@@ -1,32 +1,95 @@
-using FrontEnd.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
 
-namespace FrontEnd.Controllers
+namespace Frontend.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
-        public IActionResult Index()
+        public ActionResult Index()
         {
             return View();
         }
-
-        public IActionResult Privacy()
+        public ActionResult About()
         {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult Calles()
+        {
+            ViewBag.Message = "Calles.";
+            return View();
+        }
+        public ActionResult Cobradores()
+        {
+            ViewBag.Message = "Cobradores.";
+            return View();
+        }
+        public ActionResult Localidades()
+        {
+            ViewBag.Message = "Localidades.";
+            return View();
+        }
+        public ActionResult Provincias()
+        {
+            ViewBag.Message = "Provincias.";
+            return View();
+        }
+        public ActionResult Profesiones()
+        {
+            ViewBag.Message = "Profesiones.";
+            return View();
+        }
+        public ActionResult Sectores()
+        {
+            ViewBag.Message = "Sectores.";
+            return View();
+        }
+        public ActionResult TiposDeDocumentos()
+        {
+            ViewBag.Message = "Tipos de Documentos.";
+            return View();
+        }
+        public ActionResult Usuarios()
+        {
+            ViewBag.Message = "Usuarios.";
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+
+     
+
+
+        //MODULOS
+        public ActionResult Socios()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            ViewBag.Message = "Socios";
+            return View();
+        }
+        public ActionResult Materiales()
+        {
+            ViewBag.Message = "Socios";
+            return View();
+        }
+        public ActionResult Prestamos()
+        {
+            ViewBag.Message = "Socios";
+            return View();
+        }
+
+        public ActionResult Cobros()
+        {
+            ViewBag.Message = "Cobros";
+            return View();
         }
     }
 }
