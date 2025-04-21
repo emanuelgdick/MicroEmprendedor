@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\BibiotecaBF\\Biblioteca\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|c:\\bibiotecabf\\biblioteca\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|c:\\bibiotecabf\\biblioteca\\api\\controllers\\callecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|solutionrelative:api\\controllers\\callecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A83615A9-05C0-418A-A077-496565D764B1}|FrontEnd\\FrontEnd.csproj|c:\\bibiotecabf\\biblioteca\\frontend\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A83615A9-05C0-418A-A077-496565D764B1}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\BibiotecaBF\\Biblioteca\\Api\\Program.cs",
+              "RelativeDocumentMoniker": "Api\\Program.cs",
+              "ToolTip": "C:\\BibiotecaBF\\Biblioteca\\Api\\Program.cs",
+              "RelativeToolTip": "Api\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T22:03:27.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CalleController.cs",
+              "DocumentMoniker": "C:\\BibiotecaBF\\Biblioteca\\Api\\Controllers\\CalleController.cs",
+              "RelativeDocumentMoniker": "Api\\Controllers\\CalleController.cs",
+              "ToolTip": "C:\\BibiotecaBF\\Biblioteca\\Api\\Controllers\\CalleController.cs",
+              "RelativeToolTip": "Api\\Controllers\\CalleController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T21:57:09.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApiService.cs",
+              "DocumentMoniker": "C:\\BibiotecaBF\\Biblioteca\\FrontEnd\\Services\\ApiService.cs",
+              "RelativeDocumentMoniker": "FrontEnd\\Services\\ApiService.cs",
+              "ToolTip": "C:\\BibiotecaBF\\Biblioteca\\FrontEnd\\Services\\ApiService.cs",
+              "RelativeToolTip": "FrontEnd\\Services\\ApiService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwBQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T21:55:37.055Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+﻿@model List<Calle>
+<br />
+<div class="container p-4 border">
+    <div class="row pb-2">
+        <div class="col">
+            <h1 class="text-primary">Calles</h1>
+        </div>
+        <div class="col text-end p1-1">
+            <a asp-controller="Calle" asp-action="Create" class="btn btn-primary">Nueva Calle</a>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Descripción</th>
+                <th>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+          @*   @if (Model != null)
+            {  *@
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Descripcion</td>
+                        <td class="text-end">
+                            <a asp-controller="Calle" asp-action="Details" asp-route-Id="@item.Id"
+                               class="btn btn-primary">"Details"</a>
+                            <a asp-controller="Calle" asp-action="Delete" asp-route-Id="@item.Id"
+                               class="btn btn-primary">"Delete"</a>
+                        </td>
+
+                    </tr>
+                }
+            @* }  *@
+
+        </tbody>
+    </table>
+</div>
