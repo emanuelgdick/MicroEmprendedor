@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Biblioteca\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|c:\\biblioteca\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|solutionrelative:api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\calle\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\calle\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|c:\\biblioteca\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\models\\pageresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\models\\pageresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\controllers\\callecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,20 +23,24 @@
       "RelativeMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|solutionrelative:api\\controllers\\callecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\controllers\\authusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\controllers\\authusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|c:\\biblioteca\\api\\models\\pageresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|solutionrelative:api\\models\\pageresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\services\\apiuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\services\\apiuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|c:\\biblioteca\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\controllers\\authusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\controllers\\authusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\services\\apiuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\services\\apiuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -67,10 +75,6 @@
       "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\calle\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\calle\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
@@ -102,7 +106,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -114,20 +118,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Biblioteca\\Api\\appsettings.json",
-              "RelativeDocumentMoniker": "Api\\appsettings.json",
-              "ToolTip": "C:\\Biblioteca\\Api\\appsettings.json",
-              "RelativeToolTip": "Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-22T15:26:33.03Z",
+              "DocumentIndex": 2,
+              "Title": "PageResult.cs",
+              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Models\\PageResult.cs",
+              "RelativeDocumentMoniker": "FrontEnd\\Models\\PageResult.cs",
+              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Models\\PageResult.cs",
+              "RelativeToolTip": "FrontEnd\\Models\\PageResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T18:44:38.921Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "PageResult.cs",
+              "DocumentMoniker": "C:\\Biblioteca\\Api\\Models\\PageResult.cs",
+              "RelativeDocumentMoniker": "Api\\Models\\PageResult.cs",
+              "ToolTip": "C:\\Biblioteca\\Api\\Models\\PageResult.cs",
+              "RelativeToolTip": "Api\\Models\\PageResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T18:19:11.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Program.cs",
               "RelativeDocumentMoniker": "FrontEnd\\Program.cs",
@@ -135,48 +152,38 @@
               "RelativeToolTip": "FrontEnd\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T12:05:24.94Z"
+              "WhenOpened": "2025-04-22T12:05:24.94Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "FrontEnd\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "FrontEnd\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAAMAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-22T12:00:16.594Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "ApiService.cs",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Services\\ApiService.cs",
               "RelativeDocumentMoniker": "FrontEnd\\Services\\ApiService.cs",
               "ToolTip": "C:\\Biblioteca\\FrontEnd\\Services\\ApiService.cs",
               "RelativeToolTip": "FrontEnd\\Services\\ApiService.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwDEAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T13:35:33.227Z"
+              "WhenOpened": "2025-04-22T13:35:33.227Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CalleController.cs",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Controllers\\CalleController.cs",
               "RelativeDocumentMoniker": "FrontEnd\\Controllers\\CalleController.cs",
               "ToolTip": "C:\\Biblioteca\\FrontEnd\\Controllers\\CalleController.cs",
               "RelativeToolTip": "FrontEnd\\Controllers\\CalleController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBYAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-22T11:29:53.168Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "ApiUserService.cs",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Services\\ApiUserService.cs",
               "RelativeDocumentMoniker": "FrontEnd\\Services\\ApiUserService.cs",
@@ -188,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "AccessDenied.cshtml",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Authuser\\AccessDenied.cshtml",
               "RelativeDocumentMoniker": "FrontEnd\\Views\\Authuser\\AccessDenied.cshtml",
@@ -200,7 +207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Biblioteca\\Api\\Program.cs",
               "RelativeDocumentMoniker": "Api\\Program.cs",
@@ -208,24 +215,49 @@
               "RelativeToolTip": "Api\\Program.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T11:31:08.869Z",
+              "WhenOpened": "2025-04-22T11:31:08.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Calle\\Index.cshtml",
+              "RelativeDocumentMoniker": "FrontEnd\\Views\\Calle\\Index.cshtml",
+              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Calle\\Index.cshtml",
+              "RelativeToolTip": "FrontEnd\\Views\\Calle\\Index.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAQwDIAAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-22T11:33:52.973Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "CalleController.cs",
               "DocumentMoniker": "C:\\Biblioteca\\Api\\Controllers\\CalleController.cs",
               "RelativeDocumentMoniker": "Api\\Controllers\\CalleController.cs",
               "ToolTip": "C:\\Biblioteca\\Api\\Controllers\\CalleController.cs",
               "RelativeToolTip": "Api\\Controllers\\CalleController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBYAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T11:56:02.297Z"
+              "WhenOpened": "2025-04-22T11:56:02.297Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "FrontEnd\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "FrontEnd\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAAMAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-22T12:00:16.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "AuthuserController.cs",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Controllers\\AuthuserController.cs",
               "RelativeDocumentMoniker": "FrontEnd\\Controllers\\AuthuserController.cs",
@@ -237,7 +269,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "C:\\Biblioteca\\Api\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "Api\\Controllers\\UsuarioController.cs",
@@ -249,7 +281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "UserLoginResponse.cs",
               "DocumentMoniker": "C:\\Biblioteca\\Api\\Models\\UserLoginResponse.cs",
               "RelativeDocumentMoniker": "Api\\Models\\UserLoginResponse.cs",
@@ -261,7 +293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Calle\\Delete.cshtml",
               "RelativeDocumentMoniker": "FrontEnd\\Views\\Calle\\Delete.cshtml",
@@ -273,7 +305,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Calle\\Details.cshtml",
               "RelativeDocumentMoniker": "FrontEnd\\Views\\Calle\\Details.cshtml",
@@ -285,7 +317,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "ErrorPage.cshtml",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Calle\\ErrorPage.cshtml",
               "RelativeDocumentMoniker": "FrontEnd\\Views\\Calle\\ErrorPage.cshtml",
@@ -297,7 +329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "FrontEnd\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -309,7 +341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Calle\\Create.cshtml",
               "RelativeDocumentMoniker": "FrontEnd\\Views\\Calle\\Create.cshtml",
@@ -321,19 +353,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Calle\\Index.cshtml",
-              "RelativeDocumentMoniker": "FrontEnd\\Views\\Calle\\Index.cshtml",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Calle\\Index.cshtml",
-              "RelativeToolTip": "FrontEnd\\Views\\Calle\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-22T11:33:52.973Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "FrontEnd\\Views\\Home\\Index.cshtml",
@@ -345,7 +365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "_Layout.cshtml.css",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Shared\\_Layout.cshtml.css",
               "RelativeDocumentMoniker": "FrontEnd\\Views\\Shared\\_Layout.cshtml.css",
@@ -357,7 +377,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "FrontEnd",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\FrontEnd.csproj",
               "RelativeDocumentMoniker": "FrontEnd\\FrontEnd.csproj",
@@ -368,7 +388,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\appsettings.Development.json",
               "RelativeDocumentMoniker": "FrontEnd\\appsettings.Development.json",
@@ -380,7 +400,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "FrontEnd\\Controllers\\HomeController.cs",
