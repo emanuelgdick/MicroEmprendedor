@@ -4884,11 +4884,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\BibiotecaBF\\Biblioteca\\Api\\Api.csproj",
+      "projectUniqueName": "C:\\Biblioteca\\Api\\Api.csproj",
       "projectName": "Api",
-      "projectPath": "C:\\BibiotecaBF\\Biblioteca\\Api\\Api.csproj",
+      "projectPath": "C:\\Biblioteca\\Api\\Api.csproj",
       "packagesPath": "C:\\Users\\Emanuel\\.nuget\\packages\\",
-      "outputPath": "C:\\BibiotecaBF\\Biblioteca\\Api\\obj\\",
+      "outputPath": "C:\\Biblioteca\\Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4903,8 +4903,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://www.nuget.org/api/v2/": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {

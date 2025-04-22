@@ -13,7 +13,7 @@ builder.Services.AddResponseCaching();
 builder.Services.AddControllers(options =>
 {
 
-    options.CacheProfiles.Add("apichache",
+    options.CacheProfiles.Add("apicache",
         new CacheProfile{Duration = 30 });
 
 });
