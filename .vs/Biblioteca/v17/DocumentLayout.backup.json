@@ -120,7 +120,7 @@
               "RelativeDocumentMoniker": "Api\\appsettings.json",
               "ToolTip": "C:\\Biblioteca\\Api\\appsettings.json",
               "RelativeToolTip": "Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-04-22T15:26:33.03Z",
               "EditorCaption": ""
@@ -171,8 +171,7 @@
               "RelativeToolTip": "FrontEnd\\Controllers\\CalleController.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAQwBYAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T11:29:53.168Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-22T11:29:53.168Z"
             },
             {
               "$type": "Document",
@@ -208,8 +207,7 @@
               "RelativeToolTip": "Api\\Program.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T11:31:08.869Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-22T11:31:08.869Z"
             },
             {
               "$type": "Document",
