@@ -1288,13 +1288,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\FrontEnd.4ji32hhmnz.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"4ji32hhmnz"},{"Name":"integrity","Value":"sha256-kDaX66Hk8fAvFiLokrQ84VFkxfEPYi4z1/y0U8dv5I8="},{"Name":"label","Value":"_content/FrontEnd/FrontEnd.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1126"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022kDaX66Hk8fAvFiLokrQ84VFkxfEPYi4z1/y0U8dv5I8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 23 Apr 2025 15:30:57 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1126"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022kDaX66Hk8fAvFiLokrQ84VFkxfEPYi4z1/y0U8dv5I8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 23 Apr 2025 15:34:43 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/FrontEnd/FrontEnd.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\FrontEnd.4ji32hhmnz.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-kDaX66Hk8fAvFiLokrQ84VFkxfEPYi4z1/y0U8dv5I8="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1126"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022kDaX66Hk8fAvFiLokrQ84VFkxfEPYi4z1/y0U8dv5I8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 23 Apr 2025 15:30:57 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1126"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022kDaX66Hk8fAvFiLokrQ84VFkxfEPYi4z1/y0U8dv5I8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 23 Apr 2025 15:34:43 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/FrontEnd/js/boostrap-progressbar/bootstrap-progressbar.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\boostrap-progressbar\bootstrap-progressbar.js'))</AssetFile>
