@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\css\animate\animate.min.css" />
     <Content Remove="wwwroot\css\custom.css" />
     <Content Remove="wwwroot\css\custom.min.css" />
     <Content Remove="wwwroot\css\jqvmap\jqvmap.css" />
@@ -45,6 +46,7 @@
     <None Include="Content\Chart.js\.github\ISSUE_TEMPLATE.md" />
     <None Include="Content\Chart.js\.github\PULL_REQUEST_TEMPLATE.md" />
     <None Include="Content\Flot\.circleci\config.yml" />
+    <None Include="wwwroot\css\animate\animate.min.css" />
     <None Include="wwwroot\css\bootstrap-daterangepicker\daterangepicker.css" />
     <None Include="wwwroot\css\bootstrap-progressbar\bootstrap-progressbar-3.3.4.css" />
     <None Include="wwwroot\css\bootstrap-progressbar\bootstrap-progressbar-3.3.4.min.css" />
