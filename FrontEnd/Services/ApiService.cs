@@ -16,13 +16,13 @@ namespace FrontEnd.Services
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async Task<List<Calle>> GetAllCalles(string token)
+        public async Task<PageResult<Calle>> GetAllCalles(string token,int pagesize,int pagenumber)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync("api/Calle");
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Calle?pagesize={pagesize}&pagenumber={pagenumber}");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
-            var APIResponse = JsonConvert.DeserializeObject<List<Calle>>(contents);
+            var APIResponse = JsonConvert.DeserializeObject<PageResult<Calle>>(contents);
             return APIResponse;
         }
 

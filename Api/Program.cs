@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Mvc;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -38,7 +40,9 @@ builder.Services.AddAuthentication(x =>
         ValidateIssuerSigningKey = true,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(key)),
         ValidateIssuer = false,
-        ValidateAudience = false,
+        ValidateAudience = false
+        //ClockSkew=TimeSpan.Zero,
+       // ValidateLifetime=true
 
     };
 

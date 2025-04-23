@@ -10,9 +10,9 @@ namespace Api.Controllers
     public class CalleController : ControllerBase
     {
         private BibliotecaContext _db;
-        private readonly ILogger<CalleController> _logger;  
+        private readonly ILogger<CalleController> _logger;
 
-        public CalleController(BibliotecaContext db, ILogger<CalleController> logger    )
+        public CalleController(BibliotecaContext db, ILogger<CalleController> logger)
         {
             _db = db;
             _logger = logger;
@@ -21,10 +21,20 @@ namespace Api.Controllers
         [HttpGet]
         [Authorize]
         [ResponseCache(CacheProfileName = "apicache")]
-        public List<Calle> GetCalles()
+        public IActionResult GetCalles(int pagesize, int pagenumber)
         {
             _logger.LogInformation("Fetching Todas las Calles");
-            return _db.Calle.ToList();
+            int totalCount = _db.Calle.Count();
+            var calleList = _db.Calle.ToList().Skip(pagesize * (pagenumber - 1)).Take(pagesize).ToList();
+            var result = new PageResult<Calle>
+            {
+                items = calleList,
+                CurrentPage = pagenumber,
+                TotalCount = totalCount,
+                TotalPages = (int)Math.Ceiling(totalCount / (double)pagenumber)
+            };
+
+            return Ok(result);
         }
 
         [HttpGet("GetCalleById")]
@@ -33,7 +43,7 @@ namespace Api.Controllers
         public ActionResult<Calle> GetCalleById(int id)
         {
 
-                if (id == 0)
+            if (id == 0)
             {
                 _logger.LogError("Id de Calle no pasada");
                 return BadRequest();
@@ -84,7 +94,7 @@ namespace Api.Controllers
         }
 
         [HttpPut("DeleteCalle")]
-        [Authorize(Roles ="Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult<Calle> DeleteCalle(Int32 Id)
         {
             var Calle = _db.Calle.FirstOrDefault(x => x.Id == Id);

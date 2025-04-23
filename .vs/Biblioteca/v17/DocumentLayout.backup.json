@@ -3,96 +3,12 @@
   "WorkspaceRootPath": "C:\\Biblioteca\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|c:\\biblioteca\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|solutionrelative:api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\content\\login.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\content\\login.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|c:\\biblioteca\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\controllers\\callecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\controllers\\callecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|c:\\biblioteca\\api\\controllers\\callecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|solutionrelative:api\\controllers\\callecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\controllers\\authusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\controllers\\authusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\services\\apiuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\services\\apiuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\authuser\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\authuser\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|c:\\biblioteca\\api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|solutionrelative:api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|c:\\biblioteca\\api\\models\\userloginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|solutionrelative:api\\models\\userloginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\calle\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\calle\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\calle\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\calle\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\calle\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\calle\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\calle\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\calle\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\calle\\errorpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\calle\\errorpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\frontend.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\frontend.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\authuser\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\authuser\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -115,278 +31,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Biblioteca\\Api\\appsettings.json",
-              "RelativeDocumentMoniker": "Api\\appsettings.json",
-              "ToolTip": "C:\\Biblioteca\\Api\\appsettings.json",
-              "RelativeToolTip": "Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-22T15:26:33.03Z",
+              "Title": "login.html",
+              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Content\\login.html",
+              "RelativeDocumentMoniker": "FrontEnd\\Content\\login.html",
+              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Content\\login.html",
+              "RelativeToolTip": "FrontEnd\\Content\\login.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-04-23T15:18:52.93Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Program.cs",
-              "RelativeDocumentMoniker": "FrontEnd\\Program.cs",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Program.cs",
-              "RelativeToolTip": "FrontEnd\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T12:05:24.94Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "FrontEnd\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "FrontEnd\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAAMAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-22T12:00:16.594Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ApiService.cs",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Services\\ApiService.cs",
-              "RelativeDocumentMoniker": "FrontEnd\\Services\\ApiService.cs",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Services\\ApiService.cs",
-              "RelativeToolTip": "FrontEnd\\Services\\ApiService.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwDEAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T13:35:33.227Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CalleController.cs",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Controllers\\CalleController.cs",
-              "RelativeDocumentMoniker": "FrontEnd\\Controllers\\CalleController.cs",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Controllers\\CalleController.cs",
-              "RelativeToolTip": "FrontEnd\\Controllers\\CalleController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBYAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T11:29:53.168Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ApiUserService.cs",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Services\\ApiUserService.cs",
-              "RelativeDocumentMoniker": "FrontEnd\\Services\\ApiUserService.cs",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Services\\ApiUserService.cs",
-              "RelativeToolTip": "FrontEnd\\Services\\ApiUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T14:34:08.379Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AccessDenied.cshtml",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Authuser\\AccessDenied.cshtml",
-              "RelativeDocumentMoniker": "FrontEnd\\Views\\Authuser\\AccessDenied.cshtml",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Authuser\\AccessDenied.cshtml",
-              "RelativeToolTip": "FrontEnd\\Views\\Authuser\\AccessDenied.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-22T14:33:19.028Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Biblioteca\\Api\\Program.cs",
-              "RelativeDocumentMoniker": "Api\\Program.cs",
-              "ToolTip": "C:\\Biblioteca\\Api\\Program.cs",
-              "RelativeToolTip": "Api\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T11:31:08.869Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CalleController.cs",
-              "DocumentMoniker": "C:\\Biblioteca\\Api\\Controllers\\CalleController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\CalleController.cs",
-              "ToolTip": "C:\\Biblioteca\\Api\\Controllers\\CalleController.cs",
-              "RelativeToolTip": "Api\\Controllers\\CalleController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBYAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T11:56:02.297Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AuthuserController.cs",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Controllers\\AuthuserController.cs",
-              "RelativeDocumentMoniker": "FrontEnd\\Controllers\\AuthuserController.cs",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Controllers\\AuthuserController.cs",
-              "RelativeToolTip": "FrontEnd\\Controllers\\AuthuserController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACoAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T11:48:15.344Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UsuarioController.cs",
-              "DocumentMoniker": "C:\\Biblioteca\\Api\\Controllers\\UsuarioController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\UsuarioController.cs",
-              "ToolTip": "C:\\Biblioteca\\Api\\Controllers\\UsuarioController.cs",
-              "RelativeToolTip": "Api\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAQwBIAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T13:48:27.621Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UserLoginResponse.cs",
-              "DocumentMoniker": "C:\\Biblioteca\\Api\\Models\\UserLoginResponse.cs",
-              "RelativeDocumentMoniker": "Api\\Models\\UserLoginResponse.cs",
-              "ToolTip": "C:\\Biblioteca\\Api\\Models\\UserLoginResponse.cs",
-              "RelativeToolTip": "Api\\Models\\UserLoginResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T14:20:27.677Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Calle\\Delete.cshtml",
-              "RelativeDocumentMoniker": "FrontEnd\\Views\\Calle\\Delete.cshtml",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Calle\\Delete.cshtml",
-              "RelativeToolTip": "FrontEnd\\Views\\Calle\\Delete.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Authuser\\Login.cshtml",
+              "RelativeDocumentMoniker": "FrontEnd\\Views\\Authuser\\Login.cshtml",
+              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Authuser\\Login.cshtml",
+              "RelativeToolTip": "FrontEnd\\Views\\Authuser\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-22T13:29:56.225Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Calle\\Details.cshtml",
-              "RelativeDocumentMoniker": "FrontEnd\\Views\\Calle\\Details.cshtml",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Calle\\Details.cshtml",
-              "RelativeToolTip": "FrontEnd\\Views\\Calle\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-22T11:35:43.015Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ErrorPage.cshtml",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Calle\\ErrorPage.cshtml",
-              "RelativeDocumentMoniker": "FrontEnd\\Views\\Calle\\ErrorPage.cshtml",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Calle\\ErrorPage.cshtml",
-              "RelativeToolTip": "FrontEnd\\Views\\Calle\\ErrorPage.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-22T11:35:40.285Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeDocumentMoniker": "FrontEnd\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeToolTip": "FrontEnd\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-22T13:54:37.936Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Calle\\Create.cshtml",
-              "RelativeDocumentMoniker": "FrontEnd\\Views\\Calle\\Create.cshtml",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Calle\\Create.cshtml",
-              "RelativeToolTip": "FrontEnd\\Views\\Calle\\Create.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-22T11:47:21.438Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Calle\\Index.cshtml",
-              "RelativeDocumentMoniker": "FrontEnd\\Views\\Calle\\Index.cshtml",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Calle\\Index.cshtml",
-              "RelativeToolTip": "FrontEnd\\Views\\Calle\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-22T11:33:52.973Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "FrontEnd\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "FrontEnd\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-22T11:41:36.149Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "_Layout.cshtml.css",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Shared\\_Layout.cshtml.css",
-              "RelativeDocumentMoniker": "FrontEnd\\Views\\Shared\\_Layout.cshtml.css",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Shared\\_Layout.cshtml.css",
-              "RelativeToolTip": "FrontEnd\\Views\\Shared\\_Layout.cshtml.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-22T12:54:40.637Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "FrontEnd",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\FrontEnd.csproj",
-              "RelativeDocumentMoniker": "FrontEnd\\FrontEnd.csproj",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\FrontEnd.csproj",
-              "RelativeToolTip": "FrontEnd\\FrontEnd.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-22T12:46:20.725Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "FrontEnd\\appsettings.Development.json",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\appsettings.Development.json",
-              "RelativeToolTip": "FrontEnd\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-22T12:55:55.718Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "FrontEnd\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "FrontEnd\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T12:07:40.588Z"
+              "WhenOpened": "2025-04-23T15:16:39.569Z",
+              "EditorCaption": ""
             }
           ]
         }

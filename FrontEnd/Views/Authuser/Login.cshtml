@@ -1,4 +1,10 @@
-﻿@model Frontend.Models.LoginRequestDTO
+﻿@{
+
+    Layout = null;
+}
+@model Frontend.Models.LoginRequestDTO
+
+
 <form method="post" asp-action="Login">
     <br /><br />
     <div class="container border rounded p-4" style="max-width:500px;margin:auto;">
@@ -8,7 +14,7 @@
         <div class="row text-center">
             <div asp-validation-summary="All" class="text-danger"></div>
         </div>
-        
+
         <div class="row mb-3">
             <div class="col-12">
                 <input asp-for="User" type="text" placeholder="User..." class="form-control" style="width: 100%;" />
@@ -27,8 +33,9 @@
             </div>
         </div>
     </div>
+
 </form>
 
-@section Scripts{
+@section Scripts {
     <partial name="_validationScriptsPartial" />
 }

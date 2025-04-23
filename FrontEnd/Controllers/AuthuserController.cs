@@ -60,7 +60,6 @@ namespace FrontEnd.Controllers
             return RedirectToAction("Login", "Authuser");
 
         }
-
         public IActionResult AccessDenied()
         {
 
