@@ -18,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthuserController.cs",
+              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Controllers\\AuthuserController.cs",
+              "RelativeDocumentMoniker": "FrontEnd\\Controllers\\AuthuserController.cs",
+              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Controllers\\AuthuserController.cs",
+              "RelativeToolTip": "FrontEnd\\Controllers\\AuthuserController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAwB4AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T12:11:14.152Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -28,47 +41,9 @@
               "RelativeDocumentMoniker": "FrontEnd\\Views\\Authuser\\Login.cshtml",
               "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Authuser\\Login.cshtml",
               "RelativeToolTip": "FrontEnd\\Views\\Authuser\\Login.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAEMAAABTAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEEAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-23T20:43:04.354Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 0,
-              "Title": "login.html",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Content\\login.html",
-              "RelativeDocumentMoniker": "FrontEnd\\Content\\login.html",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Content\\login.html",
-              "RelativeToolTip": "FrontEnd\\Content\\login.html",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-04-23T15:18:52.93Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-=======
->>>>>>> 640bb70bdb5266f6c72a9197669036909642971b
-              "DocumentIndex": 1,
-              "Title": "AuthuserController.cs",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Controllers\\AuthuserController.cs",
-              "RelativeDocumentMoniker": "FrontEnd\\Controllers\\AuthuserController.cs",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Controllers\\AuthuserController.cs",
-              "RelativeToolTip": "FrontEnd\\Controllers\\AuthuserController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwBYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T21:03:59.828Z",
+              "WhenOpened": "2025-04-23T15:16:39.569Z",
               "EditorCaption": ""
             }
           ]

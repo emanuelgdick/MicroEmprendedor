@@ -1,5 +1,9 @@
 C:\Biblioteca\FrontEnd\bin\Debug\net8.0\appsettings.Development.json
 C:\Biblioteca\FrontEnd\bin\Debug\net8.0\appsettings.json
+C:\Biblioteca\FrontEnd\bin\Debug\net8.0\Content\animate.css\.bower.json
+C:\Biblioteca\FrontEnd\bin\Debug\net8.0\Content\animate.css\animate-config.json
+C:\Biblioteca\FrontEnd\bin\Debug\net8.0\Content\animate.css\bower.json
+C:\Biblioteca\FrontEnd\bin\Debug\net8.0\Content\animate.css\package.json
 C:\Biblioteca\FrontEnd\bin\Debug\net8.0\Content\bootstrap-daterangepicker\.bower.json
 C:\Biblioteca\FrontEnd\bin\Debug\net8.0\Content\bootstrap-daterangepicker\bower.json
 C:\Biblioteca\FrontEnd\bin\Debug\net8.0\Content\bootstrap-daterangepicker\package.json
@@ -277,7 +281,3 @@ C:\Biblioteca\FrontEnd\obj\Debug\net8.0\refint\FrontEnd.dll
 C:\Biblioteca\FrontEnd\obj\Debug\net8.0\FrontEnd.pdb
 C:\Biblioteca\FrontEnd\obj\Debug\net8.0\FrontEnd.genruntimeconfig.cache
 C:\Biblioteca\FrontEnd\obj\Debug\net8.0\ref\FrontEnd.dll
-C:\Biblioteca\FrontEnd\bin\Debug\net8.0\Content\animate.css\.bower.json
-C:\Biblioteca\FrontEnd\bin\Debug\net8.0\Content\animate.css\animate-config.json
-C:\Biblioteca\FrontEnd\bin\Debug\net8.0\Content\animate.css\bower.json
-C:\Biblioteca\FrontEnd\bin\Debug\net8.0\Content\animate.css\package.json

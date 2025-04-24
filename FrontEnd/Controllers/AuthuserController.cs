@@ -21,14 +21,16 @@ namespace FrontEnd.Controllers
 
         public IActionResult Login()
         {
+            
             LoginRequestDTO obj = new LoginRequestDTO();
             return View(obj);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginRequestDTO obj)
+        public async Task<IActionResult> Login(LoginRequestDTO  obj)
         {
+
             LoginResponseDTO objResponse = new LoginResponseDTO();
             objResponse = await _apiService.AuthenticateUser(obj);
             if (objResponse != null && objResponse.Token.ToString() != "")
