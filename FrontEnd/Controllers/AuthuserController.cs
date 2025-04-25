@@ -28,9 +28,10 @@ namespace FrontEnd.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginRequestDTO  obj)
+        public async Task<IActionResult> Login(string User/*,string Password,LoginRequestDTO  obj*/)
         {
-
+            var obj = new LoginRequestDTO { User = User, Password = "" };
+          
             LoginResponseDTO objResponse = new LoginResponseDTO();
             objResponse = await _apiService.AuthenticateUser(obj);
             if (objResponse != null && objResponse.Token.ToString() != "")
@@ -55,6 +56,7 @@ namespace FrontEnd.Controllers
             }
             return View(objResponse);
         }
+      
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();

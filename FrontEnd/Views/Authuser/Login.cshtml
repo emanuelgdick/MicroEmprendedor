@@ -55,22 +55,25 @@
         <div class="login_wrapper">
             <div class="animate form login_form">
                 <section class="login_content">
-                    <form  >
+
+                    <form method="post">
                         <h1>Login Form</h1>
                         <div>
-                            <input type="text" asp-for="User"  class="form-control" placeholder="Username" required="" />
+                            <input type="text" asp-for="User" class="form-control" placeholder="Username" required="" />
                         </div>
                         <div>
                             <input type="password" asp-for="Password" class="form-control" placeholder="Password" required="" />
                         </div>
                         <div>
 
-                          
-                          @*   <a class="btn btn-default form-control" asp-action="Login" asp-controller="Authuser"  asp-all-route-data="obj" >Login2 </a> *@
+                           
 
-                            <a class="btn btn-default form-control" asp-controller="Authuser" asp-action="Login"  asp-route-obj="@Model"> Click</a>
 
-                            <button type="submit" class="btn btn-primary"  style="width: 100%;">Login3</button>
+
+                            <a href="#" onclick="enviarLogin(/*'Authuser', 'Login' , ['emanuelgdick@gmail.com','manolo'] */)">Login</a>
+
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Login3</button>
 
                             <a class="reset_pass" href="#">Lost your password?</a>
                         </div>
@@ -130,11 +133,76 @@
                         </div>
                     </form>
                 </section>
-            </div> 
+            </div>
         </div>
     </div>
 </body>
- 
+
 @section Scripts {
+
     <partial name="_validationScriptsPartial" />
+
+
+    <script src="~/js/jquery/jquery.js"></script>
+    <script src="~/js/jquery/jquery.min.js"></script>
+    <a href="~/js/jquery/jquery.min.map">~/js/jquery/jquery.min.map</a>
 }
+
+<script>
+
+    async function  enviarLogin(/* controlador, accion, parametros */)
+    {
+        
+
+            const login = await fetch('/Authuser/Login', {
+      method: 'POST',
+      body: JSON.stringify({
+         User: 'bob@example.com'//,
+        // Password: '123',
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (login.ok) {
+      console.log('Login successful');
+    } else {
+      throw new Error('Login failed.');
+    }
+
+      
+         // var form = document.createElement("form");
+         // form.method = "post";
+         // form.action = "/" + controlador + "/" + accion; // URL del controlador y acción
+         // form.style.display = "none";
+         // debugger;
+         // // for (var key in parametros) {
+         // //     var input = document.createElement("input");
+         // //     input.type = "hidden";
+         // //     input.name = key;
+         // //     input.value = parametros[key];
+         // //     form.appendChild(input);
+         // // }
+         //  var input = document.createElement("input");
+         //     input.type = "hidden";
+         //     input.name = "User";
+         //     input.value = parametros[0];
+         //     form.appendChild(input);
+         //     // var input2 = document.createElement("input");
+         //     // input2.type = "hidden";
+         //     // input2.name = "Password";
+         //     // input2.value = parametros[1];
+         //     // form.appendChild(input2);
+
+
+         // document.body.appendChild(form);
+         // form.submit();
+         // document.body.removeChild(form);
+
+         
+
+
+    };
+     
+</script>

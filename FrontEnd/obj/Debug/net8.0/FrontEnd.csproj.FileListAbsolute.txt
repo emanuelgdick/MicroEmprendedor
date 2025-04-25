@@ -281,3 +281,5 @@ C:\Biblioteca\FrontEnd\obj\Debug\net8.0\refint\FrontEnd.dll
 C:\Biblioteca\FrontEnd\obj\Debug\net8.0\FrontEnd.pdb
 C:\Biblioteca\FrontEnd\obj\Debug\net8.0\FrontEnd.genruntimeconfig.cache
 C:\Biblioteca\FrontEnd\obj\Debug\net8.0\ref\FrontEnd.dll
+C:\Biblioteca\FrontEnd\bin\Debug\net8.0\Content\jquery\.bower.json
+C:\Biblioteca\FrontEnd\bin\Debug\net8.0\Content\jquery\bower.json
