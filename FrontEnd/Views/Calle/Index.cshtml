@@ -1,4 +1,4 @@
-﻿@model PageResult<Calle>
+﻿@* @model PageResult<Calle>
 <br />
 <div class="container p-4 border">
     <div class="row pb-2">
@@ -50,4 +50,321 @@
     {
         <a asp-action="Index" asp-route-pageNumber="@((Model.CurrentPage+1))" class="btn btn-primary">Next</a>
     }
+</div> *@
+
+ @model Calle
+@{
+    ViewBag.Title = "Calle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section estilos {
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.min.css" />
+                                      
+    <style>
+        .btn-exportar-excel {
+            background-color: #198754 !important;
+            color: white !important;
+        }
+
+        .btn-exportar-pdf {
+            background-color: #e90909a1 !important;
+            color: white !important;
+        }
+
+        .btn-imprimir {
+            background-color: #0094ff !important;
+            color: white !important;
+        }
+
+        #TortaGraph {
+            max-width: 200px;
+        }
+
+        hr {
+            color: darkred;
+        }
+    </style>
+
+}
+
+<div class="card">
+    <div class="card-header">
+        <i class="fas fa-solid fa-palette me-1"></i>Lista de Colores
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <button type="button" class="btn btn-success" onclick="abrirModal(null)">Crear Nuevo</button>
+            </div>
+        </div>
+        <hr />
+        <table id="tabla" class="display cell-border" style="width: 100%">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Descripción</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="FormModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title" id="exampleModalLabel">Color</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body ">
+                <input id="txtid" type="hidden" value="0" />
+                <form id="formNivel" class="row">
+                    <div class="row g-1">
+                        <div class="row ">
+                            <div class="col-sm-9 form-floating mb-4  mt-2">
+                                <input type="text" class="form-control" id="txtdescripcion" name="descripcion" autocomplete="off" placeholder="Descripción" value="@Html.DisplayTextFor(model => Model.Descripcion)">
+                                <label class="m-lg-1" for="txtdescripcion">Descripción</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div id="mensajeError" class="alert alert-danger" role="alert">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="Guardar()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+        
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+    @*para exportar PDFs*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    @*Para Imprimir*@
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+    @*Exportar Charjs a PDF*@
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.bootstrap5.min.js"></script>
+
+        
+    <script>
+            var tabladata;
+            var filaSeleccionada;
+            tabladata = $("#tabla").DataTable({
+                responsive: true,
+                ordering: true,
+                dom: "Bfrtip",
+                // buttons: [
+                //     {
+                //         extend: "excelHtml5",
+                //         text: "Exportar Excel",
+                //         filename: "Reporte de Colores",
+                //         title: "",
+                //         exportOptions: {
+                //             //muestra las columnas
+                //             columns: [0, 1]
+                //         },
+                //         className: "btn-exportar-excel"
+
+                //     },
+                //     {
+                //         extend: "pdfHtml5",
+                //         text: "Exportar PDF",
+                //         filename: "Reporte de Colores",
+                //         title: "Listado de Color",
+                //         exportOptions: {
+                //             //muestra las columnas
+                //             columns: [0, 1]
+                //         },
+                //         className: "btn-exportar-pdf"
+                //     },
+                //     {
+                //         extend: "print",
+                //         text: "Imprimir",
+                //         filename: "Reporte de Colores",
+                //         title: "Listado de Color",
+                //         exportOptions: {
+                //             //muestra las columnas
+                //             columns: [0, 1]
+                //         },
+                //         className: "btn-imprimir"
+
+                //     }
+                // ],
+                 "ajax": {
+                     url: "@Url.Action("GetAllCalles", "Calle")",
+                     type: "GET",
+                     dataType: "json"
+                 },
+                // "columns": [
+                //     { "data": "Id" },
+                //     { "data": "Descripcion" },
+                //     {
+                //         "defaultContent": '<button type="button" title="Editar Color" class=" rounded-circle btn btn-outline-primary m-1 btn-editar"><i class="fas fa-pen"></i></button>' +
+                //                           '<button type="button" title="Eliminar Color" class=" rounded-circle btn btn-outline-danger m-1 btn-eliminar"><i class="fas fa-trash"></i></button>',
+                //         "orderable": false,
+                //         "searchable": false,
+                //         "width": "90px"
+                //     }
+                // ],
+                 "language": {
+                      "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+                  }//,
+                // "columnDefs": [
+                //         { "width": "10", "targets": 0 },
+                //     { "width": "800", "targets": 1 },
+                // ]
+            })
+
+        // $("#formNivel").validate({
+        //     rules: {
+
+        //         descripcion: {
+        //             required: true
+        //         },
+        //     },
+        //     messages: {
+
+        //         descripcion: " El campo Descripción es obligatorio",
+        //     },
+        //     errorElement: "div",
+        //     errorLabelContainer: ".alert-danger"
+        // });
+
+        //     function abrirModal(json) {
+        //         $("#txtid").val(0);
+        //         $("#txtdescripcion").val("");
+        //         $("#mensajeError").hide();
+        //         if (json != null) {
+        //             $("#txtid").val(json.Id);
+        //             $("#txtdescripcion").val(json.Descripcion);
+
+        //         }
+        //         $("#FormModal").modal("show");
+        //     }
+        //     $("#tabla tbody").on("click", '.btn-editar', function () {
+        //         filaSeleccionada = $(this).closest("tr");
+        //         var data = tabladata.row(filaSeleccionada).data();
+        //         abrirModal(data)
+        //     })
+
+        //     $("#tabla tbody").on("click", '.btn-eliminar', function () {
+        //         var Colorseleccionado = $(this).closest("tr");
+        //         var data = tabladata.row(Colorseleccionado).data();
+        //         swal({
+        //             title: "Está Seguro?",
+        //             text: "Desea eliminar el Color?",
+        //             type: "warning",
+        //             showCancelButton: true,
+        //             confirmButtonClass: "btn-primary",
+        //             confirmButtonText: "Si",
+        //             cancelButtonText: "No",
+        //             closeOnConfirm: true
+        //         },
+        //             function () {
+        //                 jQuery.ajax({
+        //                     url: '@Url.Action("EliminarColor", "Mantenedor")',
+        //                     type: "POST",
+        //                     data: JSON.stringify({ id: data.Id }),
+        //                     dataType: "json",
+        //                     contentType: "application/json;charset=uft-8",
+        //                     success: function (data) {
+        //                         if (data.resultado) {
+        //                             tabladata.row(Colorseleccionado).remove().draw();
+        //                         } else {
+        //                             swal("No se pudo eliminar", data.mensaje, "error");
+        //                         }
+        //                     },
+        //                     error: function (error) {
+        //                         console.log(error);
+        //                     }
+        //                 })
+        //             })
+        //     });
+
+
+        // function Guardar() {
+
+        //     if (!$("#formNivel").valid()) {
+        //         return;
+        //     }
+
+        //     debugger;
+        //     var Color = {
+        //             Id: $("#txtid").val(),
+        //             Descripcion: $("#txtdescripcion").val(),
+
+        //         }
+        //         jQuery.ajax({
+        //             url: '@Url.Action("GuardarColor", "Mantenedor")',
+        //             type: "POST",
+        //             data: JSON.stringify({ Color: Color }),
+        //             dataType: "json",
+        //             contentType: "application/json;charset=uft-8",
+        //             success: function (data) {
+        //                 $(".modal-body").LoadingOverlay("hide");
+        //                 //  Color nuevo
+        //                 if (Color.Id == 0) {
+        //                     if (data.resultado != 0) {
+        //                         Color.Id = data.resultado;
+        //                         tabladata.row.add(Color).draw(false);
+        //                         $("#FormModal").modal("hide");
+        //                     }
+        //                     else {
+        //                         $("#mensajeError").text(data.mensaje);
+        //                         $("#mensajeError").show();
+        //                     }
+        //                 }
+        //               //  Color Editar
+        //                 else {
+
+        //                     if (data.resultado) {
+        //                         tabladata.row(filaSeleccionada).data(Color).draw(false);
+        //                         filaSeleccionada = null;
+        //                         $("#FormModal").modal("hide");
+        //                     } else {
+        //                         $("#mensajeError").text(data.mensaje);
+        //                         $("#mensajeError").show();
+        //                     }
+        //                 }
+        //                 },
+        //                 error: function (error) {
+        //                     $(".modal-body").LoadingOverlay("hide");
+        //                     $("#mensajeError").text("Error Ajax");
+        //                     $("#mensajeError").show();
+        //                 },
+        //                 beforeSend: function () {
+        //                     $(".modal-body").LoadingOverlay("show", {
+        //                         imageResizeFactor: 2,
+        //                         text: "Cargando...",
+        //                         size: 14
+        //                     })
+
+        //                 }
+        //             }
+        //         )
+        //     }
+    </script>
+}

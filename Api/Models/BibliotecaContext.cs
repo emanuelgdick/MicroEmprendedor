@@ -8,9 +8,10 @@ namespace Api.Models
         {
             
         }
-
+        public DbSet<Autor> Autor { get; set; }
         public DbSet<Calle> Calle { get; set; }
 
         public DbSet<Usuario> Usuario { get; set; }
+
     }
 }

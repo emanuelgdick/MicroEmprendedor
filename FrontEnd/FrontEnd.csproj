@@ -27,6 +27,8 @@
     <Content Remove="wwwroot\js\charts\Chart.min.js" />
     <Content Remove="wwwroot\js\custom.js" />
     <Content Remove="wwwroot\js\custom.min.js" />
+    <Content Remove="wwwroot\js\datatables.net\js\jquery.dataTables.js" />
+    <Content Remove="wwwroot\js\datatables.net\js\jquery.dataTables.min.js" />
     <Content Remove="wwwroot\js\DateJs\date.js" />
     <Content Remove="wwwroot\js\flot\curvedLines.js" />
     <Content Remove="wwwroot\js\flot\jquery.flot.js" />
@@ -168,6 +170,8 @@
     <None Include="wwwroot\js\charts\Chart.min.js" />
     <None Include="wwwroot\js\custom.js" />
     <None Include="wwwroot\js\custom.min.js" />
+    <None Include="wwwroot\js\datatables.net\js\jquery.dataTables.js" />
+    <None Include="wwwroot\js\datatables.net\js\jquery.dataTables.min.js" />
     <None Include="wwwroot\js\DateJs\date.js" />
     <None Include="wwwroot\js\flot\curvedLines.js" />
     <None Include="wwwroot\js\flot\jquery.flot.js" />
@@ -186,6 +190,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.7" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />

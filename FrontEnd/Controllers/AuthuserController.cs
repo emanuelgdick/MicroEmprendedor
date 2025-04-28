@@ -27,10 +27,10 @@ namespace FrontEnd.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(string User/*,string Password,LoginRequestDTO  obj*/)
+       // [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login([FromBody] LoginRequestDTO  obj)
         {
-            var obj = new LoginRequestDTO { User = User, Password = "" };
+            //var obj = new LoginRequestDTO { User = "emanuelgdick@gmail.com", Password = "manolo" };
           
             LoginResponseDTO objResponse = new LoginResponseDTO();
             objResponse = await _apiService.AuthenticateUser(obj);
@@ -46,15 +46,21 @@ namespace FrontEnd.Controllers
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
                 HttpContext.Session.SetString("APIToken", objResponse.Token);
-                return RedirectToAction("Index", "Home");
+
+                return Json(new { success = true,token = objResponse.Token });
+               // return RedirectToAction("Index", "Home");
+                
+
             }
             else
             {
                 HttpContext.Session.SetString("APIToken", "");
+                return Json(new { success = false, message = "Credenciales inválidas" });
 
 
             }
-            return View(objResponse);
+           // return View(objResponse);
+            
         }
       
         public async Task<IActionResult> Logout()

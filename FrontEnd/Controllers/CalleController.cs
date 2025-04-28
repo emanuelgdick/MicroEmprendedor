@@ -2,9 +2,7 @@
 using FrontEnd.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using System.Net.Http.Headers;
-using Microsoft.Extensions.Configuration;
+
 namespace FrontEnd.Controllers
 {
     public class CalleController : Controller
@@ -20,13 +18,25 @@ namespace FrontEnd.Controllers
 
         [Authorize(Roles = "Admin")]
         [ResponseCache(Duration = 30)]
-        public async Task<IActionResult> Index(int pagenumber=1)
+        public async Task<IActionResult> Index()
         {
             int pagesize = _config.GetValue<int>("PageSettings:PageSize");
-            PageResult<Calle> lstCalle = new PageResult<Calle>();
-            lstCalle = await _apiService.GetAllCalles(HttpContext.Session.GetString("APIToken"),pagesize,pagenumber);
-            return View(lstCalle);
+            List<Calle> lstCalle = new List<Calle>();
+            lstCalle = await _apiService.GetAllCalles(HttpContext.Session.GetString("APIToken"));
+            return View();
+            
         }
+
+      
+        [Authorize(Roles = "Admin")]
+        public async Task<JsonResult> GetAllCalles()
+        {
+            List<Calle> oLista = new List<Calle>();
+            oLista =  await _apiService.GetAllCalles(HttpContext.Session.GetString("APIToken"));
+            //return new JsonResult(oLista);// Json(oLista);
+            return Json(new { data = oLista }, System.Web.Mvc.JsonRequestBehavior.AllowGet);
+        }
+       
 
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create()

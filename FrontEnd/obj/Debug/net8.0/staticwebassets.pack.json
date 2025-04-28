@@ -1829,6 +1829,18 @@
       "PackagePath": "staticwebassets\\js\\bootstrap\\site\\sw.js"
     },
     {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\js\\jquery\\dist\\jquery.min.map"
+    },
+    {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\external\\sizzle\\LICENSE.txt",
       "PackagePath": "staticwebassets\\js\\jquery\\external\\sizzle\\LICENSE.txt"
     },
@@ -1845,6 +1857,50 @@
       "PackagePath": "staticwebassets\\js\\jquery\\external\\sizzle\\dist\\sizzle.min.map"
     },
     {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery-3.7.1.intellisense.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery-3.7.1.intellisense.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery-3.7.1.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery-3.7.1.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery-3.7.1.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery-3.7.1.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery-3.7.1.min.map",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery-3.7.1.min.map"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery-3.7.1.slim.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery-3.7.1.slim.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery-3.7.1.slim.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery-3.7.1.slim.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery-3.7.1.slim.min.map",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery-3.7.1.slim.min.map"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery-ui.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery-ui.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery.csv.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery.csv.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery.dataTables.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery.datetimepicker.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery.datetimepicker.js"
+    },
+    {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery.js",
       "PackagePath": "staticwebassets\\js\\jquery\\jquery.js"
     },
@@ -1855,6 +1911,26 @@
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery.min.map",
       "PackagePath": "staticwebassets\\js\\jquery\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery.validate-vsdoc.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery.validate-vsdoc.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery.validate.unobtrusive.min.js"
     },
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\src\\.jshintrc",

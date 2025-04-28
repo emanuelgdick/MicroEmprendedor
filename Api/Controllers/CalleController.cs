@@ -21,20 +21,21 @@ namespace Api.Controllers
         [HttpGet]
         [Authorize]
         [ResponseCache(CacheProfileName = "apicache")]
-        public IActionResult GetCalles(int pagesize, int pagenumber)
+        public IActionResult GetCalles(/*int pagesize, int pagenumber*/)
         {
             _logger.LogInformation("Fetching Todas las Calles");
-            int totalCount = _db.Calle.Count();
-            var calleList = _db.Calle.ToList().Skip(pagesize * (pagenumber - 1)).Take(pagesize).ToList();
-            var result = new PageResult<Calle>
-            {
-                items = calleList,
-                CurrentPage = pagenumber,
-                TotalCount = totalCount,
-                TotalPages = (int)Math.Ceiling(totalCount / (double)pagenumber)
-            };
-
-            return Ok(result);
+            //int totalCount = _db.Calle.Count();
+            //var calleList = _db.Calle.ToList().Skip(pagesize * (pagenumber - 1)).Take(pagesize).ToList();
+            //var result = new PageResult<Calle>
+            //{
+            //    items = calleList,
+            //    CurrentPage = pagenumber,
+            //    TotalCount = totalCount,
+            //    TotalPages = (int)Math.Ceiling(totalCount / (double)pagenumber)
+            //};
+            var calleList = _db.Calle.ToList();
+            return Ok(calleList);
+            
         }
 
         [HttpGet("GetCalleById")]

@@ -1,5 +1,7 @@
 ﻿using System.Net.Http.Headers;
+using System.Web.Mvc;
 using FrontEnd.Models;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 namespace FrontEnd.Services
 {
@@ -16,13 +18,15 @@ namespace FrontEnd.Services
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async Task<PageResult<Calle>> GetAllCalles(string token,int pagesize,int pagenumber)
+
+        //CALLES
+        public async  Task<List<Calle>> GetAllCalles(string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/Calle?pagesize={pagesize}&pagenumber={pagenumber}");
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Calle?");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
-            var APIResponse = JsonConvert.DeserializeObject<PageResult<Calle>>(contents);
+            var APIResponse = JsonConvert.DeserializeObject<List<Calle>>(contents);
             return APIResponse;
         }
 
@@ -55,6 +59,50 @@ namespace FrontEnd.Services
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             HttpResponseMessage response = await _httpClient.PutAsync($"api/Calle/DeleteCalle?id={id}",null);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        //AUTORES
+        public async Task<PageResult<Autor>> GetAllAutores(string token, int pagesize, int pagenumber)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Autor?pagesize={pagesize}&pagenumber={pagenumber}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<PageResult<Autor>>(contents);
+            return APIResponse;
+        }
+
+        public async Task AddAutor(Autor autor, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Autor>($"api/Autor/AddAutor", autor);
+            response.EnsureSuccessStatusCode();
+        }
+
+        public async Task<Autor> GetAutorById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Autor/GetAutorById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Autor>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateAutor(int id, Autor autor, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Autor>($"api/Autor/UpdateAutor?id={id}", autor);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteAutor(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Autor/DeleteAutor?id={id}", null);
             response.EnsureSuccessStatusCode();
 
         }

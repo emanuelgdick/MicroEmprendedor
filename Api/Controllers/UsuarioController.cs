@@ -25,7 +25,7 @@ namespace Api.Controllers
         public async Task<UserLoginResponse> Login(UserLoginRequest logindetails)
         {
             var user = _db.Usuario.FirstOrDefault(u => u.User.ToLower() == logindetails.User.ToLower()
-            && logindetails.Password.ToLower() == logindetails.Password.ToLower());
+            && u.Password.ToLower() == logindetails.Password.ToLower());
 
             if (user == null)
             {

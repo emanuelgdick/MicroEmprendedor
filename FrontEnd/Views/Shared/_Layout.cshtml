@@ -64,11 +64,11 @@
                             <h3>General</h3>
                             <ul class="nav side-menu">
                                 <li>
-                                    <a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                                    <a><i class="fa fa-home"></i> Mantenimiento <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="index.html">Dashboard</a></li>
-                                        <li><a href="index2.html">Dashboard2</a></li>
-                                        <li><a href="index3.html">Dashboard3</a></li>
+                                        <li><a href="/Autor/index">Autores</a></li>
+                                        <li><a href="/Calle/index">Calles</a></li>
+                                        
                                     </ul>
                                 </li>
                                 <li>
@@ -304,7 +304,32 @@
 
     </div>
    <!--Scripts-->
+    
+    <a href="~/js/jquery/jquery.min.map">~/js/jquery/jquery.min.map</a>
     <script src="~/js/jquery/jquery.min.js"></script>
+    <script src="~/js/jquery/jquery.js"></script>
+    
+    @* 
+    <script src="~/js/jquery/jquery.csv.min.js"></script>
+    <script src="~/js/jquery/jquery.datatables.min.js"></script>
+   
+    <script src="~/js/jquery/jquery.datetimepicker.js"></script>
+    <script src="~/js/jquery/jquery.validate-vsdoc.js"></script>
+    <script src="~/js/jquery/jquery.validate.js"></script>
+    <script src="~/js/jquery/jquery.validate.min.js"></script>
+    <script src="~/js/jquery/jquery.validate.unobtrusive.js"></script>
+    <script src="~/js/jquery/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/jquery/jquery-3.7.1.intellisense.js"></script>
+    <script src="~/js/jquery/jquery-3.7.1.js"></script>
+    <script src="~/js/jquery/jquery-3.7.1.min.js"></script>
+    <script src="~/js/jquery/jquery-3.7.1.slim.js"></script>
+    <script src="~/js/jquery/jquery-3.7.1.slim.min.js"></script>
+    <a href="~/js/jquery/jquery-3.7.1.min.map">c:\biblioteca\frontend\wwwroot\js\jquery\jquery-3.7.1.min.map</a>
+    <a href="~/js/jquery/jquery-3.7.1.slim.min.map">c:\biblioteca\frontend\wwwroot\js\jquery\jquery-3.7.1.slim.min.map</a>
+
+    <script src="~/js/jquery/jquery-ui.js"></script>
+ *@
+
     <script src="~/js/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/nprogress/nprogress.js"></script>
 
@@ -331,9 +356,17 @@
 
     <script src="~/js/moment/moment.min.js"></script>
     <script src="~/js/boostrap-daterangepicker/daterangepicker.js"></script>
-    <script src="~/js/custom.js"></script>
 
+    <script src="~/js/datatables.net/js/jquery.datatables.js"></script>
+    <script src="~/js/datatables.net/js/jquery.datatables.min.js"></script>
+
+
+    <script src="~/js/scripts.js"></script>
+
+     <script src="~/js/custom.js"></script>
+  
     @RenderSection("scripts",required:false)
+    @RenderSection("estilos", required: false)
 </body>
 </html>
 
