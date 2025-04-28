@@ -2,6 +2,7 @@
 using FrontEnd.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft;
 
 namespace FrontEnd.Controllers
 {
@@ -27,16 +28,20 @@ namespace FrontEnd.Controllers
             
         }
 
-      
+
         [Authorize(Roles = "Admin")]
-        public async Task<JsonResult> GetAllCalles()
+        public async Task<IActionResult> GetAllCalle()
         {
             List<Calle> oLista = new List<Calle>();
-            oLista =  await _apiService.GetAllCalles(HttpContext.Session.GetString("APIToken"));
+            oLista = await _apiService.GetAllCalles(HttpContext.Session.GetString("APIToken"));
             //return new JsonResult(oLista);// Json(oLista);
-            return Json(new { data = oLista }, System.Web.Mvc.JsonRequestBehavior.AllowGet);
+          //  return Json(new { data = oLista }, System.Web.Mvc.JsonRequestBehavior.AllowGet);
+
+            //var dat = "{Id:1}";
+            //return Json(new { data =dat }, System.Web.Mvc.JsonRequestBehavior.AllowGet);
+             return new JsonResult(new { data = oLista });
         }
-       
+
 
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create()

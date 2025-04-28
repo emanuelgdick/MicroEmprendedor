@@ -1829,6 +1829,322 @@
       "PackagePath": "staticwebassets\\js\\bootstrap\\site\\sw.js"
     },
     {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\autoFill.bootstrap.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\autoFill.bootstrap.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\autoFill.bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\autoFill.bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\autoFill.bootstrap4.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\autoFill.bootstrap4.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\autoFill.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\autoFill.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\autoFill.foundation.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\autoFill.foundation.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\autoFill.foundation.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\autoFill.foundation.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\autoFill.jqueryui.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\autoFill.jqueryui.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\autoFill.jqueryui.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\autoFill.jqueryui.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\autoFill.semanticui.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\autoFill.semanticui.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\autoFill.semanticui.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\autoFill.semanticui.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\buttons.bootstrap.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\buttons.bootstrap.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\buttons.bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\buttons.bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\buttons.bootstrap4.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\buttons.bootstrap4.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\buttons.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\buttons.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\buttons.colVis.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\buttons.colVis.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\buttons.colVis.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\buttons.colVis.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\buttons.flash.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\buttons.flash.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\buttons.flash.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\buttons.flash.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\buttons.foundation.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\buttons.foundation.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\buttons.foundation.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\buttons.foundation.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\buttons.html5.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\buttons.html5.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\buttons.html5.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\buttons.html5.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\buttons.jqueryui.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\buttons.jqueryui.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\buttons.jqueryui.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\buttons.jqueryui.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\buttons.print.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\buttons.print.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\buttons.print.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\buttons.print.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\buttons.semanticui.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\buttons.semanticui.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\buttons.semanticui.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\buttons.semanticui.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.autoFill.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.autoFill.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.autoFill.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.autoFill.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.bootstrap.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.bootstrap.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.bootstrap4.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.bootstrap4.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.buttons.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.buttons.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.buttons.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.buttons.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.colReorder.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.colReorder.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.colReorder.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.colReorder.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.dateTime.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.dateTime.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.editor.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.editor.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.fixedColumns.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.fixedColumns.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.fixedColumns.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.fixedColumns.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.fixedHeader.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.fixedHeader.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.fixedHeader.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.fixedHeader.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.foundation.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.foundation.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.foundation.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.foundation.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.jqueryui.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.jqueryui.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.jqueryui.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.jqueryui.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.keyTable.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.keyTable.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.keyTable.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.keyTable.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.material.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.material.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.material.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.material.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.responsive.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.responsive.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.responsive.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.responsive.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.rowGroup.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.rowGroup.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.rowGroup.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.rowGroup.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.rowReorder.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.rowReorder.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.rowReorder.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.rowReorder.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.scroller.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.scroller.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.scroller.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.scroller.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.select.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.select.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.select.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.select.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.semanticui.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.semanticui.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.semanticui.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.semanticui.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.uikit.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.uikit.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\dataTables.uikit.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\dataTables.uikit.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\jquery-3.5.1.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\jquery-3.5.1.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\jquery.dataTables.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\jquery.dataTables.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\jquery.dataTables.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\responsive.bootstrap.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\responsive.bootstrap.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\responsive.bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\responsive.bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\responsive.bootstrap4.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\responsive.bootstrap4.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\responsive.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\responsive.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\responsive.foundation.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\responsive.foundation.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\responsive.foundation.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\responsive.foundation.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\responsive.jqueryui.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\responsive.jqueryui.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\responsive.jqueryui.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\responsive.jqueryui.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\responsive.semanticui.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\responsive.semanticui.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\responsive.semanticui.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables\\responsive.semanticui.min.js"
+    },
+    {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\js\\jquery\\dist\\jquery.js"
     },
@@ -1855,6 +2171,38 @@
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\external\\sizzle\\dist\\sizzle.min.map",
       "PackagePath": "staticwebassets\\js\\jquery\\external\\sizzle\\dist\\sizzle.min.map"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery-3.4.1.intellisense.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery-3.4.1.intellisense.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery-3.4.1.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery-3.4.1.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery-3.4.1.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery-3.4.1.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery-3.4.1.min.map",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery-3.4.1.min.map"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery-3.4.1.slim.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery-3.4.1.slim.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery-3.4.1.slim.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery-3.4.1.slim.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery-3.4.1.slim.min.map",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery-3.4.1.slim.min.map"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery-3.5.1.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery-3.5.1.js"
     },
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery-3.7.1.intellisense.js",
@@ -1891,6 +2239,10 @@
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery.csv.min.js",
       "PackagePath": "staticwebassets\\js\\jquery\\jquery.csv.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery.dataTables.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery.dataTables.js"
     },
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\jquery.dataTables.min.js",
@@ -2331,10 +2683,6 @@
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\nprogress\\nprogress.js",
       "PackagePath": "staticwebassets\\js\\nprogress\\nprogress.js"
-    },
-    {
-      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\site.js",
-      "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\lib\\bootstrap\\LICENSE",

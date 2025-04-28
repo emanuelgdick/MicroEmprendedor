@@ -1,63 +1,8 @@
-﻿@* @model PageResult<Calle>
-<br />
-<div class="container p-4 border">
-    <div class="row pb-2">
-        <div class="col">
-            <h1 class="text-primary">Calles</h1>
-        </div>
-        <div class="col text-end p1-1">
-            <a asp-controller="Calle" asp-action="Create" class="btn btn-primary">Nueva Calle</a>
-        </div>
-    </div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Descripción</th>
-                <th>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-
-            @foreach (var item in Model.items)
-            {
-                <tr>
-                    <td>@item.Id</td>
-                    <td>@item.Descripcion</td>
-                    <td class="text-end">
-                        <a asp-controller="Calle" asp-action="Details" asp-route-Id="@item.Id"
-                        class="btn btn-primary">"Details"</a>
-                        <a asp-controller="Calle" asp-action="Delete" asp-route-Id="@item.Id"
-                        class="btn btn-primary">"Delete"</a>
-                    </td>
-
-                </tr>
-            }
-
-
-        </tbody>
-    </table>
-</div>
-
-<div class="pagination">
-    @if (Model.HasPreviousPage)
-    {
-        <a asp-action="Index" asp-route-pageNumber="@((Model.CurrentPage-1))" class="btn btn-primary">Prev</a>    
-    }
-    <span>Page @Model.CurrentPage of @Model.TotalPages</span>
-    @if (Model.HasNextPage)
-    {
-        <a asp-action="Index" asp-route-pageNumber="@((Model.CurrentPage+1))" class="btn btn-primary">Next</a>
-    }
-</div> *@
-
- @model Calle
+﻿@model Calle
 @{
     ViewBag.Title = "Calle";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 
 @section estilos {
 
@@ -103,17 +48,21 @@
             </div>
         </div>
         <hr />
-        <table id="tabla" class="display cell-border" style="width: 100%">
-            <thead>
-                <tr>
-                    <th>Código</th>
-                    <th>Descripción</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+      <table id="tabla" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Descripcion</th> 
+                
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+        <tfoot>
+          
+        </tfoot>
+    </table>
     </div>
 </div>
 <!-- Modal -->
@@ -152,91 +101,78 @@
 </div>
 
 @section scripts {
-        
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
-    @*para exportar PDFs*@
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    @*Para Imprimir*@
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
-    @*Exportar Charjs a PDF*@
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
-    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.bootstrap5.min.js"></script>
-
-        
+         
     <script>
+          
             var tabladata;
             var filaSeleccionada;
             tabladata = $("#tabla").DataTable({
                 responsive: true,
                 ordering: true,
                 dom: "Bfrtip",
-                // buttons: [
-                //     {
-                //         extend: "excelHtml5",
-                //         text: "Exportar Excel",
-                //         filename: "Reporte de Colores",
-                //         title: "",
-                //         exportOptions: {
-                //             //muestra las columnas
-                //             columns: [0, 1]
-                //         },
-                //         className: "btn-exportar-excel"
+                buttons: [
+                    {
+                        extend: "excelHtml5",
+                        text: "Exportar Excel",
+                        filename: "Reporte de Colores",
+                        title: "",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1]
+                        },
+                        className: "btn-exportar-excel"
 
-                //     },
-                //     {
-                //         extend: "pdfHtml5",
-                //         text: "Exportar PDF",
-                //         filename: "Reporte de Colores",
-                //         title: "Listado de Color",
-                //         exportOptions: {
-                //             //muestra las columnas
-                //             columns: [0, 1]
-                //         },
-                //         className: "btn-exportar-pdf"
-                //     },
-                //     {
-                //         extend: "print",
-                //         text: "Imprimir",
-                //         filename: "Reporte de Colores",
-                //         title: "Listado de Color",
-                //         exportOptions: {
-                //             //muestra las columnas
-                //             columns: [0, 1]
-                //         },
-                //         className: "btn-imprimir"
+                    },
+                    {
+                        extend: "pdfHtml5",
+                        text: "Exportar PDF",
+                        filename: "Reporte de Colores",
+                        title: "Listado de Color",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1]
+                        },
+                        className: "btn-exportar-pdf"
+                    },
+                    {
+                        extend: "print",
+                        text: "Imprimir",
+                        filename: "Reporte de Colores",
+                        title: "Listado de Color",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1]
+                        },
+                        className: "btn-imprimir"
 
-                //     }
-                // ],
+                    }
+                ],
                  "ajax": {
-                     url: "@Url.Action("GetAllCalles", "Calle")",
+                     url: "@Url.Action("GetAllCalle", "Calle")",
                      type: "GET",
                      dataType: "json"
                  },
-                // "columns": [
-                //     { "data": "Id" },
-                //     { "data": "Descripcion" },
-                //     {
-                //         "defaultContent": '<button type="button" title="Editar Color" class=" rounded-circle btn btn-outline-primary m-1 btn-editar"><i class="fas fa-pen"></i></button>' +
-                //                           '<button type="button" title="Eliminar Color" class=" rounded-circle btn btn-outline-danger m-1 btn-eliminar"><i class="fas fa-trash"></i></button>',
-                //         "orderable": false,
-                //         "searchable": false,
-                //         "width": "90px"
-                //     }
-                // ],
+                 "columns": [
+                         { "data": "id" },
+                         { "data": "descripcion" },
+                         {
+                             "defaultContent": '<button type="button" title="Editar Color" class=" rounded-circle btn btn-outline-primary m-0 btn-editar"><i class="fa fa-pen"></i></button>' +
+                                               '<button type="button" title="Eliminar Color" class=" rounded-circle btn btn-outline-danger m-0 btn-eliminar"><i class="fa fa-trash"></i></button>',
+                            "orderable": false,
+                            "searchable": false,
+                            "width": "90px"
+                        }
+                 ],
                  "language": {
                       "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
-                  }//,
-                // "columnDefs": [
-                //         { "width": "10", "targets": 0 },
-                //     { "width": "800", "targets": 1 },
-                // ]
+                  },
+                "columnDefs": [
+                        { "width": "10%", "targets": 0 },
+                        { "width": "80%", "targets": 1 },
+                        { "width": "10%", "targets": 2 },
+                ]
             })
+            
 
         // $("#formNivel").validate({
         //     rules: {
