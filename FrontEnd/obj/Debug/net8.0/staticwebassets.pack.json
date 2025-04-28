@@ -381,6 +381,194 @@
       "PackagePath": "staticwebassets\\css\\bootstrap\\js\\tests\\visual\\tooltip.html"
     },
     {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\.bower.json",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\.bower.json"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\.gitignore",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\.gitignore"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\.npmignore",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\.npmignore"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\HELP-US-OUT.txt",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\HELP-US-OUT.txt"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\bower.json",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\bower.json"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\css\\font-awesome.css",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\css\\font-awesome.css"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\css\\font-awesome.css.map",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\css\\font-awesome.css.map"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\less\\animated.less",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\less\\animated.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\less\\bordered-pulled.less",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\less\\bordered-pulled.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\less\\core.less",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\less\\core.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\less\\fixed-width.less",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\less\\fixed-width.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\less\\font-awesome.less",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\less\\font-awesome.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\less\\icons.less",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\less\\icons.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\less\\larger.less",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\less\\larger.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\less\\list.less",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\less\\list.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\less\\mixins.less",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\less\\mixins.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\less\\path.less",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\less\\path.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\less\\rotated-flipped.less",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\less\\rotated-flipped.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\less\\screen-reader.less",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\less\\screen-reader.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\less\\stacked.less",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\less\\stacked.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\less\\variables.less",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\less\\variables.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\scss\\_animated.scss",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\scss\\_animated.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\scss\\_bordered-pulled.scss",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\scss\\_bordered-pulled.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\scss\\_core.scss",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\scss\\_core.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\scss\\_fixed-width.scss",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\scss\\_fixed-width.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\scss\\_icons.scss",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\scss\\_icons.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\scss\\_larger.scss",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\scss\\_larger.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\scss\\_list.scss",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\scss\\_list.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\scss\\_path.scss",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\scss\\_path.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\scss\\_rotated-flipped.scss",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\scss\\_rotated-flipped.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\scss\\_screen-reader.scss",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\scss\\_screen-reader.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\scss\\_stacked.scss",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\scss\\_stacked.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\scss\\_variables.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\font-awesome\\scss\\font-awesome.scss",
+      "PackagePath": "staticwebassets\\css\\font-awesome\\scss\\font-awesome.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\.bower.json",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\.bower.json"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\.gitignore",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\.gitignore"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\.npmignore",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\.npmignore"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\HELP-US-OUT.txt",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\HELP-US-OUT.txt"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\bower.json",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\bower.json"
+    },
+    {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\css\\font-awesome.css",
       "PackagePath": "staticwebassets\\css\\fontawesome\\css\\font-awesome.css"
     },
@@ -417,6 +605,110 @@
       "PackagePath": "staticwebassets\\css\\fontawesome\\fonts\\fontawesome-webfont.woff2"
     },
     {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\less\\animated.less",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\less\\animated.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\less\\bordered-pulled.less",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\less\\bordered-pulled.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\less\\core.less",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\less\\core.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\less\\fixed-width.less",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\less\\fixed-width.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\less\\font-awesome.less",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\less\\font-awesome.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\less\\icons.less",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\less\\icons.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\less\\larger.less",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\less\\larger.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\less\\list.less",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\less\\list.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\less\\mixins.less",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\less\\mixins.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\less\\path.less",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\less\\path.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\less\\rotated-flipped.less",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\less\\rotated-flipped.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\less\\stacked.less",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\less\\stacked.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\less\\variables.less",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\less\\variables.less"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\scss\\_animated.scss",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\scss\\_animated.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\scss\\_bordered-pulled.scss",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\scss\\_bordered-pulled.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\scss\\_core.scss",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\scss\\_core.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\scss\\_fixed-width.scss",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\scss\\_fixed-width.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\scss\\_icons.scss",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\scss\\_icons.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\scss\\_larger.scss",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\scss\\_larger.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\scss\\_list.scss",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\scss\\_list.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\scss\\_path.scss",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\scss\\_path.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\scss\\_rotated-flipped.scss",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\scss\\_rotated-flipped.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\scss\\_stacked.scss",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\scss\\_stacked.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\scss\\_variables.scss"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\fontawesome\\scss\\font-awesome.scss",
+      "PackagePath": "staticwebassets\\css\\fontawesome\\scss\\font-awesome.scss"
+    },
+    {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\nprogress\\nprogress.css",
       "PackagePath": "staticwebassets\\css\\nprogress\\nprogress.css"
     },
@@ -431,6 +723,18 @@
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\images\\favicon2.ico",
+      "PackagePath": "staticwebassets\\images\\favicon2.ico"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\images\\img.jpg",
+      "PackagePath": "staticwebassets\\images\\img.jpg"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\images\\user.png",
+      "PackagePath": "staticwebassets\\images\\user.png"
     },
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\boostrap-progressbar\\bootstrap-progressbar.js",
@@ -1827,6 +2131,46 @@
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\bootstrap\\site\\sw.js",
       "PackagePath": "staticwebassets\\js\\bootstrap\\site\\sw.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables.net-buttons\\js\\buttons.colVis.js",
+      "PackagePath": "staticwebassets\\js\\datatables.net-buttons\\js\\buttons.colVis.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables.net-buttons\\js\\buttons.colVis.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables.net-buttons\\js\\buttons.colVis.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables.net-buttons\\js\\buttons.flash.js",
+      "PackagePath": "staticwebassets\\js\\datatables.net-buttons\\js\\buttons.flash.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables.net-buttons\\js\\buttons.flash.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables.net-buttons\\js\\buttons.flash.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables.net-buttons\\js\\buttons.html5.js",
+      "PackagePath": "staticwebassets\\js\\datatables.net-buttons\\js\\buttons.html5.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables.net-buttons\\js\\buttons.html5.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables.net-buttons\\js\\buttons.html5.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables.net-buttons\\js\\buttons.print.js",
+      "PackagePath": "staticwebassets\\js\\datatables.net-buttons\\js\\buttons.print.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables.net-buttons\\js\\buttons.print.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables.net-buttons\\js\\buttons.print.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables.net-buttons\\js\\dataTables.buttons.js",
+      "PackagePath": "staticwebassets\\js\\datatables.net-buttons\\js\\dataTables.buttons.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables.net-buttons\\js\\dataTables.buttons.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables.net-buttons\\js\\dataTables.buttons.min.js"
     },
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\datatables\\autoFill.bootstrap.js",
