@@ -14,7 +14,7 @@
         .btn-exportar-excel {
             background-color: #198754 !important;
             color: white !important;
-        }
+                    }
 
         .btn-exportar-pdf {
             background-color: #e90909a1 !important;
@@ -44,7 +44,7 @@
     <div class="card-body">
         <div class="row">
             <div class="col-12">
-                <button type="button" class="btn btn-success" onclick="abrirModal(null)">Crear Nuevo</button>
+                <button type="button" class="btn btn-default padding: 0; border: none; background: none; " onclick="abrirModal(null)">Crear Nuevo</button>
             </div>
         </div>
         <hr />
@@ -112,8 +112,9 @@
                 dom: "Bfrtip",
                 buttons: [
                     {
+                        
                         extend: "excelHtml5",
-                        text: "Exportar Excel",
+                        text: '<i class="fa fa-file-excel-o "></i>',
                         filename: "Reporte de Colores",
                         title: "",
                         exportOptions: {
@@ -125,7 +126,7 @@
                     },
                     {
                         extend: "pdfHtml5",
-                        text: "Exportar PDF",
+                        text: '<i class="fa fa-file-pdf-o"></i>',
                         filename: "Reporte de Colores",
                         title: "Listado de Color",
                         exportOptions: {
@@ -136,7 +137,7 @@
                     },
                     {
                         extend: "print",
-                        text: "Imprimir",
+                        text: '<i class="fa fa-print"></i>',
                         filename: "Reporte de Colores",
                         title: "Listado de Color",
                         exportOptions: {
@@ -156,8 +157,9 @@
                          { "data": "id" },
                          { "data": "descripcion" },
                          {
-                             "defaultContent": '<button type="button" title="Editar Color" class=" rounded-circle btn btn-outline-primary  p-0 mb-0 mt-0 m-1  btn-editar"><i class="fa fa-pencil"></i></button>' +
-                                               '<button type="button" title="Eliminar Color" class=" rounded-circle btn btn-outline-danger p-0 mb-0 mt-0 m-1  btn-eliminar"><i class="fa fa-trash"></i></button>',
+                                     "defaultContent": '<button type="button" title="Editar Color"   class="rounded-circle btn btn-default padding: 0; border: none; background: none;  btn-editar"   ><i class="fa fa-pencil"   style="color: #1da8a4;" ></i></button>' +
+                                                       '<button type="button" title="Eliminar Color" class="rounded-circle btn btn-default padding: 0; border: none; background: none;  btn-eliminar" ><i class="fa fa-trash-o"  style="color: #1da8a4;" ></i></button>',
+                                               
                             "orderable": false,
                             "searchable": false,
                             "width": "10%",
