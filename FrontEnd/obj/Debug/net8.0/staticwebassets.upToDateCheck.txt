@@ -177,6 +177,7 @@ wwwroot\css\font-awesome\scss\font-awesome.scss
 wwwroot\css\nprogress\nprogress.css
 wwwroot\css\nprogress\nprogress.js
 wwwroot\css\site.css
+wwwroot\css\SweetAlert\sweetalert.css
 wwwroot\favicon.ico
 wwwroot\images\favicon.ico
 wwwroot\images\img.jpg
@@ -754,6 +755,7 @@ wwwroot\js\jquery\src\wrap.js
 wwwroot\js\jqvmap\jquery.vmap.js
 wwwroot\js\jqvmap\jquery.vmap.min.js
 wwwroot\js\nprogress\nprogress.js
+wwwroot\js\SweetAlert\sweetalert.min.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
 wwwroot\lib\bootstrap\dist\css\bootstrap.min.css

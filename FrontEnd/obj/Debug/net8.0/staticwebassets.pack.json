@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\FrontEnd.4ji32hhmnz.bundle.scp.css"
     },
     {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\SweetAlert\\sweetalert.css",
+      "PackagePath": "staticwebassets\\css\\SweetAlert\\sweetalert.css"
+    },
+    {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\bootstrap-daterangepicker\\daterangepicker.css",
       "PackagePath": "staticwebassets\\css\\bootstrap-daterangepicker\\daterangepicker.css"
     },
@@ -735,6 +739,10 @@
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\images\\user.png",
       "PackagePath": "staticwebassets\\images\\user.png"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\SweetAlert\\sweetalert.min.js",
+      "PackagePath": "staticwebassets\\js\\SweetAlert\\sweetalert.min.js"
     },
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\boostrap-progressbar\\bootstrap-progressbar.js",
