@@ -178,7 +178,7 @@ wwwroot\css\nprogress\nprogress.css
 wwwroot\css\nprogress\nprogress.js
 wwwroot\css\site.css
 wwwroot\favicon.ico
-wwwroot\images\favicon2.ico
+wwwroot\images\favicon.ico
 wwwroot\images\img.jpg
 wwwroot\images\user.png
 wwwroot\js\boostrap-progressbar\bootstrap-progressbar.js

@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Biblioteca\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\calle\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\calle\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\controllers\\callecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,17 +30,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "FrontEnd\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "FrontEnd\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-28T15:10:10.258Z",
               "IsPinned": true,
@@ -52,7 +56,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "FrontEnd\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "FrontEnd\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-29T12:57:54.128Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ApiService.cs",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Services\\ApiService.cs",
               "RelativeDocumentMoniker": "FrontEnd\\Services\\ApiService.cs",
@@ -64,7 +80,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CalleController.cs",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Controllers\\CalleController.cs",
               "RelativeDocumentMoniker": "FrontEnd\\Controllers\\CalleController.cs",
@@ -72,21 +88,19 @@
               "RelativeToolTip": "FrontEnd\\Controllers\\CalleController.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAQwCkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T20:50:56.27Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-26T20:50:56.27Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Calle\\Index.cshtml",
               "RelativeDocumentMoniker": "FrontEnd\\Views\\Calle\\Index.cshtml",
               "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Calle\\Index.cshtml",
               "RelativeToolTip": "FrontEnd\\Views\\Calle\\Index.cshtml",
-              "ViewState": "AgIAAJgAAAAAAAAAAAAAAJ8AAACOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-26T20:22:14.815Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-26T20:22:14.815Z"
             }
           ]
         }
