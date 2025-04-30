@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\info\\Biblioteca\\Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E1AE5C6B-38D6-4DBA-9358-24DC1F77BD73}|Backend.csproj|c:\\info\\biblioteca\\backend\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AE5C6B-38D6-4DBA-9358-24DC1F77BD73}|Backend.csproj|solutionrelative:controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1AE5C6B-38D6-4DBA-9358-24DC1F77BD73}|Backend.csproj|c:\\info\\biblioteca\\backend\\custom\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AE5C6B-38D6-4DBA-9358-24DC1F77BD73}|Backend.csproj|solutionrelative:custom\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1AE5C6B-38D6-4DBA-9358-24DC1F77BD73}|Backend.csproj|c:\\info\\biblioteca\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AE5C6B-38D6-4DBA-9358-24DC1F77BD73}|Backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1AE5C6B-38D6-4DBA-9358-24DC1F77BD73}|Backend.csproj|c:\\info\\biblioteca\\backend\\controllers\\callecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AE5C6B-38D6-4DBA-9358-24DC1F77BD73}|Backend.csproj|solutionrelative:controllers\\callecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1AE5C6B-38D6-4DBA-9358-24DC1F77BD73}|Backend.csproj|c:\\info\\biblioteca\\backend\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AE5C6B-38D6-4DBA-9358-24DC1F77BD73}|Backend.csproj|solutionrelative:models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1AE5C6B-38D6-4DBA-9358-24DC1F77BD73}|Backend.csproj|c:\\info\\biblioteca\\backend\\models\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AE5C6B-38D6-4DBA-9358-24DC1F77BD73}|Backend.csproj|solutionrelative:models\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E1AE5C6B-38D6-4DBA-9358-24DC1F77BD73}|Backend.csproj|c:\\info\\biblioteca\\backend\\models\\bibliotecacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E1AE5C6B-38D6-4DBA-9358-24DC1F77BD73}|Backend.csproj|solutionrelative:models\\bibliotecacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Utilidades.cs",
+              "DocumentMoniker": "C:\\info\\Biblioteca\\Backend\\Custom\\Utilidades.cs",
+              "RelativeDocumentMoniker": "Custom\\Utilidades.cs",
+              "ToolTip": "C:\\info\\Biblioteca\\Backend\\Custom\\Utilidades.cs",
+              "RelativeToolTip": "Custom\\Utilidades.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T14:27:45.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\info\\Biblioteca\\Backend\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "Models\\Usuario.cs",
+              "ToolTip": "C:\\info\\Biblioteca\\Backend\\Models\\Usuario.cs",
+              "RelativeToolTip": "Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T10:29:08.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginDTO.cs",
+              "DocumentMoniker": "C:\\info\\Biblioteca\\Backend\\Models\\DTOs\\LoginDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\LoginDTO.cs",
+              "ToolTip": "C:\\info\\Biblioteca\\Backend\\Models\\DTOs\\LoginDTO.cs",
+              "RelativeToolTip": "Models\\DTOs\\LoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T15:37:49.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CalleController.cs",
+              "DocumentMoniker": "C:\\info\\Biblioteca\\Backend\\Controllers\\CalleController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CalleController.cs",
+              "ToolTip": "C:\\info\\Biblioteca\\Backend\\Controllers\\CalleController.cs",
+              "RelativeToolTip": "Controllers\\CalleController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAqwBkAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T15:36:32.885Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BibliotecaContext.cs",
+              "DocumentMoniker": "C:\\info\\Biblioteca\\Backend\\Models\\BibliotecaContext.cs",
+              "RelativeDocumentMoniker": "Models\\BibliotecaContext.cs",
+              "ToolTip": "C:\\info\\Biblioteca\\Backend\\Models\\BibliotecaContext.cs",
+              "RelativeToolTip": "Models\\BibliotecaContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T15:36:23.933Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccesoController.cs",
+              "DocumentMoniker": "C:\\info\\Biblioteca\\Backend\\Controllers\\AccesoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccesoController.cs",
+              "ToolTip": "C:\\info\\Biblioteca\\Backend\\Controllers\\AccesoController.cs",
+              "RelativeToolTip": "Controllers\\AccesoController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAA1wDEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T15:36:07.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\info\\Biblioteca\\Backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\info\\Biblioteca\\Backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T15:01:32.998Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
