@@ -1,0 +1,285 @@
+﻿@model Calle
+@{
+    ViewBag.Title = "Calle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <i class="fas fa-solid fa-palette me-1"></i>Lista de Calles
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <button type="button" class="btn btn-default padding: 0; border: none; background: none; " onclick="abrirModal(null)">Crear Nuevo</button>
+            </div>
+        </div>
+        <hr />
+        <table id="tabla" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Descripcion</th>
+
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="FormModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header text-white" style="background: #2A3F54">
+                <h5 class="modal-title" id="exampleModalLabel">Calle</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body ">
+                <input id="txtid" type="hidden" value="0" />
+                <form id="formNivel" class="row">
+
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="txtdescripcion" placeholder="Descripción" value="@Html.DisplayTextFor(model => Model.Descripcion)">
+                            <label for="txtdescripcion">Descripción</label>
+                        </div>
+
+                </form>
+            </div>
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div id="mensajeError" class="alert alert-danger" role="alert">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-outline-primary" onclick="Guardar()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+
+ 
+ 
+
+    <script>
+
+            var tabladata;
+            var filaSeleccionada;
+            tabladata = $("#tabla").DataTable({
+                responsive: true,
+                ordering: true,
+                dom: "Bfrtip",
+                buttons: [
+                    {
+
+                        extend: "excelHtml5",
+                        text: 'Excel<i class="fa fa-file-excel-o "></i>',
+                        filename: "Reporte de Calles",
+                        title: "",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1]
+                        },
+                        className: "btn-exportar-excel"
+
+                    },
+                    {
+                        extend: "pdfHtml5",
+                        text: '<i class="fa fa-file-pdf-o"></i>',
+                        filename: "Reporte de Calles",
+                        title: "Listado de Calle",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1]
+                        },
+                        className: "btn-exportar-pdf"
+                    },
+                    {
+                        extend: "print",
+                        text: '<i class="fa fa-print"></i>',
+                        filename: "Reporte de Calles",
+                        title: "Listado de Calle",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1]
+                        },
+                        className: "btn-imprimir"
+
+                    }
+                ],
+                 "ajax": {
+                     url: "@Url.Action("GetAllCalle", "Calle")",
+                     type: "GET",
+                     dataType: "json"
+                 },
+                 "columns": [
+                         { "data": "id" },
+                         { "data": "descripcion" },
+                         {
+                                     "defaultContent": '<button type="button" title="Editar Calle"   class="rounded-circle btn btn-default padding: 0; border: none; background: none;  btn-editar"   ><i class="fa fa-pencil"   style="Color: #1da8a4;" ></i></button>' +
+                                                       '<button type="button" title="Eliminar Calle" class="rounded-circle btn btn-default padding: 0; border: none; background: none;  btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #1da8a4;" ></i></button>',
+
+                            "orderable": false,
+                            "searchable": false,
+                            "width": "10%",
+                            "heigth":"10%"
+                        }
+                 ],
+                 "language": {
+                      "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+                  },
+                "columnDefs": [
+                        { "width": "10%", "targets": 0 },
+                        { "width": "80%", "targets": 1 },
+                        { "width": "10%", "targets": 2 },
+                ]
+            })
+
+
+        $("#formNivel").validate({
+            rules: {
+
+                descripcion: {
+                    required: true
+                },
+            },
+            messages: {
+
+                descripcion: " El campo Descripción es obligatorio",
+            },
+            errorElement: "div",
+            errorLabelContainer: ".alert-danger"
+        });
+
+
+            //Abrir Modal
+
+            function abrirModal(json) {
+                 
+                $("#txtid").val(0);
+                $("#txtdescripcion").val("");
+                $("#mensajeError").hide();
+                if (json != null) {
+                    $("#txtid").val(json.id);
+                    $("#txtdescripcion").val(json.descripcion);
+
+                }
+                $("#FormModal").modal("show");
+            }
+
+            //Editar
+            $("#tabla tbody").on("click", '.btn-editar', function () {
+               
+                filaSeleccionada = $(this).closest("tr");
+                var data = tabladata.row(filaSeleccionada).data();
+                abrirModal(data)
+            })
+
+            //Eliminar
+            $("#tabla tbody").on("click", '.btn-eliminar', function () {
+                var Calleseleccionado = $(this).closest("tr");
+                var data = tabladata.row(Calleseleccionado).data();
+                swal({
+                    title: "Está Seguro?",
+                    text: "Desea eliminar la Calle?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn-primary",
+                    confirmButtonText: "Si",
+                    cancelButtonText: "No",
+                    closeOnConfirm: true
+                },
+                    function () {
+                       
+                        jQuery.ajax({
+                            url: '@Url.Action("DeleteCalle", "Calle")',
+                            type: "POST",
+                            data: JSON.stringify({ id: data.id }),
+                            dataType: "json",
+                            contentType: "application/json;charset=uft-8",
+                            success: function (data) {
+                                 debugger;
+                                if (data.resultado) {
+                                    tabladata.row(Calleseleccionado).remove().draw();
+                                } else {
+                                    swal("No se pudo eliminar", data.mensaje, "error");
+                                }
+                            },
+                            error: function (error) {
+                                console.log(error);
+                            }
+                        })
+                    })
+            });
+
+            //Guardar
+            function Guardar() {
+
+            if (!$("#formNivel").valid()) {
+                return;
+            }
+
+            debugger;
+            var Calle = {
+                    Id: $("#txtid").val(),
+                    Descripcion: $("#txtdescripcion").val(),
+
+                }
+                jQuery.ajax({
+                    url: '@Url.Action("GuardarCalle", "Mantenedor")',
+                    type: "POST",
+                    data: JSON.stringify({ Calle: Calle }),
+                    dataType: "json",
+                    contentType: "application/json;charset=uft-8",
+                    success: function (data) {
+                        $(".modal-body").LoadingOverlay("hide");
+                        //  Calle nuevo
+                        if (Calle.Id == 0) {
+                            if (data.resultado != 0) {
+                                Calle.Id = data.resultado;
+                                tabladata.row.add(Calle).draw(false);
+                                $("#FormModal").modal("hide");
+                            }
+                            else {
+                                $("#mensajeError").text(data.mensaje);
+                                $("#mensajeError").show();
+                            }
+                        }
+                      //  Calle Editar
+                        else {
+
+                            if (data.resultado) {
+                                tabladata.row(filaSeleccionada).data(Calle).draw(false);
+                                filaSeleccionada = null;
+                                $("#FormModal").modal("hide");
+                            } else {
+                                $("#mensajeError").text(data.mensaje);
+                                $("#mensajeError").show();
+                            }
+                        }
+                        },
+                        error: function (error) {
+                            $(".modal-body").LoadingOverlay("hide");
+                            $("#mensajeError").text("Error Ajax");
+                            $("#mensajeError").show();
+                        },
+                        beforeSend: function () {
+                            $(".modal-body").LoadingOverlay("show", {
+                                imageResizeFactor: 2,
+                                text: "Cargando...",
+                                size: 14
+                            })
+
+                        }
+                    }
+                )
+            }
+    </script>
+}

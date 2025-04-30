@@ -1,0 +1,197 @@
+﻿@{
+
+    Layout = null;
+}
+@model Frontend.Models.LoginRequestDTO
+@inject IHttpContextAccessor HttpContextAccessor;
+
+<!-- Bootstrap -->
+<link href="~/css/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<!-- Font Awesome -->
+<link href="~/css/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
+<!-- NProgress -->
+<link href="~/css/nprogress/nprogress.css" rel="stylesheet" />
+<!-- Animate.css -->
+<link href="~/css/animate/animate.min.css" rel="stylesheet" />
+
+<!-- Custom Theme Style -->
+<link href="~/css/custom.min.css" rel="stylesheet" />
+
+@*  <form method="post" asp-action="Login">
+    <br /><br />
+    <div class="container border rounded p-4" style="max-width:500px;margin:auto;">
+        <div class="row text-center mb-3">
+            <h2 style="background-color:#addBe6;padding:10px;border-radius:5px;">Login</h2>
+        </div>
+        <div class="row text-center">
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12">
+                <input asp-for="User" type="text" placeholder="User..." class="form-control" style="width: 100%;" />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12">
+                <input asp-for="Password" type="text" placeholder="Password..." class="form-control" style="width: 100%;" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+            </div>
+        </div>
+    </div>
+
+</form>  *@
+
+<body class="login">
+    <div>
+        <a class="hiddenanchor" id="signup"></a>
+        <a class="hiddenanchor" id="signin"></a>
+
+        <div class="login_wrapper">
+            <div class="animate form login_form">
+                <section class="login_content">
+
+                    <form method="post">
+                        <h1>Login Form</h1>
+                        <div>
+                            <input type="text" asp-for="User" id="User" class="form-control" placeholder="Username" required="" value="" />
+                        </div>
+                        <div>
+                            <input type="password" asp-for="Password" id="Password" class="form-control" placeholder="Password" required="" value="" />
+                        </div>
+                        <div>
+                            
+                                <a class="btn btn-default submit" href="#" onclick="enviarLogin(document.getElementById('User').value,document.getElementById('Password').value)">Log in</a>
+
+                                <a class="reset_pass" href="#">Olvidó su contraseña?</a>
+                           
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="separator">
+                            <p class="change_link">
+                                New to site?
+                                <a href="#signup" class="to_register"> Crear Cuenta </a>
+                            </p>
+
+                            <div class="clearfix"></div>
+                            <br />
+
+                            <div>
+                                <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                                <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 4 template. Privacy and Terms</p>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+            <div id="register" class="animate form registration_form">
+                <section class="login_content">
+                    <form>
+                        <h1>Crear Cuenta</h1>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Username" required="" />
+                        </div>
+                        <div>
+                            <input type="email" class="form-control" placeholder="Email" required="" />
+                        </div>
+                        <div>
+                            <input type="password" class="form-control" placeholder="Password" required="" />
+                        </div>
+                        <div>
+                            <a class="btn btn-default submit" href="index.html">Submit</a>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="separator">
+                            <p class="change_link">
+                                Already a member ?
+                                <a href="#signin" class="to_register"> Log in </a>
+                            </p>
+
+                            <div class="clearfix"></div>
+                            <br />
+
+                            <div>
+                                <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                                <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 4 template. Privacy and Terms</p>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+
+@section Scripts {
+
+
+    <script src="~/js/jquery/jquery.min.js"></script>
+
+    <partial name="_validationScriptsPartial" />
+
+
+
+}
+
+<script>
+
+
+
+
+
+
+        async function enviarLogin(user,password)
+    {
+
+        const data = {
+            User: user,
+            Password: password
+        };
+
+
+            let res = await fetch("/Authuser/Login", {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+                })
+                .then(response => {
+                     console.log(response);
+                    if (response.ok){
+
+                       return response.json();
+                    }else{
+                    throw new Error('Error en la solicitud');
+                    }
+                })
+                .then(data => {
+                        if (data.success){
+                                window.location.href='/Home/Index';
+                        }else{
+
+                               alert(data.message);
+                        }
+
+            });
+
+
+
+    }
+
+
+
+
+</script>
