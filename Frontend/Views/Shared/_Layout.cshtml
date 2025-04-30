@@ -1,67 +1,87 @@
-﻿<!DOCTYPE html>
-<html>
+﻿﻿
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor httpObjAcc
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    @*<link rel="icon" href="images/favicon.ico" type="image/ico" />*@
+    <link rel="icon" href="~/images/favicon.ico" type="image/ico" />
 
-    <title> @ViewBag.Title | Gentelella Alela!</title>
-
+    <title>@ViewBag.Title | Gentelella Alela!</title>
     <!-- Bootstrap -->
-    <link href="~/Vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.min.css" />
+
+
+
     <!-- Font Awesome -->
-    <link href="~/Vendors/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
+    <a href="~/css/fontawesome/css/font-awesome.css.map"></a> 
+    
+    <link href="~/css/fontawesome/css/font-awesome.css" rel="stylesheet" />
+
     <!-- NProgress -->
-    <link href="~/Vendors/nprogress/nprogress.css" rel="stylesheet" />
+    <link href="~/css/nprogress/nprogress.css" rel="stylesheet" />
+    
+    <link href="~/css/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" />
+    <link href="~/css/jqvmap/jqvmap.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
+    
+    <!-- Animate.css -->
+    <link href="~/css/animate/animate.min.css" rel="stylesheet" />
 
-    <!-- Boostrap ProgressBar -->
-    <link href="~/Vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" />
 
-    <!-- JQVMap -->
-    <link href="~/Vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
 
-    <!-- bootstrap-daterangepicker -->
-    <link href="~/Vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
+    @* Sweet alert *@
+    <link href="~/css/sweetalert/sweetalert.css" rel="stylesheet" />
 
-    <!-- datatables.net-bs -->
-    <link href="~/Vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet" />
-
-    <!-- datatables.net-buttons-bs -->
-    <link href="~/Vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet" />
-
-    <!-- datatables.net-fixedheader-bs -->
-    <link href="~/Vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet" />
-
-    <!-- datatables.net-responsive-bs -->
-    <link href="~/Vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet" />
-
-    <!-- datatables.net-scroller-bs -->
-    <link href="~/Vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet" />
 
 
     <style>
+        .btn-exportar-excel {
+            background-Color: #198754 !important;
+            Color: white !important;
+            
+        }
+
+        .btn-exportar-pdf {
+            background-Color: #e90909a1 !important;
+            Color: white !important;
+        }
+
+        .btn-imprimir {
+            background-Color: #0094ff !important;
+            Color: white !important;
+        }
+
+        #TortaGraph {
+            max-width: 200px;
+        }
+
         hr {
-            width: 100%; /* Ajusta el ancho de la línea */
-            height: 1px; /* Define el grosor de la línea */
-            background-color: #059a5b; /* Cambia el color de la línea */
-            margin: 20px auto; /* Centra la línea horizontalmente */
+            Color: darkred;
         }
     </style>
 
+
+
     <!-- Custom Theme Style -->
-    <link href="~/Content/Alela/css/custom.min.css" rel="stylesheet" />
+    <link href="~/css/custom.min.css" rel="stylesheet" />
+
 </head>
 <body class="nav-md">
     <div class="container body">
-
         <div class="main_container">
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gestión Bibliotecaria</span></a>
+                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Alela!</span></a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -69,11 +89,11 @@
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_pic">
-                            <img src="~/Content/Alela/images/img.jpg" alt="..." class="img-circle profile_img">
+                            <img src="~/images/img.jpg" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
                             <span>Bienvenido,</span>
-                            <h2>Emanuel Gutierrez</h2>
+                            <h2>John Doe</h2>
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
@@ -83,40 +103,117 @@
                     <!-- sidebar menu -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
-                            <h3>Panel de Control</h3>
+                            <h3>General</h3>
                             <ul class="nav side-menu">
                                 <li>
-                                    <a href="/Home/index"><i class="fa fa-home"></i> Inicio </a>
-                                </li>
-                                <li>
-                                    <a><i class="fa fa-edit"></i> Mantenimiento <span class="fa fa-chevron-down"></span></a>
+                                    <a><i class="fa fa-home"></i> Mantenimiento <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="/Home/Calles">Calles</a></li>
-                                        <li><a href="/Home/Cobradores">Cobradores</a></li>
-                                        <li><a href="/Home/Localidades">Localidades</a></li>
-                                        <li><a href="/Home/Provincias">Provincias</a></li>
-                                        <li><a href="/Home/Profesiones">Profesiones</a></li>
-                                        <li><a href="/Home/Sectores">Sectores</a></li>
-                                        <li><a href="/Home/TiposDeDocumentos">Tipos de Documentos</a></li>
-                                        <li><a href="/Home/Usuarios">Usuarios</a></li>
+                                        <li><a href="/Autor/index">Autores</a></li>
+                                        <li><a href="/Calle/index">Calles</a></li>
+                                        
                                     </ul>
                                 </li>
-
                                 <li>
-                                    <a><i class="fa fa-edit"></i> Módulos <span class="fa fa-chevron-down"></span></a>
+                                    <a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="/Home/Socios">Socios</a></li>
-                                        <li><a href="/Home/Materiales">Materiales</a></li>
-                                        <li><a href="/Home/Prestamos">Préstamos</a></li>
-                                        <li><a href="/Home/Cobros">Gen. Cuotas y Cobros</a></li>
+                                        <li><a href="form.html">General Form</a></li>
+                                        <li><a href="form_advanced.html">Advanced Components</a></li>
+                                        <li><a href="form_validation.html">Form Validation</a></li>
+                                        <li><a href="form_wizards.html">Form Wizard</a></li>
+                                        <li><a href="form_upload.html">Form Upload</a></li>
+                                        <li><a href="form_buttons.html">Form Buttons</a></li>
                                     </ul>
                                 </li>
-
-
-
+                                <li>
+                                    <a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="general_elements.html">General Elements</a></li>
+                                        <li><a href="media_gallery.html">Media Gallery</a></li>
+                                        <li><a href="typography.html">Typography</a></li>
+                                        <li><a href="icons.html">Icons</a></li>
+                                        <li><a href="glyphicons.html">Glyphicons</a></li>
+                                        <li><a href="widgets.html">Widgets</a></li>
+                                        <li><a href="invoice.html">Invoice</a></li>
+                                        <li><a href="inbox.html">Inbox</a></li>
+                                        <li><a href="calendar.html">Calendar</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="tables.html">Tables</a></li>
+                                        <li><a href="tables_dynamic.html">Table Dynamic</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="chartjs.html">Chart JS</a></li>
+                                        <li><a href="chartjs2.html">Chart JS2</a></li>
+                                        <li><a href="morisjs.html">Moris JS</a></li>
+                                        <li><a href="echarts.html">ECharts</a></li>
+                                        <li><a href="other_charts.html">Other Charts</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
+                                        <li><a href="fixed_footer.html">Fixed Footer</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
-
+                        <div class="menu_section">
+                            <h3>Live On</h3>
+                            <ul class="nav side-menu">
+                                <li>
+                                    <a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="e_commerce.html">E-commerce</a></li>
+                                        <li><a href="projects.html">Projects</a></li>
+                                        <li><a href="project_detail.html">Project Detail</a></li>
+                                        <li><a href="contacts.html">Contacts</a></li>
+                                        <li><a href="profile.html">Profile</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="page_403.html">403 Error</a></li>
+                                        <li><a href="page_404.html">404 Error</a></li>
+                                        <li><a href="page_500.html">500 Error</a></li>
+                                        <li><a href="plain_page.html">Plain Page</a></li>
+                                        <li><a href="login.html">Login Page</a></li>
+                                        <li><a href="pricing_tables.html">Pricing Tables</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="#level1_1">Level One</a>
+                                        <li>
+                                            <a>Level One<span class="fa fa-chevron-down"></span></a>
+                                            <ul class="nav child_menu">
+                                                <li class="sub_menu">
+                                                    <a href="level2.html">Level Two</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#level2_1">Level Two</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#level2_2">Level Two</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#level1_2">Level One</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
+                            </ul>
+                        </div>
 
                     </div>
                     <!-- /sidebar menu -->
@@ -138,7 +235,6 @@
                     <!-- /menu footer buttons -->
                 </div>
             </div>
-
             <!-- top navigation -->
             <div class="top_nav">
                 <div class="nav_menu">
@@ -149,7 +245,7 @@
                         <ul class=" navbar-right">
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="~/Content/Alela/images/img.jpg" alt="">Emanuel Gutierrez
+                                    <img src="~/images/img.jpg" alt="">John Doe
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="javascript:;"> Profile</a>
@@ -158,7 +254,8 @@
                                         <span>Settings</span>
                                     </a>
                                     <a class="dropdown-item" href="javascript:;">Help</a>
-                                    <a class="dropdown-item" href="/Acceso/Login"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                    
+                                    <a asp-action="Logout" asp-controller="Authuser"><i class="fa fa-sign-out pull-right"></i>Cerrar Sesión</a>
                                 </div>
                             </li>
 
@@ -170,7 +267,7 @@
                                 <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
                                     <li class="nav-item">
                                         <a class="dropdown-item">
-                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span class="image"><img src="~/images/img.jpg" alt="Profile Image" /></span>
                                             <span>
                                                 <span>John Smith</span>
                                                 <span class="time">3 mins ago</span>
@@ -182,7 +279,7 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="dropdown-item">
-                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span class="image"><img src="~/images/img.jpg" alt="Profile Image" /></span>
                                             <span>
                                                 <span>John Smith</span>
                                                 <span class="time">3 mins ago</span>
@@ -194,7 +291,7 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="dropdown-item">
-                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span class="image"><img src="~/images/img.jpg" alt="Profile Image" /></span>
                                             <span>
                                                 <span>John Smith</span>
                                                 <span class="time">3 mins ago</span>
@@ -206,7 +303,7 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="dropdown-item">
-                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span class="image"><img src="~/images/img.jpg" alt="Profile Image" /></span>
                                             <span>
                                                 <span>John Smith</span>
                                                 <span class="time">3 mins ago</span>
@@ -235,7 +332,7 @@
             <div class="right_col" role="main">
                 @RenderBody()
             </div>
-            <!-- /page content -->
+            <!-- page content -->
             <!-- footer content -->
             <footer>
                 <div class="pull-right">
@@ -246,86 +343,117 @@
             <!-- /footer content -->
 
         </div>
+
     </div>
+   <!--Scripts-->
+    
+    <a href="~/js/jquery/jquery.min.map">~/js/jquery/jquery.min.map</a>
+    <script src="~/js/jquery/jquery.min.js"></script>
+    <script src="~/js/jquery/jquery.js"></script>
+    @* <script src="~/js/jquery/jquery-3.7.1.intellisense.js"></script> *@
+    <script src="~/js/jquery/jquery-3.7.1.min.js"></script>
+    <script src="~/js/jquery/jquery-3.7.1.slim.min.js"></script>
+    <script src="~/js/jquery/jquery-3.7.1.slim.js"></script>
+    <script src="~/js/jquery/jquery-3.7.1.js"></script>
+    <script src="~/js/jquery/jquery-ui.js"></script>
+    <script src="~/js/jquery/jquery.csv.min.js"></script>
+    <script src="~/js/jquery/jquery.datatables.js"></script>
+    <script src="~/js/jquery/jquery.datatables.min.js"></script>
+    <script src="~/js/jquery/jquery.datetimepicker.js"></script>
+    <script src="~/js/jquery/jquery.min.js"></script>
+    <script src="~/js/jquery/jquery.validate-vsdoc.js"></script>
+    <script src="~/js/jquery/jquery.validate.min.js"></script>
+    <script src="~/js/jquery/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/jquery/jquery.validate.unobtrusive.js"></script>
+    
+    <script src="~/js/jquery/jquery.js"></script>
+   @*  <script src="~/js/jquery/jquery-3.4.1.intellisense.js"></script> *@
+   @*  <script src="~/js/jquery/jquery-3.4.1.js"></script>
+    <script src="~/js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="~/js/jquery/jquery-3.4.1.slim.js"></script>
+    <script src="~/js/jquery/jquery-3.4.1.slim.min.js"></script> *@
+    <script src="~/js/jquery/jquery-3.5.1.js"></script>
+
+    
+  @*   <a href="~/js/jquery/jquery-3.7.1.min.map">~/js/jquery/jquery-3.7.1.min.map</a>
+    <a href="~/js/jquery/jquery-3.7.1.slim.min.map">~/js/jquery/jquery-3.7.1.slim.min.map</a>
+    <a href="~/js/jquery/jquery.min.map">~/js/jquery/jquery.min.map</a>
+    <a href="~/js/jquery/jquery-3.4.1.min.map">~/js/jquery/jquery-3.4.1.min.map</a>
+    <a href="~/js/jquery/jquery-3.4.1.slim.min.map">~/js/jquery/jquery-3.4.1.slim.min.map</a> *@
+
+    <script src="~/js/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/nprogress/nprogress.js"></script>
+
+    <script src="~/js/gauge/gauge.min.js"></script>
+
+    <script src="~/js/boostrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <script src="~/js/flot/jquery.flot.js"></script>
+    <script src="~/js/flot/jquery.flot.pie.js"></script>
+    <script src="~/js/flot/jquery.flot.resize.js"></script>
+    <script src="~/js/flot/jquery.flot.stack.js"></script>
+    <script src="~/js/flot/jquery.flot.time.js"></script>
+
+    <script src="~/js/flot/jquery.flot.orderbars.js"></script>
+    <script src="~/js/flot/jquery.flot.spline.min.js"></script>
+    <script src="~/js/flot/curvedlines.js"></script>
+
+    <script src="~/js/datejs/date.js"></script>
+
+    <script src="~/js/jqvmap/jquery.vmap.min.js"></script>
+    <script src="~/js/jqvmap/jquery.vmap.world.js"></script>
+    <script src="~/js/jqvmap/jquery.vmap.sampledata.js"></script>
+
+    <script src="~/js/charts/chart.min.js"></script>
+
+    <script src="~/js/moment/moment.min.js"></script>
+    <script src="~/js/boostrap-daterangepicker/daterangepicker.js"></script>
+
+    <script src="~/js/DataTables/jquery.dataTables.js"></script>
+    <script src="~/js/datatables.net/js/jquery.datatables.min.js"></script>
+    @*  <script src="~/js/datatables/datatables.buttons.min.js"></script>  *@
+   
+    
+
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+   <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+     <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script> 
+    @*para exportar PDFs*@
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    @*Para Imprimir*@
+     <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+    @*Exportar Charjs a PDF*@
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.bootstrap5.min.js"></script>
 
 
 
-    <!-- Scripts -->
-    <script src="~/Vendors/jquery/dist/jquery.min.js"></script>
 
-    <script src="~/Vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/Vendors/nprogress/nprogress.js"></script>
+    <script src="~/js/datatables.net-buttons/js/buttons.colvis.js"></script>
+    <script src="~/js/datatables.net-buttons/js/buttons.colvis.min.js"></script>
+    @*<script src="~/js/datatables.net-buttons/js/buttons.flash.js"></script>
+     <script src="~/js/datatables.net-buttons/js/buttons.flash.min.js"></script> *@
+    <script src="~/js/datatables.net-buttons/js/buttons.html5.js"></script>
+    <script src="~/js/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/js/datatables.net-buttons/js/buttons.print.js"></script>
+    <script src="~/js/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="~/js/datatables.net-buttons/js/datatables.buttons.js"></script>
+    <script src="~/js/datatables.net-buttons/js/datatables.buttons.min.js"></script>
+    
 
-    <script src="~/Vendors/Chart.js/dist/Chart.min.js"></script>
+  
+    @* Sweet Alert *@
+    <script src="~/js/sweetalert/sweetalert.min.js"></script>
 
-    <!-- GAUGE -->
-    <script src="~/Vendors/gauge.js/dist/gauge.min.js"></script>
-    <!-- BOOSTRAP PROGRESSBAR -->
-    <script src="~/Vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-
-    <!-- FLOT -->
-    <script src="~/Vendors/Flot/jquery.flot.js"></script>
-    <script src="~/Vendors/Flot/jquery.flot.pie.js"></script>
-    <script src="~/Vendors/Flot/jquery.flot.time.js"></script>
-    <script src="~/Vendors/Flot/jquery.flot.stack.js"></script>
-    <script src="~/Vendors/Flot/jquery.flot.resize.js"></script>
-
-    <!-- FLOT PLUGINS-->
-    <script src="~/Vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-    <script src="~/Vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-    <script src="~/Vendors/flot.curvedlines/curvedLines.js"></script>
-
-    <!-- DATEJS -->
-    <script src="~/Vendors/DateJS/build/date.js"></script>
-
-    <script src="~/Vendors/moment/min/moment.min.js"></script>
-    <script src="~/Vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-
-    <!-- DataTables.net -->
-    <script src="~/Vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-
-    <!-- datatables.net-bs -->
-    <script src="~/Vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-
-    <!-- datatables.net-buttons-->
-    <script src="~/Vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-
-    <!-- datatables.net-buttons-bs -->
-    <script src="~/Vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-
-    <!-- datatables.net-fixedheader -->
-    <script src="~/Vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-
-    <!-- datatables.net-keytable -->
-    <script src="~/Vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-
-    <!-- datatables.net-responsive -->
-    <script src="~/Vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-
-    <!-- datatables.net-responsive-bs -->
-    <script src="~/Vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-
-    <!-- datatables.net-scroller -->
-    <script src="~/Vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="~/Content/Alela/js/custom.min.js"></script>
-    <!-- /Scripts -->
-
-
-    @RenderSection("scripts", required: false)
-
-
+    <script src="~/js/jquery/jquery.validate.js"></script>
+    <script src="~/js/custom.js"></script>
+    @RenderSection("scripts",required:false)
+    @RenderSection("estilos", required: false)
+    
+    
+    
 </body>
 </html>
-
