@@ -30,11 +30,16 @@ namespace FrontEnd.Services
             return APIResponse;
         }
 
-        public async Task AddCalle(Calle calle, string token)
+        public async Task<Calle> AddCalle(Calle calle, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Calle>($"api/Calle/AddCalle", calle);
             response.EnsureSuccessStatusCode();
+            //HttpResponseMessage response2 = await _httpClient.GetAsync($"api/Calle/LastCalle");
+            //response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Calle>(contents);
+            return APIResponse;
         }
 
         public async Task<Calle> GetCalleById(int id, string token) 

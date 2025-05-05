@@ -4,6 +4,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft;
 
+
+
+
+
 namespace FrontEnd.Controllers
 {
     public class CalleController : Controller
@@ -25,21 +29,17 @@ namespace FrontEnd.Controllers
             List<Calle> lstCalle = new List<Calle>();
             lstCalle = await _apiService.GetAllCalles(HttpContext.Session.GetString("APIToken"));
             return View();
-            
+
         }
 
 
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> GetAllCalle()
+        public async Task<JsonResult>  GetAllCalle()
         {
             List<Calle> oLista = new List<Calle>();
             oLista = await _apiService.GetAllCalles(HttpContext.Session.GetString("APIToken"));
-            //return new JsonResult(oLista);// Json(oLista);
-          //  return Json(new { data = oLista }, System.Web.Mvc.JsonRequestBehavior.AllowGet);
-
-            //var dat = "{Id:1}";
-            //return Json(new { data =dat }, System.Web.Mvc.JsonRequestBehavior.AllowGet);
-             return new JsonResult(new { data = oLista });
+       
+            return Json(new { data = oLista });
         }
 
 
@@ -49,11 +49,57 @@ namespace FrontEnd.Controllers
             return View();
         }
 
+
+
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> CreateCalle(Calle calle)
+        public async Task<JsonResult> CreateCalle([FromBody] Calle calle)
         {
-            await _apiService.AddCalle(calle, HttpContext.Session.GetString("APIToken"));
-            return RedirectToAction("Index");
+            object resultado;
+            string mensaje = String.Empty;
+            try
+            {
+                if (calle.Id == 0)
+                {
+                    if (calle.Descripcion != "")
+                    {
+                        calle= await _apiService.AddCalle(calle, HttpContext.Session.GetString("APIToken"));
+                        resultado = calle.Id;
+                        mensaje = "Calle ingresada correctamente";
+                    }
+                    else
+                    {
+                        resultado = false;
+                        mensaje = "Por favor ingrese la descripción";
+                    }
+
+                }
+
+
+                else
+                {
+                    if (calle.Descripcion != "")
+                    {
+                        await _apiService.UpdateCalle(calle.Id, calle, HttpContext.Session.GetString("APIToken"));
+                        
+                        resultado = true;
+                        mensaje = "Calle Modificada correctamente";
+
+                    }
+                    else
+                    {
+                        resultado = false;
+                        mensaje = "Por favor ingrese la descripción";
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                resultado = false;
+                mensaje += ex.Message;
+
+            }
+            return Json(new { resultado = resultado, mensaje = mensaje }); 
         }
 
         [Authorize(Roles = "Admin,Student")]
@@ -66,12 +112,12 @@ namespace FrontEnd.Controllers
         }
 
 
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> UpdateCalle(int id, Calle calle)
-        {
-            await _apiService.UpdateCalle(id, calle, HttpContext.Session.GetString("APIToken"));
-            return RedirectToAction("Index");
-        }
+        //[Authorize(Roles = "Admin")]
+        //public async Task<IActionResult> UpdateCalle(int id, Calle calle)
+        //{
+        //    await _apiService.UpdateCalle(id, calle, HttpContext.Session.GetString("APIToken"));
+        //    return RedirectToAction("Index");
+        //}
 
         [Authorize(Roles = "Admin,Student")]
         public async Task<IActionResult> Delete(int id)
@@ -82,10 +128,26 @@ namespace FrontEnd.Controllers
             return View(calle);
         }
 
-        public async Task<IActionResult> DeleteCalle(int id)
+        [Authorize(Roles = "Admin,Student")]
+        
+        public async Task<JsonResult> DeleteCalle([FromBody] Calle calle)
         {
-            await _apiService.DeleteCalle(id, HttpContext.Session.GetString("APIToken"));
-            return RedirectToAction("Index");
+            bool resultado = false;
+            string mensaje = string.Empty;
+            try
+            {
+                await _apiService.DeleteCalle(calle.Id, HttpContext.Session.GetString("APIToken"));
+                resultado = true;
+                mensaje = "Calle eliminada correctante";
+            }catch (Exception ex)
+            {
+                resultado = false;
+                mensaje += ex.Message;
+
+            }
+            return Json(new { resultado = resultado, mensaje = mensaje });
+
+
         }
 
         public IActionResult ErrorPage()

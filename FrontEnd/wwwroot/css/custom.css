@@ -4971,3 +4971,79 @@ ul.notifications {
 
 .calendar-exibit .calendar-table {
   padding: 0 0 4px 0; }
+
+
+/**********************************Mio***********************************************/
+
+.btnAceptar {
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: #32a4a8;
+    text-align: center;
+}
+.btnAceptar-primary-on:focus {
+    background-color: #e8e410;
+}
+
+.btnAceptar-primary:focus {
+    background-color: #db2e4b;
+}
+
+
+.btnCancelar {
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: #32a4a8;
+    text-align: center;
+}
+
+/*.btnCancelar-primary:focus {
+    background-color: #db2e4b;
+}*/
+
+.btn-exportar-excel {
+    background-Color: #198754 !important;
+    Color: white !important;
+}
+
+.btn-exportar-pdf {
+    background-Color: #e90909a1 !important;
+    Color: white !important;
+}
+
+.btn-imprimir {
+    background-Color: #0094ff !important;
+    Color: white !important;
+}
+
+#TortaGraph {
+    max-width: 200px;
+}
+
+hr {
+    Color: darkred;
+}
+
+.alert-container {
+    position: fixed;
+    bottom: 0; /* Ubicar en la parte inferior */
+    left: 600px;
+    right: 600px;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.alert-container.show {
+        opacity: 1;
+    }
+
+.alert {
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: #6ebea2;
+    text-align: center;
+}

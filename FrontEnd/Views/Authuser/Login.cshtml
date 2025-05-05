@@ -146,20 +146,12 @@
 
 <script>
 
-
-
-
-
-
-        async function enviarLogin(user,password)
+   async function enviarLogin(user,password)
     {
-
         const data = {
             User: user,
             Password: password
         };
-
-
             let res = await fetch("/Authuser/Login", {
                 method: 'POST',
                 headers: {

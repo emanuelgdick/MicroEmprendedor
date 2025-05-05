@@ -24,15 +24,6 @@ namespace Api.Controllers
         public IActionResult GetCalles(/*int pagesize, int pagenumber*/)
         {
             _logger.LogInformation("Fetching Todas las Calles");
-            //int totalCount = _db.Calle.Count();
-            //var calleList = _db.Calle.ToList().Skip(pagesize * (pagenumber - 1)).Take(pagesize).ToList();
-            //var result = new PageResult<Calle>
-            //{
-            //    items = calleList,
-            //    CurrentPage = pagenumber,
-            //    TotalCount = totalCount,
-            //    TotalPages = (int)Math.Ceiling(totalCount / (double)pagenumber)
-            //};
             var calleList = _db.Calle.ToList();
             return Ok(calleList);
             
@@ -57,6 +48,23 @@ namespace Api.Controllers
             }
             return calle;
         }
+
+
+        //[HttpGet("GetLastCalle")]
+        //[Authorize]
+        //[ResponseCache(CacheProfileName = "apicache")]
+        //public ActionResult<Calle> GetLastCalle()
+        //{
+        //    var calle = _db.Calle.LastOrDefault();
+
+        //    if (calle == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return calle;
+        //}
+
+
 
         [HttpPost("AddCalle")]
         [Authorize]

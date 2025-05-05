@@ -22,57 +22,33 @@
 
     <!-- Font Awesome -->
     <link href="~/css/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
-    <a href="~/css/fontawesome/css/font-awesome.css.map"></a> 
-    
+    <a href="~/css/fontawesome/css/font-awesome.css.map"></a>
+
     <link href="~/css/fontawesome/css/font-awesome.css" rel="stylesheet" />
 
     <!-- NProgress -->
     <link href="~/css/nprogress/nprogress.css" rel="stylesheet" />
-    
+
     <link href="~/css/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" />
     <link href="~/css/jqvmap/jqvmap.min.css" rel="stylesheet" />
     <link href="~/css/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
-    
+
     <!-- Animate.css -->
     <link href="~/css/animate/animate.min.css" rel="stylesheet" />
 
-
-
+  
     @* Sweet alert *@
     <link href="~/css/sweetalert/sweetalert.css" rel="stylesheet" />
 
 
-
-    <style>
-        .btn-exportar-excel {
-            background-Color: #198754 !important;
-            Color: white !important;
-            
-        }
-
-        .btn-exportar-pdf {
-            background-Color: #e90909a1 !important;
-            Color: white !important;
-        }
-
-        .btn-imprimir {
-            background-Color: #0094ff !important;
-            Color: white !important;
-        }
-
-        #TortaGraph {
-            max-width: 200px;
-        }
-
-        hr {
-            Color: darkred;
-        }
-    </style>
-
+    <!--Floating labels-->
+    @* <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/exacti/floating-labels@latest/floating-labels.min.css" media="screen"> *@
+    <link href="~/css/floating-labels/floating.labels.min.css" rel="stylesheet" />
 
 
     <!-- Custom Theme Style -->
     <link href="~/css/custom.min.css" rel="stylesheet" />
+    <link href="~/css/custom.css" rel="stylesheet" />
 
 </head>
 <body class="nav-md">
@@ -110,7 +86,7 @@
                                     <ul class="nav child_menu">
                                         <li><a href="/Autor/index">Autores</a></li>
                                         <li><a href="/Calle/index">Calles</a></li>
-                                        
+
                                     </ul>
                                 </li>
                                 <li>
@@ -235,6 +211,13 @@
                     <!-- /menu footer buttons -->
                 </div>
             </div>
+
+
+
+        
+            
+            
+            
             <!-- top navigation -->
             <div class="top_nav">
                 <div class="nav_menu">
@@ -254,7 +237,7 @@
                                         <span>Settings</span>
                                     </a>
                                     <a class="dropdown-item" href="javascript:;">Help</a>
-                                    
+
                                     <a asp-action="Logout" asp-controller="Authuser"><i class="fa fa-sign-out pull-right"></i>Cerrar Sesión</a>
                                 </div>
                             </li>
@@ -345,8 +328,9 @@
         </div>
 
     </div>
-   <!--Scripts-->
+    <!--Scripts-->
     
+
     <a href="~/js/jquery/jquery.min.map">~/js/jquery/jquery.min.map</a>
     <script src="~/js/jquery/jquery.min.js"></script>
     <script src="~/js/jquery/jquery.js"></script>
@@ -365,17 +349,17 @@
     <script src="~/js/jquery/jquery.validate.min.js"></script>
     <script src="~/js/jquery/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/js/jquery/jquery.validate.unobtrusive.js"></script>
-    
+
     <script src="~/js/jquery/jquery.js"></script>
-   @*  <script src="~/js/jquery/jquery-3.4.1.intellisense.js"></script> *@
-   @*  <script src="~/js/jquery/jquery-3.4.1.js"></script>
+    @*  <script src="~/js/jquery/jquery-3.4.1.intellisense.js"></script> *@
+    @*  <script src="~/js/jquery/jquery-3.4.1.js"></script>
     <script src="~/js/jquery/jquery-3.4.1.min.js"></script>
     <script src="~/js/jquery/jquery-3.4.1.slim.js"></script>
     <script src="~/js/jquery/jquery-3.4.1.slim.min.js"></script> *@
     <script src="~/js/jquery/jquery-3.5.1.js"></script>
 
-    
-  @*   <a href="~/js/jquery/jquery-3.7.1.min.map">~/js/jquery/jquery-3.7.1.min.map</a>
+
+    @*   <a href="~/js/jquery/jquery-3.7.1.min.map">~/js/jquery/jquery-3.7.1.min.map</a>
     <a href="~/js/jquery/jquery-3.7.1.slim.min.map">~/js/jquery/jquery-3.7.1.slim.min.map</a>
     <a href="~/js/jquery/jquery.min.map">~/js/jquery/jquery.min.map</a>
     <a href="~/js/jquery/jquery-3.4.1.min.map">~/js/jquery/jquery-3.4.1.min.map</a>
@@ -411,18 +395,18 @@
     <script src="~/js/DataTables/jquery.dataTables.js"></script>
     <script src="~/js/datatables.net/js/jquery.datatables.min.js"></script>
     @*  <script src="~/js/datatables/datatables.buttons.min.js"></script>  *@
-   
-    
+
+
 
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-   <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script> 
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-     <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script> 
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
     @*para exportar PDFs*@
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     @*Para Imprimir*@
-     <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
     @*Exportar Charjs a PDF*@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
@@ -442,18 +426,22 @@
     <script src="~/js/datatables.net-buttons/js/buttons.print.min.js"></script>
     <script src="~/js/datatables.net-buttons/js/datatables.buttons.js"></script>
     <script src="~/js/datatables.net-buttons/js/datatables.buttons.min.js"></script>
-    
 
-  
+    @* Floating labels *@
+    <script src="~/js/floating-labels/floating.labels.min.js"></script>
     @* Sweet Alert *@
     <script src="~/js/sweetalert/sweetalert.min.js"></script>
 
+    @* Loading Overlay *@
+    <script src="~/js/loadingoverlay/loadingoverlay.js"></script>
+    <script src="~/js/loadingoverlay/loadingoverlay.min.js"></script>
+
     <script src="~/js/jquery/jquery.validate.js"></script>
     <script src="~/js/custom.js"></script>
-    @RenderSection("scripts",required:false)
+    @RenderSection("scripts", required: false)
     @RenderSection("estilos", required: false)
-    
-    
-    
+
+
+
 </body>
 </html>
