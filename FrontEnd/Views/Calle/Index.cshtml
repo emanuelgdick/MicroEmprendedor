@@ -4,19 +4,134 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<style>
 
+    .btn {
+    /*     padding: 10px; */
+        border-width: 0px;
+        border-radius: 5px;
+        color: white;
+        text-align: center;
+    }
+
+    .btnNuevo {
+        background-color: #4e95f2;
+        width: 100px;
+        opacity: 0.7;
+        /* height:40px; */
+    }
+
+    .btnNuevo:hover {
+            opacity: 1;
+    }
+
+
+
+    .btnAceptar {
+        background-color: #37915b;
+        width: 80px;
+        opacity: 0.6;
+    }
+
+    .btnAceptar:hover {
+            background-color: #279654;
+        }
+
+    .btnCancelar {
+        background-color: #eb3110; /* #2A3F54; */
+        opacity: 0.6;
+        width: 80px;
+    }
+
+    .btn-exportar-excel {
+        background-Color: #198754 !important;
+        Color: white !important;
+        opacity: 0.5;
+    }
+
+        .btn-exportar-excel:hover {
+            opacity: 1;
+        }
+
+
+
+    .btn-exportar-pdf {
+        background-Color: #e90909a1 !important;
+        Color: white !important;
+        opacity: 0.5;
+    }
+
+        .btn-exportar-pdf:hover {
+            opacity: 1;
+        }
+
+    .btn-imprimir {
+        background-Color: #0094ff !important;
+        Color: white !important;
+        opacity: 0.5;
+    }
+
+        .btn-imprimir:hover {
+            opacity: 1;
+        }
+
+    #TortaGraph {
+        max-width: 200px;
+    }
+
+    hr {
+        background-color: #E74C3C;
+    }
+
+    .alert-container {
+        position: fixed;
+        bottom: 0; /* Ubicar en la parte inferior */
+        left: 550px;
+        right: 550px;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .alert-container.show {
+            opacity: 1;
+        }
+
+    .alert {
+        border: 0px;
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+        background-color: #6ebea2;
+        text-align: center;
+    }
+
+    .alert-danger {
+        border-radius: 5px;
+        height: 30px;
+        padding: 5px;
+        opacity: 0.7;
+        text-align: center;
+    }
+
+</style>
 
 <div class="card">
-    <div class="card-header">
-        <i class="fas fa-solid fa-palette me-1"></i>Lista de Calles
-    </div>
+    <div class="card-header" style="background-color:red; align">
+        
+            
+                Calles
+            
+            
+                @*  <button type="button" class="btn btnNuevo" onclick="abrirModal(null)">Nuevo</button>  *@
+            
+            
+        
+      
+     </div>
+    <hr />
     <div class="card-body">
-        <div class="row">
-            <div class="col-12">
-                <button type="button" class="btn btn-default padding: 0; border: none; background: none; color:#CE5454" onclick="abrirModal(null)">Crear Nuevo</button>
-            </div>
-        </div>
-        <hr />
+
         <table id="tabla" class="display" style="width:100%">
             <thead>
                 <tr>
@@ -31,7 +146,8 @@
             </tfoot>
         </table>
         <div class="alert-container">
-            <div id="mensaje" class="alert alert-success" role="alert">
+
+            <div id="mensaje" class="alert" role="alert">
                 This is a success alert—check it out!
             </div>
         </div>
@@ -48,22 +164,19 @@
             </div>
             <div class="modal-body ">
                 <input id="txtid" type="hidden" value="0" />
-
                 <form id="formNivel" class="row">
-                    <div class="form-group floating-control-group">
+                    <div class=" col-12 form-group floating-control-group">
                         <div class="form-floating ">
-                            <input type="text" class="form-control"  id="txtdescripcion" placeholder="Descripción" value="@Html.DisplayTextFor(model => Model.Descripcion) ">
-                        <label for="txtdescripcion">Descripción</label>
-                    </div> 
+                            <input type="text" class="form-control" id="txtdescripcion" placeholder="Descripción" autocomplete="off" value="@Html.DisplayTextFor(model => Model.Descripcion) ">
+                            <label for="txtdescripcion">Descripción</label>
+                        </div>
                     </div>
-                 
-                </form> 
 
-
+                </form>
             </div>
             <div class="row mt-2">
                 <div class="col-12">
-                    <div id="mensajeError" class="alert alert-danger" role="alert">
+                    <div id="mensajeError" class="alert-danger" role="alert">
                     </div>
                 </div>
             </div>
@@ -71,8 +184,8 @@
 
 
             <div class="modal-footer">
-                <button type="button" class="btnCancelar" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btnAceptar btnAceptar-primary-on " onclick="Guardar()">Guardar</button>
+                <button type="button" class="btn btnCancelar" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btnAceptar" onclick="Guardar()">Guardar</button>
             </div>
         </div>
     </div>
@@ -113,13 +226,13 @@
                         extend: "excelHtml5",
                         text: '<i class="fa fa-file-excel-o "></i>',
                         filename: "Reporte de Calles",
-                        title: "",
+                         title: "Listado de Calle",
                         exportOptions: {
                             //muestra las columnas
                             columns: [0, 1]
                         },
                         className: "btn-exportar-excel",
-                        
+
 
                     },
                     {
@@ -196,19 +309,20 @@
             //Abrir Modal
 
             function abrirModal(json) {
-               
+             
+
                 $("#txtid").val(0);
                 $("#txtdescripcion").val("");
                 $("#txtdescripcion").blur();
-                
-                
+
+
                 $("#mensajeError").hide();
                 if (json != null) {
-                
+
                     $("#txtid").val(json.id);
                     $("#txtdescripcion").focus()
                     $("#txtdescripcion").val(json.descripcion).focus();
-               
+
                 }
                 $("#FormModal").modal("show");
             }
@@ -336,13 +450,16 @@
             }
 
            function mostrarAlert(mensaje) {
-           
+
                $("#mensaje").text(mensaje);
                 alertContainer.classList.add('show');
                 setTimeout(() => {
                 alertContainer.classList.remove('show');
                 }, 3000); // La alerta se oculta después de 3 segundos
                 }
+
+
+        
 
     </script>
 }
