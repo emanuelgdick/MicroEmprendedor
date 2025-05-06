@@ -7,6 +7,6 @@ namespace FrontEnd.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public string Descripcion { get; set; }
+        public string ApeyNom { get; set; }
     }
 }

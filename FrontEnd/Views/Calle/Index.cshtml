@@ -7,7 +7,7 @@
 <style>
 
     .btn {
-    /*     padding: 10px; */
+        /*     padding: 10px; */
         border-width: 0px;
         border-radius: 5px;
         color: white;
@@ -15,16 +15,15 @@
     }
 
     .btnNuevo {
-        background-color: #4e95f2;
+        background-color: #db2a02;
         width: 100px;
-        opacity: 0.7;
+        opacity: 0.6;
         /* height:40px; */
     }
-
     .btnNuevo:hover {
-            opacity: 1;
+            /* opacity: 1; */
+           background-color: #f54118;
     }
-
 
 
     .btnAceptar {
@@ -32,16 +31,31 @@
         width: 80px;
         opacity: 0.6;
     }
-
     .btnAceptar:hover {
             background-color: #279654;
-        }
+    }
+
+    .btnAceptar:focus {
+            background-color: #279654;
+         
+    }
+
 
     .btnCancelar {
-        background-color: #eb3110; /* #2A3F54; */
+        background-color: #eb3110; 
         opacity: 0.6;
         width: 80px;
     }
+
+
+    .btnCancelar:focus {
+            background-color: #ba1e02;
+    }
+
+    .btnCancelar:hover {
+            background-color: #ba1e02;
+    }
+
 
     .btn-exportar-excel {
         background-Color: #198754 !important;
@@ -49,11 +63,9 @@
         opacity: 0.5;
     }
 
-        .btn-exportar-excel:hover {
+    .btn-exportar-excel:hover {
             opacity: 1;
-        }
-
-
+    }
 
     .btn-exportar-pdf {
         background-Color: #e90909a1 !important;
@@ -61,7 +73,7 @@
         opacity: 0.5;
     }
 
-        .btn-exportar-pdf:hover {
+   .btn-exportar-pdf:hover {
             opacity: 1;
         }
 
@@ -86,14 +98,15 @@
     .alert-container {
         position: fixed;
         bottom: 0; /* Ubicar en la parte inferior */
-        left: 550px;
-        right: 550px;
+        left: 800px;
+       /* right: 50px; */
+        width:300px;
         padding: 20px;
         opacity: 0;
         transition: opacity 0.5s ease;
     }
 
-    .alert-container.show {
+        .alert-container.show {
             opacity: 1;
         }
 
@@ -117,20 +130,26 @@
 </style>
 
 <div class="card">
-    <div class="card-header" style="background-color:red; align">
+    @*   <div class="card-header" style="background-color:red; "> *@
+
+    <div class="row  m-0 p-0">
+        <div class="col-11 m-0 p-0" >
+            <h1 class=" m-0 mt-1 p-0" >Calles</h1>
+
+        </div>
+
+        <div class="col-1  m-0 p-0" >
+            <button type="button" class="btn btnNuevo mb-2 ml-4 mt-2" onclick="abrirModal(null)">Nuevo</button>
+        </div>
         
-            
-                Calles
-            
-            
-                @*  <button type="button" class="btn btnNuevo" onclick="abrirModal(null)">Nuevo</button>  *@
-            
-            
-        
-      
-     </div>
-    <hr />
-    <div class="card-body">
+    </div>
+    <hr class="m-0 p-0" style="background-color:#E74C3C" />
+
+
+
+    @*  </div> *@
+
+    <div class="card-body" >
 
         <table id="tabla" class="display" style="width:100%">
             <thead>
@@ -184,8 +203,8 @@
 
 
             <div class="modal-footer">
-                <button type="button" class="btn btnCancelar" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btnAceptar" onclick="Guardar()">Guardar</button>
+                <button type="button"  class="btn btnCancelar" data-dismiss="modal">Cerrar</button>
+                <button type="button"  class="btn btnAceptar" onclick="Guardar()">Guardar</button>
             </div>
         </div>
     </div>
@@ -309,7 +328,7 @@
             //Abrir Modal
 
             function abrirModal(json) {
-             
+
 
                 $("#txtid").val(0);
                 $("#txtdescripcion").val("");
@@ -459,7 +478,7 @@
                 }
 
 
-        
+
 
     </script>
 }

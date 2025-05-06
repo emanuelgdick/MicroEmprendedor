@@ -35,8 +35,7 @@ namespace FrontEnd.Services
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Calle>($"api/Calle/AddCalle", calle);
             response.EnsureSuccessStatusCode();
-            //HttpResponseMessage response2 = await _httpClient.GetAsync($"api/Calle/LastCalle");
-            //response.EnsureSuccessStatusCode();
+        
             var contents = await response.Content.ReadAsStringAsync();
             var APIResponse = JsonConvert.DeserializeObject<Calle>(contents);
             return APIResponse;
@@ -69,21 +68,24 @@ namespace FrontEnd.Services
         }
 
         //AUTORES
-        public async Task<PageResult<Autor>> GetAllAutores(string token, int pagesize, int pagenumber)
+        public async Task<List<Autor>> GetAllAutores(string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/Autor?pagesize={pagesize}&pagenumber={pagenumber}");
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Autor?");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
-            var APIResponse = JsonConvert.DeserializeObject<PageResult<Autor>>(contents);
+            var APIResponse = JsonConvert.DeserializeObject<List<Autor>>(contents);
             return APIResponse;
         }
 
-        public async Task AddAutor(Autor autor, string token)
+        public async Task<Autor> AddAutor(Autor autor, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Autor>($"api/Autor/AddAutor", autor);
             response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Autor>(contents);
+            return APIResponse;
         }
 
         public async Task<Autor> GetAutorById(int id, string token)
@@ -112,5 +114,52 @@ namespace FrontEnd.Services
 
         }
 
+
+        //COBRADORES
+        public async Task<List<Cobrador>> GetAllCobradores(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Cobrador?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Cobrador>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Cobrador> AddCobrador(Cobrador cobrador, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Cobrador>($"api/Cobrador/AddCobrador", cobrador);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Cobrador>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Cobrador> GetCobradorById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Cobrador/GetCobradorById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Cobrador>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateCobrador(int id, Cobrador cobrador, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Cobrador>($"api/Cobrador/UpdateCobrador?id={id}", cobrador);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteCobrador(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Cobrador/DeleteCobrador?id={id}", null);
+            response.EnsureSuccessStatusCode();
+
+        }
     }
 }

@@ -29,7 +29,7 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Descripcion")
+                    b.Property<string>("ApeyNom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -53,6 +53,23 @@ namespace Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Calle");
+                });
+
+            modelBuilder.Entity("Api.Models.Cobrador", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ApedyNom")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cobrador");
                 });
 
             modelBuilder.Entity("Api.Models.Usuario", b =>

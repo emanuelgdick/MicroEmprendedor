@@ -21,20 +21,12 @@ namespace Api.Controllers
         [HttpGet]
         [Authorize]
         [ResponseCache(CacheProfileName = "apicache")]
-        public IActionResult GetAutores(int pagesize, int pagenumber)
+        public IActionResult GetAutores(/*int pagesize, int pagenumber*/)
         {
             _logger.LogInformation("Fetching Todas las Autores");
-            int totalCount = _db.Autor.Count();
-            var AutorList = _db.Autor.ToList().Skip(pagesize * (pagenumber - 1)).Take(pagesize).ToList();
-            var result = new PageResult<Autor>
-            {
-                items = AutorList,
-                CurrentPage = pagenumber,
-                TotalCount = totalCount,
-                TotalPages = (int)Math.Ceiling(totalCount / (double)pagenumber)
-            };
+            var AutorList = _db.Autor.ToList();
+            return Ok(AutorList);
 
-            return Ok(result);
         }
 
         [HttpGet("GetAutorById")]
@@ -56,6 +48,23 @@ namespace Api.Controllers
             }
             return Autor;
         }
+
+
+        //[HttpGet("GetLastAutor")]
+        //[Authorize]
+        //[ResponseCache(CacheProfileName = "apicache")]
+        //public ActionResult<Autor> GetLastAutor()
+        //{
+        //    var Autor = _db.Autor.LastOrDefault();
+
+        //    if (Autor == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Autor;
+        //}
+
+
 
         [HttpPost("AddAutor")]
         [Authorize]
@@ -87,7 +96,7 @@ namespace Api.Controllers
                 return NotFound();
             }
 
-            Autor.Descripcion = Autor.Descripcion;
+            Autor.ApeyNom = Autor.ApeyNom;
             _db.SaveChanges();
             return Ok(Autor);
 

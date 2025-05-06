@@ -10,24 +10,6 @@
         "tags": [
           "Autor"
         ],
-        "parameters": [
-          {
-            "name": "pagesize",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "pagenumber",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -415,6 +397,202 @@
         }
       }
     },
+    "/api/Cobrador": {
+      "get": {
+        "tags": [
+          "Cobrador"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Cobrador/GetCobradorById": {
+      "get": {
+        "tags": [
+          "Cobrador"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cobrador"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cobrador"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cobrador"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cobrador/AddCobrador": {
+      "post": {
+        "tags": [
+          "Cobrador"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cobrador"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cobrador"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cobrador"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cobrador"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cobrador"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cobrador"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cobrador/UpdateCobrador": {
+      "post": {
+        "tags": [
+          "Cobrador"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cobrador"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cobrador"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cobrador"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cobrador"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cobrador"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cobrador"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cobrador/DeleteCobrador": {
+      "put": {
+        "tags": [
+          "Cobrador"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cobrador"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cobrador"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cobrador"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Usuario/Userlogin": {
       "post": {
         "tags": [
@@ -468,7 +646,7 @@
     "schemas": {
       "Autor": {
         "required": [
-          "descripcion"
+          "apeyNom"
         ],
         "type": "object",
         "properties": {
@@ -476,7 +654,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "descripcion": {
+          "apeyNom": {
             "minLength": 1,
             "type": "string"
           }
@@ -494,6 +672,23 @@
             "format": "int32"
           },
           "descripcion": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Cobrador": {
+        "required": [
+          "apeyNom"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "apeyNom": {
             "minLength": 1,
             "type": "string"
           }

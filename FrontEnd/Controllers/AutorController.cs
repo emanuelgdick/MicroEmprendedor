@@ -2,9 +2,12 @@
 using FrontEnd.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using System.Net.Http.Headers;
-using Microsoft.Extensions.Configuration;
+using Newtonsoft;
+
+
+
+
+
 namespace FrontEnd.Controllers
 {
     public class AutorController : Controller
@@ -20,13 +23,25 @@ namespace FrontEnd.Controllers
 
         [Authorize(Roles = "Admin")]
         [ResponseCache(Duration = 30)]
-        public async Task<IActionResult> Index(int pagenumber = 1)
+        public async Task<IActionResult> Index()
         {
             int pagesize = _config.GetValue<int>("PageSettings:PageSize");
-            PageResult<Autor> lstAutor = new PageResult<Autor>();
-            lstAutor = await _apiService.GetAllAutores(HttpContext.Session.GetString("APIToken"), pagesize, pagenumber);
-            return View(lstAutor);
+            List<Autor> lstAutor = new List<Autor>();
+            lstAutor = await _apiService.GetAllAutores(HttpContext.Session.GetString("APIToken"));
+            return View();
+
         }
+
+
+        [Authorize(Roles = "Admin")]
+        public async Task<JsonResult> GetAllAutores()
+        {
+            List<Autor> oLista = new List<Autor>();
+            oLista = await _apiService.GetAllAutores(HttpContext.Session.GetString("APIToken"));
+
+            return Json(new { data = oLista });
+        }
+
 
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create()
@@ -34,11 +49,57 @@ namespace FrontEnd.Controllers
             return View();
         }
 
+
+
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> CreateAutor(Autor Autor)
+        public async Task<JsonResult> CreateAutor([FromBody] Autor Autor)
         {
-            await _apiService.AddAutor(Autor, HttpContext.Session.GetString("APIToken"));
-            return RedirectToAction("Index");
+            object resultado;
+            string mensaje = String.Empty;
+            try
+            {
+                if (Autor.Id == 0)
+                {
+                    if (Autor.ApeyNom != "")
+                    {
+                        Autor = await _apiService.AddAutor(Autor, HttpContext.Session.GetString("APIToken"));
+                        resultado = Autor.Id;
+                        mensaje = "Autor ingresado correctamente";
+                    }
+                    else
+                    {
+                        resultado = false;
+                        mensaje = "Por favor ingrese el Apellido y Nombre";
+                    }
+
+                }
+
+
+                else
+                {
+                    if (Autor.ApeyNom != "")
+                    {
+                        await _apiService.UpdateAutor(Autor.Id, Autor, HttpContext.Session.GetString("APIToken"));
+
+                        resultado = true;
+                        mensaje = "Autor Modificado correctamente";
+
+                    }
+                    else
+                    {
+                        resultado = false;
+                        mensaje = "Por favor ingrese el Apellido y Nombre";
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                resultado = false;
+                mensaje += ex.Message;
+
+            }
+            return Json(new { resultado = resultado, mensaje = mensaje });
         }
 
         [Authorize(Roles = "Admin,Student")]
@@ -51,12 +112,12 @@ namespace FrontEnd.Controllers
         }
 
 
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> UpdateAutor(int id, Autor Autor)
-        {
-            await _apiService.UpdateAutor(id, Autor, HttpContext.Session.GetString("APIToken"));
-            return RedirectToAction("Index");
-        }
+        //[Authorize(Roles = "Admin")]
+        //public async Task<IActionResult> UpdateAutor(int id, Autor Autor)
+        //{
+        //    await _apiService.UpdateAutor(id, Autor, HttpContext.Session.GetString("APIToken"));
+        //    return RedirectToAction("Index");
+        //}
 
         [Authorize(Roles = "Admin,Student")]
         public async Task<IActionResult> Delete(int id)
@@ -67,10 +128,27 @@ namespace FrontEnd.Controllers
             return View(Autor);
         }
 
-        public async Task<IActionResult> DeleteAutor(int id)
+        [Authorize(Roles = "Admin,Student")]
+
+        public async Task<JsonResult> DeleteAutor([FromBody] Autor Autor)
         {
-            await _apiService.DeleteAutor(id, HttpContext.Session.GetString("APIToken"));
-            return RedirectToAction("Index");
+            bool resultado = false;
+            string mensaje = string.Empty;
+            try
+            {
+                await _apiService.DeleteAutor(Autor.Id, HttpContext.Session.GetString("APIToken"));
+                resultado = true;
+                mensaje = "Autor eliminado correctante";
+            }
+            catch (Exception ex)
+            {
+                resultado = false;
+                mensaje += ex.Message;
+
+            }
+            return Json(new { resultado = resultado, mensaje = mensaje });
+
+
         }
 
         public IActionResult ErrorPage()

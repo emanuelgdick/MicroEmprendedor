@@ -1,0 +1,482 @@
+﻿@model Cobrador
+@{
+    ViewBag.Title = "Cobrador";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    .btn {
+        /*     padding: 10px; */
+        border-width: 0px;
+        border-radius: 5px;
+        color: white;
+        text-align: center;
+    }
+
+    .btnNuevo {
+        background-color: #db2a02;
+        width: 100px;
+        opacity: 0.6;
+        /* height:40px; */
+    }
+
+        .btnNuevo:hover {
+            /* opacity: 1; */
+            background-color: #f54118;
+        }
+
+
+    .btnAceptar {
+        background-color: #37915b;
+        width: 80px;
+        opacity: 0.6;
+    }
+
+        .btnAceptar:hover {
+            background-color: #279654;
+        }
+
+        .btnAceptar:focus {
+            background-color: #279654;
+        }
+
+
+    .btnCancelar {
+        background-color: #eb3110;
+        opacity: 0.6;
+        width: 80px;
+    }
+
+
+        .btnCancelar:focus {
+            background-color: #ba1e02;
+        }
+
+        .btnCancelar:hover {
+            background-color: #ba1e02;
+        }
+
+
+    .btn-exportar-excel {
+        background-Color: #198754 !important;
+        Color: white !important;
+        opacity: 0.5;
+    }
+
+        .btn-exportar-excel:hover {
+            opacity: 1;
+        }
+
+    .btn-exportar-pdf {
+        background-Color: #e90909a1 !important;
+        Color: white !important;
+        opacity: 0.5;
+    }
+
+        .btn-exportar-pdf:hover {
+            opacity: 1;
+        }
+
+    .btn-imprimir {
+        background-Color: #0094ff !important;
+        Color: white !important;
+        opacity: 0.5;
+    }
+
+        .btn-imprimir:hover {
+            opacity: 1;
+        }
+
+    #TortaGraph {
+        max-width: 200px;
+    }
+
+    hr {
+        background-color: #E74C3C;
+    }
+
+    .alert-container {
+        position: fixed;
+        bottom: 0; /* Ubicar en la parte inferior */
+        left: 800px;
+        /* right: 50px; */
+        width: 300px;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+        .alert-container.show {
+            opacity: 1;
+        }
+
+    .alert {
+        border: 0px;
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+        background-color: #6ebea2;
+        text-align: center;
+    }
+
+    .alert-danger {
+        border-radius: 5px;
+        height: 30px;
+        padding: 5px;
+        opacity: 0.7;
+        text-align: center;
+    }
+
+</style>
+
+<div class="card">
+    @*   <div class="card-header" style="background-color:red; "> *@
+
+    <div class="row  m-0 p-0">
+        <div class="col-11 m-0 p-0">
+            <h1 class=" m-0 mt-1 p-0">Cobradors</h1>
+
+        </div>
+
+        <div class="col-1  m-0 p-0">
+            <button type="button" class="btn btnNuevo mb-2 ml-4 mt-2" onclick="abrirModal(null)">Nuevo</button>
+        </div>
+
+    </div>
+    <hr class="m-0 p-0" style="background-color:#E74C3C" />
+
+
+
+    @*  </div> *@
+
+    <div class="card-body">
+
+        <table id="tabla" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Apellido y Nombre</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+        <div class="alert-container">
+
+            <div id="mensaje" class="alert" role="alert">
+                This is a success alert—check it out!
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- Modal -->
+<div class="modal fade" id="FormModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header text-white" style="background: #2A3F54">
+                <h5 class="modal-title" id="exampleModalLabel">Cobrador</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body ">
+                <input id="txtid" type="hidden" value="0" />
+                <form id="formNivel" class="row">
+                    <div class=" col-12 form-group floating-control-group">
+                        <div class="form-floating ">
+                            <input type="text" class="form-control" id="txtapeynom" placeholder="Apellido y Nombre" autocomplete="off" value="@Html.DisplayTextFor(model => Model.ApeyNom) ">
+                            <label for="txtapeynom">Apellido y Nombre</label>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div id="mensajeError" class="alert-danger" role="alert">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btnCancelar" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btnAceptar" onclick="Guardar()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+
+
+    <script>
+            $(function(){
+
+          $('.form-group').floatingLabel();
+
+        });
+                $('.form-group').floatingLabel({
+             floatingLabelClass: 'floating-label',
+             floatingLabelOnClass: 'floating-label-on',
+             floatingInputClass: 'floating-input'
+           });
+
+           $('.form-group').floatingLabel({
+          floatingStyle: 'primary',
+
+        });
+
+
+
+            const alertContainer = document.querySelector('.alert-container');
+            var tabladata;
+            var filaSeleccionada;
+            tabladata = $("#tabla").DataTable({
+                responsive: true,
+                ordering: true,
+                dom: "Bfrtip",
+                buttons: [
+                    {
+
+                        extend: "excelHtml5",
+                        text: '<i class="fa fa-file-excel-o "></i>',
+                        filename: "Reporte de Cobradors",
+                         title: "Listado de Cobrador",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1]
+                        },
+                        className: "btn-exportar-excel",
+
+
+                    },
+                    {
+                        extend: "pdfHtml5",
+                        text: '<i class="fa fa-file-pdf-o"></i>',
+                        filename: "Reporte de Cobradors",
+                        title: "Listado de Cobrador",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1]
+                        },
+                        className: "btn-exportar-pdf"
+                    },
+                    {
+                        extend: "print",
+                        text: '<i class="fa fa-print"></i>',
+                        filename: "Reporte de Cobradors",
+                        title: "Listado de Cobrador",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1]
+                        },
+                        className: "btn-imprimir"
+
+                    }
+                ],
+                 "ajax": {
+                     url: "@Url.Action("GetAllCobradores", "Cobrador")",
+                     type: "GET",
+                     dataType: "json",
+                     beforeSend: mostrarAlert("Obteniendo datos")
+                 },
+                 "columns": [
+                         { "data": "id" },
+                          { "data": "apeyNom" },
+                         {
+                                      "defaultContent": '<button type="button" title="Editar Cobrador"   class="rounded-circle btn btn-default padding: 0; border: none; background: none;  btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
+                                                        '<button type="button" title="Eliminar Cobrador" class="rounded-circle btn btn-default padding: 0; border: none; background: none;  btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
+                                      //"defaultContent": '<a asp-controller="Cobrador" asp-action="Details" asp-route-id='+data.id+' class="btn btn-primary">"Details"</a>',
+
+                            "orderable": false,
+                            "searchable": false,
+                            "width": "10%",
+                            "heigth":"10%"
+                        }
+                 ],
+                 "language": {
+                      "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+                  },
+                "columnDefs": [
+                        { "width": "10%", "targets": 0 },
+                        { "width": "80%", "targets": 1 },
+                        { "width": "10%", "targets": 2 },
+                ]
+            })
+
+
+            $("#formNivel").validate({
+            rules: {
+
+                descripcion: {
+                    required: true
+                },
+            },
+            messages: {
+
+                descripcion: " El campo Apellido y Nombre es obligatorio",
+            },
+            errorElement: "div",
+            errorLabelContainer: ".alert-danger"
+        });
+
+
+            //Abrir Modal
+
+            function abrirModal(json) {
+
+
+                $("#txtid").val(0);
+                $("#txtapeynom").val("");
+                $("#txtapeynom").blur();
+
+
+                $("#mensajeError").hide();
+                if (json != null) {
+
+                    $("#txtid").val(json.id);
+                    $("#txtapeynom").focus()
+                    $("#txtapeynom").val(json.apeyNom).focus();
+
+                }
+                $("#FormModal").modal("show");
+            }
+
+            //Editar
+            $("#tabla tbody").on("click", '.btn-editar', function () {
+
+                filaSeleccionada = $(this).closest("tr");
+                var data = tabladata.row(filaSeleccionada).data();
+                abrirModal(data)
+            })
+
+            //Eliminar
+            $("#tabla tbody").on("click", '.btn-eliminar', function () {
+
+                var Cobradorseleccionado = $(this).closest("tr");
+                var data = tabladata.row(Cobradorseleccionado).data();
+               var Cobrador={
+               Id:data.id,
+               ApeyNom:data.ApeyNom
+               }
+
+                swal({
+                    title: "Está Seguro?",
+                    text: "Desea eliminar el Cobrador?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn-primary",
+                    confirmButtonText: "Si",
+                    cancelButtonText: "No",
+                    closeOnConfirm: true
+                },
+                   function () {
+
+                        jQuery.ajax({
+                            url: '@Url.Action("DeleteCobrador", "Cobrador")',
+                            type: "POST",
+                            data: JSON.stringify( Cobrador),
+                            contentType: 'application/json',
+                            success: function (data) {
+                                if (data.resultado) {
+                                    tabladata.row(Cobradorseleccionado).remove().draw();
+                                    mostrarAlert(data.mensaje)
+                                } else {
+                                   // swal("No se pudo eliminar", data.mensaje, "error");
+                                   mostrarAlert(data.mensaje)
+                                }
+                            },
+                            error: function (error) {
+                                console.log(error);
+                            }
+                        })
+               })
+            });
+
+
+            //Guardar
+            function Guardar() {
+
+            if (!$("#formNivel").valid()) {
+                return;
+            }
+
+
+            var Cobrador = {
+                    id: $("#txtid").val(),
+                    apeyNom: $("#txtapeynom").val(),
+
+                }
+
+                jQuery.ajax({
+                    url: '@Url.Action("CreateCobrador", "Cobrador")',
+                    type: "POST",
+                    data: JSON.stringify(Cobrador),
+                    // dataType: "json",
+                    contentType: 'application/json',
+                    success: function (data) {
+                        $(".modal-body").LoadingOverlay("hide");
+                        //  Cobrador nuevo
+                        if (Cobrador.id == 0) {
+
+                            if (data.resultado != 0) {
+                                Cobrador.id = data.resultado;
+                                tabladata.row.add(Cobrador).draw(false);
+                                $("#FormModal").modal("hide");
+                                mostrarAlert(data.mensaje)
+                            }
+                            else {
+                                $("#mensajeError").text(data.mensaje);
+                                $("#mensajeError").show();
+                            }
+                        }
+                        //  Cobrador Editar
+                        else {
+
+                            if (data.resultado) {
+                                tabladata.row(filaSeleccionada).data(Cobrador).draw(false);
+                                filaSeleccionada = null;
+                                $("#FormModal").modal("hide");
+                                mostrarAlert(data.mensaje);
+                            } else {
+                                $("#mensajeError").text(data.mensaje);
+                                $("#mensajeError").show();
+                            }
+                        }
+                        },
+                        error: function (error) {
+                            $(".modal-body").LoadingOverlay("hide");
+                            $("#mensajeError").text("Error Ajax");
+                            $("#mensajeError").show();
+                        },
+                        beforeSend: function () {
+                            $(".modal-body").LoadingOverlay("show", {
+                                imageResizeFactor: 2,
+                                text: "Cargando...",
+                                size: 14
+                            })
+
+                        }
+                    }
+                )
+            }
+
+           function mostrarAlert(mensaje) {
+
+               $("#mensaje").text(mensaje);
+                alertContainer.classList.add('show');
+                setTimeout(() => {
+                alertContainer.classList.remove('show');
+                }, 3000); // La alerta se oculta después de 3 segundos
+                }
+
+
+
+
+    </script>
+}
