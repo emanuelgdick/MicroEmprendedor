@@ -63,7 +63,7 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ApedyNom")
+                    b.Property<string>("ApeyNom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

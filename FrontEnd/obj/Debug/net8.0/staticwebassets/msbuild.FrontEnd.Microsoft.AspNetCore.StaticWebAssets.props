@@ -210,8 +210,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>4p05v57us0</Fingerprint>
-      <Integrity>OMprkyiUoCKTuekyyvTmnzsnQi+yVYS9KprANPBkSuE=</Integrity>
+      <Fingerprint>gf2dxac9qe</Fingerprint>
+      <Integrity>dIm3VZXztwbIlhOzVt+ggg5Dvhp28MJQGJoweOH9cAE=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\bootstrap\dist\css\bootstrap-reboot.min.css.map'))</OriginalItemSpec>

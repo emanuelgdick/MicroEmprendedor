@@ -97,27 +97,33 @@
     }
 
     .alert-container {
-        position: fixed;
-        bottom: 0; /* Ubicar en la parte inferior */
-        left: 800px;
-        /* right: 50px; */
-        width: 300px;
-        padding: 20px;
+        position: absolute; /* Asegura que la posición sea fija */
+        /* Mantiene el contenedor en la parte inferior */
+        /* position: absolute; */
+        
         opacity: 0;
         transition: opacity 0.5s ease;
+        bottom: 0;
+        right: 0;
+      
+
     }
 
         .alert-container.show {
             opacity: 1;
+
+
         }
 
     .alert {
+        
         border: 0px;
         padding: 10px;
         border-radius: 5px;
         color: white;
         background-color: #6ebea2;
         text-align: center;
+  
     }
 
     .alert-danger {
@@ -128,10 +134,16 @@
         text-align: center;
     }
 
+    .flex-end {
+        background-color: none;
+        padding: 0px 0;
+        display: flex;
+        justify-content: flex-end;
+    }
 </style>
 
 <div class="card">
-    @*   <div class="card-header" style="background-color:red; "> *@
+      <div class="card-header"  >
 
     <div class="row  m-0 p-0">
         <div class="col-11 m-0 p-0">
@@ -139,8 +151,8 @@
 
         </div>
 
-        <div class="col-1  m-0 p-0">
-            <button type="button" class="btn btnNuevo mb-2 ml-4 mt-2" onclick="abrirModal(null)">Nuevo</button>
+            <div class="col-1  flex-end ">
+                <button type="button" class="btn btnNuevo  m-0 p-0 mb-2  mt-2 " onclick="abrirModal(null)">Nuevo</button>
         </div>
 
     </div>
@@ -148,7 +160,7 @@
 
 
 
-    @*  </div> *@
+     </div>
 
     <div class="card-body">
         <table id="tabla" class="display" style="width:100%">
@@ -166,11 +178,15 @@
         </table>
         <div class="alert-container">
 
-            <div id="mensaje" class="alert" role="alert">
+            <div id="mensaje"  class="alert" role="alert" >
                 This is a success alert—check it out!
             </div>
         </div>
+
     </div>
+   
+   
+    
 
 </div>
 <!-- Modal -->
@@ -408,7 +424,7 @@
 
             var Autor = {
                     id: $("#txtid").val(),
-                    
+                     
                     apeyNom: $("#txtapeynom").val(),
 
                 }
