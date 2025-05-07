@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<style>
+@* <style>
 
     .btn {
         /*     padding: 10px; */
@@ -97,33 +97,27 @@
     }
 
     .alert-container {
-        position: absolute; /* Asegura que la posición sea fija */
-        /* Mantiene el contenedor en la parte inferior */
-        /* position: absolute; */
+          position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease; 
         
-        opacity: 0;
-        transition: opacity 0.5s ease;
-        bottom: 0;
-        right: 0;
-      
-
     }
 
         .alert-container.show {
             opacity: 1;
-
-
         }
 
     .alert {
-        
         border: 0px;
-        padding: 10px;
+        /* padding: 10px; */
         border-radius: 5px;
         color: white;
         background-color: #6ebea2;
         text-align: center;
-  
     }
 
     .alert-danger {
@@ -140,34 +134,53 @@
         display: flex;
         justify-content: flex-end;
     }
-</style>
+
+    body {
+        height: 100vh; /* Establece la altura del cuerpo a la altura de la ventana */
+        margin: 0; /* Elimina los márgenes predeterminados del cuerpo */
+    }
+
+    .contenedor {
+        width: 100%; /* El contenedor ocupa todo el ancho de su padre */
+        height: 100%; /* El contenedor ocupa toda la altura de su padre */
+    }
+
+    table {
+        width: 100%; /* La tabla ocupa todo el ancho de su contenedor */
+        border-collapse: collapse; /* Elimina los espacios entre las celdas */
+        height: 100%; /* Opcional, para ocupar toda la altura del contenedor */
+    }
+
+    th, td {
+        /*border: 1px solid black;  Agrega bordes a las celdas */
+        right: 0px;
+        padding: 8px; /* Agrega espacio interno a las celdas */
+    }
+
+
+</style> *@
+
 
 <div class="card">
-      <div class="card-header"  >
 
     <div class="row  m-0 p-0">
         <div class="col-11 m-0 p-0">
             <h1 class=" m-0 mt-1 p-0">Autores</h1>
-
         </div>
 
-            <div class="col-1  flex-end ">
-                <button type="button" class="btn btnNuevo  m-0 p-0 mb-2  mt-2 " onclick="abrirModal(null)">Nuevo</button>
+        <div class="col-1  m-0 p-0">
+            <button type="button" class="btn btnNuevo mb-2 ml-4 mt-2" onclick="abrirModal(null)">Nuevo</button>
         </div>
-
     </div>
     <hr class="m-0 p-0" style="background-color:#E74C3C" />
 
-
-
-     </div>
-
     <div class="card-body">
+
         <table id="tabla" class="display" style="width:100%">
             <thead>
                 <tr>
                     <th>Código</th>
-                    <th>Apellido y Nombre</th>
+                    <th>Descripcion</th>
                     <th></th>
                 </tr>
             </thead>
@@ -178,17 +191,14 @@
         </table>
         <div class="alert-container">
 
-            <div id="mensaje"  class="alert" role="alert" >
+            <div id="mensaje" class="alert" role="alert">
                 This is a success alert—check it out!
             </div>
         </div>
-
     </div>
-   
-   
-    
 
 </div>
+
 <!-- Modal -->
 <div class="modal fade" id="FormModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
     <div class="modal-dialog">
@@ -304,10 +314,10 @@
                          { "data": "id" },
                          { "data": "apeyNom" },
                          {
-                                      "defaultContent": '<button type="button" title="Editar Autor"   class="rounded-circle btn btn-default padding: 0; border: none; background: none;  btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
-                                                        '<button type="button" title="Eliminar Autor" class="rounded-circle btn btn-default padding: 0; border: none; background: none;  btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
+                                      "defaultContent": '<button type="button" title="Editar Autor"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
+                                                        '<button type="button" title="Eliminar Autor" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
                                       //"defaultContent": '<a asp-controller="Autor" asp-action="Details" asp-route-id='+data.id+' class="btn btn-primary">"Details"</a>',
-
+                                      //padding: 0; border: none; background: none;
                             "orderable": false,
                             "searchable": false,
                             "width": "10%",
@@ -345,7 +355,7 @@
 
             function abrirModal(json) {
 
-                
+
                 $("#txtid").val(0);
                 $("#txtapeynom").val("");
                 $("#txtapeynom").blur();
@@ -353,7 +363,7 @@
 
                 $("#mensajeError").hide();
                 if (json != null) {
-                    
+
                     $("#txtid").val(json.id);
                     $("#txtapeynom").focus()
                     $("#txtapeynom").val(json.apeyNom).focus();
@@ -373,8 +383,8 @@
             //Eliminar
             $("#tabla tbody").on("click", '.btn-eliminar', function () {
 
-                var Autoreseleccionado = $(this).closest("tr");
-                var data = tabladata.row(Autoreseleccionado).data();
+               var Autoreseleccionado = $(this).closest("tr");
+               var data = tabladata.row(Autoreseleccionado).data();
                var Autor={
                id:data.id,
                apeynom:data.apeynom
@@ -382,7 +392,7 @@
 
                 swal({
                     title: "Está Seguro?",
-                    text: "Desea eliminar la Autor?",
+                    text: "Desea eliminar el Autor?",
                     type: "warning",
                     showCancelButton: true,
                     confirmButtonClass: "btn-primary",
@@ -403,49 +413,44 @@
                                     mostrarAlert(data.mensaje)
                                 } else {
                                    // swal("No se pudo eliminar", data.mensaje, "error");
-                                   mostrarAlert(data.mensaje)
+                                 //  mostrarAlert(data.mensaje)
                                 }
                             },
+
                             error: function (error) {
                                 console.log(error);
                             }
                         })
-               })
+                   })
             });
 
 
             //Guardar
             function Guardar() {
 
+
             if (!$("#formNivel").valid()) {
                 return;
             }
 
-
             var Autor = {
                     id: $("#txtid").val(),
-                     
                     apeyNom: $("#txtapeynom").val(),
-
                 }
 
-                jQuery.ajax({
+            jQuery.ajax({
                     url: '@Url.Action("CreateAutor", "Autor")',
                     type: "POST",
                     data: JSON.stringify(Autor),
-                    // dataType: "json",
                     contentType: 'application/json',
                     success: function (data) {
                         $(".modal-body").LoadingOverlay("hide");
                         //  Autor nuevo
                         if (Autor.id == 0) {
-
                             if (data.resultado != 0) {
                                 Autor.id = data.resultado;
                                 tabladata.row.add(Autor).draw(false);
                                 $("#FormModal").modal("hide");
-                                mostrarAlert(data.mensaje)
-
                             }
                             else {
                                 $("#mensajeError").text(data.mensaje);
@@ -459,25 +464,27 @@
                                 tabladata.row(filaSeleccionada).data(Autor).draw(false);
                                 filaSeleccionada = null;
                                 $("#FormModal").modal("hide");
-                                mostrarAlert(data.mensaje);
+                                mostrarAlert(data.mensaje)
                             } else {
                                 $("#mensajeError").text(data.mensaje);
                                 $("#mensajeError").show();
-                            }
-                        }
+                               }
+                             }
+                        },
+
+
+                        beforeSend: function () {
+                             $(".modal-body").LoadingOverlay("show", {
+                                 imageResizeFactor: 2,
+                                 text: "Cargando...",
+                                 size: 14
+                             });
+
                         },
                         error: function (error) {
                             $(".modal-body").LoadingOverlay("hide");
                             $("#mensajeError").text("Error Ajax");
                             $("#mensajeError").show();
-                        },
-                        beforeSend: function () {
-                            $(".modal-body").LoadingOverlay("show", {
-                                imageResizeFactor: 2,
-                                text: "Cargando...",
-                                size: 14
-                            })
-
                         }
                     }
                 )
