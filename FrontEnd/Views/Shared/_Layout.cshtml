@@ -36,7 +36,7 @@
     <!-- Animate.css -->
     <link href="~/css/animate/animate.min.css" rel="stylesheet" />
 
-  
+
     @* Sweet alert *@
     <link href="~/css/sweetalert/sweetalert.css" rel="stylesheet" />
 
@@ -49,6 +49,15 @@
     <!-- Custom Theme Style -->
     <link href="~/css/custom.min.css" rel="stylesheet" />
     <link href="~/css/custom.css" rel="stylesheet" />
+
+    <!--Cards del dashboards-->
+
+    @*  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"> </script>
+     <script src="//code.jquery.com/jquery-1.11.1.min.js"> </script> *@
+    <!-- ---- Include the above in your HEAD tag -------- -->
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+ 
     <style>
 
 
@@ -175,9 +184,162 @@
             text-align: center;
         }
 
+        <!-- DashBoards-- >
+        .circle-tile {
+            margin-bottom: 15px;
+            text-align: center;
+        }
 
+        .circle-tile-heading {
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 100%;
+            color: #FFFFFF;
+            height: 80px;
+            margin: 0 auto -40px;
+            position: relative;
+            transition: all 0.3s ease-in-out 0s;
+            width: 80px;
+        }
+
+            .circle-tile-heading .fa {
+                line-height: 80px;
+            }
+
+        .circle-tile-content {
+            padding-top: 50px;
+        }
+
+        .circle-tile-number {
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 1;
+            padding: 5px 0 15px;
+        }
+
+        .circle-tile-description {
+            text-transform: uppercase;
+        }
+
+        .circle-tile-footer {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            display: block;
+            padding: 5px;
+            transition: all 0.3s ease-in-out 0s;
+        }
+
+            .circle-tile-footer:hover {
+                background-color: rgba(0, 0, 0, 0.2);
+                color: rgba(255, 255, 255, 0.5);
+                text-decoration: none;
+            }
+
+        .circle-tile-heading.dark-blue:hover {
+            background-color: #2E4154;
+        }
+
+        .circle-tile-heading.green:hover {
+            background-color: #138F77;
+        }
+
+        .circle-tile-heading.orange:hover {
+            background-color: #DA8C10;
+        }
+
+        .circle-tile-heading.blue:hover {
+            background-color: #2473A6;
+        }
+
+        .circle-tile-heading.red:hover {
+            background-color: #CF4435;
+        }
+
+        .circle-tile-heading.purple:hover {
+            background-color: #7F3D9B;
+        }
+
+        .tile-img {
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
+        }
+
+        .dark-blue {
+            background-color: #34495E;
+        }
+
+        .green {
+            background-color: #16A085;
+        }
+
+        .blue {
+            background-color: #2980B9;
+        }
+
+        .orange {
+            background-color: #F39C12;
+        }
+
+        .red {
+            background-color: #E74C3C;
+        }
+
+        .purple {
+            background-color: #8E44AD;
+        }
+
+        .dark-gray {
+            background-color: #7F8C8D;
+        }
+
+        .gray {
+            background-color: #95A5A6;
+        }
+
+        .light-gray {
+            background-color: #BDC3C7;
+        }
+
+        .yellow {
+            background-color: #F1C40F;
+        }
+
+        .text-dark-blue {
+            color: #34495E;
+        }
+
+        .text-green {
+            color: #16A085;
+        }
+
+        .text-blue {
+            color: #2980B9;
+        }
+
+        .text-orange {
+            color: #F39C12;
+        }
+
+        .text-red {
+            color: #E74C3C;
+        }
+
+        .text-purple {
+            color: #8E44AD;
+        }
+
+        .text-faded {
+            color: rgba(255, 255, 255, 0.7);
+        }
     </style>
+
+   
+
+
+
+
+
+
 </head>
+
 <body class="nav-md">
     <div class="container body">
         <div class="main_container">
@@ -217,135 +379,40 @@
 
                                     </ul>
                                 </li>
-                                <li>
-                                    <a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="form.html">General Form</a></li>
-                                        <li><a href="form_advanced.html">Advanced Components</a></li>
-                                        <li><a href="form_validation.html">Form Validation</a></li>
-                                        <li><a href="form_wizards.html">Form Wizard</a></li>
-                                        <li><a href="form_upload.html">Form Upload</a></li>
-                                        <li><a href="form_buttons.html">Form Buttons</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="general_elements.html">General Elements</a></li>
-                                        <li><a href="media_gallery.html">Media Gallery</a></li>
-                                        <li><a href="typography.html">Typography</a></li>
-                                        <li><a href="icons.html">Icons</a></li>
-                                        <li><a href="glyphicons.html">Glyphicons</a></li>
-                                        <li><a href="widgets.html">Widgets</a></li>
-                                        <li><a href="invoice.html">Invoice</a></li>
-                                        <li><a href="inbox.html">Inbox</a></li>
-                                        <li><a href="calendar.html">Calendar</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="tables.html">Tables</a></li>
-                                        <li><a href="tables_dynamic.html">Table Dynamic</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="chartjs.html">Chart JS</a></li>
-                                        <li><a href="chartjs2.html">Chart JS2</a></li>
-                                        <li><a href="morisjs.html">Moris JS</a></li>
-                                        <li><a href="echarts.html">ECharts</a></li>
-                                        <li><a href="other_charts.html">Other Charts</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                                        <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                                    </ul>
-                                </li>
+
                             </ul>
-                        </div>
-                        <div class="menu_section">
-                            <h3>Live On</h3>
+
                             <ul class="nav side-menu">
+
                                 <li>
-                                    <a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+                                    <a><i class="fa fa-sitemap"></i> Módulos <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="e_commerce.html">E-commerce</a></li>
-                                        <li><a href="projects.html">Projects</a></li>
-                                        <li><a href="project_detail.html">Project Detail</a></li>
-                                        <li><a href="contacts.html">Contacts</a></li>
-                                        <li><a href="profile.html">Profile</a></li>
+                                        <li><a href="#level1_1">Socios</a>
+                                        <li><a href="#level1_1">Materiales</a>
+                                        <li><a href="#level1_1">Cobradores</a>
+                                        <li><a href="#level1_1">Préstamos</a>
+                                        <li><a href="#level1_1">Usuarios</a>
+
                                     </ul>
                                 </li>
-                                <li>
-                                    <a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="page_403.html">403 Error</a></li>
-                                        <li><a href="page_404.html">404 Error</a></li>
-                                        <li><a href="page_500.html">500 Error</a></li>
-                                        <li><a href="plain_page.html">Plain Page</a></li>
-                                        <li><a href="login.html">Login Page</a></li>
-                                        <li><a href="pricing_tables.html">Pricing Tables</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="#level1_1">Level One</a>
-                                        <li>
-                                            <a>Level One<span class="fa fa-chevron-down"></span></a>
-                                            <ul class="nav child_menu">
-                                                <li class="sub_menu">
-                                                    <a href="level2.html">Level Two</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#level2_1">Level Two</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#level2_2">Level Two</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#level1_2">Level One</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                             </ul>
+
+
                         </div>
+                       
 
                     </div>
                     <!-- /sidebar menu -->
-                    <!-- /menu footer buttons -->
-                    <div class="sidebar-footer hidden-small">
-                        <a data-toggle="tooltip" data-placement="top" title="Settings">
-                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                        </a>
-                        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-                        </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Lock">
-                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                        </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
-                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                        </a>
-                    </div>
-                    <!-- /menu footer buttons -->
+                   
                 </div>
             </div>
 
 
 
-        
-            
-            
-            
+
+
+
+
             <!-- top navigation -->
             <div class="top_nav">
                 <div class="nav_menu">
@@ -457,7 +524,7 @@
 
     </div>
     <!--Scripts-->
-    
+
 
     <a href="~/js/jquery/jquery.min.map">~/js/jquery/jquery.min.map</a>
     <script src="~/js/jquery/jquery.min.js"></script>
