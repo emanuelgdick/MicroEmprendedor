@@ -11,7 +11,7 @@ namespace Api.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.RenameColumn(
-                name: "ApedyNom",
+                name: "ApeyNom",
                 table: "Cobrador",
                 newName: "ApeyNom");
         }
@@ -22,7 +22,7 @@ namespace Api.Migrations
             migrationBuilder.RenameColumn(
                 name: "ApeyNom",
                 table: "Cobrador",
-                newName: "ApedyNom");
+                newName: "ApeyNom");
         }
     }
 }

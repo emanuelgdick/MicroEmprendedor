@@ -18,7 +18,6 @@ namespace FrontEnd.Controllers
             _apiService = new ApiUserService();
         }
 
-
         public IActionResult Login()
         {
             
@@ -62,7 +61,6 @@ namespace FrontEnd.Controllers
            // return View(objResponse);
             
         }
-      
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();

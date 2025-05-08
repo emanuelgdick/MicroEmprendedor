@@ -18,9 +18,10 @@ namespace FrontEnd.Services
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-
         //CALLES
-        public async  Task<List<Calle>> GetAllCalles(string token)
+        #region
+
+        public async Task<List<Calle>> GetAllCalles(string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             HttpResponseMessage response = await _httpClient.GetAsync($"api/Calle?");
@@ -35,13 +36,13 @@ namespace FrontEnd.Services
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Calle>($"api/Calle/AddCalle", calle);
             response.EnsureSuccessStatusCode();
-        
+
             var contents = await response.Content.ReadAsStringAsync();
             var APIResponse = JsonConvert.DeserializeObject<Calle>(contents);
             return APIResponse;
         }
 
-        public async Task<Calle> GetCalleById(int id, string token) 
+        public async Task<Calle> GetCalleById(int id, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             HttpResponseMessage response = await _httpClient.GetAsync($"api/Calle/GetCalleById?id={id}");
@@ -51,7 +52,7 @@ namespace FrontEnd.Services
             return APIResponse;
         }
 
-        public async Task UpdateCalle(int id,Calle calle, string token)
+        public async Task UpdateCalle(int id, Calle calle, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Calle>($"api/Calle/UpdateCalle?id={id}", calle);
@@ -62,12 +63,13 @@ namespace FrontEnd.Services
         public async Task DeleteCalle(int id, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.PutAsync($"api/Calle/DeleteCalle?id={id}",null);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Calle/DeleteCalle?id={id}", null);
             response.EnsureSuccessStatusCode();
 
         }
-
+        #endregion
         //AUTORES
+        #region
         public async Task<List<Autor>> GetAllAutores(string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
@@ -113,9 +115,9 @@ namespace FrontEnd.Services
             response.EnsureSuccessStatusCode();
 
         }
-
-
+        #endregion
         //COBRADORES
+        #region
         public async Task<List<Cobrador>> GetAllCobradores(string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
@@ -161,5 +163,18 @@ namespace FrontEnd.Services
             response.EnsureSuccessStatusCode();
 
         }
+
+        #endregion
+        //TOTALES
+        public async Task<TotalesDTO> GetTotales(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Home?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<TotalesDTO>(contents);
+            return APIResponse;
+        }
+
     }
 }

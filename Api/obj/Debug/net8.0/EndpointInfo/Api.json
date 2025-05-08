@@ -593,6 +593,18 @@
         }
       }
     },
+    "/api/Home": {
+      "get": {
+        "tags": [
+          "Home"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Usuario/Userlogin": {
       "post": {
         "tags": [

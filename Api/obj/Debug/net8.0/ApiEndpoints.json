@@ -357,6 +357,16 @@
     ]
   },
   {
+    "ContainingType": "Api.Controllers.HomeController",
+    "Method": "GetTotales",
+    "RelativePath": "api/Home",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Api.Controllers.UsuarioController",
     "Method": "Login",
     "RelativePath": "api/Usuario/Userlogin",
