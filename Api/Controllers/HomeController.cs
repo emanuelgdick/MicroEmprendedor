@@ -28,6 +28,7 @@ namespace Api.Controllers
             TotalesDTO totales=new TotalesDTO();
             totales.TotalCobradores = _db.Cobrador.Count();
             totales.TotalUsuarios = _db.Usuario.Count();
+            totales.TotalSocios = _db.Socio.Count();
             return Ok(totales);
 
         }

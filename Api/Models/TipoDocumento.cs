@@ -7,6 +7,8 @@ namespace Api.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public string Descripcion { get; set; }
+        public string DescA { get; set; }
+        [Required]
+        public string DescC { get; set; }
     }
 }

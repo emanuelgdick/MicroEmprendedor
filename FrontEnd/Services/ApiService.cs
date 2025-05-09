@@ -165,6 +165,57 @@ namespace FrontEnd.Services
         }
 
         #endregion
+
+        //SOCIOS
+        #region
+        public async Task<List<Socio>> GetAllSocios(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Socio?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Socio>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Socio> AddSocio(Socio socio, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Socio>($"api/Socio/AddSocio", socio);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Socio>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Socio> GetSocioById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Socio/GetSocioById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Socio>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateSocio(int id, Socio socio, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Socio>($"api/Socio/UpdateSocio?id={id}", socio);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteSocio(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Socio/DeleteSocio?id={id}", null);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        #endregion
+
         //TOTALES
         public async Task<TotalesDTO> GetTotales(string token)
         {

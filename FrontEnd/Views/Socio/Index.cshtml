@@ -1,0 +1,353 @@
+﻿@model Socio
+@{
+    ViewBag.Title = "Socio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="card">
+
+    <div class="row  m-0 p-0">
+        <div class="col-11 m-0 p-0">
+            <h1 class=" m-0 mt-1 p-0">Socios</h1>
+        </div>
+
+        <div class="col-1  m-0 p-0">
+            <button type="button" class="btn btnNuevo mb-2 ml-4 mt-2" onclick="abrirModal(null)">Nuevo</button>
+        </div>
+    </div>
+    <hr class="m-0 p-0" style="background-color:#E74C3C" />
+
+    <div class="card-body">
+
+        <table id="tabla" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Descripcion</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+        <div class="alert-container">
+
+            <div id="mensaje" class="alert" role="alert">
+                This is a success alert—check it out!
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="FormModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header text-white" style="background: #2A3F54">
+                <h5 class="modal-title" id="exampleModalLabel">Socio</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body ">
+                <input id="txtid" type="hidden" value="0" />
+                <form id="formNivel" class="row">
+                    <div class=" col-12 form-group floating-control-group">
+                        <div class="form-floating ">
+                            <input type="text" class="form-control" id="txtapeynom" placeholder="Apellido y Nombre" autocomplete="off" value="@Html.DisplayTextFor(model => Model.ApeyNom) ">
+                            <label for="txtapeynom">Apellido y Nombre</label>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div id="mensajeError" class="alert-danger" role="alert">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btnCancelar" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btnAceptar" onclick="Guardar()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+
+
+    <script>
+            $(function(){
+
+          $('.form-group').floatingLabel();
+
+        });
+                $('.form-group').floatingLabel({
+             floatingLabelClass: 'floating-label',
+             floatingLabelOnClass: 'floating-label-on',
+             floatingInputClass: 'floating-input'
+           });
+
+           $('.form-group').floatingLabel({
+          floatingStyle: 'primary',
+
+        });
+
+
+
+            const alertContainer = document.querySelector('.alert-container');
+            var tabladata;
+            var filaSeleccionada;
+            tabladata = $("#tabla").DataTable({
+                responsive: true,
+                ordering: true,
+                dom: "Bfrtip",
+                buttons: [
+                    {
+
+                        extend: "excelHtml5",
+                        text: '<i class="fa fa-file-excel-o "></i>',
+                        filename: "Reporte de Socios",
+                         title: "Listado de Socio",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1]
+                        },
+                        className: "btn-exportar-excel",
+
+
+                    },
+                    {
+                        extend: "pdfHtml5",
+                        text: '<i class="fa fa-file-pdf-o"></i>',
+                        filename: "Reporte de Socios",
+                        title: "Listado de Socio",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1]
+                        },
+                        className: "btn-exportar-pdf"
+                    },
+                    {
+                        extend: "print",
+                        text: '<i class="fa fa-print"></i>',
+                        filename: "Reporte de Socios",
+                        title: "Listado de Socio",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1]
+                        },
+                        className: "btn-imprimir"
+
+                    }
+                ],
+                 "ajax": {
+                     url: "@Url.Action("GetAllSocios", "Socio")",
+                     type: "GET",
+                     dataType: "json",
+                     beforeSend: mostrarAlert("Obteniendo datos")
+                 },
+                 "columns": [
+                         { "data": "id" },
+                         { "data": "apeyNom" },
+                         {
+                                      "defaultContent": '<button type="button" title="Editar Socio"   class="rounded-circle btn btn-default padding: 0; border: none; background: none;  btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
+                                                        '<button type="button" title="Eliminar Socio" class="rounded-circle btn btn-default padding: 0; border: none; background: none;  btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
+                                      //"defaultContent": '<a asp-controller="Socio" asp-action="Details" asp-route-id='+data.id+' class="btn btn-primary">"Details"</a>',
+
+                            "orderable": false,
+                            "searchable": false,
+                            "width": "10%",
+                            "heigth":"10%"
+                        }
+                 ],
+                 "language": {
+                      "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+                  },
+                "columnDefs": [
+                        { "width": "10%", "targets": 0 },
+                        { "width": "80%", "targets": 1 },
+                        { "width": "10%", "targets": 2 },
+                ]
+            })
+
+
+            $("#formNivel").validate({
+            rules: {
+
+                descripcion: {
+                    required: true
+                },
+            },
+            messages: {
+
+                descripcion: " El campo Apellido y Nombre es obligatorio",
+            },
+            errorElement: "div",
+            errorLabelContainer: ".alert-danger"
+        });
+
+
+            //Abrir Modal
+
+            function abrirModal(json) {
+
+
+                $("#txtid").val(0);
+                $("#txtapeynom").val("");
+                $("#txtapeynom").blur();
+
+
+                $("#mensajeError").hide();
+                if (json != null) {
+
+                    $("#txtid").val(json.id);
+                    $("#txtapeynom").focus()
+                    $("#txtapeynom").val(json.apeyNom).focus();
+
+                }
+                $("#FormModal").modal("show");
+            }
+
+            //Editar
+            $("#tabla tbody").on("click", '.btn-editar', function () {
+
+                filaSeleccionada = $(this).closest("tr");
+                var data = tabladata.row(filaSeleccionada).data();
+                abrirModal(data)
+            })
+
+            //Eliminar
+            $("#tabla tbody").on("click", '.btn-eliminar', function () {
+
+                var Socioseleccionado = $(this).closest("tr");
+                var data = tabladata.row(Socioseleccionado).data();
+               var Socio={
+               Id:data.id,
+               ApeyNom:data.ApeyNom
+               }
+
+                swal({
+                    title: "Está Seguro?",
+                    text: "Desea eliminar el Socio?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn-primary",
+                    confirmButtonText: "Si",
+                    cancelButtonText: "No",
+                    closeOnConfirm: true
+                },
+                   function () {
+
+                        jQuery.ajax({
+                            url: '@Url.Action("DeleteSocio", "Socio")',
+                            type: "POST",
+                            data: JSON.stringify( Socio),
+                            contentType: 'application/json',
+                            success: function (data) {
+                                if (data.resultado) {
+                                    tabladata.row(Socioseleccionado).remove().draw();
+                                    mostrarAlert(data.mensaje)
+                                } else {
+                                   // swal("No se pudo eliminar", data.mensaje, "error");
+                                   mostrarAlert(data.mensaje)
+                                }
+                            },
+                            error: function (error) {
+                                console.log(error);
+                            }
+                        })
+               })
+            });
+
+
+            //Guardar
+            function Guardar() {
+
+            if (!$("#formNivel").valid()) {
+                return;
+            }
+
+
+            var Socio = {
+                    id: $("#txtid").val(),
+                    apeyNom: $("#txtapeynom").val(),
+
+                }
+
+                jQuery.ajax({
+                    url: '@Url.Action("CreateSocio", "Socio")',
+                    type: "POST",
+                    data: JSON.stringify(Socio),
+                    // dataType: "json",
+                    contentType: 'application/json',
+                    success: function (data) {
+                        $(".modal-body").LoadingOverlay("hide");
+                        //  Socio nuevo
+                        if (Socio.id == 0) {
+
+                            if (data.resultado != 0) {
+                                Socio.id = data.resultado;
+                                tabladata.row.add(Socio).draw(false);
+                                $("#FormModal").modal("hide");
+                                mostrarAlert(data.mensaje)
+                            }
+                            else {
+                                $("#mensajeError").text(data.mensaje);
+                                $("#mensajeError").show();
+                            }
+                        }
+                        //  Socio Editar
+                        else {
+
+                            if (data.resultado) {
+                                tabladata.row(filaSeleccionada).data(Socio).draw(false);
+                                filaSeleccionada = null;
+                                $("#FormModal").modal("hide");
+                                mostrarAlert(data.mensaje);
+                            } else {
+                                $("#mensajeError").text(data.mensaje);
+                                $("#mensajeError").show();
+                            }
+                        }
+                        },
+                        error: function (error) {
+                            $(".modal-body").LoadingOverlay("hide");
+                            $("#mensajeError").text("Error Ajax");
+                            $("#mensajeError").show();
+                        },
+                        beforeSend: function () {
+                            $(".modal-body").LoadingOverlay("show", {
+                                imageResizeFactor: 2,
+                                text: "Cargando...",
+                                size: 14
+                            })
+
+                        }
+                    }
+                )
+            }
+
+           function mostrarAlert(mensaje) {
+
+               $("#mensaje").text(mensaje);
+                alertContainer.classList.add('show');
+                setTimeout(() => {
+                alertContainer.classList.remove('show');
+                }, 3000); // La alerta se oculta después de 3 segundos
+                }
+
+
+
+
+    </script>
+}

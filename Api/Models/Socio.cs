@@ -1,4 +1,6 @@
-﻿namespace Api.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Api.Models
 {
     public class Socio
     {
@@ -6,24 +8,33 @@
         public int Id { get; set; }
 
 
-//        SOCIO
-//ID_TIPO_SOCIO
-//ID_ESTADO_SOCIO
-//ID_CATEGORIA
-//ID_TIPO_DOCUMENTO
-//ID_CALLE
-//ID_PROFESION
-//ID_LOCALIDAD
-//APEYNOM
-//NRO
-//DEPTO
-//TELEFONO
-//FNAC
-//FINGRESO
-//FEGRESO
-//OBSERVACIONES
-//DOCUMENTO
-//VITALICIO
-//PAGAACA
+        [ForeignKey("IdTipoSocio")]
+        public TipoSocio TipoSocio { get; set; }
+        [ForeignKey("IdEstadoSocio")]
+        public EstadoSocio EstadoSocio { get; set; }
+        [ForeignKey("IdCategoriaSocio")]
+        public CategoriaSocio CategoriaSocio { get; set; }
+        [ForeignKey("IdTipoDocumento")]
+        public TipoDocumento TipoDocumento { get; set; }
+        [ForeignKey("IdCalle")]
+        public Calle Calle { get; set; }
+        [ForeignKey("IdProfesion")]
+        public Profesion? Profesion { get; set; }
+        [ForeignKey("IdLocalidad")]
+        public Localidad Localidad { get; set; }
+
+        public int NroSocio { get; set; }
+        public string ApeyNom { get; set; }
+        public string Nro { get; set; }
+        public string? Depto { get; set; }
+        public string? Telefono { get; set; }
+        public DateTime Fnac { get; set; }
+        public DateTime FIngreso { get; set; }
+        public DateTime? FEgreso { get; set; }
+        public string? Observaciones { get; set; }
+        public string? Documento { get; set; }
+        public bool Vitalicio { get; set; }
+        public bool PagaAca { get; set; }
+     
     }
 }

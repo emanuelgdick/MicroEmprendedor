@@ -25,19 +25,19 @@ namespace Api.Models
         public DbSet<Editorial> Editorial { get; set; }
         public DbSet<Encuadernacion> Encuadernacion { get; set; }
         public DbSet<Genero> Genero { get; set; }
-        public DbSet<Guionista> Guionista{get;set;}
+        public DbSet<Guionista> Guionista { get; set; }
         public DbSet<Idioma> Idioma { get; set; }
-        public DbSet<Interprete> Intereprete { get; set; }
-
-        public DbSet<Lugar> Lugar { get; set; } 
+        public DbSet<Interprete> Interprete { get; set; }
+        public DbSet<Lugar> Lugar { get; set; }
         public DbSet<Materia> Materia { get; set; }
         public DbSet<Pais> Pais { get; set; }
-        public DbSet<Procedencia> Procedencia { get;set; }
-
-        public DbSet<Productor>Productor { get; set; }
-
+        public DbSet<Procedencia> Procedencia { get; set; }
+        public DbSet<Productor> Productor { get; set; }
         public DbSet<Provincia> Provincia { get; set; }
-        
+        public DbSet<TipoMaterial> TipoMaterial { get; set; }
+        public DbSet<TipoSoporte> TipoSoportes { get; set; }
+        public DbSet<TipoSuspension> TipoSuspension { get; set; }
+        public DbSet<Socio> Socio { get; set; }
 
     }
 }
