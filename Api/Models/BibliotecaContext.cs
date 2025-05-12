@@ -35,7 +35,7 @@ namespace Api.Models
         public DbSet<Productor> Productor { get; set; }
         public DbSet<Provincia> Provincia { get; set; }
         public DbSet<TipoMaterial> TipoMaterial { get; set; }
-        public DbSet<TipoSoporte> TipoSoportes { get; set; }
+        public DbSet<TipoSoporte> TipoSoporte { get; set; }
         public DbSet<TipoSuspension> TipoSuspension { get; set; }
         public DbSet<Socio> Socio { get; set; }
 

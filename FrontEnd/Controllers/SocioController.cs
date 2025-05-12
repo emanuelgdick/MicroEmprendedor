@@ -1,4 +1,4 @@
-﻿using FrontEnd.Models;
+﻿using Frontend.Models;
 using FrontEnd.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -49,18 +49,18 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
-        public async Task<JsonResult> CreateSocio([FromBody] Socio Socio)
+        public async Task<JsonResult> CreateSocio([FromBody] Socio socio)
         {
             object resultado;
             string mensaje = String.Empty;
             try
             {
-                if (Socio.Id == 0)
+                if (socio.Id == 0)
                 {
-                    if (Socio.ApeyNom != "")
+                    if (socio.ApeyNom != "")
                     {
-                        Socio = await _apiService.AddSocio(Socio, HttpContext.Session.GetString("APIToken"));
-                        resultado = Socio.Id;
+                        socio = await _apiService.AddSocio(socio, HttpContext.Session.GetString("APIToken"));
+                        resultado = socio.Id;
                         mensaje = "Socio ingresado correctamente";
                     }
                     else
@@ -74,9 +74,9 @@ namespace FrontEnd.Controllers
 
                 else
                 {
-                    if (Socio.ApeyNom != "")
+                    if (socio.ApeyNom != "")
                     {
-                        await _apiService.UpdateSocio(Socio.Id, Socio, HttpContext.Session.GetString("APIToken"));
+                        await _apiService.UpdateSocio(socio.Id, socio, HttpContext.Session.GetString("APIToken"));
 
                         resultado = true;
                         mensaje = "Socio Modificado correctamente";

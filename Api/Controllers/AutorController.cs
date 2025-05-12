@@ -68,16 +68,16 @@ namespace Api.Controllers
 
         [HttpPost("AddAutor")]
         [Authorize]
-        public ActionResult<Autor> AddAutor([FromBody] Autor Autor)
+        public ActionResult<Autor> AddAutor([FromBody] Autor autor)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _db.Autor.Add(Autor);
+            _db.Autor.Add(autor);
             _db.SaveChanges();
-            return Ok(Autor);
+            return Ok(autor);
 
         }
 
@@ -96,7 +96,7 @@ namespace Api.Controllers
                 return NotFound();
             }
 
-            Autor.ApeyNom = Autor.ApeyNom;
+            Autor.ApeyNom = autor.ApeyNom;
             _db.SaveChanges();
             return Ok(Autor);
 

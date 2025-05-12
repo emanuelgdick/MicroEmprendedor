@@ -21,7 +21,7 @@ namespace Api.Controllers
         [HttpGet]
         [Authorize]
         [ResponseCache(CacheProfileName = "apicache")]
-        public IActionResult GetSocio(/*int pagesize, int pagenumber*/)
+        public IActionResult GetSocios(/*int pagesize, int pagenumber*/)
         {
             _logger.LogInformation("Fetching Todas las Socio");
             var SocioList = _db.Socio.ToList();
@@ -49,35 +49,18 @@ namespace Api.Controllers
             return Socio;
         }
 
-
-        //[HttpGet("GetLastSocio")]
-        //[Authorize]
-        //[ResponseCache(CacheProfileName = "apicache")]
-        //public ActionResult<Socio> GetLastSocio()
-        //{
-        //    var Socio = _db.Socio.LastOrDefault();
-
-        //    if (Socio == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return Socio;
-        //}
-
-
-
         [HttpPost("AddSocio")]
         [Authorize]
-        public ActionResult<Socio> AddSocio([FromBody] Socio Socio)
+        public ActionResult<Socio> AddSocio([FromBody] Socio socio)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _db.Socio.Add(Socio);
+            _db.Socio.Add(socio);
             _db.SaveChanges();
-            return Ok(Socio);
+            return Ok(socio);
 
         }
 
@@ -96,7 +79,7 @@ namespace Api.Controllers
                 return NotFound();
             }
 
-            Socio.ApeyNom = Socio.ApeyNom;
+            Socio.ApeyNom = socio.ApeyNom;
             _db.SaveChanges();
             return Ok(Socio);
 

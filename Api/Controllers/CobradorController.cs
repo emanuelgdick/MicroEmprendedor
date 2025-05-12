@@ -50,20 +50,6 @@ namespace Api.Controllers
         }
 
 
-        //[HttpGet("GetLastCobrador")]
-        //[Authorize]
-        //[ResponseCache(CacheProfileName = "apicache")]
-        //public ActionResult<Cobrador> GetLastCobrador()
-        //{
-        //    var Cobrador = _db.Cobrador.LastOrDefault();
-
-        //    if (Cobrador == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return Cobrador;
-        //}
-
 
 
         [HttpPost("AddCobrador")]

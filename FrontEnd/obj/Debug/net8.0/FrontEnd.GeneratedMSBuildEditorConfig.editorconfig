@@ -28,6 +28,10 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
+[C:/Biblioteca/FrontEnd/Views/Anexo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5leG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Biblioteca/FrontEnd/Views/Authuser/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aHVzZXJcQWNjZXNzRGVuaWVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -44,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FsbGVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Biblioteca/FrontEnd/Views/CategoriaSocio/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhU29jaW9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Biblioteca/FrontEnd/Views/Cobrador/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29icmFkb3JcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -54,6 +62,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Biblioteca/FrontEnd/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Biblioteca/FrontEnd/Views/Prestamo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Biblioteca/FrontEnd/Views/Shared/Error.cshtml]

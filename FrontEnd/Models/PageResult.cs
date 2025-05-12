@@ -1,4 +1,4 @@
-﻿namespace FrontEnd.Models
+﻿namespace Frontend.Models
 {
     public class PageResult<T>
     {
@@ -8,8 +8,5 @@
         public int TotalPages { get; set; }
         public int TotalCount { get; set; }
 
-        public bool HasPreviousPage => CurrentPage > 1;
-
-        public bool HasNextPage => CurrentPage < TotalPages;
     }
 }

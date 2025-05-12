@@ -1,13 +1,9 @@
-﻿@model Autor
+﻿@using Frontend.Models
+@model Autor
 @{
     ViewBag.Title = "Autor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-
-
-
-
 
 
 <div class="card">
@@ -51,20 +47,12 @@
 
 
 
-</div> 
+</div>
 
 <!-- TOAST -->
 
 <div class="contenedor">
-    <div class="hero">
 
-        <div class="contenedor-botones" id="contenedor-botones">
-            <button class="btnA exito" data-tipo="exito">Exito</button>
-            <button class="btnA error" data-tipo="error">Error</button>
-            <button class="btnA info" data-tipo="info">Info</button>
-            <button class="btnA warning" data-tipo="warning">Warning</button>
-        </div>
-    </div>
     <div class="contenedor-toastP" id="contenedor-toastP">
     </div>
 </div>
@@ -95,10 +83,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
             <div class="modal-footer">
                 <button type="button" class="btn btnCancelar" data-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btnAceptar" onclick="Guardar()">Guardar</button>
@@ -130,33 +114,11 @@
         });
 
 
-
-                 const contenedorBotones = document.getElementById('contenedor-botones');
                 const contenedorToast = document.getElementById('contenedor-toastP');
-
-                 // Event listener para detectar click en los botones
-                 contenedorBotones.addEventListener('click', (e) => {
-                     e.preventDefault();
-
-                    const tipo = e.target.dataset.tipo;
-
-                    if (tipo === 'exito') {
-                        agregarToast({ tipo: 'exito', titulo: 'Exito!', descripcion: 'La operación fue exitosa.', autoCierre: true });
-                    }
-                    if (tipo === 'error') {
-                        agregarToast({ tipo: 'error', titulo: 'Error', descripcion: 'Hubo un error', autoCierre: true });
-                    }
-                    if (tipo === 'info') {
-                        agregarToast({ tipo: 'info', titulo: 'Info', descripcion: 'Esta es una notificación de información.' });
-                    }
-                    if (tipo === 'warning') {
-                        agregarToast({ tipo: 'warning', titulo: 'Warning', descripcion: 'Ten cuidado' });
-                    }
-                } );
 
                 // Event listener para detectar click en los toasts
                 contenedorToast.addEventListener('click', (e) => {
-                  
+
                     const toastId = e.target.closest('div.toastP').id;
 
                     if (e.target.closest('button.btn-cerrar')) {
@@ -246,7 +208,7 @@
                     };
 
                     if (autoCierre) {
-                        setTimeout(() => cerrarToast(toastId), 2000);
+                        setTimeout(() => cerrarToast(toastId), 5000);
                     }
 
                     // Agregamos event listener para detectar cuando termine la animación
@@ -255,7 +217,7 @@
 
 
 
-           
+
             var tabladata;
             var filaSeleccionada;
              tabladata = $("#tabla").DataTable({
@@ -305,7 +267,7 @@
                      url: "@Url.Action("GetAllAutores", "Autor")",
                      type: "GET",
                      dataType: "json",
-                    beforeSend: agregarToast({ tipo: 'exito', titulo: 'Obteniendo Datos!', descripcion: 'La operación fue exitosa.', autoCierre: true })
+                     beforeSend: agregarToast({ tipo: 'exito', titulo: 'Obteniendo Autores', descripcion: 'Por favor espere...', autoCierre: true })
                  },
                  "columns": [
                          { "data": "id" },
@@ -408,9 +370,9 @@
                                 if (data.resultado) {
                                     tabladata.row(Autoreseleccionado).remove().draw();
                                     // mostrarAlert(data.mensaje)
-                                    agregarToast({ tipo: 'exito', titulo: 'Eliminando Autor!', descripcion: 'La operación fue exitosa.', autoCierre: true })
+                                    agregarToast({ tipo: 'exito', titulo: 'Eliminando Autor', descripcion: 'Autor eliminado correctamente.', autoCierre: true })
                                 } else {
-                                    agregarToast({ tipo: 'error', titulo: 'Error', descripcion: 'No su puedo eliminar el Autor', autoCierre: true });
+                                    agregarToast({ tipo: 'error', titulo: 'Eliminando Autor', descripcion: 'No su puedo eliminar el Autor', autoCierre: true });
                                    // swal("No se pudo eliminar", data.mensaje, "error");
                                  //  mostrarAlert(data.mensaje)
                                 }
@@ -450,10 +412,10 @@
                                 Autor.id = data.resultado;
                                 tabladata.row.add(Autor).draw(false);
                                 $("#FormModal").modal("hide");
-                                agregarToast({ tipo: 'exito', titulo: 'Nuevo Autor', descripcion: 'Autor ingresado correctamente!', autoCierre: true });
+                                agregarToast({ tipo: 'exito', titulo: 'Creando Autor', descripcion: 'Autor ingresado correctamente.', autoCierre: true });
                             }
                             else {
-                                agregarToast({ tipo: 'error', titulo: 'Error', descripcion: 'Error al ingresar un nuevo autor', autoCierre: true });
+                                agregarToast({ tipo: 'error', titulo: 'Creando Autor', descripcion: data.mensaje, autoCierre: true });
                                 $("#mensajeError").text(data.mensaje);
                                 $("#mensajeError").show();
                             }
@@ -464,13 +426,14 @@
                             if (data.resultado) {
                                 tabladata.row(filaSeleccionada).data(Autor).draw(false);
                                 filaSeleccionada = null;
-                                  agregarToast({ tipo: 'exito', titulo: 'Modificar Autor', descripcion: 'Autor modificado correctamente!', autoCierre: true });
+                                  agregarToast({ tipo: 'exito', titulo: 'Modificando Autor', descripcion: 'Autor modificado correctamente.', autoCierre: true });
                                 $("#FormModal").modal("hide");
                                 // mostrarAlert(data.mensaje)
-                                 
+
                             } else {
-                                $("#mensajeError").text(data.mensaje);
-                                $("#mensajeError").show();
+                                    agregarToast({ tipo: 'error', titulo: 'Modificando Autor', descripcion: data.mensaje, autoCierre: true });
+                                    $("#mensajeError").text(data.mensaje);
+                                    $("#mensajeError").show();
                                }
                              }
                         },

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FrontEnd.Models
+namespace Frontend.Models
 {
     public class Pais
     {
