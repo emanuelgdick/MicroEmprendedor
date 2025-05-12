@@ -725,6 +725,14 @@
       "PackagePath": "staticwebassets\\css\\nprogress\\nprogress.js"
     },
     {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\pnotify\\.bower.json",
+      "PackagePath": "staticwebassets\\css\\pnotify\\.bower.json"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\pnotify\\bower.json",
+      "PackagePath": "staticwebassets\\css\\pnotify\\bower.json"
+    },
+    {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -3051,6 +3059,50 @@
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\nprogress\\nprogress.js",
       "PackagePath": "staticwebassets\\js\\nprogress\\nprogress.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\pnotify\\pnotify.animate.js",
+      "PackagePath": "staticwebassets\\js\\pnotify\\pnotify.animate.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\pnotify\\pnotify.buttons.js",
+      "PackagePath": "staticwebassets\\js\\pnotify\\pnotify.buttons.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\pnotify\\pnotify.callbacks.js",
+      "PackagePath": "staticwebassets\\js\\pnotify\\pnotify.callbacks.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\pnotify\\pnotify.confirm.js",
+      "PackagePath": "staticwebassets\\js\\pnotify\\pnotify.confirm.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\pnotify\\pnotify.desktop.js",
+      "PackagePath": "staticwebassets\\js\\pnotify\\pnotify.desktop.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\pnotify\\pnotify.history.js",
+      "PackagePath": "staticwebassets\\js\\pnotify\\pnotify.history.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\pnotify\\pnotify.js",
+      "PackagePath": "staticwebassets\\js\\pnotify\\pnotify.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\pnotify\\pnotify.mobile.js",
+      "PackagePath": "staticwebassets\\js\\pnotify\\pnotify.mobile.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\pnotify\\pnotify.nonblock.js",
+      "PackagePath": "staticwebassets\\js\\pnotify\\pnotify.nonblock.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\pnotify\\pnotify.reference.js",
+      "PackagePath": "staticwebassets\\js\\pnotify\\pnotify.reference.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\pnotify\\pnotify.tooltip.js",
+      "PackagePath": "staticwebassets\\js\\pnotify\\pnotify.tooltip.js"
     },
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\lib\\bootstrap\\LICENSE",

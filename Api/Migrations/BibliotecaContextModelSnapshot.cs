@@ -439,20 +439,18 @@ namespace Api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Depto")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Documento")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("FEgreso")
+                    b.Property<DateTime?>("FEgreso")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("FIngreso")
+                    b.Property<DateTime?>("FIngreso")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("Fnac")
+                    b.Property<DateTime?>("Fnac")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("IdCalle")
@@ -467,7 +465,7 @@ namespace Api.Migrations
                     b.Property<int>("IdLocalidad")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdProfesion")
+                    b.Property<int?>("IdProfesion")
                         .HasColumnType("int");
 
                     b.Property<int>("IdTipoDocumento")
@@ -477,21 +475,18 @@ namespace Api.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Nro")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("NroSocio")
                         .HasColumnType("int");
 
                     b.Property<string>("Observaciones")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("PagaAca")
                         .HasColumnType("bit");
 
                     b.Property<string>("Telefono")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Vitalicio")
@@ -684,9 +679,7 @@ namespace Api.Migrations
 
                     b.HasOne("Api.Models.Profesion", "Profesion")
                         .WithMany()
-                        .HasForeignKey("IdProfesion")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdProfesion");
 
                     b.HasOne("Api.Models.TipoDocumento", "TipoDocumento")
                         .WithMany()

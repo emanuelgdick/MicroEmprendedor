@@ -4,7 +4,23 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<style>
+    .alert-container {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 1000; /* Asegura que esté sobre otros elementos */
+    }
 
+    .alert {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        /* Estilos adicionales para la tostada */
+    }
+
+</style>
 
 
 <div class="card">
@@ -154,7 +170,7 @@
                      url: "@Url.Action("GetAllCobradores", "Cobrador")",
                      type: "GET",
                      dataType: "json",
-                     beforeSend: mostrarAlert("Obteniendo datos")
+                     beforeSend: function(){mostrarAlert("Obteniendo datos")}
                  },
                  "columns": [
                          { "data": "id" },

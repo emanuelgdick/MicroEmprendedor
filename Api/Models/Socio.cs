@@ -25,11 +25,11 @@ namespace Api.Models
 
         public int NroSocio { get; set; }
         public string ApeyNom { get; set; }
-        public string Nro { get; set; }
+        public string? Nro { get; set; }
         public string? Depto { get; set; }
         public string? Telefono { get; set; }
-        public DateTime Fnac { get; set; }
-        public DateTime FIngreso { get; set; }
+        public DateTime? Fnac { get; set; }
+        public DateTime? FIngreso { get; set; }
         public DateTime? FEgreso { get; set; }
         public string? Observaciones { get; set; }
         public string? Documento { get; set; }

@@ -23,6 +23,28 @@
     <Content Remove="wwwroot\css\custom.min.css" />
     <Content Remove="wwwroot\css\jqvmap\jqvmap.css" />
     <Content Remove="wwwroot\css\jqvmap\jqvmap.min.css" />
+    <Content Remove="wwwroot\css\pnotify\.gitignore" />
+    <Content Remove="wwwroot\css\pnotify\COPYING" />
+    <Content Remove="wwwroot\css\pnotify\dist\pnotify.animate.js" />
+    <Content Remove="wwwroot\css\pnotify\dist\pnotify.brighttheme.css" />
+    <Content Remove="wwwroot\css\pnotify\dist\pnotify.buttons.css" />
+    <Content Remove="wwwroot\css\pnotify\dist\pnotify.buttons.js" />
+    <Content Remove="wwwroot\css\pnotify\dist\pnotify.callbacks.js" />
+    <Content Remove="wwwroot\css\pnotify\dist\pnotify.confirm.js" />
+    <Content Remove="wwwroot\css\pnotify\dist\pnotify.css" />
+    <Content Remove="wwwroot\css\pnotify\dist\pnotify.desktop.js" />
+    <Content Remove="wwwroot\css\pnotify\dist\pnotify.history.css" />
+    <Content Remove="wwwroot\css\pnotify\dist\pnotify.history.js" />
+    <Content Remove="wwwroot\css\pnotify\dist\pnotify.js" />
+    <Content Remove="wwwroot\css\pnotify\dist\pnotify.material.css" />
+    <Content Remove="wwwroot\css\pnotify\dist\pnotify.mobile.css" />
+    <Content Remove="wwwroot\css\pnotify\dist\pnotify.mobile.js" />
+    <Content Remove="wwwroot\css\pnotify\dist\pnotify.nonblock.css" />
+    <Content Remove="wwwroot\css\pnotify\dist\pnotify.nonblock.js" />
+    <Content Remove="wwwroot\css\pnotify\dist\pnotify.reference.js" />
+    <Content Remove="wwwroot\css\pnotify\dist\pnotify.tooltip.js" />
+    <Content Remove="wwwroot\css\pnotify\libtests\browserify\index.js" />
+    <Content Remove="wwwroot\css\pnotify\README.md" />
     <Content Remove="wwwroot\images\back_disabled.png" />
     <Content Remove="wwwroot\images\back_enabled.png" />
     <Content Remove="wwwroot\images\back_enabled_hover.png" />
@@ -165,6 +187,28 @@
     <None Include="wwwroot\css\nprogress\nprogress.css" />
     <None Include="wwwroot\css\nprogress\nprogress.js" />
     <None Include="wwwroot\css\floating-labels\floating.labels.min.css" />
+    <None Include="wwwroot\css\pnotify\.gitignore" />
+    <None Include="wwwroot\css\pnotify\COPYING" />
+    <None Include="wwwroot\js\pnotify\pnotify.animate.js" />
+    <None Include="wwwroot\css\pnotify\dist\pnotify.brighttheme.css" />
+    <None Include="wwwroot\css\pnotify\dist\pnotify.buttons.css" />
+    <None Include="wwwroot\js\pnotify\pnotify.buttons.js" />
+    <None Include="wwwroot\js\pnotify\pnotify.callbacks.js" />
+    <None Include="wwwroot\js\pnotify\pnotify.confirm.js" />
+    <None Include="wwwroot\css\pnotify\dist\pnotify.css" />
+    <None Include="wwwroot\js\pnotify\pnotify.desktop.js" />
+    <None Include="wwwroot\css\pnotify\dist\pnotify.history.css" />
+    <None Include="wwwroot\js\pnotify\pnotify.history.js" />
+    <None Include="wwwroot\js\pnotify\pnotify.js" />
+    <None Include="wwwroot\css\pnotify\dist\pnotify.material.css" />
+    <None Include="wwwroot\css\pnotify\dist\pnotify.mobile.css" />
+    <None Include="wwwroot\js\pnotify\pnotify.mobile.js" />
+    <None Include="wwwroot\css\pnotify\dist\pnotify.nonblock.css" />
+    <None Include="wwwroot\js\pnotify\pnotify.nonblock.js" />
+    <None Include="wwwroot\js\pnotify\pnotify.reference.js" />
+    <None Include="wwwroot\js\pnotify\pnotify.tooltip.js" />
+    <None Include="wwwroot\css\pnotify\libtests\browserify\index.js" />
+    <None Include="wwwroot\css\pnotify\README.md" />
     <None Include="wwwroot\js\Floating-labels\floating.labels.min.js" />
     <None Include="wwwroot\images\back_disabled.png" />
     <None Include="wwwroot\images\back_enabled.png" />
@@ -209,6 +253,15 @@
     <Folder Include="Content\bootstrap-progressbar\css\" />
     <Folder Include="wwwroot\js\jquery\boostrap-progressbar\" />
     <Folder Include="wwwroot\js\NewFolder\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\css\pnotify\.bower.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\css\pnotify\bower.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

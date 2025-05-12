@@ -177,6 +177,8 @@ wwwroot\css\fontawesome\scss\font-awesome.scss
 wwwroot\css\font-awesome\scss\font-awesome.scss
 wwwroot\css\nprogress\nprogress.css
 wwwroot\css\nprogress\nprogress.js
+wwwroot\css\pnotify\.bower.json
+wwwroot\css\pnotify\bower.json
 wwwroot\css\site.css
 wwwroot\css\SweetAlert\sweetalert.css
 wwwroot\favicon.ico
@@ -759,6 +761,17 @@ wwwroot\js\jqvmap\jquery.vmap.min.js
 wwwroot\js\loadingOverlay\loadingoverlay.js
 wwwroot\js\loadingOverlay\loadingoverlay.min.js
 wwwroot\js\nprogress\nprogress.js
+wwwroot\js\pnotify\pnotify.animate.js
+wwwroot\js\pnotify\pnotify.buttons.js
+wwwroot\js\pnotify\pnotify.callbacks.js
+wwwroot\js\pnotify\pnotify.confirm.js
+wwwroot\js\pnotify\pnotify.desktop.js
+wwwroot\js\pnotify\pnotify.history.js
+wwwroot\js\pnotify\pnotify.js
+wwwroot\js\pnotify\pnotify.mobile.js
+wwwroot\js\pnotify\pnotify.nonblock.js
+wwwroot\js\pnotify\pnotify.reference.js
+wwwroot\js\pnotify\pnotify.tooltip.js
 wwwroot\js\SweetAlert\sweetalert.min.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

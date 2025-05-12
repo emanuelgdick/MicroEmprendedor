@@ -1080,11 +1080,13 @@
           },
           "fnac": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "fIngreso": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "fEgreso": {
             "type": "string",

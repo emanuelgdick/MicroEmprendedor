@@ -227,10 +227,10 @@ SET IDENTITY_INSERT TipoMaterial OFF
 
 delete from Socio
 dbcc checkident(Socio,reseed,0)
---SET IDENTITY_INSERT Socio ON
+
 insert into Socio(NroSocio,ApeyNom,Nro,Depto,Telefono,Fnac,FIngreso,FEgreso,Observaciones,Documento,Vitalicio,PagaAca,IdTipoSocio,IdEstadoSocio,IdCategoriaSocio,IdTipoDocumento,IdCalle,IdProfesion,IdLocalidad)
 select Socio,ApeyNom,Nro,Depto,Telefono,Fnac,FIngreso,FEgreso,Observaciones,Documento,Vitalicio,PagaAca,Id_Tipo_Socio,Id_Estado_Socio,Id_Categoria,Id_Tipo_Documento,Id_Calle,Id_Profesion,Id_Localidad from [Biblioteca].dbo.SOCIOS
---SET IDENTITY_INSERT Socio OFF
+
 --select * from Socio
 
 
