@@ -79,7 +79,7 @@ namespace Api.Controllers
                 return NotFound();
             }
 
-            Director.ApeyNom = director.ApeyNom;
+            Director.Descripcion = director.Descripcion;
             _db.SaveChanges();
             return Ok(Director);
 

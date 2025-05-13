@@ -10,7 +10,7 @@ SET IDENTITY_INSERT Anexo OFF
 delete from Autor
 dbcc checkident(Autor,reseed,0)
 SET IDENTITY_INSERT Autor ON
-insert into Autor(Id, ApeyNom)
+insert into Autor(Id, Descripcion)
 select ID_AUTOR,DESCRIPCION from [Biblioteca].dbo.autores
 SET IDENTITY_INSERT Autor OFF
 --select * from autor
@@ -34,7 +34,7 @@ SET IDENTITY_INSERT CategoriaSocio OFF
 delete from Cobrador
 dbcc checkident(Cobrador,reseed,0)
 SET IDENTITY_INSERT Cobrador ON
-insert into Cobrador(Id,ApeyNom)
+insert into Cobrador(Id,Descripcion)
 select ID_COBRADOR,APEYNOM from [Biblioteca].dbo.COBRADORES
 SET IDENTITY_INSERT Cobrador OFF
 --select * from Cobrador
@@ -50,18 +50,18 @@ SET IDENTITY_INSERT Coleccion OFF
 delete from Director
 dbcc checkident(Director,reseed,0)
 SET IDENTITY_INSERT Director ON
-insert into Director(Id, ApeyNom)
+insert into Director(Id, Descripcion)
 select id_DIRECTOR,descripcion from [Biblioteca].dbo.DIRECTORES
 SET IDENTITY_INSERT Director OFF
 --select * from Director
 
-delete from Editora
-dbcc checkident(Editora,reseed,0)
-SET IDENTITY_INSERT Editora ON
-insert into Editora(Id,Descripcion)
-select id_EDITORA, descripcion from [Biblioteca].dbo.EDITORAS
-SET IDENTITY_INSERT Editora OFF
---select * from Editora
+delete from Editor
+dbcc checkident(Editor,reseed,0)
+SET IDENTITY_INSERT Editor ON
+insert into Editor(Id,Descripcion)
+select id_Editor, descripcion from [Biblioteca].dbo.Editoras
+SET IDENTITY_INSERT Editor OFF
+--select * from Editor
 
 
 delete from Editorial
@@ -100,7 +100,7 @@ SET IDENTITY_INSERT Genero OFF
 delete from Guionista
 dbcc checkident(Guionista,reseed,0)
 SET IDENTITY_INSERT Guionista ON
-insert into Guionista(Id,ApeyNom)
+insert into Guionista(Id,Descripcion)
 select id_guionista,descripcion from [Biblioteca].dbo.Guionistas
 SET IDENTITY_INSERT Guionista OFF
 --select * from Guionista
@@ -172,7 +172,7 @@ SET IDENTITY_INSERT Procedencia OFF
 delete from Productor
 dbcc checkident(Productor,reseed,0)
 SET IDENTITY_INSERT Productor ON
-insert into Productor(Id,ApeyNom)
+insert into Productor(Id,Descripcion)
 select id_PRODUCTOR,descripcion from [Biblioteca].dbo.PRODUCTORES
 SET IDENTITY_INSERT Productor OFF
 --select * from Productor

@@ -11,7 +11,6 @@ namespace FrontEnd.Controllers
     {
         private readonly ApiService _apiService;
         private readonly IConfiguration _config;
-
         public AnexoController(IConfiguration config)
         {
             _apiService = new ApiService();
@@ -26,27 +25,21 @@ namespace FrontEnd.Controllers
             List<Anexo> lstAnexo = new List<Anexo>();
             lstAnexo = await _apiService.GetAllAnexos(HttpContext.Session.GetString("APIToken"));
             return View();
-
         }
-
 
         [Authorize(Roles = "Admin")]
         public async Task<JsonResult> GetAllAnexos()
         {
             List<Anexo> oLista = new List<Anexo>();
             oLista = await _apiService.GetAllAnexos(HttpContext.Session.GetString("APIToken"));
-
             return Json(new { data = oLista });
         }
-
 
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create()
         {
             return View();
         }
-
-
 
         [Authorize(Roles = "Admin")]
         public async Task<JsonResult> CreateAnexo([FromBody] Anexo Anexo)
@@ -68,33 +61,26 @@ namespace FrontEnd.Controllers
                         resultado = false;
                         mensaje = "Por favor ingrese la Descripción";
                     }
-
                 }
-
-
                 else
                 {
                     if (Anexo.Descripcion != "")
                     {
                         await _apiService.UpdateAnexo(Anexo.Id, Anexo, HttpContext.Session.GetString("APIToken"));
-
                         resultado = true;
                         mensaje = "Anexo Modificado correctamente";
-
                     }
                     else
                     {
                         resultado = false;
                         mensaje = "Por favor ingrese la Descripción";
                     }
-
                 }
             }
             catch (Exception ex)
             {
                 resultado = false;
                 mensaje += ex.Message;
-
             }
             return Json(new { resultado = resultado, mensaje = mensaje });
         }
@@ -102,24 +88,15 @@ namespace FrontEnd.Controllers
         [Authorize(Roles = "Admin,Student")]
         public async Task<IActionResult> Details(int id)
         {
-
             Anexo Anexo = new Anexo();
             Anexo = await _apiService.GetAnexoById(id, HttpContext.Session.GetString("APIToken"));
             return View(Anexo);
         }
 
 
-        //[Authorize(Roles = "Admin")]
-        //public async Task<IActionResult> UpdateAnexo(int id, Anexo Anexo)
-        //{
-        //    await _apiService.UpdateAnexo(id, Anexo, HttpContext.Session.GetString("APIToken"));
-        //    return RedirectToAction("Index");
-        //}
-
         [Authorize(Roles = "Admin,Student")]
         public async Task<IActionResult> Delete(int id)
         {
-
             Anexo Anexo = new Anexo();
             Anexo = await _apiService.GetAnexoById(id, HttpContext.Session.GetString("APIToken"));
             return View(Anexo);
@@ -141,11 +118,8 @@ namespace FrontEnd.Controllers
             {
                 resultado = false;
                 mensaje += ex.Message;
-
             }
             return Json(new { resultado = resultado, mensaje = mensaje });
-
-
         }
 
         public IActionResult ErrorPage()

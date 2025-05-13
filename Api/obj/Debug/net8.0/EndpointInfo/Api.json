@@ -1377,10 +1377,10 @@
         }
       }
     },
-    "/api/Editora": {
+    "/api/Editor": {
       "get": {
         "tags": [
-          "Editora"
+          "Editor"
         ],
         "responses": {
           "200": {
@@ -1389,10 +1389,10 @@
         }
       }
     },
-    "/api/Editora/GetEditoraById": {
+    "/api/Editor/GetEditorById": {
       "get": {
         "tags": [
-          "Editora"
+          "Editor"
         ],
         "parameters": [
           {
@@ -1410,17 +1410,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Editora"
+                  "$ref": "#/components/schemas/Editor"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Editora"
+                  "$ref": "#/components/schemas/Editor"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Editora"
+                  "$ref": "#/components/schemas/Editor"
                 }
               }
             }
@@ -1428,26 +1428,26 @@
         }
       }
     },
-    "/api/Editora/AddEditora": {
+    "/api/Editor/AddEditor": {
       "post": {
         "tags": [
-          "Editora"
+          "Editor"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Editora"
+                "$ref": "#/components/schemas/Editor"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Editora"
+                "$ref": "#/components/schemas/Editor"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Editora"
+                "$ref": "#/components/schemas/Editor"
               }
             }
           }
@@ -1458,17 +1458,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Editora"
+                  "$ref": "#/components/schemas/Editor"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Editora"
+                  "$ref": "#/components/schemas/Editor"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Editora"
+                  "$ref": "#/components/schemas/Editor"
                 }
               }
             }
@@ -1476,10 +1476,10 @@
         }
       }
     },
-    "/api/Editora/UpdateEditora": {
+    "/api/Editor/UpdateEditor": {
       "post": {
         "tags": [
-          "Editora"
+          "Editor"
         ],
         "parameters": [
           {
@@ -1495,17 +1495,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Editora"
+                "$ref": "#/components/schemas/Editor"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Editora"
+                "$ref": "#/components/schemas/Editor"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Editora"
+                "$ref": "#/components/schemas/Editor"
               }
             }
           }
@@ -1516,17 +1516,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Editora"
+                  "$ref": "#/components/schemas/Editor"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Editora"
+                  "$ref": "#/components/schemas/Editor"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Editora"
+                  "$ref": "#/components/schemas/Editor"
                 }
               }
             }
@@ -1534,10 +1534,10 @@
         }
       }
     },
-    "/api/Editora/DeleteEditora": {
+    "/api/Editor/DeleteEditor": {
       "put": {
         "tags": [
-          "Editora"
+          "Editor"
         ],
         "parameters": [
           {
@@ -1555,17 +1555,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Editora"
+                  "$ref": "#/components/schemas/Editor"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Editora"
+                  "$ref": "#/components/schemas/Editor"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Editora"
+                  "$ref": "#/components/schemas/Editor"
                 }
               }
             }
@@ -5771,7 +5771,7 @@
       },
       "Autor": {
         "required": [
-          "apeyNom"
+          "descripcion"
         ],
         "type": "object",
         "properties": {
@@ -5779,7 +5779,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "apeyNom": {
+          "descripcion": {
             "minLength": 1,
             "type": "string"
           }
@@ -5827,7 +5827,7 @@
       },
       "Cobrador": {
         "required": [
-          "apeyNom"
+          "descripcion"
         ],
         "type": "object",
         "properties": {
@@ -5835,7 +5835,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "apeyNom": {
+          "descripcion": {
             "minLength": 1,
             "type": "string"
           }
@@ -5861,7 +5861,7 @@
       },
       "Director": {
         "required": [
-          "apeyNom"
+          "descripcion"
         ],
         "type": "object",
         "properties": {
@@ -5869,14 +5869,14 @@
             "type": "integer",
             "format": "int32"
           },
-          "apeyNom": {
+          "descripcion": {
             "minLength": 1,
             "type": "string"
           }
         },
         "additionalProperties": false
       },
-      "Editora": {
+      "Editor": {
         "required": [
           "descripcion"
         ],
@@ -5963,7 +5963,7 @@
       },
       "Guionista": {
         "required": [
-          "apeyNom"
+          "descripcion"
         ],
         "type": "object",
         "properties": {
@@ -5971,7 +5971,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "apeyNom": {
+          "descripcion": {
             "minLength": 1,
             "type": "string"
           }
@@ -6068,8 +6068,7 @@
       },
       "Pais": {
         "required": [
-          "descripcion",
-          "provincia"
+          "descripcion"
         ],
         "type": "object",
         "properties": {
@@ -6080,12 +6079,6 @@
           "descripcion": {
             "minLength": 1,
             "type": "string"
-          },
-          "provincia": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Provincia"
-            }
           }
         },
         "additionalProperties": false
@@ -6109,7 +6102,7 @@
       },
       "Productor": {
         "required": [
-          "apeyNom"
+          "descripcion"
         ],
         "type": "object",
         "properties": {
@@ -6117,7 +6110,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "apeyNom": {
+          "descripcion": {
             "minLength": 1,
             "type": "string"
           }

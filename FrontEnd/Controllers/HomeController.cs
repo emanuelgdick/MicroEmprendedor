@@ -11,15 +11,10 @@ namespace Frontend.Controllers
     public class HomeController : Controller
     {
         private readonly ApiService _apiService;
-
-
-
         public HomeController()
         {
             _apiService = new ApiService();
         }
-
-
 
         [Authorize(Roles = "Admin")]
         [ResponseCache(Duration = 30)]
@@ -30,6 +25,5 @@ namespace Frontend.Controllers
             return View(totales);
 
         }
-
     }
 }

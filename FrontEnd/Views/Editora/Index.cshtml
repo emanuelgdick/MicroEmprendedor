@@ -1,7 +1,7 @@
 ﻿@using Frontend.Models
-@model Editora
+@model Editor
 @{
-    ViewBag.Title = "Editora";
+    ViewBag.Title = "Editor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -9,7 +9,7 @@
 <div class="card">
     <div class="row  m-0 p-0">
         <div class="col-11 m-0 p-0">
-            <h1 class=" m-0 mt-1 p-0">Editoras</h1>
+            <h1 class=" m-0 mt-1 p-0">Editors</h1>
         </div>
         <div class="col-1  m-0 p-0">
             <button type="button" class="btn btnNuevo mb-2 ml-4 mt-2" onclick="abrirModal(null)">Nuevo</button>
@@ -48,7 +48,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header text-white" style="background: #2A3F54">
-                <h5 class="modal-title" id="exampleModalLabel">Editora</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Editor</h5>
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body ">
@@ -216,8 +216,8 @@
 
                         extend: "excelHtml5",
                         text: '<i class="fa fa-file-excel-o "></i>',
-                        filename: "Reporte de Editoras",
-                         title: "Listado de Editoras",
+                        filename: "Reporte de Editors",
+                         title: "Listado de Editors",
                         exportOptions: {
                             //muestra las columnas
                             columns: [0, 1]
@@ -229,8 +229,8 @@
                     {
                         extend: "pdfHtml5",
                         text: '<i class="fa fa-file-pdf-o"></i>',
-                        filename: "Reporte de Editoras",
-                        title: "Listado de Editoras",
+                        filename: "Reporte de Editors",
+                        title: "Listado de Editors",
                         exportOptions: {
                             //muestra las columnas
                             columns: [0, 1]
@@ -240,8 +240,8 @@
                     {
                         extend: "print",
                         text: '<i class="fa fa-print"></i>',
-                        filename: "Reporte de Editoras",
-                        title: "Listado de Editoras",
+                        filename: "Reporte de Editors",
+                        title: "Listado de Editors",
                         exportOptions: {
                             //muestra las columnas
                             columns: [0, 1]
@@ -251,18 +251,18 @@
                     }
                 ],
                  "ajax": {
-                     url: "@Url.Action("GetAllEditoras", "Editora")",
+                     url: "@Url.Action("GetAllEditors", "Editor")",
                      type: "GET",
                      dataType: "json",
-                    beforeSend: agregarToast({ tipo: 'exito', titulo: 'Obteniendo Editoras', descripcion: 'Por favor espere...', autoCierre: true })
+                    beforeSend: agregarToast({ tipo: 'exito', titulo: 'Obteniendo Editors', descripcion: 'Por favor espere...', autoCierre: true })
                  },
                  "columns": [
                          { "data": "id" },
                          { "data": "descripcion" },
                          {
-                                      "defaultContent": '<button type="button" title="Editar Editora"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
-                                                        '<button type="button" title="Eliminar Editora" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
-                                      //"defaultContent": '<a asp-controller="Editora" asp-action="Details" asp-route-id='+data.id+' class="btn btn-primary">"Details"</a>',
+                                      "defaultContent": '<button type="button" title="Editar Editor"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
+                                                        '<button type="button" title="Eliminar Editor" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
+                                      //"defaultContent": '<a asp-controller="Editor" asp-action="Details" asp-route-id='+data.id+' class="btn btn-primary">"Details"</a>',
                                       //padding: 0; border: none; background: none;
                             "orderable": false,
                             "searchable": false,
@@ -324,16 +324,16 @@
             //Eliminar
             $("#tabla tbody").on("click", '.btn-eliminar', function () {
 
-               var Editoraseleccionado = $(this).closest("tr");
-               var data = tabladata.row(Editoraseleccionado).data();
-               var Editora={
+               var Editorseleccionado = $(this).closest("tr");
+               var data = tabladata.row(Editorseleccionado).data();
+               var Editor={
                id:data.id,
                descripcion:data.descripcion
                }
 
                 swal({
                     title: "Está Seguro?",
-                    text: "Desea eliminar el Editora?",
+                    text: "Desea eliminar el Editor?",
                     type: "warning",
                     showCancelButton: true,
                     confirmButtonClass: "btn-primary",
@@ -344,17 +344,17 @@
                    function () {
 
                         jQuery.ajax({
-                            url: '@Url.Action("DeleteEditora", "Editora")',
+                            url: '@Url.Action("DeleteEditor", "Editor")',
                             type: "POST",
-                            data: JSON.stringify( Editora),
+                            data: JSON.stringify( Editor),
                             contentType: 'application/json',
                             success: function (data) {
                                 if (data.resultado) {
-                                    tabladata.row(Editoraseleccionado).remove().draw();
+                                    tabladata.row(Editorseleccionado).remove().draw();
                                     // mostrarAlert(data.mensaje)
-                                    agregarToast({ tipo: 'exito', titulo: 'Eliminando Editora', descripcion: 'Editora eliminada correctamente.', autoCierre: true })
+                                    agregarToast({ tipo: 'exito', titulo: 'Eliminando Editor', descripcion: 'Editor eliminada correctamente.', autoCierre: true })
                                 } else {
-                                    agregarToast({ tipo: 'error', titulo: 'Eliminando Editora', descripcion: 'No se pudo eliminar la Editora', autoCierre: true });
+                                    agregarToast({ tipo: 'error', titulo: 'Eliminando Editor', descripcion: 'No se pudo eliminar la Editor', autoCierre: true });
                                    // swal("No se pudo eliminar", data.mensaje, "error");
                                  //  mostrarAlert(data.mensaje)
                                 }
@@ -376,44 +376,44 @@
                 return;
             }
 
-            var Editora = {
+            var Editor = {
                     id: $("#txtid").val(),
                     descripcion: $("#txtdescripcion").val(),
                 }
 
             jQuery.ajax({
-                    url: '@Url.Action("CreateEditora", "Editora")',
+                    url: '@Url.Action("CreateEditor", "Editor")',
                     type: "POST",
-                    data: JSON.stringify(Editora),
+                    data: JSON.stringify(Editor),
                     contentType: 'application/json',
                     success: function (data) {
                         $(".modal-body").LoadingOverlay("hide");
-                        //  Editora nuevo
-                        if (Editora.id == 0) {
+                        //  Editor nuevo
+                        if (Editor.id == 0) {
                             if (data.resultado != 0) {
-                                Editora.id = data.resultado;
-                                tabladata.row.add(Editora).draw(false);
+                                Editor.id = data.resultado;
+                                tabladata.row.add(Editor).draw(false);
                                 $("#FormModal").modal("hide");
-                                agregarToast({ tipo: 'exito', titulo: 'Creando Editora', descripcion: 'Editora ingresada correctamente.', autoCierre: true });
+                                agregarToast({ tipo: 'exito', titulo: 'Creando Editor', descripcion: 'Editor ingresada correctamente.', autoCierre: true });
                             }
                             else {
-                                agregarToast({ tipo: 'error', titulo: 'Creando Editora', descripcion: data.mensaje, autoCierre: true });
+                                agregarToast({ tipo: 'error', titulo: 'Creando Editor', descripcion: data.mensaje, autoCierre: true });
                                 $("#mensajeError").text(data.mensaje);
                                 $("#mensajeError").show();
                             }
                         }
-                        //  Editora Editar
+                        //  Editor Editar
                         else {
 
                             if (data.resultado) {
-                                tabladata.row(filaSeleccionada).data(Editora).draw(false);
+                                tabladata.row(filaSeleccionada).data(Editor).draw(false);
                                 filaSeleccionada = null;
-                                  agregarToast({ tipo: 'exito', titulo: 'Modificando Editora', descripcion: 'Editora modificada correctamente.', autoCierre: true });
+                                  agregarToast({ tipo: 'exito', titulo: 'Modificando Editor', descripcion: 'Editor modificada correctamente.', autoCierre: true });
                                 $("#FormModal").modal("hide");
                                 // mostrarAlert(data.mensaje)
 
                             } else {
-                                    agregarToast({ tipo: 'error', titulo: 'Modificando Editora', descripcion: data.mensaje, autoCierre: true });
+                                    agregarToast({ tipo: 'error', titulo: 'Modificando Editor', descripcion: data.mensaje, autoCierre: true });
                                     $("#mensajeError").text(data.mensaje);
                                     $("#mensajeError").show();
                                }

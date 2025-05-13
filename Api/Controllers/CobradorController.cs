@@ -82,7 +82,7 @@ namespace Api.Controllers
                 return NotFound();
             }
 
-            Cobr.ApeyNom = cobrador.ApeyNom;
+            Cobr.Descripcion = cobrador.Descripcion;
             _db.SaveChanges();
             return Ok(Cobr);
 

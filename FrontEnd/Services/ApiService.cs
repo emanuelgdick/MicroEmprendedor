@@ -372,50 +372,50 @@ namespace FrontEnd.Services
 
         #endregion
 
-        //EDITORA
+        //EDITOR
         #region
-        public async Task<List<Editora>> GetAllEditoras(string token)
+        public async Task<List<Editor>> GetAllEditors(string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/Editora?");
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Editor?");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
-            var APIResponse = JsonConvert.DeserializeObject<List<Editora>>(contents);
+            var APIResponse = JsonConvert.DeserializeObject<List<Editor>>(contents);
             return APIResponse;
         }
 
-        public async Task<Editora> AddEditora(Editora editora, string token)
+        public async Task<Editor> AddEditor(Editor Editor, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Editora>($"api/Editora/AddEditora", editora);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Editor>($"api/Editor/AddEditor", Editor);
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
-            var APIResponse = JsonConvert.DeserializeObject<Editora>(contents);
+            var APIResponse = JsonConvert.DeserializeObject<Editor>(contents);
             return APIResponse;
         }
 
-        public async Task<Editora> GetEditoraById(int id, string token)
+        public async Task<Editor> GetEditorById(int id, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/Coleccion/GetEditoraById?id={id}");
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Coleccion/GetEditorById?id={id}");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
-            var APIResponse = JsonConvert.DeserializeObject<Editora>(contents);
+            var APIResponse = JsonConvert.DeserializeObject<Editor>(contents);
             return APIResponse;
         }
 
-        public async Task UpdateEditora(int id, Editora editora, string token)
+        public async Task UpdateEditor(int id, Editor Editor, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Editora>($"api/Editora/UpdateEditora?id={id}", editora);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Editor>($"api/Editor/UpdateEditor?id={id}", Editor);
             response.EnsureSuccessStatusCode();
 
         }
 
-        public async Task DeleteEditora(int id, string token)
+        public async Task DeleteEditor(int id, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.PutAsync($"api/Editora/DeleteEditora?id={id}", null);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Editor/DeleteEditor?id={id}", null);
             response.EnsureSuccessStatusCode();
 
         }
@@ -472,6 +472,736 @@ namespace FrontEnd.Services
 
         #endregion
 
+        //ENCUADERNACION
+        #region
+        public async Task<List<Encuadernacion>> GetAllEncuadernaciones(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Encuadernacion?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Encuadernacion>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Encuadernacion> AddEncuadernacion(Encuadernacion encuadernacion, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Encuadernacion>($"api/Encuadernacion/AddEditorial", encuadernacion);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Encuadernacion>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Encuadernacion> GetEncuadernacionById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Encuadernacion/GetEncuadernacionById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Encuadernacion>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateEncuadernacion(int id, Encuadernacion encuadernacion, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Encuadernacion>($"api/Encuadernacion/Updateencuadernacion?id={id}", encuadernacion);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteEncuadernacion(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Encuadernacion/DeleteEncuadernacion?id={id}", null);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        #endregion
+
+        //ESTADO SOCIO
+        #region
+        public async Task<List<EstadoSocio>> GetAllEstadoSocios(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/EstadoSocio?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<EstadoSocio>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<EstadoSocio> AddEstadoSocio(EstadoSocio estadoSocio, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<EstadoSocio>($"api/EstadoSocio/AddEstadoSocio", estadoSocio);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<EstadoSocio>(contents);
+            return APIResponse;
+        }
+
+        public async Task<EstadoSocio> GetEstadoSocioById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/EstadoSocio/GetEstadoSocioById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<EstadoSocio>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateEstadoSocio(int id, EstadoSocio estadoSocio, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<EstadoSocio>($"api/EstadoSocio/UpdateEstadoSocio?id={id}", estadoSocio);
+            response.EnsureSuccessStatusCode();
+        }
+
+        public async Task DeleteEstadoSocio(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/EstadoSocio/DeleteEstadoSocio?id={id}", null);
+            response.EnsureSuccessStatusCode();
+        }
+        #endregion
+
+        //GENERO
+        #region
+        public async Task<List<Genero>> GetAllGeneros(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Genero?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Genero>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Genero> AddGenero(Genero genero, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Genero>($"api/Genero/AddGenero", genero);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Genero>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Genero> GetGeneroById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Genero/GetGeneroById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Genero>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateGenero(int id, Genero genero, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Genero>($"api/Genero/UpdateGenero?id={id}", genero);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteGenero(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Genero/DeleteGenero?id={id}", null);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        #endregion
+
+        //GUIONISTA
+        #region
+        public async Task<List<Guionista>> GetAllGuionistas(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Guionista?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Guionista>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Guionista> AddGuionista(Guionista guionista, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Guionista>($"api/Guionista/AddGuionista", guionista);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Guionista>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Guionista> GetGuionistaById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Guionista/GetGuionistaById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Guionista>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateGuionista(int id, Guionista guionista, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Guionista>($"api/Guionista/UpdateGuionista?id={id}", guionista);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteGuionista(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Guionista/DeleteGuionista?id={id}", null);
+            response.EnsureSuccessStatusCode();
+        }
+
+        #endregion
+
+        //IDIOMA
+        #region
+        public async Task<List<Idioma>> GetAllIdiomas(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Idioma?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Idioma>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Idioma> AddIdioma(Idioma idioma, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Idioma>($"api/Idioma/AddIdioma", idioma);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Idioma>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Idioma> GetIdiomaById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Idioma/GetIdiomaById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Idioma>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateIdioma(int id, Idioma idioma, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Idioma>($"api/Idioma/UpdateIdioma?id={id}", idioma);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteIdioma(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Idioma/DeleteIdioma?id={id}", null);
+            response.EnsureSuccessStatusCode();
+        }
+
+        #endregion
+
+        //INTERPRETE
+        #region
+        public async Task<List<Interprete>> GetAllInterpretes(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Interprete?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Interprete>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Interprete> AddInterprete(Interprete interprete, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Interprete>($"api/Interprete/AddInterprete", interprete);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Interprete>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Interprete> GetInterpreteById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Interprete/GetInterpreteById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Interprete>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateInterprete(int id, Interprete interprete, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Interprete>($"api/Interprete/UpdateInterprete?id={id}", interprete);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteInterprete(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Interprete/DeleteInterprete?id={id}", null);
+            response.EnsureSuccessStatusCode();
+        }
+
+        #endregion
+
+        //LOCALIDAD
+        #region
+        public async Task<List<Localidad>> GetAllLocalidades(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Localidad?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Localidad>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Localidad> AddLocalidad(Localidad localidad, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Localidad>($"api/Localidad/AddLocalidad", localidad);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Localidad>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Localidad> GetLocalidadById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Localidad/GetLocalidadById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Localidad>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateLocalidad(int id, Localidad localidad, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Localidad>($"api/Localidad/UpdateLocalidad?id={id}", localidad);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteLocalidad(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Localidad/DeleteLocalidad?id={id}", null);
+            response.EnsureSuccessStatusCode();
+        }
+
+        #endregion
+
+        //LUGAR
+        #region
+        public async Task<List<Lugar>> GetAllLugares(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Lugar?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Lugar>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Lugar> AddLugar(Lugar lugar, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Lugar>($"api/Lugar/AddLugar", lugar);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Lugar>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Lugar> GetLugarById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Lugar/GetLugarById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Lugar>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateLugar(int id, Lugar lugar, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Lugar>($"api/Lugar/UpdateLugar?id={id}", lugar);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteLugar(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Lugar/DeleteLugar?id={id}", null);
+            response.EnsureSuccessStatusCode();
+        }
+
+        #endregion
+
+        //MATERIA
+        #region
+        public async Task<List<Materia>> GetAllMaterias(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Materia?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Materia>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Materia> AddMateria(Materia materia, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Materia>($"api/Materia/AddMateria", materia);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Materia>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Materia> GetMateriaById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Materia/GetMateriaById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Materia>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateMateria(int id, Materia materia, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Materia>($"api/Materia/UpdateMateria?id={id}", materia);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteMateria(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Materia/DeleteMateria?id={id}", null);
+            response.EnsureSuccessStatusCode();
+        }
+
+        #endregion
+
+        //PAIS
+        #region
+        public async Task<List<Pais>> GetAllPaises(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Pais?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Pais>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Pais> AddPais(Pais pais, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Pais>($"api/Pais/AddPais", pais);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Pais>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Pais> GetPaisById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Pais/GetPaisById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Pais>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdatePais(int id, Pais pais, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Pais>($"api/Pais/UpdatePais?id={id}", pais);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeletePais(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Pais/DeletePais?id={id}", null);
+            response.EnsureSuccessStatusCode();
+        }
+
+        #endregion
+
+        //PRESTAMO
+        #region
+        public async Task<List<Prestamo>> GetAllPrestamos(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Prestamo?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Prestamo>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Prestamo> AddPrestamo(Prestamo prestamo, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Prestamo>($"api/Prestamo/AddPrestamo", prestamo);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Prestamo>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Prestamo> GetPrestamoById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Pais/GetPrestamoById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Prestamo>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdatePrestamo(int id, Prestamo prestamo, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Prestamo>($"api/Prestamo/UpdatePrestamo?id={id}", prestamo);
+            response.EnsureSuccessStatusCode();
+        }
+
+        public async Task DeletePrestamo(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Prestamo/DeletePrestamo?id={id}", null);
+            response.EnsureSuccessStatusCode();
+        }
+
+        #endregion
+
+        //PROCEDENCIA
+        #region
+        public async Task<List<Procedencia>> GetAllProcedencias(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Procedencia?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Procedencia>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Procedencia> AddProcedencia(Procedencia procedencia, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Procedencia>($"api/Procedencia/AddProcedencia", procedencia);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Procedencia>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Procedencia> GetProcedenciaById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Procedencia/GetProcedenciaById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Procedencia>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateProcedencia(int id, Procedencia procedencia, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Procedencia>($"api/Procedencia/UpdateProcedencia?id={id}", procedencia);
+            response.EnsureSuccessStatusCode();
+        }
+
+        public async Task DeleteProcedencia(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Procedencia/DeleteProcedencia?id={id}", null);
+            response.EnsureSuccessStatusCode();
+        }
+
+        #endregion
+
+        //PRODUCTOR
+        #region
+        public async Task<List<Productor>> GetAllProductores(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Productor?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Productor>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Productor> AddProductor(Productor productor, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Productor>($"api/Productor/AddProductor", productor);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Productor>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Productor> GetProductorById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Productor/GetProductorById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Productor>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateProductor(int id, Productor productor, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Productor>($"api/Productor/UpdateProductor?id={id}", productor);
+            response.EnsureSuccessStatusCode();
+        }
+
+        public async Task DeleteProductor(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Productor/DeleteProductor?id={id}", null);
+            response.EnsureSuccessStatusCode();
+        }
+
+        #endregion
+
+        //PROFESION
+        #region
+        public async Task<List<Profesion>> GetAllProfesiones(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Profesion?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Profesion>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Profesion> AddProfesion(Profesion profesion, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Profesion>($"api/Profesion/AddProfesion", profesion);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Profesion>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Profesion> GetProfesionById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Profesion/GetProfesionById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Profesion>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateProfesion(int id, Profesion profesion, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Profesion>($"api/Profesion/UpdateProfesion?id={id}", profesion);
+            response.EnsureSuccessStatusCode();
+        }
+
+        public async Task DeleteProfesion(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Profesion/DeleteProfesion?id={id}", null);
+            response.EnsureSuccessStatusCode();
+        }
+
+        #endregion
+
+        //PROVINCIA
+        #region
+        public async Task<List<Provincia>> GetAllProvincias(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Provincia?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Provincia>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Provincia> AddProvincia(Provincia provincia, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Provincia>($"api/Provincia/AddProvincia", provincia);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Provincia>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Provincia> GetProvinciaById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Provincia/GetProvinciaById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Provincia>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateProvincia(int id, Provincia provincia, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Provincia>($"api/Provincia/UpdateProfesion?id={id}", provincia);
+            response.EnsureSuccessStatusCode();
+        }
+
+        public async Task DeleteProvincia(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Provincia/DeleteProvincia?id={id}", null);
+            response.EnsureSuccessStatusCode();
+        }
+
+        #endregion
+
         //SOCIOS
         #region
         public async Task<List<Socio>> GetAllSocios(string token)
@@ -521,6 +1251,256 @@ namespace FrontEnd.Services
         }
 
         #endregion
+
+        //TIPO DE DOCUMENTO
+        #region
+        public async Task<List<TipoDocumento>> GetAllTipoDocumentos(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/TipoDocumento?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<TipoDocumento>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<TipoDocumento> AddTipoDocumento(TipoDocumento tipoDocumento, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<TipoDocumento>($"api/TipoDocumento/AddTipoDocumento", tipoDocumento);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<TipoDocumento>(contents);
+            return APIResponse;
+        }
+
+        public async Task<TipoDocumento> GetTipoDocumentoById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/TipoDocumento/GetTipoDocumentoById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<TipoDocumento>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateTipoDocumento(int id, TipoDocumento tipoDocumento, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<TipoDocumento>($"api/TipoDocumento/UpdateTipoDocumento?id={id}", tipoDocumento);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteTipoDocumento(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/TipoDocumento/DeleteTipoDocumento?id={id}", null);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        #endregion
+
+        //TIPO DE MATERIAL
+        #region
+        public async Task<List<TipoMaterial>> GetAllTipoMateriales(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/TipoMaterial?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<TipoMaterial>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<TipoMaterial> AddTipoMaterial(TipoMaterial tipoMaterial, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<TipoMaterial>($"api/TipoMaterial/AddTipoMaterial", tipoMaterial);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<TipoMaterial>(contents);
+            return APIResponse;
+        }
+
+        public async Task<TipoMaterial> GetTipoMaterialById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/TipoMaterial/GetTipoMaterialById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<TipoMaterial>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateTipoMaterial(int id, TipoMaterial tipoMaterial, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<TipoMaterial>($"api/TipoMaterial/UpdateTipoMaterial?id={id}", tipoMaterial);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteTipoMaterial(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/TipoMaterial/DeleteTipoMaterial?id={id}", null);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        #endregion
+
+        //TIPO DE SOCIO
+        #region
+        public async Task<List<TipoSocio>> GetAllTipoSocios(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/TipoSocio?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<TipoSocio>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<TipoSocio> AddTipoSocio(TipoSocio tipoSocio, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<TipoSocio>($"api/TipoSocio/AddTipoSocio", tipoSocio);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<TipoSocio>(contents);
+            return APIResponse;
+        }
+
+        public async Task<TipoSocio> GetTipoSocioById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/TipoSocio/GetTipoSocioById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<TipoSocio>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateTipoSocio(int id, TipoSocio tipoSocio, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<TipoSocio>($"api/TipoSocio/UpdateTipoSocio?id={id}", tipoSocio);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteTipoSocio(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/TipoSocio/DeleteTipoSocio?id={id}", null);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        #endregion
+
+        //TIPO DE SOPORTE
+        #region
+        public async Task<List<TipoSoporte>> GetAllTipoSoportes(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/TipoSoporte?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<TipoSoporte>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<TipoSoporte> AddTipoSoporte(TipoSoporte tipoSoporte, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<TipoSoporte>($"api/TipoSoporte/AddTipoSoporte", tipoSoporte);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<TipoSoporte>(contents);
+            return APIResponse;
+        }
+
+        public async Task<TipoSoporte> GetTipoSoporteById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/TipoSoporte/GetTipoSoporteById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<TipoSoporte>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateTipoSoporte(int id, TipoSoporte tipoSoporte, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<TipoSoporte>($"api/TipoSoporte/UpdateTipoSoporte?id={id}", tipoSoporte);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteTipoSoporte(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/TipoSoporte/DeleteTipoSoporte?id={id}", null);
+            response.EnsureSuccessStatusCode();
+        }
+
+        #endregion
+
+        //TIPO DE SUSPENSION
+        #region
+        public async Task<List<TipoSuspension>> GetAllTipoSuspensiones(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/TipoSuspension?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<TipoSuspension>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<TipoSuspension> AddTipoSuspension(TipoSuspension tipoSuspension, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<TipoSuspension>($"api/TipoSuspension/AddTipoSuspension", tipoSuspension);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<TipoSuspension>(contents);
+            return APIResponse;
+        }
+
+        public async Task<TipoSuspension> GetTipoSuspensionById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/TipoSuspension/GetTipoSuspensionById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<TipoSuspension>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateTipoSuspension(int id, TipoSuspension tipoSuspension, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<TipoSuspension>($"api/TipoSuspension/UpdateTipoSuspension?id={id}", tipoSuspension);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteTipoSuspension(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/TipoSuspension/DeleteTipoSuspension?id={id}", null);
+            response.EnsureSuccessStatusCode();
+        }
+
+        #endregion
+
+
 
         //TOTALES
         public async Task<TotalesDTO> GetTotales(string token)

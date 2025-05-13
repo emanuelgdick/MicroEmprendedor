@@ -1,0 +1,405 @@
+﻿@using Frontend.Models
+@model Materia
+@{
+    ViewBag.Title = "Materia";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card">
+    <div class="row  m-0 p-0">
+        <div class="col-11 m-0 p-0">
+            <h1 class=" m-0 mt-1 p-0">Materias</h1>
+        </div>
+        <div class="col-1  m-0 p-0">
+            <button type="button" class="btn btnNuevo mb-2 ml-4 mt-2" onclick="abrirModal(null)">Nuevo</button>
+        </div>
+    </div>
+    <hr class="m-0 p-0" style="background-color:#E74C3C" />
+
+    <div class="card-body">
+
+        <table id="tabla" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Descripcion</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+    </div>
+
+</div>
+
+<!-- TOAST -->
+<div class="contenedor">
+    <div class="contenedor-toastP" id="contenedor-toastP">
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="FormModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header text-white" style="background: #2A3F54">
+                <h5 class="modal-title" id="exampleModalLabel">Materia</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body ">
+                <input id="txtid" type="hidden" value="0" />
+                <form id="formNivel" class="row">
+                    <div class=" col-12 form-group floating-control-group">
+                        <div class="form-floating ">
+                            <input type="text" class="form-control" id="txtdescripcion" placeholder="Descripción" autocomplete="off" value="@Html.DisplayTextFor(model => Model.Descripcion) ">
+                            <label for="txtdescripcion">Descripción</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row mt-2">
+                <div class="col-12">
+                    <div id="mensajeError" class="alert-danger" role="alert">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btnCancelar" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btnAceptar" onclick="Guardar()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+            $(function(){
+                $('.form-group').floatingLabel();
+            });
+            $('.form-group').floatingLabel({
+             floatingLabelClass: 'floating-label',
+             floatingLabelOnClass: 'floating-label-on',
+             floatingInputClass: 'floating-input'
+           });
+
+           $('.form-group').floatingLabel({
+               floatingStyle: 'primary',
+           });
+
+           const contenedorToast = document.getElementById('contenedor-toastP');
+           // Event listener para detectar click en los toasts
+           contenedorToast.addEventListener('click', (e) => {
+           const toastId = e.target.closest('div.toastP').id;
+           if (e.target.closest('button.btn-cerrar')) {
+                 cerrarToast(toastId);
+           }
+           });
+
+           // Función para cerrar el toast
+           const cerrarToast = (id) => {
+                 document.getElementById(id)?.classList.add('cerrando');
+           };
+
+           // Función para agregar la clase de cerrando al toast.
+           const agregarToast = ({ tipo, titulo, descripcion, autoCierre }) => {
+           // Crear el nuevo toast
+           const nuevoToast = document.createElement('div');
+           // Agregar clases correspondientes
+           nuevoToast.classList.add('toastP');
+           nuevoToast.classList.add(tipo);
+           if (autoCierre) nuevoToast.classList.add('autoCierreP');
+           // Agregar id del toast
+           const numeroAlAzar = Math.floor(Math.random() * 100);
+           const fecha = Date.now();
+           const toastId = fecha + numeroAlAzar;
+           nuevoToast.id = toastId;
+           // Iconos
+           const iconos = {
+                        exito: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
+                                    />
+                                </svg>`,
+                        error: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                />
+                                            </svg>`,
+                        info: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+                                                />
+                                            </svg>`,
+                        warning: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                />
+                                            </svg>`,
+                    };
+
+                    // Plantilla del toast
+                    const toast = `
+                        <div class="contenidoP">
+                            <div class="icono">
+                                ${iconos[tipo]}
+                            </div>
+                            <div class="texto">
+                                <p class="titulo">${titulo}</p>
+                                <p class="descripcion">${descripcion}</p>
+                            </div>
+                        </div>
+                        <button class="btn-cerrar">
+                            <div class="icono">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                                    />
+                                </svg>
+                            </div>
+                        </button>
+                    `;
+
+                    // Agregar la plantilla al nuevo toast
+                    nuevoToast.innerHTML = toast;
+
+                    // Agregamos el nuevo toast al contenedor
+                    contenedorToast.appendChild(nuevoToast);
+
+                    // Función para menajera el cierre del toast
+                    const handleAnimacionCierre = (e) => {
+                        if (e.animationName === 'cierre') {
+                            nuevoToast.removeEventListener('animationend', handleAnimacionCierre);
+                            nuevoToast.remove();
+                        }
+                    };
+
+                    if (autoCierre) {
+                        setTimeout(() => cerrarToast(toastId), 5000);
+                    }
+
+                    // Agregamos event listener para detectar cuando termine la animación
+                    nuevoToast.addEventListener('animationend', handleAnimacionCierre);
+                 };
+
+            var tabladata;
+            var filaSeleccionada;
+            tabladata = $("#tabla").DataTable({
+                responsive: true,
+                ordering: true,
+                dom: "Bfrtip",
+                buttons: [
+                    {
+                        extend: "excelHtml5",
+                        text: '<i class="fa fa-file-excel-o "></i>',
+                        filename: "Reporte de Materias",
+                         title: "Listado de Materias",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1]
+                        },
+                        className: "btn-exportar-excel",
+                    },
+                    {
+                        extend: "pdfHtml5",
+                        text: '<i class="fa fa-file-pdf-o"></i>',
+                        filename: "Reporte de Materias",
+                        title: "Listado de Materias",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1]
+                        },
+                        className: "btn-exportar-pdf"
+                    },
+                    {
+                        extend: "print",
+                        text: '<i class="fa fa-print"></i>',
+                        filename: "Reporte de Materias",
+                        title: "Listado de Materias",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1]
+                        },
+                        className: "btn-imprimir"
+
+                    }
+                ],
+                 "ajax": {
+                     url: "@Url.Action("GetAllMaterias", "Materia")",
+                     type: "GET",
+                     dataType: "json",
+                    beforeSend: agregarToast({ tipo: 'exito', titulo: 'Obteniendo Materias', descripcion: 'Por favor espere...', autoCierre: true })
+                 },
+                 "columns": [
+                         { "data": "id" },
+                         { "data": "descripcion" },
+                         {
+                                      "defaultContent": '<button type="button" title="Editar Materia"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
+                                                        '<button type="button" title="Eliminar Materia" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
+                                      //"defaultContent": '<a asp-controller="Materia" asp-action="Details" asp-route-id='+data.id+' class="btn btn-primary">"Details"</a>',
+                                      //padding: 0; border: none; background: none;
+                            "orderable": false,
+                            "searchable": false,
+                            "width": "10%",
+                            "heigth":"10%"
+                        }
+                 ],
+                 "language": {
+                      "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+                  },
+                "columnDefs": [
+                        { "width": "10%", "targets": 0 },
+                        { "width": "80%", "targets": 1 },
+                        { "width": "10%", "targets": 2 },
+                ]
+            })
+
+            $("#formNivel").validate({
+            rules: {
+                    descripcion: {
+                    required: true
+                },
+            },
+            messages: {
+                descripcion: " El campo Descripción es obligatorio",
+            },
+            errorElement: "div",
+            errorLabelContainer: ".alert-danger"
+        });
+
+            //Abrir Modal
+
+            function abrirModal(json) {
+
+                $("#txtid").val(0);
+                $("#txtdescripcion").val("");
+                $("#txtdescripcion").blur();
+                $("#mensajeError").hide();
+                if (json != null) {
+                    $("#txtid").val(json.id);
+                    $("#txtdescripcion").focus()
+                    $("#txtdescripcion").val(json.descripcion).focus();
+                }
+                $("#FormModal").modal("show");
+            }
+
+            //Editar
+            $("#tabla tbody").on("click", '.btn-editar', function () {
+                filaSeleccionada = $(this).closest("tr");
+                var data = tabladata.row(filaSeleccionada).data();
+                abrirModal(data)
+            })
+
+            //Eliminar
+            $("#tabla tbody").on("click", '.btn-eliminar', function () {
+               var Materiaseleccionado = $(this).closest("tr");
+               var data = tabladata.row(Materiaseleccionado).data();
+               var Materia={
+                        id:data.id,
+                        descripcion:data.descripcion
+               }
+               swal({
+                    title: "Está Seguro?",
+                    text: "Desea eliminar la Materia?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn-primary",
+                    confirmButtonText: "Si",
+                    cancelButtonText: "No",
+                    closeOnConfirm: true
+                },
+                   function () {
+                        jQuery.ajax({
+                            url: '@Url.Action("DeleteMateria", "Materia")',
+                            type: "POST",
+                            data: JSON.stringify( Materia),
+                            contentType: 'application/json',
+                            success: function (data) {
+                                if (data.resultado) {
+                                    tabladata.row(Materiaseleccionado).remove().draw();
+                                    // mostrarAlert(data.mensaje)
+                                    agregarToast({ tipo: 'exito', titulo: 'Eliminando Materia', descripcion: 'Materia eliminada correctamente.', autoCierre: true })
+                                } else {
+                                    agregarToast({ tipo: 'error', titulo: 'Eliminando Materia', descripcion: 'No se pudo eliminar la Materia', autoCierre: true });
+                                   // swal("No se pudo eliminar", data.mensaje, "error");
+                                 //  mostrarAlert(data.mensaje)
+                                }
+                            },
+                            error: function (error) {
+                                console.log(error);
+                            }
+                        })
+                   })
+            });
+
+
+            //Guardar
+            function Guardar() {
+
+            if (!$("#formNivel").valid()) {
+                return;
+            }
+
+            var Materia = {
+                    id: $("#txtid").val(),
+                    descripcion: $("#txtdescripcion").val(),
+                }
+
+            jQuery.ajax({
+                    url: '@Url.Action("CreateMateria", "Materia")',
+                    type: "POST",
+                    data: JSON.stringify(Materia),
+                    contentType: 'application/json',
+                    success: function (data) {
+                        $(".modal-body").LoadingOverlay("hide");
+                        //  Materia nuevo
+                        if (Materia.id == 0) {
+                            if (data.resultado != 0) {
+                                Materia.id = data.resultado;
+                                tabladata.row.add(Materia).draw(false);
+                                $("#FormModal").modal("hide");
+                                agregarToast({ tipo: 'exito', titulo: 'Creando Materia', descripcion: 'Materia ingresada correctamente.', autoCierre: true });
+                            }
+                            else {
+                                agregarToast({ tipo: 'error', titulo: 'Creando Materia', descripcion: data.mensaje, autoCierre: true });
+                                $("#mensajeError").text(data.mensaje);
+                                $("#mensajeError").show();
+                            }
+                        }
+                        //  Materia Editar
+                        else {
+
+                            if (data.resultado) {
+                                tabladata.row(filaSeleccionada).data(Materia).draw(false);
+                                filaSeleccionada = null;
+                                  agregarToast({ tipo: 'exito', titulo: 'Modificando Materia', descripcion: 'Materia modificada correctamente.', autoCierre: true });
+                                $("#FormModal").modal("hide");
+                                // mostrarAlert(data.mensaje)
+
+                            } else {
+                                    agregarToast({ tipo: 'error', titulo: 'Modificando Materia', descripcion: data.mensaje, autoCierre: true });
+                                    $("#mensajeError").text(data.mensaje);
+                                    $("#mensajeError").show();
+                               }
+                             }
+                        },
+                        beforeSend: function () {
+                             $(".modal-body").LoadingOverlay("show", {
+                                 imageResizeFactor: 2,
+                                 text: "Cargando...",
+                                 size: 14
+                             });
+                        },
+                        error: function (error) {
+                            $(".modal-body").LoadingOverlay("hide");
+                            $("#mensajeError").text("Error Ajax");
+                            $("#mensajeError").show();
+                        }
+                    }
+                )
+            }
+    </script>
+}

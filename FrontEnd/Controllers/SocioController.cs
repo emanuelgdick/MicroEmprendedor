@@ -35,7 +35,6 @@ namespace FrontEnd.Controllers
         {
             List<Socio> oLista = new List<Socio>();
             oLista = await _apiService.GetAllSocios(HttpContext.Session.GetString("APIToken"));
-
             return Json(new { data = oLista });
         }
 
@@ -68,10 +67,7 @@ namespace FrontEnd.Controllers
                         resultado = false;
                         mensaje = "Por favor ingrese el Apellido y Nombre";
                     }
-
                 }
-
-
                 else
                 {
                     if (socio.ApeyNom != "")
@@ -79,22 +75,19 @@ namespace FrontEnd.Controllers
                         await _apiService.UpdateSocio(socio.Id, socio, HttpContext.Session.GetString("APIToken"));
 
                         resultado = true;
-                        mensaje = "Socio Modificado correctamente";
-
+                        mensaje = "Socio modificado correctamente";
                     }
                     else
                     {
                         resultado = false;
                         mensaje = "Por favor ingrese el Apellido y Nombre";
                     }
-
                 }
             }
             catch (Exception ex)
             {
                 resultado = false;
                 mensaje += ex.Message;
-
             }
             return Json(new { resultado = resultado, mensaje = mensaje });
         }
@@ -102,10 +95,9 @@ namespace FrontEnd.Controllers
         [Authorize(Roles = "Admin,Student")]
         public async Task<IActionResult> Details(int id)
         {
-
-            Socio Socio = new Socio();
-            Socio = await _apiService.GetSocioById(id, HttpContext.Session.GetString("APIToken"));
-            return View(Socio);
+            Socio socio = new Socio();
+            socio = await _apiService.GetSocioById(id, HttpContext.Session.GetString("APIToken"));
+            return View(socio);
         }
 
 

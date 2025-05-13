@@ -8,6 +8,6 @@ namespace Api.Models
         public int Id { get; set; }
 
         [Required]
-        public string ApeyNom { get; set; }
+        public string Descripcion { get; set; }
     }
 }

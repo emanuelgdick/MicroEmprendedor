@@ -833,9 +833,9 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.EditoraController",
-    "Method": "GetEditoras",
-    "RelativePath": "api/Editora",
+    "ContainingType": "Api.Controllers.EditorController",
+    "Method": "GetEditores",
+    "RelativePath": "api/Editor",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -843,22 +843,22 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Api.Controllers.EditoraController",
-    "Method": "AddEditora",
-    "RelativePath": "api/Editora/AddEditora",
+    "ContainingType": "Api.Controllers.EditorController",
+    "Method": "AddEditor",
+    "RelativePath": "api/Editor/AddEditor",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "editora",
-        "Type": "Api.Models.Editora",
+        "Name": "editor",
+        "Type": "Api.Models.Editor",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.Editora",
+        "Type": "Api.Models.Editor",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -869,9 +869,9 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.EditoraController",
-    "Method": "DeleteEditora",
-    "RelativePath": "api/Editora/DeleteEditora",
+    "ContainingType": "Api.Controllers.EditorController",
+    "Method": "DeleteEditor",
+    "RelativePath": "api/Editor/DeleteEditor",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -884,7 +884,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.Editora",
+        "Type": "Api.Models.Editor",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -895,9 +895,9 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.EditoraController",
-    "Method": "GetEditoraById",
-    "RelativePath": "api/Editora/GetEditoraById",
+    "ContainingType": "Api.Controllers.EditorController",
+    "Method": "GetEditorById",
+    "RelativePath": "api/Editor/GetEditorById",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -910,7 +910,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.Editora",
+        "Type": "Api.Models.Editor",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -921,9 +921,9 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.EditoraController",
-    "Method": "UpdateEditora",
-    "RelativePath": "api/Editora/UpdateEditora",
+    "ContainingType": "Api.Controllers.EditorController",
+    "Method": "UpdateEditor",
+    "RelativePath": "api/Editor/UpdateEditor",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -934,14 +934,14 @@
         "IsRequired": false
       },
       {
-        "Name": "editora",
-        "Type": "Api.Models.Editora",
+        "Name": "editor",
+        "Type": "Api.Models.Editor",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.Editora",
+        "Type": "Api.Models.Editor",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -3224,7 +3224,7 @@
   },
   {
     "ContainingType": "Api.Controllers.TipoSoporteController",
-    "Method": "GetTipoSoportes",
+    "Method": "GetTipoSoporte",
     "RelativePath": "api/TipoSoporte",
     "HttpMethod": "GET",
     "IsController": true,

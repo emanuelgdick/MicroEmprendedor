@@ -80,7 +80,7 @@ namespace Api.Controllers
                 return NotFound();
             }
 
-            Productor.ApeyNom = Productor.ApeyNom;
+            Productor.Descripcion = Productor.Descripcion;
             _db.SaveChanges();
             return Ok(Productor);
 

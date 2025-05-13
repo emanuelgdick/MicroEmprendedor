@@ -21,9 +21,9 @@ namespace Api.Controllers
         [HttpGet]
         [Authorize]
         [ResponseCache(CacheProfileName = "apicache")]
-        public IActionResult GetTipoSoportes(/*int pagesize, int pagenumber*/)
+        public IActionResult GetTipoSoporte(/*int pagesize, int pagenumber*/)
         {
-            _logger.LogInformation("Fetching Todas las TipoSoportes");
+            _logger.LogInformation("Fetching Todas las TipoSoporte");
             var TipoSoporteList = _db.TipoSoporte.ToList();
             return Ok(TipoSoporteList);
 

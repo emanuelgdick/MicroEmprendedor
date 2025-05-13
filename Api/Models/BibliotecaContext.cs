@@ -21,7 +21,7 @@ namespace Api.Models
         public DbSet<Anexo> Anexo { get; set; }
         public DbSet<Coleccion> Coleccion { get; set; }
         public DbSet<Director> Director { get; set; }
-        public DbSet<Editora> Editora { get; set; }
+        public DbSet<Editor> Editor { get; set; }
         public DbSet<Editorial> Editorial { get; set; }
         public DbSet<Encuadernacion> Encuadernacion { get; set; }
         public DbSet<Genero> Genero { get; set; }
@@ -30,6 +30,7 @@ namespace Api.Models
         public DbSet<Interprete> Interprete { get; set; }
         public DbSet<Lugar> Lugar { get; set; }
         public DbSet<Materia> Materia { get; set; }
+        public DbSet<Material> Material { get; set; }
         public DbSet<Pais> Pais { get; set; }
         public DbSet<Procedencia> Procedencia { get; set; }
         public DbSet<Productor> Productor { get; set; }
@@ -38,6 +39,11 @@ namespace Api.Models
         public DbSet<TipoSoporte> TipoSoporte { get; set; }
         public DbSet<TipoSuspension> TipoSuspension { get; set; }
         public DbSet<Socio> Socio { get; set; }
+        public DbSet<Sector> Sector { get; set; }
+        public DbSet<Serie> Serie { get; set; }
+        public DbSet<Traductor> Traductor { get; set; }
+        public DbSet<Ilustrador> Ilustrador { get; set; }
+        public DbSet<Prologuista> Prologuista { get; set; }
 
     }
 }

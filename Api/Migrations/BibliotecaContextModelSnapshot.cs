@@ -47,7 +47,7 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ApeyNom")
+                    b.Property<string>("Descripcion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -101,7 +101,7 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ApeyNom")
+                    b.Property<string>("Descripcion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -135,7 +135,7 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ApeyNom")
+                    b.Property<string>("Descripcion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -144,7 +144,7 @@ namespace Api.Migrations
                     b.ToTable("Director");
                 });
 
-            modelBuilder.Entity("Api.Models.Editora", b =>
+            modelBuilder.Entity("Api.Models.Editor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -158,7 +158,7 @@ namespace Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Editora");
+                    b.ToTable("Editor");
                 });
 
             modelBuilder.Entity("Api.Models.Editorial", b =>
@@ -237,7 +237,7 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ApeyNom")
+                    b.Property<string>("Descripcion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -261,6 +261,23 @@ namespace Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Idioma");
+                });
+
+            modelBuilder.Entity("Api.Models.Ilustrador", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Ilustrador");
                 });
 
             modelBuilder.Entity("Api.Models.Interprete", b =>
@@ -336,6 +353,150 @@ namespace Api.Migrations
                     b.ToTable("Materia");
                 });
 
+            modelBuilder.Entity("Api.Models.Material", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AnoEdicion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CantPaginas")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Clase")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EanIsbn")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Extension")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FechaCompra")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IdColeccion")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdEditor")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdEditorial")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdEncuadernacion")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdIdioma")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdIlustrador")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdLugar")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdProcedencia")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdProloguista")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdSector")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdSerie")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdTipoMaterial")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdTraductor")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Libristica")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NroColeccion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NroEdicion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NroEjemplar")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("NroInventario")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NroTomo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Observaciones")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Precio")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TieneIlustracion")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Volumen")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdColeccion");
+
+                    b.HasIndex("IdEditor");
+
+                    b.HasIndex("IdEditorial");
+
+                    b.HasIndex("IdEncuadernacion");
+
+                    b.HasIndex("IdIdioma");
+
+                    b.HasIndex("IdIlustrador");
+
+                    b.HasIndex("IdLugar");
+
+                    b.HasIndex("IdProcedencia");
+
+                    b.HasIndex("IdProloguista");
+
+                    b.HasIndex("IdSector");
+
+                    b.HasIndex("IdSerie");
+
+                    b.HasIndex("IdTipoMaterial");
+
+                    b.HasIndex("IdTraductor");
+
+                    b.ToTable("Material");
+                });
+
             modelBuilder.Entity("Api.Models.Pais", b =>
                 {
                     b.Property<int>("Id")
@@ -378,7 +539,7 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ApeyNom")
+                    b.Property<string>("Descripcion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -404,6 +565,23 @@ namespace Api.Migrations
                     b.ToTable("Profesion");
                 });
 
+            modelBuilder.Entity("Api.Models.Prologuista", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Prologuista");
+                });
+
             modelBuilder.Entity("Api.Models.Provincia", b =>
                 {
                     b.Property<int>("Id")
@@ -424,6 +602,40 @@ namespace Api.Migrations
                     b.HasIndex("IdPais");
 
                     b.ToTable("Provincia");
+                });
+
+            modelBuilder.Entity("Api.Models.Sector", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Sector");
+                });
+
+            modelBuilder.Entity("Api.Models.Serie", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Serie");
                 });
 
             modelBuilder.Entity("Api.Models.Socio", b =>
@@ -580,7 +792,7 @@ namespace Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TipoSoportes");
+                    b.ToTable("TipoSoporte");
                 });
 
             modelBuilder.Entity("Api.Models.TipoSuspension", b =>
@@ -598,6 +810,23 @@ namespace Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TipoSuspension");
+                });
+
+            modelBuilder.Entity("Api.Models.Traductor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Traductor");
                 });
 
             modelBuilder.Entity("Api.Models.Usuario", b =>
@@ -640,10 +869,117 @@ namespace Api.Migrations
                     b.Navigation("provincia");
                 });
 
+            modelBuilder.Entity("Api.Models.Material", b =>
+                {
+                    b.HasOne("Api.Models.Coleccion", "Coleccion")
+                        .WithMany()
+                        .HasForeignKey("IdColeccion")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api.Models.Editor", "Editor")
+                        .WithMany()
+                        .HasForeignKey("IdEditor")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api.Models.Editorial", "Editorial")
+                        .WithMany()
+                        .HasForeignKey("IdEditorial")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api.Models.Encuadernacion", "Encuadernacion")
+                        .WithMany()
+                        .HasForeignKey("IdEncuadernacion")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api.Models.Idioma", "Idioma")
+                        .WithMany()
+                        .HasForeignKey("IdIdioma")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api.Models.Ilustrador", "Ilustrador")
+                        .WithMany()
+                        .HasForeignKey("IdIlustrador")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api.Models.Lugar", "Lugar")
+                        .WithMany()
+                        .HasForeignKey("IdLugar")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api.Models.Procedencia", "Procedencia")
+                        .WithMany()
+                        .HasForeignKey("IdProcedencia")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api.Models.Prologuista", "Prologuista")
+                        .WithMany()
+                        .HasForeignKey("IdProloguista")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api.Models.Sector", "Sector")
+                        .WithMany()
+                        .HasForeignKey("IdSector")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api.Models.Serie", "Serie")
+                        .WithMany()
+                        .HasForeignKey("IdSerie")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api.Models.TipoMaterial", "TipoMaterial")
+                        .WithMany()
+                        .HasForeignKey("IdTipoMaterial")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api.Models.Traductor", "Traductor")
+                        .WithMany()
+                        .HasForeignKey("IdTraductor")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Coleccion");
+
+                    b.Navigation("Editor");
+
+                    b.Navigation("Editorial");
+
+                    b.Navigation("Encuadernacion");
+
+                    b.Navigation("Idioma");
+
+                    b.Navigation("Ilustrador");
+
+                    b.Navigation("Lugar");
+
+                    b.Navigation("Procedencia");
+
+                    b.Navigation("Prologuista");
+
+                    b.Navigation("Sector");
+
+                    b.Navigation("Serie");
+
+                    b.Navigation("TipoMaterial");
+
+                    b.Navigation("Traductor");
+                });
+
             modelBuilder.Entity("Api.Models.Provincia", b =>
                 {
                     b.HasOne("Api.Models.Pais", "Pais")
-                        .WithMany("Provincia")
+                        .WithMany()
                         .HasForeignKey("IdPais")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -706,11 +1042,6 @@ namespace Api.Migrations
                     b.Navigation("TipoDocumento");
 
                     b.Navigation("TipoSocio");
-                });
-
-            modelBuilder.Entity("Api.Models.Pais", b =>
-                {
-                    b.Navigation("Provincia");
                 });
 
             modelBuilder.Entity("Api.Models.Provincia", b =>

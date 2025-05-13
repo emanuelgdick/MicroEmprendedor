@@ -96,7 +96,7 @@ namespace Api.Controllers
                 return NotFound();
             }
 
-            Autor.ApeyNom = autor.ApeyNom;
+            Autor.Descripcion = autor.Descripcion;
             _db.SaveChanges();
             return Ok(Autor);
 
