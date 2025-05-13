@@ -49,52 +49,57 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
-        public async Task<JsonResult> CreateCategoriaSocio([FromBody] CategoriaSocio CategoriaSocio)
+        public async Task<JsonResult> CreateCategoriaSocio([FromBody] CategoriaSocio categoriaSocio)
         {
             object resultado;
             string mensaje = String.Empty;
             try
             {
-                if (CategoriaSocio.Id == 0)
+                if (categoriaSocio!=null)
                 {
-                    if (CategoriaSocio.Descripcion != "")
+                    if (categoriaSocio.Id == 0 )
                     {
-                        CategoriaSocio = await _apiService.AddCategoriaSocio(CategoriaSocio, HttpContext.Session.GetString("APIToken"));
-                        resultado = CategoriaSocio.Id;
-                        mensaje = "CategoriaSocio ingresado correctamente";
+                        if (categoriaSocio.Descripcion != "" && categoriaSocio.cantMaterial!=0)
+                        {
+                            categoriaSocio = await _apiService.AddCategoriaSocio(categoriaSocio, HttpContext.Session.GetString("APIToken"));
+                            resultado = categoriaSocio.Id;
+                            mensaje = "Categoría de Socio ingresada correctamente";
+                        }
+                        else
+                        {
+                            resultado = false;
+                            mensaje = "Por favor ingrese los datos solicitados";
+                        }
                     }
                     else
                     {
-                        resultado = false;
-                        mensaje = "Por favor ingrese la Descripción";
+                        if (categoriaSocio.Descripcion != "" && categoriaSocio.cantMaterial != 0)
+                        {
+                            await _apiService.UpdateCategoriaSocio(categoriaSocio.Id, categoriaSocio, HttpContext.Session.GetString("APIToken"));
+                            resultado = true;
+                            mensaje = "Categoría de Socio modificada correctamente";
+                        }
+                        else
+                        {
+                            resultado = false;
+                            mensaje = "Por favor ingrese los datos solicitados";
+                        }
                     }
-
+                    
                 }
-
-
                 else
                 {
-                    if (CategoriaSocio.Descripcion != "")
-                    {
-                        await _apiService.UpdateCategoriaSocio(CategoriaSocio.Id, CategoriaSocio, HttpContext.Session.GetString("APIToken"));
-
-                        resultado = true;
-                        mensaje = "CategoriaSocio Modificado correctamente";
-
-                    }
-                    else
-                    {
-                        resultado = false;
-                        mensaje = "Por favor ingrese la Descripción";
-                    }
-
+                    resultado = false;
+                    mensaje = "Por favor ingrese los datos solicitados";
                 }
+
+              
             }
             catch (Exception ex)
             {
                 resultado = false;
                 mensaje += ex.Message;
-
+                
             }
             return Json(new { resultado = resultado, mensaje = mensaje });
         }

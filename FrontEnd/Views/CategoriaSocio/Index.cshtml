@@ -24,6 +24,7 @@
                 <tr>
                     <th>Código</th>
                     <th>Descripcion</th>
+                    <th>Cant. Material</th>
                     <th></th>
                 </tr>
             </thead>
@@ -53,18 +54,23 @@
             </div>
             <div class="modal-body ">
                 <input id="txtid" type="hidden" value="0" />
-                <form id="formNivel" class="row">
-                    <div class=" col-12 form-group floating-control-group">
-                        <div class="form-floating ">
-                            <input type="text" class="form-control" id="txtdescripcion" placeholder="Descripción" autocomplete="off" value="@Html.DisplayTextFor(model => Model.Descripcion) ">
-                            <label for="txtdescripcion">Descripción</label>
+                <form id="formNivel">
+
+                    <div class="row">
+                        <div class=" col-8 form-group floating-control-group">
+                            <div class="form-floating ">
+                                <input type="text" class="form-control" id="txtdescripcion" placeholder="Descripción" autocomplete="off" value="@Html.DisplayTextFor(model => Model.Descripcion) ">
+                                <label for="txtdescripcion">Descripción</label>
+                            </div>
                         </div>
-                        <div class="form-floating ">
-                            <input type="text" class="form-control" id="txtcant_material" placeholder="Cant. Material" autocomplete="off" value="@Html.DisplayTextFor(model => Model.cantMaterial) ">
-                            <label for="txtcant_material">Cant. Material</label>
+                        <div class=" col-4 form-group floating-control-group">
+                            <div class="form-floating ">
+                                <input type="text" class="form-control" id="txtcantmaterial" placeholder="Cant. Material" autocomplete="off" value="@Html.DisplayTextFor(model => Model.cantMaterial) ">
+                                <label for="txtcantmaterial">Cant. Material</label>
+                            </div>
                         </div>
                     </div>
-
+                    
                 </form>
             </div>
             <div class="row mt-2">
@@ -263,6 +269,7 @@
                  "columns": [
                          { "data": "id" },
                          { "data": "descripcion" },
+                         { "data": "cantMaterial" },
                          {
                                       "defaultContent": '<button type="button" title="Editar Categoría de Socios"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
                                                         '<button type="button" title="Eliminar Categoría de Socios" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
@@ -279,7 +286,7 @@
                   },
                 "columnDefs": [
                         { "width": "10%", "targets": 0 },
-                        { "width": "80%", "targets": 1 },
+                        { "width": "60%", "targets": 1 },
                         { "width": "10%", "targets": 2 },
                 ]
             })
@@ -291,10 +298,15 @@
                 descripcion: {
                     required: true
                 },
+
+                cantidad: {
+                    required: true
+                },
             },
             messages: {
 
                 descripcion: " El campo Descripción es obligatorio",
+                cantidad: " El campo Cantidad es obligatorio",
             },
             errorElement: "div",
             errorLabelContainer: ".alert-danger"
@@ -308,15 +320,15 @@
                 $("#txtid").val(0);
                 $("#txtdescripcion").val("");
                 $("#txtdescripcion").blur();
-                $("#txtcant_material").val("");
-                $("#txtcant_material").blur();
+                $("#txtcantmaterial").val("");
+                $("#txtcantmaterial").blur();
                 $("#mensajeError").hide();
                 if (json != null) {
                     $("#txtid").val(json.id);
                     $("#txtdescripcion").focus()
                     $("#txtdescripcion").val(json.descripcion).focus();
-                     
-                    $("#txtcant_material").val(json.cantMaterial).focus();
+                    $("#txtcantmaterial").focus()
+                    $("#txtcantmaterial").val(json.cantMaterial).focus();
                 }
                 $("#FormModal").modal("show");
             }
@@ -360,9 +372,9 @@
                                 if (data.resultado) {
                                     tabladata.row(CategoriaSocioseleccionado).remove().draw();
                                     // mostrarAlert(data.mensaje)
-                                    agregarToast({ tipo: 'exito', titulo: 'Eliminando CategoriaSocio', descripcion: 'CategoriaSocio eliminado correctamente.', autoCierre: true })
+                                    agregarToast({ tipo: 'exito', titulo: 'Eliminando Categoría de Socio', descripcion: 'Categoría de Socio eliminado correctamente.', autoCierre: true })
                                 } else {
-                                    agregarToast({ tipo: 'error', titulo: 'Eliminando CategoriaSocio', descripcion: 'No su puedo eliminar el CategoriaSocio', autoCierre: true });
+                                    agregarToast({ tipo: 'error', titulo: 'Eliminando Categoría de Socio', descripcion: 'No su puedo eliminar la Categoría de Socio', autoCierre: true });
                                    // swal("No se pudo eliminar", data.mensaje, "error");
                                  //  mostrarAlert(data.mensaje)
                                 }
@@ -387,6 +399,7 @@
             var CategoriaSocio = {
                     id: $("#txtid").val(),
                     descripcion: $("#txtdescripcion").val(),
+                    cantMaterial: $("#txtcantmaterial").val(),
                 }
 
             jQuery.ajax({
@@ -402,10 +415,10 @@
                                 CategoriaSocio.id = data.resultado;
                                 tabladata.row.add(CategoriaSocio).draw(false);
                                 $("#FormModal").modal("hide");
-                                agregarToast({ tipo: 'exito', titulo: 'Creando CategoriaSocio', descripcion: 'CategoriaSocio ingresado correctamente.', autoCierre: true });
+                                agregarToast({ tipo: 'exito', titulo: 'Creando Categoría de Socio', descripcion: 'Categoría de Socio ingresada correctamente.', autoCierre: true });
                             }
                             else {
-                                agregarToast({ tipo: 'error', titulo: 'Creando CategoriaSocio', descripcion: data.mensaje, autoCierre: true });
+                                agregarToast({ tipo: 'error', titulo: 'Creando Categoría de Socio', descripcion: data.mensaje, autoCierre: true });
                                 $("#mensajeError").text(data.mensaje);
                                 $("#mensajeError").show();
                             }
@@ -416,12 +429,12 @@
                             if (data.resultado) {
                                 tabladata.row(filaSeleccionada).data(CategoriaSocio).draw(false);
                                 filaSeleccionada = null;
-                                  agregarToast({ tipo: 'exito', titulo: 'Modificando CategoriaSocio', descripcion: 'CategoriaSocio modificado correctamente.', autoCierre: true });
+                                  agregarToast({ tipo: 'exito', titulo: 'Modificando Categoría de Socio', descripcion: 'Categoría de Socio modificada correctamente.', autoCierre: true });
                                 $("#FormModal").modal("hide");
                                 // mostrarAlert(data.mensaje)
 
                             } else {
-                                    agregarToast({ tipo: 'error', titulo: 'Modificando CategoriaSocio', descripcion: data.mensaje, autoCierre: true });
+                                    agregarToast({ tipo: 'error', titulo: 'Modificando Categoría de Socio', descripcion: data.mensaje, autoCierre: true });
                                     $("#mensajeError").text(data.mensaje);
                                     $("#mensajeError").show();
                                }

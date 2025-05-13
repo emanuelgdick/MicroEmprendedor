@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FrontendApi.Models
+namespace Frontend.Models
 {
     public class Coleccion
     {

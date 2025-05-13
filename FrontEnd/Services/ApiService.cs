@@ -272,6 +272,206 @@ namespace FrontEnd.Services
 
         #endregion
 
+        //COLECCIONES
+        #region
+        public async Task<List<Coleccion>> GetAllColecciones(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Coleccion?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Coleccion>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Coleccion> AddColeccion(Coleccion coleccion, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Coleccion>($"api/Coleccion/AddColeccion", coleccion);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Coleccion>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Coleccion> GetColeccionById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Coleccion/GetColeccionById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Coleccion>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateColeccion(int id, Coleccion coleccion, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Coleccion>($"api/Coleccion/UpdateColeccion?id={id}", coleccion);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteColeccion(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Coleccion/DeleteColeccion?id={id}", null);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        #endregion
+
+        //DIRECTORES
+        #region
+        public async Task<List<Director>> GetAllDirectores(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Director?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Director>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Director> AddDirector(Director director, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Director>($"api/Director/AddDirector", director);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Director>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Director> GetDirectorById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Director/GetDirectorById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Director>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateDirector(int id, Director director, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Director>($"api/Director/UpdateDirector?id={id}", director);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteDirector(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Director/DeleteDirector?id={id}", null);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        #endregion
+
+        //EDITORA
+        #region
+        public async Task<List<Editora>> GetAllEditoras(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Editora?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Editora>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Editora> AddEditora(Editora editora, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Editora>($"api/Editora/AddEditora", editora);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Editora>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Editora> GetEditoraById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Coleccion/GetEditoraById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Editora>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateEditora(int id, Editora editora, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Editora>($"api/Editora/UpdateEditora?id={id}", editora);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteEditora(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Editora/DeleteEditora?id={id}", null);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        #endregion
+
+        //EDITORIAL
+        #region
+        public async Task<List<Editorial>> GetAllEditoriales(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Editorial?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Editorial>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Editorial> AddEditorial(Editorial editorial, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Editorial>($"api/Editorial/AddEditorial", editorial);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Editorial>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Editorial> GetEditorialById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Editorial/GetEditorialById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Editorial>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateEditorial(int id, Editorial editorial, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Editorial>($"api/Editorial/UpdateEditorial?id={id}", editorial);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteEditorial(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Editorial/DeleteEditorial?id={id}", null);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        #endregion
+
         //SOCIOS
         #region
         public async Task<List<Socio>> GetAllSocios(string token)
@@ -321,10 +521,6 @@ namespace FrontEnd.Services
         }
 
         #endregion
-
-
-
-
 
         //TOTALES
         public async Task<TotalesDTO> GetTotales(string token)
