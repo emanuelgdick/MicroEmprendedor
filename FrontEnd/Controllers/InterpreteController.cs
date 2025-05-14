@@ -56,7 +56,7 @@ namespace FrontEnd.Controllers
             {
                 if (interprete.Id == 0)
                 {
-                    if (interprete.Descripcion != "")
+                    if (interprete.ApeyNom != "")
                     {
                         interprete = await _apiService.AddInterprete(interprete, HttpContext.Session.GetString("APIToken"));
                         resultado = interprete.Id;
@@ -65,7 +65,7 @@ namespace FrontEnd.Controllers
                     else
                     {
                         resultado = false;
-                        mensaje = "Por favor ingrese la Descripción";
+                        mensaje = "Por favor ingrese el Apellido y Nombre";
                     }
 
                 }
@@ -73,7 +73,7 @@ namespace FrontEnd.Controllers
 
                 else
                 {
-                    if (interprete.Descripcion != "")
+                    if (interprete.ApeyNom != "")
                     {
                         await _apiService.UpdateInterprete(interprete.Id, interprete, HttpContext.Session.GetString("APIToken"));
 
@@ -84,7 +84,7 @@ namespace FrontEnd.Controllers
                     else
                     {
                         resultado = false;
-                        mensaje = "Por favor ingrese la Descripción";
+                        mensaje = "Por favor ingrese el Apellido y Nombre";
                     }
 
                 }

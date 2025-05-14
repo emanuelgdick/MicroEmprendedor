@@ -374,7 +374,7 @@ namespace FrontEnd.Services
 
         //EDITOR
         #region
-        public async Task<List<Editor>> GetAllEditors(string token)
+        public async Task<List<Editor>> GetAllEditores(string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             HttpResponseMessage response = await _httpClient.GetAsync($"api/Editor?");
@@ -1495,6 +1495,152 @@ namespace FrontEnd.Services
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             HttpResponseMessage response = await _httpClient.PutAsync($"api/TipoSuspension/DeleteTipoSuspension?id={id}", null);
+            response.EnsureSuccessStatusCode();
+        }
+
+        #endregion
+
+        //TRADUCTOR
+        #region
+        public async Task<List<Traductor>> GetAllTraductores(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Traductor?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Traductor>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Traductor> AddTraductor(Traductor traductor, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Traductor>($"api/Traductor/AddTraductor", traductor);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Traductor>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Traductor> GetTraductorById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Traductor/GetTraductorById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Traductor>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateTraductor(int id, Traductor traductor, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Traductor>($"api/Traductor/UpdateTraductor?id={id}", traductor);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteTraductor(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Traductor/DeleteTraductor?id={id}", null);
+            response.EnsureSuccessStatusCode();
+        }
+
+        #endregion
+
+        //PROLOGUISTA
+        #region
+        public async Task<List<Prologuista>> GetAllProloguistas(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Prologuista?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Prologuista>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Prologuista> AddProloguista(Prologuista prologuista, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Prologuista>($"api/Prologuista/AddProloguista", prologuista);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Prologuista>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Prologuista> GetProloguistaById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Prologuista/GetProloguistaById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Prologuista>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateProloguista(int id, Prologuista prologuista, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Prologuista>($"api/Prologuista/UpdateProloguista?id={id}", prologuista);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteProloguista(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Prologuista/DeleteProloguista?id={id}", null);
+            response.EnsureSuccessStatusCode();
+        }
+
+        #endregion
+
+        //ILUSTRADOR
+        #region
+        public async Task<List<Ilustrador>> GetAllIlustradores(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Ilustrador?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Ilustrador>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Ilustrador> AddIlustrador(Ilustrador ilustrador, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Ilustrador>($"api/Ilustrador/AddIlustrador", ilustrador);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Ilustrador>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Ilustrador> GetIlustradorById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Ilustrador/GetIlustradorById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Ilustrador>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateIlustrador(int id, Ilustrador ilustrador, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Ilustrador>($"api/Ilustrador/UpdateIlustrador?id={id}", ilustrador);
+            response.EnsureSuccessStatusCode();
+        }
+
+        public async Task DeleteIlustrador(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Ilustrador/DeleteIlustrador?id={id}", null);
             response.EnsureSuccessStatusCode();
         }
 

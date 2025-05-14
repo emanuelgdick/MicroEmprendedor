@@ -47,7 +47,7 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Descripcion")
+                    b.Property<string>("ApeyNom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -101,7 +101,7 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Descripcion")
+                    b.Property<string>("ApeyNom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -135,7 +135,7 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Descripcion")
+                    b.Property<string>("ApeyNom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -152,7 +152,7 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Descripcion")
+                    b.Property<string>("ApeyNom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -237,7 +237,7 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Descripcion")
+                    b.Property<string>("ApeyNom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -271,7 +271,7 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Descripcion")
+                    b.Property<string>("ApeyNom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -288,7 +288,7 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Descripcion")
+                    b.Property<string>("ApeyNom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -539,7 +539,7 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Descripcion")
+                    b.Property<string>("ApeyNom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -573,7 +573,7 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Descripcion")
+                    b.Property<string>("ApeyNom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -820,7 +820,7 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Descripcion")
+                    b.Property<string>("ApeyNom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

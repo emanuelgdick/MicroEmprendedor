@@ -34,7 +34,6 @@ namespace Api.Controllers
         [ResponseCache(CacheProfileName = "apicache")]
         public ActionResult<Calle> GetCalleById(int id)
         {
-
             if (id == 0)
             {
                 _logger.LogError("Id de Calle no pasada");
@@ -49,23 +48,6 @@ namespace Api.Controllers
             return calle;
         }
 
-
-        //[HttpGet("GetLastCalle")]
-        //[Authorize]
-        //[ResponseCache(CacheProfileName = "apicache")]
-        //public ActionResult<Calle> GetLastCalle()
-        //{
-        //    var calle = _db.Calle.LastOrDefault();
-
-        //    if (calle == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return calle;
-        //}
-
-
-
         [HttpPost("AddCalle")]
         [Authorize]
         public ActionResult<Calle> AddCalle([FromBody] Calle calle)
@@ -74,11 +56,9 @@ namespace Api.Controllers
             {
                 return BadRequest(ModelState);
             }
-
             _db.Calle.Add(calle);
             _db.SaveChanges();
             return Ok(calle);
-
         }
 
         [HttpPost("UpdateCalle")]
@@ -99,7 +79,6 @@ namespace Api.Controllers
             Calle.Descripcion = calle.Descripcion;
             _db.SaveChanges();
             return Ok(calle);
-
         }
 
         [HttpPut("DeleteCalle")]

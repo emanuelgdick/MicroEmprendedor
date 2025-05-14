@@ -11,7 +11,6 @@ namespace Api.Controllers
     {
         private BibliotecaContext _db;
         private readonly ILogger<EstadoSocioController> _logger;
-
         public EstadoSocioController(BibliotecaContext db, ILogger<EstadoSocioController> logger)
         {
             _db = db;
@@ -26,7 +25,6 @@ namespace Api.Controllers
             _logger.LogInformation("Fetching Todas las EstadoSocios");
             var EstadoSocioList = _db.EstadoSocio.ToList();
             return Ok(EstadoSocioList);
-
         }
 
         [HttpGet("GetEstadoSocioById")]
@@ -34,7 +32,6 @@ namespace Api.Controllers
         [ResponseCache(CacheProfileName = "apicache")]
         public ActionResult<EstadoSocio> GetEstadoSocioById(int id)
         {
-
             if (id == 0)
             {
                 _logger.LogError("Id de EstadoSocio no pasada");
@@ -49,7 +46,6 @@ namespace Api.Controllers
             return EstadoSocio;
         }
 
-
         [HttpPost("AddEstadoSocio")]
         [Authorize]
         public ActionResult<EstadoSocio> AddEstadoSocio([FromBody] EstadoSocio estadoSocio)
@@ -62,7 +58,6 @@ namespace Api.Controllers
             _db.EstadoSocio.Add(estadoSocio);
             _db.SaveChanges();
             return Ok(estadoSocio);
-
         }
 
         [HttpPost("UpdateEstadoSocio")]
@@ -73,17 +68,14 @@ namespace Api.Controllers
             {
                 return BadRequest(estadoSocio);
             }
-
             var EstadoSocio = _db.EstadoSocio.FirstOrDefault(x => x.Id == Id);
             if (EstadoSocio == null)
             {
                 return NotFound();
             }
-
             EstadoSocio.Descripcion = estadoSocio.Descripcion;
             _db.SaveChanges();
             return Ok(EstadoSocio);
-
         }
 
         [HttpPut("DeleteEstadoSocio")]

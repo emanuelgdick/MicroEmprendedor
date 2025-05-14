@@ -26,7 +26,6 @@ namespace Api.Controllers
             _logger.LogInformation("Fetching Todas las CategoriaSocios");
             var CategoriaSocioList = _db.CategoriaSocio.ToList();
             return Ok(CategoriaSocioList);
-
         }
 
         [HttpGet("GetCategoriaSocioById")]
@@ -34,7 +33,6 @@ namespace Api.Controllers
         [ResponseCache(CacheProfileName = "apicache")]
         public ActionResult<CategoriaSocio> GetCategoriaSocioById(int id)
         {
-
             if (id == 0)
             {
                 _logger.LogError("Id de CategoriaSocio no pasada");
@@ -49,7 +47,6 @@ namespace Api.Controllers
             return CategoriaSocio;
         }
 
-
         [HttpPost("AddCategoriaSocio")]
         [Authorize]
         public ActionResult<CategoriaSocio> AddCategoriaSocio([FromBody] CategoriaSocio categoriaSocio)
@@ -62,7 +59,6 @@ namespace Api.Controllers
             _db.CategoriaSocio.Add(categoriaSocio);
             _db.SaveChanges();
             return Ok(categoriaSocio);
-
         }
 
         [HttpPost("UpdateCategoriaSocio")]
@@ -83,7 +79,6 @@ namespace Api.Controllers
             CategoriaSocio.Descripcion = categoriaSocio.Descripcion;
             _db.SaveChanges();
             return Ok(CategoriaSocio);
-
         }
 
         [HttpPut("DeleteCategoriaSocio")]

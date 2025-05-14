@@ -1,7 +1,7 @@
 ﻿@using Frontend.Models
 @model Guionista
 @{
-    ViewBag.Title = "Guionista";
+    ViewBag.Title = "Guionistas";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -23,7 +23,7 @@
             <thead>
                 <tr>
                     <th>Código</th>
-                    <th>Descripcion</th>
+                    <th>Apellido y Nombre</th>
                     <th></th>
                 </tr>
             </thead>
@@ -261,8 +261,6 @@
                          {
                                       "defaultContent": '<button type="button" title="Editar Guionista"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
                                                         '<button type="button" title="Eliminar Guionista" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
-                                      //"defaultContent": '<a asp-controller="Guionista" asp-action="Details" asp-route-id='+data.id+' class="btn btn-primary">"Details"</a>',
-                                      //padding: 0; border: none; background: none;
                             "orderable": false,
                             "searchable": false,
                             "width": "10%",
@@ -278,22 +276,6 @@
                         { "width": "10%", "targets": 2 },
                 ]
             })
-
-
-            $("#formNivel").validate({
-            rules: {
-
-                descripcion: {
-                    required: true
-                },
-            },
-            messages: {
-
-                descripcion: " El campo Descripción es obligatorio",
-            },
-            errorElement: "div",
-            errorLabelContainer: ".alert-danger"
-        });
 
 
             //Abrir Modal
@@ -326,8 +308,8 @@
                var Guionistaseleccionado = $(this).closest("tr");
                var data = tabladata.row(Guionistaseleccionado).data();
                var Guionista={
-               id:data.id,
-               apeynom:data.apeynom
+                              id:data.id,
+                              apeynom:data.apeynom
                }
 
                 swal({
@@ -376,7 +358,7 @@
             }
 
             var Guionista = {
-                    id: $("#txtid").val(),
+                       id: $("#txtid").val(),
                        apeyNom: $("#txtapeynom").val(),
                 }
 

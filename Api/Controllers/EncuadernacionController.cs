@@ -26,7 +26,6 @@ namespace Api.Controllers
             _logger.LogInformation("Fetching Todas las Encuadernacions");
             var EncuadernacionList = _db.Encuadernacion.ToList();
             return Ok(EncuadernacionList);
-
         }
 
         [HttpGet("GetEncuadernacionById")]
@@ -34,7 +33,6 @@ namespace Api.Controllers
         [ResponseCache(CacheProfileName = "apicache")]
         public ActionResult<Encuadernacion> GetEncuadernacionById(int id)
         {
-
             if (id == 0)
             {
                 _logger.LogError("Id de Encuadernacion no pasada");
@@ -49,7 +47,6 @@ namespace Api.Controllers
             return Encuadernacion;
         }
 
-
         [HttpPost("AddEncuadernacion")]
         [Authorize]
         public ActionResult<Encuadernacion> AddEncuadernacion([FromBody] Encuadernacion encuadernacion)
@@ -62,7 +59,6 @@ namespace Api.Controllers
             _db.Encuadernacion.Add(encuadernacion);
             _db.SaveChanges();
             return Ok(encuadernacion);
-
         }
 
         [HttpPost("UpdateEncuadernacion")]
@@ -83,7 +79,6 @@ namespace Api.Controllers
             Encuadernacion.Descripcion = encuadernacion.Descripcion;
             _db.SaveChanges();
             return Ok(Encuadernacion);
-
         }
 
         [HttpPut("DeleteEncuadernacion")]

@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
-namespace Frontend.Models
+namespace FrontEnd.Models
 {
     public class TipoSoporte
     {

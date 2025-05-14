@@ -1,6 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Frontend.Models
+namespace FrontEnd.Models
 {
     public class Socio
     {

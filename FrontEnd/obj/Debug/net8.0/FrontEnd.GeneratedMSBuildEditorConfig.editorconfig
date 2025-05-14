@@ -64,12 +64,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlyZWN0b3JcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Biblioteca/FrontEnd/Views/Editora/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWRpdG9yYVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Biblioteca/FrontEnd/Views/Editorial/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWRpdG9yaWFsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Biblioteca/FrontEnd/Views/Editor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWRpdG9yXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Biblioteca/FrontEnd/Views/Encuadernacion/Index.cshtml]
@@ -98,6 +98,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Biblioteca/FrontEnd/Views/Idioma/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWRpb21hXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Biblioteca/FrontEnd/Views/Ilustrador/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWx1c3RyYWRvclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Biblioteca/FrontEnd/Views/Interprete/Index.cshtml]
@@ -136,6 +140,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzaW9uXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Biblioteca/FrontEnd/Views/Prologuista/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbG9ndWlzdGFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Biblioteca/FrontEnd/Views/Provincia/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmluY2lhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -170,6 +178,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Biblioteca/FrontEnd/Views/TipoSuspension/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb1N1c3BlbnNpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Biblioteca/FrontEnd/Views/Traductor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhZHVjdG9yXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Biblioteca/FrontEnd/Views/_ViewImports.cshtml]

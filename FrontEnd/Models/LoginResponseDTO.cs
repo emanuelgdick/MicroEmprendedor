@@ -1,4 +1,6 @@
-﻿namespace Frontend.Models
+﻿using FrontEnd.Models;
+
+namespace Frontend.Models
 {
     public class LoginResponseDTO
     {

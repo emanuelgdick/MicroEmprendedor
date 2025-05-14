@@ -11,7 +11,6 @@ namespace Api.Controllers
     {
         private BibliotecaContext _db;
         private readonly ILogger<DirectorController> _logger;
-
         public DirectorController(BibliotecaContext db, ILogger<DirectorController> logger)
         {
             _db = db;
@@ -26,7 +25,6 @@ namespace Api.Controllers
             _logger.LogInformation("Fetching Todas las Directors");
             var DirectorList = _db.Director.ToList();
             return Ok(DirectorList);
-
         }
 
         [HttpGet("GetDirectorById")]
@@ -34,7 +32,6 @@ namespace Api.Controllers
         [ResponseCache(CacheProfileName = "apicache")]
         public ActionResult<Director> GetDirectorById(int id)
         {
-
             if (id == 0)
             {
                 _logger.LogError("Id de Director no pasada");
@@ -57,11 +54,9 @@ namespace Api.Controllers
             {
                 return BadRequest(ModelState);
             }
-
             _db.Director.Add(director);
             _db.SaveChanges();
             return Ok(director);
-
         }
 
         [HttpPost("UpdateDirector")]
@@ -72,17 +67,14 @@ namespace Api.Controllers
             {
                 return BadRequest(director);
             }
-
             var Director = _db.Director.FirstOrDefault(x => x.Id == Id);
             if (Director == null)
             {
                 return NotFound();
             }
-
-            Director.Descripcion = director.Descripcion;
+            Director.ApeyNom = director.ApeyNom;
             _db.SaveChanges();
             return Ok(Director);
-
         }
 
         [HttpPut("DeleteDirector")]

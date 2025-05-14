@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Frontend.Models
+namespace FrontEnd.Models
 {
     public class Localidad
     {

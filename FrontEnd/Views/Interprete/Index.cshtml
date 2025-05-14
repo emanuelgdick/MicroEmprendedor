@@ -1,7 +1,7 @@
 ﻿@using Frontend.Models
 @model Interprete
 @{
-    ViewBag.Title = "Interprete";
+    ViewBag.Title = "Intérpretes";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -23,7 +23,7 @@
             <thead>
                 <tr>
                     <th>Código</th>
-                    <th>Descripcion</th>
+                    <th>Apellido y Nombre</th>
                     <th></th>
                 </tr>
             </thead>
@@ -56,8 +56,8 @@
                 <form id="formNivel" class="row">
                     <div class=" col-12 form-group floating-control-group">
                         <div class="form-floating ">
-                            <input type="text" class="form-control" id="txtdescripcion" placeholder="Descripción" autocomplete="off" value="@Html.DisplayTextFor(model => Model.Descripcion) ">
-                            <label for="txtdescripcion">Descripción</label>
+                            <input type="text" class="form-control" id="txtapeynom" placeholder="Apellido y Nombre" autocomplete="off" value="@Html.DisplayTextFor(model => Model.ApeyNom) ">
+                            <label for="txtapeynom">Apellido y Nombre</label>
                         </div>
                     </div>
                 </form>
@@ -257,12 +257,10 @@
                  },
                  "columns": [
                          { "data": "id" },
-                         { "data": "descripcion" },
+                         { "data": "apeyNom" },
                          {
                                       "defaultContent": '<button type="button" title="Editar Interprete"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
                                                         '<button type="button" title="Eliminar Interprete" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
-                                      //"defaultContent": '<a asp-controller="Interprete" asp-action="Details" asp-route-id='+data.id+' class="btn btn-primary">"Details"</a>',
-                                      //padding: 0; border: none; background: none;
                             "orderable": false,
                             "searchable": false,
                             "width": "10%",
@@ -278,36 +276,20 @@
                         { "width": "10%", "targets": 2 },
                 ]
             })
-
-
-            $("#formNivel").validate({
-            rules: {
-
-                descripcion: {
-                    required: true
-                },
-            },
-            messages: {
-
-                descripcion: " El campo Descripción es obligatorio",
-            },
-            errorElement: "div",
-            errorLabelContainer: ".alert-danger"
-        });
+         
 
 
             //Abrir Modal
-
             function abrirModal(json) {
 
                 $("#txtid").val(0);
-                $("#txtdescripcion").val("");
-                $("#txtdescripcion").blur();
+                $("#txtapeynom").val("");
+                $("#txtapeynom").blur();
                 $("#mensajeError").hide();
                 if (json != null) {
                     $("#txtid").val(json.id);
-                    $("#txtdescripcion").focus()
-                    $("#txtdescripcion").val(json.descripcion).focus();
+                    $("#txtapeynom").focus()
+                    $("#txtapeynom").val(json.apeyNom).focus();
                 }
                 $("#FormModal").modal("show");
             }
@@ -326,8 +308,8 @@
                var Interpreteseleccionado = $(this).closest("tr");
                var data = tabladata.row(Interpreteseleccionado).data();
                var Interprete={
-               id:data.id,
-               apeynom:data.apeynom
+                                id:data.id,
+                                apeyNom:data.apeyNom
                }
 
                 swal({
@@ -377,7 +359,7 @@
 
             var Interprete = {
                     id: $("#txtid").val(),
-                    descripcion: $("#txtdescripcion").val(),
+                    apeyNom: $("#txtapeynom").val(),
                 }
 
             jQuery.ajax({

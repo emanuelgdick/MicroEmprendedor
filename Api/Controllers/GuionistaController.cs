@@ -80,7 +80,7 @@ namespace Api.Controllers
                 return NotFound();
             }
 
-            Guionista.Descripcion = guionista.Descripcion;
+            Guionista.ApeyNom = guionista.ApeyNom;
             _db.SaveChanges();
             return Ok(Guionista);
 

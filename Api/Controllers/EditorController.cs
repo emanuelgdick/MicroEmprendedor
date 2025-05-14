@@ -80,7 +80,7 @@ namespace Api.Controllers
                 return NotFound();
             }
 
-            Editor.Descripcion = Editor.Descripcion;
+            Editor.ApeyNom = Editor.ApeyNom;
             _db.SaveChanges();
             return Ok(Editor);
 

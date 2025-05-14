@@ -49,23 +49,6 @@ namespace Api.Controllers
             return Autor;
         }
 
-
-        //[HttpGet("GetLastAutor")]
-        //[Authorize]
-        //[ResponseCache(CacheProfileName = "apicache")]
-        //public ActionResult<Autor> GetLastAutor()
-        //{
-        //    var Autor = _db.Autor.LastOrDefault();
-
-        //    if (Autor == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return Autor;
-        //}
-
-
-
         [HttpPost("AddAutor")]
         [Authorize]
         public ActionResult<Autor> AddAutor([FromBody] Autor autor)
@@ -78,7 +61,6 @@ namespace Api.Controllers
             _db.Autor.Add(autor);
             _db.SaveChanges();
             return Ok(autor);
-
         }
 
         [HttpPost("UpdateAutor")]
@@ -96,7 +78,7 @@ namespace Api.Controllers
                 return NotFound();
             }
 
-            Autor.Descripcion = autor.Descripcion;
+            Autor.ApeyNom = autor.ApeyNom;
             _db.SaveChanges();
             return Ok(Autor);
 

@@ -83,7 +83,6 @@ namespace Api.Controllers
             Editorial.Descripcion = editorial.Descripcion;
             _db.SaveChanges();
             return Ok(Editorial);
-
         }
 
         [HttpPut("DeleteEditorial")]

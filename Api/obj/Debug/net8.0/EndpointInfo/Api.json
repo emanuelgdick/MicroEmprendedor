@@ -2761,6 +2761,202 @@
         }
       }
     },
+    "/api/Ilustrador": {
+      "get": {
+        "tags": [
+          "Ilustrador"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Ilustrador/GetIlustradorById": {
+      "get": {
+        "tags": [
+          "Ilustrador"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ilustrador"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ilustrador"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ilustrador"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ilustrador/AddIlustrador": {
+      "post": {
+        "tags": [
+          "Ilustrador"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ilustrador"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ilustrador"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ilustrador"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ilustrador"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ilustrador"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ilustrador"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ilustrador/UpdateIlustrador": {
+      "post": {
+        "tags": [
+          "Ilustrador"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ilustrador"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ilustrador"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ilustrador"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ilustrador"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ilustrador"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ilustrador"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Ilustrador/DeleteIlustrador": {
+      "put": {
+        "tags": [
+          "Ilustrador"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ilustrador"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ilustrador"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ilustrador"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Interprete": {
       "get": {
         "tags": [
@@ -4329,6 +4525,202 @@
         }
       }
     },
+    "/api/Prologuista": {
+      "get": {
+        "tags": [
+          "Prologuista"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Prologuista/GetProloguistaById": {
+      "get": {
+        "tags": [
+          "Prologuista"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Prologuista"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Prologuista"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Prologuista"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Prologuista/AddProloguista": {
+      "post": {
+        "tags": [
+          "Prologuista"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Prologuista"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Prologuista"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Prologuista"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Prologuista"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Prologuista"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Prologuista"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Prologuista/UpdateProloguista": {
+      "post": {
+        "tags": [
+          "Prologuista"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Prologuista"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Prologuista"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Prologuista"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Prologuista"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Prologuista"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Prologuista"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Prologuista/DeleteProloguista": {
+      "put": {
+        "tags": [
+          "Prologuista"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Prologuista"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Prologuista"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Prologuista"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Provincia": {
       "get": {
         "tags": [
@@ -5701,6 +6093,202 @@
         }
       }
     },
+    "/api/Traductor": {
+      "get": {
+        "tags": [
+          "Traductor"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Traductor/GetTraductorById": {
+      "get": {
+        "tags": [
+          "Traductor"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Traductor"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Traductor"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Traductor"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Traductor/AddTraductor": {
+      "post": {
+        "tags": [
+          "Traductor"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Traductor"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Traductor"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Traductor"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Traductor"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Traductor"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Traductor"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Traductor/UpdateTraductor": {
+      "post": {
+        "tags": [
+          "Traductor"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Traductor"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Traductor"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Traductor"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Traductor"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Traductor"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Traductor"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Traductor/DeleteTraductor": {
+      "put": {
+        "tags": [
+          "Traductor"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Traductor"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Traductor"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Traductor"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Usuario/Userlogin": {
       "post": {
         "tags": [
@@ -5771,7 +6359,7 @@
       },
       "Autor": {
         "required": [
-          "descripcion"
+          "apeyNom"
         ],
         "type": "object",
         "properties": {
@@ -5779,7 +6367,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "descripcion": {
+          "apeyNom": {
             "minLength": 1,
             "type": "string"
           }
@@ -5827,7 +6415,7 @@
       },
       "Cobrador": {
         "required": [
-          "descripcion"
+          "apeyNom"
         ],
         "type": "object",
         "properties": {
@@ -5835,7 +6423,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "descripcion": {
+          "apeyNom": {
             "minLength": 1,
             "type": "string"
           }
@@ -5861,7 +6449,7 @@
       },
       "Director": {
         "required": [
-          "descripcion"
+          "apeyNom"
         ],
         "type": "object",
         "properties": {
@@ -5869,7 +6457,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "descripcion": {
+          "apeyNom": {
             "minLength": 1,
             "type": "string"
           }
@@ -5878,7 +6466,7 @@
       },
       "Editor": {
         "required": [
-          "descripcion"
+          "apeyNom"
         ],
         "type": "object",
         "properties": {
@@ -5886,7 +6474,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "descripcion": {
+          "apeyNom": {
             "minLength": 1,
             "type": "string"
           }
@@ -5963,7 +6551,7 @@
       },
       "Guionista": {
         "required": [
-          "descripcion"
+          "apeyNom"
         ],
         "type": "object",
         "properties": {
@@ -5971,7 +6559,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "descripcion": {
+          "apeyNom": {
             "minLength": 1,
             "type": "string"
           }
@@ -5995,9 +6583,9 @@
         },
         "additionalProperties": false
       },
-      "Interprete": {
+      "Ilustrador": {
         "required": [
-          "descripcion"
+          "apeyNom"
         ],
         "type": "object",
         "properties": {
@@ -6005,7 +6593,24 @@
             "type": "integer",
             "format": "int32"
           },
-          "descripcion": {
+          "apeyNom": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Interprete": {
+        "required": [
+          "apeyNom"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "apeyNom": {
             "minLength": 1,
             "type": "string"
           }
@@ -6102,7 +6707,7 @@
       },
       "Productor": {
         "required": [
-          "descripcion"
+          "apeyNom"
         ],
         "type": "object",
         "properties": {
@@ -6110,7 +6715,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "descripcion": {
+          "apeyNom": {
             "minLength": 1,
             "type": "string"
           }
@@ -6128,6 +6733,23 @@
             "format": "int32"
           },
           "descripcion": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Prologuista": {
+        "required": [
+          "apeyNom"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "apeyNom": {
             "minLength": 1,
             "type": "string"
           }
@@ -6325,6 +6947,23 @@
             "format": "int32"
           },
           "descripcion": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Traductor": {
+        "required": [
+          "apeyNom"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "apeyNom": {
             "minLength": 1,
             "type": "string"
           }

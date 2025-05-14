@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Frontend.Models
+namespace FrontEnd.Models
 {
     public class Interprete
     {
@@ -8,6 +8,6 @@ namespace Frontend.Models
         public int Id { get; set; }
 
         [Required]
-        public string Descripcion { get; set; }
+        public string ApeyNom { get; set; }
     }
 }

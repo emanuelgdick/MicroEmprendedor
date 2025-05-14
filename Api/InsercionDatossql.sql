@@ -10,7 +10,7 @@ SET IDENTITY_INSERT Anexo OFF
 delete from Autor
 dbcc checkident(Autor,reseed,0)
 SET IDENTITY_INSERT Autor ON
-insert into Autor(Id, Descripcion)
+insert into Autor(Id, ApeyNom)
 select ID_AUTOR,DESCRIPCION from [Biblioteca].dbo.autores
 SET IDENTITY_INSERT Autor OFF
 --select * from autor
@@ -34,7 +34,7 @@ SET IDENTITY_INSERT CategoriaSocio OFF
 delete from Cobrador
 dbcc checkident(Cobrador,reseed,0)
 SET IDENTITY_INSERT Cobrador ON
-insert into Cobrador(Id,Descripcion)
+insert into Cobrador(Id,ApeyNom)
 select ID_COBRADOR,APEYNOM from [Biblioteca].dbo.COBRADORES
 SET IDENTITY_INSERT Cobrador OFF
 --select * from Cobrador
@@ -50,7 +50,7 @@ SET IDENTITY_INSERT Coleccion OFF
 delete from Director
 dbcc checkident(Director,reseed,0)
 SET IDENTITY_INSERT Director ON
-insert into Director(Id, Descripcion)
+insert into Director(Id, ApeyNom)
 select id_DIRECTOR,descripcion from [Biblioteca].dbo.DIRECTORES
 SET IDENTITY_INSERT Director OFF
 --select * from Director
@@ -58,8 +58,8 @@ SET IDENTITY_INSERT Director OFF
 delete from Editor
 dbcc checkident(Editor,reseed,0)
 SET IDENTITY_INSERT Editor ON
-insert into Editor(Id,Descripcion)
-select id_Editor, descripcion from [Biblioteca].dbo.Editoras
+insert into Editor(Id,ApeyNom)
+select id_Editora, descripcion from [Biblioteca].dbo.Editoras
 SET IDENTITY_INSERT Editor OFF
 --select * from Editor
 
@@ -100,7 +100,7 @@ SET IDENTITY_INSERT Genero OFF
 delete from Guionista
 dbcc checkident(Guionista,reseed,0)
 SET IDENTITY_INSERT Guionista ON
-insert into Guionista(Id,Descripcion)
+insert into Guionista(Id,ApeyNom)
 select id_guionista,descripcion from [Biblioteca].dbo.Guionistas
 SET IDENTITY_INSERT Guionista OFF
 --select * from Guionista
@@ -116,7 +116,7 @@ SET IDENTITY_INSERT Idioma OFF
 delete from Interprete
 dbcc checkident(Interprete,reseed,0)
 SET IDENTITY_INSERT Interprete ON
-insert into Interprete(Id,Descripcion)
+insert into Interprete(Id,ApeyNom)
 select ID_INTERPRETE,descripcion from [Biblioteca].dbo.INTERPRETES
 SET IDENTITY_INSERT Interprete OFF
 --select * from Interprete
@@ -172,7 +172,7 @@ SET IDENTITY_INSERT Procedencia OFF
 delete from Productor
 dbcc checkident(Productor,reseed,0)
 SET IDENTITY_INSERT Productor ON
-insert into Productor(Id,Descripcion)
+insert into Productor(Id,ApeyNom)
 select id_PRODUCTOR,descripcion from [Biblioteca].dbo.PRODUCTORES
 SET IDENTITY_INSERT Productor OFF
 --select * from Productor
@@ -227,11 +227,42 @@ SET IDENTITY_INSERT TipoMaterial OFF
 
 delete from Socio
 dbcc checkident(Socio,reseed,0)
-
 insert into Socio(NroSocio,ApeyNom,Nro,Depto,Telefono,Fnac,FIngreso,FEgreso,Observaciones,Documento,Vitalicio,PagaAca,IdTipoSocio,IdEstadoSocio,IdCategoriaSocio,IdTipoDocumento,IdCalle,IdProfesion,IdLocalidad)
 select Socio,ApeyNom,Nro,Depto,Telefono,Fnac,FIngreso,FEgreso,Observaciones,Documento,Vitalicio,PagaAca,Id_Tipo_Socio,Id_Estado_Socio,Id_Categoria,Id_Tipo_Documento,Id_Calle,Id_Profesion,Id_Localidad from [Biblioteca].dbo.SOCIOS
-
 --select * from Socio
+
+delete from Prologuista
+dbcc checkident(Prologuista,reseed,0)
+SET IDENTITY_INSERT Prologuista ON
+insert into Prologuista(Id,ApeyNom)
+select ID_TRADPROL,DESCRIPCION from [Biblioteca].dbo.TRADPROL WHERE DESCRIPCION LIKE('PROL%')
+SET IDENTITY_INSERT Prologuista OFF
+--select * from Prologuista
+
+delete from Traductor
+dbcc checkident(Traductor,reseed,0)
+SET IDENTITY_INSERT Traductor ON
+insert into Traductor(Id,ApeyNom)
+select ID_TRADPROL,DESCRIPCION from [Biblioteca].dbo.TRADPROL WHERE DESCRIPCION LIKE('TRAD%')
+SET IDENTITY_INSERT Traductor OFF
+--select * from Traductor
+
+delete from Sector
+dbcc checkident(Sector,reseed,0)
+SET IDENTITY_INSERT Sector ON
+insert into Sector(Id,Descripcion)
+select ID_SECTOR,DESCRIPCION from [Biblioteca].dbo.Sectores
+SET IDENTITY_INSERT Sector OFF
+--select * from Sector
+
+
+--delete from Ilustrador
+--dbcc checkident(Ilustrador,reseed,0)
+--SET IDENTITY_INSERT Ilustrador ON
+--insert into Ilustrador(Id,ApeyNom)
+--select ID_PROLOGUISTA,ApeyNom from [Biblioteca].dbo.Ilustradores
+--SET IDENTITY_INSERT Ilustrador OFF
+--select * from Ilustrador
 
 
 

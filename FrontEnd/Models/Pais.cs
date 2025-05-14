@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Frontend.Models
+namespace FrontEnd.Models
 {
     public class Pais
     {
@@ -8,7 +8,6 @@ namespace Frontend.Models
         public int Id { get; set; }
         [Required]
         public string Descripcion { get; set; }
-        //[Required] 
-        //public ICollection<Provincia> Provincia { get; set; }
+   
     }
 }

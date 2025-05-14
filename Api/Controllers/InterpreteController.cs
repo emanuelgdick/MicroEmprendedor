@@ -80,7 +80,7 @@ namespace Api.Controllers
                 return NotFound();
             }
 
-            Interprete.Descripcion = Interprete.Descripcion;
+            Interprete.ApeyNom = Interprete.ApeyNom;
             _db.SaveChanges();
             return Ok(Interprete);
 

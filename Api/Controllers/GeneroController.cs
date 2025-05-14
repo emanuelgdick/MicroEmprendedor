@@ -26,7 +26,6 @@ namespace Api.Controllers
             _logger.LogInformation("Fetching Todas las Generos");
             var GeneroList = _db.Genero.ToList();
             return Ok(GeneroList);
-
         }
 
         [HttpGet("GetGeneroById")]
@@ -34,7 +33,6 @@ namespace Api.Controllers
         [ResponseCache(CacheProfileName = "apicache")]
         public ActionResult<Genero> GetGeneroById(int id)
         {
-
             if (id == 0)
             {
                 _logger.LogError("Id de Genero no pasada");
@@ -58,11 +56,9 @@ namespace Api.Controllers
             {
                 return BadRequest(ModelState);
             }
-
             _db.Genero.Add(genero);
             _db.SaveChanges();
             return Ok(genero);
-
         }
 
         [HttpPost("UpdateGenero")]

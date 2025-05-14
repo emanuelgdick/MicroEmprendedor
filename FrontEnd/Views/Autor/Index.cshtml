@@ -1,7 +1,7 @@
 ﻿@using Frontend.Models
 @model Autor
 @{
-    ViewBag.Title = "Autor";
+    ViewBag.Title = "Autores";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -34,19 +34,7 @@
             <tfoot>
             </tfoot>
         </table>
-        @*    <div class="alert-container">
-
-            <div id="mensaje" class="alert" role="alert">
-                This is a success alert—check it out!
-            </div>
-        </div>
- *@
     </div>
-
-
-
-
-
 </div>
 
 <!-- TOAST -->
@@ -74,7 +62,6 @@
                             <label for="txtapeynom">Apellido y Nombre</label>
                         </div>
                     </div>
-
                 </form>
             </div>
             <div class="row mt-2">
@@ -92,17 +79,11 @@
 </div>
 
 @section scripts {
-
-
     <script>
-
-
             $(function(){
-
           $('.form-group').floatingLabel();
-
         });
-                $('.form-group').floatingLabel({
+             $('.form-group').floatingLabel({
              floatingLabelClass: 'floating-label',
              floatingLabelOnClass: 'floating-label-on',
              floatingInputClass: 'floating-input'
@@ -110,17 +91,12 @@
 
            $('.form-group').floatingLabel({
           floatingStyle: 'primary',
-
         });
-
-
                 const contenedorToast = document.getElementById('contenedor-toastP');
 
                 // Event listener para detectar click en los toasts
                 contenedorToast.addEventListener('click', (e) => {
-
                     const toastId = e.target.closest('div.toastP').id;
-
                     if (e.target.closest('button.btn-cerrar')) {
                         cerrarToast(toastId);
                     }
@@ -215,9 +191,6 @@
                     nuevoToast.addEventListener('animationend', handleAnimacionCierre);
                  };
 
-
-
-
             var tabladata;
             var filaSeleccionada;
              tabladata = $("#tabla").DataTable({
@@ -226,7 +199,6 @@
                 dom: "Bfrtip",
                 buttons: [
                     {
-
                         extend: "excelHtml5",
                         text: '<i class="fa fa-file-excel-o "></i>',
                         filename: "Reporte de Autores",
@@ -308,32 +280,22 @@
             errorElement: "div",
             errorLabelContainer: ".alert-danger"
         });
-
-
             //Abrir Modal
-
             function abrirModal(json) {
-
-
                 $("#txtid").val(0);
                 $("#txtapeynom").val("");
                 $("#txtapeynom").blur();
-
-
                 $("#mensajeError").hide();
                 if (json != null) {
-
                     $("#txtid").val(json.id);
                     $("#txtapeynom").focus()
                     $("#txtapeynom").val(json.apeyNom).focus();
-
                 }
                 $("#FormModal").modal("show");
             }
 
             //Editar
             $("#tabla tbody").on("click", '.btn-editar', function () {
-
                 filaSeleccionada = $(this).closest("tr");
                 var data = tabladata.row(filaSeleccionada).data();
                 abrirModal(data)
@@ -345,11 +307,10 @@
                var Autoreseleccionado = $(this).closest("tr");
                var data = tabladata.row(Autoreseleccionado).data();
                var Autor={
-               id:data.id,
-               apeynom:data.apeynom
+                            id:data.id,
+                            apeyNom:data.apeyNom
                }
-
-                swal({
+               swal({
                     title: "Está Seguro?",
                     text: "Desea eliminar el Autor?",
                     type: "warning",
@@ -360,11 +321,10 @@
                     closeOnConfirm: true
                 },
                    function () {
-
                         jQuery.ajax({
                             url: '@Url.Action("DeleteAutor", "Autor")',
                             type: "POST",
-                            data: JSON.stringify( Autor),
+                            data: JSON.stringify(Autor),
                             contentType: 'application/json',
                             success: function (data) {
                                 if (data.resultado) {
@@ -377,7 +337,6 @@
                                  //  mostrarAlert(data.mensaje)
                                 }
                             },
-
                             error: function (error) {
                                 console.log(error);
                             }
@@ -437,8 +396,6 @@
                                }
                              }
                         },
-
-
                         beforeSend: function () {
                              $(".modal-body").LoadingOverlay("show", {
                                  imageResizeFactor: 2,
@@ -455,14 +412,5 @@
                     }
                 )
             }
-
-
-
-
-
-
-
-
-
     </script>
 }

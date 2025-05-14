@@ -74,8 +74,6 @@ namespace FrontEnd.Controllers
                     }
 
                 }
-
-
                 else
                 {
                     if (Autor.ApeyNom != "")

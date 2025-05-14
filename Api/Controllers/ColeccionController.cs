@@ -26,7 +26,6 @@ namespace Api.Controllers
             _logger.LogInformation("Fetching Todas las Coleccions");
             var ColeccionList = _db.Coleccion.ToList();
             return Ok(ColeccionList);
-
         }
 
         [HttpGet("GetColeccionById")]
@@ -34,7 +33,6 @@ namespace Api.Controllers
         [ResponseCache(CacheProfileName = "apicache")]
         public ActionResult<Coleccion> GetColeccionById(int id)
         {
-
             if (id == 0)
             {
                 _logger.LogError("Id de Coleccion no pasada");
@@ -49,7 +47,6 @@ namespace Api.Controllers
             return Coleccion;
         }
 
-
         [HttpPost("AddColeccion")]
         [Authorize]
         public ActionResult<Coleccion> AddColeccion([FromBody] Coleccion coleccion)
@@ -58,11 +55,9 @@ namespace Api.Controllers
             {
                 return BadRequest(ModelState);
             }
-
             _db.Coleccion.Add(coleccion);
             _db.SaveChanges();
             return Ok(coleccion);
-
         }
 
         [HttpPost("UpdateColeccion")]
@@ -83,7 +78,6 @@ namespace Api.Controllers
             Coleccion.Descripcion = coleccion.Descripcion;
             _db.SaveChanges();
             return Ok(Coleccion);
-
         }
 
         [HttpPut("DeleteColeccion")]

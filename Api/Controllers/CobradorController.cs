@@ -26,7 +26,6 @@ namespace Api.Controllers
             _logger.LogInformation("Fetching Todas las Cobradores");
             var CobradorList = _db.Cobrador.ToList();
             return Ok(CobradorList);
-
         }
 
         [HttpGet("GetCobradorById")]
@@ -34,7 +33,6 @@ namespace Api.Controllers
         [ResponseCache(CacheProfileName = "apicache")]
         public ActionResult<Cobrador> GetCobradorById(int id)
         {
-
             if (id == 0)
             {
                 _logger.LogError("Id de Cobrador no pasada");
@@ -48,9 +46,6 @@ namespace Api.Controllers
             }
             return Cobrador;
         }
-
-
-
 
         [HttpPost("AddCobrador")]
         [Authorize]
@@ -82,7 +77,7 @@ namespace Api.Controllers
                 return NotFound();
             }
 
-            Cobr.Descripcion = cobrador.Descripcion;
+            Cobr.ApeyNom = cobrador.ApeyNom;
             _db.SaveChanges();
             return Ok(Cobr);
 

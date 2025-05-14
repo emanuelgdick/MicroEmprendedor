@@ -23,15 +23,15 @@ namespace FrontEnd.Controllers
         {
             int pagesize = _config.GetValue<int>("PageSettings:PageSize");
             List<Editor> lstEditor = new List<Editor>();
-            lstEditor = await _apiService.GetAllEditors(HttpContext.Session.GetString("APIToken"));
+            lstEditor = await _apiService.GetAllEditores(HttpContext.Session.GetString("APIToken"));
             return View();
         }
 
         [Authorize(Roles = "Admin")]
-        public async Task<JsonResult> GetAllEditors()
+        public async Task<JsonResult> GetAllEditores()
         {
             List<Editor> oLista = new List<Editor>();
-            oLista = await _apiService.GetAllEditors(HttpContext.Session.GetString("APIToken"));
+            oLista = await _apiService.GetAllEditores(HttpContext.Session.GetString("APIToken"));
             return Json(new { data = oLista });
         }
 
@@ -50,7 +50,7 @@ namespace FrontEnd.Controllers
             {
                 if (editor.Id == 0)
                 {
-                    if (editor.Descripcion != "")
+                    if (editor.ApeyNom != "")
                     {
                         editor = await _apiService.AddEditor(editor, HttpContext.Session.GetString("APIToken"));
                         resultado = editor.Id;
@@ -59,12 +59,12 @@ namespace FrontEnd.Controllers
                     else
                     {
                         resultado = false;
-                        mensaje = "Por favor ingrese la Descripción";
+                        mensaje = "Por favor ingrese el Apellido y Nombre";
                     }
                 }
                 else
                 {
-                    if (editor.Descripcion != "")
+                    if (editor.ApeyNom != "")
                     {
                         await _apiService.UpdateEditor(editor.Id, editor, HttpContext.Session.GetString("APIToken"));
                         resultado = true;
@@ -73,7 +73,7 @@ namespace FrontEnd.Controllers
                     else
                     {
                         resultado = false;
-                        mensaje = "Por favor ingrese la Descripción";
+                        mensaje = "Por favor ingrese el Apellido y Nombre";
                     }
                 }
             }

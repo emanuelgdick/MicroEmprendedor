@@ -61,7 +61,7 @@ namespace FrontEnd.Controllers
                     else
                     {
                         resultado = false;
-                        mensaje = "Por favor ingrese la Descripción";
+                        mensaje = "Por favor ingrese el Apellido y Nombre";
                     }
 
                 }
@@ -80,7 +80,7 @@ namespace FrontEnd.Controllers
                     else
                     {
                         resultado = false;
-                        mensaje = "Por favor ingrese la Descripción";
+                        mensaje = "Por favor ingrese el Apellido y Nombre";
                     }
 
                 }
