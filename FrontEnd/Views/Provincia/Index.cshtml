@@ -105,51 +105,27 @@
     <script src="~/js/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
     <script>
 
+         var paisesDescArray =[];
+         var paisesCodArray =[];
+         $(document).ready(function() {
 
-
-             //GET PAISES
-             jQuery.ajax({
-             url: '@Url.Action("GetAllPaises", "Pais")',
-             type: "GET",
-             dataType: "json",
-             contentType: "application/json; charset=utf-8",
-             success: function (data) {
-
-       
-             var paises = [];
-
-
-        for(var i=0; i<1; i++){
-         
-           var dataId=data.data[i].id;
-           var dataDesc=data.data[i].descripcion;
-         
-           var objeto =   {
-                    
-                    key: "AR",
-                    value:dataDesc
-           }
-          paises.push(objeto);
-      
-        }
-
-        var paisesArray = $.map(paises, function (value, key) {
-             return {
-                  key: key,
-                  value: value
-                 };
-             });
-
-             // initialize autocomplete with custom appendTo
-             $('#autocomplete-custom-append').autocomplete({
-                 lookup: paisesArray
-             });
-
-             },
-             error: function (error) {
-             console.log(error)
-             }
-             });
+            //GET PAISES
+              jQuery.ajax({
+              url: '@Url.Action("GetAllPaises", "Pais")',
+              type: "GET",
+              dataType: "json",
+              contentType: "application/json; charset=utf-8",
+              success: function (data) {
+                    for (var i = 0; i < data.data.length; i++) {
+                      paisesDescArray.push(data.data[i].descripcion)
+                      paisesCodArray.push(data.data[i].id)
+                      }
+                    $('#autocomplete-custom-append').autocomplete({
+                        lookup: paisesDescArray
+                    });
+                }
+              });
+        });
 
 
 

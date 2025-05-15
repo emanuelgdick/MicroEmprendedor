@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Biblioteca\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\wwwroot\\js\\custom.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\wwwroot\\js\\custom.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\provincia\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\provincia\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\content\\form.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\content\\form.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\wwwroot\\css\\custom.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\wwwroot\\css\\custom.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,38 +34,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "custom.js",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\custom.js",
-              "RelativeDocumentMoniker": "FrontEnd\\wwwroot\\js\\custom.js",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\custom.js",
-              "RelativeToolTip": "FrontEnd\\wwwroot\\js\\custom.js",
-              "ViewState": "AgIAAIkDAAAAAAAAAADgv50DAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-05-14T22:18:26.005Z",
+              "DocumentIndex": 1,
+              "Title": "custom.css",
+              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\custom.css",
+              "RelativeDocumentMoniker": "FrontEnd\\wwwroot\\css\\custom.css",
+              "ToolTip": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\custom.css",
+              "RelativeToolTip": "FrontEnd\\wwwroot\\css\\custom.css",
+              "ViewState": "AgIAAF8LAAAAAAAAAAAQwHALAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-15T11:15:38.319Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "form.html",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Content\\form.html",
-              "RelativeDocumentMoniker": "FrontEnd\\Content\\form.html",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Content\\form.html",
-              "RelativeToolTip": "FrontEnd\\Content\\form.html",
-              "ViewState": "AgIAAMsCAAAAAAAAAAAUwNwCAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-05-14T20:02:18.97Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Provincia\\Index.cshtml",
               "RelativeDocumentMoniker": "FrontEnd\\Views\\Provincia\\Index.cshtml",
               "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Provincia\\Index.cshtml",
               "RelativeToolTip": "FrontEnd\\Views\\Provincia\\Index.cshtml",
-              "ViewState": "AgIAADgAAAAAAAAAAAAUwJAAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAcwHoAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-14T18:29:59.735Z",
               "EditorCaption": ""
