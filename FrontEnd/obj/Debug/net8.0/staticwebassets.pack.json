@@ -2513,6 +2513,58 @@
       "PackagePath": "staticwebassets\\js\\datatables\\responsive.semanticui.min.js"
     },
     {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\devbridge-autocomplete\\.bower.json",
+      "PackagePath": "staticwebassets\\js\\devbridge-autocomplete\\.bower.json"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\devbridge-autocomplete\\bower.json",
+      "PackagePath": "staticwebassets\\js\\devbridge-autocomplete\\bower.json"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\devbridge-autocomplete\\devbridge-autocomplete.jquery.json",
+      "PackagePath": "staticwebassets\\js\\devbridge-autocomplete\\devbridge-autocomplete.jquery.json"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\devbridge-autocomplete\\dist\\jquery.autocomplete.js",
+      "PackagePath": "staticwebassets\\js\\devbridge-autocomplete\\dist\\jquery.autocomplete.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\devbridge-autocomplete\\dist\\jquery.autocomplete.min.js",
+      "PackagePath": "staticwebassets\\js\\devbridge-autocomplete\\dist\\jquery.autocomplete.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\devbridge-autocomplete\\dist\\license.txt",
+      "PackagePath": "staticwebassets\\js\\devbridge-autocomplete\\dist\\license.txt"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\devbridge-autocomplete\\gruntfile.js",
+      "PackagePath": "staticwebassets\\js\\devbridge-autocomplete\\gruntfile.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\devbridge-autocomplete\\index.htm",
+      "PackagePath": "staticwebassets\\js\\devbridge-autocomplete\\index.htm"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\devbridge-autocomplete\\license.txt",
+      "PackagePath": "staticwebassets\\js\\devbridge-autocomplete\\license.txt"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\devbridge-autocomplete\\package.json",
+      "PackagePath": "staticwebassets\\js\\devbridge-autocomplete\\package.json"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\devbridge-autocomplete\\readme.md",
+      "PackagePath": "staticwebassets\\js\\devbridge-autocomplete\\readme.md"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\devbridge-autocomplete\\src\\jquery.autocomplete.d.ts",
+      "PackagePath": "staticwebassets\\js\\devbridge-autocomplete\\src\\jquery.autocomplete.d.ts"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\devbridge-autocomplete\\src\\jquery.autocomplete.js",
+      "PackagePath": "staticwebassets\\js\\devbridge-autocomplete\\src\\jquery.autocomplete.js"
+    },
+    {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\js\\jquery\\dist\\jquery.js"
     },
