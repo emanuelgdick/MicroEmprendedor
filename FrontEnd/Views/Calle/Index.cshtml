@@ -5,7 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
 <div class="card">
     <div class="row  m-0 p-0">
         <div class="col-11 m-0 p-0">
@@ -53,10 +52,16 @@
             <div class="modal-body ">
                 <input id="txtid" type="hidden" value="0" />
                 <form id="formNivel" class="row">
-                    <div class=" col-12 form-group floating-control-group">
-                        <div class="form-floating ">
-                            <input type="text" class="form-control" id="txtdescripcion" placeholder="Descripción" autocomplete="off" value="@Html.DisplayTextFor(model => Model.Descripcion) ">
-                            <label for="txtdescripcion">Descripción</label>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-7 mx-auto">
+                                <form >
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="example-input-3" placeholder="name@example.com" value="steve@apple.com">
+                                        <label for="example-input-3">Email address</label>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -81,17 +86,17 @@
 
     <script>
 
-            $(function(){
-              $('.form-group').floatingLabel();
-               });
-              $('.form-group').floatingLabel({
-               floatingLabelClass: 'floating-label',
-                floatingLabelOnClass: 'floating-label-on',
-                floatingInputClass: 'floating-input'
-               });
-               $('.form-group').floatingLabel({
-             floatingStyle: 'primary',
-            });
+            // $(function(){
+            //   $('.form-group').floatingLabel();
+            //    });
+            //   $('.form-group').floatingLabel({
+            //    floatingLabelClass: 'floating-label',
+            //     floatingLabelOnClass: 'floating-label-on',
+            //     floatingInputClass: 'floating-input'
+            //    });
+            //    $('.form-group').floatingLabel({
+            //  floatingStyle: 'primary',
+            // });
 
            const contenedorToast = document.getElementById('contenedor-toastP');
                 // Event listener para detectar click en los toasts

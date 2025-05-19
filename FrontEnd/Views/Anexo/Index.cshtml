@@ -55,9 +55,23 @@
                 <input id="txtid" type="hidden" value="0" />
                 <form id="formNivel" class="row">
                     <div class=" col-12 form-group floating-control-group">
-                        <div class="form-floating ">
-                            <input type="text" class="form-control" id="txtdescripcion" placeholder="Descripción" autocomplete="off" value="@Html.DisplayTextFor(model => Model.Descripcion) ">
-                            <label for="txtdescripcion">Descripción</label>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-7 mx-auto">
+                                    <form class="form-signin">
+
+                                        <div class="form-label-group">
+                                            <input type="email" id="inputEmail4" class="form-control" placeholder="Email" required="" autofocus="">
+                                            <label for="inputEmail4">Email Address</label>
+                                        </div>
+                                        <div class="form-label-group">
+                                            <input type="password" id="inputPassword4" class="form-control" placeholder="Password" required="">
+                                            <label for="inputPassword4">Password</label>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
