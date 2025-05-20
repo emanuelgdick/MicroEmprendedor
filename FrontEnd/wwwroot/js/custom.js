@@ -51,6 +51,7 @@ var CURRENT_URL = window.location.href.split('#')[0].split('?')[0],
 
 // Sidebar
 function init_sidebar() {
+ 
     // TODO: This is some kind of easy fix, maybe we can improve this
     var setContentHeight = function () {
         // reset height
@@ -173,11 +174,11 @@ $(document).ready(function () {
 // /Panel toolbox
 
 // Tooltip
-$(document).ready(function () {
-    $('[data-toggle="tooltip"]').tooltip({
-        container: 'body'
-    });
-});
+////////$(document).ready(function () {
+////////    $('[data-bs-toggle="tooltip"]').tooltip({
+////////        container: 'body'
+////////    });
+////////});
 // /Tooltip
 
 // Progressbar
@@ -294,36 +295,38 @@ if (typeof NProgress != 'undefined') {
 
 
 //hover and retain popover when on popover content
-var originalLeave = $.fn.popover.Constructor.prototype.leave;
-$.fn.popover.Constructor.prototype.leave = function (obj) {
-    var self = obj instanceof this.constructor ?
-        obj : $(obj.currentTarget)[this.type](this.getDelegateOptions()).data('bs.' + this.type);
-    var container, timeout;
 
-    originalLeave.call(this, obj);
+////////////var originalLeave = $.fn.popover.Constructor.prototype.leave;
 
-    if (obj.currentTarget) {
-        container = $(obj.currentTarget).siblings('.popover');
-        timeout = self.timeout;
-        container.one('mouseenter', function () {
-            //We entered the actual popover – call off the dogs
-            clearTimeout(timeout);
-            //Let's monitor popover content instead
-            container.one('mouseleave', function () {
-                $.fn.popover.Constructor.prototype.leave.call(self, self);
-            });
-        });
-    }
-};
+////////////$.fn.popover.Constructor.prototype.leave = function (obj) {
+////////////    var self = obj instanceof this.constructor ?
+////////////        obj : $(obj.currentTarget)[this.type](this.getDelegateOptions()).data('bs.' + this.type);
+////////////    var container, timeout;
 
-$('body').popover({
-    selector: '[data-popover]',
-    trigger: 'click hover',
-    delay: {
-        show: 50,
-        hide: 400
-    }
-});
+////////////    originalLeave.call(this, obj);
+ 
+////////////    if (obj.currentTarget) {
+////////////        container = $(obj.currentTarget).siblings('.popover');
+////////////        timeout = self.timeout;
+////////////        container.one('mouseenter', function () {
+////////////            //We entered the actual popover – call off the dogs
+////////////            clearTimeout(timeout);
+////////////            //Let's monitor popover content instead
+////////////            container.one('mouseleave', function () {
+////////////                $.fn.popover.Constructor.prototype.leave.call(self, self);
+////////////            });
+////////////        });
+////////////    }
+////////////};
+
+//////////////$('body').popover({
+//////////////    selector: '[data-popover]',
+//////////////    trigger: 'click hover',
+//////////////    delay: {
+//////////////        show: 50,
+//////////////        hide: 400
+//////////////    }
+//////////////});
 
 
 function gd(year, month, day) {
@@ -1097,7 +1100,7 @@ function init_wysiwyg() {
         } else {
            /* console.log("error uploading file", reason, detail);*/
         }
-        $('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>' +
+        $('<div class="alert"> <button type="button" class="close" data-bs-dismiss="alert">&times;</button>' +
             '<strong>File upload error</strong> ' + msg + ' </div>').prependTo('#alerts');
     }
 
@@ -1105,7 +1108,7 @@ function init_wysiwyg() {
         var id = $(this).attr('id');	//editor-one
 
         $(this).wysiwyg({
-            toolbarSelector: '[data-target="#' + id + '"]',
+            toolbarSelector: '[data-bs-target="#' + id + '"]',
             fileUploadError: showErrorAlert
         });
     });
@@ -1149,7 +1152,7 @@ function init_cropper() {
 
 
     // Tooltip
-    $('[data-toggle="tooltip"]').tooltip();
+ /*   $('[data-bs-toggle="tooltip"]').tooltip();*/
 
 
     // Cropper

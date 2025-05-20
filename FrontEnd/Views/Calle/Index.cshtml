@@ -5,6 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+
+
+
 <div class="card">
     <div class="row  m-0 p-0">
         <div class="col-11 m-0 p-0">
@@ -53,16 +57,19 @@
                 <input id="txtid" type="hidden" value="0" />
                 <form id="formNivel" class="row">
                     <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-7 mx-auto">
-                                <form >
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="example-input-3" placeholder="name@example.com" value="steve@apple.com">
-                                        <label for="example-input-3">Email address</label>
-                                    </div>
-                                </form>
+
+
+                            <div class="form-floatingFL mb-3">
+                                <input type="email" class="form-controlFL" id="floatingInput" placeholder="name@example.com" />
+                                <label for="floatingInput">Email address</label>
                             </div>
-                        </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+                                <label for="floatingPassword">Password</label>
+                            </div>
+
+                          
+                        
                     </div>
                 </form>
             </div>
