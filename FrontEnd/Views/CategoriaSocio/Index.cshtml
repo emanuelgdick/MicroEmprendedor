@@ -50,27 +50,17 @@
         <div class="modal-content">
             <div class="modal-header text-white" style="background: #2A3F54">
                 <h5 class="modal-title" id="exampleModalLabel">Categoría de Socios</h5>
-                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body ">
                 <input id="txtid" type="hidden" value="0" />
-                <form id="formNivel">
-
-                    <div class="row">
-                        <div class=" col-8 form-group floating-control-group">
-                            <div class="form-floating ">
-                                <input type="text" class="form-control" id="txtdescripcion" placeholder="Descripción" autocomplete="off" value="@Html.DisplayTextFor(model => Model.Descripcion) ">
+               <form id="formNivel" class="row">
+                      <div class="container p-2">
+                           <div class="form-floating">
+                               <input type="text" class="form-control form-control-sm" id="txtdescripcion" placeholder="Descripción" />
                                 <label for="txtdescripcion">Descripción</label>
-                            </div>
+                           </div>
                         </div>
-                        <div class=" col-4 form-group floating-control-group">
-                            <div class="form-floating ">
-                                <input type="text" class="form-control" id="txtcantmaterial" placeholder="Cant. Material" autocomplete="off" value="@Html.DisplayTextFor(model => Model.cantMaterial) ">
-                                <label for="txtcantmaterial">Cant. Material</label>
-                            </div>
-                        </div>
-                    </div>
-                    
                 </form>
             </div>
             <div class="row mt-2">
@@ -81,7 +71,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btnCancelar" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btnCancelar" data-bs-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btnAceptar" onclick="Guardar()">Guardar</button>
             </div>
         </div>
@@ -92,24 +82,6 @@
 
 
     <script>
-
-
-            $(function(){
-
-          $('.form-group').floatingLabel();
-
-        });
-                $('.form-group').floatingLabel({
-             floatingLabelClass: 'floating-label',
-             floatingLabelOnClass: 'floating-label-on',
-             floatingInputClass: 'floating-input'
-           });
-
-           $('.form-group').floatingLabel({
-          floatingStyle: 'primary',
-
-        });
-
 
                 const contenedorToast = document.getElementById('contenedor-toastP');
 

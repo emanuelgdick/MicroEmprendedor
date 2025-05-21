@@ -49,32 +49,17 @@
         <div class="modal-content">
             <div class="modal-header text-white" style="background: #2A3F54">
                 <h5 class="modal-title" id="exampleModalLabel">Anexo</h5>
-                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body ">
                 <input id="txtid" type="hidden" value="0" />
                 <form id="formNivel" class="row">
-                    <div class=" col-12 form-group floating-control-group">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-7 mx-auto">
-                                    <form class="form-signin">
-
-                                        <div class="form-label-group">
-                                            <input type="email" id="inputEmail4" class="form-control" placeholder="Email" required="" autofocus="">
-                                            <label for="inputEmail4">Email Address</label>
-                                        </div>
-                                        <div class="form-label-group">
-                                            <input type="password" id="inputPassword4" class="form-control" placeholder="Password" required="">
-                                            <label for="inputPassword4">Password</label>
-                                        </div>
-
-                                    </form>
-                                </div>
-                            </div>
+                      <div class="container p-2">
+                           <div class="form-floating">
+                               <input type="text" class="form-control form-control-sm" id="txtdescripcion" placeholder="Descripción" />
+                                <label for="txtdescripcion">Descripción</label>
+                           </div>
                         </div>
-                    </div>
-
                 </form>
             </div>
             <div class="row mt-2">
@@ -85,7 +70,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btnCancelar" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btnCancelar" data-bs-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btnAceptar" onclick="Guardar()">Guardar</button>
             </div>
         </div>
@@ -93,27 +78,7 @@
 </div>
 
 @section scripts {
-
-
     <script>
-
-
-            $(function(){
-
-          $('.form-group').floatingLabel();
-
-        });
-                $('.form-group').floatingLabel({
-             floatingLabelClass: 'floating-label',
-             floatingLabelOnClass: 'floating-label-on',
-             floatingInputClass: 'floating-input'
-           });
-
-           $('.form-group').floatingLabel({
-          floatingStyle: 'primary',
-
-        });
-
 
                 const contenedorToast = document.getElementById('contenedor-toastP');
 

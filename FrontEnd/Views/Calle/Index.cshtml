@@ -51,26 +51,17 @@
         <div class="modal-content">
             <div class="modal-header text-white" style="background: #2A3F54">
                 <h5 class="modal-title" id="exampleModalLabel">Calle</h5>
-                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body ">
                 <input id="txtid" type="hidden" value="0" />
                 <form id="formNivel" class="row">
-                    <div class="container">
-
-
-                            <div class="form-floatingFL mb-3">
-                                <input type="email" class="form-controlFL" id="floatingInput" placeholder="name@example.com" />
-                                <label for="floatingInput">Email address</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
-                                <label for="floatingPassword">Password</label>
-                            </div>
-
-                          
-                        
-                    </div>
+                      <div class="container p-2">
+                           <div class="form-floating">
+                               <input type="text" class="form-control form-control-sm" id="txtdescripcion" placeholder="Descripción" />
+                                <label for="txtdescripcion">Descripción</label>
+                           </div>
+                        </div>
                 </form>
             </div>
             <div class="row mt-2">
@@ -81,7 +72,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btnCancelar" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btnCancelar" data-bs-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btnAceptar" onclick="Guardar()">Guardar</button>
             </div>
         </div>
