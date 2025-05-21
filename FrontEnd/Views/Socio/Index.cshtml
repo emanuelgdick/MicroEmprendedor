@@ -6,6 +6,8 @@
 }
 
 
+
+
 <div class="card">
     <div class="row  m-0 p-0">
         <div class="col-11 m-0 p-0">
@@ -42,169 +44,25 @@
     </div>
 </div>
 
+
 <!-- Modal -->
 <div class="modal fade" id="FormModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
-    <div class="modal-dialog  modal-xl">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header text-white" style="background: #2A3F54">
                 <h5 class="modal-title" id="exampleModalLabel">Socio</h5>
-                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body ">
                 <input id="txtid" type="hidden" value="0" />
-                <!-- Tabs -->
-                <div id="wizard_verticle" class="form_wizard wizard_verticle">
-                    <ul class="list-unstyled wizard_steps">
-                        <li>
-                            <a href="#step-11">
-                                <span class="step_no">1</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#step-22">
-                                <span class="step_no">2</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#step-33">
-                                <span class="step_no">3</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#step-44">
-                                <span class="step_no">4</span>
-                            </a>
-                        </li>
-                    </ul>
-
-                    <div id="step-11">
-                        <h2 class="StepTitle">Paso 1-Información Personal</h2>
-                        <form class="form-horizontal form-label-left">
-
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-7 mx-auto">
-                                        <form class="form-signin">
-                                            
-                                            <div class="form-label-group">
-                                                <input type="email" id="inputEmail4" class="form-control" placeholder="Email" required="" autofocus="">
-                                                <label for="inputEmail4">Email Address</label>
-                                            </div>
-                                            <div class="form-label-group">
-                                                <input type="password" id="inputPassword4" class="form-control" placeholder="Password" required="">
-                                                <label for="inputPassword4">Password</label>
-                                            </div>
-                                            
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div id="step-22">
-                        <h2 class="StepTitle">Paso 2-Domicilio</h2>
-                   
-                    </div>
-                    <div id="step-33">
-                        <h2 class="StepTitle">Paso 3</h2>
-                       
-                    </div>
-                    <div id="step-44">
-                        <h2 class="StepTitle">Paso 4-Observaciones</h2>
-                        <div class="col-md-12 col-sm-12 ">
-                            <div class="x_panel">
-                               
-                                <div class="x_content">
-                                    <div id="alerts"></div>
-                                    <div class="btn-toolbar editor" data-role="editor-toolbar" data-target="#editor-one">
-                                        <div class="btn-group">
-                                            <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
-                                            <ul class="dropdown-menu">
-                                            </ul>
-                                        </div>
-
-                                        <div class="btn-group">
-                                            <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <a data-edit="fontSize 5">
-                                                        <p style="font-size:17px">Huge</p>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-edit="fontSize 3">
-                                                        <p style="font-size:14px">Normal</p>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a data-edit="fontSize 1">
-                                                        <p style="font-size:11px">Small</p>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                        <div class="btn-group">
-                                            <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
-                                            <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
-                                            <a class="btn" data-edit="strikethrough" title="Strikethrough"><i class="fa fa-strikethrough"></i></a>
-                                            <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
-                                        </div>
-
-                                        <div class="btn-group">
-                                            <a class="btn" data-edit="insertunorderedlist" title="Bullet list"><i class="fa fa-list-ul"></i></a>
-                                            <a class="btn" data-edit="insertorderedlist" title="Number list"><i class="fa fa-list-ol"></i></a>
-                                            <a class="btn" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>
-                                            <a class="btn" data-edit="indent" title="Indent (Tab)"><i class="fa fa-indent"></i></a>
-                                        </div>
-
-                                        <div class="btn-group">
-                                            <a class="btn" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
-                                            <a class="btn" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
-                                            <a class="btn" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
-                                            <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
-                                        </div>
-
-                                        <div class="btn-group">
-                                            <a class="btn dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="fa fa-link"></i></a>
-                                            <div class="dropdown-menu input-append">
-                                                <input class="span2" placeholder="URL" type="text" data-edit="createLink" />
-                                                <button class="btn" type="button">Add</button>
-                                            </div>
-                                            <a class="btn" data-edit="unlink" title="Remove Hyperlink"><i class="fa fa-cut"></i></a>
-                                        </div>
-
-                                        <div class="btn-group">
-                                            <a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
-                                            <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
-                                        </div>
-
-                                        <div class="btn-group">
-                                            <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
-                                            <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
-                                        </div>
-                                    </div>
-
-                                    <div id="editor-one" class="editor-wrapper"></div>
-
-                                    <textarea name="descr" id="descr" style="display:none;"></textarea>
-
-                                    <br />
-
-                                    <div class="ln_solid"></div>
-
-                                    <div class="form-group">
-                                        <label class="control-label col-md-3 col-sm-3 ">Resizable Text area</label>
-                                        <div class="col-md-9 col-sm-9 ">
-                                            <textarea class="resizable_textarea form-control" placeholder="This text area automatically resizes its height as you fill in more text courtesy of autosize-master it out..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <form id="formNivel" class="row">
+                    <div class="container p-2">
+                        <div class="form-floating">
+                            <input type="text" class="form-control form-control-sm" id="txtapeynom" placeholder="Apellido y Nombre" />
+                            <label for="txtapeynom">Apellido y Nombre</label>
                         </div>
                     </div>
-                </div>
-                <!-- End SmartWizard Content -->
+                </form>
             </div>
             <div class="row mt-2">
                 <div class="col-12">
@@ -212,8 +70,9 @@
                     </div>
                 </div>
             </div>
+
             <div class="modal-footer">
-                <button type="button" class="btn btnCancelar" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btnCancelar" data-bs-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btnAceptar" onclick="Guardar()">Guardar</button>
             </div>
         </div>
@@ -222,20 +81,46 @@
 
 
 
+
+ <div class="modal fade"id="FormModal" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+               
+            </div>
+            
+
+            
+        </div>
+    </div>
+</div> 
+
+
+
+
+
 @section scripts {
     <script>
-            $(function(){
-                $('.form-group').floatingLabel();
-            });
-            $('.form-group').floatingLabel({
-             floatingLabelClass: 'floating-label',
-             floatingLabelOnClass: 'floating-label-on',
-             floatingInputClass: 'floating-input'
-           });
 
-           $('.form-group').floatingLabel({
-               floatingStyle: 'primary',
-           });
+
+
+        //         $(document).ready(function(){
+
+        // $('#smartwizard').smartWizard({
+        // selected: 0,
+        // theme: 'dots',
+        // autoAdjustHeight:true,
+        // transitionEffect:'fade',
+        // showStepURLhash: false,
+
+        // });
+
+        // });
+
+
 
            const contenedorToast = document.getElementById('contenedor-toastP');
            // Event listener para detectar click en los toasts
@@ -550,5 +435,9 @@
                     }
                 )
             }
+
+
+
+
     </script>
-}
+    }
