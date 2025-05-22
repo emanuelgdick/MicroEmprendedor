@@ -47,7 +47,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="FormModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
-    <div class="modal-dialog">
+    <div class="modal-dialog  modal-lg">
         <div class="modal-content">
             <div class="modal-header text-white" style="background: #2A3F54">
                 <h5 class="modal-title" id="exampleModalLabel">Socio</h5>
@@ -55,14 +55,73 @@
             </div>
             <div class="modal-body ">
                 <input id="txtid" type="hidden" value="0" />
-                <form id="formNivel" class="row">
-                    <div class="container p-2">
-                        <div class="form-floating">
-                            <input type="text" class="form-control form-control-sm" id="txtapeynom" placeholder="Apellido y Nombre" />
-                            <label for="txtapeynom">Apellido y Nombre</label>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 ">
+                        <div class="x_panel">
+                            <div class="x_content">
+                                <!-- Smart Wizard -->
+                                <div id="wizard" class=" form_wizard wizard_horizontal">
+                                    <ul class="wizard_steps">
+                                        <li>
+                                            <a href="#step-1">
+                                                <span class="step_no">1</span>
+                                                <span class="step_descr">
+                                                    Step 1<br />
+                                                    <small>Step 1 description</small>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#step-2">
+                                                <span class="step_no">2</span>
+                                                <span class="step_descr">
+                                                    Step 2<br />
+                                                    <small>Step 2 description</small>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#step-3">
+                                                <span class="step_no">3</span>
+                                                <span class="step_descr">
+                                                    Step 3<br />
+                                                    <small>Step 3 description</small>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#step-4">
+                                                <span class="step_no">4</span>
+                                                <span class="step_descr">
+                                                    Step 4<br />
+                                                    <small>Step 4 description</small>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div id="step-1">
+                                        <h2 class="StepTitle">Step 1 Content</h2>
+                                    </div>
+                                    <div id="step-2">
+                                        <h2 class="StepTitle">Step 2 Content</h2>
+
+                                    </div>
+                                    <div id="step-3">
+                                        <h2 class="StepTitle">Step 3 Content</h2>
+
+                                    </div>
+                                    <div id="step-4">
+                                        <h2 class="StepTitle">Step 4 Content</h2>
+
+                                    </div>
+
+                                </div>
+                                <!-- End SmartWizard Content -->
+
+                            </div>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
             <div class="row mt-2">
                 <div class="col-12">
@@ -81,45 +140,24 @@
 
 
 
-
- <div class="modal fade"id="FormModal" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
+@*  <div class="modal fade"id="FormModal" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-               
             </div>
-            
-
-            
         </div>
     </div>
 </div> 
-
+ *@
 
 
 
 
 @section scripts {
     <script>
-
-
-
-        //         $(document).ready(function(){
-
-        // $('#smartwizard').smartWizard({
-        // selected: 0,
-        // theme: 'dots',
-        // autoAdjustHeight:true,
-        // transitionEffect:'fade',
-        // showStepURLhash: false,
-
-        // });
-
-        // });
-
 
 
            const contenedorToast = document.getElementById('contenedor-toastP');
@@ -307,16 +345,17 @@
             //Abrir Modal
 
             function abrirModal(json) {
-
-                $("#txtid").val(0);
-                $("#txtapeynom").val("");
-                $("#txtapeynom").blur();
-                $("#mensajeError").hide();
-                if (json != null) {
-                    $("#txtid").val(json.id);
-                    $("#txtapeynom").focus()
-                    $("#txtapeynom").val(json.apeyNom).focus();
-                }
+              
+                
+                // $("#txtid").val(0);
+                // $("#txtapeynom").val("");
+                // $("#txtapeynom").blur();
+                // $("#mensajeError").hide();
+                // if (json != null) {
+                //     $("#txtid").val(json.id);
+                //     $("#txtapeynom").focus()
+                //     $("#txtapeynom").val(json.apeyNom).focus();
+                // }
                 $("#FormModal").modal("show");
             }
 

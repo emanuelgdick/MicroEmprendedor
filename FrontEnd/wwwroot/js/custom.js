@@ -1779,7 +1779,7 @@ function init_daterangepicker_reservation() {
 /* SMART WIZARD */
 
 function init_SmartWizard() {
-
+    
     if (typeof ($.fn.smartWizard) === 'undefined') { return; }
     //console.log('init_SmartWizard');
 
