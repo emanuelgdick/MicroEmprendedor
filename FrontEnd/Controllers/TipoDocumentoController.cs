@@ -30,6 +30,7 @@ namespace FrontEnd.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<JsonResult> GetAllTipoDocumentos()
         {
+
             List<TipoDocumento> oLista = new List<TipoDocumento>();
             oLista = await _apiService.GetAllTipoDocumentos(HttpContext.Session.GetString("APIToken"));
             return Json(new { data = oLista });

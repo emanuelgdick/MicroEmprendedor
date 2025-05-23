@@ -1779,21 +1779,31 @@ function init_daterangepicker_reservation() {
 /* SMART WIZARD */
 
 function init_SmartWizard() {
-    
+
+  
+  
     if (typeof ($.fn.smartWizard) === 'undefined') { return; }
-    //console.log('init_SmartWizard');
-
     $('#wizard').smartWizard();
-
+    
     $('#wizard_verticle').smartWizard({
         transitionEffect: 'slide'
     });
-
     $('.buttonNext').addClass('btn btn-success');
     $('.buttonPrevious').addClass('btn btn-primary');
     $('.buttonFinish').addClass('btn btn-default');
-
 };
+
+
+//function init_SmartWizard() {
+    
+//    void 0 !== $.fn.smartWizard && (console.log("init_SmartWizard888"),
+//        $("#wizard").smartWizard(),
+//        $("#wizard_verticle").smartWizard({ transitionEffect: "slide" }),
+//        $(".buttonNext").addClass("btn btn-success"),
+//        $(".buttonPrevious").addClass("btn btn-primary"),
+//        $(".buttonFinish").addClass("btn btn-default"))
+//}
+
 
 
 /* VALIDATOR */
@@ -5020,6 +5030,7 @@ $(document).ready(function () {
     init_daterangepicker_right();
     init_daterangepicker_single_call();
     init_daterangepicker_reservation();
+   
     init_SmartWizard();
     init_EasyPieChart();
     init_charts();

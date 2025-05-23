@@ -59,6 +59,7 @@
                     <div class="col-md-12 col-sm-12 ">
                         <div class="x_panel">
                             <div class="x_content">
+
                                 <!-- Smart Wizard -->
                                 <div id="wizard" class=" form_wizard wizard_horizontal">
                                     <ul class="wizard_steps">
@@ -66,8 +67,8 @@
                                             <a href="#step-1">
                                                 <span class="step_no">1</span>
                                                 <span class="step_descr">
-                                                    Step 1<br />
-                                                    <small>Step 1 description</small>
+                                                    Datos Filiatorios<br />
+                                                    @*     <small>Step 1 description</small>  *@
                                                 </span>
                                             </a>
                                         </li>
@@ -75,8 +76,8 @@
                                             <a href="#step-2">
                                                 <span class="step_no">2</span>
                                                 <span class="step_descr">
-                                                    Step 2<br />
-                                                    <small>Step 2 description</small>
+                                                    Datos Societarios<br />
+                                                    @*<small>Step 2 description</small> *@
                                                 </span>
                                             </a>
                                         </li>
@@ -84,8 +85,8 @@
                                             <a href="#step-3">
                                                 <span class="step_no">3</span>
                                                 <span class="step_descr">
-                                                    Step 3<br />
-                                                    <small>Step 3 description</small>
+                                                    Domicilio<br />
+                                                    @*<small>Step 3 description</small> *@
                                                 </span>
                                             </a>
                                         </li>
@@ -93,25 +94,162 @@
                                             <a href="#step-4">
                                                 <span class="step_no">4</span>
                                                 <span class="step_descr">
-                                                    Step 4<br />
-                                                    <small>Step 4 description</small>
+                                                   Observaciones<br />
+                                                    @*<small>Step 4 description</small>*@
                                                 </span>
                                             </a>
                                         </li>
                                     </ul>
-                                    <div id="step-1">
-                                        <h2 class="StepTitle">Step 1 Content</h2>
+                                    <div id="step-1" style=" height: 250px; border: 1px solid; background-color:yellow">
+                                        <form id="formNivel" class="col-12 row m-2 p-2 mt-5">
+
+                                            <div class=" col-3 p-2 form-floating">
+                                                <select id="cbotipodoc" class="form-select " name="tipodoc" autocomplete="off" placeholder="Tipo Documento"></select>
+                                                <label for="cbotipodoc" class="form-label pt-1">Tipo Documento</label>
+                                            </div>
+                                            <div class="col-3 p-2 form-floating">
+                                                <input type="text" class="form-control form-control-sm" id="txtdni" placeholder="Dni" />
+                                                <label for="txtdni">Dni</label>
+                                            </div>
+                                            <div class="col-6 p-2 form-floating">
+                                                <input type="text" class="form-control form-control-sm" id="txtapeynom" placeholder="Apellido y Nombre" />
+                                                <label for="txtapeynom">Apellido y Nombre</label>
+                                            </div>
+
+                                        </form>
                                     </div>
-                                    <div id="step-2">
-                                        <h2 class="StepTitle">Step 2 Content</h2>
+                                    <div id="step-2" style=" height: 250px; border: 1px solid; background-color:red">
+                                        <form id="formNivel" class="col-12 row m-2 p-2  mt-5">
+                                            <div class="col-3 p-2">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txtdni" placeholder="Dni" />
+                                                    <label for="txtdni">Dni</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 p-2">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txtdescripcion" placeholder="Descripción" />
+                                                    <label for="txtdescripcion">Descripción</label>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div id="step-3" style=" height: 250px; border: 1px solid; background-color:green">
+                                        <form id="formNivel" class="col-12 row m-2 p-2  mt-5">
+                                            <div class="col-3 p-2">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txtdni" placeholder="Dni" />
+                                                    <label for="txtdni">Dni</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 p-2">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txtdescripcion" placeholder="Descripción" />
+                                                    <label for="txtdescripcion">Descripción</label>
+                                                </div>
+                                            </div>
+                                        </form>
 
                                     </div>
-                                    <div id="step-3">
-                                        <h2 class="StepTitle">Step 3 Content</h2>
+                                    <div id="step-4" style=" height: 250px; border: 1px solid; background-color:blue">
+                                        <div class="col-md-12 col-sm-12 ">
+                                            <div class="x_panel">
+                                                <div class="x_content">
+                                                    <div id="alerts"></div>
+                                                    <div class="btn-toolbar editor" data-role="editor-toolbar" data-bs-target="#editor-one">
+                                                        <div class="btn-group">
+                                                            <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
+                                                            <ul class="dropdown-menu">
+                                                            </ul>
+                                                        </div>
 
-                                    </div>
-                                    <div id="step-4">
-                                        <h2 class="StepTitle">Step 4 Content</h2>
+                                                        <div class="btn-group">
+                                                            <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
+                                                            <ul class="dropdown-menu">
+                                                                <li>
+                                                                    <a data-edit="fontSize 5">
+                                                                        <p style="font-size:17px">Huge</p>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a data-edit="fontSize 3">
+                                                                        <p style="font-size:14px">Normal</p>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a data-edit="fontSize 1">
+                                                                        <p style="font-size:11px">Small</p>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <div class="btn-group">
+                                                            <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
+                                                            <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
+                                                            <a class="btn" data-edit="strikethrough" title="Strikethrough"><i class="fa fa-strikethrough"></i></a>
+                                                            <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
+                                                        </div>
+
+                                                        <div class="btn-group">
+                                                            <a class="btn" data-edit="insertunorderedlist" title="Bullet list"><i class="fa fa-list-ul"></i></a>
+                                                            <a class="btn" data-edit="insertorderedlist" title="Number list"><i class="fa fa-list-ol"></i></a>
+                                                            <a class="btn" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>
+                                                            <a class="btn" data-edit="indent" title="Indent (Tab)"><i class="fa fa-indent"></i></a>
+                                                        </div>
+
+                                                        <div class="btn-group">
+                                                            <a class="btn" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+                                                            <a class="btn" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
+                                                            <a class="btn" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+                                                            <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
+                                                        </div>
+
+                                                        <div class="btn-group">
+                                                            <a class="btn dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="fa fa-link"></i></a>
+                                                            <div class="dropdown-menu input-append">
+                                                                <input class="span2" placeholder="URL" type="text" data-edit="createLink" />
+                                                                <button class="btn" type="button">Add</button>
+                                                            </div>
+                                                            <a class="btn" data-edit="unlink" title="Remove Hyperlink"><i class="fa fa-cut"></i></a>
+                                                        </div>
+
+                                                        <div class="btn-group">
+                                                            <a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
+                                                            <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
+                                                        </div>
+
+                                                        <div class="btn-group">
+                                                            <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
+                                                            <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="editor-one" class="editor-wrapper"></div>
+
+                                                    <textarea name="descr" id="descr" style="display:none;"></textarea>
+
+                                                    <br />
+
+                                                    <div class="ln_solid"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                     @*    <form id="formNivel" class="col-12 row m-2 p-2  mt-5">
+                                            <div class="col-3 p-2">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txtdni" placeholder="Dni" />
+                                                    <label for="txtdni">Dni</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 p-2">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txtdescripcion" placeholder="Descripción" />
+                                                    <label for="txtdescripcion">Descripción</label>
+                                                </div>
+                                            </div>
+                                        </form> *@
 
                                     </div>
 
@@ -138,27 +276,35 @@
     </div>
 </div>
 
-
-
-@*  <div class="modal fade"id="FormModal" tabindex="1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </div>
-    </div>
-</div> 
- *@
-
-
-
-
 @section scripts {
     <script>
 
+         //GET TIPO DOCUMENTOS
+        jQuery.ajax({
+                url: '@Url.Action("GetAllTipoDocumentos", "TipoDocumento")',
+                type: "GET",
+                data: null,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                   $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbotipodoc");
+                    $.each(data.data, function (index, value) {
+                    $("<option>").attr({ "value": value.id }).text(value.descA).appendTo("#cbotipodoc");
+                    });
+                    },
+                    error: function (error) {
+                    console.log(error)
+                    }
+                    });
+
+
+
+
+           function abrirModal(json) {
+               $("#wizard").smartWizard('goToStep', 1)
+               $("#FormModal").modal("show")
+
+            }
 
            const contenedorToast = document.getElementById('contenedor-toastP');
            // Event listener para detectar click en los toasts
@@ -344,20 +490,10 @@
 
             //Abrir Modal
 
-            function abrirModal(json) {
-              
-                
-                // $("#txtid").val(0);
-                // $("#txtapeynom").val("");
-                // $("#txtapeynom").blur();
-                // $("#mensajeError").hide();
-                // if (json != null) {
-                //     $("#txtid").val(json.id);
-                //     $("#txtapeynom").focus()
-                //     $("#txtapeynom").val(json.apeyNom).focus();
-                // }
-                $("#FormModal").modal("show");
-            }
+
+
+
+
 
             //Editar
             $("#tabla tbody").on("click", '.btn-editar', function () {

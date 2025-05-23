@@ -5522,7 +5522,7 @@ fieldset {
     margin: 0 0 20px;
 }
 
-    .wizard_horizontal ul.wizard_steps li {
+     .wizard_horizontal ul.wizard_steps li {
         display: table-cell;
         text-align: center;
     }
@@ -5610,7 +5610,7 @@ fieldset {
     .actionBar a {
         margin: 0 3px;
     }
-    
+/*   
 .wizard_verticle .wizard_content {
     width: 80%;
     float: left;
@@ -5695,7 +5695,7 @@ fieldset {
             left: 49%;
             left: auto;
             width: 0;
-        }
+        }*/
     
 .form_wizard .loader {
     display: none;

@@ -12,6 +12,8 @@
  */
 
 function SmartWizard(target, options) {
+
+  
   
     this.target       = target;
     this.options      = options;
