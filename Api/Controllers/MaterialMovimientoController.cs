@@ -53,7 +53,7 @@ namespace Api.Controllers
         [HttpGet("GetMaterialMovimientoBySocio")]
         [Authorize]
         [ResponseCache(CacheProfileName = "apicache")]
-        public ActionResult<MaterialMovimiento> GetMaterialMovimientoBySocio(int socio)
+        public ActionResult<List<MaterialMovimiento>> GetMaterialMovimientoBySocio(int socio)
         {
 
             if (socio == 0)
@@ -61,7 +61,8 @@ namespace Api.Controllers
                 _logger.LogError("Id de MaterialMovimiento no pasada");
                 return BadRequest();
             }
-            var MaterialMovimiento = _db.MaterialMovimiento.FirstOrDefault(x => x.Socio.NroSocio == socio);
+            
+            var MaterialMovimiento = _db.MaterialMovimiento.Where(x => x.Socio.Id == socio).OrderBy(s=>s.Fecha).ToList();
 
             if (MaterialMovimiento == null)
             {

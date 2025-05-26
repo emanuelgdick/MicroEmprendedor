@@ -255,16 +255,16 @@
                                         </form>
                                     </div>
                                     <div id="step-4" style=" height: 250px; ">
-                                        <form id="formNivelHistorico" class="col-12 row m-2 p-2  mt-5">
+                                        <form id="formNivelHistorico" class="col-12 row   mt-0">
                                             <div class="card-body">
                                                 <table id="tablaHistorico" class="display" style="width:100%">
                                                     <thead>
                                                         <tr>
+                                                            <th>Nro Inventario</th>
                                                             <th>Fecha</th>
-                                                            <th>Tipo Material</th>
-                                                            <th>Descripción</th>
-                                                            <th>Tipo Movimiento</th>
-                                                            <th></th>
+                                                            <th>Fecha Devolución</th>
+                                                            <th>Nro Movimiento</th>
+                                                        @*     <th></th>  *@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -530,9 +530,7 @@
                                  });
 
 
-
-
-           const getDatePickerTitle = elem => {
+        const getDatePickerTitle = elem => {
           // From the label or the aria-label
           const label = elem.nextElementSibling;
           let titleText = '';
@@ -543,7 +541,6 @@
           }
           return titleText;
         }
-
         const elems = document.querySelectorAll('.datepicker_input');
         for (const elem of elems) {
           const datepicker = new Datepicker(elem, {
@@ -552,94 +549,221 @@
           });
         }
 
+        function abrirModal(json) {
+
+             $("#wizard").smartWizard('goToStep', 1)
+            if (json != null) {
+                $("#txtnrosocio").val(json.nroSocio);
+                var tabladataHistorico;
+
+            $('#tablaHistorico').DataTable().clear().destroy();
 
 
-
-
-           function abrirModal(json) {
-
-               $("#wizard").smartWizard('goToStep', 1)
-                  if (json != null) {
-                  
-                      $("#txtnrosocio").val(json.nroSocio);
-                           var tabladataHistorico;
             tabladataHistorico = $("#tablaHistorico").DataTable({
+                order: [[0, 'asc']],
                 responsive: true,
                 ordering: true,
-                dom: "Bfrtip",
-                buttons: [
-                    {
-                        extend: "excelHtml5",
-                        text: '<i class="fa fa-file-excel-o "></i>',
-                        filename: "Reporte Histórico de Material",
-                         title: "Listado de Histórico",
-                        exportOptions: {
-                            //muestra las columnas
-                            columns: [0, 1]
-                        },
-                        className: "btn-exportar-excel",
-
-
-                    },
-                    {
-                        extend: "pdfHtml5",
-                        text: '<i class="fa fa-file-pdf-o"></i>',
-                        filename: "Reporte de Socios",
-                        title: "Listado de Socios",
-                        exportOptions: {
-                            //muestra las columnas
-                            columns: [0, 1]
-                        },
-                        className: "btn-exportar-pdf"
-                    },
-                    {
-                        extend: "print",
-                        text: '<i class="fa fa-print"></i>',
-                        filename: "Reporte de Socios",
-                        title: "Listado de Socios",
-                        exportOptions: {
-                            //muestra las columnas
-                            columns: [0, 1]
-                        },
-                        className: "btn-imprimir"
-
-                    }
+                searching: false,
+                info: false,
+                lengthChange: false, // Will Disabled Record number per page
+                pageLength: 5,
+                "ajax": {
+                     url: "@Url.Action("GetAllMaterialMovimientosBySocio", "MaterialMovimiento")"+"?socio="+$("#txtnrosocio").val(),
+                
+                    type: "GET",
+                    dataType: "json"
+                },
+                "columns": [
+                    { "data": "nroInventario" },
+                    { "data": "fecha" },
+                    { "data": "fechaDevolucion" },
+                    { "data": "nroMovimiento" },
+                    
+                    // { "data": "Seleccionado",render: function (data, type, row) {
+                    //         // if (data) {
+                    //         //     return '<input type="checkbox" checked class="editor-active">';
+                    //         // } else {
+                    //         //     return '<input type="checkbox" class="editor-active">';
+                    //         // }
+                    //         // return data;
+                    //     }
+                    // },
                 ],
-                 "ajax": {
-                     url: "@Url.Action("GetAllMaterialMovimientosBySocio", "MaterialMovimiento")?socio="+$("#txtnrosocio").val(),
-                     type: "GET",
-                     dataType: "json",
-                 },
-                 "columns": [
-                         { "data": "Fecha" },
-                         { "data": "Tipo Material" },
-                         { "data": "Descripcion" },
-                         { "data": "Tipo Movimiento" },
-                         {
-                                      "defaultContent": '<button type="button" title="Editar Socio"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
-                                                        '<button type="button" title="Eliminar Socio" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
-                                      //"defaultContent": '<a asp-controller="Socio" asp-action="Details" asp-route-id='+data.id+' class="btn btn-primary">"Details"</a>',
-                                      //padding: 0; border: none; background: none;
-                            "orderable": false,
-                            "searchable": false,
-                            "width": "10%",
-                            "heigth":"10%"
-                        }
-                 ],
-                 "language": {
+                "language": {
                       "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
                   },
                 "columnDefs": [
-                        { "width": "10%", "targets": 0 },
-                        { "width": "40%", "targets": 1 },
-                        { "width": "40%", "targets": 2 },
-                        { "width": "10%", "targets": 3 },
-                ]
-            })
-            }
-               $("#FormModal").modal("show")
 
-            }
+                    { "width": "20%", "targets": 0 },
+                    { "width": "50%", "targets": 1 },
+                    { "width": "50%", "targets": 2 },
+                    { "width": "20%", "targets": 3 }
+                ]
+            });
+
+
+
+
+
+            $("#FormModal").modal("show");
+
+        }
+        
+        }
+
+           // function abrirModal(json) {
+
+           // $("#wizard").smartWizard('goToStep', 1)
+           // if (json != null) {
+           //     $("#txtnrosocio").val(json.nroSocio);
+           //     var tabladataHistorico;
+           //      $('#tablaHistorico').DataTable().clear().destroy();
+           //      tabladataHistorico = $("#tablaHistorico").DataTable({
+           //      responsive: true,
+           //      ordering: true,
+           //      dom: "Bfrtip",
+           //      buttons: [
+           //          {
+           //              extend: "excelHtml5",
+           //              text: '<i class="fa fa-file-excel-o "></i>',
+           //              filename: "Reporte Histórico de Material",
+           //               title: "Listado de Histórico",
+           //              exportOptions: {
+           //                  //muestra las columnas
+           //                  columns: [0, 1]
+           //              },
+           //              className: "btn-exportar-excel",
+
+
+           //          },
+           //          {
+           //              extend: "pdfHtml5",
+           //              text: '<i class="fa fa-file-pdf-o"></i>',
+           //              filename: "Reporte de Socios",
+           //              title: "Listado de Socios",
+           //              exportOptions: {
+           //                  //muestra las columnas
+           //                  columns: [0, 1]
+           //              },
+           //              className: "btn-exportar-pdf"
+           //          },
+           //          {
+           //              extend: "print",
+           //              text: '<i class="fa fa-print"></i>',
+           //              filename: "Reporte de Socios",
+           //              title: "Listado de Socios",
+           //              exportOptions: {
+           //                  //muestra las columnas
+           //                  columns: [0, 1]
+           //              },
+           //              className: "btn-imprimir"
+
+           //          }
+           //      ],
+           //       "ajax": {
+           //           url: "@Url.Action("GetAllMaterialMovimientosBySocio", "MaterialMovimiento")"+"?socio="+$("#txtnrosocio").val(),
+           //           type: "GET",
+           //           dataType: "json",
+           //       },
+           //       "columns": [
+           //                   { "data": "nroMovimiento"},
+           //              // { "data": "fechaDevolucion"},
+           //              // { "data": "nroInventario"},
+           //               //{ "data": "nroMovimiento"},
+
+           //               {
+
+           //                  "orderable": false,
+           //                  "searchable": false,
+           //                  "width": "10%",
+           //                  "heigth":"10%"
+           //              }
+           //       ],
+           //       "language": {
+           //            "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+           //        },
+           //      "columnDefs": [
+           //              { "width": "10%", "targets": 0 }
+           //            //  { "width": "40%",  "targets": 1 },
+           //             // { "width": "40%", "targets": 2 },
+           //              //{ "width": "10%", "targets": 3 },
+           //      ]
+           //  })
+
+
+           //         // $('#tablaHistorico').DataTable().clear().destroy();
+           //  // tabladataHistorico = $("#tablaHistorico").DataTable({
+           //  //     order: [[0, 'asc']],
+           //  //     responsive: true,
+           //  //     ordering: true,
+           //  //     searching: true,
+           //  //     info: false,
+           //  //     lengthChange: false, // Will Disabled Record number per page
+           //  //     pageLength: 5,
+           //  //     "ajax": {
+           //  //         url: "@Url.Action("GetAllMaterialMovimientosBySocio", "MaterialMovimiento")?socio="+$("#txtnrosocio").val(),
+           //  //         type: "GET",
+           //  //         dataType: "json"
+           //  //     },
+           //  //     "columns": [
+           //  //         { "data": "fecha" },
+           //  //         {
+           //  //                           "defaultContent": '<button type="button" title="Editar Socio"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
+           //  //                                             '<button type="button" title="Eliminar Socio" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
+
+           //  //                 "orderable": false,
+           //  //                 "searchable": false,
+           //  //                 "width": "10%",
+           //  //                 "heigth":"10%"
+           //  //             }
+
+           //  //     ],
+           //  //     "language": {
+           //  //         "url": "//cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+           //  //     },
+           //  //     "columnDefs": [
+
+           //  //         { "width": "10%", "targets": 0 },
+           //  //         { "width": "70%", "targets": 1 },
+           //  //         { "width": "10%", "targets": 2 },
+           //  //     ]
+           //  // })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           //      }
+           //     $("#FormModal").modal("show")
+           //  }
 
            const contenedorToast = document.getElementById('contenedor-toastP');
            // Event listener para detectar click en los toasts
@@ -803,6 +927,7 @@
                  "language": {
                       "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
                   },
+                           
                 "columnDefs": [
                         { "width": "10%", "targets": 0 },
                         { "width": "80%", "targets": 1 },

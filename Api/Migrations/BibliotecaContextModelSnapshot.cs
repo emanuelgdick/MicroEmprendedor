@@ -523,7 +523,7 @@ namespace Api.Migrations
                     b.Property<int>("IdTipoMovimiento")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdUsuario")
+                    b.Property<int?>("IdUsuario")
                         .HasColumnType("int");
 
                     b.Property<string>("NroInventario")
@@ -535,7 +535,6 @@ namespace Api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Observaciones")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -1096,9 +1095,7 @@ namespace Api.Migrations
 
                     b.HasOne("Api.Models.Usuario", "Usuario")
                         .WithMany()
-                        .HasForeignKey("IdUsuario")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdUsuario");
 
                     b.Navigation("Sector");
 

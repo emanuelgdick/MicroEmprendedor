@@ -20,12 +20,12 @@ namespace Api.Models
         public TipoMaterial TipoMaterial { get; set; }
 
         [ForeignKey("IdUsuario")]
-        public Usuario Usuario { get; set; }
+        public Usuario? Usuario { get; set; }
 
         public string NroInventario { get; set; }
         public DateTime? Fecha { get; set; }
         public DateTime? FechaDevolucion { get; set; }
         public string NroMovimiento { get; set; }
-        public string Observaciones { get; set; }
+        public string? Observaciones { get; set; }
     }
 }
