@@ -5,7 +5,6 @@ namespace FrontEnd.Models
 {
     public class Socio
     {
-
         public int Id { get; set; }
 
 
@@ -23,12 +22,14 @@ namespace FrontEnd.Models
         public Profesion? Profesion { get; set; }
         [ForeignKey("IdLocalidad")]
         public Localidad Localidad { get; set; }
-
         public int NroSocio { get; set; }
         public string ApeyNom { get; set; }
         public string? Nro { get; set; }
+        public string? Piso { get; set; }
         public string? Depto { get; set; }
-        public string? Telefono { get; set; }
+        public string? Telfijo { get; set; }
+        public string? TelCelular { get; set; }
+        public string? Email { get; set; }
         public DateTime? Fnac { get; set; }
         public DateTime? FIngreso { get; set; }
         public DateTime? FEgreso { get; set; }
@@ -36,6 +37,9 @@ namespace FrontEnd.Models
         public string? Documento { get; set; }
         public bool Vitalicio { get; set; }
         public bool PagaAca { get; set; }
-     
+
+        public bool Sexo { get; set; }
     }
 }
+
+

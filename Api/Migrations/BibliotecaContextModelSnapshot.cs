@@ -497,6 +497,62 @@ namespace Api.Migrations
                     b.ToTable("Material");
                 });
 
+            modelBuilder.Entity("Api.Models.MaterialMovimiento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("Fecha")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("FechaDevolucion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("IdSector")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdSocio")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdTipoMaterial")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdTipoMovimiento")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdUsuario")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NroInventario")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NroMovimiento")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Observaciones")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdSector");
+
+                    b.HasIndex("IdSocio");
+
+                    b.HasIndex("IdTipoMaterial");
+
+                    b.HasIndex("IdTipoMovimiento");
+
+                    b.HasIndex("IdUsuario");
+
+                    b.ToTable("MaterialMovimiento");
+                });
+
             modelBuilder.Entity("Api.Models.Pais", b =>
                 {
                     b.Property<int>("Id")
@@ -656,6 +712,9 @@ namespace Api.Migrations
                     b.Property<string>("Documento")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("FEgreso")
                         .HasColumnType("datetime2");
 
@@ -698,7 +757,16 @@ namespace Api.Migrations
                     b.Property<bool>("PagaAca")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Telefono")
+                    b.Property<string>("Piso")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Sexo")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("TelCelular")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Telfijo")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Vitalicio")
@@ -759,6 +827,30 @@ namespace Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TipoMaterial");
+                });
+
+            modelBuilder.Entity("Api.Models.TipoMovimiento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CantDias")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NroMov")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TipoMovimiento");
                 });
 
             modelBuilder.Entity("Api.Models.TipoSocio", b =>
@@ -974,6 +1066,49 @@ namespace Api.Migrations
                     b.Navigation("TipoMaterial");
 
                     b.Navigation("Traductor");
+                });
+
+            modelBuilder.Entity("Api.Models.MaterialMovimiento", b =>
+                {
+                    b.HasOne("Api.Models.Sector", "Sector")
+                        .WithMany()
+                        .HasForeignKey("IdSector")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api.Models.Socio", "Socio")
+                        .WithMany()
+                        .HasForeignKey("IdSocio")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api.Models.TipoMaterial", "TipoMaterial")
+                        .WithMany()
+                        .HasForeignKey("IdTipoMaterial")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api.Models.TipoMovimiento", "TipoMovimiento")
+                        .WithMany()
+                        .HasForeignKey("IdTipoMovimiento")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api.Models.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("IdUsuario")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Sector");
+
+                    b.Navigation("Socio");
+
+                    b.Navigation("TipoMaterial");
+
+                    b.Navigation("TipoMovimiento");
+
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("Api.Models.Provincia", b =>

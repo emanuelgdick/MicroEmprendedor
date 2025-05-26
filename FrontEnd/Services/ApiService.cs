@@ -1352,6 +1352,120 @@ namespace FrontEnd.Services
 
         #endregion
 
+
+        //TIPO DE MOVIMIENTO
+        #region
+        public async Task<List<TipoMovimiento>> GetAllTipoMovimientos(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/TipoMovimiento?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<TipoMovimiento>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<TipoMovimiento> AddTipoMovimiento(TipoMovimiento tipoMovimiento, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<TipoMovimiento>($"api/TipoMovimiento/AddTipoMovimiento", tipoMovimiento);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<TipoMovimiento>(contents);
+            return APIResponse;
+        }
+
+        public async Task<TipoMovimiento> GetTipoMovimientoById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/TipoMaterial/GetTipoMovimientoById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<TipoMovimiento>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateTipoMovimiento(int id, TipoMovimiento tipoMovimiento, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<TipoMovimiento>($"api/TipoMovimiento/UpdateTipoMovimiento?id={id}", tipoMovimiento);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteTipoMovimiento(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/TipoMovimiento/DeleteTipoMovimiento?id={id}", null);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        #endregion
+
+
+        //MATERIAL MOVIMIENTO
+        #region
+        public async Task<List<MaterialMovimiento>> GetAllMaterialMovimientos(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/MaterialMovimiento?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<MaterialMovimiento>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<MaterialMovimiento> AddMaterialMovimiento(MaterialMovimiento materialMovimiento, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<MaterialMovimiento>($"api/MaterialMovimiento/AddMaterialMovimiento", materialMovimiento);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<MaterialMovimiento>(contents);
+            return APIResponse;
+        }
+
+        public async Task<MaterialMovimiento> GetMaterialMovimientoById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/TipoMaterial/GetMaterialMovimientoById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<MaterialMovimiento>(contents);
+            return APIResponse;
+        }
+
+        public async Task<List<MaterialMovimiento>> GetMaterialMovimientoBySocio(int socio, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/MaterialMovimiento/GetMaterialMovimientoBySocio?socio={socio}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<MaterialMovimiento>>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateMaterialMovimiento(int id, MaterialMovimiento materialMovimiento, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<MaterialMovimiento>($"api/MaterialMovimiento/UpdateMaterialMovimiento?id={id}", materialMovimiento);
+            response.EnsureSuccessStatusCode();
+        }
+
+        public async Task DeleteMaterialMovimiento(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/MaterialMovimiento/DeleteMaterialMovimiento?id={id}", null);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        #endregion
+
+
+
+
         //TIPO DE SOCIO
         #region
         public async Task<List<TipoSocio>> GetAllTipoSocios(string token)

@@ -3745,6 +3745,8 @@ textarea {
     padding: 10px;
     vertical-align: top;
     width: 200px;
+    overflow: auto;
+   
 }
 
     textarea:focus {
@@ -5219,11 +5221,12 @@ header {
 /** /NProgress **/
 /** bootstrap-wysiwyg **/
 .editor-wrapper {
-    min-height: 250px;
+    min-height: 150px;
     background-color: white;
     border-collapse: separate;
     border: 1px solid #cccccc;
-    padding: 4px;
+    padding: 0px;
+    4px;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
     -webkit-box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
@@ -5497,6 +5500,7 @@ fieldset {
 
 .cropper .docs-diagram .modal-dialog {
     max-width: 352px;
+  
 }
 
 .cropper .docs-cropped canvas {

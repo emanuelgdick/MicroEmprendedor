@@ -44,6 +44,8 @@ namespace Api.Models
         public DbSet<Traductor> Traductor { get; set; }
         public DbSet<Ilustrador> Ilustrador { get; set; }
         public DbSet<Prologuista> Prologuista { get; set; }
+        public DbSet<TipoMovimiento> TipoMovimiento { get; set; }
+        public DbSet<MaterialMovimiento> MaterialMovimiento { get; set; }
 
     }
 }

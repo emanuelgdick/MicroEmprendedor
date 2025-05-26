@@ -5,8 +5,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<style>
+    .contenedor-scroll {
+        overflow-x: hidden; /* Deshabilitar scroll horizontal */
+        /* Puedes añadir overflow-y: hidden; si también necesitas deshabilitar el scroll vertical */
+        width: 715px; /* Ajusta la anchura según tus necesidades */
+        height: 120px; /* Ajusta la altura según tus necesidades */
+        /*border: 1px solid black;  Para ver los límites del contenedor */
+    }
 
-
+    /* Adapts a floating label for use with a left-handed input group icon */
+    .form-floating > .bi-calendar-date + .datepicker_input + label {
+        padding-left: 3.5rem;
+        z-index: 3;
+    }
+</style>
 
 <div class="card">
     <div class="row  m-0 p-0">
@@ -47,28 +60,27 @@
 
 <!-- Modal -->
 <div class="modal fade" id="FormModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
-    <div class="modal-dialog  modal-lg">
+    <div class="modal-dialog  modal-lg ">
         <div class="modal-content">
             <div class="modal-header text-white" style="background: #2A3F54">
                 <h5 class="modal-title" id="exampleModalLabel">Socio</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body ">
+            <div class="modal-body m-0 p-0">
                 <input id="txtid" type="hidden" value="0" />
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 ">
-                        <div class="x_panel">
+                <div class="row m-0 p-0">
+                    <div class="col-md-12 col-sm-12 m-0 p-0">
+                        <div class="x_panel  pt-3">
                             <div class="x_content">
 
                                 <!-- Smart Wizard -->
-                                <div id="wizard" class=" form_wizard wizard_horizontal">
+                                <div id="wizard" class=" form_wizard wizard_horizontal ">
                                     <ul class="wizard_steps">
                                         <li>
                                             <a href="#step-1">
                                                 <span class="step_no">1</span>
                                                 <span class="step_descr">
                                                     Datos Filiatorios<br />
-                                                    @*     <small>Step 1 description</small>  *@
                                                 </span>
                                             </a>
                                         </li>
@@ -76,8 +88,7 @@
                                             <a href="#step-2">
                                                 <span class="step_no">2</span>
                                                 <span class="step_descr">
-                                                    Datos Societarios<br />
-                                                    @*<small>Step 2 description</small> *@
+                                                    Contacto<br />
                                                 </span>
                                             </a>
                                         </li>
@@ -85,8 +96,7 @@
                                             <a href="#step-3">
                                                 <span class="step_no">3</span>
                                                 <span class="step_descr">
-                                                    Domicilio<br />
-                                                    @*<small>Step 3 description</small> *@
+                                                    Datos Socio<br />
                                                 </span>
                                             </a>
                                         </li>
@@ -94,174 +104,269 @@
                                             <a href="#step-4">
                                                 <span class="step_no">4</span>
                                                 <span class="step_descr">
-                                                   Observaciones<br />
-                                                    @*<small>Step 4 description</small>*@
+                                                    Histórico<br />
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#step-5">
+                                                <span class="step_no">5</span>
+                                                <span class="step_descr">
+                                                    Observaciones<br />
                                                 </span>
                                             </a>
                                         </li>
                                     </ul>
-                                    <div id="step-1" style=" height: 250px; border: 1px solid; background-color:yellow">
+                                    <div id="step-1" style=" height: 250px; ">
                                         <form id="formNivel" class="col-12 row m-2 p-2 mt-5">
-
-                                            <div class=" col-3 p-2 form-floating">
-                                                <select id="cbotipodoc" class="form-select " name="tipodoc" autocomplete="off" placeholder="Tipo Documento"></select>
-                                                <label for="cbotipodoc" class="form-label pt-1">Tipo Documento</label>
-                                            </div>
-                                            <div class="col-3 p-2 form-floating">
-                                                <input type="text" class="form-control form-control-sm" id="txtdni" placeholder="Dni" />
-                                                <label for="txtdni">Dni</label>
-                                            </div>
-                                            <div class="col-6 p-2 form-floating">
-                                                <input type="text" class="form-control form-control-sm" id="txtapeynom" placeholder="Apellido y Nombre" />
-                                                <label for="txtapeynom">Apellido y Nombre</label>
-                                            </div>
-
-                                        </form>
-                                    </div>
-                                    <div id="step-2" style=" height: 250px; border: 1px solid; background-color:red">
-                                        <form id="formNivel" class="col-12 row m-2 p-2  mt-5">
-                                            <div class="col-3 p-2">
-                                                <div class="form-floating">
+                                            <div class="row">
+                                                <div class=" col-3 p-2 form-floating">
+                                                    <select id="cbotipodoc" class="form-select " name="tipodoc" autocomplete="off" placeholder="Tipo Documento"></select>
+                                                    <label for="cbotipodoc" class="form-label pt-1">Tipo Documento</label>
+                                                </div>
+                                                <div class="col-3 p-2 form-floating">
                                                     <input type="text" class="form-control form-control-sm" id="txtdni" placeholder="Dni" />
                                                     <label for="txtdni">Dni</label>
                                                 </div>
+                                                <div class="col-6 p-2 form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txtapeynom" placeholder="Apellido y Nombre" />
+                                                    <label for="txtapeynom">Apellido y Nombre</label>
+                                                </div>
                                             </div>
-                                            <div class="col-6 p-2">
-                                                <div class="form-floating">
-                                                    <input type="text" class="form-control form-control-sm" id="txtdescripcion" placeholder="Descripción" />
-                                                    <label for="txtdescripcion">Descripción</label>
+                                            <div class="row">
+                                                <div class="col-3 p-2 form-floating mb-4 d-flex">
+                                                    <input type="text"
+                                                           class="datepicker_input form-control border-2"
+                                                           id="datepicker1"
+                                                           required
+                                                           placeholder="DD/MM/YYYY">
+                                                    <label for="datepicker1">Fecha Nacimiento</label>
+                                                </div>
+                                                <div class=" col-4 p-2 form-floating">
+                                                    <select id="cboprofesion" class="form-select " name="profesion" autocomplete="off" placeholder="Profesión"></select>
+                                                    <label for="cboprofesion" class="form-label pt-1">Profesión</label>
+                                                </div>
+                                                <div class="col-4 mt-2">
+
+                                                    <label>Sexo</label>
+                                                    <p>
+                                                        M:
+                                                        <input type="radio" class="flat p-4" name="gender" id="genderM" value="M" checked="" required /> F:
+                                                        <input type="radio" class="flat p-4" name="gender" id="genderF" value="F" />
+                                                    </p>
+
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
-                                    <div id="step-3" style=" height: 250px; border: 1px solid; background-color:green">
+                                    <div id="step-2" style=" height: 250px; ">
                                         <form id="formNivel" class="col-12 row m-2 p-2  mt-5">
-                                            <div class="col-3 p-2">
-                                                <div class="form-floating">
-                                                    <input type="text" class="form-control form-control-sm" id="txtdni" placeholder="Dni" />
-                                                    <label for="txtdni">Dni</label>
+                                            <div class="row">
+                                                <div class=" col-6 p-2 form-floating">
+                                                    <select id="cbocalle" class="form-select " name="calle" autocomplete="off" placeholder="Calle"></select>
+                                                    <label for="cbocalle" class="form-label pt-1">Calle</label>
+                                                </div>
+                                                <div class="col-2 p-2 form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txtnro" placeholder="Nro" />
+                                                    <label for="txtnro">Nro</label>
+                                                </div>
+                                                <div class="col-2 p-2 form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txtpiso" placeholder="Piso" />
+                                                    <label for="txtpiso">Piso</label>
+                                                </div>
+                                                <div class="col-2 p-2 form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txtdepto" placeholder="Depto" />
+                                                    <label for="txtdepto">Depto</label>
                                                 </div>
                                             </div>
-                                            <div class="col-6 p-2">
-                                                <div class="form-floating">
-                                                    <input type="text" class="form-control form-control-sm" id="txtdescripcion" placeholder="Descripción" />
-                                                    <label for="txtdescripcion">Descripción</label>
+                                            <div class="row">
+                                                <div class=" col-4 p-2 form-floating">
+                                                    <select id="cboprovincia" class="form-select " name="provincia" autocomplete="off" placeholder="Provincia"></select>
+                                                    <label for="cboprovincia" class="form-label pt-1">Provincia</label>
+                                                </div>
+                                                <div class=" col-4 p-2 form-floating">
+                                                    <select id="cbolocalidad" class="form-select " name="localidad" autocomplete="off" placeholder="Localidad"></select>
+                                                    <label for="cbolocalidad" class="form-label pt-1">Localidad</label>
+                                                </div>
+                                                <div class="col-4 p-2 form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txttelfijo" placeholder="Teléfono Fijo" />
+                                                    <label for="txttelfijo">Teléfono Fijo</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4 p-2 form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txttelcelular" placeholder="Teléfono Celular" />
+                                                    <label for="txttelcelular">Teléfono Celular</label>
+                                                </div>
+                                                <div class="col-8 p-2 form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txtemail" placeholder="Correo Electrónico" />
+                                                    <label for="txtemail">Correo Electrónico</label>
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div id="step-3" style=" height: 250px; ">
+                                        <form id="formNivel" class="col-12 row m-2 p-2  mt-5">
+                                            <div class="row">
+                                                <div class=" col-4 p-2 form-floating">
+                                                    <select id="cbotiposocio" class="form-select " name="tiposocio" autocomplete="off" placeholder="Tipo"></select>
+                                                    <label for="cbotiposocio" class="form-label pt-1">Tipo</label>
+                                                </div>
+                                                <div class=" col-4 p-2 form-floating">
+                                                    <select id="cbocategoriasocio" class="form-select " name="categoriasocio" autocomplete="off" placeholder="Categoría"></select>
+                                                    <label for="cbocategoriasocio" class="form-label pt-1">Categoría</label>
+                                                </div>
+                                                <div class=" col-4 p-2 form-floating">
+                                                    <select id="cboestadosocio" class="form-select " name="estadosocio" autocomplete="off" placeholder="Estado"></select>
+                                                    <label for="cboestadosocio" class="form-label pt-1">Estado</label>
+                                                </div>
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-2 p-2 form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txtnrosocio" placeholder="Nro Socio" />
+                                                    <label for="txtnrosocio">Nro Socio</label>
+                                                </div>
+
+                                                <div class="col-3 p-2 form-floating mb-4 d-flex">
+                                                    <input type="text"
+                                                           class="datepicker_input form-control border-2"
+                                                           id="dtfechaingreso"
+                                                           required
+                                                           placeholder="DD/MM/YYYY">
+                                                    <label for="dtfechaingreso">Fecha Ingreso</label>
+                                                </div>
+                                                <div class="col-3 p-2 form-floating mb-4 d-flex">
+                                                    <input type="text"
+                                                           class="datepicker_input form-control border-2"
+                                                           id="dtfechaegreso"
+                                                           required
+                                                           placeholder="DD/MM/YYYY">
+                                                    <label for="dtfechaegreso">Fecha Egreso</label>
+                                                </div>
+                                                <div class="col-3 p-4 ">
+                                                    <label>
+                                                        <input type="checkbox" class="js-switch" checked /> Vitalicio
+                                                    </label>
                                                 </div>
                                             </div>
                                         </form>
-
                                     </div>
-                                    <div id="step-4" style=" height: 250px; border: 1px solid; background-color:blue">
-                                        <div class="col-md-12 col-sm-12 ">
-                                            <div class="x_panel">
-                                                <div class="x_content">
-                                                    <div id="alerts"></div>
-                                                    <div class="btn-toolbar editor" data-role="editor-toolbar" data-bs-target="#editor-one">
-                                                        <div class="btn-group">
-                                                            <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
-                                                            <ul class="dropdown-menu">
-                                                            </ul>
-                                                        </div>
-
-                                                        <div class="btn-group">
-                                                            <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
-                                                            <ul class="dropdown-menu">
-                                                                <li>
-                                                                    <a data-edit="fontSize 5">
-                                                                        <p style="font-size:17px">Huge</p>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-edit="fontSize 3">
-                                                                        <p style="font-size:14px">Normal</p>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a data-edit="fontSize 1">
-                                                                        <p style="font-size:11px">Small</p>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-
-                                                        <div class="btn-group">
-                                                            <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
-                                                            <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
-                                                            <a class="btn" data-edit="strikethrough" title="Strikethrough"><i class="fa fa-strikethrough"></i></a>
-                                                            <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
-                                                        </div>
-
-                                                        <div class="btn-group">
-                                                            <a class="btn" data-edit="insertunorderedlist" title="Bullet list"><i class="fa fa-list-ul"></i></a>
-                                                            <a class="btn" data-edit="insertorderedlist" title="Number list"><i class="fa fa-list-ol"></i></a>
-                                                            <a class="btn" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>
-                                                            <a class="btn" data-edit="indent" title="Indent (Tab)"><i class="fa fa-indent"></i></a>
-                                                        </div>
-
-                                                        <div class="btn-group">
-                                                            <a class="btn" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
-                                                            <a class="btn" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
-                                                            <a class="btn" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
-                                                            <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
-                                                        </div>
-
-                                                        <div class="btn-group">
-                                                            <a class="btn dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="fa fa-link"></i></a>
-                                                            <div class="dropdown-menu input-append">
-                                                                <input class="span2" placeholder="URL" type="text" data-edit="createLink" />
-                                                                <button class="btn" type="button">Add</button>
+                                    <div id="step-4" style=" height: 250px; ">
+                                        <form id="formNivelHistorico" class="col-12 row m-2 p-2  mt-5">
+                                            <div class="card-body">
+                                                <table id="tablaHistorico" class="display" style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Fecha</th>
+                                                            <th>Tipo Material</th>
+                                                            <th>Descripción</th>
+                                                            <th>Tipo Movimiento</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    </tbody>
+                                                    <tfoot>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div id="step-5" style=" height: 250px; ">
+                                        <form id="formNivel" class="col-12 row m-2 p-2  mt-5 ">
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="x_panel  p-0">
+                                                    <div class="x_content m-0 p-0">
+                                                        <div id="alerts"></div>
+                                                        <div class="btn-toolbar editor" data-bs-role="editor-toolbar" data-bs-target="#editor-one">
+                                                            <div class="btn-group m-0 p-0">
+                                                                <a class="btn dropdown-toggle" data-bs-toggle="dropdown" title="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
+                                                                <ul class="dropdown-menu">
+                                                                </ul>
                                                             </div>
-                                                            <a class="btn" data-edit="unlink" title="Remove Hyperlink"><i class="fa fa-cut"></i></a>
-                                                        </div>
 
-                                                        <div class="btn-group">
-                                                            <a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
-                                                            <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
-                                                        </div>
+                                                            <div class="btn-group">
+                                                                <a class="btn dropdown-toggle" data-bs-toggle="dropdown" title="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
+                                                                <ul class="dropdown-menu">
+                                                                    <li>
+                                                                        <a data-edit="fontSize 5">
+                                                                            <p style="font-size:17px">Huge</p>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a data-edit="fontSize 3">
+                                                                            <p style="font-size:14px">Normal</p>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a data-edit="fontSize 1">
+                                                                            <p style="font-size:11px">Small</p>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
 
-                                                        <div class="btn-group">
-                                                            <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
-                                                            <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
+                                                            <div class="btn-group">
+                                                                <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
+                                                                <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
+                                                                <a class="btn" data-edit="strikethrough" title="Strikethrough"><i class="fa fa-strikethrough"></i></a>
+                                                                <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
+                                                            </div>
+
+                                                            <div class="btn-group">
+                                                                <a class="btn" data-edit="insertunorderedlist" title="Bullet list"><i class="fa fa-list-ul"></i></a>
+                                                                <a class="btn" data-edit="insertorderedlist" title="Number list"><i class="fa fa-list-ol"></i></a>
+                                                                <a class="btn" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>
+                                                                <a class="btn" data-edit="indent" title="Indent (Tab)"><i class="fa fa-indent"></i></a>
+                                                            </div>
+
+                                                            <div class="btn-group">
+                                                                <a class="btn" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+                                                                <a class="btn" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
+                                                                <a class="btn" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+                                                                <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
+                                                            </div>
+
+                                                            <div class="btn-group">
+                                                                <a class="btn dropdown-toggle" data-bs-toggle="dropdown" title="Hyperlink"><i class="fa fa-link"></i></a>
+                                                                <div class="dropdown-menu input-append">
+                                                                    <input class="span2" placeholder="URL" type="text" data-edit="createLink" />
+                                                                    <button class="btn" type="button">Add</button>
+                                                                </div>
+                                                                <a class="btn" data-edit="unlink" title="Remove Hyperlink"><i class="fa fa-cut"></i></a>
+                                                            </div>
+
+                                                            <div class="btn-group">
+                                                                <a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
+                                                                <input type="file" data-bs-role="magic-overlay" data-bs-target="#pictureBtn" data-edit="insertImage" />
+                                                            </div>
+
+                                                            <div class="btn-group">
+                                                                <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
+                                                                <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
+                                                            </div>
                                                         </div>
+                                                        <div id="editor-one" class="editor-wrapper contenedor-scroll "></div>
+                                                        <textarea name="descr" id="descr" style="display:none;"></textarea>
+                                                        @*  <br />
+                                                        <div class="ln_solid"></div> *@
                                                     </div>
-
-                                                    <div id="editor-one" class="editor-wrapper"></div>
-
-                                                    <textarea name="descr" id="descr" style="display:none;"></textarea>
-
-                                                    <br />
-
-                                                    <div class="ln_solid"></div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        </div>
-                                     @*    <form id="formNivel" class="col-12 row m-2 p-2  mt-5">
-                                            <div class="col-3 p-2">
-                                                <div class="form-floating">
-                                                    <input type="text" class="form-control form-control-sm" id="txtdni" placeholder="Dni" />
-                                                    <label for="txtdni">Dni</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-6 p-2">
-                                                <div class="form-floating">
-                                                    <input type="text" class="form-control form-control-sm" id="txtdescripcion" placeholder="Descripción" />
-                                                    <label for="txtdescripcion">Descripción</label>
-                                                </div>
-                                            </div>
-                                        </form> *@
-
+                                        </form>
                                     </div>
-
                                 </div>
-                                <!-- End SmartWizard Content -->
-
                             </div>
+                            <!-- End SmartWizard Content -->
                         </div>
                     </div>
                 </div>
+
             </div>
-            <div class="row mt-2">
+            <div class="row mt-0 p-0">
                 <div class="col-12">
                     <div id="mensajeError" class="alert-danger" role="alert">
                     </div>
@@ -272,14 +377,16 @@
                 <button type="button" class="btn btnCancelar" data-bs-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btnAceptar" onclick="Guardar()">Guardar</button>
             </div>
+
         </div>
     </div>
 </div>
 
+
 @section scripts {
     <script>
 
-         //GET TIPO DOCUMENTOS
+        //GET TIPO DOCUMENTOS
         jQuery.ajax({
                 url: '@Url.Action("GetAllTipoDocumentos", "TipoDocumento")',
                 type: "GET",
@@ -297,11 +404,239 @@
                     }
                     });
 
+        //GET PROFESIONES
+        jQuery.ajax({
+                     url: '@Url.Action("GetAllProfesiones", "Profesion")',
+                     type: "GET",
+                     data: null,
+                     dataType: "json",
+                     contentType: "application/json; charset=utf-8",
+                     success: function (data) {
+                        $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cboprofesion");
+                         $.each(data.data, function (index, value) {
+                         $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cboprofesion");
+                         });
+                         },
+                         error: function (error) {
+                         console.log(error)
+                         }
+                         });
+
+        //GET CALLES
+        jQuery.ajax({
+                     url: '@Url.Action("GetAllCalle", "Calle")',
+                     type: "GET",
+                     data: null,
+                     dataType: "json",
+                     contentType: "application/json; charset=utf-8",
+                     success: function (data) {
+                        $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbocalle");
+                         $.each(data.data, function (index, value) {
+                         $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbocalle");
+                         });
+                         },
+                         error: function (error) {
+                         console.log(error)
+                         }
+                         });
+
+        //GET TIPOS DE SOCIOS
+        jQuery.ajax({
+                     url: '@Url.Action("GetAllTipoSocios", "TipoSocio")',
+                     type: "GET",
+                     data: null,
+                     dataType: "json",
+                     contentType: "application/json; charset=utf-8",
+                     success: function (data) {
+                        $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbotiposocio");
+                         $.each(data.data, function (index, value) {
+                         $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbotiposocio");
+                         });
+                         },
+                         error: function (error) {
+                         console.log(error)
+                         }
+                         });
+        //GET CATEGORIAS DE SOCIOS
+        jQuery.ajax({
+                             url: '@Url.Action("GetAllCategoriaSocios", "CategoriaSocio")',
+                             type: "GET",
+                             data: null,
+                             dataType: "json",
+                             contentType: "application/json; charset=utf-8",
+                             success: function (data) {
+                                $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbocategoriasocio");
+                                 $.each(data.data, function (index, value) {
+                                 $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbocategoriasocio");
+                                 });
+                                 },
+                                 error: function (error) {
+                                 console.log(error)
+                                 }
+                                 });
+
+        //GET ESTADOS DE SOCIOS
+        jQuery.ajax({
+                             url: '@Url.Action("GetAllEstadoSocios", "EstadoSocio")',
+                             type: "GET",
+                             data: null,
+                             dataType: "json",
+                             contentType: "application/json; charset=utf-8",
+                             success: function (data) {
+                                $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cboestadosocio");
+                                 $.each(data.data, function (index, value) {
+                                 $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cboestadosocio");
+                                 });
+                                 },
+                                 error: function (error) {
+                                 console.log(error)
+                                 }
+                                 });
+
+        //GET PROVINCIA
+        jQuery.ajax({
+                             url: '@Url.Action("GetAllProvincias", "Provincia")',
+                             type: "GET",
+                             data: null,
+                             dataType: "json",
+                             contentType: "application/json; charset=utf-8",
+                             success: function (data) {
+                                $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cboprovincia");
+                                 $.each(data.data, function (index, value) {
+                                 $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cboprovincia");
+                                 });
+                                 },
+                                 error: function (error) {
+                                 console.log(error)
+                                 }
+                                 });
+
+        //GET LOCALIDADES
+        jQuery.ajax({
+                             url: '@Url.Action("GetAllLocalidades", "Localidad")',
+                             type: "GET",
+                             data: null,
+                             dataType: "json",
+                             contentType: "application/json; charset=utf-8",
+                             success: function (data) {
+                                $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbolocalidad");
+                                 $.each(data.data, function (index, value) {
+                                 $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidad");
+                                 });
+                                 },
+                                 error: function (error) {
+                                 console.log(error)
+                                 }
+                                 });
+
+
+
+
+           const getDatePickerTitle = elem => {
+          // From the label or the aria-label
+          const label = elem.nextElementSibling;
+          let titleText = '';
+          if (label && label.tagName === 'LABEL') {
+            titleText = label.textContent;
+          } else {
+            titleText = elem.getAttribute('aria-label') || '';
+          }
+          return titleText;
+        }
+
+        const elems = document.querySelectorAll('.datepicker_input');
+        for (const elem of elems) {
+          const datepicker = new Datepicker(elem, {
+            'format': 'dd/mm/yyyy', // UK format
+            title: getDatePickerTitle(elem)
+          });
+        }
+
+
 
 
 
            function abrirModal(json) {
+
                $("#wizard").smartWizard('goToStep', 1)
+                  if (json != null) {
+                  
+                      $("#txtnrosocio").val(json.nroSocio);
+                           var tabladataHistorico;
+            tabladataHistorico = $("#tablaHistorico").DataTable({
+                responsive: true,
+                ordering: true,
+                dom: "Bfrtip",
+                buttons: [
+                    {
+                        extend: "excelHtml5",
+                        text: '<i class="fa fa-file-excel-o "></i>',
+                        filename: "Reporte Histórico de Material",
+                         title: "Listado de Histórico",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1]
+                        },
+                        className: "btn-exportar-excel",
+
+
+                    },
+                    {
+                        extend: "pdfHtml5",
+                        text: '<i class="fa fa-file-pdf-o"></i>',
+                        filename: "Reporte de Socios",
+                        title: "Listado de Socios",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1]
+                        },
+                        className: "btn-exportar-pdf"
+                    },
+                    {
+                        extend: "print",
+                        text: '<i class="fa fa-print"></i>',
+                        filename: "Reporte de Socios",
+                        title: "Listado de Socios",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1]
+                        },
+                        className: "btn-imprimir"
+
+                    }
+                ],
+                 "ajax": {
+                     url: "@Url.Action("GetAllMaterialMovimientosBySocio", "MaterialMovimiento")?socio="+$("#txtnrosocio").val(),
+                     type: "GET",
+                     dataType: "json",
+                 },
+                 "columns": [
+                         { "data": "Fecha" },
+                         { "data": "Tipo Material" },
+                         { "data": "Descripcion" },
+                         { "data": "Tipo Movimiento" },
+                         {
+                                      "defaultContent": '<button type="button" title="Editar Socio"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
+                                                        '<button type="button" title="Eliminar Socio" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
+                                      //"defaultContent": '<a asp-controller="Socio" asp-action="Details" asp-route-id='+data.id+' class="btn btn-primary">"Details"</a>',
+                                      //padding: 0; border: none; background: none;
+                            "orderable": false,
+                            "searchable": false,
+                            "width": "10%",
+                            "heigth":"10%"
+                        }
+                 ],
+                 "language": {
+                      "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+                  },
+                "columnDefs": [
+                        { "width": "10%", "targets": 0 },
+                        { "width": "40%", "targets": 1 },
+                        { "width": "40%", "targets": 2 },
+                        { "width": "10%", "targets": 3 },
+                ]
+            })
+            }
                $("#FormModal").modal("show")
 
             }
@@ -475,6 +810,9 @@
                 ]
             })
 
+
+
+
             $("#formNivel").validate({
             rules: {
                     ApeyNom: {
@@ -615,4 +953,7 @@
 
 
     </script>
+
+
+
     }

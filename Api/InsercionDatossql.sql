@@ -225,9 +225,28 @@ select ID_TIPO_MATERIAL,DESCRIPCION from [Biblioteca].dbo.TIPOS_DE_MATERIAL
 SET IDENTITY_INSERT TipoMaterial OFF
 --select * from TipoMaterial
 
+delete from TipoMovimiento
+dbcc checkident(TipoMovimiento,reseed,0)
+SET IDENTITY_INSERT TipoMovimiento ON
+insert into TipoMovimiento(Id,Descripcion,CantDias,NroMov)
+select ID_TIPO_MOVIMIENTO,DESCRIPCION,CANT_DIAS,NRO_MOV from [Biblioteca].dbo.TIPOS_DE_MOVIMIENTOS
+SET IDENTITY_INSERT TipoMovimiento OFF
+--select * from TipoMovimiento
+
+
+delete from materialMovimiento
+dbcc checkident(MaterialMovimiento,reseed,0)
+SET IDENTITY_INSERT MaterialMovimiento ON
+insert into MaterialMovimiento(IdTipoMovimiento,IdSector,IdSocio,IdTipoMaterial,IdUsuario,Fecha,FechaDevolucion,NroInventario,NroMovimiento,Observaciones)
+select ID_TIPO_MOVIMIENTO,ID_SECTOR,S.ID,ID_TIPO_MATERIAL,NULL AS IDUSUARIO,FECHA,fecha_devolucion,NRO_INVENTARIO,NRO_MOV,ISNULL(MM.OBSERVACIONES,'') from [Biblioteca].dbo.MOVIMIENTOS_DE_MATERIAL MM JOIN SOCIO S ON MM.SOCIO=S.NroSocio
+WHERE SOCIO  IN (SELECT SOCIO FROM [Biblioteca].dbo.SOCIOS)
+SET IDENTITY_INSERT MaterialMovimiento OFF
+--select * from MaterialMovimiento
+
+
 delete from Socio
 dbcc checkident(Socio,reseed,0)
-insert into Socio(NroSocio,ApeyNom,Nro,Depto,Telefono,Fnac,FIngreso,FEgreso,Observaciones,Documento,Vitalicio,PagaAca,IdTipoSocio,IdEstadoSocio,IdCategoriaSocio,IdTipoDocumento,IdCalle,IdProfesion,IdLocalidad)
+insert into Socio(NroSocio,ApeyNom,Nro,Depto,Telfijo,Fnac,FIngreso,FEgreso,Observaciones,Documento,Vitalicio,PagaAca,IdTipoSocio,IdEstadoSocio,IdCategoriaSocio,IdTipoDocumento,IdCalle,IdProfesion,IdLocalidad)
 select Socio,ApeyNom,Nro,Depto,Telefono,Fnac,FIngreso,FEgreso,Observaciones,Documento,Vitalicio,PagaAca,Id_Tipo_Socio,Id_Estado_Socio,Id_Categoria,Id_Tipo_Documento,Id_Calle,Id_Profesion,Id_Localidad from [Biblioteca].dbo.SOCIOS
 --select * from Socio
 
@@ -260,7 +279,7 @@ SET IDENTITY_INSERT Sector OFF
 --dbcc checkident(Ilustrador,reseed,0)
 --SET IDENTITY_INSERT Ilustrador ON
 --insert into Ilustrador(Id,ApeyNom)
---select ID_PROLOGUISTA,ApeyNom from [Biblioteca].dbo.Ilustradores
+--select ID_ILUSTRADOR,ApeyNom from [Biblioteca].dbo.Ilustradores
 --SET IDENTITY_INSERT Ilustrador OFF
 --select * from Ilustrador
 
