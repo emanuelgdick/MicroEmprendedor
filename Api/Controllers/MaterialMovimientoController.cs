@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Api.Controllers
 {
@@ -62,7 +63,10 @@ namespace Api.Controllers
                 return BadRequest();
             }
             
-            var MaterialMovimiento = _db.MaterialMovimiento.Where(x => x.Socio.Id == socio).OrderBy(s=>s.Fecha).ToList();
+            var MaterialMovimiento = _db.MaterialMovimiento.Where(x => x.Socio.NroSocio == socio)
+                .Include(y=>y.TipoMovimiento)
+                .Include(q=>q.TipoMaterial)
+                .OrderBy(s=>s.Fecha).ToList();
 
             if (MaterialMovimiento == null)
             {

@@ -256,23 +256,25 @@
                                     </div>
                                     <div id="step-4" style=" height: 250px; ">
                                         <form id="formNivelHistorico" class="col-12 row   mt-0">
-                                            <div class="card-body">
-                                                <table id="tablaHistorico" class="display" style="width:100%">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Nro Inventario</th>
-                                                            <th>Fecha</th>
-                                                            <th>Fecha Devolución</th>
-                                                            <th>Nro Movimiento</th>
+
+                                            <table id="tablaHistorico" class="display" style="width:100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Fecha</th>
+                                                        <th>Material</th>
+                                                        <th>Movimiento</th>
+                                                        <th>Inv</th>
+                                                        <th>Devol.</th>
+                                                        <th>Mov</th>
                                                         @*     <th></th>  *@
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    </tbody>
-                                                    <tfoot>
-                                                    </tfoot>
-                                                </table>
-                                            </div>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                                <tfoot>
+                                                </tfoot>
+                                            </table>
+
                                         </form>
                                     </div>
                                     <div id="step-5" style=" height: 250px; ">
@@ -566,19 +568,30 @@
                 searching: false,
                 info: false,
                 lengthChange: false, // Will Disabled Record number per page
-                pageLength: 5,
+                pageLength: 3,
                 "ajax": {
                      url: "@Url.Action("GetAllMaterialMovimientosBySocio", "MaterialMovimiento")"+"?socio="+$("#txtnrosocio").val(),
-                
+
                     type: "GET",
                     dataType: "json"
+                  
                 },
                 "columns": [
+                    { "data": "fecha"},
+                    { "data": "tipoMaterial", render: function (data) {
+                       
+                                return data.descripcion
+                            }
+                    },
+                    { "data": "tipoMovimiento", render: function (data) {
+                                return data.descripcion
+                            }
+                    },
+
                     { "data": "nroInventario" },
-                    { "data": "fecha" },
                     { "data": "fechaDevolucion" },
-                    { "data": "nroMovimiento" },
-                    
+                    { "data": "nroMovimiento" }
+
                     // { "data": "Seleccionado",render: function (data, type, row) {
                     //         // if (data) {
                     //         //     return '<input type="checkbox" checked class="editor-active">';
@@ -594,10 +607,12 @@
                   },
                 "columnDefs": [
 
-                    { "width": "20%", "targets": 0 },
-                    { "width": "50%", "targets": 1 },
-                    { "width": "50%", "targets": 2 },
-                    { "width": "20%", "targets": 3 }
+                    { "width": "10%", "targets": 0 ,render: DataTable.render.datetime( 'DD/MM/YYYY' ) },
+                    { "width": "10%", "targets": 1 },
+                    { "width": "40%", "targets": 2 },
+                    { "width": "10%", "targets": 3 },
+                    { "width": "10%", "targets": 4 ,render: DataTable.render.datetime( 'DD/MM/YYYY' ) },
+                    { "width": "10%", "targets": 5 }
                 ]
             });
 
@@ -608,7 +623,7 @@
             $("#FormModal").modal("show");
 
         }
-        
+
         }
 
            // function abrirModal(json) {
@@ -927,7 +942,7 @@
                  "language": {
                       "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
                   },
-                           
+
                 "columnDefs": [
                         { "width": "10%", "targets": 0 },
                         { "width": "80%", "targets": 1 },

@@ -1,4 +1,4 @@
-﻿namespace FrontEnd.Models
+﻿namespace Api.Models.DTOs
 {
     public class TotalesDTO
     {
