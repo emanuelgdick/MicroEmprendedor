@@ -65,7 +65,7 @@ namespace Api.Controllers
             
             var MaterialMovimiento = _db.MaterialMovimiento.Where(x => x.Socio.NroSocio == socio)
                 .Include(y=>y.TipoMovimiento)
-                .Include(q=>q.TipoMaterial)
+                .Include(q=>q.Material)
                 .OrderBy(s=>s.Fecha).ToList();
 
             if (MaterialMovimiento == null)

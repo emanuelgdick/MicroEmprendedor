@@ -16,8 +16,8 @@ namespace Api.Models
         [ForeignKey("IdSocio")]
         public Socio Socio { get; set; }
 
-        [ForeignKey("IdTipoMaterial")]
-        public TipoMaterial TipoMaterial { get; set; }
+        [ForeignKey("IdMaterial")]
+        public Material Material { get; set; }
 
         [ForeignKey("IdUsuario")]
         public Usuario? Usuario { get; set; }

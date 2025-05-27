@@ -362,108 +362,93 @@ namespace Api.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("AnoEdicion")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CantPaginas")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Clase")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EanIsbn")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Extension")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FechaCompra")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("IdColeccion")
+                    b.Property<int?>("IdColeccion")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdEditor")
+                    b.Property<int?>("IdEditor")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdEditorial")
+                    b.Property<int?>("IdEditorial")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdEncuadernacion")
+                    b.Property<int?>("IdEncuadernacion")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdIdioma")
+                    b.Property<int?>("IdIdioma")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdIlustrador")
+                    b.Property<int?>("IdIlustrador")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdLugar")
+                    b.Property<int?>("IdLugar")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdProcedencia")
+                    b.Property<int?>("IdProcedencia")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdProloguista")
+                    b.Property<int?>("IdProloguista")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdSector")
+                    b.Property<int?>("IdSector")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdSerie")
+                    b.Property<int?>("IdSerie")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdTipoMaterial")
+                    b.Property<int?>("IdTipoMaterial")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdTraductor")
+                    b.Property<int?>("IdTraductor")
                         .HasColumnType("int");
 
                     b.Property<string>("Libristica")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NroColeccion")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NroEdicion")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NroEjemplar")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("NroInventario")
                         .HasColumnType("int");
 
                     b.Property<string>("NroTomo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Observaciones")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Precio")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("TieneIlustracion")
+                    b.Property<bool?>("TieneIlustracion")
                         .HasColumnType("bit");
 
                     b.Property<string>("Titulo")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Volumen")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -511,13 +496,13 @@ namespace Api.Migrations
                     b.Property<DateTime?>("FechaDevolucion")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("IdMaterial")
+                        .HasColumnType("int");
+
                     b.Property<int>("IdSector")
                         .HasColumnType("int");
 
                     b.Property<int>("IdSocio")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdTipoMaterial")
                         .HasColumnType("int");
 
                     b.Property<int>("IdTipoMovimiento")
@@ -539,11 +524,11 @@ namespace Api.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("IdMaterial");
+
                     b.HasIndex("IdSector");
 
                     b.HasIndex("IdSocio");
-
-                    b.HasIndex("IdTipoMaterial");
 
                     b.HasIndex("IdTipoMovimiento");
 
@@ -964,81 +949,55 @@ namespace Api.Migrations
                 {
                     b.HasOne("Api.Models.Coleccion", "Coleccion")
                         .WithMany()
-                        .HasForeignKey("IdColeccion")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdColeccion");
 
                     b.HasOne("Api.Models.Editor", "Editor")
                         .WithMany()
-                        .HasForeignKey("IdEditor")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdEditor");
 
                     b.HasOne("Api.Models.Editorial", "Editorial")
                         .WithMany()
-                        .HasForeignKey("IdEditorial")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdEditorial");
 
                     b.HasOne("Api.Models.Encuadernacion", "Encuadernacion")
                         .WithMany()
-                        .HasForeignKey("IdEncuadernacion")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdEncuadernacion");
 
                     b.HasOne("Api.Models.Idioma", "Idioma")
                         .WithMany()
-                        .HasForeignKey("IdIdioma")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdIdioma");
 
                     b.HasOne("Api.Models.Ilustrador", "Ilustrador")
                         .WithMany()
-                        .HasForeignKey("IdIlustrador")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdIlustrador");
 
                     b.HasOne("Api.Models.Lugar", "Lugar")
                         .WithMany()
-                        .HasForeignKey("IdLugar")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdLugar");
 
                     b.HasOne("Api.Models.Procedencia", "Procedencia")
                         .WithMany()
-                        .HasForeignKey("IdProcedencia")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdProcedencia");
 
                     b.HasOne("Api.Models.Prologuista", "Prologuista")
                         .WithMany()
-                        .HasForeignKey("IdProloguista")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdProloguista");
 
                     b.HasOne("Api.Models.Sector", "Sector")
                         .WithMany()
-                        .HasForeignKey("IdSector")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdSector");
 
                     b.HasOne("Api.Models.Serie", "Serie")
                         .WithMany()
-                        .HasForeignKey("IdSerie")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdSerie");
 
                     b.HasOne("Api.Models.TipoMaterial", "TipoMaterial")
                         .WithMany()
-                        .HasForeignKey("IdTipoMaterial")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdTipoMaterial");
 
                     b.HasOne("Api.Models.Traductor", "Traductor")
                         .WithMany()
-                        .HasForeignKey("IdTraductor")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdTraductor");
 
                     b.Navigation("Coleccion");
 
@@ -1069,6 +1028,12 @@ namespace Api.Migrations
 
             modelBuilder.Entity("Api.Models.MaterialMovimiento", b =>
                 {
+                    b.HasOne("Api.Models.Material", "Material")
+                        .WithMany()
+                        .HasForeignKey("IdMaterial")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Api.Models.Sector", "Sector")
                         .WithMany()
                         .HasForeignKey("IdSector")
@@ -1078,12 +1043,6 @@ namespace Api.Migrations
                     b.HasOne("Api.Models.Socio", "Socio")
                         .WithMany()
                         .HasForeignKey("IdSocio")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Api.Models.TipoMaterial", "TipoMaterial")
-                        .WithMany()
-                        .HasForeignKey("IdTipoMaterial")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -1097,11 +1056,11 @@ namespace Api.Migrations
                         .WithMany()
                         .HasForeignKey("IdUsuario");
 
+                    b.Navigation("Material");
+
                     b.Navigation("Sector");
 
                     b.Navigation("Socio");
-
-                    b.Navigation("TipoMaterial");
 
                     b.Navigation("TipoMovimiento");
 

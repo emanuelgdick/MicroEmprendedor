@@ -118,8 +118,8 @@
                                             </a>
                                         </li>
                                     </ul>
-                                    <div id="step-1" style=" height: 250px; ">
-                                        <form id="formNivel" class="col-12 row m-2 p-2 mt-5">
+                                    <div id="step-1" style=" height: 320px; ">
+                                        <form id="formNivel" class="col-12 row m-2 p-5 mt-0">
                                             <div class="row">
                                                 <div class=" col-3 p-2 form-floating">
                                                     <select id="cbotipodoc" class="form-select " name="tipodoc" autocomplete="off" placeholder="Tipo Documento"></select>
@@ -160,8 +160,8 @@
                                             </div>
                                         </form>
                                     </div>
-                                    <div id="step-2" style=" height: 250px; ">
-                                        <form id="formNivel" class="col-12 row m-2 p-2  mt-5">
+                                    <div id="step-2" style=" height: 320px; ">
+                                        <form id="formNivel" class="col-12 row m-2 p-5  mt-0">
                                             <div class="row">
                                                 <div class=" col-6 p-2 form-floating">
                                                     <select id="cbocalle" class="form-select " name="calle" autocomplete="off" placeholder="Calle"></select>
@@ -207,8 +207,8 @@
                                             </div>
                                         </form>
                                     </div>
-                                    <div id="step-3" style=" height: 250px; ">
-                                        <form id="formNivel" class="col-12 row m-2 p-2  mt-5">
+                                    <div id="step-3" style=" height: 320px; ">
+                                        <form id="formNivel" class="col-12 row m-2 p-5  mt-0">
                                             <div class="row">
                                                 <div class=" col-4 p-2 form-floating">
                                                     <select id="cbotiposocio" class="form-select " name="tiposocio" autocomplete="off" placeholder="Tipo"></select>
@@ -254,17 +254,17 @@
                                             </div>
                                         </form>
                                     </div>
-                                    <div id="step-4" style=" height: 250px; ">
-                                        <form id="formNivelHistorico" class="col-12 row   mt-0">
+                                    <div id="step-4" style=" height: 320px; ">
+                                        <form id="formNivelHistorico" class="col-12 row p-0  mt-0">
 
                                             <table id="tablaHistorico" class="display" style="width:100%">
                                                 <thead>
                                                     <tr>
                                                         <th>Fecha</th>
                                                         <th>Material</th>
-                                                        <th>Movimiento</th>
+                                                        <th>Tipo</th>
                                                         <th>Inv</th>
-                                                        <th>Devol.</th>
+                                                        <th>Devol</th>
                                                         <th>Mov</th>
                                                         @*     <th></th>  *@
                                                     </tr>
@@ -277,8 +277,8 @@
 
                                         </form>
                                     </div>
-                                    <div id="step-5" style=" height: 250px; ">
-                                        <form id="formNivel" class="col-12 row m-2 p-2  mt-5 ">
+                                    <div id="step-5" style=" height: 320px; ">
+                                        <form id="formNivel" class="col-12 row m-2 p-3  mt-0 ">
                                             <div class="col-md-12 col-sm-12">
                                                 <div class="x_panel  p-0">
                                                     <div class="x_content m-0 p-0">
@@ -568,30 +568,32 @@
                 searching: false,
                 info: false,
                 lengthChange: false, // Will Disabled Record number per page
-                pageLength: 3,
+                pageLength: 5,
                 "ajax": {
                      url: "@Url.Action("GetAllMaterialMovimientosBySocio", "MaterialMovimiento")"+"?socio="+$("#txtnrosocio").val(),
-
                     type: "GET",
                     dataType: "json"
-                  
                 },
                 "columns": [
                     { "data": "fecha"},
                     { "data": "tipoMaterial", render: function (data) {
-                       
                                 return data.descripcion
                             }
                     },
                     { "data": "tipoMovimiento", render: function (data) {
-                                return data.descripcion
+                                if (data.descripcion='Préstamo Común por 15 Días')
+                                return 'Préstamo(15 días)'
+                                 if (data.descripcion='Préstamo Común por 30 Días')
+                                return 'Préstamo(30 días)'
+                                 if (data.descripcion='Préstamo vence 31 de diciembre')
+                                return 'Préstamo(31 Diciembre)'
+                                if (data.descripcion='Préstamo por 48 Hs(Videos)')
+                                return 'Préstamo Videos(48 Hs)'
                             }
                     },
-
                     { "data": "nroInventario" },
                     { "data": "fechaDevolucion" },
                     { "data": "nroMovimiento" }
-
                     // { "data": "Seleccionado",render: function (data, type, row) {
                     //         // if (data) {
                     //         //     return '<input type="checkbox" checked class="editor-active">';
@@ -608,11 +610,11 @@
                 "columnDefs": [
 
                     { "width": "10%", "targets": 0 ,render: DataTable.render.datetime( 'DD/MM/YYYY' ) },
-                    { "width": "10%", "targets": 1 },
-                    { "width": "40%", "targets": 2 },
+                    { "width": "5%", "targets": 1 },
+                    { "width": "50%", "targets": 2 },
                     { "width": "10%", "targets": 3 },
                     { "width": "10%", "targets": 4 ,render: DataTable.render.datetime( 'DD/MM/YYYY' ) },
-                    { "width": "10%", "targets": 5 }
+                    { "width": "5%", "targets": 5 }
                 ]
             });
 
