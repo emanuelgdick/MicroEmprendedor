@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Biblioteca\\FrontEnd\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FrontEnd.bundle.scp.css",
-      "PackagePath": "staticwebassets\\FrontEnd.4ji32hhmnz.bundle.scp.css"
-    },
-    {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\SweetAlert\\sweetalert.css",
       "PackagePath": "staticwebassets\\css\\SweetAlert\\sweetalert.css"
     },
@@ -717,6 +713,26 @@
       "PackagePath": "staticwebassets\\css\\fontawesome\\scss\\font-awesome.scss"
     },
     {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\google-code-prettify\\prettify.min.css",
+      "PackagePath": "staticwebassets\\css\\google-code-prettify\\prettify.min.css"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\iCheck\\skins\\flat\\green.css",
+      "PackagePath": "staticwebassets\\css\\iCheck\\skins\\flat\\green.css"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\iCheck\\skins\\flat\\green@2x.png",
+      "PackagePath": "staticwebassets\\css\\iCheck\\skins\\flat\\green@2x.png"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\malihu-custom-scrollbar-plugin\\jquery.mCustomScrollbar.css",
+      "PackagePath": "staticwebassets\\css\\malihu-custom-scrollbar-plugin\\jquery.mCustomScrollbar.css"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\malihu-custom-scrollbar-plugin\\jquery.mCustomScrollbar.min.css",
+      "PackagePath": "staticwebassets\\css\\malihu-custom-scrollbar-plugin\\jquery.mCustomScrollbar.min.css"
+    },
+    {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\nprogress\\nprogress.css",
       "PackagePath": "staticwebassets\\css\\nprogress\\nprogress.css"
     },
@@ -733,8 +749,20 @@
       "PackagePath": "staticwebassets\\css\\pnotify\\bower.json"
     },
     {
-      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\select2\\dist\\css\\select2.css",
+      "PackagePath": "staticwebassets\\css\\select2\\dist\\css\\select2.css"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\select2\\dist\\css\\select2.min.css",
+      "PackagePath": "staticwebassets\\css\\select2\\dist\\css\\select2.min.css"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\switchery\\switchery.css",
+      "PackagePath": "staticwebassets\\css\\switchery\\switchery.css"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\switchery\\switchery.min.css",
+      "PackagePath": "staticwebassets\\css\\switchery\\switchery.min.css"
     },
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\favicon.ico",
@@ -767,6 +795,10 @@
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\boostrap-progressbar\\bootstrap-progressbar.min.js",
       "PackagePath": "staticwebassets\\js\\boostrap-progressbar\\bootstrap-progressbar.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\bootstrap-wysiwyg\\bootstrap-wysiwyg.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap-wysiwyg\\bootstrap-wysiwyg.min.js"
     },
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\bootstrap\\bootstrap.min.js",
@@ -2565,6 +2597,54 @@
       "PackagePath": "staticwebassets\\js\\devbridge-autocomplete\\src\\jquery.autocomplete.js"
     },
     {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\google-code-prettify\\prettify.js",
+      "PackagePath": "staticwebassets\\js\\google-code-prettify\\prettify.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\iCheck\\icheck.js",
+      "PackagePath": "staticwebassets\\js\\iCheck\\icheck.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\iCheck\\icheck.min.js",
+      "PackagePath": "staticwebassets\\js\\iCheck\\icheck.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jQuery-Smart-Wizard\\.bower.json",
+      "PackagePath": "staticwebassets\\js\\jQuery-Smart-Wizard\\.bower.json"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jQuery-Smart-Wizard\\README.md",
+      "PackagePath": "staticwebassets\\js\\jQuery-Smart-Wizard\\README.md"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jQuery-Smart-Wizard\\images\\loader.gif",
+      "PackagePath": "staticwebassets\\js\\jQuery-Smart-Wizard\\images\\loader.gif"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jQuery-Smart-Wizard\\js\\jquery-1.4.2.min.js",
+      "PackagePath": "staticwebassets\\js\\jQuery-Smart-Wizard\\js\\jquery-1.4.2.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jQuery-Smart-Wizard\\js\\jquery.smartWizard.js",
+      "PackagePath": "staticwebassets\\js\\jQuery-Smart-Wizard\\js\\jquery.smartWizard.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jQuery-Smart-Wizard\\styles\\demo_style.css",
+      "PackagePath": "staticwebassets\\js\\jQuery-Smart-Wizard\\styles\\demo_style.css"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jQuery-Smart-Wizard\\styles\\smart_wizard.css",
+      "PackagePath": "staticwebassets\\js\\jQuery-Smart-Wizard\\styles\\smart_wizard.css"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jQuery-Smart-Wizard\\styles\\smart_wizard_vertical.css",
+      "PackagePath": "staticwebassets\\js\\jQuery-Smart-Wizard\\styles\\smart_wizard_vertical.css"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery.hotkeys\\jquery.hotkeys.js",
+      "PackagePath": "staticwebassets\\js\\jquery.hotkeys\\jquery.hotkeys.js"
+    },
+    {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\js\\jquery\\dist\\jquery.js"
     },
@@ -3109,6 +3189,26 @@
       "PackagePath": "staticwebassets\\js\\loadingOverlay\\loadingoverlay.min.js"
     },
     {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\malihu-custom-scrollbar-plugin\\.bower.json",
+      "PackagePath": "staticwebassets\\js\\malihu-custom-scrollbar-plugin\\.bower.json"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\malihu-custom-scrollbar-plugin\\bower.json",
+      "PackagePath": "staticwebassets\\js\\malihu-custom-scrollbar-plugin\\bower.json"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\malihu-custom-scrollbar-plugin\\jquery.mCustomScrollbar.concat.min.js",
+      "PackagePath": "staticwebassets\\js\\malihu-custom-scrollbar-plugin\\jquery.mCustomScrollbar.concat.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\malihu-custom-scrollbar-plugin\\jquery.mCustomScrollbar.js",
+      "PackagePath": "staticwebassets\\js\\malihu-custom-scrollbar-plugin\\jquery.mCustomScrollbar.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\malihu-custom-scrollbar-plugin\\mCSB_buttons.png",
+      "PackagePath": "staticwebassets\\js\\malihu-custom-scrollbar-plugin\\mCSB_buttons.png"
+    },
+    {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\nprogress\\nprogress.js",
       "PackagePath": "staticwebassets\\js\\nprogress\\nprogress.js"
     },
@@ -3155,6 +3255,218 @@
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\pnotify\\pnotify.tooltip.js",
       "PackagePath": "staticwebassets\\js\\pnotify\\pnotify.tooltip.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\ar.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\ar.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\az.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\az.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\bg.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\bg.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\ca.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\ca.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\cs.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\cs.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\da.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\da.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\de.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\de.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\el.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\el.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\en.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\en.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\es.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\es.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\et.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\et.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\eu.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\eu.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\fa.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\fa.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\fi.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\fi.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\fr.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\fr.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\gl.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\gl.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\he.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\he.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\hi.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\hi.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\hr.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\hr.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\hu.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\hu.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\id.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\id.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\is.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\is.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\it.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\it.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\ja.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\ja.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\km.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\km.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\ko.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\ko.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\lt.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\lt.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\lv.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\lv.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\mk.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\mk.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\ms.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\ms.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\nb.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\nb.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\nl.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\nl.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\pl.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\pl.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\pt-BR.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\pt-BR.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\pt.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\pt.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\ro.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\ro.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\ru.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\ru.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\sk.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\sk.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\sr-Cyrl.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\sr-Cyrl.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\sr.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\sr.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\sv.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\sv.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\th.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\th.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\tr.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\tr.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\uk.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\uk.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\vi.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\vi.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\zh-CN.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\zh-CN.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\i18n\\zh-TW.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\i18n\\zh-TW.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\select2.full.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\select2.full.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\select2.full.min.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\select2.full.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\select2.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\select2.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\select2\\dist\\js\\select2.min.js",
+      "PackagePath": "staticwebassets\\js\\select2\\dist\\js\\select2.min.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\switchery\\switchery.js",
+      "PackagePath": "staticwebassets\\js\\switchery\\switchery.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\switchery\\switchery.min.js",
+      "PackagePath": "staticwebassets\\js\\switchery\\switchery.min.js"
     },
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\lib\\bootstrap\\LICENSE",

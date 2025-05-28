@@ -3741,6 +3741,250 @@
         }
       }
     },
+    "/api/MaterialMovimiento": {
+      "get": {
+        "tags": [
+          "MaterialMovimiento"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/MaterialMovimiento/GetMaterialMovimientoById": {
+      "get": {
+        "tags": [
+          "MaterialMovimiento"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaterialMovimiento"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaterialMovimiento"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaterialMovimiento"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MaterialMovimiento/GetMaterialMovimientoBySocio": {
+      "get": {
+        "tags": [
+          "MaterialMovimiento"
+        ],
+        "parameters": [
+          {
+            "name": "socio",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MaterialMovimiento"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MaterialMovimiento"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MaterialMovimiento"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MaterialMovimiento/AddMaterialMovimiento": {
+      "post": {
+        "tags": [
+          "MaterialMovimiento"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MaterialMovimiento"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MaterialMovimiento"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MaterialMovimiento"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaterialMovimiento"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaterialMovimiento"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaterialMovimiento"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MaterialMovimiento/UpdateMaterialMovimiento": {
+      "post": {
+        "tags": [
+          "MaterialMovimiento"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MaterialMovimiento"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MaterialMovimiento"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MaterialMovimiento"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaterialMovimiento"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaterialMovimiento"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaterialMovimiento"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MaterialMovimiento/DeleteMaterialMovimiento": {
+      "put": {
+        "tags": [
+          "MaterialMovimiento"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaterialMovimiento"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaterialMovimiento"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaterialMovimiento"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Pais": {
       "get": {
         "tags": [
@@ -5505,6 +5749,202 @@
         }
       }
     },
+    "/api/TipoMovimiento": {
+      "get": {
+        "tags": [
+          "TipoMovimiento"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TipoMovimiento/GetTipoMovimientoById": {
+      "get": {
+        "tags": [
+          "TipoMovimiento"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoMovimiento"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoMovimiento"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoMovimiento"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TipoMovimiento/AddTipoMovimiento": {
+      "post": {
+        "tags": [
+          "TipoMovimiento"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoMovimiento"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoMovimiento"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoMovimiento"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoMovimiento"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoMovimiento"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoMovimiento"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TipoMovimiento/UpdateTipoMovimiento": {
+      "post": {
+        "tags": [
+          "TipoMovimiento"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoMovimiento"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoMovimiento"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoMovimiento"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoMovimiento"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoMovimiento"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoMovimiento"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TipoMovimiento/DeleteTipoMovimiento": {
+      "put": {
+        "tags": [
+          "TipoMovimiento"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoMovimiento"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoMovimiento"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoMovimiento"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/TipoSocio": {
       "get": {
         "tags": [
@@ -6671,6 +7111,170 @@
         },
         "additionalProperties": false
       },
+      "Material": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idioma": {
+            "$ref": "#/components/schemas/Idioma"
+          },
+          "procedencia": {
+            "$ref": "#/components/schemas/Procedencia"
+          },
+          "serie": {
+            "$ref": "#/components/schemas/Serie"
+          },
+          "editorial": {
+            "$ref": "#/components/schemas/Editorial"
+          },
+          "sector": {
+            "$ref": "#/components/schemas/Sector"
+          },
+          "tipoMaterial": {
+            "$ref": "#/components/schemas/TipoMaterial"
+          },
+          "encuadernacion": {
+            "$ref": "#/components/schemas/Encuadernacion"
+          },
+          "coleccion": {
+            "$ref": "#/components/schemas/Coleccion"
+          },
+          "traductor": {
+            "$ref": "#/components/schemas/Traductor"
+          },
+          "prologuista": {
+            "$ref": "#/components/schemas/Prologuista"
+          },
+          "editor": {
+            "$ref": "#/components/schemas/Editor"
+          },
+          "ilustrador": {
+            "$ref": "#/components/schemas/Ilustrador"
+          },
+          "lugar": {
+            "$ref": "#/components/schemas/Lugar"
+          },
+          "nroInventario": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nroTomo": {
+            "type": "string",
+            "nullable": true
+          },
+          "cantPaginas": {
+            "type": "string",
+            "nullable": true
+          },
+          "extension": {
+            "type": "string",
+            "nullable": true
+          },
+          "precio": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaCompra": {
+            "type": "string",
+            "nullable": true
+          },
+          "eanIsbn": {
+            "type": "string",
+            "nullable": true
+          },
+          "volumen": {
+            "type": "string",
+            "nullable": true
+          },
+          "nroColeccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "nroEdicion": {
+            "type": "string",
+            "nullable": true
+          },
+          "anoEdicion": {
+            "type": "string",
+            "nullable": true
+          },
+          "clase": {
+            "type": "string",
+            "nullable": true
+          },
+          "libristica": {
+            "type": "string",
+            "nullable": true
+          },
+          "titulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "observaciones": {
+            "type": "string",
+            "nullable": true
+          },
+          "tieneIlustracion": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "nroEjemplar": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MaterialMovimiento": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipoMovimiento": {
+            "$ref": "#/components/schemas/TipoMovimiento"
+          },
+          "sector": {
+            "$ref": "#/components/schemas/Sector"
+          },
+          "socio": {
+            "$ref": "#/components/schemas/Socio"
+          },
+          "material": {
+            "$ref": "#/components/schemas/Material"
+          },
+          "usuario": {
+            "$ref": "#/components/schemas/Usuario"
+          },
+          "nroInventario": {
+            "type": "string",
+            "nullable": true
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fechaDevolucion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "nroMovimiento": {
+            "type": "string",
+            "nullable": true
+          },
+          "observaciones": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Pais": {
         "required": [
           "descripcion"
@@ -6783,6 +7387,40 @@
         },
         "additionalProperties": false
       },
+      "Sector": {
+        "required": [
+          "descripcion"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descripcion": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Serie": {
+        "required": [
+          "descripcion"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descripcion": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
       "Socio": {
         "type": "object",
         "properties": {
@@ -6823,11 +7461,23 @@
             "type": "string",
             "nullable": true
           },
+          "piso": {
+            "type": "string",
+            "nullable": true
+          },
           "depto": {
             "type": "string",
             "nullable": true
           },
-          "telefono": {
+          "telfijo": {
+            "type": "string",
+            "nullable": true
+          },
+          "telCelular": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
             "type": "string",
             "nullable": true
           },
@@ -6859,6 +7509,10 @@
           },
           "pagaAca": {
             "type": "boolean"
+          },
+          "sexo": {
+            "type": "boolean",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -6898,6 +7552,28 @@
           "descripcion": {
             "minLength": 1,
             "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoMovimiento": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "cantDias": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nroMov": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
