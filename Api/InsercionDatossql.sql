@@ -275,46 +275,6 @@ SET IDENTITY_INSERT Sector OFF
 --SET IDENTITY_INSERT Ilustrador OFF
 --select * from Ilustrador
 
-delete from Material
-dbcc checkident(Material,reseed,0)
-SET IDENTITY_INSERT Material ON
-insert into Material(IdIdioma,IdProcedencia,IdSerie,IdEditorial,IdSector,IdTipoMaterial,IdEncuadernacion,IdColeccion,IdTraductor,IdProloguista,IdEditor,IdIlustrador,IdLugar,NroInventario,NroTomo,CantPaginas,Extension,Precio,FechaCompra,EanIsbn,Volumen,NroColeccion,NroEdicion,AnoEdicion,Clase,Libristica,Titulo,Observaciones,TieneIlustracion,NroEjemplar)
-select 
-		ISNULL((SELECT ID FROM SERIE WHERE ID=a.ID_IDIOMA),NULL),
-		ISNULL((SELECT ID FROM SERIE WHERE ID=a.ID_PROCEDENCIA),NULL),
-		ISNULL((SELECT ID FROM SERIE WHERE ID=a.ID_SERIE),NULL),
-		ISNULL((SELECT ID FROM EDITORIAL WHERE ID=a.ID_EDITORIAL),NULL),
-		ISNULL((SELECT ID FROM SECTOR WHERE ID=a.ID_SECTOR),NULL),
-		ISNULL((SELECT ID FROM TIPOMATERIAL WHERE ID=a.ID_TIPO_MATERIAL),NULL),
-		ISNULL((SELECT ID FROM ENCUADERNACION WHERE ID=a.ID_ENCUADERNACION),NULL),
-		ISNULL((SELECT ID FROM COLECCION WHERE ID=a.ID_COLECCION),NULL),
-		ISNULL((SELECT ID FROM TRADUCTOR WHERE ID=a.ID_TRADUCTOR),NULL),
-		ISNULL((SELECT ID FROM PROLOGUISTA WHERE ID=a.ID_PROLOGUISTA),NULL),
-		ISNULL((SELECT ID FROM EDITOR WHERE ID=a.ID_EDITOR),NULL),
-		ISNULL((SELECT ID FROM ILUSTRADOR WHERE ID=a.ID_ILUSTRADOR),NULL),
-		ID_LUGAR,
-		NRO_INVENTARIO,
-		NRO_TOMO,
-		CANT_PAGINAS,
-		EXTENSION,
-		PRECIO,
-		FECHA_COMPRA,
-		EAN_ISBN,
-		VOLUMEN,
-		NRO_COLECCION,
-		NRO_EDICION,
-		ANO_EDICION,
-		CLASE,
-		LIBRISTICA,
-		TITULO,
-		OBSERVACIONES,
-		TIENE_ILUSTRACION,
-		NRO_EJEMPLAR 
-from [Biblioteca].dbo.Materiales a
-order by id_editor
-SET IDENTITY_INSERT Material OFF
---select * from Material order by idilustrador
-
 
 
 
@@ -355,14 +315,71 @@ SET IDENTITY_INSERT Socio OFF
 
 
 
+
+delete from Material
+dbcc checkident(Material,reseed,0)
+SET IDENTITY_INSERT Material ON
+insert into Material(IdIdioma,IdProcedencia,IdSerie,IdEditorial,IdSector,IdTipoMaterial,IdEncuadernacion,IdColeccion,IdTraductor,IdProloguista,IdEditor,IdIlustrador,IdLugar,NroInventario,NroTomo,CantPaginas,Extension,Precio,FechaCompra,EanIsbn,Volumen,NroColeccion,NroEdicion,AnoEdicion,Clase,Libristica,Titulo,Observaciones,TieneIlustracion,NroEjemplar)
+select 
+		ISNULL((SELECT ID FROM IDIOMA WHERE ID=a.ID_IDIOMA),NULL),
+		ISNULL((SELECT ID FROM PROCEDENCIA WHERE ID=a.ID_PROCEDENCIA),NULL),
+		ISNULL((SELECT ID FROM SERIE WHERE ID=a.ID_SERIE),NULL),
+		ISNULL((SELECT ID FROM EDITORIAL WHERE ID=a.ID_EDITORIAL),NULL),
+		ISNULL((SELECT ID FROM SECTOR WHERE ID=a.ID_SECTOR),NULL),
+		ISNULL((SELECT ID FROM TIPOMATERIAL WHERE ID=a.ID_TIPO_MATERIAL),NULL),
+		ISNULL((SELECT ID FROM ENCUADERNACION WHERE ID=a.ID_ENCUADERNACION),NULL),
+		ISNULL((SELECT ID FROM COLECCION WHERE ID=a.ID_COLECCION),NULL),
+		ISNULL((SELECT ID FROM TRADUCTOR WHERE ID=a.ID_TRADUCTOR),NULL),
+		ISNULL((SELECT ID FROM PROLOGUISTA WHERE ID=a.ID_PROLOGUISTA),NULL),
+		ISNULL((SELECT ID FROM EDITOR WHERE ID=a.ID_EDITOR),NULL),
+		ISNULL((SELECT ID FROM ILUSTRADOR WHERE ID=a.ID_ILUSTRADOR),NULL),
+		ID_LUGAR,
+		NRO_INVENTARIO,
+		NRO_TOMO,
+		CANT_PAGINAS,
+		EXTENSION,
+		PRECIO,
+		FECHA_COMPRA,
+		EAN_ISBN,
+		VOLUMEN,
+		NRO_COLECCION,
+		NRO_EDICION,
+		ANO_EDICION,
+		CLASE,
+		LIBRISTICA,
+		TITULO,
+		OBSERVACIONES,
+		TIENE_ILUSTRACION,
+		NRO_EJEMPLAR 
+from [Biblioteca].dbo.Materiales a
+
+SET IDENTITY_INSERT Material OFF
+--select * from Material order by idilustrador
+
+
+
+
+
+
 delete from materialMovimiento
 dbcc checkident(MaterialMovimiento,reseed,0)
 SET IDENTITY_INSERT MaterialMovimiento ON
-insert into MaterialMovimiento(IdTipoMovimiento,IdSector,IdSocio,IdMaterial,IdUsuario,Fecha,FechaDevolucion,NroInventario,NroMovimiento,Observaciones)
-select ID_TIPO_MOVIMIENTO,ID_SECTOR,S.ID,(Select Id from [Biblioteca].dbo.MATERIALES where NRO_INVENTARIO=MM.NRO_INVENTARIO),NULL AS IDUSUARIO,FECHA,fecha_devolucion,NRO_INVENTARIO,NRO_MOV,ISNULL(MM.OBSERVACIONES,'') from [Biblioteca].dbo.MOVIMIENTOS_DE_MATERIAL MM JOIN SOCIO S ON MM.SOCIO=S.NroSocio
+insert into MaterialMovimiento(IdTipoMovimiento,IdSector,IdSocio,IdMaterial,IdUsuario,Fecha,FechaDevolucion,NroMovimiento,Observaciones)
+select 
+		ID_TIPO_MOVIMIENTO,ID_SECTOR,
+		S.ID,
+		(Select Id from MATERIAL where NroInventario=MM.NRO_INVENTARIO) as idmaterial,
+		NULL AS IDUSUARIO,
+		FECHA,fecha_devolucion,
+		NRO_MOV,
+		ISNULL(MM.OBSERVACIONES,'') 
+from 
+		[Biblioteca].dbo.MOVIMIENTOS_DE_MATERIAL MM JOIN SOCIO S ON 
+		MM.SOCIO=S.NroSocio
 WHERE SOCIO  IN (SELECT SOCIO FROM [Biblioteca].dbo.SOCIOS)
 SET IDENTITY_INSERT MaterialMovimiento OFF
 --select * from MaterialMovimiento
+
 
 
 

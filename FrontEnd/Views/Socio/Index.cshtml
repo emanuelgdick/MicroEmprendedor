@@ -20,10 +20,23 @@
         z-index: 3;
     }
 
-    .table.dataTable {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-size: 13px;
+    table.dataTable td {
+        font-size: 1em; /* O el tamaño que desees, por ejemplo 1.1em, 12px, etc. */
     }
+
+    /* Cambiar el tamaño de fuente de los encabezados de la tabla
+                table.dataTable th {
+                    font-size: 1.2em;
+                }*/
+
+
+
+    .dataTable {
+        font-family: Arial, sans-serif; /* Cambia la fuente a Arial */
+        font-size: 10px; /* Cambia el tamaño de la fuente */
+        /*font-weight: bold;  Cambia el peso de la fuente */
+    }
+
 </style>
 
 <div class="card">
@@ -39,11 +52,22 @@
 
     <div class="card-body">
 
-        <table id="tabla" class="display" style="width:100%">
+        <table id="tabla" class="display dataTable" style="width:100%">
             <thead>
                 <tr>
                     <th>Código</th>
-                    <th>Descripcion</th>
+                    <th>Apellido y Nombre</th>
+                    <th>Documento</th>
+                    <th>Calle</th>
+                    <th>Nro</th>
+                    <th>Piso</th>
+                    <th>Depto</th>
+                    <th>Tel.Fijo</th>
+                    <th>Tel.Celular</th>
+                    <th>Categoría Socio</th>
+                    <th>Tipo Socio</th>
+                    <th>Estado</th>
+                    <th>Profesión</th>
                     <th></th>
                 </tr>
             </thead>
@@ -268,7 +292,6 @@
                                                         <th>Fecha</th>
                                                         <th>Material</th>
                                                         <th>Tipo</th>
-                                                        <th>Inv</th>
                                                         <th>Devol</th>
                                                         <th>Mov</th>
                                                         @*     <th></th>  *@
@@ -582,21 +605,15 @@
                 "columns": [
                     { "data": "fecha"},
                     { "data": "material", render: function (data) {
-                                return data.titulo
-                            }
-                    },
+                                var str='('+String(parseInt(data.nroInventario)).padStart(4, '0')+')';
+                                return str+data.titulo;
+                                }
+                            },
                     { "data": "tipoMovimiento", render: function (data) {
-                                if (data.descripcion='Préstamo Común por 15 Días')
-                                return 'Préstamo(15 días)'
-                                 if (data.descripcion='Préstamo Común por 30 Días')
-                                return 'Préstamo(30 días)'
-                                 if (data.descripcion='Préstamo vence 31 de diciembre')
-                                return 'Préstamo(31 Diciembre)'
-                                if (data.descripcion='Préstamo por 48 Hs(Videos)')
-                                return 'Préstamo Videos(48 Hs)'
+                                    return data.descripcion;
                             }
                     },
-                    { "data": "nroInventario" },
+
                     { "data": "fechaDevolucion" },
                     { "data": "nroMovimiento" }
                     // { "data": "Seleccionado",render: function (data, type, row) {
@@ -610,182 +627,21 @@
                     // },
                 ],
                 "language": {
-                      "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+                       "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+                        
                   },
                 "columnDefs": [
 
                     { "width": "10%", "targets": 0 ,render: DataTable.render.datetime( 'DD/MM/YYYY' ) },
-                    { "width": "5%", "targets": 1 },
+                    { "width": "50%", "targets": 1 },
                     { "width": "50%", "targets": 2 },
-                    { "width": "10%", "targets": 3 },
-                    { "width": "10%", "targets": 4 ,render: DataTable.render.datetime( 'DD/MM/YYYY' ) },
-                    { "width": "5%", "targets": 5 }
+                    { "width": "10%", "targets": 3  ,render: DataTable.render.datetime( 'DD/MM/YYYY' ) },
+                    { "width": "10%", "targets": 4 },
                 ]
             });
-
-
-
-
-
             $("#FormModal").modal("show");
-
         }
-
         }
-
-           // function abrirModal(json) {
-
-           // $("#wizard").smartWizard('goToStep', 1)
-           // if (json != null) {
-           //     $("#txtnrosocio").val(json.nroSocio);
-           //     var tabladataHistorico;
-           //      $('#tablaHistorico').DataTable().clear().destroy();
-           //      tabladataHistorico = $("#tablaHistorico").DataTable({
-           //      responsive: true,
-           //      ordering: true,
-           //      dom: "Bfrtip",
-           //      buttons: [
-           //          {
-           //              extend: "excelHtml5",
-           //              text: '<i class="fa fa-file-excel-o "></i>',
-           //              filename: "Reporte Histórico de Material",
-           //               title: "Listado de Histórico",
-           //              exportOptions: {
-           //                  //muestra las columnas
-           //                  columns: [0, 1]
-           //              },
-           //              className: "btn-exportar-excel",
-
-
-           //          },
-           //          {
-           //              extend: "pdfHtml5",
-           //              text: '<i class="fa fa-file-pdf-o"></i>',
-           //              filename: "Reporte de Socios",
-           //              title: "Listado de Socios",
-           //              exportOptions: {
-           //                  //muestra las columnas
-           //                  columns: [0, 1]
-           //              },
-           //              className: "btn-exportar-pdf"
-           //          },
-           //          {
-           //              extend: "print",
-           //              text: '<i class="fa fa-print"></i>',
-           //              filename: "Reporte de Socios",
-           //              title: "Listado de Socios",
-           //              exportOptions: {
-           //                  //muestra las columnas
-           //                  columns: [0, 1]
-           //              },
-           //              className: "btn-imprimir"
-
-           //          }
-           //      ],
-           //       "ajax": {
-           //           url: "@Url.Action("GetAllMaterialMovimientosBySocio", "MaterialMovimiento")"+"?socio="+$("#txtnrosocio").val(),
-           //           type: "GET",
-           //           dataType: "json",
-           //       },
-           //       "columns": [
-           //                   { "data": "nroMovimiento"},
-           //              // { "data": "fechaDevolucion"},
-           //              // { "data": "nroInventario"},
-           //               //{ "data": "nroMovimiento"},
-
-           //               {
-
-           //                  "orderable": false,
-           //                  "searchable": false,
-           //                  "width": "10%",
-           //                  "heigth":"10%"
-           //              }
-           //       ],
-           //       "language": {
-           //            "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
-           //        },
-           //      "columnDefs": [
-           //              { "width": "10%", "targets": 0 }
-           //            //  { "width": "40%",  "targets": 1 },
-           //             // { "width": "40%", "targets": 2 },
-           //              //{ "width": "10%", "targets": 3 },
-           //      ]
-           //  })
-
-
-           //         // $('#tablaHistorico').DataTable().clear().destroy();
-           //  // tabladataHistorico = $("#tablaHistorico").DataTable({
-           //  //     order: [[0, 'asc']],
-           //  //     responsive: true,
-           //  //     ordering: true,
-           //  //     searching: true,
-           //  //     info: false,
-           //  //     lengthChange: false, // Will Disabled Record number per page
-           //  //     pageLength: 5,
-           //  //     "ajax": {
-           //  //         url: "@Url.Action("GetAllMaterialMovimientosBySocio", "MaterialMovimiento")?socio="+$("#txtnrosocio").val(),
-           //  //         type: "GET",
-           //  //         dataType: "json"
-           //  //     },
-           //  //     "columns": [
-           //  //         { "data": "fecha" },
-           //  //         {
-           //  //                           "defaultContent": '<button type="button" title="Editar Socio"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
-           //  //                                             '<button type="button" title="Eliminar Socio" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
-
-           //  //                 "orderable": false,
-           //  //                 "searchable": false,
-           //  //                 "width": "10%",
-           //  //                 "heigth":"10%"
-           //  //             }
-
-           //  //     ],
-           //  //     "language": {
-           //  //         "url": "//cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
-           //  //     },
-           //  //     "columnDefs": [
-
-           //  //         { "width": "10%", "targets": 0 },
-           //  //         { "width": "70%", "targets": 1 },
-           //  //         { "width": "10%", "targets": 2 },
-           //  //     ]
-           //  // })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-           //      }
-           //     $("#FormModal").modal("show")
-           //  }
 
            const contenedorToast = document.getElementById('contenedor-toastP');
            // Event listener para detectar click en los toasts
@@ -933,8 +789,37 @@
                     beforeSend: agregarToast({ tipo: 'exito', titulo: 'Obteniendo Socios', descripcion: 'Por favor espere...', autoCierre: true })
                  },
                  "columns": [
-                         { "data": "id" },
+                         { "data": "nroSocio" },
                          { "data": "apeyNom" },
+                         { "data": function(data){
+                                return data.tipoDocumento.descA+'-'+data.documento
+                         }
+                         },
+                         { "data": "calle" , render: function (data) {
+                                    return data.descripcion;
+                            }
+                         },
+                         { "data": "nro" },
+                         { "data": "piso" },
+                         { "data": "depto" },
+                         { "data": "telFijo" },
+                         { "data": "telCelular" },
+                         { "data": "categoriaSocio" , render: function (data) {
+                                    return data.descripcion;
+                          }
+                         },
+                         { "data": "tipoSocio" , render: function (data) {
+                                    return data.descripcion;
+                          }
+                         },
+                         { "data": "estadoSocio" , render: function (data) {
+                                    return data.descripcion;
+                         }
+                         },
+                         { "data": "profesion" , render: function (data) {
+                                    return data.descripcion;
+                         }
+                         },
                          {
                                       "defaultContent": '<button type="button" title="Editar Socio"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
                                                         '<button type="button" title="Eliminar Socio" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
@@ -946,14 +831,26 @@
                             "heigth":"10%"
                         }
                  ],
-                 "language": {
-                      "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
-                  },
+                  "language": {
+                            "url":"https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+                  
+                   },
 
                 "columnDefs": [
                         { "width": "10%", "targets": 0 },
-                        { "width": "80%", "targets": 1 },
+                        { "width": "10%", "targets": 1 },
                         { "width": "10%", "targets": 2 },
+                        { "width": "10%", "targets": 3 },
+                        { "width": "10%", "targets": 4 },
+                        { "width": "10%", "targets": 5 },
+                        { "width": "10%", "targets": 6 },
+                        { "width": "10%", "targets": 7 },
+                        { "width": "10%", "targets": 8 },
+                        { "width": "10%", "targets": 9 },
+                        { "width": "10%", "targets": 10 },
+                        { "width": "10%", "targets": 11 },
+                        { "width": "10%", "targets": 12 },
+                        { "width": "40%", "targets": 13 },
                 ]
             })
 

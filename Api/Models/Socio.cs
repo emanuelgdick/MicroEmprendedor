@@ -27,7 +27,7 @@ namespace Api.Models
         public string? Nro { get; set; }
         public string? Piso { get; set; }
         public string? Depto { get; set; }
-        public string? Telfijo { get; set; }
+        public string? TelFijo { get; set; }
         public string? TelCelular { get; set; }
         public string? Email { get; set; }
         public DateTime? Fnac { get; set; }

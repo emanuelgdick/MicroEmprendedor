@@ -499,7 +499,7 @@ namespace Api.Migrations
                     b.Property<int>("IdMaterial")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdSector")
+                    b.Property<int?>("IdSector")
                         .HasColumnType("int");
 
                     b.Property<int>("IdSocio")
@@ -510,10 +510,6 @@ namespace Api.Migrations
 
                     b.Property<int?>("IdUsuario")
                         .HasColumnType("int");
-
-                    b.Property<string>("NroInventario")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NroMovimiento")
                         .IsRequired()
@@ -744,13 +740,13 @@ namespace Api.Migrations
                     b.Property<string>("Piso")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Sexo")
+                    b.Property<bool?>("Sexo")
                         .HasColumnType("bit");
 
                     b.Property<string>("TelCelular")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Telfijo")
+                    b.Property<string>("TelFijo")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Vitalicio")
@@ -1036,9 +1032,7 @@ namespace Api.Migrations
 
                     b.HasOne("Api.Models.Sector", "Sector")
                         .WithMany()
-                        .HasForeignKey("IdSector")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdSector");
 
                     b.HasOne("Api.Models.Socio", "Socio")
                         .WithMany()

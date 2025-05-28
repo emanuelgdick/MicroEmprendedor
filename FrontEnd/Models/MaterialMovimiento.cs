@@ -24,7 +24,6 @@ namespace FrontEnd.Models
         [ForeignKey("IdUsuario")]
         public Usuario? Usuario { get; set; }
 
-        public string NroInventario { get; set; }
         public DateTime? Fecha { get; set; }
         public DateTime? FechaDevolucion { get; set; }
         public string NroMovimiento { get; set; }

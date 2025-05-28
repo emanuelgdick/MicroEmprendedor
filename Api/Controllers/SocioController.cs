@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Api.Controllers
 {
@@ -24,7 +25,16 @@ namespace Api.Controllers
         public IActionResult GetSocios(/*int pagesize, int pagenumber*/)
         {
             _logger.LogInformation("Fetching Todas las Socio");
-            var SocioList = _db.Socio.ToList();
+            var SocioList = _db.Socio
+                .Include(y => y.Localidad)
+                .Include(y => y.Calle)
+                .Include(y => y.TipoDocumento)
+                .Include(y => y.Profesion)
+                .Include(q => q.TipoSocio)
+                .Include(r => r.CategoriaSocio)
+                .Include(r => r.EstadoSocio)
+                .OrderBy(s => s.NroSocio).ToList();
+                
             return Ok(SocioList);
 
         }
