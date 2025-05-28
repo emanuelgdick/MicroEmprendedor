@@ -19,6 +19,11 @@
         padding-left: 3.5rem;
         z-index: 3;
     }
+
+    .table.dataTable {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 13px;
+    }
 </style>
 
 <div class="card">
@@ -576,8 +581,8 @@
                 },
                 "columns": [
                     { "data": "fecha"},
-                    { "data": "tipoMaterial", render: function (data) {
-                                return data.descripcion
+                    { "data": "material", render: function (data) {
+                                return data.titulo
                             }
                     },
                     { "data": "tipoMovimiento", render: function (data) {

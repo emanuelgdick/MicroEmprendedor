@@ -1,10 +1,11 @@
-﻿
+﻿using FrontEnd.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace FrontEnd.Models
+namespace Frontend.Models
 {
     public class Socio
     {
+
         public int Id { get; set; }
 
 
@@ -38,8 +39,7 @@ namespace FrontEnd.Models
         public bool Vitalicio { get; set; }
         public bool PagaAca { get; set; }
 
-        public bool Sexo { get; set; }
+        public bool? Sexo { get; set; }
+     
     }
 }
-
-

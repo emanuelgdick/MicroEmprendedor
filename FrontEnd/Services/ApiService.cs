@@ -1,4 +1,5 @@
-﻿using System.Net.Http.Headers;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Web.Mvc;
 using Frontend.Models;
@@ -1442,7 +1443,14 @@ namespace FrontEnd.Services
             HttpResponseMessage response = await _httpClient.GetAsync($"api/MaterialMovimiento/GetMaterialMovimientoBySocio?socio={socio}");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
-            var APIResponse = JsonConvert.DeserializeObject<List<MaterialMovimiento>>(contents);
+      
+
+
+
+        var APIResponse = JsonConvert.DeserializeObject<List<MaterialMovimiento>>(contents);
+
+
+
             return APIResponse;
         }
 

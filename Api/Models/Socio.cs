@@ -38,7 +38,7 @@ namespace Api.Models
         public bool Vitalicio { get; set; }
         public bool PagaAca { get; set; }
 
-        public bool Sexo { get; set; }
+        public bool? Sexo { get; set; }
      
     }
 }

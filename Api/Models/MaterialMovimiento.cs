@@ -11,7 +11,7 @@ namespace Api.Models
         public TipoMovimiento TipoMovimiento { get; set; }
         
         [ForeignKey("IdSector")]
-        public Sector Sector { get; set; }
+        public Sector? Sector { get; set; }
 
         [ForeignKey("IdSocio")]
         public Socio Socio { get; set; }

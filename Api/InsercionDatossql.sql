@@ -275,27 +275,9 @@ SET IDENTITY_INSERT Sector OFF
 --SET IDENTITY_INSERT Ilustrador OFF
 --select * from Ilustrador
 
-
-
-
-delete from Socio
-dbcc checkident(Socio,reseed,0)
-SET IDENTITY_INSERT Socio OFF
-insert into Socio(NroSocio,ApeyNom,Nro,Depto,Telfijo,Fnac,FIngreso,FEgreso,Observaciones,Documento,Vitalicio,PagaAca,IdTipoSocio,IdEstadoSocio,IdCategoriaSocio,IdTipoDocumento,IdCalle,IdProfesion,IdLocalidad)
-select Socio,ApeyNom,Nro,Depto,Telefono,Fnac,FIngreso,FEgreso,Observaciones,Documento,Vitalicio,PagaAca,Id_Tipo_Socio,Id_Estado_Socio,Id_Categoria,Id_Tipo_Documento,Id_Calle,Id_Profesion,Id_Localidad from [Biblioteca].dbo.SOCIOS
-SET IDENTITY_INSERT Socio ON
---select * from Socio
-
-
-
-
-
-
-
-
 delete from Material
 dbcc checkident(Material,reseed,0)
-SET IDENTITY_INSERT Material OFF
+SET IDENTITY_INSERT Material ON
 insert into Material(IdIdioma,IdProcedencia,IdSerie,IdEditorial,IdSector,IdTipoMaterial,IdEncuadernacion,IdColeccion,IdTraductor,IdProloguista,IdEditor,IdIlustrador,IdLugar,NroInventario,NroTomo,CantPaginas,Extension,Precio,FechaCompra,EanIsbn,Volumen,NroColeccion,NroEdicion,AnoEdicion,Clase,Libristica,Titulo,Observaciones,TieneIlustracion,NroEjemplar)
 select 
 		ISNULL((SELECT ID FROM SERIE WHERE ID=a.ID_IDIOMA),NULL),
@@ -330,18 +312,56 @@ select
 		NRO_EJEMPLAR 
 from [Biblioteca].dbo.Materiales a
 order by id_editor
-SET IDENTITY_INSERT Material ON
+SET IDENTITY_INSERT Material OFF
 --select * from Material order by idilustrador
+
+
+
+
+
+delete from Socio
+dbcc checkident(Socio,reseed,0)
+SET IDENTITY_INSERT Socio ON
+insert into Socio(IdTipoSocio,IdEstadoSocio,IdCategoriaSocio,IdTipoDocumento,IdCalle,IdProfesion,IdLocalidad,NroSocio,ApeyNom,Nro,Piso,Depto,Telfijo,TelCelular,Email,Fnac,FIngreso,FEgreso,Observaciones,Documento,Vitalicio,PagaAca,Sexo)
+select 
+		Id_Tipo_Socio,
+		Id_Estado_Socio,
+		Id_Categoria,
+		Id_Tipo_Documento,
+		Id_Calle,
+		Id_Profesion,
+		Id_Localidad,
+		Socio,
+		ApeyNom,
+		Nro,
+		null Piso,
+		Depto,
+		Telefono,
+		null TelCelulcar,
+		null Email,
+		Fnac,
+		FIngreso,
+		FEgreso,
+		Observaciones,
+		Documento,
+		Vitalicio,
+		PagaAca,
+		null Sexo
+from 
+	[Biblioteca].dbo.SOCIOS
+SET IDENTITY_INSERT Socio OFF
+--select * from Socio
+
 
 
 
 delete from materialMovimiento
 dbcc checkident(MaterialMovimiento,reseed,0)
-SET IDENTITY_INSERT MaterialMovimiento OFF
+SET IDENTITY_INSERT MaterialMovimiento ON
 insert into MaterialMovimiento(IdTipoMovimiento,IdSector,IdSocio,IdMaterial,IdUsuario,Fecha,FechaDevolucion,NroInventario,NroMovimiento,Observaciones)
 select ID_TIPO_MOVIMIENTO,ID_SECTOR,S.ID,(Select Id from [Biblioteca].dbo.MATERIALES where NRO_INVENTARIO=MM.NRO_INVENTARIO),NULL AS IDUSUARIO,FECHA,fecha_devolucion,NRO_INVENTARIO,NRO_MOV,ISNULL(MM.OBSERVACIONES,'') from [Biblioteca].dbo.MOVIMIENTOS_DE_MATERIAL MM JOIN SOCIO S ON MM.SOCIO=S.NroSocio
 WHERE SOCIO  IN (SELECT SOCIO FROM [Biblioteca].dbo.SOCIOS)
-SET IDENTITY_INSERT MaterialMovimiento ON
+SET IDENTITY_INSERT MaterialMovimiento OFF
 --select * from MaterialMovimiento
 
 
