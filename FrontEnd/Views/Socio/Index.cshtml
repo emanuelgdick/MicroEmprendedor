@@ -25,9 +25,9 @@
     }
 
     /* Cambiar el tamaño de fuente de los encabezados de la tabla
-                table.dataTable th {
-                    font-size: 1.2em;
-                }*/
+                    table.dataTable th {
+                        font-size: 1.2em;
+                    }*/
 
 
 
@@ -57,17 +57,18 @@
                 <tr>
                     <th>Código</th>
                     <th>Apellido y Nombre</th>
-                    <th>Documento</th>
+                    @* <th>Documento</th> *@
                     <th>Calle</th>
                     <th>Nro</th>
                     <th>Piso</th>
                     <th>Depto</th>
                     <th>Tel.Fijo</th>
                     <th>Tel.Celular</th>
-                    <th>Categoría Socio</th>
-                    <th>Tipo Socio</th>
+                    @* <th>Profesión</th> *@
+                    <th>Categoría</th>
+                    <th>Tipo</th>
                     <th>Estado</th>
-                    <th>Profesión</th>
+
                     <th></th>
                 </tr>
             </thead>
@@ -167,10 +168,10 @@
                                                 <div class="col-3 p-2 form-floating mb-4 d-flex">
                                                     <input type="text"
                                                            class="datepicker_input form-control border-2"
-                                                           id="datepicker1"
+                                                           id="dtfechanac"
                                                            required
                                                            placeholder="DD/MM/YYYY">
-                                                    <label for="datepicker1">Fecha Nacimiento</label>
+                                                    <label for="dtfechanac">Fecha Nacimiento</label>
                                                 </div>
                                                 <div class=" col-4 p-2 form-floating">
                                                     <select id="cboprofesion" class="form-select " name="profesion" autocomplete="off" placeholder="Profesión"></select>
@@ -583,7 +584,22 @@
 
              $("#wizard").smartWizard('goToStep', 1)
             if (json != null) {
+            console.log(json);
                 $("#txtnrosocio").val(json.nroSocio);
+                $("#txtapeynom").val(json.apeyNom);
+                $("#txtdni").val(json.documento);
+                $("#cbotipodoc").val(json.tipoDocumento.id);
+                $("#dtfechanac").val(json.fnac);
+                $("#dtfechaingreso").val(json.fIngreso);
+                $("#dtfechaegreso").val(json.fEgreso);
+                $("#cbocalle").val(json.calle.id);
+                $("#txtnro").val(json.nro);
+                $("#txtpiso").val(json.piso);
+                $("#txtdepto").val(json.depto);
+                $("#cboprofesion").val(json.profesion.id);
+                $("#cbotiposocio").val(json.tipoSocio.id);
+                $("#cbocategoriasocio").val(json.categoriaSocio.id);
+                $("#cboestadosocio").val(json.estadoSocio.id);
                 var tabladataHistorico;
 
             $('#tablaHistorico').DataTable().clear().destroy();
@@ -628,7 +644,7 @@
                 ],
                 "language": {
                        "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
-                        
+
                   },
                 "columnDefs": [
 
@@ -791,10 +807,10 @@
                  "columns": [
                          { "data": "nroSocio" },
                          { "data": "apeyNom" },
-                         { "data": function(data){
-                                return data.tipoDocumento.descA+'-'+data.documento
-                         }
-                         },
+                         // { "data": function(data){
+                         //        return data.tipoDocumento.descA+'-'+data.documento
+                         //   }
+                         // },
                          { "data": "calle" , render: function (data) {
                                     return data.descripcion;
                             }
@@ -804,6 +820,17 @@
                          { "data": "depto" },
                          { "data": "telFijo" },
                          { "data": "telCelular" },
+                        // { "data": "profesion" , render: function(data){
+                        //             var desc;
+                        //             if (data==null)
+                        //             {
+                        //                 desc='qqq'
+                        //             }
+                        //             else
+                        //                 desc=data.descripcion;
+                        //         return desc;
+                        //    }
+                        //  },
                          { "data": "categoriaSocio" , render: function (data) {
                                     return data.descripcion;
                           }
@@ -812,19 +839,16 @@
                                     return data.descripcion;
                           }
                          },
+
                          { "data": "estadoSocio" , render: function (data) {
                                     return data.descripcion;
-                         }
+                           }
                          },
-                         { "data": "profesion" , render: function (data) {
-                                    return data.descripcion;
-                         }
-                         },
+
+
                          {
                                       "defaultContent": '<button type="button" title="Editar Socio"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
                                                         '<button type="button" title="Eliminar Socio" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
-                                      //"defaultContent": '<a asp-controller="Socio" asp-action="Details" asp-route-id='+data.id+' class="btn btn-primary">"Details"</a>',
-                                      //padding: 0; border: none; background: none;
                             "orderable": false,
                             "searchable": false,
                             "width": "10%",
@@ -833,24 +857,24 @@
                  ],
                   "language": {
                             "url":"https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
-                  
+
                    },
 
                 "columnDefs": [
-                        { "width": "10%", "targets": 0 },
-                        { "width": "10%", "targets": 1 },
+                        { "width": "5%", "targets": 0 },
+                        { "width": "20%", "targets": 1 },
+                        // { "width": "10%", "targets": 2 },
                         { "width": "10%", "targets": 2 },
-                        { "width": "10%", "targets": 3 },
-                        { "width": "10%", "targets": 4 },
-                        { "width": "10%", "targets": 5 },
-                        { "width": "10%", "targets": 6 },
-                        { "width": "10%", "targets": 7 },
-                        { "width": "10%", "targets": 8 },
+                        { "width": "5%", "targets": 3 },
+                        { "width": "5%", "targets": 4 },
+                        { "width": "5%", "targets": 5 },
+                        { "width": "5%", "targets": 6 },
+                        { "width": "5%", "targets": 7 },
+                        // { "width": "5%", "targets": 9 },
+                        { "width": "5%", "targets": 8 },
                         { "width": "10%", "targets": 9 },
                         { "width": "10%", "targets": 10 },
-                        { "width": "10%", "targets": 11 },
-                        { "width": "10%", "targets": 12 },
-                        { "width": "40%", "targets": 13 },
+                        { "width": "40%", "targets": 11 },
                 ]
             })
 

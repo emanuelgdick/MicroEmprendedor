@@ -29,10 +29,10 @@ namespace Api.Controllers
                 .Include(y => y.Localidad)
                 .Include(y => y.Calle)
                 .Include(y => y.TipoDocumento)
-                .Include(y => y.Profesion)
+                .Include(y => y.Profesion!)
                 .Include(q => q.TipoSocio)
                 .Include(r => r.CategoriaSocio)
-                .Include(r => r.EstadoSocio)
+                .Include(q => q.EstadoSocio)
                 .OrderBy(s => s.NroSocio).ToList();
                 
             return Ok(SocioList);

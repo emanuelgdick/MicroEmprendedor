@@ -281,7 +281,7 @@ SET IDENTITY_INSERT Sector OFF
 
 delete from Socio
 dbcc checkident(Socio,reseed,0)
-SET IDENTITY_INSERT Socio ON
+SET IDENTITY_INSERT Socio ON;
 insert into Socio(IdTipoSocio,IdEstadoSocio,IdCategoriaSocio,IdTipoDocumento,IdCalle,IdProfesion,IdLocalidad,NroSocio,ApeyNom,Nro,Piso,Depto,Telfijo,TelCelular,Email,Fnac,FIngreso,FEgreso,Observaciones,Documento,Vitalicio,PagaAca,Sexo)
 select 
 		Id_Tipo_Socio,
@@ -309,7 +309,7 @@ select
 		null Sexo
 from 
 	[Biblioteca].dbo.SOCIOS
-SET IDENTITY_INSERT Socio OFF
+SET IDENTITY_INSERT Socio OFF;
 --select * from Socio
 
 
