@@ -25,9 +25,9 @@
     }
 
     /* Cambiar el tamaño de fuente de los encabezados de la tabla
-                    table.dataTable th {
-                        font-size: 1.2em;
-                    }*/
+                                    table.dataTable th {
+                                        font-size: 1.2em;
+                                    }*/
 
 
 
@@ -47,37 +47,93 @@
         <div class="col-1  m-0 p-0">
             <button type="button" class="btn btnNuevo mb-2 ml-4 mt-2" onclick="abrirModal(null)">Nuevo</button>
         </div>
+
     </div>
+
     <hr class="m-0 p-0" style="background-color:#E74C3C" />
 
-    <div class="card-body">
 
-        <table id="tabla" class="display dataTable" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Código</th>
-                    <th>Apellido y Nombre</th>
-                    @* <th>Documento</th> *@
-                    <th>Calle</th>
-                    <th>Nro</th>
-                    <th>Piso</th>
-                    <th>Depto</th>
-                    <th>Tel.Fijo</th>
-                    <th>Tel.Celular</th>
-                    @* <th>Profesión</th> *@
-                    <th>Categoría</th>
-                    <th>Tipo</th>
-                    <th>Estado</th>
+    <p>
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Filtros</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li>
+                        <a class="collapse-link" data-bs-toggle="collapse"><i class="fa fa-chevron-down"></i></a>
+                    </li>
+                  
+                </ul>
+               
+            </div>
+       
+            <div class="x_content  m-0 p-0" id=" collapseExample">
+                    <div class="row  ">
+                        <div class="col-2 m-2 mt-0 p-0 form-floating">
+                            <select id="cbocalleF" class="form-select " name="calleF" autocomplete="off" placeholder="Calle"></select>
+                            <label for="cbocalleF" class="form-label pt-1">Calle</label>
+                        </div>
+                        <div class=" col-2  m-2 mt-0 p-0  form-floating">
+                            <select id="cbotiposocioF" class="form-select " name="tiposocioF" autocomplete="off" placeholder="Tipo"></select>
+                            <label for="cbotiposocioF" class="form-label pt-1">Tipo</label>
+                        </div>
+                        <div class=" col-2  m-2 mt-0 p-0  form-floating">
+                            <select id="cbocategoriasocioF" class="form-select " name="categoriasocioF" autocomplete="off" placeholder="Categoría"></select>
+                            <label for="cbocategoriasocioF" class="form-label pt-1">Categoría</label>
+                        </div>
+                        <div class=" col-2  m-2 mt-0 p-0  form-floating">
+                            <select id="cboestadosocioF" class="form-select " name="estadosocioF" autocomplete="off" placeholder="Estado"></select>
+                            <label for="cboestadosocioF" class="form-label pt-1">Estado</label>
+                        </div>
 
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-            <tfoot>
-            </tfoot>
-        </table>
-    </div>
+                        <div class="col-3 m-2 p-2 ">
+                            <label>
+                                <input type="checkbox" id="swVitalicioF" class="js-switch" checked /> Vitalicio
+                            </label>
+                        </div>
+                    </div>
+            
+            </div>
+
+        </div>
+
+
+
+    </p>
+
+</div>
+
+
+
+
+
+<div class="card-body">
+
+    <table id="tabla" class="display dataTable" style="width:100%">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Apellido y Nombre</th>
+                <th>Documento</th>
+                <th>Calle</th>
+                <th>Nro</th>
+                <th>Piso</th>
+                <th>Depto</th>
+                <th>Tel.Fijo</th>
+                <th>Tel.Celular</th>
+                <th>Profesión</th>
+                <th>Categoría</th>
+                <th>Tipo</th>
+                <th>Estado</th>
+                <th>Vitalicio</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <tfoot>
+        </tfoot>
+    </table>
+</div>
 
 </div>
 
@@ -278,7 +334,7 @@
                                                 </div>
                                                 <div class="col-3 p-4 ">
                                                     <label>
-                                                        <input type="checkbox" class="js-switch" checked /> Vitalicio
+                                                        <input type="checkbox" id="swVitalicio" class="js-switch" checked /> Vitalicio
                                                     </label>
                                                 </div>
                                             </div>
@@ -462,8 +518,10 @@
                      contentType: "application/json; charset=utf-8",
                      success: function (data) {
                         $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbocalle");
+                        $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbocalleF");
                          $.each(data.data, function (index, value) {
                          $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbocalle");
+                         $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbocalleF");
                          });
                          },
                          error: function (error) {
@@ -480,14 +538,17 @@
                      contentType: "application/json; charset=utf-8",
                      success: function (data) {
                         $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbotiposocio");
+                        $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbotiposocioF");
                          $.each(data.data, function (index, value) {
                          $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbotiposocio");
+                          $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbotiposocioF");
                          });
                          },
                          error: function (error) {
                          console.log(error)
                          }
                          });
+
         //GET CATEGORIAS DE SOCIOS
         jQuery.ajax({
                              url: '@Url.Action("GetAllCategoriaSocios", "CategoriaSocio")',
@@ -497,8 +558,10 @@
                              contentType: "application/json; charset=utf-8",
                              success: function (data) {
                                 $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbocategoriasocio");
+                                $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbocategoriasocioF");
                                  $.each(data.data, function (index, value) {
                                  $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbocategoriasocio");
+                                  $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbocategoriasocioF");
                                  });
                                  },
                                  error: function (error) {
@@ -515,8 +578,10 @@
                              contentType: "application/json; charset=utf-8",
                              success: function (data) {
                                 $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cboestadosocio");
+                                $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cboestadosocioF");
                                  $.each(data.data, function (index, value) {
                                  $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cboestadosocio");
+                                 $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cboestadosocioF");
                                  });
                                  },
                                  error: function (error) {
@@ -559,7 +624,6 @@
                                  console.log(error)
                                  }
                                  });
-
 
         const getDatePickerTitle = elem => {
           // From the label or the aria-label
@@ -807,10 +871,10 @@
                  "columns": [
                          { "data": "nroSocio" },
                          { "data": "apeyNom" },
-                         // { "data": function(data){
-                         //        return data.tipoDocumento.descA+'-'+data.documento
-                         //   }
-                         // },
+                         { "data": function(data){
+                                 return data.tipoDocumento.descA+'-'+data.documento
+                           }
+                         },
                          { "data": "calle" , render: function (data) {
                                     return data.descripcion;
                             }
@@ -820,17 +884,17 @@
                          { "data": "depto" },
                          { "data": "telFijo" },
                          { "data": "telCelular" },
-                        // { "data": "profesion" , render: function(data){
-                        //             var desc;
-                        //             if (data==null)
-                        //             {
-                        //                 desc='qqq'
-                        //             }
-                        //             else
-                        //                 desc=data.descripcion;
-                        //         return desc;
-                        //    }
-                        //  },
+                        { "data": "profesion" , render: function(data){
+                                    var desc;
+                                    if (data==null)
+                                    {
+                                        desc='qqq'
+                                    }
+                                    else
+                                        desc=data.descripcion;
+                                return desc;
+                           }
+                         },
                          { "data": "categoriaSocio" , render: function (data) {
                                     return data.descripcion;
                           }
@@ -844,6 +908,16 @@
                                     return data.descripcion;
                            }
                          },
+                         { "data": "vitalicio" , render: function (data) {
+                                    if (data){
+                                        return '<i class="fa fa-check"   style="Color: #E74C3C;" ></i>'
+                                    }
+                                    else
+                                        return '<i class="fa fa-times"   style="Color: #47e73c;" ></i>'
+
+                           }
+                         },
+
 
 
                          {
@@ -862,19 +936,20 @@
 
                 "columnDefs": [
                         { "width": "5%", "targets": 0 },
-                        { "width": "20%", "targets": 1 },
-                        // { "width": "10%", "targets": 2 },
+                        { "width": "10%", "targets": 1 },
                         { "width": "10%", "targets": 2 },
-                        { "width": "5%", "targets": 3 },
-                        { "width": "5%", "targets": 4 },
-                        { "width": "5%", "targets": 5 },
+                        { "width": "2%", "targets": 3 },
+                        { "width": "2%", "targets": 4 },
+                        { "width": "2%", "targets": 5 },
                         { "width": "5%", "targets": 6 },
-                        { "width": "5%", "targets": 7 },
-                        // { "width": "5%", "targets": 9 },
+                        { "width": "10%", "targets": 7 },
                         { "width": "5%", "targets": 8 },
-                        { "width": "10%", "targets": 9 },
-                        { "width": "10%", "targets": 10 },
-                        { "width": "40%", "targets": 11 },
+                        { "width": "5%", "targets": 9 },
+                        { "width": "5%", "targets": 10 },
+                        { "width": "10%", "targets": 11 },
+                        { "width": "10%", "targets": 12 },
+                        { "width": "5%", "targets": 13 },
+                        { "width": "40%", "targets": 14 },
                 ]
             })
 
