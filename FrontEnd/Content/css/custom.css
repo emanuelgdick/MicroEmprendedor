@@ -2687,13 +2687,13 @@ button,
   z-index: 9999;
   display: none; }
 
-.compose .compose-header {
+.compose .compose-header2 {
   padding: 5px;
   background: #169F85;
   color: #fff;
   border-top-left-radius: 5px; }
 
-.compose .compose-header .close {
+.compose .compose-header2 .close {
   text-shadow: 0 1px 0 #ffffff;
   line-height: .8; }
 

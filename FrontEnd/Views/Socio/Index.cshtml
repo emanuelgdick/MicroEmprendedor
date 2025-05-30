@@ -40,7 +40,7 @@
 </style>
 
 <div class="card">
-    <div class="row  m-0 p-0">
+    <div class="row  m-0 p-0" >
         <div class="col-11 m-0 p-0">
             <h1 class=" m-0 mt-1 p-0">Socios</h1>
         </div>
@@ -52,10 +52,7 @@
 
     <hr class="m-0 p-0" style="background-color:#E74C3C" />           
 
-        
-
-
-    <div class="accordion" id="accordionExample">
+    <div class="accordion m-3" id="accordionExample">
         <div class="accordion-item">
 
 
@@ -68,23 +65,23 @@
                 <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <div class="row  ">
-                            <div class="col-2 m-2 mt-0 p-0 form-floating">
+                            <div class="col-2 m-1 mt-0 p-0 form-floating">
                                 <select id="cbocalleF" class="form-select " name="calleF" autocomplete="off" placeholder="Calle"></select>
                                 <label for="cbocalleF" class="form-label pt-1">Calle</label>
                             </div>
-                            <div class=" col-2  m-2 mt-0 p-0  form-floating">
+                            <div class=" col-2  m-1 mt-0 p-0  form-floating">
                                 <select id="cbotiposocioF" class="form-select " name="tiposocioF" autocomplete="off" placeholder="Tipo"></select>
                                 <label for="cbotiposocioF" class="form-label pt-1">Tipo</label>
                             </div>
-                            <div class=" col-2  m-2 mt-0 p-0  form-floating">
+                            <div class=" col-2  m-1 mt-0 p-0  form-floating">
                                 <select id="cbocategoriasocioF" class="form-select " name="categoriasocioF" autocomplete="off" placeholder="Categoría"></select>
                                 <label for="cbocategoriasocioF" class="form-label pt-1">Categoría</label>
                             </div>
-                            <div class=" col-2  m-2 mt-0 p-0  form-floating">
+                            <div class=" col-2  m-1 mt-0 p-0  form-floating">
                                 <select id="cboestadosocioF" class="form-select " name="estadosocioF" autocomplete="off" placeholder="Estado"></select>
                                 <label for="cboestadosocioF" class="form-label pt-1">Estado</label>
                             </div>
-                            <div class="col-3 m-2 p-2 ">
+                            <div class="col-2 m-1 p-2 ">
                                 <label>
                                     <input type="checkbox" id="swVitalicioF" class="js-switch" checked /> Vitalicio
                                 </label>
@@ -99,6 +96,95 @@
         </div>
     </div>
 
+    <!-- compose -->
+    <div class="compose col-md-6" id="compose">
+        <div class="compose-header">
+            New Message
+            <button type="button" class="close compose-close">
+                <span>×</span>
+            </button>
+        </div>
+
+        <div class="compose-body">
+            <div id="alerts"></div>
+
+            <div class="btn-toolbar editor" data-bs-role="editor-toolbar" data-bs-target="#editor">
+                <div class="btn-group">
+                    <a class="btn dropdown-toggle" data-bs-toggle="dropdown" title="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    </ul>
+                </div>
+
+                <div class="btn-group">
+                    <a class="btn dropdown-toggle" data-bs-toggle="dropdown" title="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a data-edit="fontSize 5">
+                                <p style="font-size:17px">Huge</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-edit="fontSize 3">
+                                <p style="font-size:14px">Normal</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-edit="fontSize 1">
+                                <p style="font-size:11px">Small</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="btn-group">
+                    <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
+                    <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
+                    <a class="btn" data-edit="strikethrough" title="Strikethrough"><i class="fa fa-strikethrough"></i></a>
+                    <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
+                </div>
+
+                <div class="btn-group">
+                    <a class="btn" data-edit="insertunorderedlist" title="Bullet list"><i class="fa fa-list-ul"></i></a>
+                    <a class="btn" data-edit="insertorderedlist" title="Number list"><i class="fa fa-list-ol"></i></a>
+                    <a class="btn" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>
+                    <a class="btn" data-edit="indent" title="Indent (Tab)"><i class="fa fa-indent"></i></a>
+                </div>
+
+                <div class="btn-group">
+                    <a class="btn" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+                    <a class="btn" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
+                    <a class="btn" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+                    <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
+                </div>
+
+                <div class="btn-group">
+                    <a class="btn dropdown-toggle" data-bs-toggle="dropdown" title="Hyperlink"><i class="fa fa-link"></i></a>
+                    <div class="dropdown-menu input-append">
+                        <input class="span2" placeholder="URL" type="text" data-edit="createLink" />
+                        <button class="btn" type="button">Add</button>
+                    </div>
+                    <a class="btn" data-edit="unlink" title="Remove Hyperlink"><i class="fa fa-cut"></i></a>
+                </div>
+
+                <div class="btn-group">
+                    <a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
+                    <input type="file" data-bs-role="magic-overlay" data-bs-target="#pictureBtn" data-edit="insertImage" />
+                </div>
+
+                <div class="btn-group">
+                    <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
+                    <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
+                </div>
+            </div>
+
+            <div id="editor" class="editor-wrapper"></div>
+        </div>
+
+        <div class="compose-footer">
+            <button id="send" class="btn btn-sm btn-success" type="button">Send</button>
+        </div>
+    </div>
+    <!-- /compose -->
 
 <div class="card-body">
 
@@ -826,7 +912,7 @@
                          title: "Listado de Socios",
                         exportOptions: {
                             //muestra las columnas
-                            columns: [0, 1]
+                            columns: [0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14]
                         },
                         className: "btn-exportar-excel",
 
@@ -839,7 +925,7 @@
                         title: "Listado de Socios",
                         exportOptions: {
                             //muestra las columnas
-                            columns: [0, 1]
+                            columns: [0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14]
                         },
                         className: "btn-exportar-pdf"
                     },
@@ -850,7 +936,7 @@
                         title: "Listado de Socios",
                         exportOptions: {
                             //muestra las columnas
-                            columns: [0, 1]
+                            columns: [0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14]
                         },
                         className: "btn-imprimir"
 
@@ -911,11 +997,11 @@
 
                            }
                          },
-
-
-
                          {
-                                      "defaultContent": '<button type="button" title="Editar Socio"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
+                                      "defaultContent":  '<button type="button" title="Enviar Mensaje"  class="rounded-circle btn btn-sm  btn-block btn-enviar"   > <img src="../images/whatsapp.png" alt="" width="20" height="20" ></button>'+ 
+                                                        // '<button id="compose"  class="btn-enviar" type="button">COMPOSE</button>'+
+                                                        
+                                                        '<button type="button" title="Editar Socio"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
                                                         '<button type="button" title="Eliminar Socio" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
                             "orderable": false,
                             "searchable": false,
@@ -931,14 +1017,14 @@
                 "columnDefs": [
                         { "width": "5%", "targets": 0 },
                         { "width": "10%", "targets": 1 },
-                        { "width": "10%", "targets": 2 },
-                        { "width": "2%", "targets": 3 },
-                        { "width": "2%", "targets": 4 },
-                        { "width": "2%", "targets": 5 },
-                        { "width": "5%", "targets": 6 },
-                        { "width": "10%", "targets": 7 },
-                        { "width": "5%", "targets": 8 },
-                        { "width": "5%", "targets": 9 },
+                        { "width": "10%", "targets": 2 ,visible: false},
+                        { "width": "2%", "targets": 3 , visible: false},
+                        { "width": "2%", "targets": 4 ,visible: false},
+                        { "width": "2%", "targets": 5 ,visible: false},
+                        { "width": "5%", "targets": 6 ,visible: false},
+                        { "width": "10%", "targets": 7 ,visible: false},
+                        { "width": "5%", "targets": 8 ,visible: false},
+                        { "width": "5%", "targets": 9 ,visible: false},
                         { "width": "5%", "targets": 10 },
                         { "width": "10%", "targets": 11 },
                         { "width": "10%", "targets": 12 },
@@ -965,17 +1051,25 @@
 
             //Abrir Modal
 
-
-
-
-
-
             //Editar
             $("#tabla tbody").on("click", '.btn-editar', function () {
                 filaSeleccionada = $(this).closest("tr");
                 var data = tabladata.row(filaSeleccionada).data();
                 abrirModal(data)
             })
+
+
+            //Enviar
+            $("#tabla tbody").on("click", '.btn-enviar', function () {
+           
+                $("#compose").show();
+                              
+
+                
+            })
+
+
+
 
             //Eliminar
             $("#tabla tbody").on("click", '.btn-eliminar', function () {
@@ -1090,7 +1184,4 @@
 
 
     </script>
-
-
-
     }
