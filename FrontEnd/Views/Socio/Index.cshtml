@@ -50,60 +50,54 @@
 
     </div>
 
-    <hr class="m-0 p-0" style="background-color:#E74C3C" />
+    <hr class="m-0 p-0" style="background-color:#E74C3C" />           
+
+        
 
 
-    <p>
-        <div class="x_panel">
-            <div class="x_title">
-                <h2>Filtros</h2>
-                <ul class="nav navbar-right panel_toolbox">
-                    <li>
-                        <a class="collapse-link" data-bs-toggle="collapse"><i class="fa fa-chevron-down"></i></a>
-                    </li>
-                  
-                </ul>
-               
-            </div>
-       
-            <div class="x_content  m-0 p-0" id=" collapseExample">
-                    <div class="row  ">
-                        <div class="col-2 m-2 mt-0 p-0 form-floating">
-                            <select id="cbocalleF" class="form-select " name="calleF" autocomplete="off" placeholder="Calle"></select>
-                            <label for="cbocalleF" class="form-label pt-1">Calle</label>
-                        </div>
-                        <div class=" col-2  m-2 mt-0 p-0  form-floating">
-                            <select id="cbotiposocioF" class="form-select " name="tiposocioF" autocomplete="off" placeholder="Tipo"></select>
-                            <label for="cbotiposocioF" class="form-label pt-1">Tipo</label>
-                        </div>
-                        <div class=" col-2  m-2 mt-0 p-0  form-floating">
-                            <select id="cbocategoriasocioF" class="form-select " name="categoriasocioF" autocomplete="off" placeholder="Categoría"></select>
-                            <label for="cbocategoriasocioF" class="form-label pt-1">Categoría</label>
-                        </div>
-                        <div class=" col-2  m-2 mt-0 p-0  form-floating">
-                            <select id="cboestadosocioF" class="form-select " name="estadosocioF" autocomplete="off" placeholder="Estado"></select>
-                            <label for="cboestadosocioF" class="form-label pt-1">Estado</label>
-                        </div>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
 
-                        <div class="col-3 m-2 p-2 ">
-                            <label>
-                                <input type="checkbox" id="swVitalicioF" class="js-switch" checked /> Vitalicio
-                            </label>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        Filtros
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="row  ">
+                            <div class="col-2 m-2 mt-0 p-0 form-floating">
+                                <select id="cbocalleF" class="form-select " name="calleF" autocomplete="off" placeholder="Calle"></select>
+                                <label for="cbocalleF" class="form-label pt-1">Calle</label>
+                            </div>
+                            <div class=" col-2  m-2 mt-0 p-0  form-floating">
+                                <select id="cbotiposocioF" class="form-select " name="tiposocioF" autocomplete="off" placeholder="Tipo"></select>
+                                <label for="cbotiposocioF" class="form-label pt-1">Tipo</label>
+                            </div>
+                            <div class=" col-2  m-2 mt-0 p-0  form-floating">
+                                <select id="cbocategoriasocioF" class="form-select " name="categoriasocioF" autocomplete="off" placeholder="Categoría"></select>
+                                <label for="cbocategoriasocioF" class="form-label pt-1">Categoría</label>
+                            </div>
+                            <div class=" col-2  m-2 mt-0 p-0  form-floating">
+                                <select id="cboestadosocioF" class="form-select " name="estadosocioF" autocomplete="off" placeholder="Estado"></select>
+                                <label for="cboestadosocioF" class="form-label pt-1">Estado</label>
+                            </div>
+                            <div class="col-3 m-2 p-2 ">
+                                <label>
+                                    <input type="checkbox" id="swVitalicioF" class="js-switch" checked /> Vitalicio
+                                </label>
+                            </div>
+                            <div class="col-1  m-0 p-0">
+                                <button type="button" class="btn btn-secondary" onclick="abrirModal(null)">Filtrar</button>
+                            </div>
                         </div>
                     </div>
-            
+                </div>
             </div>
-
         </div>
-
-
-
-    </p>
-
-</div>
-
-
-
+    </div>
 
 
 <div class="card-body">
