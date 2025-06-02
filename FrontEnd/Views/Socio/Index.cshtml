@@ -25,9 +25,9 @@
     }
 
     /* Cambiar el tamaño de fuente de los encabezados de la tabla
-                                                        table.dataTable th {
-                                                            font-size: 1.2em;
-                                                        }*/
+                                                            table.dataTable th {
+                                                                font-size: 1.2em;
+                                                            }*/
 
 
 
@@ -194,7 +194,7 @@
                                         </li>
                                     </ul>
                                     <div id="step-1" style=" height: 320px; ">
-                                        <form id="formNivel" class="col-12 row m-2 p-5 mt-0">
+                                        <form id="formNivel" class="col-12 row m-0 p-5" style="border:solid; border-color:#256080; border-width:2px; height:350px; border-radius: 8px;">
                                             <div class="row">
                                                 <div class=" col-3 p-2 form-floating">
                                                     <select id="cbotipodoc" class="form-select " name="tipodoc" autocomplete="off" placeholder="Tipo Documento"></select>
@@ -236,7 +236,7 @@
                                         </form>
                                     </div>
                                     <div id="step-2" style=" height: 320px; ">
-                                        <form id="formNivel" class="col-12 row m-2 p-5  mt-0">
+                                        <form id="formNivel" class="col-12 row m-0 p-5" style="border:solid; border-color:#256080; border-width:2px; height:350px; border-radius: 8px;">
                                             <div class="row">
                                                 <div class=" col-6 p-2 form-floating">
                                                     <select id="cbocalle" class="form-select " name="calle" autocomplete="off" placeholder="Calle"></select>
@@ -283,7 +283,7 @@
                                         </form>
                                     </div>
                                     <div id="step-3" style=" height: 320px; ">
-                                        <form id="formNivel" class="col-12 row m-2 p-5  mt-0">
+                                        <form id="formNivel" class="col-12 row m-0 p-5" style="border:solid; border-color:#256080; border-width:2px; height:350px; border-radius: 8px;">
                                             <div class="row">
                                                 <div class=" col-4 p-2 form-floating">
                                                     <select id="cbotiposocio" class="form-select " name="tiposocio" autocomplete="off" placeholder="Tipo"></select>
@@ -322,15 +322,16 @@
                                                     <label for="dtfechaegreso">Fecha Egreso</label>
                                                 </div>
                                                 <div class="col-3 p-4 ">
-                                                    <label>
-                                                        <input type="checkbox" id="swVitalicio" class="js-switch" checked /> Vitalicio
-                                                    </label>
+                                                     <label>
+                                                        <input type="checkbox" id="swVitalicio" class="js-switch"  /> Vitalicio
+                                                    </label> 
+                                              
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
                                     <div id="step-4" style=" height: 320px; ">
-                                        <form id="formNivelHistorico" class="col-12 row p-0  mt-0">
+                                        <form id="formNivelHistorico" class="col-12 row  m-0 p-5" style="border:solid; border-color:#256080; border-width:2px; height:350px; border-radius: 8px;">
 
                                             <table id="tablaHistorico" class="display" style="width:100%">
                                                 <thead>
@@ -352,7 +353,7 @@
                                         </form>
                                     </div>
                                     <div id="step-5" style=" height: 320px; ">
-                                        <form id="formNivel" class="col-12 row m-2 p-3  mt-0 ">
+                                        <form id="formNivel" class="col-12 row  m-0 p-5" style="border:solid; border-color:#256080; border-width:2px; height:350px; border-radius: 8px;">
                                             <div class="col-md-12 col-sm-12">
                                                 <div class="x_panel  p-0">
                                                     <div class="x_content m-0 p-0">
@@ -739,7 +740,7 @@
 
          //Abrir Modal
          function abrirModal(json) {
-
+           
               $("#wizard").smartWizard('goToStep', 1)
                 $("#txtnrosocio").val('');
                  $("#txtapeynom").val('');
@@ -757,21 +758,28 @@
                  let mesfing = `${(fing.getMonth()+1)}`.padStart(2,'0');
                  let aniofing = fing.getFullYear();
                  $("#dtfechaingreso").val(`${diafing}/${mesfing}/${aniofing}`);
-                 
-                 $("#swVitalicio").checked =false
+
+                 //$("#swVitalicio").checked =""
+           
 
                  $("#cbocalle").val(0);
                  $("#txtnro").val('');
                  $("#txtpiso").val('');
                  $("#txtdepto").val('');
+
                  $("#cboprofesion").val(0);
                  $("#cbotiposocio").val(0);
                  $("#cbocategoriasocio").val(0);
                  $("#cboestadosocio").val(0);
+
+
+
+                 $("#txtobservaciones").val('');
              if (json != null) {
 
-                 $("#txtnrosocio").val(json.nroSocio);
+
                  $("#txtapeynom").val(json.apeyNom);
+
                  $("#txtdni").val(json.documento);
                  $("#cbotipodoc").val(json.tipoDocumento.id);
 
@@ -782,6 +790,28 @@
                  aniofnac = fnac.getFullYear();
                  $("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
 
+
+
+                 
+                 $("#cbocalle").val(json.calle.id);
+                 $("#txtnro").val(json.nro);
+                 $("#txtpiso").val(json.piso);
+                 $("#txtdepto").val(json.depto);
+
+
+                 $("#cbolocalidad").val(json.localidad.id);
+
+                 $("#cboprofesion").val(json.profesion.id);
+
+
+
+
+
+                 $("#cbotiposocio").val(json.tipoSocio.id);
+                 $("#cbocategoriasocio").val(json.categoriaSocio.id);
+                 $("#cboestadosocio").val(json.estadoSocio.id);
+                 $("#txtnrosocio").val(json.nroSocio);
+
                  fing= new Date(json.fIngreso);
                  diafing = `${(fing.getDate())}`.padStart(2,'0');
                  mesfing = `${(fing.getMonth()+1)}`.padStart(2,'0');
@@ -789,25 +819,31 @@
                  $("#dtfechaingreso").val(`${diafing}/${mesfing}/${aniofing}`);
 
                  if (json.fEgreso!=null){
-                 let fEgreso= new Date(json.fEgreso);
-                 let diafegre = `${(fEgreso.getDate())}`.padStart(2,'0');
-                 let mesfegre = `${(fEgreso.getMonth()+1)}`.padStart(2,'0');
-                 let aniofegre = fEgreso.getFullYear();
-                 $("#dtfechaegreso").val(`${diafegre}/${mesfegre}/${aniofegre}`);
+                    let fEgreso= new Date(json.fEgreso);
+                    let diafegre = `${(fEgreso.getDate())}`.padStart(2,'0');
+                    let mesfegre = `${(fEgreso.getMonth()+1)}`.padStart(2,'0');
+                    let aniofegre = fEgreso.getFullYear();
+                    $("#dtfechaegreso").val(`${diafegre}/${mesfegre}/${aniofegre}`);
                  }
                  else
-                 $("#dtfechaegreso").val(null);
-                 debugger;
+                    $("#dtfechaegreso").val(null);
+                    debugger;
 
-                 $("#swVitalicio").checked=json.vitalicio;
-                 $("#cbocalle").val(json.calle.id);
-                 $("#txtnro").val(json.nro);
-                 $("#txtpiso").val(json.piso);
-                 $("#txtdepto").val(json.depto);
-                 $("#cboprofesion").val(json.profesion.id);
-                 $("#cbotiposocio").val(json.tipoSocio.id);
-                 $("#cbocategoriasocio").val(json.categoriaSocio.id);
-                 $("#cboestadosocio").val(json.estadoSocio.id);
+
+                $('#swVitalicio').trigger('click').prop("checked", json.vitalicio);
+                 if (json.vitalicio) { // switch on if not on
+                    
+                    $( $('#swVitalicio').data('target')).addClass('show');
+
+                } else 
+               {
+                    
+                    $( $('#swVitalicio').data('target')).removeClass('show');
+               }
+                
+
+
+                 $("#txtobservaciones").val(json.observaciones);
                  var tabladataHistorico;
                  $('#tablaHistorico').DataTable().clear().destroy();
                  tabladataHistorico = $("#tablaHistorico").DataTable({
@@ -879,6 +915,8 @@
 
          //Llenar Tabla
          function  llenarTabla( filtro){
+
+             debugger;
               var url;
               if (filtro){
                   url="@Url.Action("GetSociosFiltrados", "Socio")" +'?calle='+$("#cbocalleF").val()+'&tipo='+$("#cbotiposocioF").val()+'&categoria='+$("#cbocategoriasocioF").val()+'&estado='+$("#cboestadosocioF").val()
