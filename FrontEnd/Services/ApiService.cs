@@ -1215,6 +1215,16 @@ namespace FrontEnd.Services
             return APIResponse;
         }
 
+        public async Task<List<Socio>> GetSociosFiltrados(int calle,int tipo,int categoria,int estado, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Socio/GetSociosFiltrados?calle={calle}&tipo={tipo}&categoria={categoria}&estado={estado}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Socio>>(contents);
+            return APIResponse;
+        }
+
         public async Task<Socio> AddSocio(Socio socio, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);

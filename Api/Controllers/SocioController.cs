@@ -25,7 +25,7 @@ namespace Api.Controllers
         public IActionResult GetSocios(/*int pagesize, int pagenumber*/)
         {
             _logger.LogInformation("Fetching Todas las Socio");
-            var SocioList = _db.Socio
+            var SocioList = _db.Socio/*.Where(s => s.NroSocio <= 10)*/
                 .Include(y => y.Localidad)
                 .Include(y => y.Calle)
                 .Include(y => y.TipoDocumento)
@@ -33,11 +33,33 @@ namespace Api.Controllers
                 .Include(q => q.TipoSocio)
                 .Include(r => r.CategoriaSocio)
                 .Include(q => q.EstadoSocio)
-                .OrderBy(s => s.NroSocio).ToList();
+                .OrderBy(s => s.ApeyNom).ToList();
                 
             return Ok(SocioList);
 
         }
+
+        [HttpGet("GetSociosFiltrados")]
+        [Authorize]
+        [ResponseCache(CacheProfileName = "apicache")]
+        public IActionResult GetSociosFiltrados(int calle, int tipo, int categoria, int estado)
+        {
+            _logger.LogInformation("Fetching Todas las Socios Filtrados");
+            var SocioList = _db.Socio.Where(s => ((((s.Calle.Id == calle) && (calle!=0)) || (calle==0)) && (((s.TipoSocio.Id == tipo) && (tipo!=0)) || (tipo==0)) && (((s.CategoriaSocio.Id == categoria && categoria!=0) || (categoria==0)) && (((s.EstadoSocio.Id == estado) && (estado!=0))  || (estado==0)))))
+                .Include(y => y.Localidad)
+                .Include(y => y.Calle)
+                .Include(y => y.TipoDocumento)
+                .Include(y => y.Profesion!)
+                .Include(q => q.TipoSocio)
+                .Include(r => r.CategoriaSocio)
+                .Include(q => q.EstadoSocio)
+                .OrderBy(s => s.ApeyNom).ToList();
+
+            return Ok(SocioList);
+
+        }
+
+
 
         [HttpGet("GetSocioById")]
         [Authorize]

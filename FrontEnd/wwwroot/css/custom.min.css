@@ -6024,3 +6024,28 @@ ul.notifications {
 #slash {
     display: none;
 }
+
+
+
+
+.btnFiltrar {
+    background-color: #21dbaa;
+    width: 100px;
+    opacity: 0.6;
+    /* height:40px; */
+}
+
+    .btnFiltrar:hover {
+        /* opacity: 1; */
+        background-color: #21dbaa;
+    }
+
+.btnLimpiar {
+    background-color: #69e5f0;
+    width: 100px;
+    opacity: 0.6;
+}
+
+    .btnLimpiar:hover {
+        background-color: #f54118;
+    }
