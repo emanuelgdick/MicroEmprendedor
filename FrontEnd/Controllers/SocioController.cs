@@ -41,6 +41,14 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
+        public async Task<JsonResult> GetSociosFiltrados(int calle,int tipo,int categoria,int estado)
+        {
+            List<Socio> oLista = new List<Socio>();
+            oLista = await _apiService.GetSociosFiltrados(calle,tipo,categoria,estado,HttpContext.Session.GetString("APIToken"));
+            return Json(new { data = oLista });
+        }
+
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create()
         {
             return View();
