@@ -25,9 +25,9 @@
     }
 
     /* Cambiar el tamaño de fuente de los encabezados de la tabla
-                                                            table.dataTable th {
-                                                                font-size: 1.2em;
-                                                            }*/
+                                                                    table.dataTable th {
+                                                                        font-size: 1.2em;
+                                                                    }*/
 
 
 
@@ -194,49 +194,64 @@
                                         </li>
                                     </ul>
                                     <div id="step-1" style=" height: 320px; ">
-                                        <form id="formNivel" class="col-12 row m-0 p-5" style="border:solid; border-color:#256080; border-width:2px; height:325px; border-radius: 8px;">
-                                            <div class="row">
-                                                <div class=" col-3 p-2 form-floating">
-                                                    <select id="cbotipodoc" class="form-select " name="tipodoc" autocomplete="off" placeholder="Tipo Documento"></select>
-                                                    <label for="cbotipodoc" class="form-label pt-1">Tipo Documento</label>
+                                        <form id="formNivel" class="col-12 row m-1 " style="border:solid; border-color:#256080; border-width:2px; height:325px; border-radius: 8px;">
+                                            <div class="col-9 mt-5">
+                                                <div class="row">
+                                                    <div class="col-4 p-2 form-floating">
+                                                        <select id="cbotipodoc" class="form-select " name="tipodoc" autocomplete="off" placeholder="Tipo Documento"></select>
+                                                        <label for="cbotipodoc" class="form-label pt-1">Tipo Documento</label>
+                                                    </div>
+                                                    <div class="col-3 p-2 form-floating">
+                                                        <input type="text" class="form-control form-control-sm" id="txtdni" placeholder="Dni" />
+                                                        <label for="txtdni">Dni</label>
+                                                    </div>
+                                                    <div class="col-5 p-2 form-floating">
+                                                        <input type="text" class="form-control form-control-sm" id="txtapeynom" placeholder="Apellido y Nombre" />
+                                                        <label for="txtapeynom">Apellido y Nombre</label>
+                                                    </div>
                                                 </div>
-                                                <div class="col-3 p-2 form-floating">
-                                                    <input type="text" class="form-control form-control-sm" id="txtdni" placeholder="Dni" />
-                                                    <label for="txtdni">Dni</label>
+                                                <div class="row mt-4">
+                                                    <div class="col-4 p-2 form-floating mb-4 d-flex">
+                                                        <input type="text"
+                                                               class="datepicker_input form-control border-2"
+                                                               id="dtfechanac"
+                                                               required
+                                                               placeholder="DD/MM/YYYY">
+                                                        <label for="dtfechanac">Fecha Nacimiento</label>
+                                                    </div>
+                                                    <div class="col-5 p-2 form-floating">
+                                                        <select id="cboprofesion" class="form-select " name="profesion" autocomplete="off" placeholder="Profesión"></select>
+                                                        <label for="cboprofesion" class="form-label pt-1">Profesión</label>
+                                                    </div>
+                                                    <div class="col-3 mt-2">
+
+                                                        <label>Sexo</label>
+                                                        <p>
+                                                            M:
+                                                            <input type="radio" class="flat p-4" name="gender" id="genderM" value="M" checked="" required /> F:
+                                                            <input type="radio" class="flat p-4" name="gender" id="genderF" value="F" />
+                                                        </p>
+
+                                                    </div>
                                                 </div>
-                                                <div class="col-6 p-2 form-floating">
-                                                    <input type="text" class="form-control form-control-sm" id="txtapeynom" placeholder="Apellido y Nombre" />
-                                                    <label for="txtapeynom">Apellido y Nombre</label>
-                                                </div>
+
                                             </div>
-                                            <div class="row">
-                                                <div class="col-3 p-2 form-floating mb-4 d-flex">
-                                                    <input type="text"
-                                                           class="datepicker_input form-control border-2"
-                                                           id="dtfechanac"
-                                                           required
-                                                           placeholder="DD/MM/YYYY">
-                                                    <label for="dtfechanac">Fecha Nacimiento</label>
+                                            <div class="col-3 mt-5">
+                                                <div class="row" >
+                                                    <div class="right text-center m-0">
+                                                        <img src="/images/user.png" alt="" class="img-circle img-fluid" style="border:solid; border-width:1px; border-color:#bf2c04">
+                                                    </div>
                                                 </div>
-                                                <div class=" col-4 p-2 form-floating">
-                                                    <select id="cboprofesion" class="form-select " name="profesion" autocomplete="off" placeholder="Profesión"></select>
-                                                    <label for="cboprofesion" class="form-label pt-1">Profesión</label>
-                                                </div>
-                                                <div class="col-4 mt-2">
-
-                                                    <label>Sexo</label>
-                                                    <p>
-                                                        M:
-                                                        <input type="radio" class="flat p-4" name="gender" id="genderM" value="M" checked="" required /> F:
-                                                        <input type="radio" class="flat p-4" name="gender" id="genderF" value="F" />
-                                                    </p>
-
+                                                <div class="row mt-3" style=" justify-content: center;">
+                                                    <button type="button" class="btn btnLimpiar" onclick="subirFoto()">Subir Foto</button>
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
                                     <div id="step-2" style=" height: 320px; ">
                                         <form id="formNivel" class="col-12 row m-0 p-5" style="border:solid; border-color:#256080; border-width:2px; height:325px; border-radius: 8px;">
+
+
                                             <div class="row">
                                                 <div class=" col-6 p-2 form-floating">
                                                     <select id="cbocalle" class="form-select " name="calle" autocomplete="off" placeholder="Calle"></select>
@@ -278,8 +293,12 @@
                                                     <input type="text" class="form-control form-control-sm" id="txtemail" placeholder="Correo Electrónico" />
                                                     <label for="txtemail">Correo Electrónico</label>
                                                 </div>
-
                                             </div>
+
+
+
+
+
                                         </form>
                                     </div>
                                     <div id="step-3" style=" height: 320px; ">
@@ -322,10 +341,10 @@
                                                     <label for="dtfechaegreso">Fecha Egreso</label>
                                                 </div>
                                                 <div class="col-3 p-4 ">
-                                                     <label>
-                                                        <input type="checkbox" id="swVitalicio" class="js-switch"  /> Vitalicio
-                                                    </label> 
-                                              
+                                                    <label>
+                                                        <input type="checkbox" id="swVitalicio" class="js-switch" /> Vitalicio
+                                                    </label>
+
                                                 </div>
                                             </div>
                                         </form>
@@ -355,8 +374,8 @@
                                     <div id="step-5" style=" height: 320px; ">
                                         <form id="formNivel" class="col-12 row m-0 " style="border:solid; border-color:#256080; border-width:2px; height:325px; border-radius: 8px;">
                                             <div class="col-md-12 col-sm-12">
-                                                <div class="x_panel  p-0" >
-                                                    <div class="x_content  mt-3 p-0" >
+                                                <div class="x_panel  p-0">
+                                                    <div class="x_content  mt-3 p-0">
                                                         <div id="alerts"></div>
                                                         <div class="btn-toolbar editor" data-bs-role="editor-toolbar" data-bs-target="#editor-one">
                                                             <div class="btn-group m-0 p-0">
@@ -740,7 +759,7 @@
 
          //Abrir Modal
          function abrirModal(json) {
-           
+
               $("#wizard").smartWizard('goToStep', 1)
                 $("#txtnrosocio").val('');
                  $("#txtapeynom").val('');
@@ -760,7 +779,7 @@
                  $("#dtfechaingreso").val(`${diafing}/${mesfing}/${aniofing}`);
 
                  //$("#swVitalicio").checked =""
-           
+
 
                  $("#cbocalle").val(0);
                  $("#txtnro").val('');
@@ -792,7 +811,7 @@
 
 
 
-                 
+
                  $("#cbocalle").val(json.calle.id);
                  $("#txtnro").val(json.nro);
                  $("#txtpiso").val(json.piso);
@@ -832,15 +851,15 @@
 
                 $('#swVitalicio').trigger('click').prop("checked", json.vitalicio);
                  if (json.vitalicio) { // switch on if not on
-                    
+
                     $( $('#swVitalicio').data('target')).addClass('show');
 
-                } else 
+                } else
                {
-                    
+
                     $( $('#swVitalicio').data('target')).removeClass('show');
                }
-                
+
 
 
                  $("#txtobservaciones").val(json.observaciones);
