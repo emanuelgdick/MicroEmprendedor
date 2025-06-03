@@ -5173,6 +5173,52 @@
         }
       }
     },
+    "/api/Socio/GetSociosFiltrados": {
+      "get": {
+        "tags": [
+          "Socio"
+        ],
+        "parameters": [
+          {
+            "name": "calle",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "tipo",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "categoria",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "estado",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Socio/GetSocioById": {
       "get": {
         "tags": [
@@ -7250,10 +7296,6 @@
           "usuario": {
             "$ref": "#/components/schemas/Usuario"
           },
-          "nroInventario": {
-            "type": "string",
-            "nullable": true
-          },
           "fecha": {
             "type": "string",
             "format": "date-time",
@@ -7469,7 +7511,7 @@
             "type": "string",
             "nullable": true
           },
-          "telfijo": {
+          "telFijo": {
             "type": "string",
             "nullable": true
           },

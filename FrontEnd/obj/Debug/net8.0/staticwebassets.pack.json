@@ -769,6 +769,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\images\\aceptar.png",
+      "PackagePath": "staticwebassets\\images\\aceptar.png"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\images\\cancelar.png",
+      "PackagePath": "staticwebassets\\images\\cancelar.png"
+    },
+    {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\images\\favicon.ico",
       "PackagePath": "staticwebassets\\images\\favicon.ico"
     },
@@ -779,6 +787,10 @@
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\images\\user.png",
       "PackagePath": "staticwebassets\\images\\user.png"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\images\\whatsapp.png",
+      "PackagePath": "staticwebassets\\images\\whatsapp.png"
     },
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\Floating-labels\\floating.labels.min.js",
@@ -2595,6 +2607,26 @@
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\devbridge-autocomplete\\src\\jquery.autocomplete.js",
       "PackagePath": "staticwebassets\\js\\devbridge-autocomplete\\src\\jquery.autocomplete.js"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\fastclick\\.bower.json",
+      "PackagePath": "staticwebassets\\js\\fastclick\\.bower.json"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\fastclick\\LICENSE",
+      "PackagePath": "staticwebassets\\js\\fastclick"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\fastclick\\README.md",
+      "PackagePath": "staticwebassets\\js\\fastclick\\README.md"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\fastclick\\bower.json",
+      "PackagePath": "staticwebassets\\js\\fastclick\\bower.json"
+    },
+    {
+      "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\fastclick\\lib\\fastclick.js",
+      "PackagePath": "staticwebassets\\js\\fastclick\\lib\\fastclick.js"
     },
     {
       "Id": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\google-code-prettify\\prettify.js",

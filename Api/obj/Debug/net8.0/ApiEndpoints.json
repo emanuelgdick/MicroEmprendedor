@@ -3219,6 +3219,37 @@
   },
   {
     "ContainingType": "Api.Controllers.SocioController",
+    "Method": "GetSociosFiltrados",
+    "RelativePath": "api/Socio/GetSociosFiltrados",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "calle",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "tipo",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "categoria",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "estado",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Api.Controllers.SocioController",
     "Method": "UpdateSocio",
     "RelativePath": "api/Socio/UpdateSocio",
     "HttpMethod": "POST",

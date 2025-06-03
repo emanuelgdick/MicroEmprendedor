@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hYylwl+N6pXtcXCUSqfRoRC+PSh4PWhw3zDuyn67/a8=",
+  "Hash": "LWX20gJzzlzncZm2Wm+KOTlVXIF9V/pWB5H7NqAO6ck=",
   "Source": "FrontEnd",
   "BasePath": "_content/FrontEnd",
   "Mode": "Default",
@@ -4049,6 +4049,48 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Biblioteca\\FrontEnd\\wwwroot\\images\\aceptar.png",
+      "SourceId": "FrontEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Biblioteca\\FrontEnd\\wwwroot\\",
+      "BasePath": "_content/FrontEnd",
+      "RelativePath": "images/aceptar#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "a0r1650cs5",
+      "Integrity": "BscUeyd+uxbrybty060sLIE29+PJ3eRjBlq4RhQquAM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\aceptar.png"
+    },
+    {
+      "Identity": "C:\\Biblioteca\\FrontEnd\\wwwroot\\images\\cancelar.png",
+      "SourceId": "FrontEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Biblioteca\\FrontEnd\\wwwroot\\",
+      "BasePath": "_content/FrontEnd",
+      "RelativePath": "images/cancelar#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "h6xkjrbf74",
+      "Integrity": "B2xo3Zgmo7XSHDy/9duricZTauzwXFwHv90OYSfJoHI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\cancelar.png"
+    },
+    {
       "Identity": "C:\\Biblioteca\\FrontEnd\\wwwroot\\images\\favicon.ico",
       "SourceId": "FrontEnd",
       "SourceType": "Discovered",
@@ -4110,6 +4152,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\user.png"
+    },
+    {
+      "Identity": "C:\\Biblioteca\\FrontEnd\\wwwroot\\images\\whatsapp.png",
+      "SourceId": "FrontEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Biblioteca\\FrontEnd\\wwwroot\\",
+      "BasePath": "_content/FrontEnd",
+      "RelativePath": "images/whatsapp#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "w4ydyq3kvu",
+      "Integrity": "8NeIHdscjdO1f2fS0LTfDcjMvEhKtPG1qh4YNjHbr10=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\whatsapp.png"
     },
     {
       "Identity": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\boostrap-progressbar\\bootstrap-progressbar.js",
@@ -13604,6 +13667,111 @@
       "OriginalItemSpec": "wwwroot\\js\\devbridge-autocomplete\\src\\jquery.autocomplete.js"
     },
     {
+      "Identity": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\fastclick\\.bower.json",
+      "SourceId": "FrontEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Biblioteca\\FrontEnd\\wwwroot\\",
+      "BasePath": "_content/FrontEnd",
+      "RelativePath": "js/fastclick/.bower#[.{fingerprint}]?.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "68m7oh10j3",
+      "Integrity": "uoeQMT7ICqyfv0veujIlr7l4c4yD93HsBnGmkmu4h2U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\fastclick\\.bower.json"
+    },
+    {
+      "Identity": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\fastclick\\bower.json",
+      "SourceId": "FrontEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Biblioteca\\FrontEnd\\wwwroot\\",
+      "BasePath": "_content/FrontEnd",
+      "RelativePath": "js/fastclick/bower#[.{fingerprint}]?.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tvf4a23y7v",
+      "Integrity": "aWtt7KZi7PBMSWNVk7dbIq5Jy9o68TOuZi+AeYhYXkg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\fastclick\\bower.json"
+    },
+    {
+      "Identity": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\fastclick\\lib\\fastclick.js",
+      "SourceId": "FrontEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Biblioteca\\FrontEnd\\wwwroot\\",
+      "BasePath": "_content/FrontEnd",
+      "RelativePath": "js/fastclick/lib/fastclick#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ai6pjh167g",
+      "Integrity": "MlRJRfTG1kRU5S/H3p+G6M0I+7vnt0XeyahrImL3kS8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\fastclick\\lib\\fastclick.js"
+    },
+    {
+      "Identity": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\fastclick\\LICENSE",
+      "SourceId": "FrontEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Biblioteca\\FrontEnd\\wwwroot\\",
+      "BasePath": "_content/FrontEnd",
+      "RelativePath": "js/fastclick/LICENSE#[.{fingerprint}]?",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vljmfid98w",
+      "Integrity": "PexziE51KuOzwv0FJwsN6Dy39rZru72hvm2V2dZvtrE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\fastclick\\LICENSE"
+    },
+    {
+      "Identity": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\fastclick\\README.md",
+      "SourceId": "FrontEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Biblioteca\\FrontEnd\\wwwroot\\",
+      "BasePath": "_content/FrontEnd",
+      "RelativePath": "js/fastclick/README#[.{fingerprint}]?.md",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "e69rp0kmln",
+      "Integrity": "yh90V9cs4jnyzDM50RxoTS7YxzXFiF0/p79/pog0b1k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\fastclick\\README.md"
+    },
+    {
       "Identity": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\Floating-labels\\floating.labels.min.js",
       "SourceId": "FrontEnd",
       "SourceType": "Discovered",
@@ -16537,8 +16705,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "pu4fhp2pgp",
-      "Integrity": "ryQhBKbedPKwbEzrcEsnQaPTe5wAj4+1616oAeVHo+s=",
+      "Fingerprint": "p6mh7v3sdh",
+      "Integrity": "bwIpIdW2uJW6reTZ8EfGnVn2TFCgKwpxeIBBZ8nEW3o=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\jQuery-Smart-Wizard\\js\\jquery.smartWizard.js"
@@ -35167,6 +35335,170 @@
       ]
     },
     {
+      "Route": "images/aceptar.a0r1650cs5.png",
+      "AssetFile": "C:\\Biblioteca\\FrontEnd\\wwwroot\\images\\aceptar.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21603"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BscUeyd+uxbrybty060sLIE29+PJ3eRjBlq4RhQquAM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 14:29:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "a0r1650cs5"
+        },
+        {
+          "Name": "label",
+          "Value": "images/aceptar.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-BscUeyd+uxbrybty060sLIE29+PJ3eRjBlq4RhQquAM="
+        }
+      ]
+    },
+    {
+      "Route": "images/aceptar.png",
+      "AssetFile": "C:\\Biblioteca\\FrontEnd\\wwwroot\\images\\aceptar.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21603"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BscUeyd+uxbrybty060sLIE29+PJ3eRjBlq4RhQquAM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 14:29:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-BscUeyd+uxbrybty060sLIE29+PJ3eRjBlq4RhQquAM="
+        }
+      ]
+    },
+    {
+      "Route": "images/cancelar.h6xkjrbf74.png",
+      "AssetFile": "C:\\Biblioteca\\FrontEnd\\wwwroot\\images\\cancelar.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3941"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"B2xo3Zgmo7XSHDy/9duricZTauzwXFwHv90OYSfJoHI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 14:30:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "h6xkjrbf74"
+        },
+        {
+          "Name": "label",
+          "Value": "images/cancelar.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-B2xo3Zgmo7XSHDy/9duricZTauzwXFwHv90OYSfJoHI="
+        }
+      ]
+    },
+    {
+      "Route": "images/cancelar.png",
+      "AssetFile": "C:\\Biblioteca\\FrontEnd\\wwwroot\\images\\cancelar.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3941"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"B2xo3Zgmo7XSHDy/9duricZTauzwXFwHv90OYSfJoHI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 14:30:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-B2xo3Zgmo7XSHDy/9duricZTauzwXFwHv90OYSfJoHI="
+        }
+      ]
+    },
+    {
       "Route": "images/favicon.et09kukbmk.ico",
       "AssetFile": "C:\\Biblioteca\\FrontEnd\\wwwroot\\images\\favicon.ico",
       "Selectors": [],
@@ -35409,6 +35741,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-IpXNGFfGdBOLUDCYRuoWAZH5zJWMznHoYvC0caQA0/g="
+        }
+      ]
+    },
+    {
+      "Route": "images/whatsapp.png",
+      "AssetFile": "C:\\Biblioteca\\FrontEnd\\wwwroot\\images\\whatsapp.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10495"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8NeIHdscjdO1f2fS0LTfDcjMvEhKtPG1qh4YNjHbr10=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 30 May 2025 15:46:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8NeIHdscjdO1f2fS0LTfDcjMvEhKtPG1qh4YNjHbr10="
+        }
+      ]
+    },
+    {
+      "Route": "images/whatsapp.w4ydyq3kvu.png",
+      "AssetFile": "C:\\Biblioteca\\FrontEnd\\wwwroot\\images\\whatsapp.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10495"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8NeIHdscjdO1f2fS0LTfDcjMvEhKtPG1qh4YNjHbr10=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 30 May 2025 15:46:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w4ydyq3kvu"
+        },
+        {
+          "Name": "label",
+          "Value": "images/whatsapp.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8NeIHdscjdO1f2fS0LTfDcjMvEhKtPG1qh4YNjHbr10="
         }
       ]
     },
@@ -72477,6 +72891,416 @@
       ]
     },
     {
+      "Route": "js/fastclick/.bower.68m7oh10j3.json",
+      "AssetFile": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\fastclick\\.bower.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "531"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uoeQMT7ICqyfv0veujIlr7l4c4yD93HsBnGmkmu4h2U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 15:36:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "68m7oh10j3"
+        },
+        {
+          "Name": "label",
+          "Value": "js/fastclick/.bower.json"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uoeQMT7ICqyfv0veujIlr7l4c4yD93HsBnGmkmu4h2U="
+        }
+      ]
+    },
+    {
+      "Route": "js/fastclick/.bower.json",
+      "AssetFile": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\fastclick\\.bower.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "531"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uoeQMT7ICqyfv0veujIlr7l4c4yD93HsBnGmkmu4h2U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 15:36:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uoeQMT7ICqyfv0veujIlr7l4c4yD93HsBnGmkmu4h2U="
+        }
+      ]
+    },
+    {
+      "Route": "js/fastclick/bower.json",
+      "AssetFile": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\fastclick\\bower.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "186"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aWtt7KZi7PBMSWNVk7dbIq5Jy9o68TOuZi+AeYhYXkg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 15:36:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-aWtt7KZi7PBMSWNVk7dbIq5Jy9o68TOuZi+AeYhYXkg="
+        }
+      ]
+    },
+    {
+      "Route": "js/fastclick/bower.tvf4a23y7v.json",
+      "AssetFile": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\fastclick\\bower.json",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "186"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/json"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aWtt7KZi7PBMSWNVk7dbIq5Jy9o68TOuZi+AeYhYXkg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 15:36:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tvf4a23y7v"
+        },
+        {
+          "Name": "label",
+          "Value": "js/fastclick/bower.json"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-aWtt7KZi7PBMSWNVk7dbIq5Jy9o68TOuZi+AeYhYXkg="
+        }
+      ]
+    },
+    {
+      "Route": "js/fastclick/lib/fastclick.ai6pjh167g.js",
+      "AssetFile": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\fastclick\\lib\\fastclick.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26806"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MlRJRfTG1kRU5S/H3p+G6M0I+7vnt0XeyahrImL3kS8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 15:36:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ai6pjh167g"
+        },
+        {
+          "Name": "label",
+          "Value": "js/fastclick/lib/fastclick.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-MlRJRfTG1kRU5S/H3p+G6M0I+7vnt0XeyahrImL3kS8="
+        }
+      ]
+    },
+    {
+      "Route": "js/fastclick/lib/fastclick.js",
+      "AssetFile": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\fastclick\\lib\\fastclick.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26806"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MlRJRfTG1kRU5S/H3p+G6M0I+7vnt0XeyahrImL3kS8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 15:36:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-MlRJRfTG1kRU5S/H3p+G6M0I+7vnt0XeyahrImL3kS8="
+        }
+      ]
+    },
+    {
+      "Route": "js/fastclick/LICENSE",
+      "AssetFile": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\fastclick\\LICENSE",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1090"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PexziE51KuOzwv0FJwsN6Dy39rZru72hvm2V2dZvtrE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 15:36:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-PexziE51KuOzwv0FJwsN6Dy39rZru72hvm2V2dZvtrE="
+        }
+      ]
+    },
+    {
+      "Route": "js/fastclick/LICENSE.vljmfid98w",
+      "AssetFile": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\fastclick\\LICENSE",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1090"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PexziE51KuOzwv0FJwsN6Dy39rZru72hvm2V2dZvtrE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 15:36:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vljmfid98w"
+        },
+        {
+          "Name": "label",
+          "Value": "js/fastclick/LICENSE"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PexziE51KuOzwv0FJwsN6Dy39rZru72hvm2V2dZvtrE="
+        }
+      ]
+    },
+    {
+      "Route": "js/fastclick/README.e69rp0kmln.md",
+      "AssetFile": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\fastclick\\README.md",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7048"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/markdown"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yh90V9cs4jnyzDM50RxoTS7YxzXFiF0/p79/pog0b1k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 15:36:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "e69rp0kmln"
+        },
+        {
+          "Name": "label",
+          "Value": "js/fastclick/README.md"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yh90V9cs4jnyzDM50RxoTS7YxzXFiF0/p79/pog0b1k="
+        }
+      ]
+    },
+    {
+      "Route": "js/fastclick/README.md",
+      "AssetFile": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\fastclick\\README.md",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7048"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/markdown"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yh90V9cs4jnyzDM50RxoTS7YxzXFiF0/p79/pog0b1k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 26 May 2025 15:36:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yh90V9cs4jnyzDM50RxoTS7YxzXFiF0/p79/pog0b1k="
+        }
+      ]
+    },
+    {
       "Route": "js/Floating-labels/floating.labels.min.js",
       "AssetFile": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\Floating-labels\\floating.labels.min.js",
       "Selectors": [],
@@ -83885,7 +84709,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "17332"
+          "Value": "17323"
         },
         {
           "Name": "Content-Type",
@@ -83893,11 +84717,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ryQhBKbedPKwbEzrcEsnQaPTe5wAj4+1616oAeVHo+s=\""
+          "Value": "\"bwIpIdW2uJW6reTZ8EfGnVn2TFCgKwpxeIBBZ8nEW3o=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 26 May 2025 15:36:38 GMT"
+          "Value": "Mon, 02 Jun 2025 15:42:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -83907,12 +84731,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ryQhBKbedPKwbEzrcEsnQaPTe5wAj4+1616oAeVHo+s="
+          "Value": "sha256-bwIpIdW2uJW6reTZ8EfGnVn2TFCgKwpxeIBBZ8nEW3o="
         }
       ]
     },
     {
-      "Route": "js/jQuery-Smart-Wizard/js/jquery.smartWizard.pu4fhp2pgp.js",
+      "Route": "js/jQuery-Smart-Wizard/js/jquery.smartWizard.p6mh7v3sdh.js",
       "AssetFile": "C:\\Biblioteca\\FrontEnd\\wwwroot\\js\\jQuery-Smart-Wizard\\js\\jquery.smartWizard.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -83922,7 +84746,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "17332"
+          "Value": "17323"
         },
         {
           "Name": "Content-Type",
@@ -83930,11 +84754,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ryQhBKbedPKwbEzrcEsnQaPTe5wAj4+1616oAeVHo+s=\""
+          "Value": "\"bwIpIdW2uJW6reTZ8EfGnVn2TFCgKwpxeIBBZ8nEW3o=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 26 May 2025 15:36:38 GMT"
+          "Value": "Mon, 02 Jun 2025 15:42:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -83944,7 +84768,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "pu4fhp2pgp"
+          "Value": "p6mh7v3sdh"
         },
         {
           "Name": "label",
@@ -83952,7 +84776,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ryQhBKbedPKwbEzrcEsnQaPTe5wAj4+1616oAeVHo+s="
+          "Value": "sha256-bwIpIdW2uJW6reTZ8EfGnVn2TFCgKwpxeIBBZ8nEW3o="
         }
       ]
     },

@@ -190,9 +190,12 @@ wwwroot\css\SweetAlert\sweetalert.css
 wwwroot\css\switchery\switchery.css
 wwwroot\css\switchery\switchery.min.css
 wwwroot\favicon.ico
+wwwroot\images\aceptar.png
+wwwroot\images\cancelar.png
 wwwroot\images\favicon.ico
 wwwroot\images\img.jpg
 wwwroot\images\user.png
+wwwroot\images\whatsapp.png
 wwwroot\js\boostrap-progressbar\bootstrap-progressbar.js
 wwwroot\js\boostrap-progressbar\bootstrap-progressbar.min.js
 wwwroot\js\bootstrap\bootstrap.min.js
@@ -645,6 +648,11 @@ wwwroot\js\devbridge-autocomplete\package.json
 wwwroot\js\devbridge-autocomplete\readme.md
 wwwroot\js\devbridge-autocomplete\src\jquery.autocomplete.d.ts
 wwwroot\js\devbridge-autocomplete\src\jquery.autocomplete.js
+wwwroot\js\fastclick\.bower.json
+wwwroot\js\fastclick\bower.json
+wwwroot\js\fastclick\lib\fastclick.js
+wwwroot\js\fastclick\LICENSE
+wwwroot\js\fastclick\README.md
 wwwroot\js\Floating-labels\floating.labels.min.js
 wwwroot\js\google-code-prettify\prettify.js
 wwwroot\js\iCheck\icheck.js
