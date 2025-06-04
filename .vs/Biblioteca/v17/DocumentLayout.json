@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\socio\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\wwwroot\\css\\custom.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\wwwroot\\css\\custom.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\controllers\\cobradorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\controllers\\cobradorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\content\\contacts.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\content\\contacts.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\controllers\\sociocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\controllers\\sociocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\content\\form.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -21,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\controllers\\sociocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\controllers\\sociocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\biblioteca\\frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -38,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -55,27 +51,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "custom.css",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\custom.css",
-              "RelativeDocumentMoniker": "FrontEnd\\wwwroot\\css\\custom.css",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\wwwroot\\css\\custom.css",
-              "RelativeToolTip": "FrontEnd\\wwwroot\\css\\custom.css",
-              "ViewState": "AgIAAK0EAAAAAAAAAAAAwMEEAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-03T11:47:03.024Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "contacts.html",
-              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Content\\contacts.html",
-              "RelativeDocumentMoniker": "FrontEnd\\Content\\contacts.html",
-              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Content\\contacts.html",
-              "RelativeToolTip": "FrontEnd\\Content\\contacts.html",
-              "ViewState": "AgIAACMBAAAAAAAAAAAAAD4BAABQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-06-03T11:29:12.237Z",
+              "Title": "CobradorController.cs",
+              "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Controllers\\CobradorController.cs",
+              "RelativeDocumentMoniker": "FrontEnd\\Controllers\\CobradorController.cs",
+              "ToolTip": "C:\\Biblioteca\\FrontEnd\\Controllers\\CobradorController.cs",
+              "RelativeToolTip": "FrontEnd\\Controllers\\CobradorController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T21:35:41.969Z",
               "EditorCaption": ""
             },
             {
@@ -88,8 +71,7 @@
               "RelativeToolTip": "FrontEnd\\Content\\form.html",
               "ViewState": "AgIAAJoEAAAAAAAAAAAAAMMEAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-06-03T11:22:42.048Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-03T11:22:42.048Z"
             },
             {
               "$type": "Document",
@@ -101,12 +83,11 @@
               "RelativeToolTip": "FrontEnd\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-02T22:29:59.959Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-02T22:29:59.959Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "FrontEnd\\Views\\Shared\\_Layout.cshtml",
@@ -118,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "SocioController.cs",
               "DocumentMoniker": "C:\\Biblioteca\\FrontEnd\\Controllers\\SocioController.cs",
               "RelativeDocumentMoniker": "FrontEnd\\Controllers\\SocioController.cs",
@@ -126,8 +107,7 @@
               "RelativeToolTip": "FrontEnd\\Controllers\\SocioController.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAUwCQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T11:08:54.939Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-31T11:08:54.939Z"
             },
             {
               "$type": "Document",
@@ -137,7 +117,7 @@
               "RelativeDocumentMoniker": "FrontEnd\\Views\\Socio\\Index.cshtml",
               "ToolTip": "C:\\Biblioteca\\FrontEnd\\Views\\Socio\\Index.cshtml",
               "RelativeToolTip": "FrontEnd\\Views\\Socio\\Index.cshtml",
-              "ViewState": "AgIAAOMAAAAAAAAAAAAAAOEAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAO8AAAAAAAAAAAAAAPYAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-30T21:12:08.539Z",
               "EditorCaption": ""

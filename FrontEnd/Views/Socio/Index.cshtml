@@ -25,9 +25,9 @@
     }
 
     /* Cambiar el tamaño de fuente de los encabezados de la tabla
-                                                                    table.dataTable th {
-                                                                        font-size: 1.2em;
-                                                                    }*/
+                                                                        table.dataTable th {
+                                                                            font-size: 1.2em;
+                                                                        }*/
 
 
 
@@ -237,14 +237,25 @@
 
                                             </div>
                                             <div class="col-3 mt-5">
-                                                <div class="row" >
-                                                    <div class="right text-center m-0">
-                                                        <img src="/images/user.png" alt="" class="img-circle img-fluid" style="border:solid; border-width:1px; border-color:#bf2c04">
-                                                    </div>
+                                            
+                                                <div class="right text-center m-0">
+                                                    <img id="imagen" src="/images/user.png" alt="Imagen capturada" class="img-circle img-fluid" style="border:solid; border-width:1px; border-color:#bf2c04">
                                                 </div>
                                                 <div class="row mt-3" style=" justify-content: center;">
-                                                    <button type="button" class="btn btnLimpiar" onclick="subirFoto()">Subir Foto</button>
+                                                    <button id="botonCaptura" type="button" class="btn btnLimpiar" onclick="tomarFoto()">Tomar Foto</button>
                                                 </div>
+                                                <video id="video" autoplay >
+                                                </video>
+                                                  <canvas id="canvas" > 
+                                                  
+                                                </canvas>
+                                             @*    <div class="row">
+                                                    <div class="right text-center m-0">
+                                                        <img id="imagen" src="/images/user.png" alt="Imagen capturada" class="img-circle img-fluid" style="border:solid; border-width:1px; border-color:#bf2c04">
+
+                                                    </div>
+                                                </div> *@
+                                                
                                             </div>
                                         </form>
                                     </div>
@@ -1142,6 +1153,37 @@
                     })
              });
 
+        //Tomar Foto
+        function tomarFoto(){
+            debugger;
+             const video = document.getElementById('video');
+            const canvas = document.getElementById('canvas');
+            const imagen = document.getElementById('imagen');
+            const botonCaptura = document.getElementById('botonCaptura');
+            // Solicitar acceso a la cámara
+            navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+                
+               
+              })
+              .catch(error => {
+                console.error('Error al acceder a la cámara:', error);
+            });
+
+            // Capturar la foto al hacer clic en el botón
+            botonCaptura.addEventListener('click', () => {
+            // Dibujar la imagen en el canvas
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // Obtener la imagen como data URL
+            const dataURL = canvas.toDataURL('image/png');
+
+            // Mostrar la imagen en la etiqueta img
+            imagen.src = dataURL;
+        });
+        }
          //Guardar
          function Guardar() {
 
