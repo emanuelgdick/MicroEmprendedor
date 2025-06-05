@@ -704,25 +704,28 @@ namespace Api.Migrations
                     b.Property<DateTime?>("Fnac")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("IdCalle")
+                    b.Property<string>("Foto")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("IdCalle")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdCategoriaSocio")
+                    b.Property<int?>("IdCategoriaSocio")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdEstadoSocio")
+                    b.Property<int?>("IdEstadoSocio")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdLocalidad")
+                    b.Property<int?>("IdLocalidad")
                         .HasColumnType("int");
 
                     b.Property<int?>("IdProfesion")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdTipoDocumento")
+                    b.Property<int?>("IdTipoDocumento")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdTipoSocio")
+                    b.Property<int?>("IdTipoSocio")
                         .HasColumnType("int");
 
                     b.Property<string>("Nro")
@@ -1076,27 +1079,19 @@ namespace Api.Migrations
                 {
                     b.HasOne("Api.Models.Calle", "Calle")
                         .WithMany()
-                        .HasForeignKey("IdCalle")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdCalle");
 
                     b.HasOne("Api.Models.CategoriaSocio", "CategoriaSocio")
                         .WithMany()
-                        .HasForeignKey("IdCategoriaSocio")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdCategoriaSocio");
 
                     b.HasOne("Api.Models.EstadoSocio", "EstadoSocio")
                         .WithMany()
-                        .HasForeignKey("IdEstadoSocio")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdEstadoSocio");
 
                     b.HasOne("Api.Models.Localidad", "Localidad")
                         .WithMany()
-                        .HasForeignKey("IdLocalidad")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdLocalidad");
 
                     b.HasOne("Api.Models.Profesion", "Profesion")
                         .WithMany()
@@ -1104,15 +1099,11 @@ namespace Api.Migrations
 
                     b.HasOne("Api.Models.TipoDocumento", "TipoDocumento")
                         .WithMany()
-                        .HasForeignKey("IdTipoDocumento")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdTipoDocumento");
 
                     b.HasOne("Api.Models.TipoSocio", "TipoSocio")
                         .WithMany()
-                        .HasForeignKey("IdTipoSocio")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IdTipoSocio");
 
                     b.Navigation("Calle");
 

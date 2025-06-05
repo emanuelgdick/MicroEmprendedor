@@ -25,9 +25,9 @@
     }
 
     /* Cambiar el tamaño de fuente de los encabezados de la tabla
-                                                                                    table.dataTable th {
-                                                                                        font-size: 1.2em;
-                                                                                    }*/
+                                                                                        table.dataTable th {
+                                                                                            font-size: 1.2em;
+                                                                                        }*/
 
 
 
@@ -36,7 +36,6 @@
         font-size: 10px; /* Cambia el tamaño de la fuente */
         /*font-weight: bold;  Cambia el peso de la fuente */
     }
-
 </style>
 
 <div class="card">
@@ -236,25 +235,26 @@
                                                 </div>
 
                                             </div>
-                                         
+
                                             <div class="col-3 mt-5">
 
-                                                <video id="video" autoplay>
+                                                @*       <video id="video" autoplay>
                                                 </video>
                                                 <canvas id="canvas" style="display:none;">
                                                 </canvas>
                                                 <div class="right text-center m-0">
                                                     <img id="imagen" src="/images/user.png" alt="Imagen capturada" class="img-circle img-fluid" style="border:solid; border-width:1px; border-color:#bf2c04">
-                                                   
+
                                                 </div>
                                                 <div class="row mt-3" style=" justify-content: center;">
                                                     <button id="botonCaptura" type="button" class="btn btnLimpiar" onclick="tomarFoto()">Tomar Foto</button>
 
-                                                </div>
+                                                </div> *@
 
-                                               
 
-                                             @*    <div id="userphoto">
+
+
+                                                @*   <div id="userphoto">
                                                     <div class="gravatar-wrapper-128 right text-center m-0">
                                                         <img id="imagen" src="/images/user.png" alt="" class=" logo  img-circle" width="150" height="150" style=" border:solid; border-width:1px; border-color:#bf2c04">
                                                         <input accept="image/*" type="file" id="upload" name="upload" onchange="readURL(this);" style="visibility: hidden;" />
@@ -507,6 +507,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btnCancelar" data-bs-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btnAceptar" onclick="Guardar()">Guardar</button>
+
             </div>
 
         </div>
@@ -1031,11 +1032,15 @@
                                 { "data": "nroSocio" },
                                 { "data": "apeyNom" },
                                 { "data": function(data){
+                                        if (data!=null){
                                         return data.tipoDocumento.descA+'-'+data.documento
+                                        }
                                   }
                                 },
                                 { "data": "calle" , render: function (data) {
+                                       if (data!=null){
                                            return data.descripcion;
+                                       }
                                    }
                                 },
                                 { "data": "nro" },
@@ -1047,7 +1052,7 @@
                                            var desc;
                                            if (data==null)
                                            {
-                                               desc='qqq'
+                                               desc=null
                                            }
                                            else
                                                desc=data.descripcion;
@@ -1055,16 +1060,24 @@
                                   }
                                 },
                                 { "data": "categoriaSocio" , render: function (data) {
+                                       if (data!=null){
                                            return data.descripcion;
+                                       }
+
+
                                  }
                                 },
                                 { "data": "tipoSocio" , render: function (data) {
+                                       if (data!=null){
                                            return data.descripcion;
+                                       }
                                  }
                                 },
 
                                 { "data": "estadoSocio" , render: function (data) {
+                                       if (data!=null){
                                            return data.descripcion;
+                                       }
                                   }
                                 },
                                 { "data": "vitalicio" , render: function (data) {
@@ -1234,7 +1247,6 @@
           }
 
 
-
         function capture() {
             debugger;
             var canvas = document.getElementById("canvas");
@@ -1267,15 +1279,64 @@
                    return;
                }
 
-               var Socio = {
+               var socio = {
                        id: $("#txtid").val(),
                        apeyNom: $("#txtapeynom").val(),
-                   }
+                       documento:$("#txtdni").val(),
+                       tipoDocumento:{
+                            id:$("#cbotipodoc").val()
+                       },
+                      // fnac:$("#dtfechanac").val(),
+                       profesion:{
+                            id:$("#cboprofesion").val()
+                       },
+                       sexo:null,
+                       calle:{
+                            id:$("#cbocalle").val()
+                       },
+                       nro:$("#txtnro").val(),
+                       piso:$("#txtpiso").val(),
+                       depto:$("#txtdepto").val(),
+                       tipoSocio:{
+                            id:$("#cbotiposocio").val()
+                       },
+                       estadoSocio:{
+                            id:$("#cboestadosocio").val()
+                       },
+                       categoriaSocio:{
+                            id:$("#cbocategoriasocio").val()
+                       },
+                       localidad:{
+                            id:$("#cbolocalidad").val()
+                       },
+                       nroSocio: $("#txtnrosocio").val(),
+                       telFijo: $("#txttelfijo").val(),
+                       telCelular: $("#txttelcelular").val(),
+                       email: $("#txtemail").val(),
+                       observaciones:$("#descr").val(),
+                       //vitalicio:$("#swVitalicio").val(),
+                       // pagaAca:$("#pagaAca").val(),
 
+                        // sexo:$("#swSexo").val(),
+                        foto:""
+
+
+                     
+                       
+                    
+                    
+                       // fNac: $("#dtfechanac").val(),
+                       // fIng: $("#dtfechaingreso").val(),
+                       // fEgre: $("#dtfechaegreso").val(),
+                       
+
+                      
+                   };
+                   console.log(socio);
                jQuery.ajax({
                        url: '@Url.Action("CreateSocio", "Socio")',
                        type: "POST",
-                       data: JSON.stringify(Socio),
+                       data: JSON.stringify(socio),
                        contentType: 'application/json',
                        success: function (data) {
                            $(".modal-body").LoadingOverlay("hide");

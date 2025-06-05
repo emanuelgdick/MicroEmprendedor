@@ -70,7 +70,7 @@ namespace FrontEnd.Controllers
                 {
                     if (socio.ApeyNom != "")
                     {
-                        socio = await _apiService.AddSocio(socio, HttpContext.Session.GetString("APIToken"));
+                        //socio = await _apiService.AddSocio(socio, HttpContext.Session.GetString("APIToken"));
                         resultado = socio.Id;
                         mensaje = "Socio ingresado correctamente";
                     }

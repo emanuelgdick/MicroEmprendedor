@@ -251,6 +251,7 @@
 
   <ItemGroup>
     <Folder Include="Content\bootstrap-progressbar\css\" />
+    <Folder Include="Models\DTOs\" />
     <Folder Include="wwwroot\js\jquery\boostrap-progressbar\" />
     <Folder Include="wwwroot\js\NewFolder\" />
   </ItemGroup>
