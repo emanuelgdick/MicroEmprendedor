@@ -7555,6 +7555,10 @@
           "sexo": {
             "type": "boolean",
             "nullable": true
+          },
+          "foto": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
