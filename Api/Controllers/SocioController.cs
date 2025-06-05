@@ -89,7 +89,6 @@ namespace Api.Controllers
             {
                 return BadRequest(ModelState);
             }
-
             _db.Socio.Add(socio);
             _db.SaveChanges();
             return Ok(socio);

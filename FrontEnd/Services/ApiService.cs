@@ -1363,7 +1363,6 @@ namespace FrontEnd.Services
 
         #endregion
 
-
         //TIPO DE MOVIMIENTO
         #region
         public async Task<List<TipoMovimiento>> GetAllTipoMovimientos(string token)
@@ -1413,7 +1412,6 @@ namespace FrontEnd.Services
         }
 
         #endregion
-
 
         //MATERIAL MOVIMIENTO
         #region
@@ -1480,9 +1478,6 @@ namespace FrontEnd.Services
         }
 
         #endregion
-
-
-
 
         //TIPO DE SOCIO
         #region
@@ -1777,8 +1772,6 @@ namespace FrontEnd.Services
         }
 
         #endregion
-
-
 
         //TOTALES
         public async Task<TotalesDTO> GetTotales(string token)

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Api.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Api.Models
 {
@@ -9,25 +10,25 @@ namespace Api.Models
 
 
         [ForeignKey("IdTipoSocio")]
-        public TipoSocio TipoSocio { get; set; }
-       
+        public TipoSocio? TipoSocio { get; set; }
+
         [ForeignKey("IdEstadoSocio")]
-        public EstadoSocio EstadoSocio { get; set; }
-      
+        public EstadoSocio? EstadoSocio { get; set; }
+
         [ForeignKey("IdCategoriaSocio")]
-        public CategoriaSocio CategoriaSocio { get; set; }
-       
+        public CategoriaSocio? CategoriaSocio { get; set; }
+
         [ForeignKey("IdTipoDocumento")]
-        public TipoDocumento TipoDocumento { get; set; }
-       
+        public TipoDocumento? TipoDocumento { get; set; }
+
         [ForeignKey("IdCalle")]
-        public Calle Calle { get; set; }
-     
+        public Calle? Calle { get; set; }
+
         [ForeignKey("IdProfesion")]
         public Profesion? Profesion { get; set; }
-      
+
         [ForeignKey("IdLocalidad")]
-        public Localidad Localidad { get; set; }
+        public Localidad? Localidad { get; set; }
         public int NroSocio { get; set; }
         public string ApeyNom { get; set; }
         public string? Nro { get; set; }
@@ -43,8 +44,8 @@ namespace Api.Models
         public string? Documento { get; set; }
         public bool Vitalicio { get; set; }
         public bool PagaAca { get; set; }
-
         public bool? Sexo { get; set; }
-     
+        public string? Foto { get; set; }
+
     }
 }

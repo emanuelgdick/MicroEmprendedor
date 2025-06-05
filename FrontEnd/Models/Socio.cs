@@ -10,25 +10,25 @@ namespace Frontend.Models
 
 
         [ForeignKey("IdTipoSocio")]
-        public TipoSocio TipoSocio { get; set; }
+        public TipoSocio? TipoSocio { get; set; }
         
         [ForeignKey("IdEstadoSocio")]
-        public EstadoSocio EstadoSocio { get; set; }
+        public EstadoSocio? EstadoSocio { get; set; }
        
         [ForeignKey("IdCategoriaSocio")]
-        public CategoriaSocio CategoriaSocio { get; set; }
+        public CategoriaSocio? CategoriaSocio { get; set; }
         
         [ForeignKey("IdTipoDocumento")]
-        public TipoDocumento TipoDocumento { get; set; }
+        public TipoDocumento? TipoDocumento { get; set; }
         
         [ForeignKey("IdCalle")]
-        public Calle Calle { get; set; }
+        public Calle? Calle { get; set; }
         
         [ForeignKey("IdProfesion")]
         public Profesion? Profesion { get; set; }
         
         [ForeignKey("IdLocalidad")]
-        public Localidad Localidad { get; set; }
+        public Localidad? Localidad { get; set; }
         public int NroSocio { get; set; }
         public string ApeyNom { get; set; }
         public string? Nro { get; set; }
@@ -45,6 +45,7 @@ namespace Frontend.Models
         public bool Vitalicio { get; set; }
         public bool PagaAca { get; set; }
         public bool? Sexo { get; set; }
-     
+        public string? foto { get; set; }
+
     }
 }
