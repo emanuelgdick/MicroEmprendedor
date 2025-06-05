@@ -244,14 +244,14 @@
                                                 <div class="row mt-3" style=" justify-content: center;">
                                                     <button id="botonCaptura" type="button" class="btn btnLimpiar" onclick="tomarFoto()">Tomar Foto</button>
                                                 </div>
-                                                <video id="video" autoplay >
+                                                    <video id="video" autoplay>
                                                 </video>
-                                                  <canvas id="canvas" > 
-
+                                                <canvas id="canvas" style="display:none;">
                                                 </canvas>
+
                                             *@
 
-
+                                            
                                                 <div id="userphoto">
                                                     <div class="gravatar-wrapper-128 right text-center m-0">
                                                         <img id="imagen" src="/images/user.png" alt="" class=" logo  img-circle" width="150" height="150" style=" border:solid; border-width:1px; border-color:#bf2c04">
@@ -267,24 +267,9 @@
                                                             <div style="text-align:center">
                                                                 <a href="" onclick="changePicture(); return false"><i class="fa fa-file-image-o"></i></a>
                                                             </div>
-
                                                         </div>
-
-
-
-                                                        @*   <div class="change-picture-slide" style="top: 30px;  ">
-                                                            <input accept="image/*" type="file" id="upload" name="upload" onchange="readURL(this);" style="visibility: hidden;" />
-                                                            <a href="" onclick="changePicture(); return false"><i class="fa fa-camera"></i></a>
-                                                        </div>
-
-                                                        <div class="change-picture-slide" style="top: 30px; ">
-                                                            <input accept="image/*" type="file" id="upload" name="upload" onchange="readURL(this);" style="visibility: hidden;" />
-                                                            <a href="" onclick="changePicture(); return false"><i class="fa fa-file-image-o"></i></a>
-                                                        </div>
- *@
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </form>
                                     </div>
