@@ -25,9 +25,9 @@
     }
 
     /* Cambiar el tamaño de fuente de los encabezados de la tabla
-                                                                                table.dataTable th {
-                                                                                    font-size: 1.2em;
-                                                                                }*/
+                                                                                    table.dataTable th {
+                                                                                        font-size: 1.2em;
+                                                                                    }*/
 
 
 
@@ -236,23 +236,25 @@
                                                 </div>
 
                                             </div>
+                                         
                                             <div class="col-3 mt-5">
 
-                                                @*      <div class="right text-center m-0">
+                                                <video id="video" autoplay>
+                                                </video>
+                                                <canvas id="canvas" style="display:none;">
+                                                </canvas>
+                                                <div class="right text-center m-0">
                                                     <img id="imagen" src="/images/user.png" alt="Imagen capturada" class="img-circle img-fluid" style="border:solid; border-width:1px; border-color:#bf2c04">
+                                                   
                                                 </div>
                                                 <div class="row mt-3" style=" justify-content: center;">
                                                     <button id="botonCaptura" type="button" class="btn btnLimpiar" onclick="tomarFoto()">Tomar Foto</button>
+
                                                 </div>
-                                                <video id="video" autoplay >
-                                                </video>
-                                                  <canvas id="canvas" > 
 
-                                                </canvas>
-                                            *@
+                                               
 
-
-                                                <div id="userphoto">
+                                             @*    <div id="userphoto">
                                                     <div class="gravatar-wrapper-128 right text-center m-0">
                                                         <img id="imagen" src="/images/user.png" alt="" class=" logo  img-circle" width="150" height="150" style=" border:solid; border-width:1px; border-color:#bf2c04">
                                                         <input accept="image/*" type="file" id="upload" name="upload" onchange="readURL(this);" style="visibility: hidden;" />
@@ -260,7 +262,7 @@
                                                     <div class="row">
                                                         <div class="col-4 m-2 mr-5 p-0" title="Tomar foto">
                                                             <div style="text-align:end">
-                                                                <a href="" onclick="tomarFoto(); return false"><i class="fa fa-camera" ></i></a>
+                                                                <a href="" id="botonCaptura" onclick="tomarFoto(); return false"><i class="fa fa-camera"></i></a>
                                                             </div>
                                                         </div>
                                                         <div class="col-4 m-2  p-0" title="Seleccionar foto">
@@ -272,7 +274,7 @@
 
 
 
-                                                        @*   <div class="change-picture-slide" style="top: 30px;  ">
+                                                          <div class="change-picture-slide" style="top: 30px;  ">
                                                             <input accept="image/*" type="file" id="upload" name="upload" onchange="readURL(this);" style="visibility: hidden;" />
                                                             <a href="" onclick="changePicture(); return false"><i class="fa fa-camera"></i></a>
                                                         </div>
@@ -281,9 +283,9 @@
                                                             <input accept="image/*" type="file" id="upload" name="upload" onchange="readURL(this);" style="visibility: hidden;" />
                                                             <a href="" onclick="changePicture(); return false"><i class="fa fa-file-image-o"></i></a>
                                                         </div>
- *@
+
                                                     </div>
-                                                </div>
+                                                </div> *@
 
                                             </div>
                                         </form>
@@ -514,792 +516,815 @@
 
 @section scripts {
     <script>
-        var tabladata;
-        var agregarToast;
-        $( document ).ready(function() {
+          var tabladata;
+          var agregarToast;
+          $( document ).ready(function() {
 
-         //GET TIPO DOCUMENTOS
-         jQuery.ajax({
-                 url: '@Url.Action("GetAllTipoDocumentos", "TipoDocumento")',
-                 type: "GET",
-                 data: null,
-                 dataType: "json",
-                 contentType: "application/json; charset=utf-8",
-                 success: function (data) {
-                    $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbotipodoc");
-                     $.each(data.data, function (index, value) {
-                     $("<option>").attr({ "value": value.id }).text(value.descA).appendTo("#cbotipodoc");
-                     });
-                     },
-                     error: function (error) {
-                     console.log(error)
+           //GET TIPO DOCUMENTOS
+           jQuery.ajax({
+                   url: '@Url.Action("GetAllTipoDocumentos", "TipoDocumento")',
+                   type: "GET",
+                   data: null,
+                   dataType: "json",
+                   contentType: "application/json; charset=utf-8",
+                   success: function (data) {
+                      $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbotipodoc");
+                       $.each(data.data, function (index, value) {
+                       $("<option>").attr({ "value": value.id }).text(value.descA).appendTo("#cbotipodoc");
+                       });
+                       },
+                       error: function (error) {
+                       console.log(error)
+                       }
+                       });
+
+           //GET PROFESIONES
+           jQuery.ajax({
+                        url: '@Url.Action("GetAllProfesiones", "Profesion")',
+                        type: "GET",
+                        data: null,
+                        dataType: "json",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+                           $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cboprofesion");
+                            $.each(data.data, function (index, value) {
+                            $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cboprofesion");
+                            });
+                            },
+                            error: function (error) {
+                            console.log(error)
+                            }
+                            });
+
+           //GET CALLES
+           jQuery.ajax({
+                        url: '@Url.Action("GetAllCalle", "Calle")',
+                        type: "GET",
+                        data: null,
+                        dataType: "json",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+                           $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbocalle");
+                           $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbocalleF");
+                            $.each(data.data, function (index, value) {
+                            $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbocalle");
+                            $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbocalleF");
+                            });
+                            },
+                            error: function (error) {
+                            console.log(error)
+                            }
+                            });
+
+           //GET TIPOS DE SOCIOS
+           jQuery.ajax({
+                        url: '@Url.Action("GetAllTipoSocios", "TipoSocio")',
+                        type: "GET",
+                        data: null,
+                        dataType: "json",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+                           $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbotiposocio");
+                           $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbotiposocioF");
+                            $.each(data.data, function (index, value) {
+                            $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbotiposocio");
+                             $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbotiposocioF");
+                            });
+                            },
+                            error: function (error) {
+                            console.log(error)
+                            }
+                            });
+
+           //GET CATEGORIAS DE SOCIOS
+           jQuery.ajax({
+                                url: '@Url.Action("GetAllCategoriaSocios", "CategoriaSocio")',
+                                type: "GET",
+                                data: null,
+                                dataType: "json",
+                                contentType: "application/json; charset=utf-8",
+                                success: function (data) {
+                                   $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbocategoriasocio");
+                                   $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbocategoriasocioF");
+                                    $.each(data.data, function (index, value) {
+                                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbocategoriasocio");
+                                     $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbocategoriasocioF");
+                                    });
+                                    },
+                                    error: function (error) {
+                                    console.log(error)
+                                    }
+                                    });
+
+           //GET ESTADOS DE SOCIOS
+           jQuery.ajax({
+                                url: '@Url.Action("GetAllEstadoSocios", "EstadoSocio")',
+                                type: "GET",
+                                data: null,
+                                dataType: "json",
+                                contentType: "application/json; charset=utf-8",
+                                success: function (data) {
+                                   $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cboestadosocio");
+                                   $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cboestadosocioF");
+                                    $.each(data.data, function (index, value) {
+                                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cboestadosocio");
+                                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cboestadosocioF");
+                                    });
+                                    },
+                                    error: function (error) {
+                                    console.log(error)
+                                    }
+                                    });
+
+           //GET PROVINCIA
+           jQuery.ajax({
+                                url: '@Url.Action("GetAllProvincias", "Provincia")',
+                                type: "GET",
+                                data: null,
+                                dataType: "json",
+                                contentType: "application/json; charset=utf-8",
+                                success: function (data) {
+                                   $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cboprovincia");
+                                    $.each(data.data, function (index, value) {
+                                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cboprovincia");
+                                    });
+                                    },
+                                    error: function (error) {
+                                    console.log(error)
+                                    }
+                                    });
+
+           //GET LOCALIDADES
+           jQuery.ajax({
+                                url: '@Url.Action("GetAllLocalidades", "Localidad")',
+                                type: "GET",
+                                data: null,
+                                dataType: "json",
+                                contentType: "application/json; charset=utf-8",
+                                success: function (data) {
+                                   $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbolocalidad");
+                                    $.each(data.data, function (index, value) {
+                                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidad");
+                                    });
+                                    },
+                                    error: function (error) {
+                                    console.log(error)
+                                    }
+                                    });
+
+           const getDatePickerTitle = elem => {
+                     // From the label or the aria-label
+                     const label = elem.nextElementSibling;
+                     let titleText = '';
+                     if (label && label.tagName === 'LABEL') {
+                       titleText = label.textContent;
+                     } else {
+                       titleText = elem.getAttribute('aria-label') || '';
                      }
-                     });
-
-         //GET PROFESIONES
-         jQuery.ajax({
-                      url: '@Url.Action("GetAllProfesiones", "Profesion")',
-                      type: "GET",
-                      data: null,
-                      dataType: "json",
-                      contentType: "application/json; charset=utf-8",
-                      success: function (data) {
-                         $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cboprofesion");
-                          $.each(data.data, function (index, value) {
-                          $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cboprofesion");
-                          });
-                          },
-                          error: function (error) {
-                          console.log(error)
-                          }
-                          });
-
-         //GET CALLES
-         jQuery.ajax({
-                      url: '@Url.Action("GetAllCalle", "Calle")',
-                      type: "GET",
-                      data: null,
-                      dataType: "json",
-                      contentType: "application/json; charset=utf-8",
-                      success: function (data) {
-                         $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbocalle");
-                         $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbocalleF");
-                          $.each(data.data, function (index, value) {
-                          $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbocalle");
-                          $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbocalleF");
-                          });
-                          },
-                          error: function (error) {
-                          console.log(error)
-                          }
-                          });
-
-         //GET TIPOS DE SOCIOS
-         jQuery.ajax({
-                      url: '@Url.Action("GetAllTipoSocios", "TipoSocio")',
-                      type: "GET",
-                      data: null,
-                      dataType: "json",
-                      contentType: "application/json; charset=utf-8",
-                      success: function (data) {
-                         $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbotiposocio");
-                         $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbotiposocioF");
-                          $.each(data.data, function (index, value) {
-                          $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbotiposocio");
-                           $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbotiposocioF");
-                          });
-                          },
-                          error: function (error) {
-                          console.log(error)
-                          }
-                          });
-
-         //GET CATEGORIAS DE SOCIOS
-         jQuery.ajax({
-                              url: '@Url.Action("GetAllCategoriaSocios", "CategoriaSocio")',
-                              type: "GET",
-                              data: null,
-                              dataType: "json",
-                              contentType: "application/json; charset=utf-8",
-                              success: function (data) {
-                                 $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbocategoriasocio");
-                                 $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbocategoriasocioF");
-                                  $.each(data.data, function (index, value) {
-                                  $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbocategoriasocio");
-                                   $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbocategoriasocioF");
-                                  });
-                                  },
-                                  error: function (error) {
-                                  console.log(error)
-                                  }
-                                  });
-
-         //GET ESTADOS DE SOCIOS
-         jQuery.ajax({
-                              url: '@Url.Action("GetAllEstadoSocios", "EstadoSocio")',
-                              type: "GET",
-                              data: null,
-                              dataType: "json",
-                              contentType: "application/json; charset=utf-8",
-                              success: function (data) {
-                                 $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cboestadosocio");
-                                 $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cboestadosocioF");
-                                  $.each(data.data, function (index, value) {
-                                  $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cboestadosocio");
-                                  $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cboestadosocioF");
-                                  });
-                                  },
-                                  error: function (error) {
-                                  console.log(error)
-                                  }
-                                  });
-
-         //GET PROVINCIA
-         jQuery.ajax({
-                              url: '@Url.Action("GetAllProvincias", "Provincia")',
-                              type: "GET",
-                              data: null,
-                              dataType: "json",
-                              contentType: "application/json; charset=utf-8",
-                              success: function (data) {
-                                 $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cboprovincia");
-                                  $.each(data.data, function (index, value) {
-                                  $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cboprovincia");
-                                  });
-                                  },
-                                  error: function (error) {
-                                  console.log(error)
-                                  }
-                                  });
-
-         //GET LOCALIDADES
-         jQuery.ajax({
-                              url: '@Url.Action("GetAllLocalidades", "Localidad")',
-                              type: "GET",
-                              data: null,
-                              dataType: "json",
-                              contentType: "application/json; charset=utf-8",
-                              success: function (data) {
-                                 $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbolocalidad");
-                                  $.each(data.data, function (index, value) {
-                                  $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidad");
-                                  });
-                                  },
-                                  error: function (error) {
-                                  console.log(error)
-                                  }
-                                  });
-
-         const getDatePickerTitle = elem => {
-                   // From the label or the aria-label
-                   const label = elem.nextElementSibling;
-                   let titleText = '';
-                   if (label && label.tagName === 'LABEL') {
-                     titleText = label.textContent;
-                   } else {
-                     titleText = elem.getAttribute('aria-label') || '';
+                     return titleText;
                    }
-                   return titleText;
+                   const elems = document.querySelectorAll('.datepicker_input');
+                   for (const elem of elems) {
+                     const datepicker = new Datepicker(elem, {
+                       'format': 'dd/mm/yyyy', // UK format
+                       title: getDatePickerTitle(elem)
+                     });
+                   }
+
+
+               const contenedorToast = document.getElementById('contenedor-toastP');
+               // Event listener para detectar click en los toasts
+               contenedorToast.addEventListener('click', (e) => {
+               const toastId = e.target.closest('div.toastP').id;
+               if (e.target.closest('button.btn-cerrar')) {
+                     cerrarToast(toastId);
+               }
+               });
+
+               // Función para cerrar el toast
+               const cerrarToast = (id) => {
+                     document.getElementById(id)?.classList.add('cerrando');
+               };
+
+               // Función para agregar la clase de cerrando al toast.
+               agregarToast = ({ tipo, titulo, descripcion, autoCierre }) => {
+               // Crear el nuevo toast
+               const nuevoToast = document.createElement('div');
+               // Agregar clases correspondientes
+               nuevoToast.classList.add('toastP');
+               nuevoToast.classList.add(tipo);
+               if (autoCierre) nuevoToast.classList.add('autoCierreP');
+               // Agregar id del toast
+               const numeroAlAzar = Math.floor(Math.random() * 100);
+               const fecha = Date.now();
+               const toastId = fecha + numeroAlAzar;
+               nuevoToast.id = toastId;
+               // Iconos
+               const iconos = {
+                            exito: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                        <path
+                                            d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
+                                        />
+                                    </svg>`,
+                            error: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                    />
+                                                </svg>`,
+                            info: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+                                                    />
+                                                </svg>`,
+                            warning: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                    />
+                                                </svg>`,
+                        };
+
+                        // Plantilla del toast
+                        const toast = `
+                            <div class="contenidoP">
+                                <div class="icono">
+                                    ${iconos[tipo]}
+                                </div>
+                                <div class="texto">
+                                    <p class="titulo">${titulo}</p>
+                                    <p class="descripcion">${descripcion}</p>
+                                </div>
+                            </div>
+                            <button class="btn-cerrar">
+                                <div class="icono">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                        <path
+                                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                                        />
+                                    </svg>
+                                </div>
+                            </button>
+                        `;
+
+                        // Agregar la plantilla al nuevo toast
+                        nuevoToast.innerHTML = toast;
+
+                        // Agregamos el nuevo toast al contenedor
+                        contenedorToast.appendChild(nuevoToast);
+
+                        // Función para menajera el cierre del toast
+                        const handleAnimacionCierre = (e) => {
+                            if (e.animationName === 'cierre') {
+                                nuevoToast.removeEventListener('animationend', handleAnimacionCierre);
+                                nuevoToast.remove();
+                            }
+                        };
+
+                        if (autoCierre) {
+                            setTimeout(() => cerrarToast(toastId), 5000);
+                        }
+
+                        // Agregamos event listener para detectar cuando termine la animación
+                        nuevoToast.addEventListener('animationend', handleAnimacionCierre);
+                     };
+
+               var filaSeleccionada;
+              llenarTabla(false)
+
+           });
+
+           //Abrir Modal
+           function abrirModal(json) {
+
+                $("#wizard").smartWizard('goToStep', 1)
+                  $("#txtnrosocio").val('');
+                   $("#txtapeynom").val('');
+                   $("#txtdni").val('');
+                   $("#cbotipodoc").val(0);
+                   let fnac = new Date()
+                   let diafnac = `${(fnac.getDate())}`.padStart(2,'0');
+                   let mesfnac = `${(fnac.getMonth()+1)}`.padStart(2,'0');
+                   let aniofnac = fnac.getFullYear();
+                   $("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
+
+
+                   let fing = new Date()
+                   let diafing = `${(fing.getDate())}`.padStart(2,'0');
+                   let mesfing = `${(fing.getMonth()+1)}`.padStart(2,'0');
+                   let aniofing = fing.getFullYear();
+                   $("#dtfechaingreso").val(`${diafing}/${mesfing}/${aniofing}`);
+
+                   //$("#swVitalicio").checked =""
+
+
+                   $("#cbocalle").val(0);
+                   $("#txtnro").val('');
+                   $("#txtpiso").val('');
+                   $("#txtdepto").val('');
+
+                   $("#cboprofesion").val(0);
+                   $("#cbotiposocio").val(0);
+                   $("#cbocategoriasocio").val(0);
+                   $("#cboestadosocio").val(0);
+
+
+
+                   $("#txtobservaciones").val('');
+               if (json != null) {
+
+
+                   $("#txtapeynom").val(json.apeyNom);
+
+                   $("#txtdni").val(json.documento);
+                   $("#cbotipodoc").val(json.tipoDocumento.id);
+
+
+                   fnac = new Date(json.fnac)
+                   diafnac = `${(fnac.getDate())}`.padStart(2,'0');
+                   mesfnac = `${(fnac.getMonth()+1)}`.padStart(2,'0');
+                   aniofnac = fnac.getFullYear();
+                   $("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
+
+
+
+
+                   $("#cbocalle").val(json.calle.id);
+                   $("#txtnro").val(json.nro);
+                   $("#txtpiso").val(json.piso);
+                   $("#txtdepto").val(json.depto);
+
+
+                   $("#cbolocalidad").val(json.localidad.id);
+
+                   $("#cboprofesion").val(json.profesion.id);
+
+
+
+
+
+                   $("#cbotiposocio").val(json.tipoSocio.id);
+                   $("#cbocategoriasocio").val(json.categoriaSocio.id);
+                   $("#cboestadosocio").val(json.estadoSocio.id);
+                   $("#txtnrosocio").val(json.nroSocio);
+
+                   fing= new Date(json.fIngreso);
+                   diafing = `${(fing.getDate())}`.padStart(2,'0');
+                   mesfing = `${(fing.getMonth()+1)}`.padStart(2,'0');
+                   aniofing = fing.getFullYear();
+                   $("#dtfechaingreso").val(`${diafing}/${mesfing}/${aniofing}`);
+
+                   if (json.fEgreso!=null){
+                      let fEgreso= new Date(json.fEgreso);
+                      let diafegre = `${(fEgreso.getDate())}`.padStart(2,'0');
+                      let mesfegre = `${(fEgreso.getMonth()+1)}`.padStart(2,'0');
+                      let aniofegre = fEgreso.getFullYear();
+                      $("#dtfechaegreso").val(`${diafegre}/${mesfegre}/${aniofegre}`);
+                   }
+                   else
+                      $("#dtfechaegreso").val(null);
+                      debugger;
+
+
+                  $('#swVitalicio').trigger('click').prop("checked", json.vitalicio);
+                   if (json.vitalicio) { // switch on if not on
+
+                      $( $('#swVitalicio').data('target')).addClass('show');
+
+                  } else
+                 {
+
+                      $( $('#swVitalicio').data('target')).removeClass('show');
                  }
-                 const elems = document.querySelectorAll('.datepicker_input');
-                 for (const elem of elems) {
-                   const datepicker = new Datepicker(elem, {
-                     'format': 'dd/mm/yyyy', // UK format
-                     title: getDatePickerTitle(elem)
-                   });
-                 }
-
-
-             const contenedorToast = document.getElementById('contenedor-toastP');
-             // Event listener para detectar click en los toasts
-             contenedorToast.addEventListener('click', (e) => {
-             const toastId = e.target.closest('div.toastP').id;
-             if (e.target.closest('button.btn-cerrar')) {
-                   cerrarToast(toastId);
-             }
-             });
-
-             // Función para cerrar el toast
-             const cerrarToast = (id) => {
-                   document.getElementById(id)?.classList.add('cerrando');
-             };
-
-             // Función para agregar la clase de cerrando al toast.
-             agregarToast = ({ tipo, titulo, descripcion, autoCierre }) => {
-             // Crear el nuevo toast
-             const nuevoToast = document.createElement('div');
-             // Agregar clases correspondientes
-             nuevoToast.classList.add('toastP');
-             nuevoToast.classList.add(tipo);
-             if (autoCierre) nuevoToast.classList.add('autoCierreP');
-             // Agregar id del toast
-             const numeroAlAzar = Math.floor(Math.random() * 100);
-             const fecha = Date.now();
-             const toastId = fecha + numeroAlAzar;
-             nuevoToast.id = toastId;
-             // Iconos
-             const iconos = {
-                          exito: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                      <path
-                                          d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
-                                      />
-                                  </svg>`,
-                          error: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                  <path
-                                                      d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                                                  />
-                                              </svg>`,
-                          info: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                  <path
-                                                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
-                                                  />
-                                              </svg>`,
-                          warning: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                  <path
-                                                      d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                                                  />
-                                              </svg>`,
-                      };
-
-                      // Plantilla del toast
-                      const toast = `
-                          <div class="contenidoP">
-                              <div class="icono">
-                                  ${iconos[tipo]}
-                              </div>
-                              <div class="texto">
-                                  <p class="titulo">${titulo}</p>
-                                  <p class="descripcion">${descripcion}</p>
-                              </div>
-                          </div>
-                          <button class="btn-cerrar">
-                              <div class="icono">
-                                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                      <path
-                                          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-                                      />
-                                  </svg>
-                              </div>
-                          </button>
-                      `;
-
-                      // Agregar la plantilla al nuevo toast
-                      nuevoToast.innerHTML = toast;
-
-                      // Agregamos el nuevo toast al contenedor
-                      contenedorToast.appendChild(nuevoToast);
-
-                      // Función para menajera el cierre del toast
-                      const handleAnimacionCierre = (e) => {
-                          if (e.animationName === 'cierre') {
-                              nuevoToast.removeEventListener('animationend', handleAnimacionCierre);
-                              nuevoToast.remove();
-                          }
-                      };
-
-                      if (autoCierre) {
-                          setTimeout(() => cerrarToast(toastId), 5000);
-                      }
-
-                      // Agregamos event listener para detectar cuando termine la animación
-                      nuevoToast.addEventListener('animationend', handleAnimacionCierre);
-                   };
-
-             var filaSeleccionada;
-            llenarTabla(false)
-
-         });
-
-         //Abrir Modal
-         function abrirModal(json) {
-
-              $("#wizard").smartWizard('goToStep', 1)
-                $("#txtnrosocio").val('');
-                 $("#txtapeynom").val('');
-                 $("#txtdni").val('');
-                 $("#cbotipodoc").val(0);
-                 let fnac = new Date()
-                 let diafnac = `${(fnac.getDate())}`.padStart(2,'0');
-                 let mesfnac = `${(fnac.getMonth()+1)}`.padStart(2,'0');
-                 let aniofnac = fnac.getFullYear();
-                 $("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
-
-
-                 let fing = new Date()
-                 let diafing = `${(fing.getDate())}`.padStart(2,'0');
-                 let mesfing = `${(fing.getMonth()+1)}`.padStart(2,'0');
-                 let aniofing = fing.getFullYear();
-                 $("#dtfechaingreso").val(`${diafing}/${mesfing}/${aniofing}`);
-
-                 //$("#swVitalicio").checked =""
-
-
-                 $("#cbocalle").val(0);
-                 $("#txtnro").val('');
-                 $("#txtpiso").val('');
-                 $("#txtdepto").val('');
-
-                 $("#cboprofesion").val(0);
-                 $("#cbotiposocio").val(0);
-                 $("#cbocategoriasocio").val(0);
-                 $("#cboestadosocio").val(0);
 
 
 
-                 $("#txtobservaciones").val('');
-             if (json != null) {
+                   $("#txtobservaciones").val(json.observaciones);
+                   var tabladataHistorico;
+                   $('#tablaHistorico').DataTable().clear().destroy();
+                   tabladataHistorico = $("#tablaHistorico").DataTable({
+                   order: [[0, 'asc']],
+                   responsive: true,
+                   ordering: true,
+                   searching: false,
+                   info: false,
+                   lengthChange: false, // Will Disabled Record number per page
+                   pageLength: 5,
+                   "ajax": {
+                        url: "@Url.Action("GetAllMaterialMovimientosBySocio", "MaterialMovimiento")"+"?socio="+$("#txtnrosocio").val(),
+                       type: "GET",
+                       dataType: "json"
+                   },
+                   "columns": [
+                       { "data": "fecha"},
+                       { "data": "material", render: function (data) {
+                                   var str='('+String(parseInt(data.nroInventario)).padStart(4, '0')+')';
+                                   return str+data.titulo;
+                                   }
+                               },
+                       { "data": "tipoMovimiento", render: function (data) {
+                                       return data.descripcion;
+                               }
+                       },
+
+                       { "data": "fechaDevolucion" },
+                       { "data": "nroMovimiento" }
+                       // { "data": "Seleccionado",render: function (data, type, row) {
+                       //         // if (data) {
+                       //         //     return '<input type="checkbox" checked class="editor-active">';
+                       //         // } else {
+                       //         //     return '<input type="checkbox" class="editor-active">';
+                       //         // }
+                       //         // return data;
+                       //     }
+                       // },
+                   ],
+                   "language": {
+                          "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+
+                     },
+                   "columnDefs": [
+
+                       { "width": "10%", "targets": 0 ,render: DataTable.render.datetime( 'DD/MM/YYYY' ) },
+                       { "width": "50%", "targets": 1 },
+                       { "width": "50%", "targets": 2 },
+                       { "width": "10%", "targets": 3  ,render: DataTable.render.datetime( 'DD/MM/YYYY' ) },
+                       { "width": "10%", "targets": 4 },
+                   ]
+               });
+           }
+           $("#FormModal").modal("show");
+           }
+
+           $("#formNivel").validate({
+               rules: {
+                       ApeyNom: {
+                       required: true
+                   },
+               },
+               messages: {
+                   ApeyNom: " El campo Descripción es obligatorio",
+               },
+               errorElement: "div",
+               errorLabelContainer: ".alert-danger"
+           });
+
+           //Llenar Tabla
+           function  llenarTabla( filtro){
+
+               debugger;
+                var url;
+                if (filtro){
+                    url="@Url.Action("GetSociosFiltrados", "Socio")" +'?calle='+$("#cbocalleF").val()+'&tipo='+$("#cbotiposocioF").val()+'&categoria='+$("#cbocategoriasocioF").val()+'&estado='+$("#cboestadosocioF").val()
+                }else{
+                     url="@Url.Action("GetAllSocios", "Socio")";
+                }
+
+          $('#tabla').DataTable().clear().destroy();
+            tabladata = $("#tabla").DataTable({
+                       responsive: true,
+                       ordering: false,
+                       dom: "Bfrtip",
+                       buttons: [
+                           {
+                               extend: "excelHtml5",
+                               text: '<i class="fa fa-file-excel-o "></i>',
+                               filename: "Reporte de Socios",
+                                title: "Listado de Socios",
+                               exportOptions: {
+                                   //muestra las columnas
+                                   columns: [0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+                               },
+                               className: "btn-exportar-excel",
 
 
-                 $("#txtapeynom").val(json.apeyNom);
+                           },
+                           {
+                               extend: "pdfHtml5",
+                               text: '<i class="fa fa-file-pdf-o"></i>',
+                               filename: "Reporte de Socios",
+                               title: "Listado de Socios",
+                               exportOptions: {
+                                   //muestra las columnas
+                                   columns: [0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+                               },
+                               className: "btn-exportar-pdf"
+                           },
+                           {
+                               extend: "print",
+                               text: '<i class="fa fa-print"></i>',
+                               filename: "Reporte de Socios",
+                               title: "Listado de Socios",
+                               exportOptions: {
+                                   //muestra las columnas
+                                   columns: [0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+                               },
+                               className: "btn-imprimir"
 
-                 $("#txtdni").val(json.documento);
-                 $("#cbotipodoc").val(json.tipoDocumento.id);
+                           }
+                       ],
+                        "ajax": {
+                            url: url,
+                            type: "GET",
+                            dataType: "json",
+                            beforeSend: agregarToast({ tipo: 'exito', titulo: 'Obteniendo Socios', descripcion: 'Por favor espere...', autoCierre: true })
+                        },
+                        "columns": [
+                                { "data": "nroSocio" },
+                                { "data": "apeyNom" },
+                                { "data": function(data){
+                                        return data.tipoDocumento.descA+'-'+data.documento
+                                  }
+                                },
+                                { "data": "calle" , render: function (data) {
+                                           return data.descripcion;
+                                   }
+                                },
+                                { "data": "nro" },
+                                { "data": "piso" },
+                                { "data": "depto" },
+                                { "data": "telFijo" },
+                                { "data": "telCelular" },
+                               { "data": "profesion" , render: function(data){
+                                           var desc;
+                                           if (data==null)
+                                           {
+                                               desc='qqq'
+                                           }
+                                           else
+                                               desc=data.descripcion;
+                                       return desc;
+                                  }
+                                },
+                                { "data": "categoriaSocio" , render: function (data) {
+                                           return data.descripcion;
+                                 }
+                                },
+                                { "data": "tipoSocio" , render: function (data) {
+                                           return data.descripcion;
+                                 }
+                                },
+
+                                { "data": "estadoSocio" , render: function (data) {
+                                           return data.descripcion;
+                                  }
+                                },
+                                { "data": "vitalicio" , render: function (data) {
+                                           if (data){
+                                               return '<img src="../images/aceptar.png" alt="" width="17" height="17" >'//'<i class="fa fa-check"   style="Color: #E74C3C;" ></i>'
+                                           }
+                                           else
+                                               return '<img src="../images/cancelar.png" alt="" width="17" height="17" >'//'<i class="fa fa-times"   style="Color: #47e73c;" ></i>'
+
+                                  }
+                                },
+                                {
+                                             "defaultContent":  '<button type="button" title="Enviar Mensaje"  class="rounded-circle btn btn-sm  btn-block btn-enviar"   > <img src="../images/whatsapp.png" alt="" width="20" height="20" ></button>'+
+                                                               // '<button id="compose"  class="btn-enviar" type="button">COMPOSE</button>'+
+
+                                                               '<button type="button" title="Editar Socio"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
+                                                               '<button type="button" title="Eliminar Socio" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
+                                   "orderable": false,
+                                   "searchable": false,
+                                   "width": "10%",
+                                   "heigth":"10%"
+                               }
+                        ],
+                        "order": {
+                              name: 'apeyNom',
+                              dir: 'asc'
+                          },
+                         "language": {
+                                   "url":"https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+                          },
+
+                       "columnDefs": [
+                               { "width": "5%", "targets": 0 },
+                               { "width": "10%", "targets": 1 },
+                               { "width": "10%", "targets": 2 ,visible: false},
+                               { "width": "2%", "targets": 3 , visible: false},
+                               { "width": "2%", "targets": 4 ,visible: false},
+                               { "width": "2%", "targets": 5 ,visible: false},
+                               { "width": "5%", "targets": 6 ,visible: false},
+                               { "width": "10%", "targets": 7 ,visible: false},
+                               { "width": "5%", "targets": 8 ,visible: false},
+                               { "width": "5%", "targets": 9 ,visible: false},
+                               { "width": "5%", "targets": 10 },
+                               { "width": "10%", "targets": 11 },
+                               { "width": "10%", "targets": 12 },
+                               { "width": "5%", "targets": 13 },
+                               { "width": "40%", "targets": 14, className: 'dt-body-right' },
+                       ]
+                   })
+           }
+
+           //Filtrar Socios
+           function filtrarSocios(filtro){
+              llenarTabla(filtro);
+           }
+            //Filtrar Socios
+           function limpiarFiltros(){
+              $('#cbocalleF').val(0);
+              $('#cbocategoriasocioF').val(0);
+              $('#cboestadosocioF').val(0);
+              $('#cbotiposocioF').val(0);
+              llenarTabla(false)
+           }
+           //Editar
+           $("#tabla tbody").on("click", '.btn-editar', function () {
+                   filaSeleccionada = $(this).closest("tr");
+                   var data = tabladata.row(filaSeleccionada).data();
+                   abrirModal(data)
+               })
+
+           //Eliminar
+           $("#tabla tbody").on("click", '.btn-eliminar', function () {
+                  var Socioseleccionado = $(this).closest("tr");
+                  var data = tabladata.row(Socioseleccionado).data();
+                  var Socio={
+                           id:data.id,
+                           apeyNom:data.apeyNom
+                  }
+                  swal({
+                       title: "Está Seguro?",
+                       text: "Desea eliminar el Socio?",
+                       type: "warning",
+                       showCancelButton: true,
+                       confirmButtonClass: "btn-primary",
+                       confirmButtonText: "Si",
+                       cancelButtonText: "No",
+                       closeOnConfirm: true
+                   },
+                      function () {
+                           jQuery.ajax({
+                               url: '@Url.Action("DeleteSocio", "Socio")',
+                               type: "POST",
+                               data: JSON.stringify( Socio),
+                               contentType: 'application/json',
+                               success: function (data) {
+                                   if (data.resultado) {
+                                       tabladata.row(Socioseleccionado).remove().draw();
+                                       // mostrarAlert(data.mensaje)
+                                       agregarToast({ tipo: 'exito', titulo: 'Eliminando Socio', descripcion: 'Socio eliminado correctamente.', autoCierre: true })
+                                   } else {
+                                       agregarToast({ tipo: 'error', titulo: 'Eliminando Socio', descripcion: 'No se pudo eliminar el Socio', autoCierre: true });
+                                      // swal("No se pudo eliminar", data.mensaje, "error");
+                                    //  mostrarAlert(data.mensaje)
+                                   }
+                               },
+                               error: function (error) {
+                                   console.log(error);
+                               }
+                           })
+                      })
+               });
+
+          //Tomar Foto
+          function tomarFoto(){
+
+                          debugger;
+               const video = document.getElementById('video');
+              const canvas = document.getElementById('canvas');
+              const imagen = document.getElementById('imagen');
+              const botonCaptura = document.getElementById('botonCaptura');
+              // Solicitar acceso a la cámara
+              navigator.mediaDevices.getUserMedia({ video: true })
+              .then(stream => {
+                  video.srcObject = stream;
 
 
-                 fnac = new Date(json.fnac)
-                 diafnac = `${(fnac.getDate())}`.padStart(2,'0');
-                 mesfnac = `${(fnac.getMonth()+1)}`.padStart(2,'0');
-                 aniofnac = fnac.getFullYear();
-                 $("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
+                })
+                .catch(error => {
+                  console.error('Error al acceder a la cámara:', error);
+              });
+
+              // Capturar la foto al hacer clic en el botón
+              botonCaptura.addEventListener('click', () => {
+              // Dibujar la imagen en el canvas
+              const ctx = canvas.getContext('2d');
+              ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+              // Obtener la imagen como data URL
+              const dataURL = canvas.toDataURL('image/png');
+
+              // Mostrar la imagen en la etiqueta img
+              imagen.src = dataURL;
+          });
 
 
 
 
-                 $("#cbocalle").val(json.calle.id);
-                 $("#txtnro").val(json.nro);
-                 $("#txtpiso").val(json.piso);
-                 $("#txtdepto").val(json.depto);
+          }
 
 
-                 $("#cbolocalidad").val(json.localidad.id);
+          //Seleccionar Imagen
+          function changePicture(){
+              $('#upload').click();
+          }
+          function readURL(input)
+          {
+              if (input.files && input.files[0])
+              {
+                  var reader = new FileReader();
+                  reader.onload = function (e)
+                  {
+                      $('#imagen').attr('src',e.target.result);
 
-                 $("#cboprofesion").val(json.profesion.id);
-
-
-
-
-
-                 $("#cbotiposocio").val(json.tipoSocio.id);
-                 $("#cbocategoriasocio").val(json.categoriaSocio.id);
-                 $("#cboestadosocio").val(json.estadoSocio.id);
-                 $("#txtnrosocio").val(json.nroSocio);
-
-                 fing= new Date(json.fIngreso);
-                 diafing = `${(fing.getDate())}`.padStart(2,'0');
-                 mesfing = `${(fing.getMonth()+1)}`.padStart(2,'0');
-                 aniofing = fing.getFullYear();
-                 $("#dtfechaingreso").val(`${diafing}/${mesfing}/${aniofing}`);
-
-                 if (json.fEgreso!=null){
-                    let fEgreso= new Date(json.fEgreso);
-                    let diafegre = `${(fEgreso.getDate())}`.padStart(2,'0');
-                    let mesfegre = `${(fEgreso.getMonth()+1)}`.padStart(2,'0');
-                    let aniofegre = fEgreso.getFullYear();
-                    $("#dtfechaegreso").val(`${diafegre}/${mesfegre}/${aniofegre}`);
-                 }
-                 else
-                    $("#dtfechaegreso").val(null);
-                    debugger;
+                  };
+                  reader.readAsDataURL(input.files[0]);
+              }
+          }
 
 
-                $('#swVitalicio').trigger('click').prop("checked", json.vitalicio);
-                 if (json.vitalicio) { // switch on if not on
 
-                    $( $('#swVitalicio').data('target')).addClass('show');
+        function capture() {
+            debugger;
+            var canvas = document.getElementById("canvas");
+              var video = document.getElementById("video");
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext("2d").drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+            const dataURL = canvas.toDataURL('image/png');
+            const playImage = new Image();
+              playImage.src = dataURL;
+            playImage.onload = () => {
+              const startX = video.videoWidth / 2 - playImage.width / 2;
+              const startY = video.videoHeight / 2 - playImage.height / 2;
+              canvas.getContext("2d").drawImage(playImage, startX, startY, playImage.width, playImage.height);
+              canvas.toBlob() = (blob) => {
+                const img = new Image();
+                img.src = window.URL.createObjectUrl(blob);
+              };
+            };
+            /** End **/
+          }
 
-                } else
-               {
 
-                    $( $('#swVitalicio').data('target')).removeClass('show');
+
+
+           //Guardar
+           function Guardar() {
+
+               if (!$("#formNivel").valid()) {
+                   return;
                }
 
+               var Socio = {
+                       id: $("#txtid").val(),
+                       apeyNom: $("#txtapeynom").val(),
+                   }
 
-
-                 $("#txtobservaciones").val(json.observaciones);
-                 var tabladataHistorico;
-                 $('#tablaHistorico').DataTable().clear().destroy();
-                 tabladataHistorico = $("#tablaHistorico").DataTable({
-                 order: [[0, 'asc']],
-                 responsive: true,
-                 ordering: true,
-                 searching: false,
-                 info: false,
-                 lengthChange: false, // Will Disabled Record number per page
-                 pageLength: 5,
-                 "ajax": {
-                      url: "@Url.Action("GetAllMaterialMovimientosBySocio", "MaterialMovimiento")"+"?socio="+$("#txtnrosocio").val(),
-                     type: "GET",
-                     dataType: "json"
-                 },
-                 "columns": [
-                     { "data": "fecha"},
-                     { "data": "material", render: function (data) {
-                                 var str='('+String(parseInt(data.nroInventario)).padStart(4, '0')+')';
-                                 return str+data.titulo;
-                                 }
-                             },
-                     { "data": "tipoMovimiento", render: function (data) {
-                                     return data.descripcion;
-                             }
-                     },
-
-                     { "data": "fechaDevolucion" },
-                     { "data": "nroMovimiento" }
-                     // { "data": "Seleccionado",render: function (data, type, row) {
-                     //         // if (data) {
-                     //         //     return '<input type="checkbox" checked class="editor-active">';
-                     //         // } else {
-                     //         //     return '<input type="checkbox" class="editor-active">';
-                     //         // }
-                     //         // return data;
-                     //     }
-                     // },
-                 ],
-                 "language": {
-                        "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
-
-                   },
-                 "columnDefs": [
-
-                     { "width": "10%", "targets": 0 ,render: DataTable.render.datetime( 'DD/MM/YYYY' ) },
-                     { "width": "50%", "targets": 1 },
-                     { "width": "50%", "targets": 2 },
-                     { "width": "10%", "targets": 3  ,render: DataTable.render.datetime( 'DD/MM/YYYY' ) },
-                     { "width": "10%", "targets": 4 },
-                 ]
-             });
-         }
-         $("#FormModal").modal("show");
-         }
-
-         $("#formNivel").validate({
-             rules: {
-                     ApeyNom: {
-                     required: true
-                 },
-             },
-             messages: {
-                 ApeyNom: " El campo Descripción es obligatorio",
-             },
-             errorElement: "div",
-             errorLabelContainer: ".alert-danger"
-         });
-
-         //Llenar Tabla
-         function  llenarTabla( filtro){
-
-             debugger;
-              var url;
-              if (filtro){
-                  url="@Url.Action("GetSociosFiltrados", "Socio")" +'?calle='+$("#cbocalleF").val()+'&tipo='+$("#cbotiposocioF").val()+'&categoria='+$("#cbocategoriasocioF").val()+'&estado='+$("#cboestadosocioF").val()
-              }else{
-                   url="@Url.Action("GetAllSocios", "Socio")";
-              }
-
-        $('#tabla').DataTable().clear().destroy();
-          tabladata = $("#tabla").DataTable({
-                     responsive: true,
-                     ordering: false,
-                     dom: "Bfrtip",
-                     buttons: [
-                         {
-                             extend: "excelHtml5",
-                             text: '<i class="fa fa-file-excel-o "></i>',
-                             filename: "Reporte de Socios",
-                              title: "Listado de Socios",
-                             exportOptions: {
-                                 //muestra las columnas
-                                 columns: [0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14]
-                             },
-                             className: "btn-exportar-excel",
-
-
-                         },
-                         {
-                             extend: "pdfHtml5",
-                             text: '<i class="fa fa-file-pdf-o"></i>',
-                             filename: "Reporte de Socios",
-                             title: "Listado de Socios",
-                             exportOptions: {
-                                 //muestra las columnas
-                                 columns: [0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14]
-                             },
-                             className: "btn-exportar-pdf"
-                         },
-                         {
-                             extend: "print",
-                             text: '<i class="fa fa-print"></i>',
-                             filename: "Reporte de Socios",
-                             title: "Listado de Socios",
-                             exportOptions: {
-                                 //muestra las columnas
-                                 columns: [0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14]
-                             },
-                             className: "btn-imprimir"
-
-                         }
-                     ],
-                      "ajax": {
-                          url: url,
-                          type: "GET",
-                          dataType: "json",
-                          beforeSend: agregarToast({ tipo: 'exito', titulo: 'Obteniendo Socios', descripcion: 'Por favor espere...', autoCierre: true })
-                      },
-                      "columns": [
-                              { "data": "nroSocio" },
-                              { "data": "apeyNom" },
-                              { "data": function(data){
-                                      return data.tipoDocumento.descA+'-'+data.documento
-                                }
-                              },
-                              { "data": "calle" , render: function (data) {
-                                         return data.descripcion;
-                                 }
-                              },
-                              { "data": "nro" },
-                              { "data": "piso" },
-                              { "data": "depto" },
-                              { "data": "telFijo" },
-                              { "data": "telCelular" },
-                             { "data": "profesion" , render: function(data){
-                                         var desc;
-                                         if (data==null)
-                                         {
-                                             desc='qqq'
-                                         }
-                                         else
-                                             desc=data.descripcion;
-                                     return desc;
-                                }
-                              },
-                              { "data": "categoriaSocio" , render: function (data) {
-                                         return data.descripcion;
+               jQuery.ajax({
+                       url: '@Url.Action("CreateSocio", "Socio")',
+                       type: "POST",
+                       data: JSON.stringify(Socio),
+                       contentType: 'application/json',
+                       success: function (data) {
+                           $(".modal-body").LoadingOverlay("hide");
+                           //  Socio nuevo
+                           if (Socio.id == 0) {
+                               if (data.resultado != 0) {
+                                   Socio.id = data.resultado;
+                                   tabladata.row.add(Socio).draw(false);
+                                   $("#FormModal").modal("hide");
+                                   agregarToast({ tipo: 'exito', titulo: 'Creando Socio', descripcion: 'Socio ingresado correctamente.', autoCierre: true });
                                }
-                              },
-                              { "data": "tipoSocio" , render: function (data) {
-                                         return data.descripcion;
+                               else {
+                                   agregarToast({ tipo: 'error', titulo: 'Creando Socio', descripcion: data.mensaje, autoCierre: true });
+                                   $("#mensajeError").text(data.mensaje);
+                                   $("#mensajeError").show();
                                }
-                              },
+                           }
+                           //  Socio Editar
+                           else {
 
-                              { "data": "estadoSocio" , render: function (data) {
-                                         return data.descripcion;
+                               if (data.resultado) {
+                                   tabladata.row(filaSeleccionada).data(Socio).draw(false);
+                                   filaSeleccionada = null;
+                                     agregarToast({ tipo: 'exito', titulo: 'Modificando Socio', descripcion: 'Socio modificado correctamente.', autoCierre: true });
+                                   $("#FormModal").modal("hide");
+                                   // mostrarAlert(data.mensaje)
+
+                               } else {
+                                       agregarToast({ tipo: 'error', titulo: 'Modificando Socio', descripcion: data.mensaje, autoCierre: true });
+                                       $("#mensajeError").text(data.mensaje);
+                                       $("#mensajeError").show();
+                                  }
                                 }
-                              },
-                              { "data": "vitalicio" , render: function (data) {
-                                         if (data){
-                                             return '<img src="../images/aceptar.png" alt="" width="17" height="17" >'//'<i class="fa fa-check"   style="Color: #E74C3C;" ></i>'
-                                         }
-                                         else
-                                             return '<img src="../images/cancelar.png" alt="" width="17" height="17" >'//'<i class="fa fa-times"   style="Color: #47e73c;" ></i>'
-
-                                }
-                              },
-                              {
-                                           "defaultContent":  '<button type="button" title="Enviar Mensaje"  class="rounded-circle btn btn-sm  btn-block btn-enviar"   > <img src="../images/whatsapp.png" alt="" width="20" height="20" ></button>'+
-                                                             // '<button id="compose"  class="btn-enviar" type="button">COMPOSE</button>'+
-
-                                                             '<button type="button" title="Editar Socio"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
-                                                             '<button type="button" title="Eliminar Socio" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
-                                 "orderable": false,
-                                 "searchable": false,
-                                 "width": "10%",
-                                 "heigth":"10%"
-                             }
-                      ],
-                      "order": {
-                            name: 'apeyNom',
-                            dir: 'asc'
-                        },
-                       "language": {
-                                 "url":"https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
-                        },
-
-                     "columnDefs": [
-                             { "width": "5%", "targets": 0 },
-                             { "width": "10%", "targets": 1 },
-                             { "width": "10%", "targets": 2 ,visible: false},
-                             { "width": "2%", "targets": 3 , visible: false},
-                             { "width": "2%", "targets": 4 ,visible: false},
-                             { "width": "2%", "targets": 5 ,visible: false},
-                             { "width": "5%", "targets": 6 ,visible: false},
-                             { "width": "10%", "targets": 7 ,visible: false},
-                             { "width": "5%", "targets": 8 ,visible: false},
-                             { "width": "5%", "targets": 9 ,visible: false},
-                             { "width": "5%", "targets": 10 },
-                             { "width": "10%", "targets": 11 },
-                             { "width": "10%", "targets": 12 },
-                             { "width": "5%", "targets": 13 },
-                             { "width": "40%", "targets": 14, className: 'dt-body-right' },
-                     ]
-                 })
-         }
-
-         //Filtrar Socios
-         function filtrarSocios(filtro){
-            llenarTabla(filtro);
-         }
-          //Filtrar Socios
-         function limpiarFiltros(){
-            $('#cbocalleF').val(0);
-            $('#cbocategoriasocioF').val(0);
-            $('#cboestadosocioF').val(0);
-            $('#cbotiposocioF').val(0);
-            llenarTabla(false)
-         }
-         //Editar
-         $("#tabla tbody").on("click", '.btn-editar', function () {
-                 filaSeleccionada = $(this).closest("tr");
-                 var data = tabladata.row(filaSeleccionada).data();
-                 abrirModal(data)
-             })
-
-         //Eliminar
-         $("#tabla tbody").on("click", '.btn-eliminar', function () {
-                var Socioseleccionado = $(this).closest("tr");
-                var data = tabladata.row(Socioseleccionado).data();
-                var Socio={
-                         id:data.id,
-                         apeyNom:data.apeyNom
-                }
-                swal({
-                     title: "Está Seguro?",
-                     text: "Desea eliminar el Socio?",
-                     type: "warning",
-                     showCancelButton: true,
-                     confirmButtonClass: "btn-primary",
-                     confirmButtonText: "Si",
-                     cancelButtonText: "No",
-                     closeOnConfirm: true
-                 },
-                    function () {
-                         jQuery.ajax({
-                             url: '@Url.Action("DeleteSocio", "Socio")',
-                             type: "POST",
-                             data: JSON.stringify( Socio),
-                             contentType: 'application/json',
-                             success: function (data) {
-                                 if (data.resultado) {
-                                     tabladata.row(Socioseleccionado).remove().draw();
-                                     // mostrarAlert(data.mensaje)
-                                     agregarToast({ tipo: 'exito', titulo: 'Eliminando Socio', descripcion: 'Socio eliminado correctamente.', autoCierre: true })
-                                 } else {
-                                     agregarToast({ tipo: 'error', titulo: 'Eliminando Socio', descripcion: 'No se pudo eliminar el Socio', autoCierre: true });
-                                    // swal("No se pudo eliminar", data.mensaje, "error");
-                                  //  mostrarAlert(data.mensaje)
-                                 }
-                             },
-                             error: function (error) {
-                                 console.log(error);
-                             }
-                         })
-                    })
-             });
-
-        //Tomar Foto
-        function tomarFoto(){
-            try{
-                        debugger;
-             const video = document.getElementById('video');
-            const canvas = document.getElementById('canvas');
-            const imagen = document.getElementById('imagen');
-            const botonCaptura = document.getElementById('botonCaptura');
-            // Solicitar acceso a la cámara
-            navigator.mediaDevices.getUserMedia({ video: true })
-            .then(stream => {
-                video.srcObject = stream;
-
-
-              })
-              .catch(error => {
-                console.error('Error al acceder a la cámara:', error);
-            });
-
-            // Capturar la foto al hacer clic en el botón
-            botonCaptura.addEventListener('click', () => {
-            // Dibujar la imagen en el canvas
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-            // Obtener la imagen como data URL
-            const dataURL = canvas.toDataURL('image/png');
-
-            // Mostrar la imagen en la etiqueta img
-            imagen.src = dataURL;
-        });
-
-            }
-            catch{
-                    alert("No se encontró la cámera");
-            }
-
-        }
-
-
-        //Seleccionar Imagen
-        function changePicture(){
-            $('#upload').click();
-        }
-        function readURL(input)
-        {
-            if (input.files && input.files[0])
-            {
-                var reader = new FileReader();
-                reader.onload = function (e)
-                {
-                    $('#imagen').attr('src',e.target.result);
-
-                };
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-
-
-         //Guardar
-         function Guardar() {
-
-             if (!$("#formNivel").valid()) {
-                 return;
-             }
-
-             var Socio = {
-                     id: $("#txtid").val(),
-                     apeyNom: $("#txtapeynom").val(),
-                 }
-
-             jQuery.ajax({
-                     url: '@Url.Action("CreateSocio", "Socio")',
-                     type: "POST",
-                     data: JSON.stringify(Socio),
-                     contentType: 'application/json',
-                     success: function (data) {
-                         $(".modal-body").LoadingOverlay("hide");
-                         //  Socio nuevo
-                         if (Socio.id == 0) {
-                             if (data.resultado != 0) {
-                                 Socio.id = data.resultado;
-                                 tabladata.row.add(Socio).draw(false);
-                                 $("#FormModal").modal("hide");
-                                 agregarToast({ tipo: 'exito', titulo: 'Creando Socio', descripcion: 'Socio ingresado correctamente.', autoCierre: true });
-                             }
-                             else {
-                                 agregarToast({ tipo: 'error', titulo: 'Creando Socio', descripcion: data.mensaje, autoCierre: true });
-                                 $("#mensajeError").text(data.mensaje);
-                                 $("#mensajeError").show();
-                             }
-                         }
-                         //  Socio Editar
-                         else {
-
-                             if (data.resultado) {
-                                 tabladata.row(filaSeleccionada).data(Socio).draw(false);
-                                 filaSeleccionada = null;
-                                   agregarToast({ tipo: 'exito', titulo: 'Modificando Socio', descripcion: 'Socio modificado correctamente.', autoCierre: true });
-                                 $("#FormModal").modal("hide");
-                                 // mostrarAlert(data.mensaje)
-
-                             } else {
-                                     agregarToast({ tipo: 'error', titulo: 'Modificando Socio', descripcion: data.mensaje, autoCierre: true });
-                                     $("#mensajeError").text(data.mensaje);
-                                     $("#mensajeError").show();
-                                }
-                              }
-                         },
-                         beforeSend: function () {
-                              $(".modal-body").LoadingOverlay("show", {
-                                  imageResizeFactor: 2,
-                                  text: "Cargando...",
-                                  size: 14
-                              });
-                         },
-                         error: function (error) {
-                             $(".modal-body").LoadingOverlay("hide");
-                             $("#mensajeError").text("Error Ajax");
-                             $("#mensajeError").show();
-                         }
-                     }
-                 )
-             }
+                           },
+                           beforeSend: function () {
+                                $(".modal-body").LoadingOverlay("show", {
+                                    imageResizeFactor: 2,
+                                    text: "Cargando...",
+                                    size: 14
+                                });
+                           },
+                           error: function (error) {
+                               $(".modal-body").LoadingOverlay("hide");
+                               $("#mensajeError").text("Error Ajax");
+                               $("#mensajeError").show();
+                           }
+                       }
+                   )
+               }
 
     </script>
     }
