@@ -480,8 +480,8 @@
                                                                 <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
                                                             </div>
                                                         </div>
-                                                        <div id="editor-one" class="editor-wrapper contenedor-scroll "></div>
-                                                        <textarea name="descr" id="descr" style="display:none;"></textarea>
+                                                         <div id="editor-one" class="editor-wrapper contenedor-scroll "></div> 
+                                                        @*<textarea name="descr" id="descr"  style="display:none;" ></textarea>*@
                                                         @*  <br />
                                                         <div class="ln_solid"></div> *@
                                                     </div>
@@ -831,7 +831,7 @@
 
                    $("#txtobservaciones").val('');
                if (json != null) {
-
+                   $("#txtid").val(json.id);
 
                    $("#txtapeynom").val(json.apeyNom);
 
@@ -1279,7 +1279,10 @@
                if (!$("#formNivel").valid()) {
                    return;
                }
-               debugger;
+
+             
+           
+
                var Socio = {
                        id: $("#txtid").val(),
                        apeyNom: $("#txtapeynom").val(),
@@ -1287,7 +1290,6 @@
                        tipoDocumento:{
                             id:$("#cbotipodoc").val()
                        },
-                      // fnac:$("#dtfechanac").val(),
                        profesion:{
                             id:$("#cboprofesion").val()
                        },
@@ -1301,7 +1303,7 @@
                        tipoSocio:{
                             id:$("#cbotiposocio").val()
                        },
-                       estadoSocio:{
+                         estadoSocio:{
                             id:$("#cboestadosocio").val()
                        },
                        categoriaSocio:{
@@ -1314,18 +1316,22 @@
                        telFijo: $("#txttelfijo").val(),
                        telCelular: $("#txttelcelular").val(),
                        email: $("#txtemail").val(),
-                       observaciones:$("#descr").val(),
-                       //vitalicio:$("#swVitalicio").val(),
+                       observaciones:$("#editor-one").text(),
+                                              //vitalicio:$("#swVitalicio").val(),
                        // pagaAca:$("#pagaAca").val(),
 
                         // sexo:$("#swSexo").val(),
-                        foto:""
-                       // fNac: $("#dtfechanac").val(),
-                       // fIng: $("#dtfechaingreso").val(),
-                       // fEgre: $("#dtfechaegreso").val(),
-                     
+                       // foto:""
+                        //fNac: $("#dtfechanac").val(),
+                        // fIngreso: $("#dtfechaingreso").val(),
+                        // fEgreso: $("#dtfechaegreso").val(),
+
+
+
                    };
+                   console.log('*');
                    console.log(Socio);
+                   console.log('*');
                jQuery.ajax({
                        url: '@Url.Action("CreateSocio", "Socio")',
                        type: "POST",
