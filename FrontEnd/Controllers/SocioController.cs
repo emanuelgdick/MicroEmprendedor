@@ -60,18 +60,19 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
-        public async Task<JsonResult> CreateSocio([FromBody] Socio socio)
+        public async Task<JsonResult> CreateSocio([FromBody] Socio Socio)
         {
-            object resultado;
+            object resultado = null;
             string mensaje = String.Empty;
+            if (Socio != null) { 
             try
             {
-                if (socio.Id == 0)
+                if (Socio.Id == 0)
                 {
-                    if (socio.ApeyNom != "")
+                    if (Socio.ApeyNom != "")
                     {
                         //socio = await _apiService.AddSocio(socio, HttpContext.Session.GetString("APIToken"));
-                        resultado = socio.Id;
+                        resultado = Socio.Id;
                         mensaje = "Socio ingresado correctamente";
                     }
                     else
@@ -82,9 +83,9 @@ namespace FrontEnd.Controllers
                 }
                 else
                 {
-                    if (socio.ApeyNom != "")
+                    if (Socio.ApeyNom != "")
                     {
-                        await _apiService.UpdateSocio(socio.Id, socio, HttpContext.Session.GetString("APIToken"));
+                        await _apiService.UpdateSocio(Socio.Id, Socio, HttpContext.Session.GetString("APIToken"));
 
                         resultado = true;
                         mensaje = "Socio modificado correctamente";
@@ -100,6 +101,7 @@ namespace FrontEnd.Controllers
             {
                 resultado = false;
                 mensaje += ex.Message;
+            }
             }
             return Json(new { resultado = resultado, mensaje = mensaje });
         }

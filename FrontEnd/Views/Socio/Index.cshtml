@@ -1274,12 +1274,13 @@
 
            //Guardar
            function Guardar() {
+             
 
                if (!$("#formNivel").valid()) {
                    return;
                }
-
-               var socio = {
+               debugger;
+               var Socio = {
                        id: $("#txtid").val(),
                        apeyNom: $("#txtapeynom").val(),
                        documento:$("#txtdni").val(),
@@ -1319,24 +1320,16 @@
 
                         // sexo:$("#swSexo").val(),
                         foto:""
-
-
-                     
-                       
-                    
-                    
                        // fNac: $("#dtfechanac").val(),
                        // fIng: $("#dtfechaingreso").val(),
                        // fEgre: $("#dtfechaegreso").val(),
-                       
-
-                      
+                     
                    };
-                   console.log(socio);
+                   console.log(Socio);
                jQuery.ajax({
                        url: '@Url.Action("CreateSocio", "Socio")',
                        type: "POST",
-                       data: JSON.stringify(socio),
+                       data: JSON.stringify(Socio),
                        contentType: 'application/json',
                        success: function (data) {
                            $(".modal-body").LoadingOverlay("hide");
