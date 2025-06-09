@@ -7,17 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\DTOs\**" />
+    <Content Remove="Models\DTOs\**" />
+    <EmbeddedResource Remove="Models\DTOs\**" />
+    <None Remove="Models\DTOs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Controllers\AccesoController.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Autor\Create.cshtml" />
-    <Content Remove="Views\Autor\Details.cshtml" />
-    <Content Remove="Views\Autor\ErrorPage.cshtml" />
-    <Content Remove="Views\Calle\Create.cshtml" />
-    <Content Remove="Views\Calle\Delete.cshtml" />
-    <Content Remove="Views\Calle\Details.cshtml" />
-    <Content Remove="Views\Calle\ErrorPage.cshtml" />
     <Content Remove="wwwroot\css\animate\animate.min.css" />
     <Content Remove="wwwroot\css\custom.css" />
     <Content Remove="wwwroot\css\custom.min.css" />
@@ -251,7 +251,6 @@
 
   <ItemGroup>
     <Folder Include="Content\bootstrap-progressbar\css\" />
-    <Folder Include="Models\DTOs\" />
     <Folder Include="wwwroot\js\jquery\boostrap-progressbar\" />
     <Folder Include="wwwroot\js\NewFolder\" />
   </ItemGroup>

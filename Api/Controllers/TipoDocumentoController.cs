@@ -9,10 +9,10 @@ namespace Api.Controllers
     [ApiController]
     public class TipoDocumentoController : ControllerBase
     {
-        private BibliotecaContext _db;
+        private ConsultorioContext _db;
         private readonly ILogger<TipoDocumentoController> _logger;
 
-        public TipoDocumentoController(BibliotecaContext db, ILogger<TipoDocumentoController> logger)
+        public TipoDocumentoController(ConsultorioContext db, ILogger<TipoDocumentoController> logger)
         {
             _db = db;
             _logger = logger;

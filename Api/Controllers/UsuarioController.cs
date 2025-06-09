@@ -12,10 +12,10 @@ namespace Api.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        private BibliotecaContext _db;
+        private ConsultorioContext _db;
         private string _SecretKey;
 
-        public UsuarioController(BibliotecaContext db, IConfiguration configuration)
+        public UsuarioController(ConsultorioContext db, IConfiguration configuration)
         {
             _db = db;
             _SecretKey = configuration.GetValue<string>("ApiSettings:Secret");
@@ -56,8 +56,6 @@ namespace Api.Controllers
 
             return loginResponse;
         }
-
-
-       
+     
     }
 }

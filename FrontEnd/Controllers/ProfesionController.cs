@@ -1,5 +1,4 @@
-﻿using Frontend.Models;
-using FrontEnd.Models;
+﻿using FrontEnd.Models;
 using FrontEnd.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -56,7 +55,7 @@ namespace FrontEnd.Controllers
                     {
                         profesion = await _apiService.AddProfesion(profesion, HttpContext.Session.GetString("APIToken"));
                         resultado = profesion.Id;
-                        mensaje = "Profesion ingresada correctamente";
+                        mensaje = "Profesión ingresada correctamente";
                     }
                     else
                     {
@@ -71,7 +70,7 @@ namespace FrontEnd.Controllers
                         await _apiService.UpdateProfesion(profesion.Id, profesion, HttpContext.Session.GetString("APIToken"));
 
                         resultado = true;
-                        mensaje = "Profesion Modificado correctamente";
+                        mensaje = "Profesión Modificado correctamente";
                     }
                     else
                     {
@@ -116,7 +115,7 @@ namespace FrontEnd.Controllers
             {
                 await _apiService.DeleteProfesion(profesion.Id, HttpContext.Session.GetString("APIToken"));
                 resultado = true;
-                mensaje = "Profesion eliminada correctante";
+                mensaje = "Profesión eliminada correctamente";
             }
             catch (Exception ex)
             {

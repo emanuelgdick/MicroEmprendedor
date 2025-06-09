@@ -9,10 +9,10 @@ namespace Api.Controllers
     [ApiController]
     public class LocalidadController : ControllerBase
     {
-        private BibliotecaContext _db;
+        private ConsultorioContext _db;
         private readonly ILogger<LocalidadController> _logger;
 
-        public LocalidadController(BibliotecaContext db, ILogger<LocalidadController> logger)
+        public LocalidadController(ConsultorioContext db, ILogger<LocalidadController> logger)
         {
             _db = db;
             _logger = logger;

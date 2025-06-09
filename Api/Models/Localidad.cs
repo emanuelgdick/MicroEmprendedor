@@ -9,8 +9,5 @@ namespace Api.Models
         public int Id { get; set; }
         [Required]
         public string Descripcion { get; set; }
-        
-        [ForeignKey("IdProvincia")]
-        public Provincia provincia { get; set; }
     }
 }

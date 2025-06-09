@@ -9,10 +9,10 @@ namespace Api.Controllers
     [ApiController]
     public class ProfesionController : ControllerBase
     {
-        private BibliotecaContext _db;
+        private ConsultorioContext _db;
         private readonly ILogger<ProfesionController> _logger;
 
-        public ProfesionController(BibliotecaContext db, ILogger<ProfesionController> logger)
+        public ProfesionController(ConsultorioContext db, ILogger<ProfesionController> logger)
         {
             _db = db;
             _logger = logger;

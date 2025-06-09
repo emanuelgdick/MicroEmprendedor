@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "Api.Controllers.AnexoController",
-    "Method": "GetAnexos",
-    "RelativePath": "api/Anexo",
+    "ContainingType": "Api.Controllers.DiagnosticoController",
+    "Method": "GetDiagnosticoes",
+    "RelativePath": "api/Diagnostico",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -10,22 +10,22 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Api.Controllers.AnexoController",
-    "Method": "AddAnexo",
-    "RelativePath": "api/Anexo/AddAnexo",
+    "ContainingType": "Api.Controllers.DiagnosticoController",
+    "Method": "AddDiagnostico",
+    "RelativePath": "api/Diagnostico/AddDiagnostico",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "anexo",
-        "Type": "Api.Models.Anexo",
+        "Name": "diagnostico",
+        "Type": "Api.Models.Diagnostico",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.Anexo",
+        "Type": "Api.Models.Diagnostico",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -36,9 +36,9 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.AnexoController",
-    "Method": "DeleteAnexo",
-    "RelativePath": "api/Anexo/DeleteAnexo",
+    "ContainingType": "Api.Controllers.DiagnosticoController",
+    "Method": "DeleteDiagnostico",
+    "RelativePath": "api/Diagnostico/DeleteDiagnostico",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -51,7 +51,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.Anexo",
+        "Type": "Api.Models.Diagnostico",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -62,9 +62,9 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.AnexoController",
-    "Method": "GetAnexoById",
-    "RelativePath": "api/Anexo/GetAnexoById",
+    "ContainingType": "Api.Controllers.DiagnosticoController",
+    "Method": "GetDiagnosticoById",
+    "RelativePath": "api/Diagnostico/GetDiagnosticoById",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -77,7 +77,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.Anexo",
+        "Type": "Api.Models.Diagnostico",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -88,9 +88,9 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.AnexoController",
-    "Method": "UpdateAnexo",
-    "RelativePath": "api/Anexo/UpdateAnexo",
+    "ContainingType": "Api.Controllers.DiagnosticoController",
+    "Method": "UpdateDiagnostico",
+    "RelativePath": "api/Diagnostico/UpdateDiagnostico",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -101,1442 +101,14 @@
         "IsRequired": false
       },
       {
-        "Name": "anexo",
-        "Type": "Api.Models.Anexo",
+        "Name": "diagnostico",
+        "Type": "Api.Models.Diagnostico",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.Anexo",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.AutorController",
-    "Method": "GetAutores",
-    "RelativePath": "api/Autor",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.AutorController",
-    "Method": "AddAutor",
-    "RelativePath": "api/Autor/AddAutor",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "autor",
-        "Type": "Api.Models.Autor",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Autor",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.AutorController",
-    "Method": "DeleteAutor",
-    "RelativePath": "api/Autor/DeleteAutor",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Autor",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.AutorController",
-    "Method": "GetAutorById",
-    "RelativePath": "api/Autor/GetAutorById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Autor",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.AutorController",
-    "Method": "UpdateAutor",
-    "RelativePath": "api/Autor/UpdateAutor",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "autor",
-        "Type": "Api.Models.Autor",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Autor",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.CalleController",
-    "Method": "GetCalles",
-    "RelativePath": "api/Calle",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.CalleController",
-    "Method": "AddCalle",
-    "RelativePath": "api/Calle/AddCalle",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "calle",
-        "Type": "Api.Models.Calle",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Calle",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.CalleController",
-    "Method": "DeleteCalle",
-    "RelativePath": "api/Calle/DeleteCalle",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Calle",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.CalleController",
-    "Method": "GetCalleById",
-    "RelativePath": "api/Calle/GetCalleById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Calle",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.CalleController",
-    "Method": "UpdateCalle",
-    "RelativePath": "api/Calle/UpdateCalle",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "calle",
-        "Type": "Api.Models.Calle",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Calle",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.CategoriaSocioController",
-    "Method": "GetCategoriaSocios",
-    "RelativePath": "api/CategoriaSocio",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.CategoriaSocioController",
-    "Method": "AddCategoriaSocio",
-    "RelativePath": "api/CategoriaSocio/AddCategoriaSocio",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "categoriaSocio",
-        "Type": "Api.Models.CategoriaSocio",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.CategoriaSocio",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.CategoriaSocioController",
-    "Method": "DeleteCategoriaSocio",
-    "RelativePath": "api/CategoriaSocio/DeleteCategoriaSocio",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.CategoriaSocio",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.CategoriaSocioController",
-    "Method": "GetCategoriaSocioById",
-    "RelativePath": "api/CategoriaSocio/GetCategoriaSocioById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.CategoriaSocio",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.CategoriaSocioController",
-    "Method": "UpdateCategoriaSocio",
-    "RelativePath": "api/CategoriaSocio/UpdateCategoriaSocio",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "categoriaSocio",
-        "Type": "Api.Models.CategoriaSocio",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.CategoriaSocio",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.CobradorController",
-    "Method": "GetCobradores",
-    "RelativePath": "api/Cobrador",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.CobradorController",
-    "Method": "AddCobrador",
-    "RelativePath": "api/Cobrador/AddCobrador",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Cobrador",
-        "Type": "Api.Models.Cobrador",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Cobrador",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.CobradorController",
-    "Method": "DeleteCobrador",
-    "RelativePath": "api/Cobrador/DeleteCobrador",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Cobrador",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.CobradorController",
-    "Method": "GetCobradorById",
-    "RelativePath": "api/Cobrador/GetCobradorById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Cobrador",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.CobradorController",
-    "Method": "UpdateCobrador",
-    "RelativePath": "api/Cobrador/UpdateCobrador",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "cobrador",
-        "Type": "Api.Models.Cobrador",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Cobrador",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.ColeccionController",
-    "Method": "GetColeccion",
-    "RelativePath": "api/Coleccion",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.ColeccionController",
-    "Method": "AddColeccion",
-    "RelativePath": "api/Coleccion/AddColeccion",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "coleccion",
-        "Type": "Api.Models.Coleccion",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Coleccion",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.ColeccionController",
-    "Method": "DeleteColeccion",
-    "RelativePath": "api/Coleccion/DeleteColeccion",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Coleccion",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.ColeccionController",
-    "Method": "GetColeccionById",
-    "RelativePath": "api/Coleccion/GetColeccionById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Coleccion",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.ColeccionController",
-    "Method": "UpdateColeccion",
-    "RelativePath": "api/Coleccion/UpdateColeccion",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "coleccion",
-        "Type": "Api.Models.Coleccion",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Coleccion",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.DirectorController",
-    "Method": "GetDirector",
-    "RelativePath": "api/Director",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.DirectorController",
-    "Method": "AddDirector",
-    "RelativePath": "api/Director/AddDirector",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "director",
-        "Type": "Api.Models.Director",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Director",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.DirectorController",
-    "Method": "DeleteDirector",
-    "RelativePath": "api/Director/DeleteDirector",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Director",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.DirectorController",
-    "Method": "GetDirectorById",
-    "RelativePath": "api/Director/GetDirectorById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Director",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.DirectorController",
-    "Method": "UpdateDirector",
-    "RelativePath": "api/Director/UpdateDirector",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "director",
-        "Type": "Api.Models.Director",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Director",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.EditorController",
-    "Method": "GetEditores",
-    "RelativePath": "api/Editor",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.EditorController",
-    "Method": "AddEditor",
-    "RelativePath": "api/Editor/AddEditor",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "editor",
-        "Type": "Api.Models.Editor",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Editor",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.EditorController",
-    "Method": "DeleteEditor",
-    "RelativePath": "api/Editor/DeleteEditor",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Editor",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.EditorController",
-    "Method": "GetEditorById",
-    "RelativePath": "api/Editor/GetEditorById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Editor",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.EditorController",
-    "Method": "UpdateEditor",
-    "RelativePath": "api/Editor/UpdateEditor",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "editor",
-        "Type": "Api.Models.Editor",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Editor",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.EditorialController",
-    "Method": "GetEditoriales",
-    "RelativePath": "api/Editorial",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.EditorialController",
-    "Method": "AddEditorial",
-    "RelativePath": "api/Editorial/AddEditorial",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "editorial",
-        "Type": "Api.Models.Editorial",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Editorial",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.EditorialController",
-    "Method": "DeleteEditorial",
-    "RelativePath": "api/Editorial/DeleteEditorial",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Editorial",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.EditorialController",
-    "Method": "GetEditorialById",
-    "RelativePath": "api/Editorial/GetEditorialById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Editorial",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.EditorialController",
-    "Method": "UpdateEditorial",
-    "RelativePath": "api/Editorial/UpdateEditorial",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "editorial",
-        "Type": "Api.Models.Editorial",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Editorial",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.EncuadernacionController",
-    "Method": "GetEncuadernacion",
-    "RelativePath": "api/Encuadernacion",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.EncuadernacionController",
-    "Method": "AddEncuadernacion",
-    "RelativePath": "api/Encuadernacion/AddEncuadernacion",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "encuadernacion",
-        "Type": "Api.Models.Encuadernacion",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Encuadernacion",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.EncuadernacionController",
-    "Method": "DeleteEncuadernacion",
-    "RelativePath": "api/Encuadernacion/DeleteEncuadernacion",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Encuadernacion",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.EncuadernacionController",
-    "Method": "GetEncuadernacionById",
-    "RelativePath": "api/Encuadernacion/GetEncuadernacionById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Encuadernacion",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.EncuadernacionController",
-    "Method": "UpdateEncuadernacion",
-    "RelativePath": "api/Encuadernacion/UpdateEncuadernacion",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "encuadernacion",
-        "Type": "Api.Models.Encuadernacion",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Encuadernacion",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.EstadoSocioController",
-    "Method": "GetEstadoSocios",
-    "RelativePath": "api/EstadoSocio",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.EstadoSocioController",
-    "Method": "AddEstadoSocio",
-    "RelativePath": "api/EstadoSocio/AddEstadoSocio",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "estadoSocio",
-        "Type": "Api.Models.EstadoSocio",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.EstadoSocio",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.EstadoSocioController",
-    "Method": "DeleteEstadoSocio",
-    "RelativePath": "api/EstadoSocio/DeleteEstadoSocio",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.EstadoSocio",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.EstadoSocioController",
-    "Method": "GetEstadoSocioById",
-    "RelativePath": "api/EstadoSocio/GetEstadoSocioById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.EstadoSocio",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.EstadoSocioController",
-    "Method": "UpdateEstadoSocio",
-    "RelativePath": "api/EstadoSocio/UpdateEstadoSocio",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "estadoSocio",
-        "Type": "Api.Models.EstadoSocio",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.EstadoSocio",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.GeneroController",
-    "Method": "GetGeneros",
-    "RelativePath": "api/Genero",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.GeneroController",
-    "Method": "AddGenero",
-    "RelativePath": "api/Genero/AddGenero",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "genero",
-        "Type": "Api.Models.Genero",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Genero",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.GeneroController",
-    "Method": "DeleteGenero",
-    "RelativePath": "api/Genero/DeleteGenero",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Genero",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.GeneroController",
-    "Method": "GetGeneroById",
-    "RelativePath": "api/Genero/GetGeneroById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Genero",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.GeneroController",
-    "Method": "UpdateGenero",
-    "RelativePath": "api/Genero/UpdateGenero",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "genero",
-        "Type": "Api.Models.Genero",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Genero",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.GuionistaController",
-    "Method": "GetGuionistas",
-    "RelativePath": "api/Guionista",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.GuionistaController",
-    "Method": "AddGuionista",
-    "RelativePath": "api/Guionista/AddGuionista",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "guionista",
-        "Type": "Api.Models.Guionista",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Guionista",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.GuionistaController",
-    "Method": "DeleteGuionista",
-    "RelativePath": "api/Guionista/DeleteGuionista",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Guionista",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.GuionistaController",
-    "Method": "GetGuionistaById",
-    "RelativePath": "api/Guionista/GetGuionistaById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Guionista",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.GuionistaController",
-    "Method": "UpdateGuionista",
-    "RelativePath": "api/Guionista/UpdateGuionista",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "guionista",
-        "Type": "Api.Models.Guionista",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Guionista",
+        "Type": "Api.Models.Diagnostico",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1555,363 +127,6 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.IdiomaController",
-    "Method": "GetIdiomas",
-    "RelativePath": "api/Idioma",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.IdiomaController",
-    "Method": "AddIdioma",
-    "RelativePath": "api/Idioma/AddIdioma",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "idioma",
-        "Type": "Api.Models.Idioma",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Idioma",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.IdiomaController",
-    "Method": "DeleteIdioma",
-    "RelativePath": "api/Idioma/DeleteIdioma",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Idioma",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.IdiomaController",
-    "Method": "GetIdiomaById",
-    "RelativePath": "api/Idioma/GetIdiomaById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Idioma",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.IdiomaController",
-    "Method": "UpdateIdioma",
-    "RelativePath": "api/Idioma/UpdateIdioma",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "idioma",
-        "Type": "Api.Models.Idioma",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Idioma",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.IlustradorController",
-    "Method": "GetIlustradores",
-    "RelativePath": "api/Ilustrador",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.IlustradorController",
-    "Method": "AddIlustrador",
-    "RelativePath": "api/Ilustrador/AddIlustrador",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "ilustrador",
-        "Type": "Api.Models.Ilustrador",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Ilustrador",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.IlustradorController",
-    "Method": "DeleteIlustrador",
-    "RelativePath": "api/Ilustrador/DeleteIlustrador",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Ilustrador",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.IlustradorController",
-    "Method": "GetIlustradorById",
-    "RelativePath": "api/Ilustrador/GetIlustradorById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Ilustrador",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.IlustradorController",
-    "Method": "UpdateIlustrador",
-    "RelativePath": "api/Ilustrador/UpdateIlustrador",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "ilustrador",
-        "Type": "Api.Models.Ilustrador",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Ilustrador",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.InterpreteController",
-    "Method": "GetInterpretes",
-    "RelativePath": "api/Interprete",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.InterpreteController",
-    "Method": "AddInterprete",
-    "RelativePath": "api/Interprete/AddInterprete",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "interprete",
-        "Type": "Api.Models.Interprete",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Interprete",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.InterpreteController",
-    "Method": "DeleteInterprete",
-    "RelativePath": "api/Interprete/DeleteInterprete",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Interprete",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.InterpreteController",
-    "Method": "GetInterpreteById",
-    "RelativePath": "api/Interprete/GetInterpreteById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Interprete",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.InterpreteController",
-    "Method": "UpdateInterprete",
-    "RelativePath": "api/Interprete/UpdateInterprete",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "interprete",
-        "Type": "Api.Models.Interprete",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Interprete",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
   },
   {
     "ContainingType": "Api.Controllers.LocalidadController",
@@ -2033,9 +248,9 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.LugarController",
-    "Method": "GetLugares",
-    "RelativePath": "api/Lugar",
+    "ContainingType": "Api.Controllers.MedicoController",
+    "Method": "GetMedicoes",
+    "RelativePath": "api/Medico",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -2043,22 +258,22 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Api.Controllers.LugarController",
-    "Method": "AddLugar",
-    "RelativePath": "api/Lugar/AddLugar",
+    "ContainingType": "Api.Controllers.MedicoController",
+    "Method": "AddMedico",
+    "RelativePath": "api/Medico/AddMedico",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "lugar",
-        "Type": "Api.Models.Lugar",
+        "Name": "Medico",
+        "Type": "Api.Models.Medico",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.Lugar",
+        "Type": "Api.Models.Medico",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -2069,9 +284,9 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.LugarController",
-    "Method": "DeleteLugar",
-    "RelativePath": "api/Lugar/DeleteLugar",
+    "ContainingType": "Api.Controllers.MedicoController",
+    "Method": "DeleteMedico",
+    "RelativePath": "api/Medico/DeleteMedico",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -2084,7 +299,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.Lugar",
+        "Type": "Api.Models.Medico",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -2095,9 +310,9 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.LugarController",
-    "Method": "GetLugarById",
-    "RelativePath": "api/Lugar/GetLugarById",
+    "ContainingType": "Api.Controllers.MedicoController",
+    "Method": "GetMedicoById",
+    "RelativePath": "api/Medico/GetMedicoById",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -2110,7 +325,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.Lugar",
+        "Type": "Api.Models.Medico",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -2121,9 +336,9 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.LugarController",
-    "Method": "UpdateLugar",
-    "RelativePath": "api/Lugar/UpdateLugar",
+    "ContainingType": "Api.Controllers.MedicoController",
+    "Method": "UpdateMedico",
+    "RelativePath": "api/Medico/UpdateMedico",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -2134,14 +349,14 @@
         "IsRequired": false
       },
       {
-        "Name": "lugar",
-        "Type": "Api.Models.Lugar",
+        "Name": "medico",
+        "Type": "Api.Models.Medico",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.Lugar",
+        "Type": "Api.Models.Medico",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -2152,9 +367,9 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.MateriaController",
-    "Method": "GetMaterias",
-    "RelativePath": "api/Materia",
+    "ContainingType": "Api.Controllers.MutualController",
+    "Method": "GetMutuales",
+    "RelativePath": "api/Mutual",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -2162,22 +377,22 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Api.Controllers.MateriaController",
-    "Method": "AddMateria",
-    "RelativePath": "api/Materia/AddMateria",
+    "ContainingType": "Api.Controllers.MutualController",
+    "Method": "AddMutual",
+    "RelativePath": "api/Mutual/AddMutual",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "materia",
-        "Type": "Api.Models.Materia",
+        "Name": "mutual",
+        "Type": "Api.Models.Mutual",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.Materia",
+        "Type": "Api.Models.Mutual",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -2188,9 +403,9 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.MateriaController",
-    "Method": "DeleteMateria",
-    "RelativePath": "api/Materia/DeleteMateria",
+    "ContainingType": "Api.Controllers.MutualController",
+    "Method": "DeleteMutual",
+    "RelativePath": "api/Mutual/DeleteMutual",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -2203,7 +418,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.Materia",
+        "Type": "Api.Models.Mutual",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -2214,9 +429,9 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.MateriaController",
-    "Method": "GetMateriaById",
-    "RelativePath": "api/Materia/GetMateriaById",
+    "ContainingType": "Api.Controllers.MutualController",
+    "Method": "GetMutualById",
+    "RelativePath": "api/Mutual/GetMutualById",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -2229,7 +444,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.Materia",
+        "Type": "Api.Models.Mutual",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -2240,9 +455,9 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.MateriaController",
-    "Method": "UpdateMateria",
-    "RelativePath": "api/Materia/UpdateMateria",
+    "ContainingType": "Api.Controllers.MutualController",
+    "Method": "UpdateMutual",
+    "RelativePath": "api/Mutual/UpdateMutual",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -2253,14 +468,14 @@
         "IsRequired": false
       },
       {
-        "Name": "materia",
-        "Type": "Api.Models.Materia",
+        "Name": "mutual",
+        "Type": "Api.Models.Mutual",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.Materia",
+        "Type": "Api.Models.Mutual",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -2271,9 +486,9 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.MaterialMovimientoController",
-    "Method": "GetMaterialMovimientos",
-    "RelativePath": "api/MaterialMovimiento",
+    "ContainingType": "Api.Controllers.PacienteController",
+    "Method": "GetPacientes",
+    "RelativePath": "api/Paciente",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -2281,22 +496,22 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Api.Controllers.MaterialMovimientoController",
-    "Method": "AddMaterialMovimiento",
-    "RelativePath": "api/MaterialMovimiento/AddMaterialMovimiento",
+    "ContainingType": "Api.Controllers.PacienteController",
+    "Method": "AddPaciente",
+    "RelativePath": "api/Paciente/AddPaciente",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "materialMovimiento",
-        "Type": "Api.Models.MaterialMovimiento",
+        "Name": "Paciente",
+        "Type": "Api.Models.Paciente",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.MaterialMovimiento",
+        "Type": "Api.Models.Paciente",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -2307,9 +522,9 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.MaterialMovimientoController",
-    "Method": "DeleteMaterialMovimiento",
-    "RelativePath": "api/MaterialMovimiento/DeleteMaterialMovimiento",
+    "ContainingType": "Api.Controllers.PacienteController",
+    "Method": "DeletePaciente",
+    "RelativePath": "api/Paciente/DeletePaciente",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -2322,7 +537,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.MaterialMovimiento",
+        "Type": "Api.Models.Paciente",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -2333,9 +548,9 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.MaterialMovimientoController",
-    "Method": "GetMaterialMovimientoById",
-    "RelativePath": "api/MaterialMovimiento/GetMaterialMovimientoById",
+    "ContainingType": "Api.Controllers.PacienteController",
+    "Method": "GetPacienteById",
+    "RelativePath": "api/Paciente/GetPacienteById",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -2348,7 +563,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.MaterialMovimiento",
+        "Type": "Api.Models.Paciente",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -2359,154 +574,25 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.MaterialMovimientoController",
-    "Method": "GetMaterialMovimientoBySocio",
-    "RelativePath": "api/MaterialMovimiento/GetMaterialMovimientoBySocio",
+    "ContainingType": "Api.Controllers.PacienteController",
+    "Method": "GetPacientesFiltrados",
+    "RelativePath": "api/Paciente/GetPacientesFiltrados",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "socio",
+        "Name": "localidad",
         "Type": "System.Int32",
         "IsRequired": false
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[Api.Models.MaterialMovimiento, Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.MaterialMovimientoController",
-    "Method": "UpdateMaterialMovimiento",
-    "RelativePath": "api/MaterialMovimiento/UpdateMaterialMovimiento",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "materialMovimiento",
-        "Type": "Api.Models.MaterialMovimiento",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.MaterialMovimiento",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.PaisController",
-    "Method": "GetPais",
-    "RelativePath": "api/Pais",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Api.Controllers.PaisController",
-    "Method": "AddPais",
-    "RelativePath": "api/Pais/AddPais",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "pais",
-        "Type": "Api.Models.Pais",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Pais",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.PaisController",
-    "Method": "DeletePais",
-    "RelativePath": "api/Pais/DeletePais",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Pais",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.PaisController",
-    "Method": "GetPaisById",
-    "RelativePath": "api/Pais/GetPaisById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Pais",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.PaisController",
-    "Method": "UpdatePais",
-    "RelativePath": "api/Pais/UpdatePais",
+    "ContainingType": "Api.Controllers.PacienteController",
+    "Method": "UpdatePaciente",
+    "RelativePath": "api/Paciente/UpdatePaciente",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -2517,252 +603,14 @@
         "IsRequired": false
       },
       {
-        "Name": "pais",
-        "Type": "Api.Models.Pais",
+        "Name": "paciente",
+        "Type": "Api.Models.Paciente",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.Pais",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.ProcedenciaController",
-    "Method": "GetProcedencias",
-    "RelativePath": "api/Procedencia",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.ProcedenciaController",
-    "Method": "AddProcedencia",
-    "RelativePath": "api/Procedencia/AddProcedencia",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "procedencia",
-        "Type": "Api.Models.Procedencia",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Procedencia",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.ProcedenciaController",
-    "Method": "DeleteProcedencia",
-    "RelativePath": "api/Procedencia/DeleteProcedencia",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Procedencia",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.ProcedenciaController",
-    "Method": "GetProcedenciaById",
-    "RelativePath": "api/Procedencia/GetProcedenciaById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Procedencia",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.ProcedenciaController",
-    "Method": "UpdateProcedencia",
-    "RelativePath": "api/Procedencia/UpdateProcedencia",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "procedencia",
-        "Type": "Api.Models.Procedencia",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Procedencia",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.ProductorController",
-    "Method": "GetProductores",
-    "RelativePath": "api/Productor",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.ProductorController",
-    "Method": "AddProductor",
-    "RelativePath": "api/Productor/AddProductor",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "productor",
-        "Type": "Api.Models.Productor",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Productor",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.ProductorController",
-    "Method": "DeleteProductor",
-    "RelativePath": "api/Productor/DeleteProductor",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Productor",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.ProductorController",
-    "Method": "GetProductorById",
-    "RelativePath": "api/Productor/GetProductorById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Productor",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.ProductorController",
-    "Method": "UpdateProductor",
-    "RelativePath": "api/Productor/UpdateProductor",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "productor",
-        "Type": "Api.Models.Productor",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Productor",
+        "Type": "Api.Models.Paciente",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -2892,394 +740,6 @@
     ]
   },
   {
-    "ContainingType": "Api.Controllers.ProloguistaController",
-    "Method": "GetProloguistaes",
-    "RelativePath": "api/Prologuista",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.ProloguistaController",
-    "Method": "AddProloguista",
-    "RelativePath": "api/Prologuista/AddProloguista",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "prologuista",
-        "Type": "Api.Models.Prologuista",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Prologuista",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.ProloguistaController",
-    "Method": "DeleteProloguista",
-    "RelativePath": "api/Prologuista/DeleteProloguista",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Prologuista",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.ProloguistaController",
-    "Method": "GetProloguistaById",
-    "RelativePath": "api/Prologuista/GetProloguistaById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Prologuista",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.ProloguistaController",
-    "Method": "UpdateProloguista",
-    "RelativePath": "api/Prologuista/UpdateProloguista",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "prologuista",
-        "Type": "Api.Models.Prologuista",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Prologuista",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.ProvinciaController",
-    "Method": "GetProvincias",
-    "RelativePath": "api/Provincia",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.ProvinciaController",
-    "Method": "AddProvincia",
-    "RelativePath": "api/Provincia/AddProvincia",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "provincia",
-        "Type": "Api.Models.Provincia",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Provincia",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.ProvinciaController",
-    "Method": "DeleteProvincia",
-    "RelativePath": "api/Provincia/DeleteProvincia",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Provincia",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.ProvinciaController",
-    "Method": "GetProvinciaById",
-    "RelativePath": "api/Provincia/GetProvinciaById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Provincia",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.ProvinciaController",
-    "Method": "UpdateProvincia",
-    "RelativePath": "api/Provincia/UpdateProvincia",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "provincia",
-        "Type": "Api.Models.Provincia",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Provincia",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.SocioController",
-    "Method": "GetSocios",
-    "RelativePath": "api/Socio",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.SocioController",
-    "Method": "AddSocio",
-    "RelativePath": "api/Socio/AddSocio",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "socio",
-        "Type": "Api.Models.Socio",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Socio",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.SocioController",
-    "Method": "DeleteSocio",
-    "RelativePath": "api/Socio/DeleteSocio",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Socio",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.SocioController",
-    "Method": "GetSocioById",
-    "RelativePath": "api/Socio/GetSocioById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Socio",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.SocioController",
-    "Method": "GetSociosFiltrados",
-    "RelativePath": "api/Socio/GetSociosFiltrados",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "calle",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "tipo",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "categoria",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "estado",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.SocioController",
-    "Method": "UpdateSocio",
-    "RelativePath": "api/Socio/UpdateSocio",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "socio",
-        "Type": "Api.Models.Socio",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Socio",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "Api.Controllers.TipoDocumentoController",
     "Method": "GetTipoDocumentos",
     "RelativePath": "api/TipoDocumento",
@@ -3389,720 +849,6 @@
     "ReturnTypes": [
       {
         "Type": "Api.Models.TipoDocumento",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoMaterialController",
-    "Method": "GetTipoMateriales",
-    "RelativePath": "api/TipoMaterial",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoMaterialController",
-    "Method": "AddTipoMaterial",
-    "RelativePath": "api/TipoMaterial/AddTipoMaterial",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "tipoMaterial",
-        "Type": "Api.Models.TipoMaterial",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.TipoMaterial",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoMaterialController",
-    "Method": "DeleteTipoMaterial",
-    "RelativePath": "api/TipoMaterial/DeleteTipoMaterial",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.TipoMaterial",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoMaterialController",
-    "Method": "GetTipoMaterialById",
-    "RelativePath": "api/TipoMaterial/GetTipoMaterialById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.TipoMaterial",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoMaterialController",
-    "Method": "UpdateTipoMaterial",
-    "RelativePath": "api/TipoMaterial/UpdateTipoMaterial",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "tipoMaterial",
-        "Type": "Api.Models.TipoMaterial",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.TipoMaterial",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoMovimientoController",
-    "Method": "GetTipoMovimientos",
-    "RelativePath": "api/TipoMovimiento",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoMovimientoController",
-    "Method": "AddTipoMovimiento",
-    "RelativePath": "api/TipoMovimiento/AddTipoMovimiento",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "tipoMovimiento",
-        "Type": "Api.Models.TipoMovimiento",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.TipoMovimiento",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoMovimientoController",
-    "Method": "DeleteTipoMovimiento",
-    "RelativePath": "api/TipoMovimiento/DeleteTipoMovimiento",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.TipoMovimiento",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoMovimientoController",
-    "Method": "GetTipoMovimientoById",
-    "RelativePath": "api/TipoMovimiento/GetTipoMovimientoById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.TipoMovimiento",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoMovimientoController",
-    "Method": "UpdateTipoMovimiento",
-    "RelativePath": "api/TipoMovimiento/UpdateTipoMovimiento",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "tipoMovimiento",
-        "Type": "Api.Models.TipoMovimiento",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.TipoMovimiento",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoSocioController",
-    "Method": "GetTipoSocios",
-    "RelativePath": "api/TipoSocio",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoSocioController",
-    "Method": "AddTipoSocio",
-    "RelativePath": "api/TipoSocio/AddTipoSocio",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "tipoSocio",
-        "Type": "Api.Models.TipoSocio",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.TipoSocio",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoSocioController",
-    "Method": "DeleteTipoSocio",
-    "RelativePath": "api/TipoSocio/DeleteTipoSocio",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.TipoSocio",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoSocioController",
-    "Method": "GetTipoSocioById",
-    "RelativePath": "api/TipoSocio/GetTipoSocioById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.TipoSocio",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoSocioController",
-    "Method": "UpdateTipoSocio",
-    "RelativePath": "api/TipoSocio/UpdateTipoSocio",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "tipoSocio",
-        "Type": "Api.Models.TipoSocio",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.TipoSocio",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoSoporteController",
-    "Method": "GetTipoSoporte",
-    "RelativePath": "api/TipoSoporte",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoSoporteController",
-    "Method": "AddTipoSoporte",
-    "RelativePath": "api/TipoSoporte/AddTipoSoporte",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "tipoSoporte",
-        "Type": "Api.Models.TipoSoporte",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.TipoSoporte",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoSoporteController",
-    "Method": "DeleteTipoSoporte",
-    "RelativePath": "api/TipoSoporte/DeleteTipoSoporte",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.TipoSoporte",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoSoporteController",
-    "Method": "GetTipoSoporteById",
-    "RelativePath": "api/TipoSoporte/GetTipoSoporteById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.TipoSoporte",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoSoporteController",
-    "Method": "UpdateTipoSoporte",
-    "RelativePath": "api/TipoSoporte/UpdateTipoSoporte",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "tipoSoporte",
-        "Type": "Api.Models.TipoSoporte",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.TipoSoporte",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoSuspensionController",
-    "Method": "GetTipoSuspensiones",
-    "RelativePath": "api/TipoSuspension",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoSuspensionController",
-    "Method": "AddTipoSuspension",
-    "RelativePath": "api/TipoSuspension/AddTipoSuspension",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "tipoSuspension",
-        "Type": "Api.Models.TipoSuspension",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.TipoSuspension",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoSuspensionController",
-    "Method": "DeleteTipoSuspension",
-    "RelativePath": "api/TipoSuspension/DeleteTipoSuspension",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.TipoSuspension",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoSuspensionController",
-    "Method": "GetTipoSuspensionById",
-    "RelativePath": "api/TipoSuspension/GetTipoSuspensionById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.TipoSuspension",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TipoSuspensionController",
-    "Method": "UpdateTipoSuspension",
-    "RelativePath": "api/TipoSuspension/UpdateTipoSuspension",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "tipoSuspension",
-        "Type": "Api.Models.TipoSuspension",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.TipoSuspension",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TraductorController",
-    "Method": "GetTraductores",
-    "RelativePath": "api/Traductor",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.TraductorController",
-    "Method": "AddTraductor",
-    "RelativePath": "api/Traductor/AddTraductor",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Traductor",
-        "Type": "Api.Models.Traductor",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Traductor",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TraductorController",
-    "Method": "DeleteTraductor",
-    "RelativePath": "api/Traductor/DeleteTraductor",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Traductor",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TraductorController",
-    "Method": "GetTraductorById",
-    "RelativePath": "api/Traductor/GetTraductorById",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Traductor",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.TraductorController",
-    "Method": "UpdateTraductor",
-    "RelativePath": "api/Traductor/UpdateTraductor",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "traductor",
-        "Type": "Api.Models.Traductor",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.Traductor",
         "MediaTypes": [
           "text/plain",
           "application/json",

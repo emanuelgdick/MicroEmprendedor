@@ -1,5 +1,4 @@
-﻿using Frontend.Models;
-using FrontEnd.Models;
+﻿using FrontEnd.Models;
 using FrontEnd.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -113,7 +112,7 @@ namespace FrontEnd.Controllers
             {
                 await _apiService.DeleteTipoDocumento(tipoDocumento.Id, HttpContext.Session.GetString("APIToken"));
                 resultado = true;
-                mensaje = "Tipo de Documento eliminado correctante";
+                mensaje = "Tipo de Documento eliminado correctamente";
             }
             catch (Exception ex)
             {

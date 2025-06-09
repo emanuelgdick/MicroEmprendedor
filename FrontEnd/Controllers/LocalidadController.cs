@@ -127,7 +127,7 @@ namespace FrontEnd.Controllers
             {
                 await _apiService.DeleteLocalidad(localidad.Id, HttpContext.Session.GetString("APIToken"));
                 resultado = true;
-                mensaje = "Localidad eliminada correctante";
+                mensaje = "Localidad eliminada correctamente";
             }
             catch (Exception ex)
             {

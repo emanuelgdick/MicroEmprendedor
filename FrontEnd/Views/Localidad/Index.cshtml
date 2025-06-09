@@ -23,9 +23,7 @@
             <thead>
                 <tr>
                     <th>Código</th>
-                    <th>Provincia</th>
                     <th>Descripcion</th>
-                    
                     <th></th>
                 </tr>
             </thead>
@@ -241,7 +239,6 @@
                  },
                  "columns": [
                          { "data": "id" },
-                         { "data": "provincia" },
                          { "data": "descripcion" },
                          {
                                       "defaultContent": '<button type="button" title="Editar Localidad"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
@@ -319,7 +316,7 @@
                var data = tabladata.row(Localidadseleccionado).data();
                var Localidad={
                id:data.id,
-               apeynom:data.apeynom
+               decripcion:data.descripcion
                }
 
                 swal({
@@ -369,8 +366,8 @@
 
             var Localidad = {
                     id: $("#txtid").val(),
-                    descripcion: $("#txtdescripcion").val(),
-                    cantMaterial: $("#txtcantmaterial").val(),
+                    descripcion: $("#txtdescripcion").val()
+                   
                 }
 
             jQuery.ajax({
