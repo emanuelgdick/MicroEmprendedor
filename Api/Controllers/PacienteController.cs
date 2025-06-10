@@ -25,34 +25,90 @@ namespace Api.Controllers
         public IActionResult GetPacientes(/*int pagesize, int pagenumber*/)
         {
             _logger.LogInformation("Fetching Todas las Paciente");
-            var PacienteList = (from pac in _db.Paciente
-                                 join prof in _db.Profesion on pac.IdProfesion equals prof.Id 
-                                select new
-                                {
-                                    pac.Id,
-                                    pac.ApeyNom,
-                                    pac.NroDocumento,
-                                    pac.Fnac,
-                                    pac.Calle,
-                                    pac.Nro,
-                                    pac.Depto,
-                                    pac.Piso,
-                                    pac.TelCelular,
-                                    pac.TelFijo,
-                                    pac.Email,
-                                    pac.Sexo,
-                                    pac.Observaciones,
-                                    prof.Descripcion
-                                    
-                                }).ToList();
-                
-                //_db.Paciente//.Where(s => s.Id <= 500) 
-                //                            .Include(y => y.Localidad)
-                //                            .Include(y => y.TipoDocumento)
-                //                            .Include(y => y.Profesion!);
-                //                           //  .OrderBy(s => s.ApeyNom).ToList();
 
-            return Ok(PacienteList);
+            //var pacienteLista = from pac in _db.Paciente
+            //                    join prof in _db.Profesion 
+            //                    on pac.IdProfesion equals prof.Id into profesion
+                                
+                                
+                                
+            //                    select new
+            //                    {
+            //                        pac.Id,
+            //                        pac.ApeyNom,
+            //                        pac.NroDocumento,
+            //                        pac.Fnac,
+            //                        pac.Calle,
+            //                        pac.Nro,
+            //                        pac.Depto,
+            //                        pac.Piso,
+            //                        pac.TelCelular,
+            //                        pac.TelFijo,
+            //                        pac.Email,
+            //                        pac.Sexo,
+            //                        pac.Observaciones,
+            //                        profesion 
+
+            //                  };
+
+
+            //            var pacienteLista = _db.Paciente//.Where(s => s.Id <= 500) 
+            //.Include(y => y.Localidad)
+            //.Include(y => y.TipoDocumento)
+            //.Include(y => y.Profesion!);
+            //  .OrderBy(s => s.ApeyNom).ToList();
+
+
+
+
+            //var pacienteLista = from pac in _db.Paciente join prof in _db.Profesion on 
+            //                    pac.IdProfesion equals prof.Id into UnionPacienteProfesion
+            //from pp in UnionPacienteProfesion.DefaultIfEmpty()
+            //select new
+            //{
+            //    pac.Id,
+            //    pac.ApeyNom,
+            //    pac.NroDocumento,
+            //    pac.Fnac,
+            //    pac.Calle,
+            //    pac.Nro,
+            //    pac.Depto,
+            //    pac.Piso,
+            //    pac.TelCelular,
+            //    pac.TelFijo,
+            //    pac.Email,
+            //    pac.Sexo,
+            //    pac.Observaciones,
+            //    Profesion = pp != null ? pp.Descripcion : string.Empty
+            //};
+
+
+            var resultado = (from pac in _db.Paciente
+                             join prof in _db.Profesion
+//                             on new { pac.IdProfesion } equals new { prof.Id } into pacientesProfesiones
+                              on pac.IdProfesion equals prof.Id into pacientesProfesiones
+                             from pp in pacientesProfesiones.DefaultIfEmpty()
+                             select new
+                             {
+                                 pac.Id,
+                                 pac.ApeyNom,
+                                 pac.NroDocumento,
+                                 pac.Fnac,
+                                 pac.Calle,
+                                 pac.Nro,
+                                 pac.Depto,
+                                 pac.Piso,
+                                 pac.TelCelular,
+                                 pac.TelFijo,
+                                 pac.Email,
+                                 pac.Sexo,
+                                 pac.Observaciones,
+                                 Profesion =pp.Descripcion,
+                                 // Puedes agregar otras columnas de ambas tablas aquí
+                             }).ToList();
+
+
+            return Ok(resultado);
 
         }
 

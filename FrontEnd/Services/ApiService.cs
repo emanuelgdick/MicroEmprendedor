@@ -12,6 +12,7 @@ namespace FrontEnd.Services
     {
         private readonly HttpClient _httpClient;
         private string _ApiURLPath = "http://localhost:5087/";
+        private readonly ILogger<ApiService> _logger;
 
         public ApiService()
         {
@@ -19,6 +20,7 @@ namespace FrontEnd.Services
             _httpClient.BaseAddress = new Uri(_ApiURLPath);
             _httpClient.DefaultRequestHeaders.Accept.Clear();
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            
         }
 
         //LOCALIDAD
@@ -274,6 +276,10 @@ namespace FrontEnd.Services
             HttpResponseMessage response = await _httpClient.GetAsync($"api/Paciente?");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
+            _logger.LogInformation(contents);
+            //ILogger<ApiService> logger
+            //_logger = logger;
+
             var APIResponse = JsonConvert.DeserializeObject<List<Paciente>>(contents);
             return APIResponse;
         }
