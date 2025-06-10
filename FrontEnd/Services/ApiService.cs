@@ -308,10 +308,10 @@ namespace FrontEnd.Services
             return APIResponse;
         }
 
-        public async Task UpdatePaciente(int id, Paciente Paciente, string token)
+        public async Task UpdatePaciente(int id, Paciente paciente, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Paciente>($"api/Paciente/UpdatePaciente?id={id}", Paciente);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Paciente>($"api/Paciente/UpdatePaciente?id={id}", paciente);
             response.EnsureSuccessStatusCode();
 
         }

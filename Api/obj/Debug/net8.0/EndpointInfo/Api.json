@@ -929,7 +929,7 @@
         ],
         "parameters": [
           {
-            "name": "Id",
+            "name": "id",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -1545,11 +1545,26 @@
             "type": "integer",
             "format": "int32"
           },
+          "idTipoDocumento": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
           "tipoDocumento": {
             "$ref": "#/components/schemas/TipoDocumento"
           },
+          "idProfesion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
           "profesion": {
             "$ref": "#/components/schemas/Profesion"
+          },
+          "idLocalidad": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
           },
           "localidad": {
             "$ref": "#/components/schemas/Localidad"
@@ -1603,10 +1618,6 @@
             "format": "int32"
           },
           "observaciones": {
-            "type": "string",
-            "nullable": true
-          },
-          "foto": {
             "type": "string",
             "nullable": true
           }
