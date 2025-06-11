@@ -46,7 +46,7 @@ SET IDENTITY_INSERT TIPODOCUMENTO OFF
 delete from PACIENTE
 dbcc checkident(PACIENTE,reseed,0)
 SET IDENTITY_INSERT PACIENTE ON
-INSERT INTO PACIENTE(ID,IdTipoDocumento,IdProfesion,IdLocalidad,ApeyNom,NroDocumento,Sexo,Calle,Nro,Piso,Depto,TelFijo,TelCelular,Email,Fnac,NroHC,Observaciones)
+INSERT INTO PACIENTE(ID,IdTipoDocumento,IdProfesion,IdLocalidad,ApeyNom,NroDocumento,Sexo,Calle,Nro,Piso,Depto,TelFijo,TelCelular,Email,Fnac,NroHC,Observaciones,Historia)
 SELECT 
 		 ID_PACIENTE,
 		 ID_TIPO_DOC,
@@ -64,7 +64,8 @@ SELECT
 		 null,
 		 Fnac,
 		 Hc,
-		 Obs
+		 Obs,
+		cast(cast(HISTORIA as varbinary(max)) as varchar(max))
 
 FROM
 	 ConsultorioFantini.dbo.PACIENTES A
