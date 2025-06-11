@@ -1,8 +1,10 @@
-﻿using Api.Models;
+﻿using Api.Migrations;
+using Api.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Api.Controllers
 {
@@ -26,88 +28,39 @@ namespace Api.Controllers
         {
             _logger.LogInformation("Fetching Todas las Paciente");
 
-            //var pacienteLista = from pac in _db.Paciente
-            //                    join prof in _db.Profesion 
-            //                    on pac.IdProfesion equals prof.Id into profesion
-                                
-                                
-                                
-            //                    select new
-            //                    {
-            //                        pac.Id,
-            //                        pac.ApeyNom,
-            //                        pac.NroDocumento,
-            //                        pac.Fnac,
-            //                        pac.Calle,
-            //                        pac.Nro,
-            //                        pac.Depto,
-            //                        pac.Piso,
-            //                        pac.TelCelular,
-            //                        pac.TelFijo,
-            //                        pac.Email,
-            //                        pac.Sexo,
-            //                        pac.Observaciones,
-            //                        profesion 
+            // Obtener datos de las tablas
+            var paciente = _db.Paciente.ToList();
+            var profesion = _db.Profesion.ToList();
 
-            //                  };
-
-
-            //            var pacienteLista = _db.Paciente//.Where(s => s.Id <= 500) 
-            //.Include(y => y.Localidad)
-            //.Include(y => y.TipoDocumento)
-            //.Include(y => y.Profesion!);
-            //  .OrderBy(s => s.ApeyNom).ToList();
-
-
-
-
-            //var pacienteLista = from pac in _db.Paciente join prof in _db.Profesion on 
-            //                    pac.IdProfesion equals prof.Id into UnionPacienteProfesion
-            //from pp in UnionPacienteProfesion.DefaultIfEmpty()
-            //select new
-            //{
-            //    pac.Id,
-            //    pac.ApeyNom,
-            //    pac.NroDocumento,
-            //    pac.Fnac,
-            //    pac.Calle,
-            //    pac.Nro,
-            //    pac.Depto,
-            //    pac.Piso,
-            //    pac.TelCelular,
-            //    pac.TelFijo,
-            //    pac.Email,
-            //    pac.Sexo,
-            //    pac.Observaciones,
-            //    Profesion = pp != null ? pp.Descripcion : string.Empty
-            //};
-
-
-            var resultado = (from pac in _db.Paciente
-                             join prof in _db.Profesion
-//                             on new { pac.IdProfesion } equals new { prof.Id } into pacientesProfesiones
-                              on pac.IdProfesion equals prof.Id into pacientesProfesiones
-                             from pp in pacientesProfesiones.DefaultIfEmpty()
-                             select new
+            // Realizar la unión utilizando Join
+            var resultado = from pac in paciente
+                             join prof in profesion on pac.IdProfesion equals prof.Id   into profesionPaciente
+                            from pp in profesionPaciente.DefaultIfEmpty()
+                            select new
                              {
-                                 pac.Id,
-                                 pac.ApeyNom,
-                                 pac.NroDocumento,
-                                 pac.Fnac,
-                                 pac.Calle,
-                                 pac.Nro,
-                                 pac.Depto,
-                                 pac.Piso,
-                                 pac.TelCelular,
-                                 pac.TelFijo,
-                                 pac.Email,
-                                 pac.Sexo,
-                                 pac.Observaciones,
-                                 Profesion =pp.Descripcion,
-                                 // Puedes agregar otras columnas de ambas tablas aquí
-                             }).ToList();
-
-
+                                 Id = pac.Id,
+                                 IdTipoDocumento = pac.IdTipoDocumento,
+                                 IdLocalidad = pac?.IdLocalidad == null ? 0 : pac?.IdLocalidad,
+                                 IdProfesion = pac?.IdProfesion == null ? 0 : pac?.IdProfesion,
+                                 ApeyNom = pac.ApeyNom,
+                                 NroDocumento = pac.NroDocumento,
+                                 Fnac = pac.Fnac,
+                                 Calle = pac.Calle,
+                                 Nro = pac.Nro,
+                                 Depto = pac.Depto,
+                                 Piso = pac.Piso,
+                                 TelCelular = pac.TelCelular,
+                                 TelFijo = pac.TelFijo,
+                                 Email = pac.Email,
+                                 Sexo = pac.Sexo,
+                                 Observaciones = pac.Observaciones,
+                                 Profesion =  new
+                                 {
+                                      Id = pp?.Id == null ? 0 : pp.Id,
+                                      Descripcion = pp?.Descripcion == null ? "" : pp.Descripcion
+                                 },
+                                Historia = pac.Historia
+                            };
             return Ok(resultado);
 
         }
@@ -118,13 +71,41 @@ namespace Api.Controllers
         public IActionResult GetPacientesFiltrados(int localidad)
         {
             _logger.LogInformation("Fetching Todas las Pacientes Filtrados");
-            var PacienteList = _db.Paciente//.Where(s=> s.Localidad.Id==localidad)
-                                           //.Include(y => y.Localidad)
-                                           //.Include(y => y.TipoDocumento)
-                                           //.Include(y => y.Profesion!)
-                .OrderBy(s => s.ApeyNom).ToList();
+            // Obtener datos de las tablas
+            var paciente = _db.Paciente.ToList();
+            var profesion = _db.Profesion.ToList();
 
-            return Ok(PacienteList);
+            // Realizar la unión utilizando Join
+            var resultado = from pac in paciente
+                            join prof in profesion on pac.IdProfesion equals prof.Id into profesionPaciente
+                            from pp in profesionPaciente.DefaultIfEmpty()
+                            where pac.IdLocalidad == localidad
+                            select new
+                            {
+                                Id = pac.Id,
+                                IdTipoDocumento = pac.IdTipoDocumento,
+                                IdLocalidad = pac?.IdLocalidad == null ? 0 : pac?.IdLocalidad,
+                                IdProfesion = pac?.IdProfesion == null ? 0 : pac?.IdProfesion,
+                                ApeyNom = pac.ApeyNom,
+                                NroDocumento = pac.NroDocumento,
+                                Fnac = pac.Fnac,
+                                Calle = pac.Calle,
+                                Nro = pac.Nro,
+                                Depto = pac.Depto,
+                                Piso = pac.Piso,
+                                TelCelular = pac.TelCelular,
+                                TelFijo = pac.TelFijo,
+                                Email = pac.Email,
+                                Sexo = pac.Sexo,
+                                Observaciones = pac.Observaciones,
+                                Profesion = new
+                                {
+                                    Id = pp?.Id == null ? 0 : pp.Id,
+                                    Descripcion = pp?.Descripcion == null ? "" : pp.Descripcion
+                                },
+                                Historia= pac.Historia
+                            };
+            return Ok(resultado);
 
         }
 
@@ -179,14 +160,14 @@ namespace Api.Controllers
                 return NotFound();
             }
 
-            Paciente.IdTipoDocumento= paciente.IdTipoDocumento;
+            Paciente.IdTipoDocumento =  paciente.IdTipoDocumento == 0 ? null : paciente.IdTipoDocumento;
             Paciente.NroDocumento = paciente.NroDocumento;
             Paciente.ApeyNom = paciente.ApeyNom;
             Paciente.Fnac = paciente.Fnac;
-            Paciente.IdProfesion = paciente.IdProfesion;
+            Paciente.IdProfesion = paciente.IdProfesion == 0? null: paciente.IdProfesion;
             Paciente.Sexo = paciente.Sexo;
 
-           // Paciente.IdLocalidad = paciente.IdLocalidad;
+            Paciente.IdLocalidad   = paciente.IdLocalidad == 0 ? null : paciente.IdLocalidad;
             Paciente.Calle = paciente.Calle;
             Paciente.Nro = paciente.Nro;
             Paciente.Piso = paciente.Piso;

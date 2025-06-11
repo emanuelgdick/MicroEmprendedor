@@ -708,14 +708,11 @@
                  $("#txtapeynom").val(json.apeyNom);
                  $("#txtdni").val(json.nroDocumento);
                  $("#cbotipodoc").val(json.idTipoDocumento);
-                 
                  fnac = new Date(json.fnac)
                  diafnac = `${(fnac.getDate())}`.padStart(2,'0');
                  mesfnac = `${(fnac.getMonth()+1)}`.padStart(2,'0');
                  aniofnac = fnac.getFullYear();
                  $("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
-                 //$("#dtfechanac").val(moment(aniofnac + "-" + mesfnac + "-" + diafnac + " " + '00' + ":" + '00').format('YYYY-MM-DD HH:mm'));
-                 //$("#dtfechanac").datepicker({ dateFormat: 'dd/mm/yy' }).datepicker('setDate', json.fnac);
                  $("#txtcalle").val(json.calle);
                  $("#txtnro").val(json.nro);
                  $("#txtpiso").val(json.piso);
@@ -725,65 +722,15 @@
                  $("#txtemail").val(json.email);
                  $("#cbolocalidad").val(json.idLocalidad);
                  $("#cboprofesion").val(json.idProfesion);
-       
                  $("#txtnroPaciente").val(json.documento);
                  $("#descr").val(json.observaciones);
-                 $("#editor-one").text(json.observaciones),
+                 //$("#editor-one").text(json.observaciones),
                  $("#txtnrohc").val(json.nroHC);
-                
-             //     var tabladataHistorico;
-             //     $('#tablaHistorico').DataTable().clear().destroy();
-             //     tabladataHistorico = $("#tablaHistorico").DataTable({
-             //     order: [[0, 'asc']],
-             //     responsive: true,
-             //     ordering: true,
-             //     searching: false,
-             //     info: false,
-             //     lengthChange: false, // Will Disabled Record number per page
-             //     pageLength: 5,
-             //     "ajax": {
-             //          url: "@Url.Action("GetAllMaterialMovimientosByPaciente", "MaterialMovimiento")"+"?Paciente="+$("#txtnroPaciente").val(),
-             //         type: "GET",
-             //         dataType: "json"
-             //     },
-             //     "columns": [
-             //         { "data": "fecha"},
-             //         { "data": "material", render: function (data) {
-             //                     var str='('+String(parseInt(data.nroInventario)).padStart(4, '0')+')';
-             //                     return str+data.titulo;
-             //                     }
-             //                 },
-             //         { "data": "tipoMovimiento", render: function (data) {
-             //                         return data.descripcion;
-             //                 }
-             //         },
+                $("#editor-one").text(json.historia)
 
-             //         { "data": "fechaDevolucion" },
-             //         { "data": "nroMovimiento" }
-             //         // { "data": "Seleccionado",render: function (data, type, row) {
-             //         //         // if (data) {
-             //         //         //     return '<input type="checkbox" checked class="editor-active">';
-             //         //         // } else {
-             //         //         //     return '<input type="checkbox" class="editor-active">';
-             //         //         // }
-             //         //         // return data;
-             //         //     }
-             //         // },
-             //     ],
-             //     "language": {
-             //            "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
 
-             //       },
-             //     "columnDefs": [
 
-             //         { "width": "10%", "targets": 0 ,render: DataTable.render.datetime( 'DD/MM/YYYY' ) },
-             //         { "width": "50%", "targets": 1 },
-             //         { "width": "50%", "targets": 2 },
-             //         { "width": "10%", "targets": 3  ,render: DataTable.render.datetime( 'DD/MM/YYYY' ) },
-             //         { "width": "10%", "targets": 4 },
-             //     ]
-             // });
-         }
+            }
          $("#FormModal").modal("show");
          }
 
@@ -872,40 +819,19 @@
                               { "data": "depto" },
                               { "data": "telFijo" },
                               { "data": "telCelular" },
-                              { "data": "profesion" },
-                             //  { "data": function(data){
-                             //          if (data!=null){
-                             //          return data.tipoDocumento.descA+'-'+data.documento
-                             //          }
-                             //    }
-                             //  },
-                             //  { "data": "calle" , render: function (data) {
-                             //         if (data!=null){
-                             //             return data.descripcion;
-                             //         }
-                             //     }
-                             //  },
-                             //  { "data": "nro" },
-                             //  { "data": "piso" },
-                             //  { "data": "depto" },
-                             //  { "data": "telFijo" },
-                             //  { "data": "telCelular" },
-                             // { "data": "profesion" , render: function(data){
-                             //             var desc;
-                             //             if (data==null)
-                             //             {
-                             //                 desc=null
-                             //             }
-                             //             else
-                             //                 desc=data.descripcion;
-                             //         return desc;
-                             //    }
-                             //  },
-
+                              { "data": "profesion" , render: function(data){
+                        var desc; 
+                               if (data==null)
+                                {
+                                    desc=null
+                                }
+                                else
+                                    desc=data.descripcion;
+                            return desc;
+                       }
+                     },
                               {
                                            "defaultContent":  '<button type="button" title="Enviar Mensaje"  class="rounded-circle btn btn-sm  btn-block btn-enviar"   > <img src="../images/whatsapp.png" alt="" width="20" height="20" ></button>'+
-                                                             // '<button id="compose"  class="btn-enviar" type="button">COMPOSE</button>'+
-
                                                              '<button type="button" title="Editar Paciente"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
                                                              '<button type="button" title="Eliminar Paciente" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
                                  "orderable": false,
@@ -1058,13 +984,13 @@
         function capture() {
           debugger;
           var canvas = document.getElementById("canvas");
-            var video = document.getElementById("video");
+          var video = document.getElementById("video");
           canvas.width = video.videoWidth;
           canvas.height = video.videoHeight;
           canvas.getContext("2d").drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
           const dataURL = canvas.toDataURL('image/png');
           const playImage = new Image();
-            playImage.src = dataURL;
+          playImage.src = dataURL;
           playImage.onload = () => {
             const startX = video.videoWidth / 2 - playImage.width / 2;
             const startY = video.videoHeight / 2 - playImage.height / 2;
@@ -1084,8 +1010,6 @@
              if (!$("#formNivel").valid()) {
                  return;
              }
-             
-
              
                     var yyyy = $("#dtfechanac").val().substring(6, 10);
                     var MM = $("#dtfechanac").val().substring(3, 5);
@@ -1117,7 +1041,7 @@
                      email: $("#txtemail").val(),
                      observaciones:$("#editor-one").text(),
                      fnac:moment(yyyy + "-" + MM + "-" + DD).format('YYYY-MM-DD'),
-                     nroHC: $("#txtnrohc").val()
+                     nroHC: $("#txtnrohc").val(),
                     // fNac:new Date($("#dtfechanac").val())
                  };
                  console.log('*');

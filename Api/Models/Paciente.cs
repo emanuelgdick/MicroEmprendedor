@@ -1,5 +1,7 @@
 ﻿
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Reflection.Metadata;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Api.Models
 {
@@ -33,8 +35,9 @@ namespace Api.Models
         public DateTime? Fnac { get; set; }
         public int NroHC { get; set; }
         public string? Observaciones { get; set; }
+        public string? Historia { get; set; }
 
-        
+
         //public string? foto { get; set; }
 
     }

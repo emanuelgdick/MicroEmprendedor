@@ -120,6 +120,9 @@ namespace Api.Migrations
                     b.Property<DateTime?>("Fnac")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Historia")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("IdLocalidad")
                         .HasColumnType("int");
 
