@@ -14,10 +14,12 @@ namespace FrontEnd.Controllers
         private readonly ApiService _apiService;
         private readonly IConfiguration _config;
 
+
         public PacienteController(IConfiguration config)
         {
             _apiService = new ApiService();
             _config = config;
+            
         }
 
         [Authorize(Roles = "Admin")]
