@@ -1569,6 +1569,14 @@
           "localidad": {
             "$ref": "#/components/schemas/Localidad"
           },
+          "idMedico": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "medico": {
+            "$ref": "#/components/schemas/Medico"
+          },
           "apeyNom": {
             "type": "string",
             "nullable": true
@@ -1618,6 +1626,10 @@
             "format": "int32"
           },
           "observaciones": {
+            "type": "string",
+            "nullable": true
+          },
+          "historia": {
             "type": "string",
             "nullable": true
           }

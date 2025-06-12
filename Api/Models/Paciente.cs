@@ -22,6 +22,10 @@ namespace Api.Models
         public int? IdLocalidad { get; set; }
         public Localidad? Localidad { get; set; }
 
+        [ForeignKey("Medico")]
+        public int? IdMedico { get; set; }
+        public Medico? Medico { get; set; }
+
         public string ApeyNom { get; set; }
         public string NroDocumento { get; set; }
         public char Sexo { get; set; }

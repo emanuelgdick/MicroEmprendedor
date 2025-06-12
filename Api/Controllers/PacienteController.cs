@@ -1,4 +1,4 @@
-﻿using Api.Migrations;
+﻿
 using Api.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -31,6 +31,7 @@ namespace Api.Controllers
             // Obtener datos de las tablas
             var paciente = _db.Paciente.ToList();
             var profesion = _db.Profesion.ToList();
+            //var medico = _db.Medico.ToList();
 
             // Realizar la unión utilizando Join
             var resultado = from pac in paciente
@@ -42,6 +43,7 @@ namespace Api.Controllers
                                  IdTipoDocumento = pac.IdTipoDocumento,
                                  IdLocalidad = pac?.IdLocalidad == null ? 0 : pac?.IdLocalidad,
                                  IdProfesion = pac?.IdProfesion == null ? 0 : pac?.IdProfesion,
+                                 IdMedico = pac?.IdMedico == null ? 0 : pac?.IdMedico,
                                  ApeyNom = pac.ApeyNom,
                                  NroDocumento = pac.NroDocumento,
                                  Fnac = pac.Fnac,
@@ -59,7 +61,8 @@ namespace Api.Controllers
                                       Id = pp?.Id == null ? 0 : pp.Id,
                                       Descripcion = pp?.Descripcion == null ? "" : pp.Descripcion
                                  },
-                                Historia = pac.Historia
+                                Historia = pac.Historia,
+                                NroHC = pac.NroHC
                             };
             return Ok(resultado);
 
@@ -86,6 +89,7 @@ namespace Api.Controllers
                                 IdTipoDocumento = pac.IdTipoDocumento,
                                 IdLocalidad = pac?.IdLocalidad == null ? 0 : pac?.IdLocalidad,
                                 IdProfesion = pac?.IdProfesion == null ? 0 : pac?.IdProfesion,
+                                IdMedico = pac?.IdMedico == null ? 0 : pac?.IdMedico,
                                 ApeyNom = pac.ApeyNom,
                                 NroDocumento = pac.NroDocumento,
                                 Fnac = pac.Fnac,
@@ -103,7 +107,8 @@ namespace Api.Controllers
                                     Id = pp?.Id == null ? 0 : pp.Id,
                                     Descripcion = pp?.Descripcion == null ? "" : pp.Descripcion
                                 },
-                                Historia= pac.Historia
+                                Historia = pac.Historia,
+                                NroHC = pac.NroHC
                             };
             return Ok(resultado);
 
@@ -164,7 +169,8 @@ namespace Api.Controllers
             Paciente.NroDocumento = paciente.NroDocumento;
             Paciente.ApeyNom = paciente.ApeyNom;
             Paciente.Fnac = paciente.Fnac;
-            Paciente.IdProfesion = paciente.IdProfesion == 0? null: paciente.IdProfesion;
+            Paciente.IdProfesion = paciente.IdProfesion == 0 ? null : paciente.IdProfesion;
+            Paciente.IdMedico = paciente.IdMedico == 0 ? null : paciente.IdMedico;
             Paciente.Sexo = paciente.Sexo;
 
             Paciente.IdLocalidad   = paciente.IdLocalidad == 0 ? null : paciente.IdLocalidad;

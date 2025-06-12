@@ -21,6 +21,9 @@
     <Content Remove="wwwroot\css\animate\animate.min.css" />
     <Content Remove="wwwroot\css\custom.css" />
     <Content Remove="wwwroot\css\custom.min.css" />
+    <Content Remove="wwwroot\css\fullCalendar\fullcalendar.css" />
+    <Content Remove="wwwroot\css\fullCalendar\fullcalendar.min.css" />
+    <Content Remove="wwwroot\css\fullCalendar\fullcalendar.print.css" />
     <Content Remove="wwwroot\css\jqvmap\jqvmap.css" />
     <Content Remove="wwwroot\css\jqvmap\jqvmap.min.css" />
     <Content Remove="wwwroot\css\pnotify\.gitignore" />
@@ -67,6 +70,8 @@
     <Content Remove="wwwroot\js\flot\jquery.flot.spline.min.js" />
     <Content Remove="wwwroot\js\flot\jquery.flot.stack.js" />
     <Content Remove="wwwroot\js\flot\jquery.flot.time.js" />
+    <Content Remove="wwwroot\js\FullCalendar\fullcalendar.js" />
+    <Content Remove="wwwroot\js\FullCalendar\fullcalendar.min.js" />
     <Content Remove="wwwroot\js\gauge\gauge.min.js" />
     <Content Remove="wwwroot\js\jqvmap\jquery.vmap.sampledata.js" />
     <Content Remove="wwwroot\js\jqvmap\jquery.vmap.world.js" />
@@ -182,6 +187,9 @@
     <None Include="wwwroot\css\fontawesome\fonts\fontawesome-webfont.woff" />
     <None Include="wwwroot\css\fontawesome\fonts\fontawesome-webfont.woff2" />
     <None Include="wwwroot\css\fontawesome\fonts\FontAwesome.otf" />
+    <None Include="wwwroot\css\fullCalendar\fullcalendar.css" />
+    <None Include="wwwroot\css\fullCalendar\fullcalendar.min.css" />
+    <None Include="wwwroot\css\fullCalendar\fullcalendar.print.css" />
     <None Include="wwwroot\css\jqvmap\jqvmap.css" />
     <None Include="wwwroot\css\jqvmap\jqvmap.min.css" />
     <None Include="wwwroot\css\nprogress\nprogress.css" />
@@ -189,6 +197,8 @@
     <None Include="wwwroot\css\floating-labels\floating.labels.min.css" />
     <None Include="wwwroot\css\pnotify\.gitignore" />
     <None Include="wwwroot\css\pnotify\COPYING" />
+    <None Include="wwwroot\js\FullCalendar\fullcalendar.js" />
+    <None Include="wwwroot\js\FullCalendar\fullcalendar.min.js" />
     <None Include="wwwroot\js\pnotify\pnotify.animate.js" />
     <None Include="wwwroot\css\pnotify\dist\pnotify.brighttheme.css" />
     <None Include="wwwroot\css\pnotify\dist\pnotify.buttons.css" />

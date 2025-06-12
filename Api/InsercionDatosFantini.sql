@@ -46,12 +46,13 @@ SET IDENTITY_INSERT TIPODOCUMENTO OFF
 delete from PACIENTE
 dbcc checkident(PACIENTE,reseed,0)
 SET IDENTITY_INSERT PACIENTE ON
-INSERT INTO PACIENTE(ID,IdTipoDocumento,IdProfesion,IdLocalidad,ApeyNom,NroDocumento,Sexo,Calle,Nro,Piso,Depto,TelFijo,TelCelular,Email,Fnac,NroHC,Observaciones,Historia)
+INSERT INTO PACIENTE(ID,IdTipoDocumento,IdProfesion,IdLocalidad,IdMedico,ApeyNom,NroDocumento,Sexo,Calle,Nro,Piso,Depto,TelFijo,TelCelular,Email,Fnac,NroHC,Observaciones,Historia)
 SELECT 
 		 ID_PACIENTE,
 		 ID_TIPO_DOC,
 		 NULL,
 		 ISNULL((SELECT ID FROM LOCALIDAD WHERE ID=A.Id_Localidad),NULL),
+		 ISNULL((SELECT ID FROM MEDICO WHERE ID=A.Id_MEdico),NULL),
 		 APELLIDO+','+NOMBRE,
 		 NRO_DOC,
 		 SEXO,

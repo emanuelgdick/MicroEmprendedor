@@ -126,6 +126,9 @@ namespace Api.Migrations
                     b.Property<int?>("IdLocalidad")
                         .HasColumnType("int");
 
+                    b.Property<int?>("IdMedico")
+                        .HasColumnType("int");
+
                     b.Property<int?>("IdProfesion")
                         .HasColumnType("int");
 
@@ -161,6 +164,8 @@ namespace Api.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("IdLocalidad");
+
+                    b.HasIndex("IdMedico");
 
                     b.HasIndex("IdProfesion");
 
@@ -242,6 +247,10 @@ namespace Api.Migrations
                         .WithMany()
                         .HasForeignKey("IdLocalidad");
 
+                    b.HasOne("Api.Models.Medico", "Medico")
+                        .WithMany()
+                        .HasForeignKey("IdMedico");
+
                     b.HasOne("Api.Models.Profesion", "Profesion")
                         .WithMany()
                         .HasForeignKey("IdProfesion");
@@ -251,6 +260,8 @@ namespace Api.Migrations
                         .HasForeignKey("IdTipoDocumento");
 
                     b.Navigation("Localidad");
+
+                    b.Navigation("Medico");
 
                     b.Navigation("Profesion");
 

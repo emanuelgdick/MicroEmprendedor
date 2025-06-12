@@ -687,6 +687,7 @@
                  $("#txtdni").val('');
                  $("#cbotipodoc").val(0);
                  $("#cbolocalidad").val(0);
+                 $("#cbomedico").val(0);
                  $("#cboprofesion").val(0);
                  let fnac = new Date()
 
@@ -701,6 +702,7 @@
                  $("#txtpiso").val('');
                  $("#txtdepto").val('');
                  $("#txtobservaciones").val('');
+                    $("#editor-one").text('');
 
              if (json != null) {
                  console.log(json);
@@ -721,6 +723,7 @@
                  $("#txttelcelular").val(json.telCelular);
                  $("#txtemail").val(json.email);
                  $("#cbolocalidad").val(json.idLocalidad);
+                 $("#cbomedico").val(json.idMedico);
                  $("#cboprofesion").val(json.idProfesion);
                  $("#txtnroPaciente").val(json.documento);
                  $("#descr").val(json.observaciones);
@@ -1030,6 +1033,7 @@
                      nroDocumento:$("#txtdni").val(),
                      idTipoDocumento:  $("#cbotipodoc option:selected").val(),
                      idProfesion: $("#cboprofesion option:selected").val(),
+                     idMedico: $("#cbomedico option:selected").val(),
                      sexo:'M',
                      calle:$("#txtcalle").val(),
                      nro:$("#txtnro").val(),

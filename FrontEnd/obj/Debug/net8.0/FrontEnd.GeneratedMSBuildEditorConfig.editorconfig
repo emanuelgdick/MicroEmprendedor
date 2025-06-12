@@ -17,75 +17,81 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FrontEnd
 build_property.RootNamespace = FrontEnd
-build_property.ProjectDir = C:\Consultorio\FrontEnd\
+build_property.ProjectDir = C:\Consultoio\FrontEnd\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Consultorio\FrontEnd
+build_property.MSBuildProjectDirectory = C:\Consultoio\FrontEnd
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
-[C:/Consultorio/FrontEnd/Views/Authuser/AccessDenied.cshtml]
+[C:/Consultoio/FrontEnd/Views/Authuser/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aHVzZXJcQWNjZXNzRGVuaWVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Consultorio/FrontEnd/Views/Authuser/Login.cshtml]
+[C:/Consultoio/FrontEnd/Views/Authuser/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aHVzZXJcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Consultorio/FrontEnd/Views/Diagnostico/Index.cshtml]
+[C:/Consultoio/FrontEnd/Views/Consulta/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc3VsdGFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Consultoio/FrontEnd/Views/Diagnostico/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlhZ25vc3RpY29cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Consultorio/FrontEnd/Views/Home/Index.cshtml]
+[C:/Consultoio/FrontEnd/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Consultorio/FrontEnd/Views/Home/Privacy.cshtml]
+[C:/Consultoio/FrontEnd/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Consultorio/FrontEnd/Views/Localidad/Index.cshtml]
+[C:/Consultoio/FrontEnd/Views/Localidad/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWxpZGFkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Consultorio/FrontEnd/Views/Medico/Index.cshtml]
+[C:/Consultoio/FrontEnd/Views/Medico/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNvXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Consultorio/FrontEnd/Views/Mutual/Index.cshtml]
+[C:/Consultoio/FrontEnd/Views/Mutual/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXV0dWFsXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Consultorio/FrontEnd/Views/Paciente/Index.cshtml]
+[C:/Consultoio/FrontEnd/Views/Paciente/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Consultorio/FrontEnd/Views/Profesion/Index.cshtml]
+[C:/Consultoio/FrontEnd/Views/Profesion/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzaW9uXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Consultorio/FrontEnd/Views/Shared/Error.cshtml]
+[C:/Consultoio/FrontEnd/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Consultorio/FrontEnd/Views/Shared/_Layout.cshtml]
+[C:/Consultoio/FrontEnd/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Consultorio/FrontEnd/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Consultoio/FrontEnd/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Consultorio/FrontEnd/Views/TipoDocumento/Index.cshtml]
+[C:/Consultoio/FrontEnd/Views/TipoDocumento/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0RvY3VtZW50b1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Consultorio/FrontEnd/Views/_ViewImports.cshtml]
+[C:/Consultoio/FrontEnd/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Consultorio/FrontEnd/Views/_ViewStart.cshtml]
+[C:/Consultoio/FrontEnd/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
