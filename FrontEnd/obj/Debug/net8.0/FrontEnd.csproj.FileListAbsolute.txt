@@ -429,9 +429,17 @@ C:\Consultorio\FrontEnd\bin\Debug\net8.0\Microsoft.CodeAnalysis.Scripting.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\Microsoft.DiaSymReader.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\Microsoft.DotNet.Scaffolding.Shared.dll
+C:\Consultorio\FrontEnd\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Consultorio\FrontEnd\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Consultorio\FrontEnd\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Consultorio\FrontEnd\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Consultorio\FrontEnd\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Consultorio\FrontEnd\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Consultorio\FrontEnd\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Consultorio\FrontEnd\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\Microsoft.NET.StringTools.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -461,6 +469,7 @@ C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Composition.Hosting.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Composition.Runtime.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Composition.TypedParts.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Drawing.Common.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Formats.Asn1.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll

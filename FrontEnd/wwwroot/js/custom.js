@@ -2442,6 +2442,7 @@ function init_calendar() {
             });
         },
         eventClick: function (calEvent, jsEvent, view) {
+          
             $('#fc_edit').click();
             $('#title2').val(calEvent.title);
 

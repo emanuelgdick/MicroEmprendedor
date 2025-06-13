@@ -379,6 +379,56 @@ namespace FrontEnd.Services
 
         #endregion
 
+        //EVENTS
+        #region
+        public async Task<List<Event>> GetAllEvents(string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/GetEvents?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Event>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Event> AddEvent(Event E, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Event>($"api/Event/AddEvent", E);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Event>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Event> GetEventById(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Event/GetEventById?id={id}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Event>(contents);
+            return APIResponse;
+        }
+
+        public async Task UpdateEvent(int id, Event e, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Event>($"api/Event/UpdateEvent?id={id}", e);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        public async Task DeleteEvent(int id, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Event/DeleteEvent?id={id}", null);
+            response.EnsureSuccessStatusCode();
+
+        }
+
+        #endregion
+
         //TOTALES
         public async Task<TotalesDTO> GetTotales(string token)
         {

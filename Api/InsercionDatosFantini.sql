@@ -73,4 +73,11 @@ FROM
 SET IDENTITY_INSERT PACIENTE OFF
 --select  * from PACIENTE where apeynom like '%dick%' where idlocalidad=1
 
-select * from Usuario
+
+delete from Usuario
+dbcc checkident(Usuario,reseed,0)
+
+INSERT INTO Usuario(ApeyNom,[User],[Password],Rol)
+VALUES('Gutierrez Dick, Emanuel','emanuelgdick@gmail.com','manolo','Admin')
+
+--select  * from TIPODOCUMENTO

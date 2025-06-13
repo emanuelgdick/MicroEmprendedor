@@ -1,101 +1,163 @@
-﻿<body class="nav-md">
-    <div class="container body">
-        <div class="main_container">
-            <!-- page content -->
-            <div class="col" role="main">
-                <div class="">
-              
+﻿@* @page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+} *@
+<style>
+    .calendar_default_event,
+    .calendar_default_event_inner {
+        border-radius: 15px;
+        color: white;
+    }
+</style>
 
-                    <div class="clearfix"></div>
+<script src="~/lib/daypilot/daypilot-all.min.js" asp-append-version="true"></script>
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="x_panel">
-                              
-                                <div class="x_content">
-
-                                    <div id='calendar'></div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /page content -->
-        </div>
+<div class="wrap">
+    <div class="left">
+        <div id="nav"></div>
     </div>
-
-    <!-- calendar modal -->
-    <div id="CalenderModalNew" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title" id="myModalLabel">New Calendar Entry</h4>
-                </div>
-                <div class="modal-body">
-                    <div id="testmodal" style="padding: 5px 20px;">
-                        <form id="antoform" class="form-horizontal calender" role="form">
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Title</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="title" name="title">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Description</label>
-                                <div class="col-sm-9">
-                                    <textarea class="form-control" style="height:55px;" id="descr" name="descr"></textarea>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default antoclose" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary antosubmit">Save changes</button>
-                </div>
-            </div>
-        </div>
+    <div class="right">
+        <div id="dp"></div>
     </div>
-    <div id="CalenderModalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+</div>
 
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title" id="myModalLabel2">Edit Calendar Entry</h4>
-                </div>
-                <div class="modal-body">
+<script>
 
-                    <div id="testmodal2" style="padding: 5px 20px;">
-                        <form id="antoform2" class="form-horizontal calender" role="form">
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Title</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="title2" name="title2">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label">Description</label>
-                                <div class="col-sm-9">
-                                    <textarea class="form-control" style="height:55px;" id="descr2" name="descr"></textarea>
-                                </div>
-                            </div>
+    const colors = [
+        {id: "#1066a8", name: "Blue"},
+        {id: "#6aa84f", name: "Green"},
+        {id: "#f1c232", name: "Yellow"},
+        {id: "#cc0000", name: "Red"},
+    ];
 
-                        </form>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default antoclose2" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary antosubmit2">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    const datepicker = new DayPilot.Navigator("nav", {
+        showMonths: 3,
+        skipMonths: 3,
+        selectMode: "Week",
+        onTimeRangeSelected: args => {
+            calendar.startDate = args.day;
+            calendar.update();
+            calendar.events.load("/api/events");
+        }
+    });
+    datepicker.init();
 
-    <div id="fc_create" data-toggle="modal" data-target="#CalenderModalNew"></div>
-    <div id="fc_edit" data-toggle="modal" data-target="#CalenderModalEdit"></div>
-</body>
+    const calendar = new DayPilot.Calendar("dp", {
+        viewType: "Week",
+        durationBarVisible: false,
+        contextMenu: new DayPilot.Menu({
+            items: [
+                {
+                    text: "Delete",
+                    onClick: async (args) => {
+                        const e = args.source;
+                        const {data} = await DayPilot.Http.delete(`/api/events/${e.id()}`);
+                        calendar.events.remove(e.id());
+                    }
+                },
+                {
+                    text: "-"
+                },
+                {
+                    text: "Blue",
+                    icon: "icon icon-blue",
+                    color: "#1066a8",
+                    onClick: (args) => { app.updateColor(args.source, args.item.color); }
+                },
+                {
+                    text: "Green",
+                    icon: "icon icon-green",
+                    color: "#6aa84f",
+                    onClick: (args) => { app.updateColor(args.source, args.item.color); }
+                },
+                {
+                    text: "Yellow",
+                    icon: "icon icon-yellow",
+                    color: "#f1c232",
+                    onClick: (args) => { app.updateColor(args.source, args.item.color); }
+                },
+                {
+                    text: "Red",
+                    icon: "icon icon-red",
+                    color: "#cc0000",
+                    onClick: (args) => { app.updateColor(args.source, args.item.color); }
+                },
+
+            ]
+        }),
+        onTimeRangeSelected: async (args) => {
+            const form = [
+                {name: "Text", id: "text"},
+                {name: "Color", id: "color", type: "select", options: colors},
+            ];
+
+            const data = {
+                text: "New event",
+                color: "#1066a8",
+                start: args.start,
+                end: args.end
+            };
+
+            const modal = await DayPilot.Modal.form(form, data);
+            calendar.clearSelection();
+            if (modal.canceled) {
+                return;
+            }
+            const params = modal.result;
+            const { data: event } = await DayPilot.Http.post("/api/events", params);
+            calendar.events.add(event);
+        },
+        onEventMove: async (args) => {
+            const params = {
+                id: args.e.id(),
+                start: args.newStart,
+                end: args.newEnd
+            };
+            const {data} = await DayPilot.Http.put(`/api/events/${args.e.id()}/move`, params);
+        },
+        onEventResize: async (args) => {
+            const params = {
+                id: args.e.id(),
+                start: args.newStart,
+                end: args.newEnd
+            };
+            const {data} = await DayPilot.Http.put(`/api/events/${args.e.id()}/move`, params);
+        },
+        onBeforeEventRender: (args) => {
+            args.data.backColor = args.data.color + "99";
+            args.data.borderColor = args.data.color;
+            args.data.areas = [
+                {
+                    top: 6,
+                    right: 6,
+                    width: 20,
+                    height: 20,
+                    backColor: args.data.color,
+                    symbol: "icons/daypilot.svg#minichevron-down-2",
+                    visibility: "Visible",
+                    action: "ContextMenu",
+                    style: "border-radius: 15px; cursor:pointer;"
+                }
+            ];
+        }
+    });
+    calendar.init();
+
+    const app = {
+        async updateColor(e, color) {
+            const params = {
+                color: color
+            };
+            const {data} = await DayPilot.Http.put(`/api/events/${e.id()}/color`, params);
+            e.data.color = color;
+            calendar.events.update(e);
+        },
+        init() {
+            calendar.events.load("/api/GetAllEvents");
+        }
+    };
+    app.init();
+
+
+</script>
