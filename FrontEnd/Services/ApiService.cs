@@ -382,52 +382,52 @@ namespace FrontEnd.Services
         //EVENTS
         #region
 
-        public async Task<List<Event>> GetAllEvents(string token)
+        public async Task<List<Consulta>> GetAllConsulta(string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/Events?");
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Consulta?");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
-            var APIResponse = JsonConvert.DeserializeObject<List<Event>>(contents);
+            var APIResponse = JsonConvert.DeserializeObject<List<Consulta>>(contents);
             return APIResponse;
         }
 
-        public async Task<List<Event>> GetEventsByFecha(string token)
+        public async Task<List<Consulta>> GetEventsByFecha(string token)
         {
             string start =DateTime.Now.ToString();
             DateTime end = DateTime.Now;
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/Events/GetEventsByFecha?start={start}");
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Consulta/GetEventsByFecha?start={start}");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
-            var APIResponse = JsonConvert.DeserializeObject<List<Event>>(contents);
+            var APIResponse = JsonConvert.DeserializeObject<List<Consulta>>(contents);
             return APIResponse;
         }
 
-        public async Task<Event> AddEvent(Event E, string token)
+        public async Task<Consulta> AddEvent(Consulta C, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Event>($"api/Event/AddEvent", E);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Consulta>($"api/Consulta/PostEvent", C);
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
-            var APIResponse = JsonConvert.DeserializeObject<Event>(contents);
+            var APIResponse = JsonConvert.DeserializeObject<Consulta>(contents);
             return APIResponse;
         }
 
-        public async Task<Event> GetEventById(int id, string token)
+        public async Task<Consulta> GetEventById(int id, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/Event/GetEventById?id={id}");
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Consulta/GetEventById?id={id}");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
-            var APIResponse = JsonConvert.DeserializeObject<Event>(contents);
+            var APIResponse = JsonConvert.DeserializeObject<Consulta>(contents);
             return APIResponse;
         }
 
-        public async Task UpdateEvent(int id, Event e, string token)
+        public async Task UpdateEvent(int id, Consulta c, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Event>($"api/Event/UpdateEvent?id={id}", e);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Consulta>($"api/Consulta/UpdateEvent?id={id}", c);
             response.EnsureSuccessStatusCode();
 
         }
@@ -435,7 +435,7 @@ namespace FrontEnd.Services
         public async Task DeleteEvent(int id, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.PutAsync($"api/Event/DeleteEvent?id={id}", null);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Consulta/DeleteEvent?id={id}", null);
             response.EnsureSuccessStatusCode();
 
         }

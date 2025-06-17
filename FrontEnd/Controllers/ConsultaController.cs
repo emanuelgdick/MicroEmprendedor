@@ -24,8 +24,8 @@ namespace FrontEnd.Controllers
         public async Task<IActionResult> Index()
         {
             int pagesize = _config.GetValue<int>("PageSettings:PageSize");
-            List<Event> lstEvent = new List<Event>();
-            lstEvent = await _apiService.GetAllEvents(HttpContext.Session.GetString("APIToken"));
+            List<Consulta> lstEvent = new List<Consulta>();
+            lstEvent = await _apiService.GetAllConsulta(HttpContext.Session.GetString("APIToken"));
             return View();
 
         }
@@ -34,8 +34,8 @@ namespace FrontEnd.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<JsonResult> Events(string start,string end)
         {
-            List<Event> oLista = new List<Event>();
-            oLista = await _apiService.GetAllEvents(HttpContext.Session.GetString("APIToken"));
+            List<Consulta> oLista = new List<Consulta>();
+            oLista = await _apiService.GetAllConsulta(HttpContext.Session.GetString("APIToken"));
             return Json(new { data = oLista });
         }
 
@@ -49,18 +49,18 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
-        public async Task<JsonResult> CreateEvent([FromBody] Event Event)
+        public async Task<JsonResult> CreateEvent([FromBody] Consulta consulta)
         {
             object resultado;
             string mensaje = String.Empty;
             try
             {
-                if (Event.Id == 0)
+                if (consulta.Id == 0)
                 {
                     //if (Event.Start != "")
                     //{
-                        Event = await _apiService.AddEvent(Event, HttpContext.Session.GetString("APIToken"));
-                        resultado = Event.Id;
+                    consulta = await _apiService.AddEvent(consulta, HttpContext.Session.GetString("APIToken"));
+                        resultado = consulta.Id;
                         mensaje = "Event ingresada correctamente";
                     //}
                     //else
@@ -76,7 +76,7 @@ namespace FrontEnd.Controllers
                 {
                     //if (Event.Descripcion != "")
                     //{
-                        await _apiService.UpdateEvent(Event.Id, Event, HttpContext.Session.GetString("APIToken"));
+                        await _apiService.UpdateEvent(consulta.Id, consulta, HttpContext.Session.GetString("APIToken"));
 
                         resultado = true;
                         mensaje = "Event modificado correctamente";
@@ -103,9 +103,9 @@ namespace FrontEnd.Controllers
         public async Task<IActionResult> Details(int id)
         {
 
-            Event Event = new Event();
-            Event = await _apiService.GetEventById(id, HttpContext.Session.GetString("APIToken"));
-            return View(Event);
+            Consulta Consulta = new Consulta();
+            Consulta = await _apiService.GetEventById(id, HttpContext.Session.GetString("APIToken"));
+            return View(Consulta);
         }
 
 
@@ -113,20 +113,20 @@ namespace FrontEnd.Controllers
         public async Task<IActionResult> Delete(int id)
         {
 
-            Event Event = new Event();
-            Event = await _apiService.GetEventById(id, HttpContext.Session.GetString("APIToken"));
-            return View(Event);
+            Consulta Consulta = new Consulta();
+            Consulta = await _apiService.GetEventById(id, HttpContext.Session.GetString("APIToken"));
+            return View(Consulta);
         }
 
         [Authorize(Roles = "Admin,Student")]
 
-        public async Task<JsonResult> DeleteEvent([FromBody] Event Event)
+        public async Task<JsonResult> DeleteEvent([FromBody] Consulta Consulta)
         {
             bool resultado = false;
             string mensaje = string.Empty;
             try
             {
-                await _apiService.DeleteEvent(Event.Id, HttpContext.Session.GetString("APIToken"));
+                await _apiService.DeleteEvent(Consulta.Id, HttpContext.Session.GetString("APIToken"));
                 resultado = true;
                 mensaje = "Event eliminada correctamente";
             }

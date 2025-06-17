@@ -16,7 +16,7 @@ namespace Api.Models
         public DbSet<Medico> Medico { get; set; }
         public DbSet<Diagnostico> Diagnostico { get; set; }
         public DbSet<Paciente> Paciente { get; set; }
-        public DbSet<Event> Events { get; set; }
+        public DbSet<Consulta> Consulta { get; set; }
 
     }
 }
