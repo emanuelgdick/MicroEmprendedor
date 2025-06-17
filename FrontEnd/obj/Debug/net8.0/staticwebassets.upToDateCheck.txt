@@ -646,7 +646,6 @@ wwwroot\js\devbridge-autocomplete\index.htm
 wwwroot\js\devbridge-autocomplete\license.txt
 wwwroot\js\devbridge-autocomplete\package.json
 wwwroot\js\devbridge-autocomplete\readme.md
-wwwroot\js\devbridge-autocomplete\src\jquery.autocomplete.d.ts
 wwwroot\js\devbridge-autocomplete\src\jquery.autocomplete.js
 wwwroot\js\fastclick\.bower.json
 wwwroot\js\fastclick\bower.json
@@ -918,6 +917,7 @@ wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
 wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
 wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
 wwwroot\lib\bootstrap\LICENSE
+wwwroot\lib\daypilot\daypilot-all.min.js
 wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map

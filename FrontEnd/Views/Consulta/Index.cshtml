@@ -13,12 +13,22 @@
 
 <script src="~/lib/daypilot/daypilot-all.min.js" asp-append-version="true"></script>
 
+
+
+
+
 <div class="wrap">
-    <div class="left">
-        <div id="nav"></div>
-    </div>
-    <div class="right">
-        <div id="dp"></div>
+    <div class="col-12">
+        <div class="row">
+            <div class="col-2 left">
+              
+                   <div id="nav"></div>
+            </div>
+            <div class="col-10 right" >
+             
+                <div id="dp"></div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -38,7 +48,7 @@
         onTimeRangeSelected: args => {
             calendar.startDate = args.day;
             calendar.update();
-            calendar.events.load("/api/events");
+            calendar.events.load("/Events/Events");
         }
     });
     datepicker.init();
@@ -98,14 +108,16 @@
                 start: args.start,
                 end: args.end
             };
-
+           
             const modal = await DayPilot.Modal.form(form, data);
             calendar.clearSelection();
+             debugger;
             if (modal.canceled) {
                 return;
             }
-            const params = modal.result;
-            const { data: event } = await DayPilot.Http.post("/api/events", params);
+            const Event = modal.result;
+            const { data: event } = await DayPilot.Http.post("/api/CreateEvent", Event);
+           
             calendar.events.add(event);
         },
         onEventMove: async (args) => {
@@ -125,6 +137,7 @@
             const {data} = await DayPilot.Http.put(`/api/events/${args.e.id()}/move`, params);
         },
         onBeforeEventRender: (args) => {
+             
             args.data.backColor = args.data.color + "99";
             args.data.borderColor = args.data.color;
             args.data.areas = [
@@ -149,12 +162,13 @@
             const params = {
                 color: color
             };
+            alert('fff');
             const {data} = await DayPilot.Http.put(`/api/events/${e.id()}/color`, params);
             e.data.color = color;
             calendar.events.update(e);
         },
         init() {
-            calendar.events.load("/api/GetAllEvents");
+            calendar.events.load("/api/Events");
         }
     };
     app.init();

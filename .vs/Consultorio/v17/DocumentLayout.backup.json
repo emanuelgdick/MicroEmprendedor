@@ -1,46 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Consultoio\\",
+  "WorkspaceRootPath": "C:\\Consultorio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\consultoio\\frontend\\wwwroot\\css\\custom.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\wwwroot\\css\\custom.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\consultoio\\frontend\\views\\consulta\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\consultorio\\frontend\\views\\consulta\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\consulta\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\consultoio\\frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\consultoio\\frontend\\controllers\\consultacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\consultorio\\frontend\\controllers\\consultacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\controllers\\consultacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\consultoio\\frontend\\content\\form.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\content\\form.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\consultorio\\frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\consultoio\\frontend\\controllers\\pacientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\controllers\\pacientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|c:\\consultoio\\api\\controllers\\pacientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|solutionrelative:api\\controllers\\pacientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\consultoio\\frontend\\models\\paciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\models\\paciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\consultoio\\frontend\\views\\paciente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\paciente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\consultoio\\frontend\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\consultorio\\frontend\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|c:\\consultorio\\api\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|solutionrelative:api\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,148 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "custom.css",
-              "DocumentMoniker": "C:\\Consultoio\\FrontEnd\\wwwroot\\css\\custom.css",
-              "RelativeDocumentMoniker": "FrontEnd\\wwwroot\\css\\custom.css",
-              "ToolTip": "C:\\Consultoio\\FrontEnd\\wwwroot\\css\\custom.css",
-              "RelativeToolTip": "FrontEnd\\wwwroot\\css\\custom.css",
-              "ViewState": "AgIAADsXAAAAAAAAAAAAAEkXAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-06-11T22:27:34.753Z",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Consultorio\\FrontEnd\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "FrontEnd\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Consultorio\\FrontEnd\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "FrontEnd\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAPMBAAAAAAAAAAAAAA4CAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-16T19:45:34.807Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Consultoio\\FrontEnd\\Views\\Consulta\\Index.cshtml",
-              "RelativeDocumentMoniker": "FrontEnd\\Views\\Consulta\\Index.cshtml",
-              "ToolTip": "C:\\Consultoio\\FrontEnd\\Views\\Consulta\\Index.cshtml",
-              "RelativeToolTip": "FrontEnd\\Views\\Consulta\\Index.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAADQAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-11T22:00:39.334Z",
+              "Title": "ConsultaController.cs",
+              "DocumentMoniker": "C:\\Consultorio\\FrontEnd\\Controllers\\ConsultaController.cs",
+              "RelativeDocumentMoniker": "FrontEnd\\Controllers\\ConsultaController.cs",
+              "ToolTip": "C:\\Consultorio\\FrontEnd\\Controllers\\ConsultaController.cs",
+              "RelativeToolTip": "FrontEnd\\Controllers\\ConsultaController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T11:54:37.136Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ConsultaController.cs",
-              "DocumentMoniker": "C:\\Consultoio\\FrontEnd\\Controllers\\ConsultaController.cs",
-              "RelativeDocumentMoniker": "FrontEnd\\Controllers\\ConsultaController.cs",
-              "ToolTip": "C:\\Consultoio\\FrontEnd\\Controllers\\ConsultaController.cs",
-              "RelativeToolTip": "FrontEnd\\Controllers\\ConsultaController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
+              "Title": "ApiService.cs",
+              "DocumentMoniker": "C:\\Consultorio\\FrontEnd\\Services\\ApiService.cs",
+              "RelativeDocumentMoniker": "FrontEnd\\Services\\ApiService.cs",
+              "ToolTip": "C:\\Consultorio\\FrontEnd\\Services\\ApiService.cs",
+              "RelativeToolTip": "FrontEnd\\Services\\ApiService.cs",
+              "ViewState": "AgIAAHABAAAAAAAAAAAawIIBAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T22:00:28.522Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Consultoio\\FrontEnd\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "FrontEnd\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Consultoio\\FrontEnd\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "FrontEnd\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAP8BAAAAAAAAAAAAABECAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-11T21:54:18.418Z",
+              "WhenOpened": "2025-06-14T11:13:57.365Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "form.html",
-              "DocumentMoniker": "C:\\Consultoio\\FrontEnd\\Content\\form.html",
-              "RelativeDocumentMoniker": "FrontEnd\\Content\\form.html",
-              "ToolTip": "C:\\Consultoio\\FrontEnd\\Content\\form.html",
-              "RelativeToolTip": "FrontEnd\\Content\\form.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-06-11T21:44:48.817Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Paciente.cs",
-              "DocumentMoniker": "C:\\Consultoio\\FrontEnd\\Models\\Paciente.cs",
-              "RelativeDocumentMoniker": "FrontEnd\\Models\\Paciente.cs",
-              "ToolTip": "C:\\Consultoio\\FrontEnd\\Models\\Paciente.cs",
-              "RelativeToolTip": "FrontEnd\\Models\\Paciente.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAgwCoAAAAYAAAAAAAAAA==",
+              "Title": "EventsController.cs",
+              "DocumentMoniker": "C:\\Consultorio\\Api\\Controllers\\EventsController.cs",
+              "RelativeDocumentMoniker": "Api\\Controllers\\EventsController.cs",
+              "ToolTip": "C:\\Consultorio\\Api\\Controllers\\EventsController.cs",
+              "RelativeToolTip": "Api\\Controllers\\EventsController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAxwB0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T12:41:38.331Z",
+              "WhenOpened": "2025-06-14T11:13:57.378Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ApiService.cs",
-              "DocumentMoniker": "C:\\Consultoio\\FrontEnd\\Services\\ApiService.cs",
-              "RelativeDocumentMoniker": "FrontEnd\\Services\\ApiService.cs",
-              "ToolTip": "C:\\Consultoio\\FrontEnd\\Services\\ApiService.cs",
-              "RelativeToolTip": "FrontEnd\\Services\\ApiService.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAQwA4BAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T14:15:37.806Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Consultoio\\FrontEnd\\Views\\Paciente\\Index.cshtml",
-              "RelativeDocumentMoniker": "FrontEnd\\Views\\Paciente\\Index.cshtml",
-              "ToolTip": "C:\\Consultoio\\FrontEnd\\Views\\Paciente\\Index.cshtml",
-              "RelativeToolTip": "FrontEnd\\Views\\Paciente\\Index.cshtml",
-              "ViewState": "AgIAAPoDAAAAAAAAAAAAAAsEAAAdAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Consultorio\\FrontEnd\\Views\\Consulta\\Index.cshtml",
+              "RelativeDocumentMoniker": "FrontEnd\\Views\\Consulta\\Index.cshtml",
+              "ToolTip": "C:\\Consultorio\\FrontEnd\\Views\\Consulta\\Index.cshtml",
+              "RelativeToolTip": "FrontEnd\\Views\\Consulta\\Index.cshtml",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAlwHEAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-08T11:43:50.496Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PacienteController.cs",
-              "DocumentMoniker": "C:\\Consultoio\\Api\\Controllers\\PacienteController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\PacienteController.cs",
-              "ToolTip": "C:\\Consultoio\\Api\\Controllers\\PacienteController.cs",
-              "RelativeToolTip": "Api\\Controllers\\PacienteController.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAUwG8AAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T12:26:29.013Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PacienteController.cs",
-              "DocumentMoniker": "C:\\Consultoio\\FrontEnd\\Controllers\\PacienteController.cs",
-              "RelativeDocumentMoniker": "FrontEnd\\Controllers\\PacienteController.cs",
-              "ToolTip": "C:\\Consultoio\\FrontEnd\\Controllers\\PacienteController.cs",
-              "RelativeToolTip": "FrontEnd\\Controllers\\PacienteController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwCkAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T11:42:27.917Z",
+              "WhenOpened": "2025-06-14T11:13:21.066Z",
               "EditorCaption": ""
             }
           ]

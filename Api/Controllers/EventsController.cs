@@ -5,13 +5,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Api.Models;
+using Microsoft.AspNetCore.Authorization;
 
 
-namespace FrontEnd.Controllers
+namespace Api.Controllers
 {
-    [Produces("application/json")]
-    [Route("api/Events")]
-    public class EventsController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class EventsController : ControllerBase
     {
         private readonly ConsultorioContext _context;
 
@@ -22,9 +23,20 @@ namespace FrontEnd.Controllers
 
         // GET: api/Events
         [HttpGet]
-        public IEnumerable<Event> GetEvents([FromQuery] DateTime start, [FromQuery] DateTime end)
+        [Authorize]
+        [ResponseCache(CacheProfileName = "apicache")]
+        public IActionResult GetEvents()
         {
-            return from e in _context.Events where !((e.End <= start) || (e.Start >= end)) select e;
+            return Ok();//from e in _context.Events where !((e.End.ToString().Length <= 10) || (e.Start.ToString().Length >=10 )) select e;
+        }
+
+        // GET: api/Events
+        [HttpGet("GetEventsByFecha")]
+        [Authorize]
+        [ResponseCache(CacheProfileName = "apicache")]
+        public IActionResult/*IEnumerable<Event>*/ GetEventsByFecha(string start)
+        {
+            return Ok();//from e in _context.Events where !((e.End.ToString().Length <= 10) || (e.Start.ToString().Length >=10 )) select e;
         }
 
         // GET: api/Events/5

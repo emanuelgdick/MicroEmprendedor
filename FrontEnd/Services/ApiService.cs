@@ -381,10 +381,23 @@ namespace FrontEnd.Services
 
         //EVENTS
         #region
+
         public async Task<List<Event>> GetAllEvents(string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/GetEvents?");
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Events?");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Event>>(contents);
+            return APIResponse;
+        }
+
+        public async Task<List<Event>> GetEventsByFecha(string token)
+        {
+            string start =DateTime.Now.ToString();
+            DateTime end = DateTime.Now;
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Events/GetEventsByFecha?start={start}");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
             var APIResponse = JsonConvert.DeserializeObject<List<Event>>(contents);

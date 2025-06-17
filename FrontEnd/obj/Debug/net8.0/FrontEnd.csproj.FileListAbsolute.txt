@@ -399,6 +399,7 @@ C:\Consultorio\FrontEnd\bin\Debug\net8.0\Content\moment\bower.json
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\Content\pnotify\.bower.json
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\Content\pnotify\bower.json
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\FrontEnd.staticwebassets.runtime.json
+C:\Consultorio\FrontEnd\bin\Debug\net8.0\FrontEnd.staticwebassets.endpoints.json
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\FrontEnd.exe
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\FrontEnd.deps.json
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\FrontEnd.runtimeconfig.json
@@ -471,7 +472,6 @@ C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Composition.TypedParts.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Drawing.Common.dll
-C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Formats.Asn1.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Security.Permissions.dll
@@ -628,15 +628,18 @@ C:\Consultorio\FrontEnd\obj\Debug\net8.0\FrontEnd.MvcApplicationPartsAssemblyInf
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\FrontEnd.RazorAssemblyInfo.cache
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\FrontEnd.RazorAssemblyInfo.cs
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\FrontEnd.sourcelink.json
+C:\Consultorio\FrontEnd\obj\Debug\net8.0\scopedcss\bundle\FrontEnd.styles.css
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\staticwebassets.build.json
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\staticwebassets.development.json
+C:\Consultorio\FrontEnd\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.FrontEnd.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Consultorio\FrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.FrontEnd.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.build.FrontEnd.props
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.FrontEnd.props
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.FrontEnd.props
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Consultorio\FrontEnd\obj\Debug\net8.0\scopedcss\bundle\FrontEnd.styles.css
-C:\Consultorio\FrontEnd\obj\Debug\net8.0\FrontEnd.csproj.CopyComplete
+C:\Consultorio\FrontEnd\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Consultorio\FrontEnd\obj\Debug\net8.0\FrontEnd.csproj.Up2Date
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\FrontEnd.dll
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\refint\FrontEnd.dll
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\FrontEnd.pdb
