@@ -89,7 +89,7 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btnCancelar" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btnAceptar" onclick="Guardar()">Guardar</button>
+                <button type="button" class="btn btnAceptar"  onclick="Guardar()" >Guardar</button>
 
             </div>
 
@@ -99,7 +99,6 @@
 @section scripts {
     <script>
         const pacientes = [];
-
 
         //GET PACIENTES
         jQuery.ajax({
@@ -111,19 +110,20 @@
             success: function (data) {
                 $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbopaciente");
                 $.each(data.data, function (index, value) {
-                    $("<option>").attr({ "value": value.id }).text(value.apeyNom).appendTo("#cbopaciente");
+                    pacientes.push({id:value.id,name:value.apeyNom});
+                    //$("<option>").attr({ "value": value.id }).text(value.apeyNom).appendTo("#cbopaciente");
                 });
             },
             error: function (error) {
                 console.log(error)
             }
         });
-
+        
         const colors = [
-            { id: "#1066a8", name: "Blue" },
-            { id: "#6aa84f", name: "Green" },
-            { id: "#f1c232", name: "Yellow" },
-            { id: "#cc0000", name: "Red" },
+            { id: "#1066a8", name: "Azul" },
+            { id: "#6aa84f", name: "Verde" },
+            { id: "#f1c232", name: "Amarillo" },
+            { id: "#cc0000", name: "Rojo" },
         ];
 
         const datepicker = new DayPilot.Navigator("nav", {
@@ -183,21 +183,25 @@
                 ]
             }),
             onTimeRangeSelected: async (args) => {
-                const form = document.getElementById('FormModal');
-                //    form.modal("show");
-                //[
-                // { name: "Text", id: "text" },
-                // { name: "Color", id: "color", type: "select", options: colors },
-                // { name: "Paciente", id: "paciente", type: "select", options: pacientes },
-                //];
-                $(form).modal("show");
+                //const form = document.getElementById('FormModal');
+                //form.modal("show");
+                debugger;
+                const form = [
+                 { name: "Text", id: "text" },
+                 { name: "Color", id: "color", type: "select", options: colors },
+                 { name: "Paciente", id: "IdPaciente", type: "select", options: pacientes },
+                ];
 
+                //$(form).modal("show");
+         
                 const data = {
-                    text: "New event",
+                    texto: form[0].value,
                     Color: "#1066a8",
-                    Desde: args.start,
-                    Hasta: args.end
+                    start: args.start,
+                    end: args.end,
+                    IdPaciente: form[2].value
                 };
+             
                 const modal = await DayPilot.Modal.form(form, data);
                 calendar.clearSelection();
 
@@ -205,8 +209,12 @@
                     return;
                 }
                 const consulta = modal.result;
+                console.log("***");
+                console.log(consulta);
+                console.log("***");
                 const { data: event } = await DayPilot.Http.post("/Consulta/CreateEvent", consulta);
-                calendar.events.add(event);
+
+                calendar.events.add(consulta);
             },
             onEventMove: async (args) => {
                 const params = {
@@ -258,6 +266,41 @@
             }
         };
         app.init();
+
+
+
+        async function Guardar(args){
+
+
+            const form = document.getElementById('FormModal');
+            //    form.modal("show");
+            //[
+            // { name: "Text", id: "text" },
+            // { name: "Color", id: "color", type: "select", options: colors },
+            // { name: "Paciente", id: "paciente", type: "select", options: pacientes },
+            //];
+
+            $(form).modal("show");
+
+            const data = {
+                text: $('#texto').val(), //"New event"
+                Color: $('#cbocolor').val(),// "#1066a8"
+                Desde: args.start,
+                Hasta: args.end
+            };
+            const modal = await DayPilot.Modal.form(form, data);
+            calendar.clearSelection();
+
+            if (modal.canceled) {
+                return;
+            }
+            const consulta = modal.result;
+            const { data: event } = await DayPilot.Http.post("/Consulta/CreateEvent", consulta);
+            console.log(event);
+            calendar.events.add(event);
+        
+        
+        }
 
 
     </script>

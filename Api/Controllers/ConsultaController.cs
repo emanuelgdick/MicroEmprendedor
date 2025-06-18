@@ -111,8 +111,8 @@ namespace Api.Controllers
                 return NotFound();
             }
 
-            @event.Desde = param.Start;
-            @event.Hasta = param.End;
+            @event.start = param.start;
+            @event.end = param.end;
 
             try
             {
@@ -148,7 +148,7 @@ namespace Api.Controllers
                 return NotFound();
             }
 
-            @event.Color = param.Color;
+            @event.color = param.Color;
 
             try
             {
@@ -217,8 +217,10 @@ namespace Api.Controllers
 
     public class EventMoveParams
     {
-        public DateTime Start { get; set; }
-        public DateTime End { get; set; }
+        public DateTime start { get; set; }
+        public DateTime end { get; set; }
+
+        public int IdPaciente { get; set; }
     }
 
     public class EventColorParams

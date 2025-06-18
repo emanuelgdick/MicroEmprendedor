@@ -30,25 +30,23 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Color")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("Desde")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("Hasta")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("IdPaciente")
                         .HasColumnType("int");
 
-                    b.Property<string>("observaciones")
+                    b.Property<string>("color")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("end")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("start")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("text")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("IdPaciente");
 
                     b.ToTable("Consulta");
                 });
@@ -270,17 +268,6 @@ namespace Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Usuario");
-                });
-
-            modelBuilder.Entity("Api.Models.Consulta", b =>
-                {
-                    b.HasOne("Api.Models.Paciente", "Paciente")
-                        .WithMany()
-                        .HasForeignKey("IdPaciente")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Paciente");
                 });
 
             modelBuilder.Entity("Api.Models.Paciente", b =>
