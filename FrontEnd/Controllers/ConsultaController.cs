@@ -21,11 +21,11 @@ namespace FrontEnd.Controllers
 
         [Authorize(Roles = "Admin")]
         [ResponseCache(Duration = 30)]
-        public async Task<IActionResult> Index()
+        public async /*IEnumerable<Consulta>*/Task<IActionResult> Index(string start, string end)
         {
             int pagesize = _config.GetValue<int>("PageSettings:PageSize");
             List<Consulta> lstEvent = new List<Consulta>();
-            lstEvent = await _apiService.GetAllConsulta(HttpContext.Session.GetString("APIToken"));
+            lstEvent = await _apiService.GetAllConsulta(HttpContext.Session.GetString("APIToken"), start, end);
             return View();
 
         }
@@ -35,7 +35,7 @@ namespace FrontEnd.Controllers
         public async Task<JsonResult> Events(string start,string end)
         {
             List<Consulta> oLista = new List<Consulta>();
-            oLista = await _apiService.GetAllConsulta(HttpContext.Session.GetString("APIToken"));
+            oLista = await _apiService.GetAllConsulta(HttpContext.Session.GetString("APIToken"),start,end);
             return Json(new { data = oLista });
         }
 

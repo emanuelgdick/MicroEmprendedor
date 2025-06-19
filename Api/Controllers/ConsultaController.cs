@@ -28,9 +28,11 @@ namespace Api.Controllers
         [HttpGet]
         [Authorize]
         [ResponseCache(CacheProfileName = "apicache")]
-        public IActionResult GetEvents()
+        public IActionResult GetEvents(DateTime start, DateTime end)
         {
-            return Ok();//from e in _context.Events where !((e.End.ToString().Length <= 10) || (e.Start.ToString().Length >=10 )) select e;
+            // Obtener datos de las tablas
+            var consulta = _db.Consulta.Where(s=>s.start>=start && s.end<= end).ToList();
+            return Ok(consulta);
         }
 
         // GET: api/Events

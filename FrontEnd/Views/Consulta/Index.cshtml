@@ -133,7 +133,7 @@
             onTimeRangeSelected: args => {
                 calendar.startDate = args.day;
                 calendar.update();
-                calendar.events.load("/Consulta/Events");
+                calendar.events.load(`/Consulta/Events/start=${start}/end=${end}`);
             }
         });
         datepicker.init();
@@ -183,17 +183,12 @@
                 ]
             }),
             onTimeRangeSelected: async (args) => {
-                //const form = document.getElementById('FormModal');
-                //form.modal("show");
-                debugger;
                 const form = [
                  { name: "Text", id: "text" },
                  { name: "Color", id: "color", type: "select", options: colors },
                  { name: "Paciente", id: "IdPaciente", type: "select", options: pacientes },
                 ];
 
-                //$(form).modal("show");
-         
                 const data = {
                     texto: form[0].value,
                     Color: "#1066a8",
@@ -209,30 +204,28 @@
                     return;
                 }
                 const consulta = modal.result;
-                console.log("***");
-                console.log(consulta);
-                console.log("***");
                 const { data: event } = await DayPilot.Http.post("/Consulta/CreateEvent", consulta);
 
                 calendar.events.add(consulta);
             },
-            onEventMove: async (args) => {
-                const params = {
-                    id: args.e.id(),
-                    start: args.newStart,
-                    end: args.newEnd
-                };
-                const { data } = await DayPilot.Http.put(`/Consulta/events/${args.e.id()}/move`, params);
-            },
-            onEventResize: async (args) => {
-                const params = {
-                    id: args.e.id(),
-                    start: args.newStart,
-                    end: args.newEnd
-                };
-                const { data } = await DayPilot.Http.put(`/Consulta/events/${args.e.id()}/move`, params);
-            },
+            // onEventMove: async (args) => {
+            //     const params = {
+            //         id: args.e.id(),
+            //         start: args.newStart,
+            //         end: args.newEnd
+            //     };
+            //     const { data } = await DayPilot.Http.put(`/Consulta/events/${args.e.id()}/move`, params);
+            // },
+            // onEventResize: async (args) => {
+            //     const params = {
+            //         id: args.e.id(),
+            //         start: args.newStart,
+            //         end: args.newEnd
+            //     };
+            //     const { data } = await DayPilot.Http.put(`/Consulta/events/${args.e.id()}/move`, params);
+            // },
             onBeforeEventRender: (args) => {
+             
                 args.data.backColor = args.data.color + "99";
                 args.data.borderColor = args.data.color;
                 args.data.areas = [
@@ -242,7 +235,7 @@
                         width: 20,
                         height: 20,
                         backColor: args.data.color,
-                        symbol: "icons/daypilot.svg#minichevron-down-2",
+                        symbol: "../icons/daypilot.svg#minichevron-down-2",
                         visibility: "Visible",
                         action: "ContextMenu",
                         style: "border-radius: 15px; cursor:pointer;"
@@ -254,6 +247,7 @@
 
         const app = {
             async updateColor(e, color) {
+            
                 const params = {
                     color: color
                 };
@@ -262,45 +256,38 @@
                 calendar.events.update(e);
             },
             init() {
-                calendar.events.load("/Consulta/Events");
+
+                //calendar.events.load(`/Consulta/Events/start=${start}/end=${end}`);
+                //calendar.events.load("/Consulta/index?start=2025-06-18&end=2025-06-20");
+                calendar.events.load("/Consulta/index");
+                alert('ok');
+                                     
             }
         };
         app.init();
 
 
 
-        async function Guardar(args){
+        // async function Guardar(args){
+        //     const form = document.getElementById('FormModal');
+        //     $(form).modal("show");
+        //     const data = {
+        //         text: $('#texto').val(), //"New event"
+        //         Color: $('#cbocolor').val(),// "#1066a8"
+        //         Desde: args.start,
+        //         Hasta: args.end
+        //     };
+        //     const modal = await DayPilot.Modal.form(form, data);
+        //     calendar.clearSelection();
 
-
-            const form = document.getElementById('FormModal');
-            //    form.modal("show");
-            //[
-            // { name: "Text", id: "text" },
-            // { name: "Color", id: "color", type: "select", options: colors },
-            // { name: "Paciente", id: "paciente", type: "select", options: pacientes },
-            //];
-
-            $(form).modal("show");
-
-            const data = {
-                text: $('#texto').val(), //"New event"
-                Color: $('#cbocolor').val(),// "#1066a8"
-                Desde: args.start,
-                Hasta: args.end
-            };
-            const modal = await DayPilot.Modal.form(form, data);
-            calendar.clearSelection();
-
-            if (modal.canceled) {
-                return;
-            }
-            const consulta = modal.result;
-            const { data: event } = await DayPilot.Http.post("/Consulta/CreateEvent", consulta);
-            console.log(event);
-            calendar.events.add(event);
-        
-        
-        }
+        //     if (modal.canceled) {
+        //         return;
+        //     }
+        //     const consulta = modal.result;
+        //     const { data: event } = await DayPilot.Http.post("/Consulta/CreateEvent", consulta);
+        //     console.log(event);
+        //     calendar.events.add(event);
+        // }
 
 
     </script>

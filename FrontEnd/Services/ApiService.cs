@@ -382,10 +382,10 @@ namespace FrontEnd.Services
         //EVENTS
         #region
 
-        public async Task<List<Consulta>> GetAllConsulta(string token)
+        public async Task<List<Consulta>> GetAllConsulta(string token,string start,string end)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/Consulta?");
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Consulta?start={start}&end={end}");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
             var APIResponse = JsonConvert.DeserializeObject<List<Consulta>>(contents);
