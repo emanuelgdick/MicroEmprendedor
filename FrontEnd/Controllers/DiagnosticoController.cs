@@ -22,11 +22,7 @@ namespace FrontEnd.Controllers
         [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Index()
         {
-            int pagesize = _config.GetValue<int>("PageSettings:PageSize");
-            List<Diagnostico> lstDiagnostico = new List<Diagnostico>();
-            lstDiagnostico = await _apiService.GetAllDiagnosticos(HttpContext.Session.GetString("APIToken"));
             return View();
-
         }
 
 

@@ -1,9 +1,10 @@
-﻿@using Frontend.Models
+﻿@* @using Frontend.Models
 @model Consulta
 @{
     ViewBag.Title = "Consultas";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
+} *@
+
 <style>
     .calendar_default_event,
     .calendar_default_event_inner {
@@ -69,9 +70,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                      
+
                                     </form>
-                                    
+
                                 </div>
                             </div>
                             <!-- End SmartWizard Content -->
@@ -89,7 +90,7 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btnCancelar" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btnAceptar"  onclick="Guardar()" >Guardar</button>
+                <button type="button" class="btn btnAceptar" onclick="Guardar()">Guardar</button>
 
             </div>
 
@@ -110,7 +111,7 @@
             success: function (data) {
                 $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbopaciente");
                 $.each(data.data, function (index, value) {
-                    pacientes.push({id:value.id,name:value.apeyNom});
+                    pacientes.push({ id: value.id, name: value.apeyNom });
                     //$("<option>").attr({ "value": value.id }).text(value.apeyNom).appendTo("#cbopaciente");
                 });
             },
@@ -118,7 +119,7 @@
                 console.log(error)
             }
         });
-        
+
         const colors = [
             { id: "#1066a8", name: "Azul" },
             { id: "#6aa84f", name: "Verde" },
@@ -184,19 +185,19 @@
             }),
             onTimeRangeSelected: async (args) => {
                 const form = [
-                 { name: "Text", id: "text" },
-                 { name: "Color", id: "color", type: "select", options: colors },
-                 { name: "Paciente", id: "IdPaciente", type: "select", options: pacientes },
+                    { name: "Text", id: "text" },
+                    { name: "Color", id: "color", type: "select", options: colors },
+                    { name: "Paciente", id: "IdPaciente", type: "select", options: pacientes },
                 ];
 
                 const data = {
                     texto: form[0].value,
-                    Color: "#1066a8",
+                    color: "#1066a8",
                     start: args.start,
                     end: args.end,
                     IdPaciente: form[2].value
                 };
-             
+
                 const modal = await DayPilot.Modal.form(form, data);
                 calendar.clearSelection();
 
@@ -205,27 +206,41 @@
                 }
                 const consulta = modal.result;
                 const { data: event } = await DayPilot.Http.post("/Consulta/CreateEvent", consulta);
-
                 calendar.events.add(consulta);
             },
-            // onEventMove: async (args) => {
-            //     const params = {
-            //         id: args.e.id(),
-            //         start: args.newStart,
-            //         end: args.newEnd
-            //     };
-            //     const { data } = await DayPilot.Http.put(`/Consulta/events/${args.e.id()}/move`, params);
-            // },
-            // onEventResize: async (args) => {
-            //     const params = {
-            //         id: args.e.id(),
-            //         start: args.newStart,
-            //         end: args.newEnd
-            //     };
-            //     const { data } = await DayPilot.Http.put(`/Consulta/events/${args.e.id()}/move`, params);
-            // },
+            onEventMove: async (args) => {
+                // const cons = {
+                //     id: args.e.id(),
+                //     start: args.newStart,
+                //     end: args.newEnd
+                // };
+
+
+                const cons = {
+                    texto:'movido',
+                    color: "#1066a8",
+                    id: args.e.id(),
+                    start: DateTime.Now(),
+                    end: DateTime.Now(),
+                    IdPaciente: 1
+                };
+
+                console.log(cons);
+
+                //const { data } = await DayPilot.Http.put(`/Consulta/${args.e.id()}/Move`, c);
+
+                const { data } = await DayPilot.Http.put("/Consulta/Move", cons);
+            },
+            onEventResize: async (args) => {
+                const params = {
+                    id: args.e.id(),
+                    start: args.newStart,
+                    end: args.newEnd
+                };
+                
+                const { data } = await DayPilot.Http.put(`/Consulta/events/${args.e.id()}/move`, params);
+            },
             onBeforeEventRender: (args) => {
-             
                 args.data.backColor = args.data.color + "99";
                 args.data.borderColor = args.data.color;
                 args.data.areas = [
@@ -247,48 +262,19 @@
 
         const app = {
             async updateColor(e, color) {
-            
                 const params = {
                     color: color
                 };
-                const { data } = await DayPilot.Http.put(`/Consulta/events/${e.id()}/color`, params);
+                const { data } = await DayPilot.Http.put(`/Consulta/Events/${e.id()}/color`, params);
                 e.data.color = color;
                 calendar.events.update(e);
             },
             init() {
+                calendar.events.load("/Consulta/Events?start=2025-06-18&end=2025-06-20");
 
-                //calendar.events.load(`/Consulta/Events/start=${start}/end=${end}`);
-                //calendar.events.load("/Consulta/index?start=2025-06-18&end=2025-06-20");
-                calendar.events.load("/Consulta/index");
-                alert('ok');
-                                     
             }
         };
         app.init();
-
-
-
-        // async function Guardar(args){
-        //     const form = document.getElementById('FormModal');
-        //     $(form).modal("show");
-        //     const data = {
-        //         text: $('#texto').val(), //"New event"
-        //         Color: $('#cbocolor').val(),// "#1066a8"
-        //         Desde: args.start,
-        //         Hasta: args.end
-        //     };
-        //     const modal = await DayPilot.Modal.form(form, data);
-        //     calendar.clearSelection();
-
-        //     if (modal.canceled) {
-        //         return;
-        //     }
-        //     const consulta = modal.result;
-        //     const { data: event } = await DayPilot.Http.post("/Consulta/CreateEvent", consulta);
-        //     console.log(event);
-        //     calendar.events.add(event);
-        // }
-
 
     </script>
 }

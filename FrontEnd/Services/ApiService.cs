@@ -6,6 +6,7 @@ using Frontend.Models;
 using FrontEnd.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using static FrontEnd.Controllers.ConsultaController;
 namespace FrontEnd.Services
 {
     public class ApiService
@@ -404,10 +405,20 @@ namespace FrontEnd.Services
             return APIResponse;
         }
 
-        public async Task<Consulta> AddEvent(Consulta C, string token)
+        public async Task<Consulta> AddConsulta(Consulta C, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Consulta>($"api/Consulta/PostEvent", C);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Consulta>(contents);
+            return APIResponse;
+        }
+
+        public async Task<Consulta> MoveConsulta(string token, Consulta C)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsJsonAsync<Consulta>($"api/Consulta/Move", C);
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
             var APIResponse = JsonConvert.DeserializeObject<Consulta>(contents);

@@ -99,8 +99,9 @@ namespace Api.Controllers
         }
 
         // PUT: api/Events/5/move
-        [HttpPut("{id}/move")]
-        public async Task<IActionResult> MoveEvent([FromRoute] int id, [FromBody] EventMoveParams param)
+        //[HttpPut("{id}/move")]
+        [HttpPut("Move")]
+        public async Task<IActionResult> MoveConsulta([FromRoute] int id, [FromBody] Consulta param)
         {
             if (!ModelState.IsValid)
             {

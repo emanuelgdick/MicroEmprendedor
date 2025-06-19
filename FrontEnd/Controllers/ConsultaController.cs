@@ -3,7 +3,9 @@ using FrontEnd.Models;
 using FrontEnd.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft;
+using System.Collections;
 
 namespace FrontEnd.Controllers
 {
@@ -21,23 +23,32 @@ namespace FrontEnd.Controllers
 
         [Authorize(Roles = "Admin")]
         [ResponseCache(Duration = 30)]
-        public async /*IEnumerable<Consulta>*/Task<IActionResult> Index(string start, string end)
+        public IActionResult Index()
         {
-            int pagesize = _config.GetValue<int>("PageSettings:PageSize");
-            List<Consulta> lstEvent = new List<Consulta>();
-            lstEvent = await _apiService.GetAllConsulta(HttpContext.Session.GetString("APIToken"), start, end);
-            return View();
-
+            return  View();
         }
 
 
         [Authorize(Roles = "Admin")]
-        public async Task<JsonResult> Events(string start,string end)
+        public async Task<List<Consulta>> Events(string start,string end)
         {
             List<Consulta> oLista = new List<Consulta>();
             oLista = await _apiService.GetAllConsulta(HttpContext.Session.GetString("APIToken"),start,end);
-            return Json(new { data = oLista });
+            return oLista;
         }
+
+
+        [Authorize(Roles = "Admin")]
+        public async Task<Consulta> Move( Consulta c)
+        {
+            Consulta oLista = new Consulta();
+            oLista = await _apiService.MoveConsulta(HttpContext.Session.GetString("APIToken"), c);
+            return oLista;
+        }
+
+
+
+
 
 
         [Authorize(Roles = "Admin")]
@@ -45,8 +56,6 @@ namespace FrontEnd.Controllers
         {
             return View();
         }
-
-
 
         [Authorize(Roles = "Admin")]
         public async Task<JsonResult> CreateEvent([FromBody] Consulta consulta)
@@ -59,7 +68,7 @@ namespace FrontEnd.Controllers
                 {
                     //if (Event.Start != "")
                     //{
-                    consulta = await _apiService.AddEvent(consulta, HttpContext.Session.GetString("APIToken"));
+                    consulta = await _apiService.AddConsulta(consulta, HttpContext.Session.GetString("APIToken"));
                         resultado = consulta.Id;
                         mensaje = "Event ingresada correctamente";
                     //}
@@ -142,6 +151,11 @@ namespace FrontEnd.Controllers
         public IActionResult ErrorPage()
         {
             return View();
+        }
+        public class EventMoveParams
+        {
+            public DateTime start { get; set; }
+            public DateTime end { get; set; }
         }
     }
 }
