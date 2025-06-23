@@ -37,6 +37,17 @@ namespace FrontEnd.Controllers
             oLista = await _apiService.GetAllMedicos(HttpContext.Session.GetString("APIToken"));
             return Json(new { data = oLista });
         }
+        
+
+        [Authorize(Roles = "Admin")]
+        public async Task<JsonResult> GetMedicosConAgenda()
+        {
+            List<Medico> oLista = new List<Medico>();
+            oLista = await _apiService.GetMedicosConAgenda(HttpContext.Session.GetString("APIToken"));
+            return Json(new { data = oLista });
+        }
+
+
 
 
         [Authorize(Roles = "Admin")]

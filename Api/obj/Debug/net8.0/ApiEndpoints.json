@@ -59,22 +59,6 @@
   },
   {
     "ContainingType": "Api.Controllers.ConsultaController",
-    "Method": "DeleteEvent",
-    "RelativePath": "api/Consulta/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Api.Controllers.ConsultaController",
     "Method": "SetEventColor",
     "RelativePath": "api/Consulta/{id}/color",
     "HttpMethod": "PUT",
@@ -88,7 +72,7 @@
       },
       {
         "Name": "param",
-        "Type": "Api.Controllers.EventColorParams",
+        "Type": "Api.Models.Consulta",
         "IsRequired": true
       }
     ],
@@ -96,7 +80,7 @@
   },
   {
     "ContainingType": "Api.Controllers.ConsultaController",
-    "Method": "MoveEvent",
+    "Method": "MoveConsulta",
     "RelativePath": "api/Consulta/{id}/move",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -108,9 +92,46 @@
         "IsRequired": true
       },
       {
-        "Name": "param",
-        "Type": "Api.Controllers.EventMoveParams",
+        "Name": "c",
+        "Type": "Api.Models.Consulta",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Api.Controllers.ConsultaController",
+    "Method": "UpdateConsulta",
+    "RelativePath": "api/Consulta/{id}/UpdateConsulta",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "param",
+        "Type": "Api.Models.Consulta",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Api.Controllers.ConsultaController",
+    "Method": "DeleteEvent",
+    "RelativePath": "api/Consulta/DeleteEvent",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -126,6 +147,32 @@
       {
         "Name": "start",
         "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Api.Controllers.ConsultaController",
+    "Method": "GetEventsByMedico",
+    "RelativePath": "api/Consulta/GetEventsByMedico",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "start",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "end",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "idMedico",
+        "Type": "System.Int32",
         "IsRequired": false
       }
     ],
@@ -397,7 +444,7 @@
   },
   {
     "ContainingType": "Api.Controllers.MedicoController",
-    "Method": "GetMedicoes",
+    "Method": "GetMedicos",
     "RelativePath": "api/Medico",
     "HttpMethod": "GET",
     "IsController": true,
@@ -414,7 +461,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Medico",
+        "Name": "medico",
         "Type": "Api.Models.Medico",
         "IsRequired": true
       }
@@ -461,6 +508,32 @@
     "ContainingType": "Api.Controllers.MedicoController",
     "Method": "GetMedicoById",
     "RelativePath": "api/Medico/GetMedicoById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Api.Models.Medico",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Api.Controllers.MedicoController",
+    "Method": "GetMedicosConAgenda",
+    "RelativePath": "api/Medico/GetMedicosConAgenda",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

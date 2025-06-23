@@ -688,6 +688,7 @@
                  $("#cbotipodoc").val(0);
                  $("#cbolocalidad").val(0);
                  $("#cbomedico").val(0);
+                 $("#cbomutual").val(0);
                  $("#cboprofesion").val(0);
                  let fnac = new Date()
 
@@ -725,6 +726,7 @@
                  $("#cbolocalidad").val(json.idLocalidad);
                  $("#cbomedico").val(json.idMedico);
                  $("#cboprofesion").val(json.idProfesion);
+                 $("#cbomutual").val(json.idMutual);
                  $("#txtnroPaciente").val(json.documento);
                  $("#descr").val(json.observaciones);
                  //$("#editor-one").text(json.observaciones),
@@ -1034,6 +1036,7 @@
                      idTipoDocumento:  $("#cbotipodoc option:selected").val(),
                      idProfesion: $("#cboprofesion option:selected").val(),
                      idMedico: $("#cbomedico option:selected").val(),
+                     idMutual: $("#cbomutual option:selected").val(),
                      sexo:'M',
                      calle:$("#txtcalle").val(),
                      nro:$("#txtnro").val(),

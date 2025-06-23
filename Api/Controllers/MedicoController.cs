@@ -21,7 +21,7 @@ namespace Api.Controllers
         [HttpGet]
         [Authorize]
         [ResponseCache(CacheProfileName = "apicache")]
-        public IActionResult GetMedicoes(/*int pagesize, int pagenumber*/)
+        public IActionResult GetMedicos(/*int pagesize, int pagenumber*/)
         {
             _logger.LogInformation("Fetching Todas las Medicos");
             var MedicoList = _db.Medico.ToList();
@@ -50,18 +50,32 @@ namespace Api.Controllers
         }
 
 
+        [HttpGet("GetMedicosConAgenda")]
+        [Authorize]
+        [ResponseCache(CacheProfileName = "apicache")]
+        public ActionResult<Medico> GetMedicosConAgenda(int id)
+        {
+            
+            var MedicoList = _db.Medico.Where(s=>s.TieneAgenda==true).ToList();
+            return Ok(MedicoList);
+        }
+
+
+
+
+
         [HttpPost("AddMedico")]
         [Authorize]
-        public ActionResult<Medico> AddMedico([FromBody] Medico Medico)
+        public ActionResult<Medico> AddMedico([FromBody] Medico medico)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _db.Medico.Add(Medico);
+            _db.Medico.Add(medico);
             _db.SaveChanges();
-            return Ok(Medico);
+            return Ok(medico);
 
         }
 
@@ -80,7 +94,8 @@ namespace Api.Controllers
                 return NotFound();
             }
 
-            Medico.ApeyNom = Medico.ApeyNom;
+            Medico.ApeyNom = medico.ApeyNom;
+            Medico.TieneAgenda = medico.TieneAgenda;
             _db.SaveChanges();
             return Ok(Medico);
 

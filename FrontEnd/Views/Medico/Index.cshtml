@@ -53,12 +53,22 @@
             <div class="modal-body ">
                 <input id="txtid" type="hidden" value="0" />
                 <form id="formNivel" class="row">
-                      <div class="container p-2">
-                           <div class="form-floating">
-                               <input type="text" class="form-control form-control-sm" id="txtapeynom" placeholder="Apellido y Nombre" />
-                                <label for="txtapeynom">Apellido y Nombre</label>
-                           </div>
+                    <div class="container p-2">
+                        <div class="row">
+                            <div class="col-9">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control form-control-sm" id="txtapeynom" placeholder="Apellido y Nombre" />
+                                    <label for="txtapeynom">Apellido y Nombre</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 form-floating mb-4 mt-4">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="chagenda">
+                                    <label class="form-check-label" for="chagenda">Agenda</label>
+                                </div>
+                            </div>
                         </div>
+                    </div>
                 </form>
             </div>
             <div class="row mt-2">
@@ -267,11 +277,19 @@
                 $("#txtid").val(0);
                 $("#txtapeynom").val("");
                 $("#txtapeynom").blur();
+                $("#chagenda").val(0);
+
                 $("#mensajeError").hide();
                 if (json != null) {
                     $("#txtid").val(json.id);
                     $("#txtapeynom").focus()
                     $("#txtapeynom").val(json.apeyNom).focus();
+                    debugger;
+                    if(json.tieneAgenda)
+                        $('#chagenda').prop('checked',true).trigger('change');
+                        else
+                        $('#chagenda').prop('checked',false).trigger('change');
+                  
                 }
                 $("#FormModal").modal("show");
             }
@@ -281,7 +299,7 @@
                 filaSeleccionada = $(this).closest("tr");
                 var data = tabladata.row(filaSeleccionada).data();
                 abrirModal(data)
-            })
+            });
 
             //Eliminar
             $("#tabla tbody").on("click", '.btn-eliminar', function () {
@@ -336,7 +354,9 @@
             var Medico = {
                     id: $("#txtid").val(),
                     apeyNom: $("#txtapeynom").val(),
+                    tieneAgenda:$("#chagenda").is(':checked') == true ? true : false,
                 }
+                console.log(Medico);
 
             jQuery.ajax({
                     url: '@Url.Action("CreateMedico", "Medico")',

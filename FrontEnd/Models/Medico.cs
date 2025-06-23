@@ -9,5 +9,6 @@ namespace FrontEnd.Models
 
         [Required]
         public string ApeyNom { get; set; }
+        public bool TieneAgenda { get; set; }
     }
 }

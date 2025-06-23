@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace Api.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    //[ApiController]
     public class ConsultaController : ControllerBase
     {
 
@@ -30,10 +30,80 @@ namespace Api.Controllers
         [ResponseCache(CacheProfileName = "apicache")]
         public IActionResult GetEvents(DateTime start, DateTime end)
         {
-            // Obtener datos de las tablas
-            var consulta = _db.Consulta.Where(s=>s.start>=start && s.end<= end).ToList();
-            return Ok(consulta);
+            var paciente = _db.Paciente.ToList();
+            var consulta = _db.Consulta.ToList();
+            var mutual = _db.Mutual.ToList();
+            var medico = _db.Medico.Where(s=>s.TieneAgenda==true).ToList();
+
+            var resultado = from con in consulta
+                            join pac in paciente on con.IdPaciente equals pac.Id into consultaPaciente
+                            join mut in mutual on con.Paciente.IdMutual equals mut.Id into mutualPaciente
+                            from cp in consultaPaciente.DefaultIfEmpty()
+                            
+                            from mp in mutualPaciente.DefaultIfEmpty()
+                            
+                            select new
+                            
+                            {
+                                Id = con.Id,
+                                text= con.Paciente.Mutual == null ? cp.ApeyNom + "(Sin Mutual)" + "\n" + "Tel Fijo:" + cp.TelFijo +"\n"+ "Tel Celular:" + cp.TelCelular + "\n" + con.observaciones : cp.ApeyNom + "(" + mp.DescA + ")\n" +  "Tel Fijo:" + cp.TelFijo + "\n" + "Tel Celular:" + cp.TelCelular + "\n"+ con.observaciones,   
+                                start=con.start,
+                                end=con.end,
+                                IdPaciente=con.IdPaciente,
+                                IdMedico = con.IdMedico,
+                                color =con.color,
+                                mutual=con.Paciente.IdMutual == null ? "" :mp.DescA
+                                
+
+                            };
+                
+
+            // var consulta = _db.Consulta.Where(s => s.start >= start && s.end <= end).ToList();
+            return Ok(resultado);
         }
+
+
+        // GET: api/EventsByMedico
+        [HttpGet("GetEventsByMedico")]
+        [Authorize]
+        [ResponseCache(CacheProfileName = "apicache")]
+        public IActionResult GetEventsByMedico(DateTime start, DateTime end, int idMedico)
+        {
+            var paciente = _db.Paciente.ToList();
+            var consulta = _db.Consulta.ToList();
+            var mutual = _db.Mutual.ToList();
+            var medico = _db.Medico.Where(s => s.TieneAgenda == true).ToList();
+
+            var resultado = from con in consulta
+                            where ((con.IdMedico == idMedico) && (idMedico != 0) || (idMedico == 0))
+                            join pac in paciente on con.IdPaciente equals pac.Id into consultaPaciente
+                            join mut in mutual on con.Paciente.IdMutual equals mut.Id into mutualPaciente
+                            from cp in consultaPaciente.DefaultIfEmpty()
+
+                            from mp in mutualPaciente.DefaultIfEmpty()
+
+                            select new
+
+                            {
+                                Id = con.Id,
+                                text = con.Paciente.Mutual == null ? cp.ApeyNom + "(Sin Mutual)" + "\n" + "Tel Fijo:" + cp.TelFijo + "\n" + "Tel Celular:" + cp.TelCelular + "\n" + con.observaciones : cp.ApeyNom + "(" + mp.DescA + ")\n" + "Tel Fijo:" + cp.TelFijo + "\n" + "Tel Celular:" + cp.TelCelular + "\n" + con.observaciones,
+                                start = con.start,
+                                end = con.end,
+                                IdPaciente = con.IdPaciente,
+                                IdMedico = con.IdMedico,
+                                color = con.color,
+                                mutual = con.Paciente.IdMutual == null ? "" : mp.DescA
+
+
+                            };
+
+
+            // var consulta = _db.Consulta.Where(s => s.start >= start && s.end <= end).ToList();
+            return Ok(resultado);
+        }
+
+
+
 
         // GET: api/Events
         [HttpGet("GetEventsByFecha")]
@@ -99,9 +169,9 @@ namespace Api.Controllers
         }
 
         // PUT: api/Events/5/move
-        //[HttpPut("{id}/move")]
-        [HttpPut("Move")]
-        public async Task<IActionResult> MoveConsulta([FromRoute] int id, [FromBody] Consulta param)
+        [HttpPut("{id}/move")]
+        //[HttpPut("Move")]
+        public async Task<IActionResult> MoveConsulta([FromRoute] int id, [FromBody] Consulta c)
         {
             if (!ModelState.IsValid)
             {
@@ -114,8 +184,8 @@ namespace Api.Controllers
                 return NotFound();
             }
 
-            @event.start = param.start;
-            @event.end = param.end;
+            @event.start = c.start;
+            @event.end = c.end;
 
             try
             {
@@ -138,7 +208,7 @@ namespace Api.Controllers
 
         // PUT: api/Events/5/color
         [HttpPut("{id}/color")]
-        public async Task<IActionResult> SetEventColor([FromRoute] int id, [FromBody] EventColorParams param)
+        public async Task<IActionResult> SetEventColor([FromRoute] int id, [FromBody] Consulta param)
         {
             if (!ModelState.IsValid)
             {
@@ -151,7 +221,7 @@ namespace Api.Controllers
                 return NotFound();
             }
 
-            @event.color = param.Color;
+            @event.color = param.color;
 
             try
             {
@@ -172,6 +242,48 @@ namespace Api.Controllers
             return NoContent();
         }
 
+
+        // PUT: api/Events/5/color
+        [HttpPut("{id}/UpdateConsulta")]
+        public async Task<IActionResult> UpdateConsulta([FromRoute] int id, [FromBody] Consulta param)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var @event = await _db.Consulta.SingleOrDefaultAsync(m => m.Id == id);
+            if (@event == null)
+            {
+                return NotFound();
+            }
+
+            @event.IdPaciente = param.IdPaciente;
+            @event.observaciones = param.observaciones;
+
+            try
+            {
+                await _db.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!EventExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+
+
+
+
         // POST: api/Events
         [HttpPost("PostEvent")]
         [Authorize]
@@ -191,8 +303,11 @@ namespace Api.Controllers
         }
 
         // DELETE: api/Events/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteEvent([FromRoute] int id)
+        //[HttpDelete("{id}")]
+        [HttpPut("DeleteEvent")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> DeleteEvent(Int32 id)
+       // public async Task<IActionResult> DeleteEvent([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {

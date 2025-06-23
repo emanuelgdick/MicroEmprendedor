@@ -44,7 +44,8 @@ namespace Api.Controllers
                                  IdLocalidad = pac?.IdLocalidad == null ? 0 : pac?.IdLocalidad,
                                  IdProfesion = pac?.IdProfesion == null ? 0 : pac?.IdProfesion,
                                  IdMedico = pac?.IdMedico == null ? 0 : pac?.IdMedico,
-                                 ApeyNom = pac.ApeyNom,
+                                 IdMutual = pac?.IdMutual == null ? 0 : pac?.IdMutual,
+                                ApeyNom = pac.ApeyNom,
                                  NroDocumento = pac.NroDocumento,
                                  Fnac = pac.Fnac,
                                  Calle = pac.Calle,
@@ -172,7 +173,7 @@ namespace Api.Controllers
             Paciente.IdProfesion = paciente.IdProfesion == 0 ? null : paciente.IdProfesion;
             Paciente.IdMedico = paciente.IdMedico == 0 ? null : paciente.IdMedico;
             Paciente.Sexo = paciente.Sexo;
-
+            Paciente.IdMutual = paciente.IdMutual;
             Paciente.IdLocalidad   = paciente.IdLocalidad == 0 ? null : paciente.IdLocalidad;
             Paciente.Calle = paciente.Calle;
             Paciente.Nro = paciente.Nro;

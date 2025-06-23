@@ -30,6 +30,9 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("IdMedico")
+                        .HasColumnType("int");
+
                     b.Property<int>("IdPaciente")
                         .HasColumnType("int");
 
@@ -39,6 +42,9 @@ namespace Api.Migrations
                     b.Property<DateTime>("end")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("observaciones")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("start")
                         .HasColumnType("datetime2");
 
@@ -47,6 +53,10 @@ namespace Api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("IdMedico");
+
+                    b.HasIndex("IdPaciente");
 
                     b.ToTable("Consulta");
                 });
@@ -96,6 +106,9 @@ namespace Api.Migrations
                     b.Property<string>("ApeyNom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TieneAgenda")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -158,6 +171,9 @@ namespace Api.Migrations
                     b.Property<int?>("IdMedico")
                         .HasColumnType("int");
 
+                    b.Property<int?>("IdMutual")
+                        .HasColumnType("int");
+
                     b.Property<int?>("IdProfesion")
                         .HasColumnType("int");
 
@@ -195,6 +211,8 @@ namespace Api.Migrations
                     b.HasIndex("IdLocalidad");
 
                     b.HasIndex("IdMedico");
+
+                    b.HasIndex("IdMutual");
 
                     b.HasIndex("IdProfesion");
 
@@ -270,6 +288,25 @@ namespace Api.Migrations
                     b.ToTable("Usuario");
                 });
 
+            modelBuilder.Entity("Api.Models.Consulta", b =>
+                {
+                    b.HasOne("Api.Models.Medico", "Medico")
+                        .WithMany()
+                        .HasForeignKey("IdMedico")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api.Models.Paciente", "Paciente")
+                        .WithMany()
+                        .HasForeignKey("IdPaciente")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Medico");
+
+                    b.Navigation("Paciente");
+                });
+
             modelBuilder.Entity("Api.Models.Paciente", b =>
                 {
                     b.HasOne("Api.Models.Localidad", "Localidad")
@@ -279,6 +316,10 @@ namespace Api.Migrations
                     b.HasOne("Api.Models.Medico", "Medico")
                         .WithMany()
                         .HasForeignKey("IdMedico");
+
+                    b.HasOne("Api.Models.Mutual", "Mutual")
+                        .WithMany()
+                        .HasForeignKey("IdMutual");
 
                     b.HasOne("Api.Models.Profesion", "Profesion")
                         .WithMany()
@@ -291,6 +332,8 @@ namespace Api.Migrations
                     b.Navigation("Localidad");
 
                     b.Navigation("Medico");
+
+                    b.Navigation("Mutual");
 
                     b.Navigation("Profesion");
 
