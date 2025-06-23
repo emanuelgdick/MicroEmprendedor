@@ -22,7 +22,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
+       // [ResponseCache(Duration = 30)]
         public IActionResult Index()
         {
             return  View();
@@ -30,7 +30,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
+       // [ResponseCache(Duration = 30)]
         public async Task<List<Consulta>> Events(string start, string end)
         {
             List<Consulta> oLista = new List<Consulta>();
@@ -39,7 +39,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
+       // [ResponseCache(Duration = 30)]
         public async Task<List<Consulta>> EventsByMedico(string start, string end,int idMedico)
         {
             List<Consulta> oLista = new List<Consulta>();
@@ -48,7 +48,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
+       // [ResponseCache(Duration = 30)]
         public async Task<Consulta> Move([FromBody] Consulta c)
         {
                 Consulta oLista = new Consulta();
@@ -59,7 +59,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
+       // [ResponseCache(Duration = 30)]
         public async Task<Consulta> ChangeColor( [FromBody] Consulta p)
         {
             Consulta oLista = new Consulta();
@@ -69,34 +69,38 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
+        //[ResponseCache(Duration = 30)]
         public async Task<IActionResult> Create()
         {
             return View();
         }
 
         [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
+        //[ResponseCache(Duration = 30)]
         public async Task<JsonResult> CreateEvent([FromBody] Consulta consulta)
         {
             object resultado;
+            resultado = "";
             string mensaje = String.Empty;
             try
             {
                 if (consulta.Id==0)
                 {
-                    if (consulta.IdPaciente != 0)
+                    if (consulta.IdPaciente == 0)
+                    {
+                        resultado = false;
+                        mensaje = "Por favor ingrese el Paciente";
+
+                    }else if (consulta.IdMedico == 0)
+                    {
+                        resultado = false;
+                        mensaje = "Por favor ingrese el Médico";
+                    }else if (consulta.IdPaciente != 0)
                     {
                         consulta = await _apiService.AddConsulta(consulta, HttpContext.Session.GetString("APIToken"));
                         resultado = consulta.Id;
                         mensaje = "Consulta ingresada correctamente";
                     }
-                    else
-                    {
-                        resultado = false;
-                        mensaje = "Por favor ingrese el Paciente";
-                    }
-
                 }
 
 
@@ -128,7 +132,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin,Student")]
-        [ResponseCache(Duration = 30)]
+        //[ResponseCache(Duration = 30)]
         public async Task<IActionResult> Details(int id)
         {
 
@@ -139,7 +143,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin,Student")]
-        [ResponseCache(Duration = 30)]
+       // [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Delete(int id)
         {
 
@@ -149,7 +153,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin,Student")]
-        [ResponseCache(Duration = 30)]
+       // [ResponseCache(Duration = 30)]
         public async Task<JsonResult> DeleteEvent(int id)
         {
             bool resultado = false;
