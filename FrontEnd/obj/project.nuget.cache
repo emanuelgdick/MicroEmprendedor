@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zfNHHioAYJI=",
+  "dgSpecHash": "ONmEmUd0/G8UVNgVlCn+d6ijbitLyCr4LtLfPIxScWyK2LJ1zTjo+B9jLswRHuS1SATgr/Ektbhut54oQAWq1Q==",
   "success": true,
   "projectFilePath": "C:\\Consultorio\\FrontEnd\\FrontEnd.csproj",
   "expectedPackageFiles": [
@@ -112,6 +112,7 @@
     "C:\\Users\\Emanuel\\.nuget\\packages\\nuget.projectmodel\\6.11.0\\nuget.projectmodel.6.11.0.nupkg.sha512",
     "C:\\Users\\Emanuel\\.nuget\\packages\\nuget.protocol\\6.11.0\\nuget.protocol.6.11.0.nupkg.sha512",
     "C:\\Users\\Emanuel\\.nuget\\packages\\nuget.versioning\\6.11.0\\nuget.versioning.6.11.0.nupkg.sha512",
+    "C:\\Users\\Emanuel\\.nuget\\packages\\rtfpipe\\2.0.7677.4303\\rtfpipe.2.0.7677.4303.nupkg.sha512",
     "C:\\Users\\Emanuel\\.nuget\\packages\\system.codedom\\5.0.0\\system.codedom.5.0.0.nupkg.sha512",
     "C:\\Users\\Emanuel\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",
     "C:\\Users\\Emanuel\\.nuget\\packages\\system.composition\\7.0.0\\system.composition.7.0.0.nupkg.sha512",

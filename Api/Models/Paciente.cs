@@ -43,6 +43,8 @@ namespace Api.Models
         public DateTime? Fnac { get; set; }
         public int NroHC { get; set; }
         public string? Observaciones { get; set; }
+
+       
         public string? Historia { get; set; }
 
 

@@ -640,8 +640,6 @@ C:\Consultorio\FrontEnd\obj\Debug\net8.0\refint\FrontEnd.dll
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\FrontEnd.pdb
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\FrontEnd.genruntimeconfig.cache
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\ref\FrontEnd.dll
-C:\Consultorio\FrontEnd\bin\Debug\net8.0\FrontEnd.staticwebassets.endpoints.json
-C:\Consultorio\FrontEnd\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Consultorio\FrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.FrontEnd.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Consultorio\FrontEnd\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-C:\Consultorio\FrontEnd\obj\Debug\net8.0\FrontEnd.csproj.Up2Date
+C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Formats.Asn1.dll
+C:\Consultorio\FrontEnd\obj\Debug\net8.0\FrontEnd.csproj.CopyComplete
+C:\Consultorio\FrontEnd\bin\Debug\net8.0\RtfPipe.dll

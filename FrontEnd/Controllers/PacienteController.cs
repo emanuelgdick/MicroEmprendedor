@@ -5,6 +5,8 @@ using FrontEnd.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft;
+using RtfPipe;
+using System.Text;
 
 
 namespace FrontEnd.Controllers
@@ -22,6 +24,8 @@ namespace FrontEnd.Controllers
             
         }
 
+        
+
         [Authorize(Roles = "Admin")]
         [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Index()
@@ -29,8 +33,19 @@ namespace FrontEnd.Controllers
             int pagesize = _config.GetValue<int>("PageSettings:PageSize");
             List<Paciente> lstPaciente = new List<Paciente>();
             lstPaciente = await _apiService.GetAllPacientes(HttpContext.Session.GetString("APIToken"));
+            System.Text.EncodingProvider ppp = System.Text.CodePagesEncodingProvider.Instance;
+            Encoding.RegisterProvider(ppp);
+            var html = Rtf.ToHtml(lstPaciente[0].Historia);
+            ViewBag.HtmlContent = html; 
             return View();
 
+        }
+        public ActionResult MyView(string rtfText)
+        {
+            string htmlContent = RtfHelper.ConvertRtfToHtml(rtfText);
+
+            ViewBag.HtmlContent = htmlContent; // Pasar el contenido HTML al modelo de la vista.
+            return View();
         }
 
 

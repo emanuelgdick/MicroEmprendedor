@@ -3,6 +3,7 @@ using Frontend.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Drawing;
 using System.Reflection.Metadata;
+using System.Web.Mvc;
 
 namespace FrontEnd.Models
 {
@@ -47,6 +48,8 @@ namespace FrontEnd.Models
         public DateTime? Fnac { get; set; }
         public int NroHC { get; set; }
         public string? Observaciones { get; set; }
+
+        [AllowHtml]
         public string? Historia { get; set; }
         //public string? foto { get; set; }
 

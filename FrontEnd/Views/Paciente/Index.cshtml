@@ -214,11 +214,11 @@
                                                 <canvas id="canvas" style="display:none;">
                                                 </canvas>
                                                 <div class="right text-center m-0">
-                                                    <img id="imagen" src="/images/user.png" alt="Imagen capturada" class="img-circle img-fluid" style="border:solid; border-width:1px; border-color:#bf2c04">
+                                                <img id="imagen" src="/images/user.png" alt="Imagen capturada" class="img-circle img-fluid" style="border:solid; border-width:1px; border-color:#bf2c04">
 
                                                 </div>
                                                 <div class="row mt-3" style=" justify-content: center;">
-                                                    <button id="botonCaptura" type="button" class="btn btnLimpiar" onclick="tomarFoto()">Tomar Foto</button>
+                                                <button id="botonCaptura" type="button" class="btn btnLimpiar" onclick="tomarFoto()">Tomar Foto</button>
 
                                                 </div> *@
 
@@ -226,36 +226,36 @@
 
 
                                                 @*   <div id="userphoto">
-                                                    <div class="gravatar-wrapper-128 right text-center m-0">
-                                                        <img id="imagen" src="/images/user.png" alt="" class=" logo  img-circle" width="150" height="150" style=" border:solid; border-width:1px; border-color:#bf2c04">
-                                                        <input accept="image/*" type="file" id="upload" name="upload" onchange="readURL(this);" style="visibility: hidden;" />
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-4 m-2 mr-5 p-0" title="Tomar foto">
-                                                            <div style="text-align:end">
-                                                                <a href="" id="botonCaptura" onclick="tomarFoto(); return false"><i class="fa fa-camera"></i></a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-4 m-2  p-0" title="Seleccionar foto">
-                                                            <div style="text-align:center">
-                                                                <a href="" onclick="changePicture(); return false"><i class="fa fa-file-image-o"></i></a>
-                                                            </div>
+                                                <div class="gravatar-wrapper-128 right text-center m-0">
+                                                <img id="imagen" src="/images/user.png" alt="" class=" logo  img-circle" width="150" height="150" style=" border:solid; border-width:1px; border-color:#bf2c04">
+                                                <input accept="image/*" type="file" id="upload" name="upload" onchange="readURL(this);" style="visibility: hidden;" />
+                                                </div>
+                                                <div class="row">
+                                                <div class="col-4 m-2 mr-5 p-0" title="Tomar foto">
+                                                <div style="text-align:end">
+                                                <a href="" id="botonCaptura" onclick="tomarFoto(); return false"><i class="fa fa-camera"></i></a>
+                                                </div>
+                                                </div>
+                                                <div class="col-4 m-2  p-0" title="Seleccionar foto">
+                                                <div style="text-align:center">
+                                                <a href="" onclick="changePicture(); return false"><i class="fa fa-file-image-o"></i></a>
+                                                </div>
 
-                                                        </div>
+                                                </div>
 
 
 
-                                                          <div class="change-picture-slide" style="top: 30px;  ">
-                                                            <input accept="image/*" type="file" id="upload" name="upload" onchange="readURL(this);" style="visibility: hidden;" />
-                                                            <a href="" onclick="changePicture(); return false"><i class="fa fa-camera"></i></a>
-                                                        </div>
+                                                <div class="change-picture-slide" style="top: 30px;  ">
+                                                <input accept="image/*" type="file" id="upload" name="upload" onchange="readURL(this);" style="visibility: hidden;" />
+                                                <a href="" onclick="changePicture(); return false"><i class="fa fa-camera"></i></a>
+                                                </div>
 
-                                                        <div class="change-picture-slide" style="top: 30px; ">
-                                                            <input accept="image/*" type="file" id="upload" name="upload" onchange="readURL(this);" style="visibility: hidden;" />
-                                                            <a href="" onclick="changePicture(); return false"><i class="fa fa-file-image-o"></i></a>
-                                                        </div>
+                                                <div class="change-picture-slide" style="top: 30px; ">
+                                                <input accept="image/*" type="file" id="upload" name="upload" onchange="readURL(this);" style="visibility: hidden;" />
+                                                <a href="" onclick="changePicture(); return false"><i class="fa fa-file-image-o"></i></a>
+                                                </div>
 
-                                                    </div>
+                                                </div>
                                                 </div> *@
 
                                             </div>
@@ -352,87 +352,115 @@
                                         </form>
                                     </div>
                                     <div id="step-5" style=" height: 320px; ">
-                                        <form id="formNivel" class="col-12 row m-0 " style="border:solid; border-color:#256080; border-width:2px; height:325px; border-radius: 8px;">
-                                            <div class="col-md-12 col-sm-12">
-                                                <div class="x_panel  p-0">
-                                                    <div class="x_content  mt-3 p-0">
-                                                        <div id="alerts"></div>
-                                                        <div class="btn-toolbar editor" data-bs-role="editor-toolbar" data-bs-target="#editor-one">
-                                                            <div class="btn-group m-0 p-0">
-                                                                <a class="btn dropdown-toggle" data-bs-toggle="dropdown" title="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
-                                                                <ul class="dropdown-menu">
-                                                                </ul>
-                                                            </div>
+                                        <form method="POST">
 
-                                                            <div class="btn-group">
-                                                                <a class="btn dropdown-toggle" data-bs-toggle="dropdown" title="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
-                                                                <ul class="dropdown-menu">
-                                                                    <li>
-                                                                        <a data-edit="fontSize 5">
-                                                                            <p style="font-size:17px">Huge</p>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a data-edit="fontSize 3">
-                                                                            <p style="font-size:14px">Normal</p>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a data-edit="fontSize 1">
-                                                                            <p style="font-size:11px">Small</p>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
+                                            <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
 
-                                                            <div class="btn-group">
-                                                                <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
-                                                                <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
-                                                                <a class="btn" data-edit="strikethrough" title="Strikethrough"><i class="fa fa-strikethrough"></i></a>
-                                                                <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
-                                                            </div>
+                                            <!-- body input -->
+                                            
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label" asp-for="Historia"></label>
+                                                <div>
 
-                                                            <div class="btn-group">
-                                                                <a class="btn" data-edit="insertunorderedlist" title="Bullet list"><i class="fa fa-list-ul"></i></a>
-                                                                <a class="btn" data-edit="insertorderedlist" title="Number list"><i class="fa fa-list-ol"></i></a>
-                                                                <a class="btn" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>
-                                                                <a class="btn" data-edit="indent" title="Indent (Tab)"><i class="fa fa-indent"></i></a>
-                                                            </div>
-
-                                                            <div class="btn-group">
-                                                                <a class="btn" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
-                                                                <a class="btn" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
-                                                                <a class="btn" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
-                                                                <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
-                                                            </div>
-
-                                                            <div class="btn-group">
-                                                                <a class="btn dropdown-toggle" data-bs-toggle="dropdown" title="Hyperlink"><i class="fa fa-link"></i></a>
-                                                                <div class="dropdown-menu input-append">
-                                                                    <input class="span2" placeholder="URL" type="text" data-edit="createLink" />
-                                                                    <button class="btn" type="button">Add</button>
-                                                                </div>
-                                                                <a class="btn" data-edit="unlink" title="Remove Hyperlink"><i class="fa fa-cut"></i></a>
-                                                            </div>
-
-                                                            <div class="btn-group">
-                                                                <a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
-                                                                <input type="file" data-bs-role="magic-overlay" data-bs-target="#pictureBtn" data-edit="insertImage" />
-                                                            </div>
-
-                                                            <div class="btn-group">
-                                                                <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
-                                                                <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
-                                                            </div>
-                                                        </div>
-                                                        <div id="editor-one" class="editor-wrapper contenedor-scroll "></div>
-                                                        <textarea name="descr" id="descr"  style="display:none;" ></textarea>
-                                                        @*  <br />
-                                                        <div class="ln_solid"></div> *@
-                                                    </div>
+                                                    <textarea asp-for="Historia" id="tahc" class="form-control">@ViewBag.HtmlContent </textarea>
+                                                    <span asp-validation-for="Historia" class="text-danger"></span>
+                                                  
                                                 </div>
                                             </div>
+                                         
                                         </form>
+
+
+                                    @*     @using (Html.BeginForm())
+                                        {
+                                            <textarea name="rtfContent" rows="10" cols="50">@Html.Raw(ViewBag.HtmlContent) </textarea>
+                                            <input type="submit" value="Submit">
+                                        } *@
+
+
+
+                                        @*     <form id="formNivel" class="col-12 row m-0 " style="border:solid; border-color:#256080; border-width:2px; height:325px; border-radius: 8px;">
+                                        <div class="col-md-12 col-sm-12">
+                                        <div class="x_panel  p-0">
+                                        <div class="x_content  mt-3 p-0">
+                                        <div id="alerts"></div>
+                                        <div class="btn-toolbar editor" data-bs-role="editor-toolbar" data-bs-target="#editor-one">
+                                        <div class="btn-group m-0 p-0">
+                                        <a class="btn dropdown-toggle" data-bs-toggle="dropdown" title="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                        </ul>
+                                        </div>
+
+                                        <div class="btn-group">
+                                        <a class="btn dropdown-toggle" data-bs-toggle="dropdown" title="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                        <li>
+                                        <a data-edit="fontSize 5">
+                                        <p style="font-size:17px">Huge</p>
+                                        </a>
+                                        </li>
+                                        <li>
+                                        <a data-edit="fontSize 3">
+                                        <p style="font-size:14px">Normal</p>
+                                        </a>
+                                        </li>
+                                        <li>
+                                        <a data-edit="fontSize 1">
+                                        <p style="font-size:11px">Small</p>
+                                        </a>
+                                        </li>
+                                        </ul>
+                                        </div>
+
+                                        <div class="btn-group">
+                                        <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
+                                        <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
+                                        <a class="btn" data-edit="strikethrough" title="Strikethrough"><i class="fa fa-strikethrough"></i></a>
+                                        <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
+                                        </div>
+
+                                        <div class="btn-group">
+                                        <a class="btn" data-edit="insertunorderedlist" title="Bullet list"><i class="fa fa-list-ul"></i></a>
+                                        <a class="btn" data-edit="insertorderedlist" title="Number list"><i class="fa fa-list-ol"></i></a>
+                                        <a class="btn" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>
+                                        <a class="btn" data-edit="indent" title="Indent (Tab)"><i class="fa fa-indent"></i></a>
+                                        </div>
+
+                                        <div class="btn-group">
+                                        <a class="btn" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+                                        <a class="btn" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
+                                        <a class="btn" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+                                        <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
+                                        </div>
+
+                                        <div class="btn-group">
+                                        <a class="btn dropdown-toggle" data-bs-toggle="dropdown" title="Hyperlink"><i class="fa fa-link"></i></a>
+                                        <div class="dropdown-menu input-append">
+                                        <input class="span2" placeholder="URL" type="text" data-edit="createLink" />
+                                        <button class="btn" type="button">Add</button>
+                                        </div>
+                                        <a class="btn" data-edit="unlink" title="Remove Hyperlink"><i class="fa fa-cut"></i></a>
+                                        </div>
+
+                                        <div class="btn-group">
+                                        <a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
+                                        <input type="file" data-bs-role="magic-overlay" data-bs-target="#pictureBtn" data-edit="insertImage" />
+                                        </div>
+
+                                        <div class="btn-group">
+                                        <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
+                                        <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
+                                        </div>
+                                        </div>
+                                        <div id="editor-one" class="editor-wrapper contenedor-scroll "></div>
+                                        <textarea name="descr" id="descr"   style="display:none;"  ></textarea>
+
+
+
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </form> *@
                                     </div>
                                 </div>
                             </div>
@@ -464,649 +492,649 @@
     <script>
         var tabladata;
         var agregarToast;
-        $( document ).ready(function() {
+        $(document).ready(function () {
 
-         //GET TIPO DOCUMENTOS
-         jQuery.ajax({
-                 url: '@Url.Action("GetAllTipoDocumentos", "TipoDocumento")',
-                 type: "GET",
-                 data: null,
-                 dataType: "json",
-                 contentType: "application/json; charset=utf-8",
-                 success: function (data) {
-                    $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbotipodoc");
-                     $.each(data.data, function (index, value) {
-                     $("<option>").attr({ "value": value.id }).text(value.descA).appendTo("#cbotipodoc");
-                     });
-                     },
-                     error: function (error) {
-                     console.log(error)
-                     }
-                     });
+            //GET TIPO DOCUMENTOS
+            jQuery.ajax({
+                url: '@Url.Action("GetAllTipoDocumentos", "TipoDocumento")',
+                type: "GET",
+                data: null,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbotipodoc");
+                    $.each(data.data, function (index, value) {
+                        $("<option>").attr({ "value": value.id }).text(value.descA).appendTo("#cbotipodoc");
+                    });
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            });
 
-         //GET PROFESIONES
-         jQuery.ajax({
-                      url: '@Url.Action("GetAllProfesiones", "Profesion")',
-                      type: "GET",
-                      data: null,
-                      dataType: "json",
-                      contentType: "application/json; charset=utf-8",
-                      success: function (data) {
-                         $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cboprofesion");
-                          $.each(data.data, function (index, value) {
-                          $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cboprofesion");
-                          });
-                          },
-                          error: function (error) {
-                          console.log(error)
-                          }
-                          });
+            //GET PROFESIONES
+            jQuery.ajax({
+                url: '@Url.Action("GetAllProfesiones", "Profesion")',
+                type: "GET",
+                data: null,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cboprofesion");
+                    $.each(data.data, function (index, value) {
+                        $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cboprofesion");
+                    });
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            });
 
-         //GET LOCALIDADES
-         jQuery.ajax({
-                              url: '@Url.Action("GetAllLocalidades", "Localidad")',
-                              type: "GET",
-                              data: null,
-                              dataType: "json",
-                              contentType: "application/json; charset=utf-8",
-                              success: function (data) {
-                                 $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbolocalidadF");
-                                 $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbolocalidad");
-                                  $.each(data.data, function (index, value) {
-                                  $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadF");
-                                  $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidad");
-                                  });
-                                  },
-                                  error: function (error) {
-                                  console.log(error)
-                                  }
-                                  });
+            //GET LOCALIDADES
+            jQuery.ajax({
+                url: '@Url.Action("GetAllLocalidades", "Localidad")',
+                type: "GET",
+                data: null,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadF");
+                    $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidad");
+                    $.each(data.data, function (index, value) {
+                        $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadF");
+                        $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidad");
+                    });
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            });
 
-         //GET MUTUALES
-         jQuery.ajax({
-                              url: '@Url.Action("GetAllMutuales", "Mutual")',
-                              type: "GET",
-                              data: null,
-                              dataType: "json",
-                              contentType: "application/json; charset=utf-8",
-                              success: function (data) {
-                                 $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbomutual");
-                                  $.each(data.data, function (index, value) {
-                                  $("<option>").attr({ "value": value.id }).text(value.descA).appendTo("#cbomutual");
-                                  });
-                                  },
-                                  error: function (error) {
-                                  console.log(error)
-                                  }
-                                  });
+            //GET MUTUALES
+            jQuery.ajax({
+                url: '@Url.Action("GetAllMutuales", "Mutual")',
+                type: "GET",
+                data: null,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbomutual");
+                    $.each(data.data, function (index, value) {
+                        $("<option>").attr({ "value": value.id }).text(value.descA).appendTo("#cbomutual");
+                    });
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            });
 
-          //GET MEDICOS
-         jQuery.ajax({
-                              url: '@Url.Action("GetAllMedicos", "Medico")',
-                              type: "GET",
-                              data: null,
-                              dataType: "json",
-                              contentType: "application/json; charset=utf-8",
-                              success: function (data) {
-                                 $("<option>").attr({ "value": "0","enabled":"true" }).text("Seleccionar").appendTo("#cbomedico");
-                                  $.each(data.data, function (index, value) {
-                                  $("<option>").attr({ "value": value.id }).text(value.apeyNom).appendTo("#cbomedico");
-                                  });
-                                  },
-                                  error: function (error) {
-                                  console.log(error)
-                                  }
-                                  });
+            //GET MEDICOS
+            jQuery.ajax({
+                url: '@Url.Action("GetAllMedicos", "Medico")',
+                type: "GET",
+                data: null,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbomedico");
+                    $.each(data.data, function (index, value) {
+                        $("<option>").attr({ "value": value.id }).text(value.apeyNom).appendTo("#cbomedico");
+                    });
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            });
 
-         const getDatePickerTitle = elem => {
-                   // From the label or the aria-label
-                   const label = elem.nextElementSibling;
-                   let titleText = '';
-                   if (label && label.tagName === 'LABEL') {
-                     titleText = label.textContent;
-                   } else {
-                     titleText = elem.getAttribute('aria-label') || '';
-                   }
-                   return titleText;
-                 }
-                 const elems = document.querySelectorAll('.datepicker_input');
-                 for (const elem of elems) {
-                   const datepicker = new Datepicker(elem, {
-                     'format': 'dd/mm/yyyy', // UK format
-                     title: getDatePickerTitle(elem)
-                   });
-                 }
+            const getDatePickerTitle = elem => {
+                // From the label or the aria-label
+                const label = elem.nextElementSibling;
+                let titleText = '';
+                if (label && label.tagName === 'LABEL') {
+                    titleText = label.textContent;
+                } else {
+                    titleText = elem.getAttribute('aria-label') || '';
+                }
+                return titleText;
+            }
+            const elems = document.querySelectorAll('.datepicker_input');
+            for (const elem of elems) {
+                const datepicker = new Datepicker(elem, {
+                    'format': 'dd/mm/yyyy', // UK format
+                    title: getDatePickerTitle(elem)
+                });
+            }
 
 
-             const contenedorToast = document.getElementById('contenedor-toastP');
-             // Event listener para detectar click en los toasts
-             contenedorToast.addEventListener('click', (e) => {
-             const toastId = e.target.closest('div.toastP').id;
-             if (e.target.closest('button.btn-cerrar')) {
-                   cerrarToast(toastId);
-             }
-             });
+            const contenedorToast = document.getElementById('contenedor-toastP');
+            // Event listener para detectar click en los toasts
+            contenedorToast.addEventListener('click', (e) => {
+                const toastId = e.target.closest('div.toastP').id;
+                if (e.target.closest('button.btn-cerrar')) {
+                    cerrarToast(toastId);
+                }
+            });
 
-             // Función para cerrar el toast
-             const cerrarToast = (id) => {
-                   document.getElementById(id)?.classList.add('cerrando');
-             };
+            // Función para cerrar el toast
+            const cerrarToast = (id) => {
+                document.getElementById(id)?.classList.add('cerrando');
+            };
 
-             // Función para agregar la clase de cerrando al toast.
-             agregarToast = ({ tipo, titulo, descripcion, autoCierre }) => {
-             // Crear el nuevo toast
-             const nuevoToast = document.createElement('div');
-             // Agregar clases correspondientes
-             nuevoToast.classList.add('toastP');
-             nuevoToast.classList.add(tipo);
-             if (autoCierre) nuevoToast.classList.add('autoCierreP');
-             // Agregar id del toast
-             const numeroAlAzar = Math.floor(Math.random() * 100);
-             const fecha = Date.now();
-             const toastId = fecha + numeroAlAzar;
-             nuevoToast.id = toastId;
-             // Iconos
-             const iconos = {
-                          exito: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                      <path
-                                          d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
-                                      />
-                                  </svg>`,
-                          error: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                  <path
-                                                      d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                                                  />
-                                              </svg>`,
-                          info: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                  <path
-                                                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
-                                                  />
-                                              </svg>`,
-                          warning: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                  <path
-                                                      d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                                                  />
-                                              </svg>`,
-                      };
+            // Función para agregar la clase de cerrando al toast.
+            agregarToast = ({ tipo, titulo, descripcion, autoCierre }) => {
+                // Crear el nuevo toast
+                const nuevoToast = document.createElement('div');
+                // Agregar clases correspondientes
+                nuevoToast.classList.add('toastP');
+                nuevoToast.classList.add(tipo);
+                if (autoCierre) nuevoToast.classList.add('autoCierreP');
+                // Agregar id del toast
+                const numeroAlAzar = Math.floor(Math.random() * 100);
+                const fecha = Date.now();
+                const toastId = fecha + numeroAlAzar;
+                nuevoToast.id = toastId;
+                // Iconos
+                const iconos = {
+                    exito: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                              <path
+                                                                  d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
+                                                              />
+                                                          </svg>`,
+                    error: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                          <path
+                                                                              d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                                          />
+                                                                      </svg>`,
+                    info: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                          <path
+                                                                              d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+                                                                          />
+                                                                      </svg>`,
+                    warning: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                          <path
+                                                                              d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                                          />
+                                                                      </svg>`,
+                };
 
-                      // Plantilla del toast
-                      const toast = `
-                          <div class="contenidoP">
-                              <div class="icono">
-                                  ${iconos[tipo]}
-                              </div>
-                              <div class="texto">
-                                  <p class="titulo">${titulo}</p>
-                                  <p class="descripcion">${descripcion}</p>
-                              </div>
-                          </div>
-                          <button class="btn-cerrar">
-                              <div class="icono">
-                                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                      <path
-                                          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-                                      />
-                                  </svg>
-                              </div>
-                          </button>
-                      `;
+                // Plantilla del toast
+                const toast = `
+                                                  <div class="contenidoP">
+                                                      <div class="icono">
+                                                          ${iconos[tipo]}
+                                                      </div>
+                                                      <div class="texto">
+                                                          <p class="titulo">${titulo}</p>
+                                                          <p class="descripcion">${descripcion}</p>
+                                                      </div>
+                                                  </div>
+                                                  <button class="btn-cerrar">
+                                                      <div class="icono">
+                                                          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                              <path
+                                                                  d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                                                              />
+                                                          </svg>
+                                                      </div>
+                                                  </button>
+                                              `;
 
-                      // Agregar la plantilla al nuevo toast
-                      nuevoToast.innerHTML = toast;
+                // Agregar la plantilla al nuevo toast
+                nuevoToast.innerHTML = toast;
 
-                      // Agregamos el nuevo toast al contenedor
-                      contenedorToast.appendChild(nuevoToast);
+                // Agregamos el nuevo toast al contenedor
+                contenedorToast.appendChild(nuevoToast);
 
-                      // Función para menajera el cierre del toast
-                      const handleAnimacionCierre = (e) => {
-                          if (e.animationName === 'cierre') {
-                              nuevoToast.removeEventListener('animationend', handleAnimacionCierre);
-                              nuevoToast.remove();
-                          }
-                      };
+                // Función para menajera el cierre del toast
+                const handleAnimacionCierre = (e) => {
+                    if (e.animationName === 'cierre') {
+                        nuevoToast.removeEventListener('animationend', handleAnimacionCierre);
+                        nuevoToast.remove();
+                    }
+                };
 
-                      if (autoCierre) {
-                          setTimeout(() => cerrarToast(toastId), 5000);
-                      }
+                if (autoCierre) {
+                    setTimeout(() => cerrarToast(toastId), 5000);
+                }
 
-                      // Agregamos event listener para detectar cuando termine la animación
-                      nuevoToast.addEventListener('animationend', handleAnimacionCierre);
-                   };
+                // Agregamos event listener para detectar cuando termine la animación
+                nuevoToast.addEventListener('animationend', handleAnimacionCierre);
+            };
 
-             var filaSeleccionada;
+            var filaSeleccionada;
             llenarTabla(false)
 
-         });
+        });
 
-         //Abrir Modal
-         function abrirModal(json) {
+        //Abrir Modal
+        function abrirModal(json) {
 
-              $("#wizard").smartWizard('goToStep', 1)
-                $("#txtnroPaciente").val('');
-                 $("#txtapeynom").val('');
-                 $("#txtdni").val('');
-                 $("#cbotipodoc").val(0);
-                 $("#cbolocalidad").val(0);
-                 $("#cbomedico").val(0);
-                 $("#cbomutual").val(0);
-                 $("#cboprofesion").val(0);
-                 let fnac = new Date()
+            $("#wizard").smartWizard('goToStep', 1)
+            $("#txtnroPaciente").val('');
+            $("#txtapeynom").val('');
+            $("#txtdni").val('');
+            $("#cbotipodoc").val(0);
+            $("#cbolocalidad").val(0);
+            $("#cbomedico").val(0);
+            $("#cbomutual").val(0);
+            $("#cboprofesion").val(0);
+            let fnac = new Date()
 
-                 let diafnac = `${(fnac.getDate())}`.padStart(2,'0');
-                 let mesfnac = `${(fnac.getMonth()+1)}`.padStart(2,'0');
-                 let aniofnac = fnac.getFullYear();
-                 $("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
-                 $("#txttelfijo").val('');
-                 $("#txttelcelular").val('');
-                 $("#txtcalle").val('');
-                 $("#txtnro").val('');
-                 $("#txtpiso").val('');
-                 $("#txtdepto").val('');
-                 $("#txtobservaciones").val('');
-                    $("#editor-one").text('');
+            let diafnac = `${(fnac.getDate())}`.padStart(2, '0');
+            let mesfnac = `${(fnac.getMonth() + 1)}`.padStart(2, '0');
+            let aniofnac = fnac.getFullYear();
+            $("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
+            $("#txttelfijo").val('');
+            $("#txttelcelular").val('');
+            $("#txtcalle").val('');
+            $("#txtnro").val('');
+            $("#txtpiso").val('');
+            $("#txtdepto").val('');
+            $("#txtobservaciones").val('');
+            $("#editor-one").text('');
 
-             if (json != null) {
-                 console.log(json);
-                 $("#txtid").val(json.id);
-                 $("#txtapeynom").val(json.apeyNom);
-                 $("#txtdni").val(json.nroDocumento);
-                 $("#cbotipodoc").val(json.idTipoDocumento);
-                 fnac = new Date(json.fnac)
-                 diafnac = `${(fnac.getDate())}`.padStart(2,'0');
-                 mesfnac = `${(fnac.getMonth()+1)}`.padStart(2,'0');
-                 aniofnac = fnac.getFullYear();
-                 $("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
-                 $("#txtcalle").val(json.calle);
-                 $("#txtnro").val(json.nro);
-                 $("#txtpiso").val(json.piso);
-                 $("#txtdepto").val(json.depto);
-                 $("#txttelfijo").val(json.telFijo);
-                 $("#txttelcelular").val(json.telCelular);
-                 $("#txtemail").val(json.email);
-                 $("#cbolocalidad").val(json.idLocalidad);
-                 $("#cbomedico").val(json.idMedico);
-                 $("#cboprofesion").val(json.idProfesion);
-                 $("#cbomutual").val(json.idMutual);
-                 $("#txtnroPaciente").val(json.documento);
-                 $("#descr").val(json.observaciones);
-                 //$("#editor-one").text(json.observaciones),
-                 $("#txtnrohc").val(json.nroHC);
-                $("#editor-one").text(json.historia)
+            if (json != null) {
+                console.log(json);
+                $("#txtid").val(json.id);
+                $("#txtapeynom").val(json.apeyNom);
+                $("#txtdni").val(json.nroDocumento);
+                $("#cbotipodoc").val(json.idTipoDocumento);
+                fnac = new Date(json.fnac)
+                diafnac = `${(fnac.getDate())}`.padStart(2, '0');
+                mesfnac = `${(fnac.getMonth() + 1)}`.padStart(2, '0');
+                aniofnac = fnac.getFullYear();
+                $("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
+                $("#txtcalle").val(json.calle);
+                $("#txtnro").val(json.nro);
+                $("#txtpiso").val(json.piso);
+                $("#txtdepto").val(json.depto);
+                $("#txttelfijo").val(json.telFijo);
+                $("#txttelcelular").val(json.telCelular);
+                $("#txtemail").val(json.email);
+                $("#cbolocalidad").val(json.idLocalidad);
+                $("#cbomedico").val(json.idMedico);
+                $("#cboprofesion").val(json.idProfesion);
+                $("#cbomutual").val(json.idMutual);
+                $("#txtnroPaciente").val(json.documento);
+              //  $("#descr").val(json.observaciones);
+                //$("#editor-one").text(json.observaciones),
+                $("#txtnrohc").val(json.nroHC);
+               // $("#editor-one").text(json.historia)
+               // $("#tahc").text(json.historia);
 
 
 
             }
-         $("#FormModal").modal("show");
-         }
+            $("#FormModal").modal("show");
+        }
 
-         $("#formNivel").validate({
-             rules: {
-                     ApeyNom: {
-                     required: true
-                 },
-             },
-             messages: {
-                 ApeyNom: " El campo Apellido y Nombre es obligatorio",
-             },
-             errorElement: "div",
-             errorLabelContainer: ".alert-danger"
-         });
+        $("#formNivel").validate({
+            rules: {
+                ApeyNom: {
+                    required: true
+                },
+            },
+            messages: {
+                ApeyNom: " El campo Apellido y Nombre es obligatorio",
+            },
+            errorElement: "div",
+            errorLabelContainer: ".alert-danger"
+        });
 
-         //Llenar Tabla
-         function  llenarTabla( filtro){
+        //Llenar Tabla
+        function llenarTabla(filtro) {
 
-             debugger;
-              var url;
-              if (filtro){
-                  url="@Url.Action("GetPacientesFiltrados", "Paciente")" +'?localidad='+$("#cbolocalidadF").val()
-              }else{
-                   url="@Url.Action("GetAllPacientes", "Paciente")";
-              }
+            debugger;
+            var url;
+            if (filtro) {
+                url = "@Url.Action("GetPacientesFiltrados", "Paciente")" + '?localidad=' + $("#cbolocalidadF").val()
+            } else {
+                url = "@Url.Action("GetAllPacientes", "Paciente")";
+            }
 
-        $('#tabla').DataTable().clear().destroy();
-          tabladata = $("#tabla").DataTable({
-                     responsive: true,
-                     ordering: true,
-                     dom: "Bfrtip",
-                     buttons: [
-                         {
-                             extend: "excelHtml5",
-                             text: '<i class="fa fa-file-excel-o "></i>',
-                             filename: "Reporte de Pacientes",
-                              title: "Listado de Pacientes",
-                             exportOptions: {
-                                 //muestra las columnas
-                                 columns: [0, 1 ,2,3,4,5,6,7,8,9,10,11]
-                             },
-                             className: "btn-exportar-excel",
+            $('#tabla').DataTable().clear().destroy();
+            tabladata = $("#tabla").DataTable({
+                responsive: true,
+                ordering: true,
+                dom: "Bfrtip",
+                buttons: [
+                    {
+                        extend: "excelHtml5",
+                        text: '<i class="fa fa-file-excel-o "></i>',
+                        filename: "Reporte de Pacientes",
+                        title: "Listado de Pacientes",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                        },
+                        className: "btn-exportar-excel",
 
 
-                         },
-                         {
-                             extend: "pdfHtml5",
-                             text: '<i class="fa fa-file-pdf-o"></i>',
-                             filename: "Reporte de Pacientes",
-                             title: "Listado de Pacientes",
-                             exportOptions: {
-                                 //muestra las columnas
-                                columns: [0, 1 ,2,3,4,5,6,7,8,9,10,11]
-                             },
-                             className: "btn-exportar-pdf"
-                         },
-                         {
-                             extend: "print",
-                             text: '<i class="fa fa-print"></i>',
-                             filename: "Reporte de Pacientes",
-                             title: "Listado de Pacientes",
-                             exportOptions: {
-                                 //muestra las columnas
-                                  columns: [0, 1 ,2,3,4,5,6,7,8,9,10,11]
-                             },
-                             className: "btn-imprimir"
+                    },
+                    {
+                        extend: "pdfHtml5",
+                        text: '<i class="fa fa-file-pdf-o"></i>',
+                        filename: "Reporte de Pacientes",
+                        title: "Listado de Pacientes",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                        },
+                        className: "btn-exportar-pdf"
+                    },
+                    {
+                        extend: "print",
+                        text: '<i class="fa fa-print"></i>',
+                        filename: "Reporte de Pacientes",
+                        title: "Listado de Pacientes",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                        },
+                        className: "btn-imprimir"
 
-                         }
-                     ],
-                      "ajax": {
-                          url: url,
-                          type: "GET",
-                          dataType: "json",
-                          beforeSend: agregarToast({ tipo: 'exito', titulo: 'Obteniendo Pacientes', descripcion: 'Por favor espere...', autoCierre: true })
-                      },
-                      "columns": [
-                              { "data": "id" },
-                              { "data": "apeyNom" },
-                              { "data": "nroDocumento" },
-                              { "data": "fnac" },
-                              { "data": "sexo" },
-                              { "data": "calle" },
-                              { "data": "nro" },
-                              { "data": "piso" },
-                              { "data": "depto" },
-                              { "data": "telFijo" },
-                              { "data": "telCelular" },
-                              { "data": "profesion" , render: function(data){
-                        var desc; 
-                               if (data==null)
-                                {
-                                    desc=null
-                                }
-                                else
-                                    desc=data.descripcion;
+                    }
+                ],
+                "ajax": {
+                    url: url,
+                    type: "GET",
+                    dataType: "json",
+                    beforeSend: agregarToast({ tipo: 'exito', titulo: 'Obteniendo Pacientes', descripcion: 'Por favor espere...', autoCierre: true })
+                },
+                "columns": [
+                    { "data": "id" },
+                    { "data": "apeyNom" },
+                    { "data": "nroDocumento" },
+                    { "data": "fnac" },
+                    { "data": "sexo" },
+                    { "data": "calle" },
+                    { "data": "nro" },
+                    { "data": "piso" },
+                    { "data": "depto" },
+                    { "data": "telFijo" },
+                    { "data": "telCelular" },
+                    {
+                        "data": "profesion", render: function (data) {
+                            var desc;
+                            if (data == null) {
+                                desc = null
+                            }
+                            else
+                                desc = data.descripcion;
                             return desc;
-                       }
-                     },
-                              {
-                                           "defaultContent":  '<button type="button" title="Enviar Mensaje"  class="rounded-circle btn btn-sm  btn-block btn-enviar"   > <img src="../images/whatsapp.png" alt="" width="20" height="20" ></button>'+
-                                                             '<button type="button" title="Editar Paciente"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
-                                                             '<button type="button" title="Eliminar Paciente" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
-                                 "orderable": false,
-                                 "searchable": false,
-                                 "width": "10%",
-                                 "heigth":"10%"
-                             }
-                      ],
-                      "order": {
-                            name: 'apeyNom',
-                            dir: 'asc'
-                        },
-                       "language": {
-                                 "url":"https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
-                        },
-                     "order": [[ 1, "asc" ]],
-                     "columnDefs": [
-                             { "width": "3%", "targets": 0 },
-                             { "width": "10%", "targets": 1 },
-                              { "width": "5%", "targets": 2 },
-                              { "width": "8%", "targets": 3 , render: DataTable.render.datetime('DD/MM/YYYY') },
-                              { "width": "2%", "targets": 4 },
-                              { "width": "10%", "targets": 5 },
-                             { "width": "3%", "targets": 6 },
-                             { "width": "3%", "targets": 7},
-                             { "width": "3%", "targets": 8 },
-                             { "width": "5%", "targets": 9 },
-                             { "width": "5%", "targets": 10 },
-                             { "width": "10%", "targets": 11 ,visible: false},
+                        }
+                    },
+                    {
+                        "defaultContent": '<button type="button" title="Enviar Mensaje"  class="rounded-circle btn btn-sm  btn-block btn-enviar"   > <img src="../images/whatsapp.png" alt="" width="20" height="20" ></button>' +
+                            '<button type="button" title="Editar Paciente"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
+                            '<button type="button" title="Eliminar Paciente" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
+                        "orderable": false,
+                        "searchable": false,
+                        "width": "10%",
+                        "heigth": "10%"
+                    }
+                ],
+                "order": {
+                    name: 'apeyNom',
+                    dir: 'asc'
+                },
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+                },
+                "order": [[1, "asc"]],
+                "columnDefs": [
+                    { "width": "3%", "targets": 0 },
+                    { "width": "10%", "targets": 1 },
+                    { "width": "5%", "targets": 2 },
+                    { "width": "8%", "targets": 3, render: DataTable.render.datetime('DD/MM/YYYY') },
+                    { "width": "2%", "targets": 4 },
+                    { "width": "10%", "targets": 5 },
+                    { "width": "3%", "targets": 6 },
+                    { "width": "3%", "targets": 7 },
+                    { "width": "3%", "targets": 8 },
+                    { "width": "5%", "targets": 9 },
+                    { "width": "5%", "targets": 10 },
+                    { "width": "10%", "targets": 11, visible: false },
 
-                             // { "width": "70%", "targets": 12 },
-                             // { "width": "40%", "targets": 14, className: 'dt-body-right' },
-                     ]
-                 })
-         }
+                    // { "width": "70%", "targets": 12 },
+                    // { "width": "40%", "targets": 14, className: 'dt-body-right' },
+                ]
+            })
+        }
 
-         //Filtrar Pacientes
-         function filtrarPacientes(filtro){
+        //Filtrar Pacientes
+        function filtrarPacientes(filtro) {
             llenarTabla(filtro);
-         }
-          //Filtrar Pacientes
-         function limpiarFiltros(){
+        }
+        //Filtrar Pacientes
+        function limpiarFiltros() {
             $('#cbolocalidadF').val(0);
             llenarTabla(false)
-         }
-         //Editar
-         $("#tabla tbody").on("click", '.btn-editar', function () {
+        }
+        //Editar
+        $("#tabla tbody").on("click", '.btn-editar', function () {
 
-                 filaSeleccionada = $(this).closest("tr");
-                 var data = tabladata.row(filaSeleccionada).data();
-                 abrirModal(data)
-             })
+            filaSeleccionada = $(this).closest("tr");
+            var data = tabladata.row(filaSeleccionada).data();
+            abrirModal(data)
+        })
 
-         //Eliminar
-         $("#tabla tbody").on("click", '.btn-eliminar', function () {
+        //Eliminar
+        $("#tabla tbody").on("click", '.btn-eliminar', function () {
 
-                var Pacienteseleccionado = $(this).closest("tr");
-                var data = tabladata.row(Pacienteseleccionado).data();
-                var Paciente={
-                         id:data.id,
-                         apeyNom:data.apeyNom
-                }
-                swal({
-                     title: "Está Seguro?",
-                     text: "Desea eliminar el Paciente?",
-                     type: "warning",
-                     showCancelButton: true,
-                     confirmButtonClass: "btn-primary",
-                     confirmButtonText: "Si",
-                     cancelButtonText: "No",
-                     closeOnConfirm: true
-                 },
-                    function () {
-                         jQuery.ajax({
-                             url: '@Url.Action("DeletePaciente", "Paciente")',
-                             type: "POST",
-                             data: JSON.stringify( Paciente),
-                             contentType: 'application/json',
-                             success: function (data) {
-                                 if (data.resultado) {
-                                     tabladata.row(Pacienteseleccionado).remove().draw();
-                                     // mostrarAlert(data.mensaje)
-                                     agregarToast({ tipo: 'exito', titulo: 'Eliminando Paciente', descripcion: 'Paciente eliminado correctamente.', autoCierre: true })
-                                 } else {
-                                     agregarToast({ tipo: 'error', titulo: 'Eliminando Paciente', descripcion: 'No se pudo eliminar el Paciente', autoCierre: true });
-                                    // swal("No se pudo eliminar", data.mensaje, "error");
-                                  //  mostrarAlert(data.mensaje)
-                                 }
-                             },
-                             error: function (error) {
-                                 console.log(error);
-                             }
-                         })
+            var Pacienteseleccionado = $(this).closest("tr");
+            var data = tabladata.row(Pacienteseleccionado).data();
+            var Paciente = {
+                id: data.id,
+                apeyNom: data.apeyNom
+            }
+            swal({
+                title: "Está Seguro?",
+                text: "Desea eliminar el Paciente?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-primary",
+                confirmButtonText: "Si",
+                cancelButtonText: "No",
+                closeOnConfirm: true
+            },
+                function () {
+                    jQuery.ajax({
+                        url: '@Url.Action("DeletePaciente", "Paciente")',
+                        type: "POST",
+                        data: JSON.stringify(Paciente),
+                        contentType: 'application/json',
+                        success: function (data) {
+                            if (data.resultado) {
+                                tabladata.row(Pacienteseleccionado).remove().draw();
+                                // mostrarAlert(data.mensaje)
+                                agregarToast({ tipo: 'exito', titulo: 'Eliminando Paciente', descripcion: 'Paciente eliminado correctamente.', autoCierre: true })
+                            } else {
+                                agregarToast({ tipo: 'error', titulo: 'Eliminando Paciente', descripcion: 'No se pudo eliminar el Paciente', autoCierre: true });
+                                // swal("No se pudo eliminar", data.mensaje, "error");
+                                //  mostrarAlert(data.mensaje)
+                            }
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
                     })
-             });
+                })
+        });
 
         //Tomar Foto
-        function tomarFoto(){
+        function tomarFoto() {
 
-                        debugger;
-             const video = document.getElementById('video');
+            debugger;
+            const video = document.getElementById('video');
             const canvas = document.getElementById('canvas');
             const imagen = document.getElementById('imagen');
             const botonCaptura = document.getElementById('botonCaptura');
             // Solicitar acceso a la cámara
             navigator.mediaDevices.getUserMedia({ video: true })
-            .then(stream => {
-                video.srcObject = stream;
+                .then(stream => {
+                    video.srcObject = stream;
 
 
-              })
-              .catch(error => {
-                console.error('Error al acceder a la cámara:', error);
-            });
+                })
+                .catch(error => {
+                    console.error('Error al acceder a la cámara:', error);
+                });
 
             // Capturar la foto al hacer clic en el botón
             botonCaptura.addEventListener('click', () => {
-            // Dibujar la imagen en el canvas
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                // Dibujar la imagen en el canvas
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-            // Obtener la imagen como data URL
-            const dataURL = canvas.toDataURL('image/png');
+                // Obtener la imagen como data URL
+                const dataURL = canvas.toDataURL('image/png');
 
-            // Mostrar la imagen en la etiqueta img
-            imagen.src = dataURL;
-        });
+                // Mostrar la imagen en la etiqueta img
+                imagen.src = dataURL;
+            });
 
 
 
 
         }
         //Seleccionar Imagen
-        function changePicture(){
+        function changePicture() {
             $('#upload').click();
         }
-        function readURL(input)
-        {
-            if (input.files && input.files[0])
-            {
+        function readURL(input) {
+            if (input.files && input.files[0]) {
                 var reader = new FileReader();
-                reader.onload = function (e)
-                {
-                    $('#imagen').attr('src',e.target.result);
+                reader.onload = function (e) {
+                    $('#imagen').attr('src', e.target.result);
 
                 };
                 reader.readAsDataURL(input.files[0]);
             }
         }
         function capture() {
-          debugger;
-          var canvas = document.getElementById("canvas");
-          var video = document.getElementById("video");
-          canvas.width = video.videoWidth;
-          canvas.height = video.videoHeight;
-          canvas.getContext("2d").drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
-          const dataURL = canvas.toDataURL('image/png');
-          const playImage = new Image();
-          playImage.src = dataURL;
-          playImage.onload = () => {
-            const startX = video.videoWidth / 2 - playImage.width / 2;
-            const startY = video.videoHeight / 2 - playImage.height / 2;
-            canvas.getContext("2d").drawImage(playImage, startX, startY, playImage.width, playImage.height);
-            canvas.toBlob() = (blob) => {
-              const img = new Image();
-              img.src = window.URL.createObjectUrl(blob);
+            debugger;
+            var canvas = document.getElementById("canvas");
+            var video = document.getElementById("video");
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext("2d").drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+            const dataURL = canvas.toDataURL('image/png');
+            const playImage = new Image();
+            playImage.src = dataURL;
+            playImage.onload = () => {
+                const startX = video.videoWidth / 2 - playImage.width / 2;
+                const startY = video.videoHeight / 2 - playImage.height / 2;
+                canvas.getContext("2d").drawImage(playImage, startX, startY, playImage.width, playImage.height);
+                canvas.toBlob() = (blob) => {
+                    const img = new Image();
+                    img.src = window.URL.createObjectUrl(blob);
+                };
             };
-          };
-          /** End **/
+            /** End **/
         }
 
-         //Guardar
-         function Guardar() {
+        //Guardar
+        function Guardar() {
 
 
-             if (!$("#formNivel").valid()) {
-                 return;
-             }
-             
-                    var yyyy = $("#dtfechanac").val().substring(6, 10);
-                    var MM = $("#dtfechanac").val().substring(3, 5);
-                    var DD = $("#dtfechanac").val().substring(0, 2);
-                    var HH = $("#dtfechanac").val().substring(10, 12).trim();
-                    var mm = $("#dtfechanac").val().substring(13, 15).trim();
-                    var A = $("#dtfechanac").val().substring(19, 23).trim();
-                    if (HH.length == 1)
-                        { HH = '0' + HH;}
+            if (!$("#formNivel").valid()) {
+                return;
+            }
 
-                    if (mm.length == 1)
-                        { mm = '0' + mm;}
+            var yyyy = $("#dtfechanac").val().substring(6, 10);
+            var MM = $("#dtfechanac").val().substring(3, 5);
+            var DD = $("#dtfechanac").val().substring(0, 2);
+            var HH = $("#dtfechanac").val().substring(10, 12).trim();
+            var mm = $("#dtfechanac").val().substring(13, 15).trim();
+            var A = $("#dtfechanac").val().substring(19, 23).trim();
+            if (HH.length == 1) { HH = '0' + HH; }
+
+            if (mm.length == 1) { mm = '0' + mm; }
 
 
-                   var Paciente = {
-                     id: $("#txtid").val(),
-                     apeyNom: $("#txtapeynom").val(),
-                     nroDocumento:$("#txtdni").val(),
-                     idTipoDocumento:  $("#cbotipodoc option:selected").val(),
-                     idProfesion: $("#cboprofesion option:selected").val(),
-                     idMedico: $("#cbomedico option:selected").val(),
-                     idMutual: $("#cbomutual option:selected").val(),
-                     sexo:'M',
-                     calle:$("#txtcalle").val(),
-                     nro:$("#txtnro").val(),
-                     piso:$("#txtpiso").val(),
-                     depto:$("#txtdepto").val(),
-                     idLocalidad:  $("#cbolocalidad option:selected").val(),
-                     telFijo: $("#txttelfijo").val(),
-                     telCelular: $("#txttelcelular").val(),
-                     email: $("#txtemail").val(),
-                     observaciones:$("#editor-one").text(),
-                     fnac:moment(yyyy + "-" + MM + "-" + DD).format('YYYY-MM-DD'),
-                     nroHC: $("#txtnrohc").val(),
-                    // fNac:new Date($("#dtfechanac").val())
-                 };
-                 console.log('*');
-                 console.log(Paciente);
-                 console.log('*');
-             jQuery.ajax({
-                     url: '@Url.Action("CreatePaciente", "Paciente")',
-                     type: "POST",
-                     data: JSON.stringify(Paciente),
-                     contentType: 'application/json',
-                     success: function (data) {
-                         $(".modal-body").LoadingOverlay("hide");
-                         //  Paciente nuevo
-                         if (Paciente.id == 0) {
-                             if (data.resultado != 0) {
-                                 Paciente.id = data.resultado;
-                                 tabladata.row.add(Paciente).draw(false);
-                                 $("#FormModal").modal("hide");
-                                 agregarToast({ tipo: 'exito', titulo: 'Creando Paciente', descripcion: 'Paciente ingresado correctamente.', autoCierre: true });
-                             }
-                             else {
-                                 agregarToast({ tipo: 'error', titulo: 'Creando Paciente', descripcion: data.mensaje, autoCierre: true });
-                                 $("#mensajeError").text(data.mensaje);
-                                 $("#mensajeError").show();
-                             }
-                         }
-                         //  Paciente Editar
-                         else {
+            var Paciente = {
+                id: $("#txtid").val(),
+                apeyNom: $("#txtapeynom").val(),
+                nroDocumento: $("#txtdni").val(),
+                idTipoDocumento: $("#cbotipodoc option:selected").val(),
+                idProfesion: $("#cboprofesion option:selected").val(),
+                idMedico: $("#cbomedico option:selected").val(),
+                idMutual: $("#cbomutual option:selected").val(),
+                sexo: 'M',
+                calle: $("#txtcalle").val(),
+                nro: $("#txtnro").val(),
+                piso: $("#txtpiso").val(),
+                depto: $("#txtdepto").val(),
+                idLocalidad: $("#cbolocalidad option:selected").val(),
+                telFijo: $("#txttelfijo").val(),
+                telCelular: $("#txttelcelular").val(),
+                email: $("#txtemail").val(),
+                observaciones: $("#editor-one").text(),
+                fnac: moment(yyyy + "-" + MM + "-" + DD).format('YYYY-MM-DD'),
+                nroHC: $("#txtnrohc").val(),
+                // fNac:new Date($("#dtfechanac").val())
+            };
+            console.log('*');
+            console.log(Paciente);
+            console.log('*');
+            jQuery.ajax({
+                url: '@Url.Action("CreatePaciente", "Paciente")',
+                type: "POST",
+                data: JSON.stringify(Paciente),
+                contentType: 'application/json',
+                success: function (data) {
+                    $(".modal-body").LoadingOverlay("hide");
+                    //  Paciente nuevo
+                    if (Paciente.id == 0) {
+                        if (data.resultado != 0) {
+                            Paciente.id = data.resultado;
+                            tabladata.row.add(Paciente).draw(false);
+                            $("#FormModal").modal("hide");
+                            agregarToast({ tipo: 'exito', titulo: 'Creando Paciente', descripcion: 'Paciente ingresado correctamente.', autoCierre: true });
+                        }
+                        else {
+                            agregarToast({ tipo: 'error', titulo: 'Creando Paciente', descripcion: data.mensaje, autoCierre: true });
+                            $("#mensajeError").text(data.mensaje);
+                            $("#mensajeError").show();
+                        }
+                    }
+                    //  Paciente Editar
+                    else {
 
-                             if (data.resultado) {
-                                 tabladata.row(filaSeleccionada).data(Paciente).draw(false);
-                                 filaSeleccionada = null;
-                                   agregarToast({ tipo: 'exito', titulo: 'Modificando Paciente', descripcion: 'Paciente modificado correctamente.', autoCierre: true });
-                                 $("#FormModal").modal("hide");
-                                 // mostrarAlert(data.mensaje)
+                        if (data.resultado) {
+                            tabladata.row(filaSeleccionada).data(Paciente).draw(false);
+                            filaSeleccionada = null;
+                            agregarToast({ tipo: 'exito', titulo: 'Modificando Paciente', descripcion: 'Paciente modificado correctamente.', autoCierre: true });
+                            $("#FormModal").modal("hide");
+                            // mostrarAlert(data.mensaje)
 
-                             } else {
-                                     agregarToast({ tipo: 'error', titulo: 'Modificando Paciente', descripcion: data.mensaje, autoCierre: true });
-                                     $("#mensajeError").text(data.mensaje);
-                                     $("#mensajeError").show();
-                                }
-                              }
-                         },
-                         beforeSend: function () {
-                              $(".modal-body").LoadingOverlay("show", {
-                                  imageResizeFactor: 2,
-                                  text: "Cargando...",
-                                  size: 14
-                              });
-                         },
-                         error: function (error) {
-                             $(".modal-body").LoadingOverlay("hide");
-                             $("#mensajeError").text("Error Ajax");
-                             $("#mensajeError").show();
-                         }
-                     }
-                 )
-             }
+                        } else {
+                            agregarToast({ tipo: 'error', titulo: 'Modificando Paciente', descripcion: data.mensaje, autoCierre: true });
+                            $("#mensajeError").text(data.mensaje);
+                            $("#mensajeError").show();
+                        }
+                    }
+                },
+                beforeSend: function () {
+                    $(".modal-body").LoadingOverlay("show", {
+                        imageResizeFactor: 2,
+                        text: "Cargando...",
+                        size: 14
+                    });
+                },
+                error: function (error) {
+                    $(".modal-body").LoadingOverlay("hide");
+                    $("#mensajeError").text("Error Ajax");
+                    $("#mensajeError").show();
+                }
+            }
+            )
+        }
 
+        tinymce.init({
+
+            selector: 'textarea#Historia'
+        });
     </script>
-    }
+}

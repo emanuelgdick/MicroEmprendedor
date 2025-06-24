@@ -250,6 +250,107 @@
     <None Include="wwwroot\js\jqvmap\jquery.vmap.sampledata.js" />
     <None Include="wwwroot\js\jqvmap\jquery.vmap.world.js" />
     <None Include="wwwroot\js\moment\moment.min.js" />
+    <None Include="wwwroot\js\tinymce\CHANGELOG.md" />
+    <None Include="wwwroot\js\tinymce\tinymce\icons\default\icons.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\langs\README.md" />
+    <None Include="wwwroot\js\tinymce\tinymce\license.md" />
+    <None Include="wwwroot\js\tinymce\tinymce\models\dom\model.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\accordion\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\advlist\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\anchor\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\autolink\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\autoresize\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\autosave\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\charmap\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\codesample\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\code\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\directionality\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\emoticons\js\emojiimages.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\emoticons\js\emojiimages.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\emoticons\js\emojis.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\emoticons\js\emojis.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\emoticons\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\fullscreen\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\ar.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\bg_BG.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\ca.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\cs.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\da.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\de.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\el.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\en.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\es.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\eu.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\fa.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\fi.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\fr_FR.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\he_IL.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\hi.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\hr.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\hu_HU.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\id.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\it.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\ja.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\kk.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\ko_KR.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\ms.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\nb_NO.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\nl.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\pl.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\pt_BR.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\pt_PT.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\ro.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\ru.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\sk.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\sl_SI.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\sv_SE.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\th_TH.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\tr.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\uk.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\vi.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\zh_CN.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\js\i18n\keynav\zh_TW.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\help\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\image\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\importcss\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\link\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\lists\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\media\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\pagebreak\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\preview\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\quickbars\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\save\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\searchreplace\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\table\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\visualblocks\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\visualchars\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\plugins\wordcount\plugin.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\content\dark\content.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\content\default\content.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\content\document\content.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\content\tinymce-5-dark\content.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\content\tinymce-5\content.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\content\writer\content.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\ui\oxide-dark\content.inline.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\ui\oxide-dark\content.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\ui\oxide-dark\skin.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\ui\oxide-dark\skin.shadowdom.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\ui\oxide\content.inline.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\ui\oxide\content.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\ui\oxide\skin.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\ui\oxide\skin.shadowdom.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\ui\tinymce-5-dark\content.inline.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\ui\tinymce-5-dark\content.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\ui\tinymce-5-dark\skin.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\ui\tinymce-5-dark\skin.shadowdom.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\ui\tinymce-5\content.inline.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\ui\tinymce-5\content.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\ui\tinymce-5\skin.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\skins\ui\tinymce-5\skin.shadowdom.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\themes\silver\theme.min.js" />
+    <None Include="wwwroot\js\tinymce\tinymce\tinymce.min.js" />
     <None Include="wwwroot\lib\daypilot\daypilot-all.min.js" />
   </ItemGroup>
 
@@ -263,6 +364,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="RtfPipe" Version="2.0.7677.4303" />
   </ItemGroup>
 
   <ItemGroup>
