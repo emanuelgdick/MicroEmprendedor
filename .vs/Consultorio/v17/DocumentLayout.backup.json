@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Consultorio\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C398E048-9E59-C463-1230-596F9693778E}|whatsappWeb\\whatsappWeb.esproj|c:\\consultorio\\whatsappweb\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{C398E048-9E59-C463-1230-596F9693778E}|whatsappWeb\\whatsappWeb.esproj|solutionrelative:whatsappweb\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\consultorio\\frontend\\controllers\\consultacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\controllers\\consultacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|c:\\consultorio\\api\\controllers\\diagnosticocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|solutionrelative:api\\controllers\\diagnosticocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|c:\\consultorio\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|solutionrelative:api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\consultorio\\frontend\\controllers\\medicocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|c:\\consultorio\\api\\controllers\\consultacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|solutionrelative:api\\controllers\\consultacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|c:\\consultorio\\api\\controllers\\diagnosticocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|solutionrelative:api\\controllers\\diagnosticocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2924DB34-875C-444B-BB4D-53187ADC6626}|FrontEnd\\FrontEnd.csproj|c:\\consultorio\\frontend\\views\\consulta\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -46,11 +54,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Consultorio\\FrontEnd\\Views\\Consulta\\Index.cshtml",
               "RelativeDocumentMoniker": "FrontEnd\\Views\\Consulta\\Index.cshtml",
@@ -59,12 +67,123 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAKQBAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-06-22T14:46:05.075Z",
-              "IsPinned": true,
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "app.js",
+              "DocumentMoniker": "C:\\Consultorio\\whatsappWeb\\app.js",
+              "RelativeDocumentMoniker": "whatsappWeb\\app.js",
+              "ToolTip": "C:\\Consultorio\\whatsappWeb\\app.js",
+              "RelativeToolTip": "whatsappWeb\\app.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-06-23T21:11:20.242Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DiagnosticoController.cs",
+              "DocumentMoniker": "C:\\Consultorio\\Api\\Controllers\\DiagnosticoController.cs",
+              "RelativeDocumentMoniker": "Api\\Controllers\\DiagnosticoController.cs",
+              "ToolTip": "C:\\Consultorio\\Api\\Controllers\\DiagnosticoController.cs",
+              "RelativeToolTip": "Api\\Controllers\\DiagnosticoController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T23:35:08.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Consultorio\\FrontEnd\\Views\\Diagnostico\\Index.cshtml",
+              "RelativeDocumentMoniker": "FrontEnd\\Views\\Diagnostico\\Index.cshtml",
+              "ToolTip": "C:\\Consultorio\\FrontEnd\\Views\\Diagnostico\\Index.cshtml",
+              "RelativeToolTip": "FrontEnd\\Views\\Diagnostico\\Index.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-22T23:34:05.28Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MedicoController.cs",
+              "DocumentMoniker": "C:\\Consultorio\\Api\\Controllers\\MedicoController.cs",
+              "RelativeDocumentMoniker": "Api\\Controllers\\MedicoController.cs",
+              "ToolTip": "C:\\Consultorio\\Api\\Controllers\\MedicoController.cs",
+              "RelativeToolTip": "Api\\Controllers\\MedicoController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAApwBkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T19:25:20.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ApiService.cs",
+              "DocumentMoniker": "C:\\Consultorio\\FrontEnd\\Services\\ApiService.cs",
+              "RelativeDocumentMoniker": "FrontEnd\\Services\\ApiService.cs",
+              "ToolTip": "C:\\Consultorio\\FrontEnd\\Services\\ApiService.cs",
+              "RelativeToolTip": "FrontEnd\\Services\\ApiService.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAhwIAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T19:25:21.004Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "MedicoController.cs",
+              "DocumentMoniker": "C:\\Consultorio\\FrontEnd\\Controllers\\MedicoController.cs",
+              "RelativeDocumentMoniker": "FrontEnd\\Controllers\\MedicoController.cs",
+              "ToolTip": "C:\\Consultorio\\FrontEnd\\Controllers\\MedicoController.cs",
+              "RelativeToolTip": "FrontEnd\\Controllers\\MedicoController.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAApwEEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T19:40:09.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ConsultaController.cs",
+              "DocumentMoniker": "C:\\Consultorio\\FrontEnd\\Controllers\\ConsultaController.cs",
+              "RelativeDocumentMoniker": "FrontEnd\\Controllers\\ConsultaController.cs",
+              "ToolTip": "C:\\Consultorio\\FrontEnd\\Controllers\\ConsultaController.cs",
+              "RelativeToolTip": "FrontEnd\\Controllers\\ConsultaController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAmwBgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T19:34:12.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Consultorio\\Api\\appsettings.json",
+              "RelativeDocumentMoniker": "Api\\appsettings.json",
+              "ToolTip": "C:\\Consultorio\\Api\\appsettings.json",
+              "RelativeToolTip": "Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-23T20:23:43.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ConsultaController.cs",
               "DocumentMoniker": "C:\\Consultorio\\Api\\Controllers\\ConsultaController.cs",
               "RelativeDocumentMoniker": "Api\\Controllers\\ConsultaController.cs",
@@ -77,85 +196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DiagnosticoController.cs",
-              "DocumentMoniker": "C:\\Consultorio\\Api\\Controllers\\DiagnosticoController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\DiagnosticoController.cs",
-              "ToolTip": "C:\\Consultorio\\Api\\Controllers\\DiagnosticoController.cs",
-              "RelativeToolTip": "Api\\Controllers\\DiagnosticoController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T23:35:08.9Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Consultorio\\FrontEnd\\Views\\Diagnostico\\Index.cshtml",
-              "RelativeDocumentMoniker": "FrontEnd\\Views\\Diagnostico\\Index.cshtml",
-              "ToolTip": "C:\\Consultorio\\FrontEnd\\Views\\Diagnostico\\Index.cshtml",
-              "RelativeToolTip": "FrontEnd\\Views\\Diagnostico\\Index.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-22T23:34:05.28Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MedicoController.cs",
-              "DocumentMoniker": "C:\\Consultorio\\Api\\Controllers\\MedicoController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\MedicoController.cs",
-              "ToolTip": "C:\\Consultorio\\Api\\Controllers\\MedicoController.cs",
-              "RelativeToolTip": "Api\\Controllers\\MedicoController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAApwBkAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T19:25:20.988Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ApiService.cs",
-              "DocumentMoniker": "C:\\Consultorio\\FrontEnd\\Services\\ApiService.cs",
-              "RelativeDocumentMoniker": "FrontEnd\\Services\\ApiService.cs",
-              "ToolTip": "C:\\Consultorio\\FrontEnd\\Services\\ApiService.cs",
-              "RelativeToolTip": "FrontEnd\\Services\\ApiService.cs",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAhwIAAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T19:25:21.004Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MedicoController.cs",
-              "DocumentMoniker": "C:\\Consultorio\\FrontEnd\\Controllers\\MedicoController.cs",
-              "RelativeDocumentMoniker": "FrontEnd\\Controllers\\MedicoController.cs",
-              "ToolTip": "C:\\Consultorio\\FrontEnd\\Controllers\\MedicoController.cs",
-              "RelativeToolTip": "FrontEnd\\Controllers\\MedicoController.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAApwEEAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T19:40:09.644Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ConsultaController.cs",
-              "DocumentMoniker": "C:\\Consultorio\\FrontEnd\\Controllers\\ConsultaController.cs",
-              "RelativeDocumentMoniker": "FrontEnd\\Controllers\\ConsultaController.cs",
-              "ToolTip": "C:\\Consultorio\\FrontEnd\\Controllers\\ConsultaController.cs",
-              "RelativeToolTip": "FrontEnd\\Controllers\\ConsultaController.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAawFIAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T19:34:12.499Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "DiagnosticoController.cs",
               "DocumentMoniker": "C:\\Consultorio\\FrontEnd\\Controllers\\DiagnosticoController.cs",
               "RelativeDocumentMoniker": "FrontEnd\\Controllers\\DiagnosticoController.cs",
@@ -163,8 +204,7 @@
               "RelativeToolTip": "FrontEnd\\Controllers\\DiagnosticoController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T23:04:02.63Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-22T23:04:02.63Z"
             }
           ]
         }

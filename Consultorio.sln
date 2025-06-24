@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEnd", "FrontEnd\FrontEnd.csproj", "{2924DB34-875C-444B-BB4D-53187ADC6626}"
 EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "whatsappWeb", "whatsappWeb\whatsappWeb.esproj", "{C398E048-9E59-C463-1230-596F9693778E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,12 @@ Global
 		{2924DB34-875C-444B-BB4D-53187ADC6626}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2924DB34-875C-444B-BB4D-53187ADC6626}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2924DB34-875C-444B-BB4D-53187ADC6626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C398E048-9E59-C463-1230-596F9693778E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C398E048-9E59-C463-1230-596F9693778E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C398E048-9E59-C463-1230-596F9693778E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C398E048-9E59-C463-1230-596F9693778E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C398E048-9E59-C463-1230-596F9693778E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C398E048-9E59-C463-1230-596F9693778E}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

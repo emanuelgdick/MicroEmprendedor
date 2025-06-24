@@ -9,6 +9,10 @@
       {
         "Path": "FrontEnd\\FrontEnd.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "whatsappWeb\\whatsappWeb.esproj",
+        "Action": "Start"
       }
     ]
   }
