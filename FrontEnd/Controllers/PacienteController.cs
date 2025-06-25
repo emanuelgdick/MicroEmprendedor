@@ -63,7 +63,10 @@ namespace FrontEnd.Controllers
             lstPaciente = await _apiService.GetAllPacientes(HttpContext.Session.GetString("APIToken"));
             for (int i = 0; i <= lstPaciente.Count - 1; i++)
             {
-                lstPaciente[i].Historia = Rtf.ToHtml(lstPaciente[i].Historia);
+                if (lstPaciente[i].Historia[0] == '{') {
+                    lstPaciente[i].Historia = Rtf.ToHtml(lstPaciente[i].Historia);
+                }
+                    
                // ViewBag.HtmlContent = Rtf.ToHtml(lstPaciente[i].Historia);
             }
             return Json(new { data = lstPaciente });
