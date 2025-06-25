@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft;
 using RtfPipe;
 using System.Text;
+using System.Web.Razor.Parser;
 
 
 namespace FrontEnd.Controllers
@@ -35,12 +36,18 @@ namespace FrontEnd.Controllers
             lstPaciente = await _apiService.GetAllPacientes(HttpContext.Session.GetString("APIToken"));
             System.Text.EncodingProvider ppp = System.Text.CodePagesEncodingProvider.Instance;
             Encoding.RegisterProvider(ppp);
-            var html = Rtf.ToHtml(lstPaciente[0].Historia);
-            ViewBag.HtmlContent = html; 
-            return View();
+            //for (int i = 0; i <= lstPaciente.Count - 1; i++)
+            //{
+                //ViewBag.HtmlContent = Rtf.ToHtml(lstPaciente[i].Historia);
+              //  lstPaciente[i].Historia = Rtf.ToHtml(lstPaciente[i].Historia);
+            //}
+
+
+            return View( );
+            
 
         }
-        public ActionResult MyView(string rtfText)
+        public ActionResult RtfToHtml(string rtfText)
         {
             string htmlContent = RtfHelper.ConvertRtfToHtml(rtfText);
 
@@ -52,9 +59,14 @@ namespace FrontEnd.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<JsonResult> GetAllPacientes()
         {
-            List<Paciente> oLista = new List<Paciente>();
-            oLista = await _apiService.GetAllPacientes(HttpContext.Session.GetString("APIToken"));
-            return Json(new { data = oLista });
+            List<Paciente> lstPaciente = new List<Paciente>();
+            lstPaciente = await _apiService.GetAllPacientes(HttpContext.Session.GetString("APIToken"));
+            for (int i = 0; i <= lstPaciente.Count - 1; i++)
+            {
+                lstPaciente[i].Historia = Rtf.ToHtml(lstPaciente[i].Historia);
+               // ViewBag.HtmlContent = Rtf.ToHtml(lstPaciente[i].Historia);
+            }
+            return Json(new { data = lstPaciente });
         }
         
         

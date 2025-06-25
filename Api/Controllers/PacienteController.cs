@@ -182,11 +182,9 @@ namespace Api.Controllers
             Paciente.TelFijo = paciente.TelFijo;
             Paciente.TelCelular = paciente.TelCelular;
             Paciente.Email = paciente.Email;
-            
             Paciente.NroHC = paciente.NroHC;
             Paciente.Observaciones = paciente.Observaciones;
-
-
+            Paciente.Historia = paciente.Historia;
             _db.SaveChanges();
             return Ok(Paciente);
 

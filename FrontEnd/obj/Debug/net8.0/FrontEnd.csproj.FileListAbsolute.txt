@@ -462,6 +462,7 @@ C:\Consultorio\FrontEnd\bin\Debug\net8.0\NuGet.Packaging.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\NuGet.ProjectModel.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\NuGet.Protocol.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\NuGet.Versioning.dll
+C:\Consultorio\FrontEnd\bin\Debug\net8.0\RtfPipe.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.CodeDom.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Composition.AttributedModel.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Composition.Convention.dll
@@ -471,6 +472,7 @@ C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Composition.TypedParts.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Drawing.Common.dll
+C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Formats.Asn1.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
 C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Security.Permissions.dll
@@ -635,11 +637,9 @@ C:\Consultorio\FrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTarge
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.FrontEnd.props
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\scopedcss\bundle\FrontEnd.styles.css
+C:\Consultorio\FrontEnd\obj\Debug\net8.0\FrontEnd.csproj.CopyComplete
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\FrontEnd.dll
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\refint\FrontEnd.dll
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\FrontEnd.pdb
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\FrontEnd.genruntimeconfig.cache
 C:\Consultorio\FrontEnd\obj\Debug\net8.0\ref\FrontEnd.dll
-C:\Consultorio\FrontEnd\bin\Debug\net8.0\System.Formats.Asn1.dll
-C:\Consultorio\FrontEnd\obj\Debug\net8.0\FrontEnd.csproj.CopyComplete
-C:\Consultorio\FrontEnd\bin\Debug\net8.0\RtfPipe.dll

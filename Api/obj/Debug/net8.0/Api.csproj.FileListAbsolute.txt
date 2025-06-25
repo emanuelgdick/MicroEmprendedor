@@ -570,6 +570,7 @@ C:\Consultorio\Api\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Consultorio\Api\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 C:\Consultorio\Api\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Consultorio\Api\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Consultorio\Api\bin\Debug\net8.0\RtfPipe.dll
 C:\Consultorio\Api\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Consultorio\Api\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Consultorio\Api\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -687,10 +688,9 @@ C:\Consultorio\Api\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.
 C:\Consultorio\Api\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Api.props
 C:\Consultorio\Api\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Consultorio\Api\obj\Debug\net8.0\scopedcss\bundle\Api.styles.css
+C:\Consultorio\Api\obj\Debug\net8.0\Api.csproj.CopyComplete
 C:\Consultorio\Api\obj\Debug\net8.0\Api.dll
 C:\Consultorio\Api\obj\Debug\net8.0\refint\Api.dll
 C:\Consultorio\Api\obj\Debug\net8.0\Api.pdb
 C:\Consultorio\Api\obj\Debug\net8.0\Api.genruntimeconfig.cache
 C:\Consultorio\Api\obj\Debug\net8.0\ref\Api.dll
-C:\Consultorio\Api\obj\Debug\net8.0\Api.csproj.CopyComplete
-C:\Consultorio\Api\bin\Debug\net8.0\RtfPipe.dll

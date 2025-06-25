@@ -153,7 +153,6 @@
                                                 </span>
                                             </a>
                                         </li>
-
                                         <li>
                                             <a href="#step-5">
                                                 <span class="step_no">5</span>
@@ -352,115 +351,12 @@
                                         </form>
                                     </div>
                                     <div id="step-5" style=" height: 320px; ">
-                                        <form method="POST">
-
-                                            <div asp-validation-summary="ModelOnly" class="text-danger"> </div>
-
-                                            <!-- body input -->
-                                            
-                                            <div class="form-outline mb-4">
-                                                <label class="form-label" asp-for="Historia"></label>
-                                                <div>
-
-                                                    <textarea asp-for="Historia" id="tahc" class="form-control">@ViewBag.HtmlContent </textarea>
-                                                    <span asp-validation-for="Historia" class="text-danger"></span>
-                                                  
-                                                </div>
-                                            </div>
+                                        <textarea id="tahistoria">
+                                       
                                          
-                                        </form>
-
-
-                                    @*     @using (Html.BeginForm())
-                                        {
-                                            <textarea name="rtfContent" rows="10" cols="50">@Html.Raw(ViewBag.HtmlContent) </textarea>
-                                            <input type="submit" value="Submit">
-                                        } *@
-
-
-
-                                        @*     <form id="formNivel" class="col-12 row m-0 " style="border:solid; border-color:#256080; border-width:2px; height:325px; border-radius: 8px;">
-                                        <div class="col-md-12 col-sm-12">
-                                        <div class="x_panel  p-0">
-                                        <div class="x_content  mt-3 p-0">
-                                        <div id="alerts"></div>
-                                        <div class="btn-toolbar editor" data-bs-role="editor-toolbar" data-bs-target="#editor-one">
-                                        <div class="btn-group m-0 p-0">
-                                        <a class="btn dropdown-toggle" data-bs-toggle="dropdown" title="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
-                                        <ul class="dropdown-menu">
-                                        </ul>
-                                        </div>
-
-                                        <div class="btn-group">
-                                        <a class="btn dropdown-toggle" data-bs-toggle="dropdown" title="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
-                                        <ul class="dropdown-menu">
-                                        <li>
-                                        <a data-edit="fontSize 5">
-                                        <p style="font-size:17px">Huge</p>
-                                        </a>
-                                        </li>
-                                        <li>
-                                        <a data-edit="fontSize 3">
-                                        <p style="font-size:14px">Normal</p>
-                                        </a>
-                                        </li>
-                                        <li>
-                                        <a data-edit="fontSize 1">
-                                        <p style="font-size:11px">Small</p>
-                                        </a>
-                                        </li>
-                                        </ul>
-                                        </div>
-
-                                        <div class="btn-group">
-                                        <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
-                                        <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
-                                        <a class="btn" data-edit="strikethrough" title="Strikethrough"><i class="fa fa-strikethrough"></i></a>
-                                        <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
-                                        </div>
-
-                                        <div class="btn-group">
-                                        <a class="btn" data-edit="insertunorderedlist" title="Bullet list"><i class="fa fa-list-ul"></i></a>
-                                        <a class="btn" data-edit="insertorderedlist" title="Number list"><i class="fa fa-list-ol"></i></a>
-                                        <a class="btn" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>
-                                        <a class="btn" data-edit="indent" title="Indent (Tab)"><i class="fa fa-indent"></i></a>
-                                        </div>
-
-                                        <div class="btn-group">
-                                        <a class="btn" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
-                                        <a class="btn" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
-                                        <a class="btn" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
-                                        <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
-                                        </div>
-
-                                        <div class="btn-group">
-                                        <a class="btn dropdown-toggle" data-bs-toggle="dropdown" title="Hyperlink"><i class="fa fa-link"></i></a>
-                                        <div class="dropdown-menu input-append">
-                                        <input class="span2" placeholder="URL" type="text" data-edit="createLink" />
-                                        <button class="btn" type="button">Add</button>
-                                        </div>
-                                        <a class="btn" data-edit="unlink" title="Remove Hyperlink"><i class="fa fa-cut"></i></a>
-                                        </div>
-
-                                        <div class="btn-group">
-                                        <a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
-                                        <input type="file" data-bs-role="magic-overlay" data-bs-target="#pictureBtn" data-edit="insertImage" />
-                                        </div>
-
-                                        <div class="btn-group">
-                                        <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
-                                        <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
-                                        </div>
-                                        </div>
-                                        <div id="editor-one" class="editor-wrapper contenedor-scroll "></div>
-                                        <textarea name="descr" id="descr"   style="display:none;"  ></textarea>
-
-
-
-                                        </div>
-                                        </div>
-                                        </div>
-                                        </form> *@
+                                        </textarea>
+                                        
+                                  
                                     </div>
                                 </div>
                             </div>
@@ -636,48 +532,48 @@
                 // Iconos
                 const iconos = {
                     exito: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                              <path
-                                                                  d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
-                                                              />
-                                                          </svg>`,
+                                                                      <path
+                                                                          d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
+                                                                      />
+                                                                  </svg>`,
                     error: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                          <path
-                                                                              d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                                                                          />
-                                                                      </svg>`,
+                                                                                  <path
+                                                                                      d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                                                  />
+                                                                              </svg>`,
                     info: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                          <path
-                                                                              d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
-                                                                          />
-                                                                      </svg>`,
+                                                                                  <path
+                                                                                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+                                                                                  />
+                                                                              </svg>`,
                     warning: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                          <path
-                                                                              d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                                                                          />
-                                                                      </svg>`,
+                                                                                  <path
+                                                                                      d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                                                  />
+                                                                              </svg>`,
                 };
 
                 // Plantilla del toast
                 const toast = `
-                                                  <div class="contenidoP">
-                                                      <div class="icono">
-                                                          ${iconos[tipo]}
-                                                      </div>
-                                                      <div class="texto">
-                                                          <p class="titulo">${titulo}</p>
-                                                          <p class="descripcion">${descripcion}</p>
-                                                      </div>
-                                                  </div>
-                                                  <button class="btn-cerrar">
-                                                      <div class="icono">
-                                                          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                              <path
-                                                                  d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-                                                              />
-                                                          </svg>
-                                                      </div>
-                                                  </button>
-                                              `;
+                                                          <div class="contenidoP">
+                                                              <div class="icono">
+                                                                  ${iconos[tipo]}
+                                                              </div>
+                                                              <div class="texto">
+                                                                  <p class="titulo">${titulo}</p>
+                                                                  <p class="descripcion">${descripcion}</p>
+                                                              </div>
+                                                          </div>
+                                                          <button class="btn-cerrar">
+                                                              <div class="icono">
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                      <path
+                                                                          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                                                                      />
+                                                                  </svg>
+                                                              </div>
+                                                          </button>
+                                                      `;
 
                 // Agregar la plantilla al nuevo toast
                 nuevoToast.innerHTML = toast;
@@ -734,7 +630,6 @@
             $("#editor-one").text('');
 
             if (json != null) {
-                console.log(json);
                 $("#txtid").val(json.id);
                 $("#txtapeynom").val(json.apeyNom);
                 $("#txtdni").val(json.nroDocumento);
@@ -756,14 +651,13 @@
                 $("#cboprofesion").val(json.idProfesion);
                 $("#cbomutual").val(json.idMutual);
                 $("#txtnroPaciente").val(json.documento);
-              //  $("#descr").val(json.observaciones);
+                //$("#descr").val(json.observaciones);
                 //$("#editor-one").text(json.observaciones),
                 $("#txtnrohc").val(json.nroHC);
-               // $("#editor-one").text(json.historia)
-               // $("#tahc").text(json.historia);
-
-
-
+                // $("#editor-one").text(json.historia)
+                // console.log(json.historia);
+                // $("#tahistoria").val(json.historia);
+                tinymce.get('tahistoria').setContent(json.historia);
             }
             $("#FormModal").modal("show");
         }
@@ -1073,6 +967,7 @@
                 observaciones: $("#editor-one").text(),
                 fnac: moment(yyyy + "-" + MM + "-" + DD).format('YYYY-MM-DD'),
                 nroHC: $("#txtnrohc").val(),
+                historia: tinymce.get('tahistoria').getContent()
                 // fNac:new Date($("#dtfechanac").val())
             };
             console.log('*');
@@ -1133,8 +1028,18 @@
         }
 
         tinymce.init({
-
-            selector: 'textarea#Historia'
+            selector: 'textarea#tahistoria',
+            height: 500,
+            plugins: [
+                'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+                'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+                'insertdatetime', 'media', 'table', 'help', 'wordcount'
+            ],
+            toolbar: 'undo redo | blocks | ' +
+                'bold italic backcolor | alignleft aligncenter ' +
+                'alignright alignjustify | bullist numlist outdent indent | ' +
+                'removeformat | help',
+            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
         });
     </script>
 }
