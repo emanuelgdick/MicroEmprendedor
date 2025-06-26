@@ -47,12 +47,11 @@ namespace FrontEnd.Controllers
             
 
         }
-        public ActionResult RtfToHtml(string rtfText)
+        public ActionResult ConverHCToHTML(string historia)
         {
-            string htmlContent = RtfHelper.ConvertRtfToHtml(rtfText);
-
-            ViewBag.HtmlContent = htmlContent; // Pasar el contenido HTML al modelo de la vista.
-            return View();
+            string htmlContent = RtfHelper.ConvertRtfToHtml(historia);
+          //  ViewBag.HtmlContent = htmlContent; // Pasar el contenido HTML al modelo de la vista.
+            return Json(new { data = htmlContent });
         }
 
 
@@ -61,14 +60,6 @@ namespace FrontEnd.Controllers
         {
             List<Paciente> lstPaciente = new List<Paciente>();
             lstPaciente = await _apiService.GetAllPacientes(HttpContext.Session.GetString("APIToken"));
-            for (int i = 0; i <= lstPaciente.Count - 1; i++)
-            {
-                if (lstPaciente[i].Historia[0] == '{') {
-                    lstPaciente[i].Historia = Rtf.ToHtml(lstPaciente[i].Historia);
-                }
-                    
-               // ViewBag.HtmlContent = Rtf.ToHtml(lstPaciente[i].Historia);
-            }
             return Json(new { data = lstPaciente });
         }
         

@@ -2,8 +2,12 @@
 
 public static class RtfHelper
 {
-    public static string ConvertRtfToHtml(string rtfText)
+    public static string? ConvertRtfToHtml(string rtfText)
     {
-        return Rtf.ToHtml(rtfText);
+        if (rtfText[0] == '{')
+        {
+            return Rtf.ToHtml(rtfText);
+        }
+        else return null;
     }
 }

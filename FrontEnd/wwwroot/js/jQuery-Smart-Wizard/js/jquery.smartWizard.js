@@ -13,7 +13,7 @@
 
 function SmartWizard(target, options) {
 
-  
+    
   
     this.target       = target;
     this.options      = options;
@@ -320,7 +320,8 @@ function SmartWizard(target, options) {
      */
 
     SmartWizard.prototype.goForward = function () {
-      
+
+       
         var nextStepIdx = this.curStepIdx + 1;
         if (this.steps.length <= nextStepIdx){
             if (! this.options.cycleSteps){
@@ -332,7 +333,7 @@ function SmartWizard(target, options) {
     };
 
     SmartWizard.prototype.goBackward = function () {
-
+     
         var nextStepIdx = this.curStepIdx-1;
         if (0 > nextStepIdx){
             if (! this.options.cycleSteps){
@@ -463,8 +464,8 @@ $.fn.smartWizard.defaults = {
 	hideButtonsOnDisabled: false, // when the previous/next/finish buttons are disabled, hide them instead?
     errorSteps:[],    // Array Steps with errors
     
-    labelNext: ' > ',
-    labelPrevious: ' < ',
+    labelNext: ' >> ',
+    labelPrevious: ' << ',
     labelFinish:'',
     noForwardJumping: false,
     onLeaveStep: null, // triggers when leaving a step

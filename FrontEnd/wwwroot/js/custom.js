@@ -1783,6 +1783,7 @@ function init_SmartWizard() {
   
   
     if (typeof ($.fn.smartWizard) === 'undefined') { return; }
+ 
     $('#wizard').smartWizard();
     
     $('#wizard_verticle').smartWizard({

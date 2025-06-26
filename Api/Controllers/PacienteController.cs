@@ -173,7 +173,7 @@ namespace Api.Controllers
             Paciente.IdProfesion = paciente.IdProfesion == 0 ? null : paciente.IdProfesion;
             Paciente.IdMedico = paciente.IdMedico == 0 ? null : paciente.IdMedico;
             Paciente.Sexo = paciente.Sexo;
-            Paciente.IdMutual = paciente.IdMutual;
+            Paciente.IdMutual = paciente.IdMutual == 0 ? null : paciente.IdMutual;
             Paciente.IdLocalidad   = paciente.IdLocalidad == 0 ? null : paciente.IdLocalidad;
             Paciente.Calle = paciente.Calle;
             Paciente.Nro = paciente.Nro;
