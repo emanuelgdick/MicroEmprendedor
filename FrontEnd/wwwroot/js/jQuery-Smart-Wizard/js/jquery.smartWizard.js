@@ -13,8 +13,6 @@
 
 function SmartWizard(target, options) {
 
-    
-  
     this.target       = target;
     this.options      = options;
     this.curStepIdx   = options.selected;
@@ -64,12 +62,12 @@ function SmartWizard(target, options) {
         this.contentWidth = $this.elmStepContainer.width();
 
         $($this.buttons.next).click(function () {
-          
             $this.goForward();
             return false;
         });
-        $($this.buttons.previous).click(function() {
-            $this.goBackward();
+        $($this.buttons.previous).click(function () {
+
+            $this.goBackward()
             return false;
         });
         $($this.buttons.finish).click(function() {
@@ -145,6 +143,8 @@ function SmartWizard(target, options) {
     };
 
     var _loadContent = function ($this, stepIdx) {
+        $($this.buttons.next).addClass("buttonDisabled");
+        $($this.buttons.previous).addClass("buttonDisabled");
         var selStep = $this.steps.eq(stepIdx);
         var ajaxurl = $this.options.contentURL;
         var ajaxurl_data = $this.options.contentURLData;
@@ -167,10 +167,13 @@ function SmartWizard(target, options) {
                     },
                     success: function(res){
                         $this.loader.hide();
-                        if(res && res.length>0){
+                        if (res && res.length > 0) {
+                           
+                            
                             selStep.data('hasContent',true);
                             _step($this, selStep).html(res);
                             _showStep($this, stepIdx);
+                           // $($this.buttons.next).addClass("buttonEnabled");
                         }
                     }
                 };
@@ -320,7 +323,6 @@ function SmartWizard(target, options) {
      */
 
     SmartWizard.prototype.goForward = function () {
-
        
         var nextStepIdx = this.curStepIdx + 1;
         if (this.steps.length <= nextStepIdx){
@@ -329,7 +331,9 @@ function SmartWizard(target, options) {
             }
             nextStepIdx = 0;
         }
+      
         _loadContent(this, nextStepIdx);
+        
     };
 
     SmartWizard.prototype.goBackward = function () {
@@ -464,8 +468,8 @@ $.fn.smartWizard.defaults = {
 	hideButtonsOnDisabled: false, // when the previous/next/finish buttons are disabled, hide them instead?
     errorSteps:[],    // Array Steps with errors
     
-    labelNext: ' >> ',
-    labelPrevious: ' << ',
+    labelNext: ' > ',
+    labelPrevious: ' < ',
     labelFinish:'',
     noForwardJumping: false,
     onLeaveStep: null, // triggers when leaving a step

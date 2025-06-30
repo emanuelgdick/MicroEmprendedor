@@ -22,11 +22,15 @@ namespace Api.Controllers
         [HttpGet]
         [Authorize]
         [ResponseCache(CacheProfileName = "apicache")]
-        public IActionResult GetTotales()
+        public IActionResult GetTotales(int id)
         {
         
             TotalesDTO totales=new TotalesDTO();
             totales.TotalPacientes = _db.Paciente.Count();
+            totales.TotalMutuales = _db.Mutual.Count();
+            totales.TotalMedicos = _db.Medico.Count();
+            totales.TotalConsultas = _db.Consulta.Count();
+            totales.Usuario = _db.Usuario.Where(s => s.Id ==id).FirstOrDefault();
             //totales.TotalSociosVitalicios = _db.Socio.Where(x => x.Vitalicio == true).Count();
             //totales.TotalSociosActivos = _db.Socio.Where(x => x.EstadoSocio.Id == 1).Count();
             //totales.TotalSociosSuspendidos = _db.Socio.Where(x => x.EstadoSocio.Id == 2).Count();

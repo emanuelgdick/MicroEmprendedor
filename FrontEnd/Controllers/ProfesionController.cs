@@ -1,8 +1,10 @@
 ﻿using FrontEnd.Models;
+using FrontEnd.Models.DTOs;
 using FrontEnd.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft;
+using System.Security.Claims;
 
 namespace FrontEnd.Controllers
 {
@@ -21,10 +23,15 @@ namespace FrontEnd.Controllers
         [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Index()
         {
-            int pagesize = _config.GetValue<int>("PageSettings:PageSize");
-            List<Profesion> lstProfesion = new List<Profesion>();
-            lstProfesion = await _apiService.GetAllProfesiones(HttpContext.Session.GetString("APIToken"));
-            return View();
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+            string userId = string.Empty;
+            if (userIdClaim != null)
+            {
+                userId = userIdClaim.Value;
+            }
+            TotalesDTO totales = new TotalesDTO();
+            totales = await _apiService.GetTotales(int.Parse(userId), HttpContext.Session.GetString("APIToken"));
+            return View(totales);
 
         }
 

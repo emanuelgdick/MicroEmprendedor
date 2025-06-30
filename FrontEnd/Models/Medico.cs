@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-
+﻿
+using System.ComponentModel.DataAnnotations;
 namespace FrontEnd.Models
 {
     public class Medico

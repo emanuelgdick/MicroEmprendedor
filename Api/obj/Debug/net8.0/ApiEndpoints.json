@@ -320,7 +320,13 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -1081,21 +1087,47 @@
   },
   {
     "ContainingType": "Api.Controllers.UsuarioController",
+    "Method": "AddUser",
+    "RelativePath": "api/Usuario/AddUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuario",
+        "Type": "Api.Models.LoginRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Api.Models.Usuario",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Api.Controllers.UsuarioController",
     "Method": "Login",
-    "RelativePath": "api/Usuario/Userlogin",
+    "RelativePath": "api/Usuario/UserLogin",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "logindetails",
-        "Type": "Api.Models.UserLoginRequest",
+        "Type": "Api.Models.LoginRequestDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.UserLoginResponse",
+        "Type": "Api.Models.LoginResponseDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",

@@ -2205,6 +2205,10 @@
       "PackagePath": "staticwebassets\\js\\bootstrap\\site\\sw.js"
     },
     {
+      "Id": "C:\\Consultorio\\FrontEnd\\wwwroot\\js\\custom.min.js",
+      "PackagePath": "staticwebassets\\js\\custom.min.js"
+    },
+    {
       "Id": "C:\\Consultorio\\FrontEnd\\wwwroot\\js\\datatables.net-buttons\\js\\buttons.colVis.js",
       "PackagePath": "staticwebassets\\js\\datatables.net-buttons\\js\\buttons.colVis.js"
     },
@@ -4227,6 +4231,10 @@
     {
       "Id": "C:\\Consultorio\\FrontEnd\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FrontEnd.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FrontEnd.Microsoft.AspNetCore.StaticWebAssets.props",

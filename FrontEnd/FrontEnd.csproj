@@ -7,17 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Models\DTOs\**" />
-    <Content Remove="Models\DTOs\**" />
-    <EmbeddedResource Remove="Models\DTOs\**" />
-    <None Remove="Models\DTOs\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="Controllers\AccesoController.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Remove="wwwroot\css\animate\animate.min.css" />
     <Content Remove="wwwroot\css\custom.css" />
     <Content Remove="wwwroot\css\custom.min.css" />
@@ -58,7 +47,6 @@
     <Content Remove="wwwroot\js\boostrap-daterangepicker\daterangepicker.js" />
     <Content Remove="wwwroot\js\charts\Chart.min.js" />
     <Content Remove="wwwroot\js\custom.js" />
-    <Content Remove="wwwroot\js\custom.min.js" />
     <Content Remove="wwwroot\js\datatables.net\js\jquery.dataTables.js" />
     <Content Remove="wwwroot\js\datatables.net\js\jquery.dataTables.min.js" />
     <Content Remove="wwwroot\js\DateJs\date.js" />

@@ -1,6 +1,6 @@
 ﻿using FrontEnd.Models;
 
-namespace Frontend.Models
+namespace FrontEnd.Models
 {
     public class LoginResponseDTO
     {

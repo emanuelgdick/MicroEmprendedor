@@ -2,7 +2,7 @@
 
     Layout = null;
 }
-@model Frontend.Models.LoginRequestDTO
+@* @model Frontend.Models.LoginRequestDTO *@
 @inject IHttpContextAccessor HttpContextAccessor;
 
 <!-- Bootstrap -->
@@ -58,35 +58,28 @@
                 <section class="login_content">
 
                     <form method="post">
-                        <h1>Login Form</h1>
+                        <h1>Login</h1>
                         <div>
-                            <input type="text" asp-for="User" id="User" class="form-control" placeholder="Username" required="" value="" />
+                            <input type="text" @* asp-for="User"  *@id="User" class="form-control" placeholder="Usuario" required="" value="" />@* Username *@
                         </div>
                         <div>
-                            <input type="password" asp-for="Password" id="Password" class="form-control" placeholder="Password" required="" value="" />
+                            <input type="password" @* asp-for="Password" *@ id="Password" class="form-control" placeholder="Contraseña" required="" value="" /> @* Password *@
                         </div>
                         <div>
-                            
-                                <a class="btn btn-default submit" href="#" onclick="enviarLogin(document.getElementById('User').value,document.getElementById('Password').value)">Log in</a>
-
-                                <a class="reset_pass" href="#">Olvidó su contraseña?</a>
-                           
+                            <a class="btn btn-default submit" href="#" onclick="enviarLogin(document.getElementById('User').value,document.getElementById('Password').value)">Log in</a>
+                            <a class="reset_pass" href="#">Olvidó su contraseña?</a>
                         </div>
-
                         <div class="clearfix"></div>
-
                         <div class="separator">
                             <p class="change_link">
-                                New to site?
                                 <a href="#signup" class="to_register"> Crear Cuenta </a>
                             </p>
-
                             <div class="clearfix"></div>
                             <br />
-
                             <div>
-                                <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                                <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 4 template. Privacy and Terms</p>
+                                <h1>
+                                    <i class="fa fa-user-md"></i> Consultório Médico - Dr. Fantini
+                                </h1>
                             </div>
                         </div>
                     </form>
@@ -98,23 +91,23 @@
                     <form>
                         <h1>Crear Cuenta</h1>
                         <div>
-                            <input type="text" class="form-control" placeholder="Username" required="" />
+                            <input type="text" class="form-control" id="apeynom" placeholder="Apellido y Nombre" required="" />@* Username *@
                         </div>
                         <div>
-                            <input type="email" class="form-control" placeholder="Email" required="" />
+                            <input type="email" id="usr" class="form-control" placeholder="Correo" required="" /> @* Email *@
                         </div>
                         <div>
-                            <input type="password" class="form-control" placeholder="Password" required="" />
+                            <input type="password" id="psw"class="form-control" placeholder="Contraseña" required="" /> @* Password *@
                         </div>
                         <div>
-                            <a class="btn btn-default submit" href="index.html">Submit</a>
+                            <a class="btn btn-default submit" href="#" onclick="registrarUser(document.getElementById('usr').value,document.getElementById('psw').value,document.getElementById('apeynom').value)">Enviar</a>
                         </div>
-
+                        
                         <div class="clearfix"></div>
 
                         <div class="separator">
                             <p class="change_link">
-                                Already a member ?
+
                                 <a href="#signin" class="to_register"> Log in </a>
                             </p>
 
@@ -122,8 +115,11 @@
                             <br />
 
                             <div>
-                                <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                                <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 4 template. Privacy and Terms</p>
+                                <h1>
+                                    <i class="fa fa-user-md"></i> Consultório Médico - Dr. Fantini
+                                </h1>
+                                @*   <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1> *@
+                                @*  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 4 template. Privacy and Terms</p> *@
                             </div>
                         </div>
                     </form>
@@ -146,43 +142,76 @@
 
 <script>
 
-   async function enviarLogin(user,password)
-    {
-        const data = {
-            User: user,
-            Password: password
-        };
-            let res = await fetch("/Authuser/Login", {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-                })
-                .then(response => {
-                     console.log(response);
-                    if (response.ok){
+    async function enviarLogin(user,password)
+     {
+         const data = {
+             User: user,
+             Password: password
+         };
+             let res = await fetch("/Authuser/Login", {
+                 method: 'POST',
+                 headers: {
+                     'Accept': 'application/json',
+                     'Content-Type': 'application/json'
+                 },
+                 body: JSON.stringify(data)
+                 })
+                 .then(response => {
+                      console.log(response);
+                     if (response.ok){
 
-                       return response.json();
-                    }else{
-                    throw new Error('Error en la solicitud');
-                    }
-                })
-                .then(data => {
-                        if (data.success){
-                                window.location.href='/Home/Index';
-                        }else{
+                        return response.json();
+                     }else{
+                     throw new Error('Error en la solicitud');
+                     }
+                 })
+                 .then(data => {
+                         if (data.success){
+                      
+                              
+                                 window.location.href='/Home/Index'
+                         }else{
 
-                               alert(data.message);
-                        }
+                                alert(data.message);
+                         }
+             });
+     }
 
-            });
+    async function registrarUser(user,password,apeyNom)
+     {
+         const data = {
+             User: user,
+             Password: password,
+             ApeyNom:apeyNom,
+             Rol:"Admin"
+         };
+             let res = await fetch("/Authuser/CreateUser", {
+                 method: 'POST',
+                 headers: {
+                     'Accept': 'application/json',
+                     'Content-Type': 'application/json'
+                 },
+                 body: JSON.stringify(data)
+                 })
+                 .then(response => {
+                      console.log(response);
+                     if (response.ok){
+                          window.location.href='#';
+                        return response.json();
+                     }else{
+                     throw new Error('Error en la solicitud');
+                     }
+                 })
+                 .then(data => {
+                     debugger;
+                         if (data.success){
+                                 window.location.href='/Home/Index';
+                         }else{
 
-
-
-    }
-
+                               // alert(data.message);
+                         }
+             });
+     }
 
 
 

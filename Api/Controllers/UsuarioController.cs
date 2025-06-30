@@ -6,6 +6,8 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using System.Security.Claims;
 using System.Security.Cryptography;
+using System.Numerics;
+using Microsoft.AspNetCore.Authorization;
 namespace Api.Controllers
 {
     [Route("api/[controller]")]
@@ -21,11 +23,12 @@ namespace Api.Controllers
             _SecretKey = configuration.GetValue<string>("ApiSettings:Secret");
         }
 
-        [HttpPost("Userlogin")]
-        public async Task<UserLoginResponse> Login(UserLoginRequest logindetails)
+        [HttpPost("UserLogin")]
+        public async Task<LoginResponseDTO> Login( LoginRequestDTO logindetails)
         {
             var user = _db.Usuario.FirstOrDefault(u => u.User.ToLower() == logindetails.User.ToLower()
-            && u.Password.ToLower() == logindetails.Password.ToLower());
+            && u.Password.ToLower() == RecursosBiz.ConvertirSha256(logindetails.Password.ToLower()));
+
 
             if (user == null)
             {
@@ -48,7 +51,7 @@ namespace Api.Controllers
             };
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
-            UserLoginResponse loginResponse = new UserLoginResponse()
+            LoginResponseDTO loginResponse = new LoginResponseDTO()
             {
                 Token = tokenHandler.WriteToken(token),
                 Usuario = user,
@@ -56,6 +59,25 @@ namespace Api.Controllers
 
             return loginResponse;
         }
-     
+
+
+        [HttpPost("AddUser")]
+        public async Task<Usuario> AddUser([FromBody] LoginRequestDTO usuario)
+        {
+            if (!ModelState.IsValid)
+            {
+                return null;//BadRequest(ModelState);
+            }
+            Usuario u = new Usuario();
+            u.Rol = usuario.Rol;
+            u.ApeyNom = usuario.ApeyNom;
+            u.User = usuario.User;
+            u.Password = RecursosBiz.ConvertirSha256(usuario.Password);
+            _db.Usuario.Add(u);
+            _db.SaveChanges();
+            return u;//Ok(u);
+
+        }
+
     }
 }

@@ -1,5 +1,5 @@
 ﻿@using Frontend.Models
-@model Paciente
+@* @model Paciente *@
 @{
     ViewBag.Title = "Pacientes";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -605,7 +605,7 @@
         //Abrir Modal
         function abrirModal(json) {
 
-            // $("#wizard").smartWizard('goToStep', 1)
+             $("#wizard").smartWizard('goToStep', 1)
             $("#txtnroPaciente").val('');
             $("#txtapeynom").val('');
             $("#txtdni").val('');
@@ -627,7 +627,8 @@
             $("#txtpiso").val('');
             $("#txtdepto").val('');
             $("#txtobservaciones").val('');
-            $("#editor-one").text('');
+            // $("#editor-one").text('');
+             tinymce.get('tahistoria').setContent("");
 
             if (json != null) {
                 $("#txtid").val(json.id);

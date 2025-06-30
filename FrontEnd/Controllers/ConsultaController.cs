@@ -1,11 +1,13 @@
 ﻿using Frontend.Models;
 using FrontEnd.Models;
+using FrontEnd.Models.DTOs;
 using FrontEnd.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft;
 using System.Collections;
+using System.Security.Claims;
 
 namespace FrontEnd.Controllers
 {
@@ -23,9 +25,17 @@ namespace FrontEnd.Controllers
 
         [Authorize(Roles = "Admin")]
         [ResponseCache(Duration = 30)]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+            string userId = string.Empty;
+            if (userIdClaim != null)
+            {
+                userId = userIdClaim.Value;
+            }
+            TotalesDTO totales = new TotalesDTO();
+            totales = await _apiService.GetTotales(int.Parse(userId), HttpContext.Session.GetString("APIToken"));
+            return View(totales);
         }
 
 

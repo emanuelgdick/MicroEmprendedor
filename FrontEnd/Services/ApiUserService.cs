@@ -1,4 +1,5 @@
 ﻿using Frontend.Models;
+using FrontEnd.Models;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
 
@@ -23,6 +24,16 @@ namespace FrontEnd.Services
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
             var APIResponse=JsonConvert.DeserializeObject<LoginResponseDTO>(contents);
+            return APIResponse;
+
+        }
+
+        public async Task<Usuario> AddUser(LoginRequestDTO userDetails)
+        {
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<LoginRequestDTO>($"api/Usuario/AddUser", userDetails);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Usuario>(contents);
             return APIResponse;
 
         }

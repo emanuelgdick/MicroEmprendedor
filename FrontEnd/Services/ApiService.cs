@@ -4,6 +4,7 @@ using System.Net.Http.Json;
 using System.Web.Mvc;
 using Frontend.Models;
 using FrontEnd.Models;
+using FrontEnd.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -489,10 +490,10 @@ namespace FrontEnd.Services
         #endregion
 
         //TOTALES
-        public async Task<TotalesDTO> GetTotales(string token)
+        public async Task<Models.DTOs.TotalesDTO> GetTotales(int id,string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/Home?");
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Home?id={id}");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
             var APIResponse = JsonConvert.DeserializeObject<TotalesDTO>(contents);

@@ -1,11 +1,13 @@
 ﻿
-using Frontend.Models;
+
 using FrontEnd.Models;
+using FrontEnd.Models.DTOs;
 using FrontEnd.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft;
 using RtfPipe;
+using System.Security.Claims;
 using System.Text;
 using System.Web.Razor.Parser;
 
@@ -31,20 +33,15 @@ namespace FrontEnd.Controllers
         [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Index()
         {
-            int pagesize = _config.GetValue<int>("PageSettings:PageSize");
-            List<Paciente> lstPaciente = new List<Paciente>();
-            lstPaciente = await _apiService.GetAllPacientes(HttpContext.Session.GetString("APIToken"));
-            System.Text.EncodingProvider ppp = System.Text.CodePagesEncodingProvider.Instance;
-            Encoding.RegisterProvider(ppp);
-            //for (int i = 0; i <= lstPaciente.Count - 1; i++)
-            //{
-                //ViewBag.HtmlContent = Rtf.ToHtml(lstPaciente[i].Historia);
-              //  lstPaciente[i].Historia = Rtf.ToHtml(lstPaciente[i].Historia);
-            //}
-
-
-            return View( );
-            
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+            string userId = string.Empty;
+            if (userIdClaim != null)
+            {
+                userId = userIdClaim.Value;
+            }
+            TotalesDTO totales = new TotalesDTO();
+            totales = await _apiService.GetTotales(int.Parse(userId), HttpContext.Session.GetString("APIToken"));
+            return View(totales);
 
         }
         public ActionResult ConverHCToHTML(string historia)

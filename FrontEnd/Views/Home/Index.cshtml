@@ -3,28 +3,28 @@
 <div class="row"   style="display: inline-block;" >
     <div class="tile_count">
         <div class="col-md-2 col-sm-4  tile_stats_count">
-            <span class="count_top"><i class="fa fa-user"></i> Total Socios</span>
-            <div class="count">@Model.TotalSocios</div>
+            <span class="count_top"><i class="fa fa-user"></i> Total Pacientes</span>
+            <div class="count">@Model.TotalPacientes</div>
              <span class="count_bottom"><i class="text-green">4% </i> From last Week</span> 
         </div>
         <div class="col-md-2 col-sm-4  tile_stats_count">
-            <span class="count_top"><i class="fa fa-clock-o"></i> Total Socios Vitalicios</span>
-            <div class="count">@Model.TotalSociosVitalicios</div>
+            <span class="count_top"><i class="fa fa-clock-o"></i> Total Mutuales</span>
+            <div class="count">@Model.TotalMutuales</div>
             <span class="count_bottom"><i class="text-green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
         </div>
         <div class="col-md-2 col-sm-4  tile_stats_count">
-            <span class="count_top"><i class="fa fa-user"></i> Total Socios Activos</span>
-            <div class="count text-green">@Model.TotalSociosActivos</div>
+            <span class="count_top"><i class="fa fa-user"></i> Total Médicos</span>
+            <div class="count text-green">@Model.TotalMedicos</div>
             <span class="count_bottom"><i class="text-green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
         </div>
         <div class="col-md-2 col-sm-4  tile_stats_count">
-            <span class="count_top"><i class="fa fa-user"></i> Total Socios Suspendidos</span>
-            <div class="count">@Model.TotalSociosSuspendidos</div>
+            <span class="count_top"><i class="fa fa-user"></i> Total Consultas</span>
+            <div class="count">@Model.TotalConsultas</div>
             <span class="count_bottom"><i class="text-red"><i class="fa fa-sort-desc"></i>12% </i> From last Week</span>
         </div>
         <div class="col-md-2 col-sm-4  tile_stats_count">
             <span class="count_top"><i class="fa fa-user"></i> Total Socios Dados de Baja</span>
-            <div class="count">@Model.TotalSociosDadosDeBaja</div>
+            <div class="count"></div>
             <span class="count_bottom"><i class="text-green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
         </div>
          <div class="col-md-2 col-sm-4  tile_stats_count">
@@ -32,12 +32,7 @@
             <div class="count">7,325</div>
             <span class="count_bottom"><i class="text-green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
         </div>
-        <div class="col-md-6">
-            <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
-                 <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                 <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
-             </div>
-        </div> 
+      
 
     </div>
 </div>
@@ -51,34 +46,34 @@
             <div class="row">
                 <div class="col-lg-2 col-sm-6">
                     <div class="circle-tile ">
-                        <a href="#"><div class="circle-tile-heading dark-blueL fa-align-center"><i class="fa fa-users fa-fw fa-3x"></i></div></a>
+                        <a href="/Paciente/index"><div class="circle-tile-heading dark-blueL fa-align-center"><i class="fa fa-users fa-fw fa-3x"></i></div></a>
                         <div class="circle-tile-content dark-blue rounded-lg">
-                            <div class="circle-tile-description text-faded text-center"> Usuarios</div>
-                            <div class="circle-tile-number text-faded text-center "> @Model.TotalUsuarios</div>
-                            <a class="circle-tile-footer" href="#">Entrar...<i class="fa fa-chevron-circle-right"></i></a>
+                            <div class="circle-tile-description text-faded text-center"> Pacientes</div>
+                            <div class="circle-tile-number text-faded text-center "> @Model.TotalPacientes</div>
+                            <a class="circle-tile-footer" href="/Paciente/index">Entrar...<i class="fa fa-chevron-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-2 col-sm-6">
                     <div class="circle-tile ">
-                        <a href="/cobrador/index" ><div class="circle-tile-heading red fa-align-center"><i class="fa fa-user fa-fw fa-3x"></i></div></a>
+                        <a href="/Mutual/index" ><div class="circle-tile-heading red fa-align-center"><i class="fa fa-user fa-fw fa-3x"></i></div></a>
                         <div class="circle-tile-content red rounded-lg">
-                            <div class="circle-tile-description text-faded text-center"> Cobradores </div>
-                            <div class="circle-tile-number text-faded text-center"> @Model.TotalCobradores</div>
-                            <a class="circle-tile-footer" href="#">Entrar...<i class="fa fa-chevron-circle-right"></i></a>
+                            <div class="circle-tile-description text-faded text-center"> Mutuales </div>
+                            <div class="circle-tile-number text-faded text-center">@Model.TotalMutuales </div>
+                            <a class="circle-tile-footer" href="/Mutual/index">Entrar...<i class="fa fa-chevron-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-2 col-sm-6">
                     <div class="circle-tile ">
-                        <a href="#"><div class="circle-tile-heading greenL fa-align-center"><i class="fa fa-book fa-fw fa-3x"></i></div></a>
+                        <a href="/Medico/index"><div class="circle-tile-heading greenL fa-align-center"><i class="fa fa-book fa-fw fa-3x"></i></div></a>
                         
                         <div class="circle-tile-content green rounded-lg">
-                            <div class="circle-tile-description text-faded text-center"> Materiales </div>
-                            <div class="circle-tile-number text-faded text-center">0</div>
-                            <a class="circle-tile-footer" href="#">Entrar...<i class="fa fa-chevron-circle-right"></i></a>
+                            <div class="circle-tile-description text-faded text-center"> Médicos </div>
+                            <div class="circle-tile-number text-faded text-center">@Model.TotalMedicos</div>
+                            <a class="circle-tile-footer" href="/Medico/index">Entrar...<i class="fa fa-chevron-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -86,12 +81,13 @@
 
                 <div class="col-lg-2 col-sm-6">
                     <div class="circle-tile ">
-                        <a href="#"><div class="circle-tile-heading blue fa-align-center"><i class="fa fa-book fa-fw fa-3x"></i></div></a>
+                        <a href="/Consulta/index"><div class="circle-tile-heading blue fa-align-center"><i class="fa fa-book fa-fw fa-3x"></i>
+                    </div></a>
 
                         <div class="circle-tile-content blue rounded-lg">
-                            <div class="circle-tile-description text-faded text-center"> Préstamos</div>
-                            <div class="circle-tile-number text-faded text-center">0</div>
-                            <a class="circle-tile-footer" href="#">Entrar...<i class="fa fa-chevron-circle-right"></i></a>
+                            <div class="circle-tile-description text-faded text-center"> Consultas</div>
+                            <div class="circle-tile-number text-faded text-center">@Model.TotalConsultas</div>
+                            <a class="circle-tile-footer" href="/Consulta/index">Entrar...<i class="fa fa-chevron-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -102,7 +98,7 @@
 
                         <div class="circle-tile-content dark-gray rounded-lg">
                             <div class="circle-tile-description text-faded text-center"> Socios </div>
-                            <div class="circle-tile-number text-faded text-center"> @Model.TotalSocios</div>
+                            <div class="circle-tile-number text-faded text-center"></div>
                             <a class="circle-tile-footer" href="#">Entrar...<i class="fa fa-chevron-circle-right"></i></a>
                         </div>
                     </div>

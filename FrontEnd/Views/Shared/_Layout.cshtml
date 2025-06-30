@@ -1,4 +1,6 @@
-﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor httpObjAcc
+﻿
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor httpObjAcc
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="~/images/favicon.ico" type="image/ico" />
-    <title>@ViewBag.Title | Consultorio Pública Municipal-Manuel Vilardaga!</title>
+    <title>@ViewBag.Title |Consultório Médico - Dr. Fantini</title>
 
     <!-- DataTables -->
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" />
@@ -490,7 +492,7 @@
             <div class="col-md-3 left_col  menu_fixed">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="~/Home/index" class="site_title"><i class="fa fa-paw"></i> <span>Consultório Médico-Dr. Fantini</span></a>
+                        <a href="~/Home/index" class="site_title"><i class="fa fa-user-md"></i> <span>Consultório Médico-Dr. Fantini</span></a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -502,7 +504,7 @@
                         </div>
                         <div class="profile_info">
                             <span>Bienvenido,</span>
-                            <h2>John Doe</h2>
+                            <h2> @Model.Usuario.ApeyNom</h2>
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
@@ -529,54 +531,7 @@
                                     </ul>
                                 </li>
                             </ul>
-                       @*      <ul class="nav side-menu ">
-                                <li>
-                                    <a><i class="fa fa-sitemap"></i> Módulos <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li>
-                                            <a href="#level1_1">Socios</a>
-                                            <ul class="nav child_menu">
-
-                                                <li><a href="/Socio/index">Socios</a></li>
-                                                <li><a href="/EstadoSocio/index">Estados de Socios</a></li>
-                                                <li><a href="/CategoriaSocio/index">Categorías de Socios</a></li>
-                                                <li><a href="/TipoSocio/index">Tipos de Socios</a></li>
-                                            </ul>
-                                        <li>
-                                            <a href="#level1_1">Materiales</a>
-                                            <ul class="nav child_menu">
-                                                <li><a href="/Anexo/index">Anexos</a></li>
-                                                <li><a href="/Autor/index">Autores</a></li>
-                                                <li><a href="/Coleccion/index">Colecciones</a></li>
-                                                <li><a href="/Director/index">Directores</a></li>
-                                                <li><a href="/Encuadernacion/index">Encuadernaciones</a></li>
-                                                <li><a href="/Editor/index">Editores</a></li>
-                                                <li><a href="/Editorial/index">Editoriales</a></li>
-                                                <li><a href="/Genero/index">Géneros</a></li>
-                                                <li><a href="/Guionista/index">Guionistas</a></li>
-                                                <li><a href="/Idioma/index">Idiomas</a></li>
-                                                <li><a href="/Ilustrador/index">Ilustradores</a></li>
-                                                <li><a href="/Interprete/index">Intérpretes</a></li>
-                                                <li><a href="/Lugar/index">Lugares</a></li>
-                                                <li><a href="/Materia/index">Materias</a></li>
-                                                <li><a href="/Procedencia/index">Procedencias</a></li>
-                                                <li><a href="/Productor/index">Productores</a></li>
-                                                <li><a href="/Prologuista/index">Prologuistas</a></li>
-                                                <li><a href="/Traductor/index">Traductores</a></li>
-                                                <li><a href="/TipoMaterial/index">Tipos de Materiales</a></li>
-                                                <li><a href="/TipoSoporte/index">Tipos de Soportes</a></li>
-                                            </ul>
-
-                                        <li><a href="#level1_1">Cobradores</a>
-                                        <li><a href="#level1_1">Préstamos</a>
-                                            <ul class="nav child_menu">
-                                                <li><a href="/TipoMovimiento/index">Tipos de Movimientos</a></li>
-                                            </ul>
-                                        <li><a href="#level1_1">Usuarios</a>
-
-                                    </ul>
-                                </li>
-                            </ul> *@
+                     
                         </div>
                     </div>
                     <!-- /sidebar menu -->
@@ -609,7 +564,7 @@
                         <ul class=" navbar-right">
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="~/images/img.jpg" alt="">John Doe
+                                    <img src="~/images/img.jpg" alt="">@Model.Usuario.ApeyNom
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="javascript:;"> Profile</a>
@@ -619,7 +574,7 @@
                                     </a>
                                     <a class="dropdown-item" href="javascript:;">Help</a>
 
-                                    <a asp-action="Logout" asp-controller="Authuser"><i class="fa fa-sign-out pull-right"></i>Cerrar Sesión</a>
+                                    <a class="dropdown-item"  asp-action="Logout" asp-controller="Authuser"><i class="fa fa-sign-out pull-right"></i>Cerrar Sesión</a>
                                 </div>
                             </li>
 
@@ -702,7 +657,7 @@
             <!-- footer content -->
             <footer>
                 <div class="pull-right">
-                    Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                    Consultório Médico - Dr. Claudio Fantini
                 </div>
                 <div class="clearfix"></div>
             </footer>
@@ -714,6 +669,7 @@
 
     <!-- jQuery -->
     <script src="~/js/jquery/dist/jquery.min.js"></script>
+
 
     <!--NProgress-->
     <script src="~/js/nprogress/nprogress.js"></script>
@@ -757,7 +713,10 @@
 
     <!--Bootstrap 5-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    
+   @*  <script src="~/js/bootstrap/bootstrap.min.js"></script> *@
+
+    <script src="~/js/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
     <!-- jQuery Smart Wizard -->
     <script src="~/js/jquery-smart-wizard/js/jquery.smartwizard.js"></script>
 
@@ -783,9 +742,9 @@
 
 
     <!-- FastClick -->
-    
+
     <script src="~/js/fastclick/lib/fastclick.js"></script>
-    
+
 
 
     <!-- momentjs -->
@@ -804,10 +763,12 @@
     <script src="~/js/tinymce/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
 
     <!-- iCheck -->
-    <script src="~/js/icheck/icheck.min.js"></script>
-    <script src="~/js/custom.js"></script>
 
- 
+    <script src="~/js/icheck/icheck.min.js"></script>
+     
+    <script src="~/js/custom.min.js"></script>
+   @*  <script src="~/js/custom.js"></script>
+  *@
     @RenderSection("scripts", required: false)
     @RenderSection("estilos", required: false)
 </body>
