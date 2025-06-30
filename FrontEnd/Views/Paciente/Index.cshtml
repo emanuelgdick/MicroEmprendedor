@@ -629,6 +629,9 @@
             $("#txtobservaciones").val('');
             // $("#editor-one").text('');
              tinymce.get('tahistoria').setContent("");
+      
+             
+
 
             if (json != null) {
                 $("#txtid").val(json.id);
@@ -653,6 +656,17 @@
                 $("#cbomutual").val(json.idMutual);
                 $("#txtnroPaciente").val(json.documento);
                 $("#txtnrohc").val(json.nroHC);
+                debugger;
+                if (json.sexo == "M") {
+                    $("#genderM").val(1);
+                    $("#genderF").val(0);
+
+                }
+                else {
+                    $("#genderM").val(0);
+                    $("#genderF").val(1);
+
+                }
 
                 var historia = json.historia == null ? "" : json.historia;
                 console.log(historia);
@@ -968,20 +982,20 @@
                 id: $("#txtid").val(),
                 apeyNom: $("#txtapeynom").val(),
                 nroDocumento: $("#txtdni").val(),
-                idTipoDocumento: $("#cbotipodoc option:selected").val(),
-                idProfesion: $("#cboprofesion option:selected").val(),
-                idMedico: $("#cbomedico option:selected").val(),
-                idMutual: $("#cbomutual option:selected").val(),
+                idTipoDocumento: $("#cbotipodoc option:selected").val() == 0 ? null : $("#cbotipodoc option:selected").val(),
+                idProfesion: $("#cboprofesion option:selected").val() == 0 ? null : $("#cboprofesion option:selected").val(),
+                idMedico: $("#cbomedico option:selected").val() == 0 ? null : $("#cbomedico option:selected").val(),
+                idMutual: $("#cbomutual option:selected").val() == 0 ? null : $("#cbomutual option:selected").val(),
                 sexo: 'M',
                 calle: $("#txtcalle").val(),
                 nro: $("#txtnro").val(),
                 piso: $("#txtpiso").val(),
                 depto: $("#txtdepto").val(),
-                idLocalidad: $("#cbolocalidad option:selected").val(),
+                idLocalidad: $("#cbolocalidad option:selected").val() == 0 ? null : $("#cbolocalidad option:selected").val(),
                 telFijo: $("#txttelfijo").val(),
                 telCelular: $("#txttelcelular").val(),
                 email: $("#txtemail").val(),
-                observaciones: $("#editor-one").text(),
+              //  observaciones: $("#editor-one").text(),
                 fnac: moment(yyyy + "-" + MM + "-" + DD).format('YYYY-MM-DD'),
                 nroHC: $("#txtnrohc").val(),
                 historia: tinymce.get('tahistoria').getContent()

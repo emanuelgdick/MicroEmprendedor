@@ -24,7 +24,7 @@ namespace FrontEnd.Controllers
         {
             _apiService = new ApiService();
             _config = config;
-            
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance); // Register the provider
         }
 
         

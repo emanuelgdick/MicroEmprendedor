@@ -52,11 +52,11 @@
     <div>
         <a class="hiddenanchor" id="signup"></a>
         <a class="hiddenanchor" id="signin"></a>
+   
 
         <div class="login_wrapper">
             <div class="animate form login_form">
                 <section class="login_content">
-
                     <form method="post">
                         <h1>Login</h1>
                         <div>
@@ -67,7 +67,7 @@
                         </div>
                         <div>
                             <a class="btn btn-default submit" href="#" onclick="enviarLogin(document.getElementById('User').value,document.getElementById('Password').value)">Log in</a>
-                            <a class="reset_pass" href="#">Olvidó su contraseña?</a>
+                            <a class="reset_pass" href="#reestablecer">Olvidó su contraseña?</a>
                         </div>
                         <div class="clearfix"></div>
                         <div class="separator">
@@ -85,26 +85,24 @@
                     </form>
                 </section>
             </div>
-
             <div id="register" class="animate form registration_form">
                 <section class="login_content">
                     <form>
                         <h1>Crear Cuenta</h1>
                         <div>
-                            <input type="text" class="form-control" id="apeynom" placeholder="Apellido y Nombre" required="" />@* Username *@
+                            <input type="text" class="form-control" id="apeynom" placeholder="Apellido y Nombre" required="" value="" />@* Username *@
                         </div>
                         <div>
-                            <input type="email" id="usr" class="form-control" placeholder="Correo" required="" /> @* Email *@
+                            <input type="email" id="usr" class="form-control" placeholder="Correo" required="" value="" /> @* Email *@
                         </div>
                         <div>
-                            <input type="password" id="psw"class="form-control" placeholder="Contraseña" required="" /> @* Password *@
+                            <input type="password" id="psw" class="form-control" placeholder="Contraseña" required="" value="" /> @* Password *@
                         </div>
                         <div>
                             <a class="btn btn-default submit" href="#" onclick="registrarUser(document.getElementById('usr').value,document.getElementById('psw').value,document.getElementById('apeynom').value)">Enviar</a>
                         </div>
-                        
-                        <div class="clearfix"></div>
 
+                        <div class="clearfix"></div>
                         <div class="separator">
                             <p class="change_link">
 
@@ -113,18 +111,17 @@
 
                             <div class="clearfix"></div>
                             <br />
-
                             <div>
                                 <h1>
                                     <i class="fa fa-user-md"></i> Consultório Médico - Dr. Fantini
                                 </h1>
-                                @*   <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1> *@
-                                @*  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 4 template. Privacy and Terms</p> *@
                             </div>
                         </div>
                     </form>
                 </section>
             </div>
+         
+          
         </div>
     </div>
 </body>
@@ -212,6 +209,38 @@
                          }
              });
      }
+
+    async function reestablecerUser(user) {
+        const data = {
+            User: user,
+        };
+        let res = await fetch("/Authuser/CreateUser", {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => {
+                console.log(response);
+                if (response.ok) {
+                    window.location.href = '#';
+                    return response.json();
+                } else {
+                    throw new Error('Error en la solicitud');
+                }
+            })
+            .then(data => {
+                debugger;
+                if (data.success) {
+                    window.location.href = '/Home/Index';
+                } else {
+
+                    // alert(data.message);
+                }
+            });
+    }
 
 
 

@@ -4960,6 +4960,8 @@ a.hiddenanchor {
     position: relative;
 }
 
+
+
 .registration_form, .login_form {
     position: absolute;
     top: 0px;
@@ -5005,11 +5007,11 @@ a.hiddenanchor {
     animation-duration: 0.5s;
     animation-timing-function: ease;
     animation-fill-mode: both;
-}*/
+}
 
 /** /login **/
 /** signup **/
-/*.login_box {
+.login_box {
     padding: 20px;
     margin: auto;
 }
