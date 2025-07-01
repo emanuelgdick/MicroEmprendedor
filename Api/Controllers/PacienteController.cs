@@ -62,6 +62,7 @@ namespace Api.Controllers
                                       Id = pp?.Id == null ? 0 : pp.Id,
                                       Descripcion = pp?.Descripcion == null ? "" : pp.Descripcion
                                  },
+                                codAflp=pac.codAflp,
                                 Historia = pac.Historia,
                                 NroHC = pac.NroHC
                             };
@@ -108,6 +109,7 @@ namespace Api.Controllers
                                     Id = pp?.Id == null ? 0 : pp.Id,
                                     Descripcion = pp?.Descripcion == null ? "" : pp.Descripcion
                                 },
+                                codAflp = pac.codAflp,
                                 Historia = pac.Historia,
                                 NroHC = pac.NroHC
                             };
@@ -184,6 +186,7 @@ namespace Api.Controllers
             Paciente.Email = paciente.Email;
             Paciente.NroHC = paciente.NroHC;
             Paciente.Observaciones = paciente.Observaciones;
+            Paciente.codAflp = paciente.codAflp;
             Paciente.Historia = paciente.Historia;
             _db.SaveChanges();
             return Ok(Paciente);

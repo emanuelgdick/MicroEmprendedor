@@ -206,6 +206,9 @@ namespace Api.Migrations
                     b.Property<string>("TelFijo")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("codAflp")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("IdLocalidad");

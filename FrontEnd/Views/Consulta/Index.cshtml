@@ -11,6 +11,16 @@
         border-radius: 15px;
         color: white;
     }
+
+    p,
+    label {
+        font: 1rem "Fira Sans", sans-serif;
+    }
+
+    input {
+        margin: 0.4rem;
+    }
+
 </style>
 
 <script src="~/lib/daypilot/daypilot-all.min.js" asp-append-version="true"></script>
@@ -86,9 +96,13 @@
                                 <label for="txtend">Hasta</label>
                             </div>
                             <div class="col-2 m-0   form-floating">
-                                 <select id="cbocolor" class="form-select " name="color" autocomplete="off" placeholder="Color"></select>
-                                <label for="cbocolor" class="form-label pt-1">Color</label> 
-                              
+                               @*   <select id="cbocolor" class="form-select " name="color" autocomplete="off" placeholder="Color"></select>
+                                <label for="cbocolor" class="form-label pt-1">Color</label> *@
+                                <div>
+                                 
+                                    <input type="color" id="colorSelect" name="color" value="#f6b73c" />
+                          
+                                </div>
                             </div>
                         </div>
                         <div class="row m-3 ">
@@ -434,11 +448,11 @@
 
              var  desde;
              var hasta;
-             let selectElement = document.getElementById("cbocolor");
+            let selectElement = document.getElementById("colorSelect");
              selectElement.innerHTML = "";
-             $.each(colors, function (index, value) {
-                          $("<option>").attr({ "value": value.id }).text(value.name).appendTo("#cbocolor");
-              });
+             // $.each(colors, function (index, value) {
+             //              $("<option>").attr({ "value": value.id }).text(value.name).appendTo("#cbocolor");
+             //  });
              $("#mensajeError").hide();
              if (!nuevo){
                   desde=desde=moment(args.e.data.start.value);
@@ -450,6 +464,7 @@
                   $("#cbomedico").val(args.e.data.idMedico);
                   $("#txtobs").val(args.e.data.text);
                   $("#txtid").val(args.e.data.id);
+                    $("#colorSelect").val(args.e.data.color);
              }
              else{
                     desde=desde=moment(args.start.value);
@@ -493,7 +508,7 @@
                         { mme = '0' + mme;}
                 const consu = {
                      text:$(`#cbopaciente option:selected`).text(),
-                     color: $("#cbocolor").val(),
+                     color: $("#colorSelect").val(),//$("#cbocolor").val(),
                      Id: $("#txtid").val(),
                      start:moment(yyyys + "-" + MMs+ "-" + DDs+" "+HHs+":"+mms ).format('YYYY-MM-DDTHH:mm:00'),
                      end:  moment(yyyye + "-" + MMe+ "-" + DDe+" "+HHe+":"+mme ).format('YYYY-MM-DDTHH:mm:00'),
@@ -501,6 +516,7 @@
                      IdMedico:$("#cbomedico").val(),
                      observaciones:$("#txtobs").val()
                 };
+             console.log(consu);
           
                const { data: event } = await DayPilot.Http.post("/Consulta/CreateEvent", consu);
                if (!event.resultado){

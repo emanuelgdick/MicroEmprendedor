@@ -124,6 +124,11 @@ namespace FrontEnd.Controllers
                 mensaje += ex.Message;
             }
             }
+            else
+            {
+                resultado = false;
+                mensaje = "Por favor ingrese el Apellido y Nombre";
+            }
             return Json(new { resultado = resultado, mensaje = mensaje });
         }
 

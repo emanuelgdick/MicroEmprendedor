@@ -260,6 +260,7 @@ namespace Api.Controllers
 
             @event.IdPaciente = param.IdPaciente;
             @event.observaciones = param.observaciones;
+            @event.color = param.color;
 
             try
             {
