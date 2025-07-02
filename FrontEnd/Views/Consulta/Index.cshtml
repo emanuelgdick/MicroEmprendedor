@@ -95,7 +95,7 @@
                                 <input type="text" class="form-control form-control-sm" disabled id="txtend" placeholder="Hasta" />
                                 <label for="txtend">Hasta</label>
                             </div>
-                            <div class="col-2 m-0   form-floating">
+                            <div class="col-2 mt-2   form-floating">
                                @*   <select id="cbocolor" class="form-select " name="color" autocomplete="off" placeholder="Color"></select>
                                 <label for="cbocolor" class="form-label pt-1">Color</label> *@
                                 <div>
@@ -117,8 +117,6 @@
                                 <label for="cbomedico" class="form-label pt-1">Médico</label>
                             </div>
                         </div>
-
-
                         <div class="row m-3 ">
                             <div class="col-12">
                                 <div>
@@ -147,11 +145,17 @@
 
 @section scripts {
     <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            calendar.events.load("/Consulta/Events");
+            calendar.update();
+        });
+
+
+     
+
         const pacientes = [];
-
-
-           const contenedorToast = document.getElementById('contenedor-toastP');
-
+        const contenedorToast = document.getElementById('contenedor-toastP');
                 // Event listener para detectar click en los toasts
                 contenedorToast.addEventListener('click', (e) => {
 
@@ -161,12 +165,10 @@
                         cerrarToast(toastId);
                     }
                 });
-
                 // Función para cerrar el toast
                 const cerrarToast = (id) => {
                     document.getElementById(id)?.classList.add('cerrando');
                 };
-
                 // Función para agregar la clase de cerrando al toast.
                 const agregarToast = ({ tipo, titulo, descripcion, autoCierre }) => {
                     // Crear el nuevo toast
@@ -270,7 +272,6 @@
             }
         });
 
-
         //GET MEDICOS
         jQuery.ajax({
             url: '@Url.Action("GetMedicosConAgenda", "Medico")',
@@ -291,14 +292,12 @@
             }
         });
 
-
-
-        const colors = [
-            { id: "#1066a8", name: "Azul" },
-            { id: "#6aa84f", name: "Verde" },
-            { id: "#f1c232", name: "Amarillo" },
-            { id: "#cc0000", name: "Rojo" },
-        ];
+        // const colors = [
+        //     { id: "#1066a8", name: "Azul" },
+        //     { id: "#6aa84f", name: "Verde" },
+        //     { id: "#f1c232", name: "Amarillo" },
+        //     { id: "#cc0000", name: "Rojo" },
+        // ];
 
         const datepicker = new DayPilot.Navigator("nav", {
             showMonths: 3,
@@ -306,9 +305,10 @@
             selectMode: "Week",
             onTimeRangeSelected: args => {
                 calendar.startDate = args.day;
+
+                // calendar.events.load(`/Consulta/Events/${args.start.value}/${args.end.value}`);
+                calendar.events.load("/Consulta/Events");
                 calendar.update();
-               // calendar.events.load(`/Consulta/Events/${args.start.value}/${args.end.value}`);
-                  calendar.events.load("/Consulta/Events");
             }
         });
         datepicker.init();
@@ -323,35 +323,36 @@
                             const e = args.source;
                             const { data } = await DayPilot.Http.delete(`/Consulta/DeleteEvent/${e.id()}`);
                             calendar.events.remove(e.id());
+                            calendar.update();
                         }
-                    },
-                    {
-                        text: "-"
-                    },
-                    {
-                        text: "Azul",
-                        icon: "icon icon-blue",
-                        color: "#1066a8",
-                        onClick: (args) => { app.updateColor(args.source, args.item.color); }
-                    },
-                    {
-                        text: "Verde",
-                        icon: "icon icon-green",
-                        color: "#6aa84f",
-                        onClick: (args) => { app.updateColor(args.source, args.item.color); }
-                    },
-                    {
-                        text: "Amarillo",
-                        icon: "icon icon-yellow",
-                        color: "#f1c232",
-                        onClick: (args) => { app.updateColor(args.source, args.item.color); }
-                    },
-                    {
-                        text: "Rojo",
-                        icon: "icon icon-red",
-                        color: "#cc0000",
-                        onClick: (args) => { app.updateColor(args.source, args.item.color); }
-                    },
+                    }//,
+                    // {
+                    //     text: "-"
+                    // },
+                    // {
+                    //     text: "Azul",
+                    //     icon: "icon icon-blue",
+                    //     color: "#1066a8",
+                    //     onClick: (args) => { app.updateColor(args.source, args.item.color); }
+                    // },
+                    // {
+                    //     text: "Verde",
+                    //     icon: "icon icon-green",
+                    //     color: "#6aa84f",
+                    //     onClick: (args) => { app.updateColor(args.source, args.item.color); }
+                    // },
+                    // {
+                    //     text: "Amarillo",
+                    //     icon: "icon icon-yellow",
+                    //     color: "#f1c232",
+                    //     onClick: (args) => { app.updateColor(args.source, args.item.color); }
+                    // },
+                    // {
+                    //     text: "Rojo",
+                    //     icon: "icon icon-red",
+                    //     color: "#cc0000",
+                    //     onClick: (args) => { app.updateColor(args.source, args.item.color); }
+                    // },
 
                 ]
             }),
@@ -381,7 +382,7 @@
                 const { data } = await DayPilot.Http.put("/Consulta/Move", c);
             },
             onBeforeEventRender: (args) => {
-                console.log(args);
+
                 args.data.backColor = args.data.color + "99";
                 args.data.borderColor = args.data.color;
                 args.data.areas = [
@@ -402,33 +403,46 @@
                 abrirModal(args,false);
             })
         });
+
+
+
+        calendar.autoRefreshInterval = 1;
+        calendar.autoRefreshMaxCount = 10;
+        calendar.autoRefreshEnabled = true;
+
+        calendar.onAutoRefresh = function (args) {
+            console.log(args);
+            calendar.events.load("/getEvents");
+        };
+     
+
+      
+
+
         calendar.init();
 
-        const app = {
-            async updateColor(e, color) {
-                 const p = {
-                     text:e.data.text,
-                     paciente:null,
-                     color: color,
-                     Id:e.data.id,
-                     start: e.data.start,
-                     end: e.data.end,
-                     IdPaciente: e.data.idPaciente,
-                };
+        // const app = {
+        //     async updateColor(e, color) {
+        //          const p = {
+        //              text:e.data.text,
+        //              paciente:null,
+        //              color: color,
+        //              Id:e.data.id,
+        //              start: e.data.start,
+        //              end: e.data.end,
+        //              IdPaciente: e.data.idPaciente,
+        //         };
+        //          const { data } = await DayPilot.Http.put(`/Consulta/ChangeColor`, p);
+        //         e.data.color = color;
+        //         calendar.events.update(e);
+        //     },
+        //     init() {
 
-                const { data } = await DayPilot.Http.put(`/Consulta/ChangeColor`, p);
-                e.data.color = color;
-                calendar.events.update(e);
-            },
-            init() {
+        //         calendar.events.load("/Consulta/Events");
 
-                calendar.events.load("/Consulta/Events");
-
-            }
-        };
-        app.init();
-
-
+        //     }
+        // };
+        // app.init();
 
          //Filtrar Agenda
          function filtrarAgenda(){
@@ -436,18 +450,11 @@
              var idMedico=$("#cbomedicoF").val();
               calendar.events.load(`/Consulta/EventsByMedico?idMedico=${idMedico}`);
          }
-          //limpiar filtro
-         function limpiarFiltros(){
-            $('#cbomedicoF').val(0);
-            llenarTabla(false)
-         }
 
+         function abrirModal(args,nuevo) {
 
-
-          function abrirModal(args,nuevo) {
-
-             var  desde;
-             var hasta;
+            var  desde;
+            var hasta;
             let selectElement = document.getElementById("colorSelect");
              selectElement.innerHTML = "";
              // $.each(colors, function (index, value) {
@@ -478,7 +485,6 @@
              }
              $("#FormModal").modal("show");
              }
-
          async  function Guardar(){
                 if (!$("#formNivel").valid()) {
                  return;
@@ -516,7 +522,6 @@
                      IdMedico:$("#cbomedico").val(),
                      observaciones:$("#txtobs").val()
                 };
-             console.log(consu);
           
                const { data: event } = await DayPilot.Http.post("/Consulta/CreateEvent", consu);
                if (!event.resultado){
@@ -525,12 +530,16 @@
                     $("#mensajeError").show();
                }
                else{
+               
                    calendar.events.add(consu);
+                calendar.events.load("/Consulta/Events");
+                calendar.update();
                $("#FormModal").modal("hide");
-                   debugger;
-               calendar.events.load("/Consulta/Events");
-               //    filtrarAgenda();
+                   
+               
+                  // filtrarAgenda();
                }
+            
             }
     </script>
 }
