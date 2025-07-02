@@ -38,6 +38,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<JsonResult> GetAllDiagnosticos()
         {
             List<Diagnostico> oLista = new List<Diagnostico>();
@@ -47,6 +48,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Create()
         {
             return View();
@@ -55,6 +57,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<JsonResult> CreateDiagnostico([FromBody] Diagnostico diagnostico)
         {
             object resultado;
@@ -106,6 +109,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin,Student")]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Details(int id)
         {
 
@@ -116,6 +120,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin,Student")]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Delete(int id)
         {
 
@@ -125,7 +130,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin,Student")]
-
+        [ResponseCache(Duration = 30)]
         public async Task<JsonResult> DeleteDiagnostico([FromBody] Diagnostico diagnostico)
         {
             bool resultado = false;

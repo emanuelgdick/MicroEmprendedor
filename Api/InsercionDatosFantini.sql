@@ -18,8 +18,8 @@ SET IDENTITY_INSERT LOCALIDAD OFF
 delete from MEDICO
 dbcc checkident(MEDICO,reseed,0)
 SET IDENTITY_INSERT MEDICO ON
-INSERT INTO MEDICO(ID,APEYNOM)
-SELECT ID_MEDICO,[DESC] FROM ConsultorioFantini.dbo.MEDICOS
+INSERT INTO MEDICO(ID,APEYNOM,TieneAgenda)
+SELECT ID_MEDICO,[DESC],0 FROM ConsultorioFantini.dbo.MEDICOS
 SET IDENTITY_INSERT MEDICO OFF
 --select  * from MEDICO
 
@@ -77,7 +77,7 @@ SET IDENTITY_INSERT PACIENTE OFF
 delete from Usuario
 dbcc checkident(Usuario,reseed,0)
 
-INSERT INTO Usuario(ApeyNom,[User],[Password],Rol)
-VALUES('Gutierrez Dick, Emanuel','emanuelgdick@gmail.com','manolo','Admin')
+--INSERT INTO Usuario(ApeyNom,[User],[Password],Rol)
+--VALUES('Gutierrez Dick, Emanuel','emanuelgdick@gmail.com','manolo','Admin')
 
 --select  * from TIPODOCUMENTO

@@ -37,6 +37,7 @@ namespace Api.Controllers
             var resultado = from pac in paciente
                              join prof in profesion on pac.IdProfesion equals prof.Id   into profesionPaciente
                             from pp in profesionPaciente.DefaultIfEmpty()
+                            orderby pac.ApeyNom
                             select new
                              {
                                  Id = pac.Id,

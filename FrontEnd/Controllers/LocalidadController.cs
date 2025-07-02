@@ -38,6 +38,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<JsonResult> GetAllLocalidades()
         {
             List<Localidad> oLista = new List<Localidad>();
@@ -47,6 +48,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Create()
         {
             return View();
@@ -55,6 +57,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<JsonResult> CreateLocalidad([FromBody] Localidad localidad)
         {
             object resultado;
@@ -116,6 +119,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin,Student")]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Delete(int id)
         {
 
@@ -125,6 +129,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin,Student")]
+        [ResponseCache(Duration = 30)]
 
         public async Task<JsonResult> DeleteLocalidad([FromBody] Localidad localidad)
         {

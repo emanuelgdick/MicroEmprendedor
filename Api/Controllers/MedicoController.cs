@@ -24,7 +24,7 @@ namespace Api.Controllers
         public IActionResult GetMedicos(/*int pagesize, int pagenumber*/)
         {
             _logger.LogInformation("Fetching Todas las Medicos");
-            var MedicoList = _db.Medico.ToList();
+            var MedicoList = _db.Medico.OrderBy(s=>s.ApeyNom).ToList();
             return Ok(MedicoList);
 
         }
@@ -56,7 +56,7 @@ namespace Api.Controllers
         public ActionResult<Medico> GetMedicosConAgenda(int id)
         {
             
-            var MedicoList = _db.Medico.Where(s=>s.TieneAgenda==true).ToList();
+            var MedicoList = _db.Medico.Where(s=>s.TieneAgenda==true).OrderBy(s => s.ApeyNom).ToList();
             return Ok(MedicoList);
         }
 

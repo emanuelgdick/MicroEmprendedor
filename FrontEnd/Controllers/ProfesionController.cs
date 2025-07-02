@@ -36,6 +36,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<JsonResult> GetAllProfesiones()
         {
             List<Profesion> oLista = new List<Profesion>();
@@ -44,12 +45,14 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Create()
         {
             return View();
         }
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<JsonResult> CreateProfesion([FromBody] Profesion profesion)
         {
             object resultado;
@@ -96,6 +99,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin,Student")]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Details(int id)
         {
 
@@ -105,6 +109,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin,Student")]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Delete(int id)
         {
             Profesion profesion = new Profesion();
@@ -113,6 +118,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin,Student")]
+        [ResponseCache(Duration = 30)]
 
         public async Task<JsonResult> DeleteProfesion([FromBody] Profesion profesion)
         {

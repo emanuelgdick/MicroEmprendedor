@@ -53,6 +53,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<JsonResult> GetAllPacientes()
         {
             List<Paciente> lstPaciente = new List<Paciente>();
@@ -62,6 +63,7 @@ namespace FrontEnd.Controllers
         
         
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<JsonResult> GetPacientesFiltrados(int localidad)
         {
             List<Paciente> oLista = new List<Paciente>();
@@ -73,6 +75,7 @@ namespace FrontEnd.Controllers
         
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Create()
         {
             return View();
@@ -81,6 +84,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<JsonResult> CreatePaciente([FromBody] Paciente paciente)
         {
             object resultado = null;
@@ -133,6 +137,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin,Student")]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Details(int id)
         {
             Paciente Paciente = new Paciente();
@@ -149,6 +154,7 @@ namespace FrontEnd.Controllers
         //}
 
         [Authorize(Roles = "Admin,Student")]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Delete(int id)
         {
 
@@ -158,7 +164,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin,Student")]
-
+        [ResponseCache(Duration = 30)]
         public async Task<JsonResult> DeletePaciente([FromBody] Paciente paciente)
         {
             bool resultado = false;

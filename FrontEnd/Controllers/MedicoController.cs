@@ -37,6 +37,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<JsonResult> GetAllMedicos()
         {
             List<Medico> oLista = new List<Medico>();
@@ -46,6 +47,7 @@ namespace FrontEnd.Controllers
         
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<JsonResult> GetMedicosConAgenda()
         {
             List<Medico> oLista = new List<Medico>();
@@ -57,6 +59,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Create()
         {
             return View();
@@ -64,6 +67,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<JsonResult> CreateMedico([FromBody] Medico Medico)
         {
             object resultado;
@@ -115,6 +119,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin,Student")]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Details(int id)
         {
 
@@ -125,6 +130,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin,Student")]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Delete(int id)
         {
 
@@ -134,6 +140,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin,Student")]
+        [ResponseCache(Duration = 30)]
 
         public async Task<JsonResult> DeleteMedico([FromBody] Medico Medico)
         {

@@ -34,6 +34,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<JsonResult> GetAllTipoDocumentos()
         {
 
@@ -43,12 +44,14 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Create()
         {
             return View();
         }
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<JsonResult> CreateTipoDocumento([FromBody] TipoDocumento tipoDocumento)
         {
             object resultado;
@@ -93,6 +96,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin,Student")]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Details(int id)
         {
             TipoDocumento tipoDocumento = new TipoDocumento();
@@ -102,6 +106,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin,Student")]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Delete(int id)
         {
             TipoDocumento tipoDocumento = new TipoDocumento();
@@ -110,6 +115,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin,Student")]
+        [ResponseCache(Duration = 30)]
 
         public async Task<JsonResult> DeleteTipoDocumento([FromBody] TipoDocumento tipoDocumento)
         {

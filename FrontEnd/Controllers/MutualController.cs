@@ -37,6 +37,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<JsonResult> GetAllMutuales()
         {
             List<Mutual> oLista = new List<Mutual>();
@@ -46,6 +47,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Create()
         {
             return View();
@@ -54,6 +56,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
+        [ResponseCache(Duration = 30)]
         public async Task<JsonResult> CreateMutual([FromBody] Mutual mutual)
         {
             object resultado;
@@ -105,6 +108,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin,Student")]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Details(int id)
         {
 
@@ -115,6 +119,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin,Student")]
+        [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Delete(int id)
         {
 
@@ -124,6 +129,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin,Student")]
+        [ResponseCache(Duration = 30)]
 
         public async Task<JsonResult> DeleteMutual([FromBody] Mutual mutual)
         {

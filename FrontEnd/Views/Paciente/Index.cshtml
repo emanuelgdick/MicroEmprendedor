@@ -50,7 +50,7 @@
                             <label for="cbolocalidadF" class="form-label pt-1">Localidad</label>
                         </div>
 
-                        <div class=" col-1">
+                        <div class=" col-7">
                         </div>
                         <div class="col-1  m-1 ">
                             <button type="button" class="btn btnFiltrar" onclick="filtrarPacientes(true)">Filtrar</button>
@@ -145,19 +145,19 @@
                                                 </span>
                                             </a>
                                         </li>
-                                        <li>
+                                       @*  <li>
                                             <a href="#step-4">
                                                 <span class="step_no">4</span>
                                                 <span class="step_descr">
                                                     Histórico<br />
                                                 </span>
                                             </a>
-                                        </li>
+                                        </li> *@
                                         <li>
-                                            <a href="#step-5">
-                                                <span class="step_no">5</span>
+                                            <a href="#step-4">
+                                                <span class="step_no">4</span>
                                                 <span class="step_descr">
-                                                    Observaciones<br />
+                                                    Historia Clínica<br />
                                                 </span>
                                             </a>
                                         </li>
@@ -192,13 +192,17 @@
                                                         <select id="cboprofesion" class="form-select " name="profesion" autocomplete="off" placeholder="Profesión"></select>
                                                         <label for="cboprofesion" class="form-label pt-1">Profesión</label>
                                                     </div>
-                                                    <div class="col-3 mt-2">
+                                                    <div class="col-3 mt-4">
                                                         <div class="radio">
-                                                            <input type="radio" name="sexo" value="F" id="rbF">
-                                                            <label for="F">F</label>
-
-                                                            <input type="radio" name="sexo" value="M" id="rbM">
-                                                            <label for="M">M</label>
+                                                            <div class="row ">
+                                                                <input type="radio" name="sexo" value="F" id="rbF">
+                                                                <label for="F">Mujer</label>
+                                                            </div>
+                                                           
+                                                            <div class="row ">
+                                                                <input type="radio" name="sexo" value="M" id="rbM">
+                                                                <label for="M">Hombre</label>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -326,7 +330,7 @@
                                             </div>
                                         </form>
                                     </div>
-                                    <div id="step-4" style=" height: 320px; ">
+                                 @*    <div id="step-4" style=" height: 320px; ">
                                         <form id="formNivelHistorico" class="col-12 row  m-0 p-5" style="border:solid; border-color:#256080; border-width:2px; height:325px; border-radius: 8px;">
 
                                             <table id="tablaHistorico" class="display" style="width:100%">
@@ -337,7 +341,7 @@
                                                         <th>Tipo</th>
                                                         <th>Devol</th>
                                                         <th>Mov</th>
-                                                        @*     <th></th>  *@
+                                                      
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -347,8 +351,8 @@
                                             </table>
 
                                         </form>
-                                    </div>
-                                    <div id="step-5" style=" height: 320px; ">
+                                    </div> *@
+                                    <div id="step-4" style=" height: 320px; ">
                                         <form id="formNivel" class="col-12 row  m-0 p-1" style="border:solid; border-color:#256080; border-width:2px; height:325px; border-radius: 8px;">
                                             <textarea id="tahistoria"></textarea>
                                         </form>
@@ -602,7 +606,12 @@
 
         //Abrir Modal
         function abrirModal(json) {
-            
+
+
+            var fnac;
+            var diafnac;
+            var mesfnac;
+            var aniofnac;
             $("#wizard").smartWizard('goToStep', 1)
             $("#txtid").val(0);
             $("#txtnroPaciente").val('');
@@ -613,10 +622,10 @@
             $("#cbomedico").val(0);
             $("#cbomutual").val(0);
             $("#cboprofesion").val(0);
-            var fnac = new Date()
-            var diafnac = `${(fnac.getDate())}`.padStart(2, '0');
-            var mesfnac = `${(fnac.getMonth() + 1)}`.padStart(2, '0');
-            var aniofnac = fnac.getFullYear();
+             fnac = new Date()
+             diafnac = `${(fnac.getDate())}`.padStart(2, '0');
+             mesfnac = `${(fnac.getMonth() + 1)}`.padStart(2, '0');
+             aniofnac = fnac.getFullYear();
             $("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
             $("#txttelfijo").val('');
             $("#txttelcelular").val('');
@@ -633,20 +642,12 @@
                 $("#txtid").val(json.id);
                 $("#txtapeynom").val(json.apeyNom);
                 $("#txtdni").val(json.nroDocumento);
-                $("#cbotipodoc").val(json.idTipoDocumento);
-                debugger;
-                var str = json.fnac;
-                
-                fnac = new Date(str);
-              
+                $("#cbotipodoc").val(json.idTipoDocumento==null?0:json.idTipoDocumento);
+
+                fnac = new Date(json.fnac);
                 diafnac = `${(fnac.getDate() )}`.padStart(2, '0');
                 mesfnac = `${(fnac.getMonth() + 1)}`.padStart(2, '0');
                 aniofnac = fnac.getFullYear();
-
-              //  const date = new Date();
-              //  const formattedDate = date.toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' });
-
-
                 $("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
 
 
@@ -657,10 +658,10 @@
                 $("#txttelfijo").val(json.telFijo);
                 $("#txttelcelular").val(json.telCelular);
                 $("#txtemail").val(json.email);
-                $("#cbolocalidad").val(json.idLocalidad);
-                $("#cbomedico").val(json.idMedico);
-                $("#cboprofesion").val(json.idProfesion);
-                $("#cbomutual").val(json.idMutual);
+                $("#cbolocalidad").val(json.idLocalidad==null?0:json.idLocalidad);
+                $("#cbomedico").val(json.idMedico==null?0:json.idMedico);
+                $("#cboprofesion").val(json.idProfesion==null?0:json.idProfesion);
+                $("#cbomutual").val(json.idMutual==null?0:json.idMutual);
                 $("#txtnroPaciente").val(json.documento);
                 $("#txtnrohc").val(json.nroHC);
                 $("#txtcodaflp").val(json.codAflp);
@@ -1002,7 +1003,7 @@
                 telCelular: $("#txttelcelular").val(),
                 email: $("#txtemail").val(),
                 // observaciones: null,
-                fnac: moment(yyyy + "-" + MM + "-" + DD).format('YYYY-MM-DD'),
+                fnac: moment(yyyy + "-" + MM + "-" + DD+"T"+HH+":"+mm+":"+A).format('YYYY-MM-DDT00:00:00'),
                 //new Date(json.fnac).toLocaleDateString("en-GB");
                 nroHC: $("#txtnrohc").val(),
                 historia: tinymce.get('tahistoria').getContent(),
@@ -1069,6 +1070,7 @@
             selector: 'textarea#tahistoria',
             height: 310,
             license_key: 'gpl',
+             language : 'es',
             plugins: [
                 'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
                 'anchor', 'searchreplace', 'visualblocks', 'fullscreen',

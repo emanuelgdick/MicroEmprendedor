@@ -2147,6 +2147,10 @@
             "type": "string",
             "nullable": true
           },
+          "codAflp": {
+            "type": "string",
+            "nullable": true
+          },
           "historia": {
             "type": "string",
             "nullable": true
