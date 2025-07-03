@@ -45,10 +45,10 @@
                             <div class=" col-7">
                             </div>
                             <div class="col-1  m-1 ">
-                                <button type="button" class="btn btnFiltrar" onclick="filtrarAgenda()">Filtrar</button>
+                                <button type="button" class="btn btnFiltrar" onclick="filtrarAgenda(true)">Filtrar</button>
                             </div>
                             <div class="col-1  m-1 ">
-                                <button type="button" class="btn btnLimpiar" onclick="limpiarFiltros(true)">Limpiar</button>
+                                <button type="button" class="btn btnLimpiar" onclick="filtrarAgenda(false)">Limpiar</button>
                             </div>
 
                         </div>
@@ -146,13 +146,17 @@
 @section scripts {
     <script>
 
-        document.addEventListener('DOMContentLoaded', function () {
+
+        
+
+        function load() {
             calendar.events.load("/Consulta/Events");
             calendar.update();
-        });
+        }
+
+        document.addEventListener("DOMContentLoaded", load, false);
 
 
-     
 
         const pacientes = [];
         const contenedorToast = document.getElementById('contenedor-toastP');
@@ -292,24 +296,23 @@
             }
         });
 
-        // const colors = [
-        //     { id: "#1066a8", name: "Azul" },
-        //     { id: "#6aa84f", name: "Verde" },
-        //     { id: "#f1c232", name: "Amarillo" },
-        //     { id: "#cc0000", name: "Rojo" },
-        // ];
+
 
         const datepicker = new DayPilot.Navigator("nav", {
             showMonths: 3,
+            
             skipMonths: 3,
             selectMode: "Week",
             onTimeRangeSelected: args => {
                 calendar.startDate = args.day;
 
-                // calendar.events.load(`/Consulta/Events/${args.start.value}/${args.end.value}`);
+              
                 calendar.events.load("/Consulta/Events");
                 calendar.update();
-            }
+
+
+                            }
+                   
         });
         datepicker.init();
         const calendar = new DayPilot.Calendar("dp", {
@@ -322,42 +325,17 @@
                         onClick: async (args) => {
                             const e = args.source;
                             const { data } = await DayPilot.Http.delete(`/Consulta/DeleteEvent/${e.id()}`);
+                            calendar.events.load("/Consulta/Events");
                             calendar.events.remove(e.id());
                             calendar.update();
                         }
-                    }//,
-                    // {
-                    //     text: "-"
-                    // },
-                    // {
-                    //     text: "Azul",
-                    //     icon: "icon icon-blue",
-                    //     color: "#1066a8",
-                    //     onClick: (args) => { app.updateColor(args.source, args.item.color); }
-                    // },
-                    // {
-                    //     text: "Verde",
-                    //     icon: "icon icon-green",
-                    //     color: "#6aa84f",
-                    //     onClick: (args) => { app.updateColor(args.source, args.item.color); }
-                    // },
-                    // {
-                    //     text: "Amarillo",
-                    //     icon: "icon icon-yellow",
-                    //     color: "#f1c232",
-                    //     onClick: (args) => { app.updateColor(args.source, args.item.color); }
-                    // },
-                    // {
-                    //     text: "Rojo",
-                    //     icon: "icon icon-red",
-                    //     color: "#cc0000",
-                    //     onClick: (args) => { app.updateColor(args.source, args.item.color); }
-                    // },
+                    }
 
                 ]
             }),
             onTimeRangeSelected: async (args) => {
                  abrirModal(args,true);
+                
             },
             onEventMove: async (args) => {
                 const c = {
@@ -369,6 +347,8 @@
                      IdPaciente: args.e.data.idPaciente,
                 };
                 const { data } = await DayPilot.Http.put("/Consulta/Move", c);
+              //  calendar.events.load("/Consulta/Events");
+              //  calendar.update();
             },
             onEventResize: async (args) => {
                  const c = {
@@ -404,52 +384,27 @@
             })
         });
 
-
-
-        calendar.autoRefreshInterval = 1;
-        calendar.autoRefreshMaxCount = 10;
-        calendar.autoRefreshEnabled = true;
-
-        calendar.onAutoRefresh = function (args) {
-            console.log(args);
-            calendar.events.load("/getEvents");
-        };
-     
-
-      
-
-
         calendar.init();
 
-        // const app = {
-        //     async updateColor(e, color) {
-        //          const p = {
-        //              text:e.data.text,
-        //              paciente:null,
-        //              color: color,
-        //              Id:e.data.id,
-        //              start: e.data.start,
-        //              end: e.data.end,
-        //              IdPaciente: e.data.idPaciente,
-        //         };
-        //          const { data } = await DayPilot.Http.put(`/Consulta/ChangeColor`, p);
-        //         e.data.color = color;
-        //         calendar.events.update(e);
-        //     },
-        //     init() {
-
-        //         calendar.events.load("/Consulta/Events");
-
-        //     }
-        // };
-        // app.init();
-
+   
          //Filtrar Agenda
-         function filtrarAgenda(){
-             debugger;
-             var idMedico=$("#cbomedicoF").val();
-              calendar.events.load(`/Consulta/EventsByMedico?idMedico=${idMedico}`);
+         function filtrarAgenda(filtro){
+           
+             if (filtro) {
+                 var idMedico = $("#cbomedicoF").val();
+                 calendar.events.load(`/Consulta/EventsByMedico?idMedico=${idMedico}`);
+             }
+             else {
+                 $("#cbomedicoF").val(0);
+                calendar.events.load(`/Consulta/Events`);
+
+             }
+
          }
+
+
+
+
 
          function abrirModal(args,nuevo) {
 
@@ -457,9 +412,6 @@
             var hasta;
             let selectElement = document.getElementById("colorSelect");
              selectElement.innerHTML = "";
-             // $.each(colors, function (index, value) {
-             //              $("<option>").attr({ "value": value.id }).text(value.name).appendTo("#cbocolor");
-             //  });
              $("#mensajeError").hide();
              if (!nuevo){
                   desde=desde=moment(args.e.data.start.value);
@@ -485,6 +437,7 @@
              }
              $("#FormModal").modal("show");
              }
+
          async  function Guardar(){
                 if (!$("#formNivel").valid()) {
                  return;
@@ -531,9 +484,10 @@
                }
                else{
                
-                   calendar.events.add(consu);
+                  // calendar.events.add(consu);
                 calendar.events.load("/Consulta/Events");
                 calendar.update();
+
                $("#FormModal").modal("hide");
                    
                

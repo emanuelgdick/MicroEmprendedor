@@ -40,7 +40,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
+        //[ResponseCache(Duration = 30)]
         public async Task<List<Consulta>> Events(string start, string end)
         {
             List<Consulta> oLista = new List<Consulta>();
@@ -49,7 +49,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
+        //[ResponseCache(Duration = 30)]
         public async Task<List<Consulta>> EventsByMedico(string start, string end, int idMedico)
         {
             List<Consulta> oLista = new List<Consulta>();
@@ -58,7 +58,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
+       // [ResponseCache(Duration = 30)]
         public async Task<Consulta> Move([FromBody] Consulta c)
         {
             Consulta oLista = new Consulta();
@@ -69,7 +69,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
+       // [ResponseCache(Duration = 30)]
         public async Task<Consulta> ChangeColor([FromBody] Consulta p)
         {
             Consulta oLista = new Consulta();
@@ -79,14 +79,14 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
+     //   [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Create()
         {
             return View();
         }
 
         [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
+       // [ResponseCache(Duration = 30)]
         public async Task<JsonResult> CreateEvent([FromBody] Consulta consulta)
         {
             object resultado;
@@ -144,7 +144,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin,Student")]
-        [ResponseCache(Duration = 30)]
+       // [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Details(int id)
         {
 
@@ -155,7 +155,7 @@ namespace FrontEnd.Controllers
 
 
         [Authorize(Roles = "Admin,Student")]
-        [ResponseCache(Duration = 30)]
+       // [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Delete(int id)
         {
 
@@ -165,7 +165,7 @@ namespace FrontEnd.Controllers
         }
 
         [Authorize(Roles = "Admin,Student")]
-        [ResponseCache(Duration = 30)]
+        //[ResponseCache(Duration = 30)]
         public async Task<JsonResult> DeleteEvent(int id)
         {
             bool resultado = false;
