@@ -27,7 +27,7 @@ namespace Frontend.Controllers
         
 
         [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
+       // [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Index()
         {
             var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);

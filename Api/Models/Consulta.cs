@@ -16,8 +16,8 @@ namespace Api.Models
         
         [ForeignKey("Paciente")]
         public int IdPaciente { get; set; }
-        public DateTime start { get; set; }
-        public DateTime end { get; set; }
+        public DateTime? start { get; set; }
+        public DateTime? end { get; set; }
         public string text { get; set; }
         public string? color { get; set; }
         public string? observaciones { get; set; }

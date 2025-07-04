@@ -1,5 +1,6 @@
 ﻿
 using Api.Models;
+using Api.Models.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -32,11 +33,16 @@ namespace Api.Controllers
             var paciente = _db.Paciente.ToList();
             var profesion = _db.Profesion.ToList();
             //var medico = _db.Medico.ToList();
+            var consulta = _db.Consulta.ToList();
 
             // Realizar la unión utilizando Join
             var resultado = from pac in paciente
-                             join prof in profesion on pac.IdProfesion equals prof.Id   into profesionPaciente
+                            join prof in profesion on pac.IdProfesion equals prof.Id   into profesionPaciente
+                            
                             from pp in profesionPaciente.DefaultIfEmpty()
+
+                            join con in consulta on pac.Id equals con.IdPaciente into consultaPaciente
+                            from cp in consultaPaciente.DefaultIfEmpty()
                             orderby pac.ApeyNom
                             select new
                              {
@@ -46,7 +52,7 @@ namespace Api.Controllers
                                  IdProfesion = pac?.IdProfesion == null ? 0 : pac?.IdProfesion,
                                  IdMedico = pac?.IdMedico == null ? 0 : pac?.IdMedico,
                                  IdMutual = pac?.IdMutual == null ? 0 : pac?.IdMutual,
-                                ApeyNom = pac.ApeyNom,
+                                 ApeyNom = pac.ApeyNom,
                                  NroDocumento = pac.NroDocumento,
                                  Fnac = pac.Fnac,
                                  Calle = pac.Calle,
@@ -63,9 +69,19 @@ namespace Api.Controllers
                                       Id = pp?.Id == null ? 0 : pp.Id,
                                       Descripcion = pp?.Descripcion == null ? "" : pp.Descripcion
                                  },
-                                codAflp=pac.codAflp,
+                                //Consulta = new 
+                                //{
+                                //    Id = cp?.Id == null ? 0 : cp.Id,
+                                //    start = cp?.start == null ? null : cp.start,
+                                //    end = cp?.end == null ? null : cp.end,
+
+                                //    Observaciones = cp?.observaciones == null ? "" : cp.observaciones
+                                //},
+                                codAflp =pac.codAflp,
                                 Historia = pac.Historia,
-                                NroHC = pac.NroHC
+                                NroHC = pac.NroHC,
+
+
                             };
             return Ok(resultado);
 
@@ -85,7 +101,8 @@ namespace Api.Controllers
             var resultado = from pac in paciente
                             join prof in profesion on pac.IdProfesion equals prof.Id into profesionPaciente
                             from pp in profesionPaciente.DefaultIfEmpty()
-                            where pac.IdLocalidad == localidad
+                            
+                            where ((pac.IdLocalidad == localidad) && (localidad != 0) || (localidad == 0))
                             select new
                             {
                                 Id = pac.Id,

@@ -8,6 +8,7 @@
         public int TotalMutuales { get; set; }
         public int TotalMedicos { get; set; }
         public int TotalConsultas { get; set; }
+        public int TotalDiagnosticos { get; set; }
         public Usuario Usuario { get; set; }
 
     }

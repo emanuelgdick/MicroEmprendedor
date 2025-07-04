@@ -30,6 +30,7 @@ namespace Api.Controllers
             totales.TotalMutuales = _db.Mutual.Count();
             totales.TotalMedicos = _db.Medico.Count();
             totales.TotalConsultas = _db.Consulta.Count();
+            totales.TotalDiagnosticos = _db.Diagnostico.Count();
             totales.Usuario = _db.Usuario.Where(s => s.Id ==id).FirstOrDefault();
             //totales.TotalSociosVitalicios = _db.Socio.Where(x => x.Vitalicio == true).Count();
             //totales.TotalSociosActivos = _db.Socio.Where(x => x.EstadoSocio.Id == 1).Count();

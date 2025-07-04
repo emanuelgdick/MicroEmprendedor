@@ -46,7 +46,7 @@ namespace Api.Models
         public string? codAflp { get; set; }
         public string? Historia { get; set; }
 
-
+        public ICollection<Consulta>? Consulta { get; set; }
         //public string? foto { get; set; }
 
     }

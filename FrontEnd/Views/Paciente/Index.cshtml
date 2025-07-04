@@ -145,16 +145,16 @@
                                                 </span>
                                             </a>
                                         </li>
-                                       @*  <li>
+                                        <li>
                                             <a href="#step-4">
                                                 <span class="step_no">4</span>
                                                 <span class="step_descr">
-                                                    Histórico<br />
+                                                    Consultas<br />
                                                 </span>
                                             </a>
-                                        </li> *@
+                                        </li>
                                         <li>
-                                            <a href="#step-4">
+                                            <a href="#step-5">
                                                 <span class="step_no">4</span>
                                                 <span class="step_descr">
                                                     Historia Clínica<br />
@@ -330,10 +330,10 @@
                                             </div>
                                         </form>
                                     </div>
-                                 @*    <div id="step-4" style=" height: 320px; ">
-                                        <form id="formNivelHistorico" class="col-12 row  m-0 p-5" style="border:solid; border-color:#256080; border-width:2px; height:325px; border-radius: 8px;">
+                                    <div id="step-4" style=" height: 320px; ">
+                                        <form id="formNivelConsulta" class="col-12 row  m-0 p-5" style="border:solid; border-color:#256080; border-width:2px; height:325px; border-radius: 8px;">
 
-                                            <table id="tablaHistorico" class="display" style="width:100%">
+                                            <table id="tablaConsulta" class="display" style="width:100%">
                                                 <thead>
                                                     <tr>
                                                         <th>Fecha</th>
@@ -351,8 +351,8 @@
                                             </table>
 
                                         </form>
-                                    </div> *@
-                                    <div id="step-4" style=" height: 320px; ">
+                                    </div>
+                                    <div id="step-5" style=" height: 320px; ">
                                         <form id="formNivel" class="col-12 row  m-0 p-1" style="border:solid; border-color:#256080; border-width:2px; height:325px; border-radius: 8px;">
                                             <textarea id="tahistoria"></textarea>
                                         </form>
@@ -717,6 +717,7 @@
         function llenarTabla(filtro) {
 
             debugger;
+           
             var url;
             if (filtro) {
                 url = "@Url.Action("GetPacientesFiltrados", "Paciente")" + '?localidad=' + $("#cbolocalidadF").val()
@@ -833,6 +834,8 @@
                 ]
             })
         }
+
+        
 
         //Filtrar Pacientes
         function filtrarPacientes(filtro) {
