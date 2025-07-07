@@ -3,6 +3,7 @@ using Frontend.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Drawing;
 using System.Reflection.Metadata;
+using System.Text.Json.Serialization;
 using System.Web.Mvc;
 
 namespace FrontEnd.Models
@@ -51,7 +52,9 @@ namespace FrontEnd.Models
         public string? codAflp { get; set; }
         [AllowHtml]
         public string? Historia { get; set; }
-        public ICollection<Consulta>? Consulta { get; set; }
+
+        //[JsonIgnore]
+        public IEnumerable<Consulta>? Consulta { get; set; }
         //public string? foto { get; set; }
 
     }

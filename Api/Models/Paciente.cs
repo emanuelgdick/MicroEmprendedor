@@ -1,6 +1,7 @@
 ﻿
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Reflection.Metadata;
+using System.Text.Json.Serialization;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Api.Models
@@ -45,8 +46,9 @@ namespace Api.Models
         public string? Observaciones { get; set; }
         public string? codAflp { get; set; }
         public string? Historia { get; set; }
-
-        public ICollection<Consulta>? Consulta { get; set; }
+        
+        [JsonIgnore]
+        public  IEnumerable<Consulta>? Consulta { get; set; }
         //public string? foto { get; set; }
 
     }

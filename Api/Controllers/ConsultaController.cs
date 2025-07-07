@@ -297,8 +297,18 @@ namespace Api.Controllers
                 return BadRequest(ModelState);
             }
 
+          
+            //_db.Consulta.Attach(@event);
+            //await _db.SaveChangesAsync();
+
+
             _db.Consulta.Add(@event);
-            await _db.SaveChangesAsync();
+            _db.SaveChanges();
+            
+
+
+
+
 
             return CreatedAtAction("GetEvent", new { id = @event.Id }, @event);
         }

@@ -21,9 +21,25 @@
         margin: 0.4rem;
     }
 
+    .mt-100 {
+        margin-top: 100px
+    }
+
+   /*  body {
+        background: #00B4DB;
+        background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+        background: linear-gradient(to right, #0083B0, #00B4DB);
+        color: #514B64;
+        min-height: 100vh
+    } */
 </style>
 
 <script src="~/lib/daypilot/daypilot-all.min.js" asp-append-version="true"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
+
+
+
+
 
 <div class="wrap">
     <div class="col-12">
@@ -96,12 +112,8 @@
                                 <label for="txtend">Hasta</label>
                             </div>
                             <div class="col-2 mt-2   form-floating">
-                                @*   <select id="cbocolor" class="form-select " name="color" autocomplete="off" placeholder="Color"></select>
-                                <label for="cbocolor" class="form-label pt-1">Color</label> *@
                                 <div>
-
                                     <input type="color" id="colorSelect" name="color" value="#f6b73c" />
-
                                 </div>
                             </div>
                         </div>
@@ -117,11 +129,33 @@
                                 <label for="cbomedico" class="form-label pt-1">Médico</label>
                             </div>
                         </div>
+
+
+                        <div class="row d-flex justify-content-center m-3">
+                            <div class="col-12">
+                                <select id="cbodiagnostico" placeholder="Seleccione Diagnósticos" multiple>
+                                    @*   <option value="HTML">HTML</option>
+                                    <option value="Jquery">Jquery</option>
+                                    <option value="CSS">CSS</option>
+                                    <option value="Bootstrap 3">Bootstrap 3</option>
+                                    <option value="Bootstrap 4">Bootstrap 4</option>
+                                    <option value="Java">Java</option>
+                                    <option value="Javascript">Javascript</option>
+                                    <option value="Angular">Angular</option>
+                                    <option value="Python">Python</option>
+                                    <option value="Hybris">Hybris</option>
+                                    <option value="SQL">SQL</option>
+                                    <option value="NOSQL">NOSQL</option>
+                                    <option value="NodeJS">NodeJS</option> *@
+                                </select>
+                            </div>
+                        </div>
+
+
                         <div class="row m-3 ">
                             <div class="col-12">
                                 <div>
                                     <textarea class="form-control" rows="5" placeholder="Observaciones" id="txtobs"></textarea>
-                                    @*   <label for="txtobs">Observaciones</label> *@
                                 </div>
                             </div>
                         </div>
@@ -147,11 +181,22 @@
     <script>
 
 
+               $(document).ready(function(){
 
+            var multipleCancelButton = new Choices('#cbodiagnostico', {
+               removeItemButton: true,
+               maxItemCount:100,
+               searchResultLimit:100,
+               renderChoiceLimit:100
+             });
+
+
+        });
 
         function load() {
             calendar.events.load("/Consulta/Events");
             calendar.update();
+
         }
 
         document.addEventListener("DOMContentLoaded", load, false);
@@ -296,6 +341,25 @@
             }
         });
 
+        //DIAGNOSTICOS
+         //GET PACIENTES
+        jQuery.ajax({
+            url: '@Url.Action("GetAllDiagnosticos", "Diagnostico")',
+            type: "GET",
+            data: null,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbodiagnostico");
+                $.each(data.data, function (index, value) {
+                    pacientes.push({ id: value.id, name: value.apeyNom });
+                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbodiagnostico");
+                });
+            },
+            error: function (error) {
+                console.log(error)
+            }
+        });
 
 
         const datepicker = new DayPilot.Navigator("nav", {
@@ -467,6 +531,35 @@
             if (HHe.length == 1) { HHe = '0' + HHe; }
 
             if (mme.length == 1) { mme = '0' + mme; }
+
+            function obtenerSeleccionados() {
+          const select = document.getElementById('cbodiagnostico');
+          //const resultado = document.getElementById('resultado');
+          let seleccionados = [];
+          for (let i = 0; i < select.options.length; i++) {
+            if (select.options[i].selected) {
+              seleccionados.push(select.options[i].value);
+            }
+          }
+         // resultado.textContent = 'Seleccionados: ' + seleccionados.join(', ');
+         return seleccionados;
+        }
+
+        const select = document.getElementById('cbodiagnostico');
+           var jsonModulo = {
+                'datos': []
+            };
+            for (var i = 0; i <select.options.length; i++) {
+                jsonModulo.datos.push({
+                    "Id": select.options[i].value,
+                    "Descripcion": select.options[i].text
+                });
+            };
+            var json = JSON.stringify(jsonModulo);
+            var obj = JSON.parse(json);
+
+
+
             const consu = {
                 text: $(`#cbopaciente option:selected`).text(),
                 color: $("#colorSelect").val(),//$("#cbocolor").val(),
@@ -475,8 +568,10 @@
                 end: moment(yyyye + "-" + MMe + "-" + DDe + " " + HHe + ":" + mme).format('YYYY-MM-DDTHH:mm:00'),
                 IdPaciente: $("#cbopaciente").val(),
                 IdMedico: $("#cbomedico").val(),
-                observaciones: $("#txtobs").val()
+                observaciones: $("#txtobs").val(),
+                diagnostico: obj.datos//obtenerSeleccionados()
             };
+            console.log(consu);
 
             const { data: event } = await DayPilot.Http.post("/Consulta/CreateEvent", consu);
             if (!event.resultado) {
@@ -497,5 +592,9 @@
             }
 
         }
+
     </script>
+    <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+
+
 }

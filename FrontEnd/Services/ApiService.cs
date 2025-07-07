@@ -287,9 +287,7 @@ namespace FrontEnd.Services
             HttpResponseMessage response = await _httpClient.GetAsync($"api/Paciente?");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
-            //ILogger<ApiService> logger
-            //_logger = logger;
-
+         
             var APIResponse = JsonConvert.DeserializeObject<List<Paciente>>(contents);
             return APIResponse;
         }

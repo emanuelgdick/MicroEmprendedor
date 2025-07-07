@@ -198,7 +198,7 @@
                                                                 <input type="radio" name="sexo" value="F" id="rbF">
                                                                 <label for="F">Mujer</label>
                                                             </div>
-                                                           
+
                                                             <div class="row ">
                                                                 <input type="radio" name="sexo" value="M" id="rbM">
                                                                 <label for="M">Hombre</label>
@@ -337,11 +337,9 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Fecha</th>
-                                                        <th>Material</th>
-                                                        <th>Tipo</th>
-                                                        <th>Devol</th>
-                                                        <th>Mov</th>
-                                                      
+                                                        <th>Observaciones</th>
+
+
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -639,6 +637,7 @@
             tinymce.get('tahistoria').setContent("");
 
             if (json != null) {
+                console.log(json);
                 $("#txtid").val(json.id);
                 $("#txtapeynom").val(json.apeyNom);
                 $("#txtdni").val(json.nroDocumento);
@@ -695,6 +694,27 @@
                 else {
                     tinymce.get('tahistoria').setContent(historia);
                 }
+                $('#tablaConsulta').DataTable().clear().destroy();
+               $('#tablaConsulta').DataTable({
+          data: json.consulta,
+          columns: [
+            { data: 'start' },
+            { data: 'observaciones' }
+          ],
+
+           "order": {
+                    name: 'start',
+                    dir: 'desc'
+                },
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+                },
+                "order": [[0, "desc"]],
+
+
+
+
+        });
 
             }
             $("#FormModal").modal("show");
@@ -717,7 +737,7 @@
         function llenarTabla(filtro) {
 
             debugger;
-           
+
             var url;
             if (filtro) {
                 url = "@Url.Action("GetPacientesFiltrados", "Paciente")" + '?localidad=' + $("#cbolocalidadF").val()
@@ -835,7 +855,7 @@
             })
         }
 
-        
+
 
         //Filtrar Pacientes
         function filtrarPacientes(filtro) {

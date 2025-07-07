@@ -1913,11 +1913,13 @@
           },
           "start": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "end": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "nullable": true
           },
           "text": {
             "type": "string",
@@ -1929,6 +1931,13 @@
           },
           "observaciones": {
             "type": "string",
+            "nullable": true
+          },
+          "diagnostico": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Diagnostico"
+            },
             "nullable": true
           }
         },

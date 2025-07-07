@@ -1,6 +1,7 @@
 ﻿using FrontEnd.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FrontEnd.Models
 {
@@ -13,7 +14,8 @@ namespace FrontEnd.Models
 
         [ForeignKey("Medico")]
         public int IdMedico { get; set; }
-        public Paciente? Paciente { get; set; }
+       
+        public   Paciente? Paciente { get; set; }
 
         [ForeignKey("Paciente")]
         public int IdPaciente { get; set; }
@@ -22,5 +24,7 @@ namespace FrontEnd.Models
         public string text { get; set; }
         public string? color { get; set; }
         public string? observaciones { get; set; }
+
+        public ICollection<Diagnostico>? Diagnostico { get; set; }
     }
 }

@@ -57,6 +57,7 @@ namespace FrontEnd.Controllers
         public async Task<JsonResult> GetAllPacientes()
         {
             List<Paciente> lstPaciente = new List<Paciente>();
+            
             lstPaciente = await _apiService.GetAllPacientes(HttpContext.Session.GetString("APIToken"));
             return Json(new { data = lstPaciente });
         }

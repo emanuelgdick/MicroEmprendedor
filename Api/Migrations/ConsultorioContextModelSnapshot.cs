@@ -39,13 +39,13 @@ namespace Api.Migrations
                     b.Property<string>("color")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("end")
+                    b.Property<DateTime?>("end")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("observaciones")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("start")
+                    b.Property<DateTime?>("start")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("text")
@@ -69,11 +69,16 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int?>("ConsultaId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Descripcion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ConsultaId");
 
                     b.ToTable("Diagnostico");
                 });
@@ -300,7 +305,7 @@ namespace Api.Migrations
                         .IsRequired();
 
                     b.HasOne("Api.Models.Paciente", "Paciente")
-                        .WithMany()
+                        .WithMany("Consulta")
                         .HasForeignKey("IdPaciente")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -308,6 +313,13 @@ namespace Api.Migrations
                     b.Navigation("Medico");
 
                     b.Navigation("Paciente");
+                });
+
+            modelBuilder.Entity("Api.Models.Diagnostico", b =>
+                {
+                    b.HasOne("Api.Models.Consulta", null)
+                        .WithMany("Diagnostico")
+                        .HasForeignKey("ConsultaId");
                 });
 
             modelBuilder.Entity("Api.Models.Paciente", b =>
@@ -341,6 +353,16 @@ namespace Api.Migrations
                     b.Navigation("Profesion");
 
                     b.Navigation("TipoDocumento");
+                });
+
+            modelBuilder.Entity("Api.Models.Consulta", b =>
+                {
+                    b.Navigation("Diagnostico");
+                });
+
+            modelBuilder.Entity("Api.Models.Paciente", b =>
+                {
+                    b.Navigation("Consulta");
                 });
 #pragma warning restore 612, 618
         }

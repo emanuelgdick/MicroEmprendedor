@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Diagnostics;
 
 namespace Api.Controllers
 {
@@ -33,56 +34,45 @@ namespace Api.Controllers
             var paciente = _db.Paciente.ToList();
             var profesion = _db.Profesion.ToList();
             //var medico = _db.Medico.ToList();
-            var consulta = _db.Consulta.ToList();
+            var consulta = _db.Consulta.OrderByDescending(s=>s.start).ToList();
 
             // Realizar la unión utilizando Join
-            var resultado = from pac in paciente
-                            join prof in profesion on pac.IdProfesion equals prof.Id   into profesionPaciente
-                            
-                            from pp in profesionPaciente.DefaultIfEmpty()
-
-                            join con in consulta on pac.Id equals con.IdPaciente into consultaPaciente
-                            from cp in consultaPaciente.DefaultIfEmpty()
-                            orderby pac.ApeyNom
-                            select new
+            var resultado = (from pac in paciente
+                             join prof in profesion
+                             on pac.IdProfesion equals prof.Id into profesionPaciente
+                             from pp in profesionPaciente.DefaultIfEmpty()
+                             join con in consulta   on pac.Id equals con.IdPaciente into consultaPaciente
+                           
+                            //from cp in consultaPaciente.DefaultIfEmpty()
+                             
+                             orderby pac.ApeyNom  
+                            select new 
                              {
-                                 Id = pac.Id,
-                                 IdTipoDocumento = pac.IdTipoDocumento,
-                                 IdLocalidad = pac?.IdLocalidad == null ? 0 : pac?.IdLocalidad,
-                                 IdProfesion = pac?.IdProfesion == null ? 0 : pac?.IdProfesion,
-                                 IdMedico = pac?.IdMedico == null ? 0 : pac?.IdMedico,
-                                 IdMutual = pac?.IdMutual == null ? 0 : pac?.IdMutual,
-                                 ApeyNom = pac.ApeyNom,
-                                 NroDocumento = pac.NroDocumento,
-                                 Fnac = pac.Fnac,
-                                 Calle = pac.Calle,
-                                 Nro = pac.Nro,
-                                 Depto = pac.Depto,
-                                 Piso = pac.Piso,
-                                 TelCelular = pac.TelCelular,
-                                 TelFijo = pac.TelFijo,
-                                 Email = pac.Email,
-                                 Sexo = pac.Sexo,
-                                 Observaciones = pac.Observaciones,
-                                 Profesion =  new
-                                 {
-                                      Id = pp?.Id == null ? 0 : pp.Id,
-                                      Descripcion = pp?.Descripcion == null ? "" : pp.Descripcion
-                                 },
-                                //Consulta = new 
-                                //{
-                                //    Id = cp?.Id == null ? 0 : cp.Id,
-                                //    start = cp?.start == null ? null : cp.start,
-                                //    end = cp?.end == null ? null : cp.end,
-
-                                //    Observaciones = cp?.observaciones == null ? "" : cp.observaciones
-                                //},
-                                codAflp =pac.codAflp,
+                                Id = pac.Id,
+                                IdTipoDocumento = pac.IdTipoDocumento,
+                                IdLocalidad = pac.IdLocalidad,
+                                IdProfesion = pp == null ? null : pac.IdProfesion,
+                                IdMedico = pac.IdMedico,
+                                IdMutual = pac.IdMutual,
+                                ApeyNom = pac.ApeyNom,
+                                NroDocumento = pac.NroDocumento,
+                                Fnac = pac.Fnac,
+                                Calle = pac.Calle,
+                                Nro = pac.Nro,
+                                Depto = pac.Depto,
+                                Piso = pac.Piso,
+                                TelCelular = pac.TelCelular,
+                                TelFijo = pac.TelFijo,
+                                Email = pac.Email,
+                                Sexo = pac.Sexo,
+                                Consulta = consultaPaciente,
+                                codAflp = pac.codAflp,
                                 Historia = pac.Historia,
-                                NroHC = pac.NroHC,
+                                NroHC = pac.NroHC
 
 
-                            };
+                            });
+           
             return Ok(resultado);
 
         }
