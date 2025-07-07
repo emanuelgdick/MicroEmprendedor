@@ -39,9 +39,7 @@ namespace Api.Controllers
                             join pac in paciente on con.IdPaciente equals pac.Id into consultaPaciente
                             join mut in mutual on con.Paciente.IdMutual equals mut.Id into mutualPaciente
                             from cp in consultaPaciente.DefaultIfEmpty()
-                            
                             from mp in mutualPaciente.DefaultIfEmpty()
-                            
                             select new
                             
                             {
@@ -79,11 +77,8 @@ namespace Api.Controllers
                             join pac in paciente on con.IdPaciente equals pac.Id into consultaPaciente
                             join mut in mutual on con.Paciente.IdMutual equals mut.Id into mutualPaciente
                             from cp in consultaPaciente.DefaultIfEmpty()
-
                             from mp in mutualPaciente.DefaultIfEmpty()
-
                             select new
-
                             {
                                 Id = con.Id,
                                 text = con.Paciente.Mutual == null ? cp.ApeyNom + "(Sin Mutual)" + "\n" + "Tel Fijo:" + cp.TelFijo + "\n" + "Tel Celular:" + cp.TelCelular + "\n" + con.observaciones : cp.ApeyNom + "(" + mp.DescA + ")\n" + "Tel Fijo:" + cp.TelFijo + "\n" + "Tel Celular:" + cp.TelCelular + "\n" + con.observaciones,
@@ -93,8 +88,6 @@ namespace Api.Controllers
                                 IdMedico = con.IdMedico,
                                 color = con.color,
                                 mutual = con.Paciente.IdMutual == null ? "" : mp.DescA
-
-
                             };
 
 
@@ -290,27 +283,35 @@ namespace Api.Controllers
         [Authorize]
         [ResponseCache(CacheProfileName = "apicache")]
 
-        public async Task<IActionResult> PostEvent([FromBody] Consulta @event)
+        public async Task<IActionResult> PostEvent([FromBody] Consulta consulta)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-          
-            //_db.Consulta.Attach(@event);
-            //await _db.SaveChangesAsync();
+            var cDiag = await _db.ConsultaDiagnostico.SingleOrDefaultAsync(m => m.IdConsulta == consulta.Id);
 
 
-            _db.Consulta.Add(@event);
-            _db.SaveChanges();
+            cDiag.IdDiagnostico = consulta.Cdiag.FirstOrDefault().Id;
+            @event.IdPaciente = param.IdPaciente;
+            @event.observaciones = param.observaciones;
+            @event.color = param.color;
+
+
+            _db.Consulta.Add(consulta);
+            try
+            {
+                _db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                e.ToString();
+
+            }
             
-
-
-
-
-
-            return CreatedAtAction("GetEvent", new { id = @event.Id }, @event);
+            //await _db.SaveChangesAsync();
+            return CreatedAtAction("GetEvent", new { id = consulta.Id }, consulta);
         }
 
         // DELETE: api/Events/5

@@ -525,7 +525,6 @@ C:\Consultoio\Api\obj\Debug\net8.0\ref\Api.dll
 C:\Consultorio\Api\bin\Debug\net8.0\appsettings.Development.json
 C:\Consultorio\Api\bin\Debug\net8.0\appsettings.json
 C:\Consultorio\Api\bin\Debug\net8.0\libman.json
-C:\Consultorio\Api\bin\Debug\net8.0\Api.staticwebassets.endpoints.json
 C:\Consultorio\Api\bin\Debug\net8.0\Api.exe
 C:\Consultorio\Api\bin\Debug\net8.0\Api.deps.json
 C:\Consultorio\Api\bin\Debug\net8.0\Api.runtimeconfig.json
@@ -684,17 +683,14 @@ C:\Consultorio\Api\obj\Debug\net8.0\Api.sourcelink.json
 C:\Consultorio\Api\obj\Debug\net8.0\scopedcss\bundle\Api.styles.css
 C:\Consultorio\Api\obj\Debug\net8.0\staticwebassets.build.json
 C:\Consultorio\Api\obj\Debug\net8.0\staticwebassets.development.json
-C:\Consultorio\Api\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Consultorio\Api\obj\Debug\net8.0\staticwebassets\msbuild.Api.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Consultorio\Api\obj\Debug\net8.0\staticwebassets\msbuild.Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Consultorio\Api\obj\Debug\net8.0\staticwebassets\msbuild.build.Api.props
 C:\Consultorio\Api\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Api.props
 C:\Consultorio\Api\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Api.props
 C:\Consultorio\Api\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Consultorio\Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-C:\Consultorio\Api\obj\Debug\net8.0\Api.csproj.Up2Date
 C:\Consultorio\Api\obj\Debug\net8.0\Api.dll
 C:\Consultorio\Api\obj\Debug\net8.0\refint\Api.dll
 C:\Consultorio\Api\obj\Debug\net8.0\Api.pdb
 C:\Consultorio\Api\obj\Debug\net8.0\Api.genruntimeconfig.cache
 C:\Consultorio\Api\obj\Debug\net8.0\ref\Api.dll
+C:\Consultorio\Api\obj\Debug\net8.0\Api.csproj.CopyComplete

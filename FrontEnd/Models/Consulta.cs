@@ -1,4 +1,5 @@
-﻿using FrontEnd.Models;
+﻿using Frontend.Models;
+using FrontEnd.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
@@ -25,6 +26,6 @@ namespace FrontEnd.Models
         public string? color { get; set; }
         public string? observaciones { get; set; }
 
-        public ICollection<Diagnostico>? Diagnostico { get; set; }
+        public ICollection<Diagnostico>? Cdiag { get; set; }
     }
 }

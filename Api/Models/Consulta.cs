@@ -24,6 +24,6 @@ namespace Api.Models
         public string? color { get; set; }
         public string? observaciones { get; set; }
 
-        public ICollection<Diagnostico>? Diagnostico { get; set; }
+        public ICollection<Diagnostico>? Cdiag { get; set; }
     }
 }
