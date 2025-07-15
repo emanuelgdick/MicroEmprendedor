@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 namespace Api.Models
 {
 
-    [DataContract(IsReference = true)]
+   
     public class MicroEmprendedor
     {
         [Key]
@@ -40,7 +40,7 @@ namespace Api.Models
         public string? Observaciones { get; set; }
 
 
-        public ICollection<MicroEmprendedorRubro> Rubros { get; set; }
+        public virtual ICollection<MicroEmprendedorRubro> Rubros { get; set; }
 
     }
 }

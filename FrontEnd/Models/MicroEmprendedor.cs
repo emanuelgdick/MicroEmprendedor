@@ -7,7 +7,6 @@ using System.Text.Json.Serialization;
 namespace FrontEnd.Models
 {
 
-    [DataContract(IsReference = true)]
     public class MicroEmprendedor
     {
         [Key]
@@ -39,7 +38,7 @@ namespace FrontEnd.Models
         public string? Facebook { get; set; }
         public string? Observaciones { get; set; }
 
-        public ICollection<MicroEmprendedorRubro> Rubros { get; set; }
+        public virtual ICollection<MicroEmprendedorRubro> Rubros { get; set; }
         
 
 

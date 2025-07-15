@@ -15,6 +15,6 @@ namespace FrontEnd.Models
         [Required]
         public string Descripcion { get; set; }
 
-        public ICollection<MicroEmprendedorRubro> MicroEmprendedores { get; set; }
+        public virtual ICollection<MicroEmprendedorRubro> MicroEmprendedores { get; set; }
     }
 }
