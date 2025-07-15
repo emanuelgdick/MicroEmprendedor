@@ -14,10 +14,10 @@ namespace Api.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        private ConsultorioContext _db;
+        private MicroEmprendedorContext _db;
         private string _SecretKey;
 
-        public UsuarioController(ConsultorioContext db, IConfiguration configuration)
+        public UsuarioController(MicroEmprendedorContext db, IConfiguration configuration)
         {
             _db = db;
             _SecretKey = configuration.GetValue<string>("ApiSettings:Secret");

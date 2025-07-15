@@ -1,1 +1,2 @@
 C:\Consultorio\whatsappWeb\obj\Debug\whatsappWeb.esproj.CoreCompileInputs.cache
+C:\MicroEmprendedores\whatsappWeb\obj\Debug\whatsappWeb.esproj.CoreCompileInputs.cache

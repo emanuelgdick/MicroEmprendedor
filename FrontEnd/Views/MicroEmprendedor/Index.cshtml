@@ -1,0 +1,1072 @@
+﻿@using Frontend.Models
+@* @model Microemprendedor *@
+@{
+    ViewBag.Title = "Microemprendedor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .contenedor-scroll {
+        overflow-x: hidden; /* Deshabilitar scroll horizontal */
+        /* Puedes añadir overflow-y: hidden; si también necesitas deshabilitar el scroll vertical */
+        width: 715px; /* Ajusta la anchura según tus necesidades */
+        height: 120px; /* Ajusta la altura según tus necesidades */
+        /*border: 1px solid black;  Para ver los límites del contenedor */
+    }
+
+    /* Adapts a floating label for use with a left-handed input group icon */
+    .form-floating > .bi-calendar-date + .datepicker_input + label {
+        padding-left: 3.5rem;
+        z-index: 3;
+    }
+
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
+
+<div class="card">
+    <div class="row  m-0 p-0">
+        <div class="col-11 m-0 p-0">
+            <h1 class=" m-0 mt-1 p-0">Microemprendedores</h1>
+        </div>
+        <div class="col-1  m-0 p-0">
+            <button type="button" class="btn btnNuevo mb-2 ml-4 mt-2" onclick="abrirModal(null)">Nuevo</button>
+        </div>
+
+    </div>
+
+    <hr class="m-0 p-0" style="background-color:#E74C3C" />
+
+    <div class="accordion m-3" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Filtros
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="row    m-0 p-0">
+                        <div class="col-2 m-1 mt-0 p-0 form-floating">
+                            <select id="cbolocalidadF" class="form-select " name="localidadF" autocomplete="off" placeholder="Localidad"></select>
+                            <label for="cbolocalidadF" class="form-label pt-1">Localidad</label>
+                        </div>
+
+                        <div class="col-2 m-1 mt-0 p-0 form-floating">
+                            <select id="cborubroF" class="form-select " name="rubroF" autocomplete="off" placeholder="Rubro"></select>
+                            <label for="cborubroF" class="form-label pt-1">Rubro</label>
+                        </div>
+
+                        <div class=" col-5">
+                        </div>
+                        <div class="col-1  m-1 ">
+                            <button type="button" class="btn btnFiltrar" onclick="filtrarMicroemprendedor(true)">Filtrar</button>
+                        </div>
+                        <div class="col-1  m-1 ">
+                            <button type="button" class="btn btnLimpiar" onclick="limpiarFiltros(true)">Limpiar</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="card-body">
+
+        <table id="tabla" class="display dataTable" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Apellido y Nombre</th>
+                    <th>Tipo Doc</th>
+                    <th>N° Doc</th>
+                    <th>Sexo</th>
+                    <th>Calle</th>
+                    <th>Nro</th>
+                    <th>Piso</th>
+                    <th>Depto</th>
+                    <th>Tel. Fijo</th>
+                    <th>Tel. Celular</th>
+                    <th>Correo</th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+    </div>
+
+</div>
+
+<!-- TOAST -->
+<div class="contenedor">
+    <div class="contenedor-toastP" id="contenedor-toastP">
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="FormModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog  modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header text-white" style="background: #2A3F54">
+                <h5 class="modal-title" id="exampleModalLabel">Microemprendedor</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body m-0 p-0">
+                <input id="txtid" type="hidden" value="0" />
+                <div class="row m-0 p-0">
+                    <div class="col-md-12 col-sm-12 m-0 p-0">
+                        <div class="x_panel  pt-3">
+                            <div class="x_content">
+
+                                <!-- Smart Wizard -->
+                                <div id="wizard" class=" form_wizard wizard_horizontal ">
+                                    <ul class="wizard_steps">
+                                        <li>
+                                            <a href="#step-1">
+                                                <span class="step_no">1</span>
+                                                <span class="step_descr">
+                                                    Datos Filiatorios<br />
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#step-2">
+                                                <span class="step_no">2</span>
+                                                <span class="step_descr">
+                                                    Contacto<br />
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#step-3">
+                                                <span class="step_no">3</span>
+                                                <span class="step_descr">
+                                                    Datos Microemprendedor<br />
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#step-4">
+                                                <span class="step_no">4</span>
+                                                <span class="step_descr">
+                                                    Consultas<br />
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#step-5">
+                                                <span class="step_no">4</span>
+                                                <span class="step_descr">
+                                                    Observaciones<br />
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div id="step-1" style=" height: 320px; ">
+                                        <form id="formNivel" class="col-12 row m-1 " style="border:solid; border-color:#256080; border-width:2px; height:325px; border-radius: 8px;">
+                                            <div class="col-12 mt-5">
+                                                <div class="row">
+                                                    <div class="col-4 p-2 form-floating">
+                                                        <select id="cbotipodoc" class="form-select " name="tipodoc" autocomplete="off" placeholder="Tipo Documento"></select>
+                                                        <label for="cbotipodoc" class="form-label pt-1">Tipo Documento</label>
+                                                    </div>
+                                                    <div class="col-3 p-2 form-floating">
+                                                        <input type="text" class="form-control form-control-sm" id="txtdni" placeholder="Dni" />
+                                                        <label for="txtdni">Dni</label>
+                                                    </div>
+                                                    <div class="col-5 p-2 form-floating">
+                                                        <input type="text" class="form-control form-control-sm" id="txtapeynom" placeholder="Apellido y Nombre" />
+                                                        <label for="txtapeynom">Apellido y Nombre</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-4">
+                                                    <div class="col-4 p-2 form-floating mb-4 d-flex">
+                                                        <input type="text"
+                                                               class="datepicker_input form-control border-2"
+                                                               id="dtfechanac"
+                                                               required
+                                                               placeholder="DD/MM/YYYY">
+                                                        <label for="dtfechanac">Fecha Nacimiento</label>
+                                                    </div>
+
+                                                    <div class="col-7">
+                                                        <div class="radio">
+                                                            <div class="row ">
+                                                                <input type="radio" name="sexo" value="F" id="rbF">
+                                                                <label for="F">Mujer</label>
+                                                                <input type="radio" name="sexo" value="M" id="rbM">
+                                                                <label for="M">Hombre</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div id="step-2" style=" height: 320px; ">
+                                        <form id="formNivel" class="col-12 row m-0 p-5" style="border:solid; border-color:#256080; border-width:2px; height:325px; border-radius: 8px;">
+                                            <div class="row">
+                                                <div class=" col-6 p-2 form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txtcalle" placeholder="Calle" />
+                                                    <label for="txtcalle">Calle</label>
+                                                </div>
+                                                <div class="col-2 p-2 form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txtnro" placeholder="Nro" />
+                                                    <label for="txtnro">Nro</label>
+                                                </div>
+                                                <div class="col-2 p-2 form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txtpiso" placeholder="Piso" />
+                                                    <label for="txtpiso">Piso</label>
+                                                </div>
+                                                <div class="col-2 p-2 form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txtdepto" placeholder="Depto" />
+                                                    <label for="txtdepto">Depto</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class=" col-4 p-2 form-floating">
+                                                    <select id="cbolocalidad" class="form-select " name="localidad" autocomplete="off" placeholder="Localidad"></select>
+                                                    <label for="cbolocalidad" class="form-label pt-1">Localidad</label>
+                                                </div>
+                                                <div class="col-4 p-2 form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txttelfijo" placeholder="Teléfono Fijo" />
+                                                    <label for="txttelfijo">Teléfono Fijo</label>
+                                                </div>
+                                                <div class="col-4 p-2 form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txttelcelular" placeholder="Teléfono Celular" />
+                                                    <label for="txttelcelular">Teléfono Celular</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-4 p-2 form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txtemail" placeholder="Correo Electrónico" />
+                                                    <label for="txtemail">Correo Electrónico</label>
+                                                </div>
+                                                <div class="col-4 p-2 form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txtinstagram" placeholder="Correo Electrónico" />
+                                                    <label for="txtinstagram">Instagram</label>
+                                                </div>
+
+                                                <div class="col-4 p-2 form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txtfacebook" placeholder="Correo Electrónico" />
+                                                    <label for="txtfacebook">Facebook</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 p-2 form-floating">
+                                                    <input type="text" class="form-control form-control-sm" id="txtsitioweb" placeholder="Sitio Web" />
+                                                    <label for="txtsitioweb">Sitio Web</label>
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div id="step-3" style=" height: 320px; ">
+                                        <form id="formNivel" class="col-12 row m-0 p-5" style="border:solid; border-color:#256080; border-width:2px; height:325px; border-radius: 8px;">
+                                            <div class="row d-flex justify-content-center m-3">
+                                                <div class="col-12">
+                                                    <select id="cborubro" placeholder="Seleccione Rubros" multiple>
+                                                    </select>
+                                                   
+                                                </div>
+                                            </div>
+                                            <h6><a href="#" id="add_Multiple-Fields">Add Multiple Fields</a></h6>
+                                        </form>
+                                    </div>
+                                    <div id="step-4" style=" height: 320px; ">
+                                        <form id="formNivelConsulta" class="col-12 row  m-0 p-5" style="border:solid; border-color:#256080; border-width:2px; height:325px; border-radius: 8px;">
+
+                                            <table id="tablaConsulta" class="display" style="width:100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Fecha</th>
+                                                        <th>Observaciones</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                                <tfoot>
+                                                </tfoot>
+                                            </table>
+
+                                        </form>
+                                    </div>
+                                    <div id="step-5" style=" height: 320px; ">
+                                        <form id="formNivel" class="col-12 row  m-0 p-1" style="border:solid; border-color:#256080; border-width:2px; height:325px; border-radius: 8px;">
+                                            <textarea id="taobservaciones"></textarea>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End SmartWizard Content -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row mt-0 p-0">
+                <div class="col-12">
+                    <div id="mensajeError" class="alert-danger" role="alert">
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btnCancelar" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btnAceptar" onclick="Guardar()">Guardar</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <script>
+        var tabladata;
+        var agregarToast;
+        var multipleCancelButton;
+        $(document).ready(function () {
+             multipleCancelButton = new Choices('#cborubro', {
+                removeItemButton: true,
+                maxItemCount: 100,
+                searchResultLimit: 100,
+                renderChoiceLimit: 100
+            });
+            });
+
+        //GET TIPO DOCUMENTOS
+        jQuery.ajax({
+            url: '@Url.Action("GetAllTipoDocumentos", "TipoDocumento")',
+            type: "GET",
+            data: null,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbotipodoc");
+                $.each(data.data, function (index, value) {
+                    $("<option>").attr({ "value": value.id }).text(value.descA).appendTo("#cbotipodoc");
+                });
+            },
+            error: function (error) {
+                console.log(error)
+            }
+        });
+
+        //GET LOCALIDADES
+        jQuery.ajax({
+            url: '@Url.Action("GetAllLocalidades", "Localidad")',
+            type: "GET",
+            data: null,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadF");
+                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidad");
+                $.each(data.data, function (index, value) {
+                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadF");
+                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidad");
+                });
+            },
+            error: function (error) {
+                console.log(error)
+            }
+        });
+
+        //GET RUBROS
+        var rub = [];
+        jQuery.ajax({
+            url: '@Url.Action("GetAllRubro", "Rubro")',
+            type: "GET",
+            data: null,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                debugger;
+                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cborubroF");
+                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cborubro");
+                $.each(data.data, function (index, value) {
+                    rub.push({ id: value.id, name: value.descripcion });
+                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cborubroF");
+                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cborubro");
+                });
+            },
+            error: function (error) {
+                console.log(error)
+            }
+        });
+
+        const getDatePickerTitle = elem => {
+            // From the label or the aria-label
+            const label = elem.nextElementSibling;
+            let titleText = '';
+            if (label && label.tagName === 'LABEL') {
+                titleText = label.textContent;
+            } else {
+                titleText = elem.getAttribute('aria-label') || '';
+            }
+            return titleText;
+        }
+        const elems = document.querySelectorAll('.datepicker_input');
+        for (const elem of elems) {
+            const datepicker = new Datepicker(elem, {
+                'format': 'dd/mm/yyyy', // UK format
+                title: getDatePickerTitle(elem)
+            });
+        }
+
+
+        const contenedorToast = document.getElementById('contenedor-toastP');
+        // Event listener para detectar click en los toasts
+        contenedorToast.addEventListener('click', (e) => {
+            const toastId = e.target.closest('div.toastP').id;
+            if (e.target.closest('button.btn-cerrar')) {
+                cerrarToast(toastId);
+            }
+        });
+
+        // Función para cerrar el toast
+        const cerrarToast = (id) => {
+            document.getElementById(id)?.classList.add('cerrando');
+        };
+
+
+        // Función para agregar la clase de cerrando al toast.
+        agregarToast = ({ tipo, titulo, descripcion, autoCierre }) => {
+            // Crear el nuevo toast
+            const nuevoToast = document.createElement('div');
+            // Agregar clases correspondientes
+            nuevoToast.classList.add('toastP');
+            nuevoToast.classList.add(tipo);
+            if (autoCierre) nuevoToast.classList.add('autoCierreP');
+            // Agregar id del toast
+            const numeroAlAzar = Math.floor(Math.random() * 100);
+            const fecha = Date.now();
+            const toastId = fecha + numeroAlAzar;
+            nuevoToast.id = toastId;
+            // Iconos
+            const iconos = {
+                exito: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                                                      <path
+                                                                                                          d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
+                                                                                                      />
+                                                                                                  </svg>`,
+                error: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                                                                  <path
+                                                                                                                      d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                                                                                  />
+                                                                                                              </svg>`,
+                info: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                                                                  <path
+                                                                                                                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+                                                                                                                  />
+                                                                                                              </svg>`,
+                warning: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                                                                  <path
+                                                                                                                      d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                                                                                  />
+                                                                                                              </svg>`,
+            };
+
+            // Plantilla del toast
+            const toast = `
+                                                                                          <div class="contenidoP">
+                                                                                              <div class="icono">
+                                                                                                  ${iconos[tipo]}
+                                                                                              </div>
+                                                                                              <div class="texto">
+                                                                                                  <p class="titulo">${titulo}</p>
+                                                                                                  <p class="descripcion">${descripcion}</p>
+                                                                                              </div>
+                                                                                          </div>
+                                                                                          <button class="btn-cerrar">
+                                                                                              <div class="icono">
+                                                                                                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                                                      <path
+                                                                                                          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                                                                                                      />
+                                                                                                  </svg>
+                                                                                              </div>
+                                                                                          </button>
+                                                                                      `;
+
+            // Agregar la plantilla al nuevo toast
+            nuevoToast.innerHTML = toast;
+
+            // Agregamos el nuevo toast al contenedor
+            contenedorToast.appendChild(nuevoToast);
+
+            // Función para menajera el cierre del toast
+            const handleAnimacionCierre = (e) => {
+                if (e.animationName === 'cierre') {
+                    nuevoToast.removeEventListener('animationend', handleAnimacionCierre);
+                    nuevoToast.remove();
+                }
+            };
+
+            if (autoCierre) {
+                setTimeout(() => cerrarToast(toastId), 5000);
+            }
+
+            // Agregamos event listener para detectar cuando termine la animación
+            nuevoToast.addEventListener('animationend', handleAnimacionCierre);
+        };
+
+        var filaSeleccionada;
+        llenarTabla(false)
+
+       
+
+        //Abrir Modal
+        function abrirModal(json) {
+
+            var fnac;
+            var diafnac;
+            var mesfnac;
+            var aniofnac;
+            $("#wizard").smartWizard('goToStep', 1)
+            $("#txtid").val(0);
+            $("#txtnroMicroemprendedor").val('');
+            $("#txtapeynom").val('');
+            $("#txtdni").val('');
+            $("#cbotipodoc").val(0);
+            $("#cbolocalidad").val(0);
+
+            fnac = new Date()
+            diafnac = `${(fnac.getDate())}`.padStart(2, '0');
+            mesfnac = `${(fnac.getMonth() + 1)}`.padStart(2, '0');
+            aniofnac = fnac.getFullYear();
+            $("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
+            $("#txttelfijo").val('');
+            $("#txttelcelular").val('');
+            $("#txtcalle").val('');
+            $("#txtnro").val('');
+            $("#txtpiso").val('');
+            $("#txtdepto").val('');
+            $("#txtemail").val('');
+            $("#txtfacebook").val('');
+            $("#txtinstagram").val('');
+            $("#txtsitioweb").val('');
+            $("#txtobservaciones").val('');
+            tinymce.get('taobservaciones').setContent("");
+        //    multipleCancelButton.val('').trigger("change");
+            if (json != null) {
+                console.log(json);
+                $("#txtid").val(json.id);
+                $("#txtapeynom").val(json.apeyNom);
+                $("#txtdni").val(json.dni);
+                $("#cbotipodoc").val(json.idTipoDocumento == null ? 0 : json.idTipoDocumento);
+
+                fnac = new Date(json.fechaNacimiento);
+                diafnac = `${(fnac.getDate())}`.padStart(2, '0');
+                mesfnac = `${(fnac.getMonth() + 1)}`.padStart(2, '0');
+                aniofnac = fnac.getFullYear();
+                $("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
+
+
+                $("#txtcalle").val(json.calle);
+                $("#txtnro").val(json.nro);
+                $("#txtpiso").val(json.piso);
+                $("#txtdepto").val(json.depto);
+                $("#txttelfijo").val(json.telFijo);
+                $("#txttelcelular").val(json.telCelular);
+                $("#txtemail").val(json.correo);
+                $("#txtfacebook").val(json.facebook);
+                $("#txtinstagram").val(json.instagram);
+                $("#txtsitioweb").val(json.sitioWeb);
+                $("#cbolocalidad").val(json.idLocalidad == null ? 0 : json.idLocalidad);
+                // $("#cborubro").val(json.idRubro == null ? 0 : json.idRubro);
+                $("#txtnrodoc").val(json.dni);
+                if (json.sexo == "F") {
+                    $('input:radio[name=sexo]')[0].checked = true;
+                    $('input:radio[name=sexo]')[1].checked = false;
+                }
+                else {
+                    $('input:radio[name=sexo]')[0].checked = false;
+                    $('input:radio[name=sexo]')[1].checked = true;
+                }
+                var observaciones = json.observaciones == null ? "" : json.observaciones;
+                if (observaciones[0] == '{') {
+                    //GET HTML DE OBSERVACIONES
+                    jQuery.ajax({
+                        url: "@Url.Action("ConverHCToHTML", "Microemprendedor")" + "?observaciones=" + observaciones,
+                        type: "GET",
+                        dataType: "json",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+                            tinymce.get('taobservaciones').setContent(data.data);
+                        },
+                        error: function (error) {
+                            console.log(error)
+                        }
+                    });
+                }
+                else {
+                    tinymce.get('taobservaciones').setContent(observaciones);
+                }
+                $('#tablaConsulta').DataTable().clear().destroy();
+                $('#tablaConsulta').DataTable({
+                    data: json.consulta,
+                    columns: [
+                        { data: 'start' },
+                        { data: 'observaciones' }
+                    ],
+
+                    "order": {
+                        name: 'start',
+                        dir: 'desc'
+                    },
+                    "language": {
+                        "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+                    },
+                    "order": [[0, "desc"]],
+                });
+
+                debugger;
+                var jsonModulo = {
+                    'datos': []
+                };
+                for (var i = 0; i < json.rubros.length; i++) {
+
+                    for (var j = 0; j < rub.length; j++) {
+                        if (rub[j].id == json.rubros[i].idRubro) {
+                            
+                            jsonModulo.datos.push({
+                                "IdMicroEmprendedor": json.id,
+                                "IdRubro": json.rubros[j].id,
+                                "Descripcion": rub[j].name
+                            }
+                            );
+                        };
+                    };
+                }
+                var json = JSON.stringify(jsonModulo);
+                var obj = JSON.parse(json);
+                multipleCancelButton.val('').trigger("change");
+                for (var i = 0; i < obj.datos.length; i++) {
+                    multipleCancelButton.setValue(obj.datos[i].Descripcion);
+                }
+
+
+            }
+            $("#FormModal").modal("show");
+        }
+
+        $("#formNivel").validate({
+            rules: {
+                ApeyNom: {
+                    required: true
+                },
+            },
+            messages: {
+                ApeyNom: " El campo Apellido y Nombre es obligatorio",
+            },
+            errorElement: "div",
+            errorLabelContainer: ".alert-danger"
+        });
+
+        //Llenar Tabla
+        function llenarTabla(filtro) {
+
+            debugger;
+
+            var url;
+            if (filtro) {
+                url = "@Url.Action("GetMicroemprendedorFiltrados", "Microemprendedor")" + '?localidad=' + $("#cbolocalidadF").val() + '&rubro=' + $("#cborubroF").val()
+            } else {
+                url = "@Url.Action("GetAllMicroemprendedor", "Microemprendedor")";
+            }
+
+            $('#tabla').DataTable().clear().destroy();
+            tabladata = $("#tabla").DataTable({
+                responsive: true,
+                ordering: true,
+                dom: "Bfrtip",
+                buttons: [
+                    {
+                        extend: "excelHtml5",
+                        text: '<i class="fa fa-file-excel-o "></i>',
+                        filename: "Reporte de Microemprendedor",
+                        title: "Listado de Microemprendedor",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                        },
+                        className: "btn-exportar-excel",
+
+
+                    },
+                    {
+                        extend: "pdfHtml5",
+                        text: '<i class="fa fa-file-pdf-o"></i>',
+                        filename: "Reporte de Microemprendedor",
+                        title: "Listado de Microemprendedor",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                        },
+                        className: "btn-exportar-pdf"
+                    },
+                    {
+                        extend: "print",
+                        text: '<i class="fa fa-print"></i>',
+                        filename: "Reporte de Microemprendedor",
+                        title: "Listado de Microemprendedor",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                        },
+                        className: "btn-imprimir"
+
+                    }
+                ],
+                "ajax": {
+                    url: url,
+                    type: "GET",
+                    dataType: "json",
+                    beforeSend: agregarToast({ tipo: 'exito', titulo: 'Obteniendo Microemprendedor', descripcion: 'Por favor espere...', autoCierre: true })
+                },
+                "columns": [
+                    { "data": "id" },
+                    { "data": "apeyNom" },
+                    {
+                        "data": "tipoDocumento", render: function (data) {
+                            var desc;
+                            if (data == null) {
+                                desc = null
+                            }
+                            else
+                                desc = data.descA
+                            return desc;
+                        }
+                    },
+                    { "data": "dni" },
+                    { "data": "sexo" },
+                    { "data": "calle" },
+                    { "data": "nro" },
+                    { "data": "piso" },
+                    { "data": "depto" },
+                    { "data": "telFijo" },
+                    { "data": "telCelular" },
+                    { "data": "correo" },
+
+
+
+
+
+
+                    {
+                        "defaultContent": '<button type="button" title="Enviar Mensaje"  class="rounded-circle btn btn-sm  btn-block btn-enviar"   > <img src="../images/whatsapp.png" alt="" width="20" height="20" ></button>' +
+                            '<button type="button" title="Editar Microemprendedor"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
+                            '<button type="button" title="Eliminar Microemprendedor" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
+                        "orderable": false,
+                        "searchable": false,
+                        "width": "10%",
+                        "heigth": "10%"
+                    }
+                ],
+                "order": {
+                    name: 'apeyNom',
+                    dir: 'asc'
+                },
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+                },
+                "order": [[1, "asc"]],
+                "columnDefs": [
+                    { "width": "3%", "targets": 0 },
+                    { "width": "10%", "targets": 1 },
+                    { "width": "5%", "targets": 2 },
+                    { "width": "8%", "targets": 3, render: DataTable.render.datetime('DD/MM/YYYY') },
+                    { "width": "2%", "targets": 4 },
+                    // { "width": "10%", "targets": 5 },
+                    // { "width": "3%", "targets": 6 },
+                    // { "width": "3%", "targets": 7 },
+                    // { "width": "3%", "targets": 8 },
+                    // { "width": "5%", "targets": 9 },
+                    // { "width": "5%", "targets": 10 },
+                    // { "width": "10%", "targets": 11, visible: false },
+
+                    // { "width": "70%", "targets": 12 },
+                    // { "width": "40%", "targets": 14, className: 'dt-body-right' },
+                ]
+            })
+        }
+
+        //Filtrar Microemprendedor
+        function filtrarMicroemprendedor(filtro) {
+            llenarTabla(filtro);
+        }
+        //Filtrar Microemprendedor
+        function limpiarFiltros() {
+            $('#cbolocalidadF').val(0);
+            $('#cborubroF').val(0);
+            llenarTabla(false)
+        }
+        //Editar
+        $("#tabla tbody").on("click", '.btn-editar', function () {
+
+            filaSeleccionada = $(this).closest("tr");
+            var data = tabladata.row(filaSeleccionada).data();
+            abrirModal(data)
+        })
+
+        //Eliminar
+        $("#tabla tbody").on("click", '.btn-eliminar', function () {
+
+            var Microemprendedoreleccionado = $(this).closest("tr");
+            var data = tabladata.row(Microemprendedoreleccionado).data();
+            var Microemprendedor = {
+                id: data.id,
+                apeyNom: data.apeyNom
+            }
+            swal({
+                title: "Está Seguro?",
+                text: "Desea eliminar el Microemprendedor?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-primary",
+                confirmButtonText: "Si",
+                cancelButtonText: "No",
+                closeOnConfirm: true
+            },
+                function () {
+                    jQuery.ajax({
+                        url: '@Url.Action("DeleteMicroemprendedor", "Microemprendedor")',
+                        type: "POST",
+                        data: JSON.stringify(Microemprendedor),
+                        contentType: 'application/json',
+                        success: function (data) {
+                            if (data.resultado) {
+                                tabladata.row(Microemprendedoreleccionado).remove().draw();
+                                // mostrarAlert(data.mensaje)
+                                agregarToast({ tipo: 'exito', titulo: 'Eliminando Microemprendedor', descripcion: 'Microemprendedor eliminado correctamente.', autoCierre: true })
+                            } else {
+                                agregarToast({ tipo: 'error', titulo: 'Eliminando Microemprendedor', descripcion: 'No se pudo eliminar el Microemprendedor', autoCierre: true });
+                                // swal("No se pudo eliminar", data.mensaje, "error");
+                                //  mostrarAlert(data.mensaje)
+                            }
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    })
+                })
+        });
+
+        //Tomar Foto
+        function tomarFoto() {
+
+            debugger;
+            const video = document.getElementById('video');
+            const canvas = document.getElementById('canvas');
+            const imagen = document.getElementById('imagen');
+            const botonCaptura = document.getElementById('botonCaptura');
+            // Solicitar acceso a la cámara
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                    video.srcObject = stream;
+
+
+                })
+                .catch(error => {
+                    console.error('Error al acceder a la cámara:', error);
+                });
+
+            // Capturar la foto al hacer clic en el botón
+            botonCaptura.addEventListener('click', () => {
+                // Dibujar la imagen en el canvas
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+                // Obtener la imagen como data URL
+                const dataURL = canvas.toDataURL('image/png');
+
+                // Mostrar la imagen en la etiqueta img
+                imagen.src = dataURL;
+            });
+
+
+
+
+        }
+        //Seleccionar Imagen
+        function changePicture() {
+            $('#upload').click();
+        }
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#imagen').attr('src', e.target.result);
+
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        function capture() {
+            debugger;
+            var canvas = document.getElementById("canvas");
+            var video = document.getElementById("video");
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext("2d").drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+            const dataURL = canvas.toDataURL('image/png');
+            const playImage = new Image();
+            playImage.src = dataURL;
+            playImage.onload = () => {
+                const startX = video.videoWidth / 2 - playImage.width / 2;
+                const startY = video.videoHeight / 2 - playImage.height / 2;
+                canvas.getContext("2d").drawImage(playImage, startX, startY, playImage.width, playImage.height);
+                canvas.toBlob() = (blob) => {
+                    const img = new Image();
+                    img.src = window.URL.createObjectUrl(blob);
+                };
+            };
+            /** End **/
+        }
+
+        //Guardar
+        function Guardar() {
+
+
+            if (!$("#formNivel").valid()) {
+                return;
+            }
+            debugger;
+            var yyyy = $("#dtfechanac").val().substring(6, 10);
+            var MM = $("#dtfechanac").val().substring(3, 5);
+            var DD = $("#dtfechanac").val().substring(0, 2);
+            var HH = $("#dtfechanac").val().substring(10, 12).trim();
+            var mm = $("#dtfechanac").val().substring(13, 15).trim();
+            var A = $("#dtfechanac").val().substring(19, 23).trim();
+            if (HH.length == 1) { HH = '0' + HH; }
+
+            if (mm.length == 1) { mm = '0' + mm; }
+
+
+
+            const select = document.getElementById('cborubro');
+            var jsonModulo = {
+                'datos': []
+            };
+            for (var i = 0; i < select.options.length; i++) {
+                jsonModulo.datos.push({
+                    "IdMicroEmprendedor": 0,
+                    "IdRubro": select.options[i].value
+                    //"Id": select.options[i].value,
+                    //"Descripcion":"AAA"
+                });
+            };
+            var json = JSON.stringify(jsonModulo);
+            var obj = JSON.parse(json);
+
+
+
+
+            var Microemprendedor = {
+                id: $("#txtid").val(),
+                apeyNom: $("#txtapeynom").val(),
+                dni: $("#txtdni").val(),
+                fechaNacimiento: moment(yyyy + "-" + MM + "-" + DD + "T" + HH + ":" + mm + ":" + A).format('YYYY-MM-DDT00:00:00'),
+                idTipoDocumento: $("#cbotipodoc option:selected").val() == 0 ? null : $("#cbotipodoc option:selected").val(),
+                sexo: $('input:radio[name=sexo]')[0].checked == 0 ? "M" : "F",
+                calle: $("#txtcalle").val(),
+                nro: $("#txtnro").val(),
+                piso: $("#txtpiso").val(),
+                depto: $("#txtdepto").val(),
+                idLocalidad: $("#cbolocalidad option:selected").val() == 0 ? null : $("#cbolocalidad option:selected").val(),
+                idRubro: $("#cborubro option:selected").val() == 0 ? null : $("#cborubro option:selected").val(),
+                telFijo: $("#txttelfijo").val(),
+                telCelular: $("#txttelcelular").val(),
+                correo: $("#txtemail").val(),
+                instagram: $("#txtinstagram").val(),
+                facebook: $("#txtfacebook").val(),
+                sitioWeb: $("#txtsitioweb").val(),
+                observaciones: tinymce.get('taobservaciones').getContent(),
+                Rubros: obj.datos
+            };
+            console.log('*');
+            console.log(Microemprendedor);
+            console.log('*');
+            jQuery.ajax({
+                url: '@Url.Action("CreateMicroemprendedor", "Microemprendedor")',
+                type: "POST",
+                data: JSON.stringify(Microemprendedor),
+                contentType: 'application/json',
+                success: function (data) {
+                    $(".modal-body").LoadingOverlay("hide");
+                    //  Microemprendedor nuevo
+                    if (Microemprendedor.id == 0) {
+                        if (data.resultado != 0) {
+                            Microemprendedor.id = data.resultado;
+                            tabladata.row.add(Microemprendedor).draw(false);
+                            $("#FormModal").modal("hide");
+                            agregarToast({ tipo: 'exito', titulo: 'Creando Microemprendedor', descripcion: 'Microemprendedor ingresado correctamente.', autoCierre: true });
+                        }
+                        else {
+                            agregarToast({ tipo: 'error', titulo: 'Creando Microemprendedor', descripcion: data.mensaje, autoCierre: true });
+                            $("#mensajeError").text(data.mensaje);
+                            $("#mensajeError").show();
+                        }
+                    }
+                    //  Microemprendedor Editar
+                    else {
+
+                        if (data.resultado) {
+                            tabladata.row(filaSeleccionada).data(Microemprendedor).draw(false);
+                            filaSeleccionada = null;
+                            agregarToast({ tipo: 'exito', titulo: 'Modificando Microemprendedor', descripcion: 'Microemprendedor modificado correctamente.', autoCierre: true });
+                            $("#FormModal").modal("hide");
+                            // mostrarAlert(data.mensaje)
+
+                        } else {
+                            agregarToast({ tipo: 'error', titulo: 'Modificando Microemprendedor', descripcion: data.mensaje, autoCierre: true });
+                            $("#mensajeError").text(data.mensaje);
+                            $("#mensajeError").show();
+                        }
+                    }
+                },
+                beforeSend: function () {
+                    $(".modal-body").LoadingOverlay("show", {
+                        imageResizeFactor: 2,
+                        text: "Cargando...",
+                        size: 14
+                    });
+                },
+                error: function (error) {
+                    $(".modal-body").LoadingOverlay("hide");
+                    $("#mensajeError").text("Error Ajax");
+                    $("#mensajeError").show();
+                }
+            }
+            )
+        }
+
+        tinymce.init({
+            selector: 'textarea#taobservaciones',
+            height: 310,
+            license_key: 'gpl',
+            language: 'es',
+            plugins: [
+                'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+                'anchor', 'searchreplace', 'visualblocks', 'fullscreen',
+                'insertdatetime', 'media', 'table'
+            ],
+            toolbar: 'undo redo | ' +
+                'bold italic backcolor | alignleft aligncenter ' +
+                'alignright alignjustify | bullist numlist outdent indent | ' +
+                'removeformat |',
+            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+}

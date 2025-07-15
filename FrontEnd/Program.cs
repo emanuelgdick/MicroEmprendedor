@@ -23,9 +23,9 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 });
 
-builder.Services.AddControllers().AddJsonOptions(x =>
-                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
+//builder.Services.AddControllersWithViews().AddJsonOptions(x => x.JsonSerializerOptions.PropertyNamingPolicy = null);
 
 builder.Services.AddSession(options =>
 {
@@ -35,6 +35,11 @@ builder.Services.AddSession(options =>
 
 
 });
+
+
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

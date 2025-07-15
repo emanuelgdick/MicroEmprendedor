@@ -19,11 +19,12 @@ builder.Services.AddControllers(options =>
         new CacheProfile{Duration = 30 });
 
 });
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<ConsultorioContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<MicroEmprendedorContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
 var key = builder.Configuration.GetValue<string>("ApiSettings:Secret");

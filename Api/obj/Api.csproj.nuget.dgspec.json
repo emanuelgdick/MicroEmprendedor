@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Consultorio\\Api\\Api.csproj": {}
+    "C:\\MicroEmprendedores\\Api\\Api.csproj": {}
   },
   "projects": {
-    "C:\\Consultorio\\Api\\Api.csproj": {
+    "C:\\MicroEmprendedores\\Api\\Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Consultorio\\Api\\Api.csproj",
+        "projectUniqueName": "C:\\MicroEmprendedores\\Api\\Api.csproj",
         "projectName": "Api",
-        "projectPath": "C:\\Consultorio\\Api\\Api.csproj",
+        "projectPath": "C:\\MicroEmprendedores\\Api\\Api.csproj",
         "packagesPath": "C:\\Users\\Emanuel\\.nuget\\packages\\",
-        "outputPath": "C:\\Consultorio\\Api\\obj\\",
+        "outputPath": "C:\\MicroEmprendedores\\Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

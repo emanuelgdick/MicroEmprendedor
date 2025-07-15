@@ -362,6 +362,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\MicroEmprendedor\Index.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Update="wwwroot\css\pnotify\.bower.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
