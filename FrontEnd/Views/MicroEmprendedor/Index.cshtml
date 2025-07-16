@@ -21,7 +21,8 @@
     }
 
 </style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
+@* <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css"> *@
+<link rel="stylesheet" href="~/css/Choices/MultiSelect.css">
 
 <div class="card">
     <div class="row  m-0 p-0">
@@ -270,14 +271,19 @@
                                     </div>
                                     <div id="step-3" style=" height: 320px; ">
                                         <form id="formNivel" class="col-12 row m-0 p-5" style="border:solid; border-color:#256080; border-width:2px; height:325px; border-radius: 8px;">
-                                            <div class="row d-flex justify-content-center m-3">
+                                           @*  <div class="row d-flex justify-content-center m-3">
                                                 <div class="col-12">
                                                     <select id="cborubro" placeholder="Seleccione Rubros" multiple>
                                                     </select>
                                                    
                                                 </div>
                                             </div>
-                                            <h6><a href="#" id="add_Multiple-Fields">Add Multiple Fields</a></h6>
+                                            <h6><a href="#" id="add_Multiple-Fields">Add Multiple Fields</a></h6> *@
+                                            <select id="example-multi-select" data-placeholder="Select options" multiple="multiple" data-multi-select>
+                                                <option value="option1">Option 1</option>
+                                                <option value="option2">Option 2</option>
+                                                <!-- more options -->
+                                            </select>
                                         </form>
                                     </div>
                                     <div id="step-4" style=" height: 320px; ">
@@ -330,19 +336,27 @@
 
 
 @section scripts {
+    
     <script>
         var tabladata;
         var agregarToast;
-        var multipleCancelButton;
-        $(document).ready(function () {
-             multipleCancelButton = new Choices('#cborubro', {
-                removeItemButton: true,
-                maxItemCount: 100,
-                searchResultLimit: 100,
-                renderChoiceLimit: 100
-            });
-            });
+      //  var multipleCancelButton;
+        // $(document).ready(function () {
+          
+            
+        //     });
 
+      //  document.addEventListener('DOMContentLoaded', function () {
+          
+            // multipleCancelButton = new Choices('#cborubro', {
+            //     removeItemButton: true,
+            //     maxItemCount: 100,
+            //     searchResultLimit: 100,
+            //     renderChoiceLimit: 100
+            // });
+          
+      //  })
+        
         //GET TIPO DOCUMENTOS
         jQuery.ajax({
             url: '@Url.Action("GetAllTipoDocumentos", "TipoDocumento")',
@@ -394,7 +408,7 @@
                 $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cborubroF");
                 $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cborubro");
                 $.each(data.data, function (index, value) {
-                    rub.push({ id: value.id, name: value.descripcion });
+                    rub.push({ value: value.id, text: value.descripcion });
                     $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cborubroF");
                     $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cborubro");
                 });
@@ -557,14 +571,21 @@
             $("#txtsitioweb").val('');
             $("#txtobservaciones").val('');
             tinymce.get('taobservaciones').setContent("");
-        //    multipleCancelButton.val('').trigger("change");
+
+
+
+
+
+
+
+
             if (json != null) {
                 console.log(json);
                 $("#txtid").val(json.id);
                 $("#txtapeynom").val(json.apeyNom);
                 $("#txtdni").val(json.dni);
                 $("#cbotipodoc").val(json.idTipoDocumento == null ? 0 : json.idTipoDocumento);
-
+                
                 fnac = new Date(json.fechaNacimiento);
                 diafnac = `${(fnac.getDate())}`.padStart(2, '0');
                 mesfnac = `${(fnac.getMonth() + 1)}`.padStart(2, '0');
@@ -641,7 +662,7 @@
                             
                             jsonModulo.datos.push({
                                 "IdMicroEmprendedor": json.id,
-                                "IdRubro": json.rubros[j].id,
+                                "IdRubro": 1,//json.rub[j].id,
                                 "Descripcion": rub[j].name
                             }
                             );
@@ -650,13 +671,35 @@
                 }
                 var json = JSON.stringify(jsonModulo);
                 var obj = JSON.parse(json);
-                multipleCancelButton.val('').trigger("change");
+
                 for (var i = 0; i < obj.datos.length; i++) {
-                    multipleCancelButton.setValue(obj.datos[i].Descripcion);
+                 //   multipleCancelButton.setValue(obj.datos[i].Descripcion);
                 }
-
-
             }
+
+            new MultiSelect(document.getElementById('example-multi-select'), {
+                data: rub,//[],
+                placeholder: 'Select options',
+                max: 100,  // Maximum number of items that can be selected
+                search: true,  // Enable the search box
+                selectAll: true,  // Add a select all option
+                onChange: function (value, text, element) {
+                    console.log('Change:', value, text, element);
+                },
+                onSelect: function (value, text, element) {
+
+
+                    console.log('Selected:', value, text, element);
+                },
+                onUnselect: function (value, text, element) {
+                    console.log('Unselected:', value, text, element);
+                }
+            });
+
+
+
+
+
             $("#FormModal").modal("show");
         }
 
@@ -1067,6 +1110,9 @@
                 'removeformat |',
             content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
         });
+        
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+    @* <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script> *@
+    <script src="~/js/Choices/MultiSelect.js"></script>
+    
 }

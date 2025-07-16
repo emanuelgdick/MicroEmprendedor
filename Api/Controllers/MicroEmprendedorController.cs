@@ -22,7 +22,7 @@ namespace Api.Controllers
         [HttpGet]
         [Authorize]
         [ResponseCache(CacheProfileName = "apicache")]
-        public IActionResult GetMicroEmprendedores(/*int pagesize, int pagenumber*/)
+        public IActionResult GetMicroEmprendedor(/*int pagesize, int pagenumber*/)
         {
             _logger.LogInformation("Fetching Todas las Paciente");
 
@@ -30,17 +30,17 @@ namespace Api.Controllers
             var micro = _db.MicroEmprendedor.ToList();
             var loc = _db.Localidad.ToList();
             var tipoDoc = _db.TipoDocumento.OrderByDescending(s => s.DescA).ToList();
-           // var microEmprendedorRubro = _db.MicroEmprendedorRubro.ToList();
+            var microEmprendedorRubro = _db.MicroEmprendedorRubro.ToList();
          
 
             // Realizar la unión utilizando Join
             var resultado = (from m in micro
                              join l in loc on m.IdLocalidad equals l.Id into localidadMicroEmprendedor
                              join td in tipoDoc on m.IdTipoDocumento equals td.Id into tipoDocMicroEmprendedor
-                             //join me in microEmprendedorRubro on m.Id equals me.IdMicroEmprendedor into meRubro
+                             join me in microEmprendedorRubro on m.Id equals me.IdMicroEmprendedor into meRubro
                              from loca in localidadMicroEmprendedor.DefaultIfEmpty()
                              from tipo in tipoDocMicroEmprendedor.DefaultIfEmpty()
-                                 // from mer in meRubro.DefaultIfEmpty()
+                             // from mer in meRubro.DefaultIfEmpty()
                              orderby m.ApeyNom
                              select new 
                              {
@@ -74,7 +74,7 @@ namespace Api.Controllers
                                      DescC = tipo.DescC
                                  },
                                  Observaciones =m.Observaciones,
-                                // Rubros =meRubro
+                                 Rubros =meRubro
                                                             
                              });
 

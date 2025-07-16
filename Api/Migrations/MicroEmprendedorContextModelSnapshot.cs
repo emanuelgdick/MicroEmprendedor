@@ -117,10 +117,10 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("IdMicroEmprendedor")
+                    b.Property<int>("IdMicroEmprendedor")
                         .HasColumnType("int");
 
-                    b.Property<int?>("IdRubro")
+                    b.Property<int>("IdRubro")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -218,11 +218,15 @@ namespace Api.Migrations
                 {
                     b.HasOne("Api.Models.MicroEmprendedor", "MicroEmprendedor")
                         .WithMany("Rubros")
-                        .HasForeignKey("IdMicroEmprendedor");
+                        .HasForeignKey("IdMicroEmprendedor")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Api.Models.Rubro", "Rubro")
                         .WithMany("MicroEmprendedores")
-                        .HasForeignKey("IdRubro");
+                        .HasForeignKey("IdRubro")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("MicroEmprendedor");
 

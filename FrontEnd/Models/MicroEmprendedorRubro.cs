@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FrontEnd.Models
 {
@@ -8,13 +9,12 @@ namespace FrontEnd.Models
     {
         [Key]
         public int Id { get; set; }
-
         [ForeignKey("MicroEmprendedor")]
-        public int? IdMicroEmprendedor { get; set; }
+        public int IdMicroEmprendedor { get; set; }
         public MicroEmprendedor? MicroEmprendedor { get; set; }
 
         [ForeignKey("Rubro")]
-        public int? IdRubro { get; set; }
+        public int IdRubro { get; set; }
         public Rubro? Rubro { get; set; }
 
     }

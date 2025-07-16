@@ -1,6 +1,14 @@
 {
   "Files": [
     {
+      "Id": "C:\\MicroEmprendedores\\FrontEnd\\wwwroot\\css\\Choices\\MultiSelect.css",
+      "PackagePath": "staticwebassets\\css\\Choices\\MultiSelect.css"
+    },
+    {
+      "Id": "C:\\MicroEmprendedores\\FrontEnd\\wwwroot\\css\\Choices\\MultiSelect.scss",
+      "PackagePath": "staticwebassets\\css\\Choices\\MultiSelect.scss"
+    },
+    {
       "Id": "C:\\MicroEmprendedores\\FrontEnd\\wwwroot\\css\\SweetAlert\\sweetalert.css",
       "PackagePath": "staticwebassets\\css\\SweetAlert\\sweetalert.css"
     },
@@ -795,6 +803,10 @@
     {
       "Id": "C:\\MicroEmprendedores\\FrontEnd\\wwwroot\\images\\whatsapp.png",
       "PackagePath": "staticwebassets\\images\\whatsapp.png"
+    },
+    {
+      "Id": "C:\\MicroEmprendedores\\FrontEnd\\wwwroot\\js\\Choices\\MultiSelect.js",
+      "PackagePath": "staticwebassets\\js\\Choices\\MultiSelect.js"
     },
     {
       "Id": "C:\\MicroEmprendedores\\FrontEnd\\wwwroot\\js\\Floating-labels\\floating.labels.min.js",

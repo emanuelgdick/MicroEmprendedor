@@ -39,7 +39,6 @@ namespace Api.Models
         public string? Facebook { get; set; }
         public string? Observaciones { get; set; }
 
-
         public virtual ICollection<MicroEmprendedorRubro> Rubros { get; set; }
 
     }
