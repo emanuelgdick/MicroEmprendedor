@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace Api.Controllers
@@ -30,14 +31,16 @@ namespace Api.Controllers
             var micro = _db.MicroEmprendedor.ToList();
             var loc = _db.Localidad.ToList();
             var tipoDoc = _db.TipoDocumento.OrderByDescending(s => s.DescA).ToList();
-            var microEmprendedorRubro = _db.MicroEmprendedorRubro.ToList();
-         
+           // var microEmprendedorRubro = _db.MicroEmprendedorRubro.ToList();
+            var rubro = _db.Rubro.ToList();
+
 
             // Realizar la unión utilizando Join
             var resultado = (from m in micro
                              join l in loc on m.IdLocalidad equals l.Id into localidadMicroEmprendedor
                              join td in tipoDoc on m.IdTipoDocumento equals td.Id into tipoDocMicroEmprendedor
-                             join me in microEmprendedorRubro on m.Id equals me.IdMicroEmprendedor into meRubro
+                            // join me in microEmprendedorRubro on m.Id equals me.IdMicroEmprendedor into meRubro
+                             
                              from loca in localidadMicroEmprendedor.DefaultIfEmpty()
                              from tipo in tipoDocMicroEmprendedor.DefaultIfEmpty()
                              // from mer in meRubro.DefaultIfEmpty()
@@ -65,8 +68,7 @@ namespace Api.Controllers
                                  {
                                      Id = loca.Id,
                                      Descripcion = loca.Descripcion
-                                 }
-                                 ,
+                                 },
                                  TipoDocumento = new TipoDocumento
                                  {
                                      Id = tipo.Id,
@@ -74,13 +76,10 @@ namespace Api.Controllers
                                      DescC = tipo.DescC
                                  },
                                  Observaciones =m.Observaciones,
-                                 Rubros =meRubro
-                                                            
+                               //  Rubros = meRubro
+
                              });
-
-   
             return Ok(resultado);
-
         }
 
 
@@ -172,16 +171,21 @@ namespace Api.Controllers
 
         [HttpPost("AddMicroEmprendedor")]
         [Authorize]
-        public ActionResult<MicroEmprendedor> AddMicroEmprendedor([FromBody] MicroEmprendedor microEmprendedor)
+        public ActionResult<MicroEmprendedor> AddMicroEmprendedor([FromRoute] List<int> lista,[FromBody] MicroEmprendedor microEmprendedor)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
-            _db.MicroEmprendedor.Add(microEmprendedor);
-            _db.SaveChanges();
-
+            else {
+                
+                foreach (int i in lista) {
+                    Rubro r = _db.Rubro.Find(i);
+                    microEmprendedor.Rubros.Add(r);
+                }
+                _db.MicroEmprendedor.Add(microEmprendedor);
+                _db.SaveChanges();
+            }
 
             return Ok(microEmprendedor);
 
@@ -218,7 +222,7 @@ namespace Api.Controllers
             MicroEmprendedor.Sexo = microEmprendedor.Sexo;
             MicroEmprendedor.IdTipoDocumento = microEmprendedor.IdTipoDocumento;
             MicroEmprendedor.IdLocalidad = microEmprendedor.IdLocalidad;
-            //MicroEmprendedor.Rubros = microEmprendedor.Rubros;
+            MicroEmprendedor.Rubros = microEmprendedor.Rubros;
             MicroEmprendedor.Observaciones = microEmprendedor.Observaciones;
 
             _db.SaveChanges();

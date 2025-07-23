@@ -4,6 +4,7 @@ using FrontEnd.Models.DTOs;
 using FrontEnd.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis;
 using Newtonsoft;
 using System.Security.Claims;
 
@@ -39,11 +40,29 @@ namespace FrontEnd.Controllers
 
         [Authorize(Roles = "Admin")]
         [ResponseCache(Duration = 30)]
-        public async Task<JsonResult> GetAllRubro()
+        public async Task<JsonResult> GetAllRubros(string? q = null)
         {
+            //List<Rubro> oLista = new List<Rubro>();
+            //oLista = await _apiService.GetAllRubros(HttpContext.Session.GetString("APIToken"));
+            //return Json(new { data = oLista });
+
             List<Rubro> oLista = new List<Rubro>();
             oLista = await _apiService.GetAllRubros(HttpContext.Session.GetString("APIToken"));
-            return Json(new { data = oLista });
+            List<Rubro> resultados = new List<Rubro>();
+            if (q == null || q=="null")
+            {
+                resultados = oLista.ToList();
+                
+                return Json(new { data = resultados.Select(c => new { id = c.Id, text = c.Descripcion }) });
+            }
+            else
+            {
+                resultados = oLista.Where(s => s.Descripcion.ToLower().Contains(q.ToLower())).ToList();
+                return Json(new { data = resultados.Select(c => new { id = c.Id, text = c.Descripcion }).ToList() });
+            }
+
+
+
         }
 
 

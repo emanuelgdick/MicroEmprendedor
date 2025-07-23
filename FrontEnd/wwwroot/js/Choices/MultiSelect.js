@@ -33,6 +33,7 @@ class MultiSelect {
         }
         this.name = this.selectElement.getAttribute('name') ? this.selectElement.getAttribute('name') : 'multi-select-' + Math.floor(Math.random() * 1000000);
         if (!this.options.data.length) {
+            
             let options = this.selectElement.querySelectorAll('option');
             for (let i = 0; i < options.length; i++) {
                 this.options.data.push({
@@ -86,6 +87,7 @@ class MultiSelect {
     }
 
     _eventHandlers() {
+        console.log('eventHandlers');
         let headerElement = this.element.querySelector('.multi-select-header');
         this.element.querySelectorAll('.multi-select-option').forEach(option => {
             option.onclick = () => {
@@ -104,7 +106,7 @@ class MultiSelect {
                         }
                     }
                     this.element.querySelector('.multi-select').insertAdjacentHTML('afterbegin', `<input type="hidden" name="${this.name}[]" value="${option.dataset.value}">`);
-                    this.data.filter(data => data.value == option.dataset.value)[0].selected = true;
+                  
                 } else {
                     option.classList.remove('multi-select-selected');
                     this.element.querySelectorAll('.multi-select-header-option').forEach(headerOption => headerOption.dataset.value == option.dataset.value ? headerOption.remove() : '');
@@ -123,9 +125,12 @@ class MultiSelect {
                 } else if (this.element.querySelector('.multi-select-header-placeholder')) {
                     this.element.querySelector('.multi-select-header-placeholder').remove();
                 }
+
+
                 if (this.options.max) {
                     this.element.querySelector('.multi-select-header-max').innerHTML = this.selectedValues.length + '/' + this.options.max;
                 }
+
                 if (this.options.search === true || this.options.search === 'true') {
                     this.element.querySelector('.multi-select-search').value = '';
                 }
@@ -176,6 +181,8 @@ class MultiSelect {
     }
 
     _updateSelected() {
+        console.log('update');
+        debugger;
         if (this.options.listAll === true || this.options.listAll === 'true') {
             this.element.querySelectorAll('.multi-select-option').forEach(option => {
                 if (option.classList.contains('multi-select-selected')) {
@@ -193,6 +200,7 @@ class MultiSelect {
     }
 
     get selectedValues() {
+
         return this.data.filter(data => data.selected).map(data => data.value);
     }
 

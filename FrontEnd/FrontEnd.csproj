@@ -166,6 +166,16 @@
     <None Include="wwwroot\css\bootstrap\js\tests\visual\tooltip.html" />
     <None Include="wwwroot\css\custom.css" />
     <None Include="wwwroot\css\custom.min.css" />
+    <None Include="wwwroot\css\filterMultiSelect\Args.js" />
+    <None Include="wwwroot\css\filterMultiSelect\Args.js.map" />
+    <None Include="wwwroot\css\filterMultiSelect\filter-multi-select-bundle.js" />
+    <None Include="wwwroot\css\filterMultiSelect\filter-multi-select-bundle.js.map" />
+    <None Include="wwwroot\css\filterMultiSelect\filter-multi-select-bundle.min.js" />
+    <None Include="wwwroot\css\filterMultiSelect\filter-multi-select-bundle.min.js.map" />
+    <None Include="wwwroot\css\filterMultiSelect\filter-multi-select.js" />
+    <None Include="wwwroot\css\filterMultiSelect\filter-multi-select.js.map" />
+    <None Include="wwwroot\css\filterMultiSelect\FilterMultiSelect.js" />
+    <None Include="wwwroot\css\filterMultiSelect\FilterMultiSelect.js.map" />
     <None Include="wwwroot\css\fontawesome\css\font-awesome.css" />
     <None Include="wwwroot\css\fontawesome\css\font-awesome.css.map" />
     <None Include="wwwroot\css\fontawesome\css\font-awesome.min.css" />

@@ -9,12 +9,15 @@ namespace Api.Models
 
         }
 
+  
+
+
         public DbSet<MicroEmprendedor> MicroEmprendedor { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<TipoDocumento> TipoDocumento { get; set; }
         public DbSet<Rubro> Rubro { get; set; }
         public DbSet<Localidad> Localidad { get; set; }
-        public DbSet<MicroEmprendedorRubro> MicroEmprendedorRubro { get; set; }
+        //public DbSet<MicroEmprendedorRubro> MicroEmprendedorRubro { get; set; }
 
 
     }

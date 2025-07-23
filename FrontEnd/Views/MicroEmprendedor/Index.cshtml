@@ -1,9 +1,11 @@
-﻿@using Frontend.Models
-@* @model Microemprendedor *@
+﻿@* @using Frontend.Models
+ @model List<Rubro> *@
 @{
     ViewBag.Title = "Microemprendedor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
 
 <style>
     .contenedor-scroll {
@@ -21,8 +23,10 @@
     }
 
 </style>
-@* <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css"> *@
-<link rel="stylesheet" href="~/css/Choices/MultiSelect.css">
+<!-- head: below existing links -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@4.0.1/dist/css/multi-select-tag.min.css">
+<!-- End of <body> -->
+<script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@4.0.1/dist/js/multi-select-tag.min.js"></script>
 
 <div class="card">
     <div class="row  m-0 p-0">
@@ -270,21 +274,13 @@
                                         </form>
                                     </div>
                                     <div id="step-3" style=" height: 320px; ">
-                                        <form id="formNivel" class="col-12 row m-0 p-5" style="border:solid; border-color:#256080; border-width:2px; height:325px; border-radius: 8px;">
-                                           @*  <div class="row d-flex justify-content-center m-3">
-                                                <div class="col-12">
-                                                    <select id="cborubro" placeholder="Seleccione Rubros" multiple>
-                                                    </select>
-                                                   
-                                                </div>
-                                            </div>
-                                            <h6><a href="#" id="add_Multiple-Fields">Add Multiple Fields</a></h6> *@
-                                            <select id="example-multi-select" data-placeholder="Select options" multiple="multiple" data-multi-select>
-                                                <option value="option1">Option 1</option>
-                                                <option value="option2">Option 2</option>
-                                                <!-- more options -->
+                                        <div class="col-12  form-floating">
+
+
+                                            <select class="js-example-basic-multiple js-states form-control" id="id_label_multiple" multiple="multiple" style="width:90%">
                                             </select>
-                                        </form>
+
+                                        </div>
                                     </div>
                                     <div id="step-4" style=" height: 320px; ">
                                         <form id="formNivelConsulta" class="col-12 row  m-0 p-5" style="border:solid; border-color:#256080; border-width:2px; height:325px; border-radius: 8px;">
@@ -325,7 +321,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btnCancelar" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btnCancelar"   data-bs-dismiss="modal" >Cerrar</button>
                 <button type="button" class="btn btnAceptar" onclick="Guardar()">Guardar</button>
 
             </div>
@@ -336,28 +332,12 @@
 
 
 @section scripts {
-    
+
     <script>
         var tabladata;
         var agregarToast;
-      //  var multipleCancelButton;
-        // $(document).ready(function () {
-          
-            
-        //     });
 
-      //  document.addEventListener('DOMContentLoaded', function () {
-          
-            // multipleCancelButton = new Choices('#cborubro', {
-            //     removeItemButton: true,
-            //     maxItemCount: 100,
-            //     searchResultLimit: 100,
-            //     renderChoiceLimit: 100
-            // });
-          
-      //  })
-        
-        //GET TIPO DOCUMENTOS
+   
         jQuery.ajax({
             url: '@Url.Action("GetAllTipoDocumentos", "TipoDocumento")',
             type: "GET",
@@ -398,7 +378,7 @@
         //GET RUBROS
         var rub = [];
         jQuery.ajax({
-            url: '@Url.Action("GetAllRubro", "Rubro")',
+            url: '@Url.Action("GetAllRubros", "Rubro")',
             type: "GET",
             data: null,
             dataType: "json",
@@ -469,48 +449,48 @@
             // Iconos
             const iconos = {
                 exito: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                      <path
-                                                                                                          d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
-                                                                                                      />
-                                                                                                  </svg>`,
+                                                                                                                      <path
+                                                                                                                          d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
+                                                                                                                      />
+                                                                                                                  </svg>`,
                 error: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                                  <path
-                                                                                                                      d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                                                                                                                  />
-                                                                                                              </svg>`,
+                                                                                                                                  <path
+                                                                                                                                      d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                                                                                                  />
+                                                                                                                              </svg>`,
                 info: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                                  <path
-                                                                                                                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
-                                                                                                                  />
-                                                                                                              </svg>`,
+                                                                                                                                  <path
+                                                                                                                                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+                                                                                                                                  />
+                                                                                                                              </svg>`,
                 warning: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                                  <path
-                                                                                                                      d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                                                                                                                  />
-                                                                                                              </svg>`,
+                                                                                                                                  <path
+                                                                                                                                      d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                                                                                                  />
+                                                                                                                              </svg>`,
             };
 
             // Plantilla del toast
             const toast = `
-                                                                                          <div class="contenidoP">
-                                                                                              <div class="icono">
-                                                                                                  ${iconos[tipo]}
-                                                                                              </div>
-                                                                                              <div class="texto">
-                                                                                                  <p class="titulo">${titulo}</p>
-                                                                                                  <p class="descripcion">${descripcion}</p>
-                                                                                              </div>
-                                                                                          </div>
-                                                                                          <button class="btn-cerrar">
-                                                                                              <div class="icono">
-                                                                                                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                      <path
-                                                                                                          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-                                                                                                      />
-                                                                                                  </svg>
-                                                                                              </div>
-                                                                                          </button>
-                                                                                      `;
+                                                                                                          <div class="contenidoP">
+                                                                                                              <div class="icono">
+                                                                                                                  ${iconos[tipo]}
+                                                                                                              </div>
+                                                                                                              <div class="texto">
+                                                                                                                  <p class="titulo">${titulo}</p>
+                                                                                                                  <p class="descripcion">${descripcion}</p>
+                                                                                                              </div>
+                                                                                                          </div>
+                                                                                                          <button class="btn-cerrar">
+                                                                                                              <div class="icono">
+                                                                                                                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                                                                      <path
+                                                                                                                          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                                                                                                                      />
+                                                                                                                  </svg>
+                                                                                                              </div>
+                                                                                                          </button>
+                                                                                                      `;
 
             // Agregar la plantilla al nuevo toast
             nuevoToast.innerHTML = toast;
@@ -537,11 +517,11 @@
         var filaSeleccionada;
         llenarTabla(false)
 
-       
 
+        var rubroSeleccionado = [];
         //Abrir Modal
         function abrirModal(json) {
-
+            
             var fnac;
             var diafnac;
             var mesfnac;
@@ -549,43 +529,81 @@
             $("#wizard").smartWizard('goToStep', 1)
             $("#txtid").val(0);
             $("#txtnroMicroemprendedor").val('');
-            $("#txtapeynom").val('');
-            $("#txtdni").val('');
-            $("#cbotipodoc").val(0);
-            $("#cbolocalidad").val(0);
+            $("#txtapeynom").val('Gutierrez Dick, Emanuel');
+            $("#txtdni").val('26888310');
+            $("#cbotipodoc").val(1);
+            $("#cbolocalidad").val(1);
 
             fnac = new Date()
             diafnac = `${(fnac.getDate())}`.padStart(2, '0');
             mesfnac = `${(fnac.getMonth() + 1)}`.padStart(2, '0');
             aniofnac = fnac.getFullYear();
-            $("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
-            $("#txttelfijo").val('');
-            $("#txttelcelular").val('');
-            $("#txtcalle").val('');
-            $("#txtnro").val('');
-            $("#txtpiso").val('');
-            $("#txtdepto").val('');
-            $("#txtemail").val('');
-            $("#txtfacebook").val('');
-            $("#txtinstagram").val('');
-            $("#txtsitioweb").val('');
-            $("#txtobservaciones").val('');
+            //$("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
+            $("#dtfechanac").val(`29/09/1978`);
+            $("#txttelfijo").val('451114');
+            $("#txttelcelular").val('2494013268');
+            $("#txtcalle").val('BElgrano');
+            $("#txtnro").val('875');
+            $("#txtpiso").val('1');
+            $("#txtdepto").val('2');
+            $("#txtemail").val('emanuelgdick@gmail.com');
+            $("#txtfacebook").val('www.facebook.com');
+            $("#txtinstagram").val('ig');
+            $("#txtsitioweb").val('www.manolo.com.ar');
+            $("#txtobservaciones").val('mano');
             tinymce.get('taobservaciones').setContent("");
 
+            $('#id_label_multiple').val(null).trigger('change');
+            $("#id_label_multiple").empty();
 
+            $(".js-example-basic-multiple").select2({
+                theme: "classic",
+                ajax: {
+                    url: '@Url.Action("GetAllRubros", "Rubro")',
+                    dataType: 'json',
+                    delay: 250,
+                    data: function (params) {
+                        return {
+                            q: params.term,
+                        };
+                    },
+                    processResults: function (data, params) {
+                        return {
+                            results: data.data
+                        };
+                    },
+                    cache: true
+                },
+                placeholder: 'Selecciona una opción',
+                allowClear: true,
+                language: "es",
+                dropdownParent: $('#FormModal'),
+                multiple: true,
+                minimumInputLength: 1,
+                templateResult: function (data) {
+                    if (data.loading) {
+                        return data.text;
+                    }
+                    var $container = $(
+                        "<div class='select2-result-repository clearfix'>" +
+                        "<div class='select2-result-repository__meta'>" +
+                        "<div class='select2-result-repository__title'></div>" +
+                        "</div>" +
+                        "</div>"
+                    );
+                    $container.find(".select2-result-repository__title").text(data.text);
+                    return $container;
+                },
+            });
 
-
-
-
-
-
+            
             if (json != null) {
                 console.log(json);
                 $("#txtid").val(json.id);
                 $("#txtapeynom").val(json.apeyNom);
                 $("#txtdni").val(json.dni);
                 $("#cbotipodoc").val(json.idTipoDocumento == null ? 0 : json.idTipoDocumento);
-                
+
                 fnac = new Date(json.fechaNacimiento);
                 diafnac = `${(fnac.getDate())}`.padStart(2, '0');
                 mesfnac = `${(fnac.getMonth() + 1)}`.padStart(2, '0');
@@ -650,55 +668,19 @@
                     },
                     "order": [[0, "desc"]],
                 });
+            
 
-                debugger;
-                var jsonModulo = {
-                    'datos': []
-                };
                 for (var i = 0; i < json.rubros.length; i++) {
+                    var newOption = new Option(json.rubros[i].rubro.descripcion, json.rubros[i].rubro.id, true, true);
+                    $('#id_label_multiple').append(newOption).trigger('change');
+                };
 
-                    for (var j = 0; j < rub.length; j++) {
-                        if (rub[j].id == json.rubros[i].idRubro) {
-                            
-                            jsonModulo.datos.push({
-                                "IdMicroEmprendedor": json.id,
-                                "IdRubro": 1,//json.rub[j].id,
-                                "Descripcion": rub[j].name
-                            }
-                            );
-                        };
-                    };
-                }
-                var json = JSON.stringify(jsonModulo);
-                var obj = JSON.parse(json);
 
-                for (var i = 0; i < obj.datos.length; i++) {
-                 //   multipleCancelButton.setValue(obj.datos[i].Descripcion);
-                }
+
+
+
+
             }
-
-            new MultiSelect(document.getElementById('example-multi-select'), {
-                data: rub,//[],
-                placeholder: 'Select options',
-                max: 100,  // Maximum number of items that can be selected
-                search: true,  // Enable the search box
-                selectAll: true,  // Add a select all option
-                onChange: function (value, text, element) {
-                    console.log('Change:', value, text, element);
-                },
-                onSelect: function (value, text, element) {
-
-
-                    console.log('Selected:', value, text, element);
-                },
-                onUnselect: function (value, text, element) {
-                    console.log('Unselected:', value, text, element);
-                }
-            });
-
-
-
-
 
             $("#FormModal").modal("show");
         }
@@ -977,6 +959,14 @@
             /** End **/
         }
 
+
+
+
+
+
+
+
+
         //Guardar
         function Guardar() {
 
@@ -984,7 +974,7 @@
             if (!$("#formNivel").valid()) {
                 return;
             }
-            debugger;
+
             var yyyy = $("#dtfechanac").val().substring(6, 10);
             var MM = $("#dtfechanac").val().substring(3, 5);
             var DD = $("#dtfechanac").val().substring(0, 2);
@@ -997,24 +987,29 @@
 
 
 
-            const select = document.getElementById('cborubro');
+
+
+
+
+
+
             var jsonModulo = {
                 'datos': []
             };
-            for (var i = 0; i < select.options.length; i++) {
+            for (var i = 0; i < $("#id_label_multiple").val().length; i++) {
                 jsonModulo.datos.push({
-                    "IdMicroEmprendedor": 0,
-                    "IdRubro": select.options[i].value
-                    //"Id": select.options[i].value,
-                    //"Descripcion":"AAA"
+                     //"IdMicroEmprendedor": 0,
+                     //"IdRubro": $("#id_label_multiple").val()[i],
+                    //"rubro": {
+                        "id": $("#id_label_multiple").val()[i],
+                         "Descripcion": "AAA"
+
+                    //}
                 });
             };
             var json = JSON.stringify(jsonModulo);
             var obj = JSON.parse(json);
-
-
-
-
+            console.log(obj);
             var Microemprendedor = {
                 id: $("#txtid").val(),
                 apeyNom: $("#txtapeynom").val(),
@@ -1035,14 +1030,16 @@
                 facebook: $("#txtfacebook").val(),
                 sitioWeb: $("#txtsitioweb").val(),
                 observaciones: tinymce.get('taobservaciones').getContent(),
-                Rubros: obj.datos
+                rubros: obj.datos
             };
-            console.log('*');
-            console.log(Microemprendedor);
-            console.log('*');
+           
+
+
             jQuery.ajax({
-                url: '@Url.Action("CreateMicroemprendedor", "Microemprendedor")',
+                url: '@Url.Action("CreateMicroEmprendedor", "MicroEmprendedor")',
                 type: "POST",
+                
+
                 data: JSON.stringify(Microemprendedor),
                 contentType: 'application/json',
                 success: function (data) {
@@ -1094,6 +1091,25 @@
             )
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         tinymce.init({
             selector: 'textarea#taobservaciones',
             height: 310,
@@ -1110,9 +1126,9 @@
                 'removeformat |',
             content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
         });
-        
+
+   
     </script>
-    @* <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script> *@
-    <script src="~/js/Choices/MultiSelect.js"></script>
-    
+
+
 }

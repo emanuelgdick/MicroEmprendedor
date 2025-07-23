@@ -1,4 +1,4 @@
-﻿using FrontEnd.Models;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
@@ -7,8 +7,13 @@ using System.Text.Json.Serialization;
 namespace FrontEnd.Models
 {
 
-    public class MicroEmprendedor
+   
+    public partial class MicroEmprendedor
     {
+
+        public MicroEmprendedor() { 
+            this.Rubros= new HashSet<Rubro>();
+        }
         [Key]
         public int Id { get; set; }
 
@@ -38,9 +43,8 @@ namespace FrontEnd.Models
         public string? Facebook { get; set; }
         public string? Observaciones { get; set; }
 
-        public virtual ICollection<MicroEmprendedorRubro> Rubros { get; set; }
-        
-
+      
+        public virtual ICollection<Rubro> Rubros { get; set; }
 
     }
 }

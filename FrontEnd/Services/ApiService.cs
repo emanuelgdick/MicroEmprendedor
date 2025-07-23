@@ -151,12 +151,11 @@ namespace FrontEnd.Services
             return APIResponse;
         }
 
-        public async Task<MicroEmprendedor> AddMicroEmprendedor(MicroEmprendedor microEmprendedor, string token)
+        public async Task<MicroEmprendedor> AddMicroEmprendedor(MicroEmprendedor microEmprendedor,List<int>lista, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<MicroEmprendedor>($"api/MicroEmprendedor/AddMicroEmprendedor", microEmprendedor);
-          
-                response.EnsureSuccessStatusCode();
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<MicroEmprendedor>($"api/MicroEmprendedor/AddMicroEmprendedor?lista={lista}", microEmprendedor);
+            response.EnsureSuccessStatusCode();
           
 
             

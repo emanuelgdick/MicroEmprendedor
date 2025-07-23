@@ -6,15 +6,21 @@ using System.Text.Json.Serialization;
 namespace Api.Models
 {
     
-    public class Rubro
+    public partial class Rubro
     {
+
+        public Rubro() {
+            this.MicroEmprendedores = new HashSet<MicroEmprendedor>();   
+        }
+
         [Key]
         public int Id { get; set; }
 
         [Required]
         public string Descripcion { get; set; }
 
-        public virtual ICollection<MicroEmprendedorRubro> MicroEmprendedores { get; set; }
+   
+        public virtual ICollection<MicroEmprendedor>? MicroEmprendedores { get; set; }
     }
 
 }

@@ -232,7 +232,7 @@
                 }
             ],
             "ajax": {
-                url: "@Url.Action("GetAllRubro", "Rubro")",
+                url: "@Url.Action("GetAllRubros", "Rubro")?q=null",
                 type: "GET",
                 dataType: "json",
                 beforeSend: agregarToast({ tipo: 'exito', titulo: 'Obteniendo Rubro', descripcion: 'Por favor espere...', autoCierre: true })

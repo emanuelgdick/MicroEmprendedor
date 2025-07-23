@@ -8,8 +8,12 @@ namespace Api.Models
 {
 
    
-    public class MicroEmprendedor
+    public partial class MicroEmprendedor
     {
+
+        public MicroEmprendedor() { 
+            this.Rubros= new HashSet<Rubro>();
+        }
         [Key]
         public int Id { get; set; }
 
@@ -39,7 +43,8 @@ namespace Api.Models
         public string? Facebook { get; set; }
         public string? Observaciones { get; set; }
 
-        public virtual ICollection<MicroEmprendedorRubro> Rubros { get; set; }
+      
+        public virtual ICollection<Rubro> Rubros { get; set; }
 
     }
 }

@@ -109,29 +109,6 @@ namespace Api.Migrations
                     b.ToTable("MicroEmprendedor");
                 });
 
-            modelBuilder.Entity("Api.Models.MicroEmprendedorRubro", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("IdMicroEmprendedor")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdRubro")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IdMicroEmprendedor");
-
-                    b.HasIndex("IdRubro");
-
-                    b.ToTable("MicroEmprendedorRubro");
-                });
-
             modelBuilder.Entity("Api.Models.Rubro", b =>
                 {
                     b.Property<int>("Id")
@@ -199,6 +176,21 @@ namespace Api.Migrations
                     b.ToTable("Usuario");
                 });
 
+            modelBuilder.Entity("MicroEmprendedorRubro", b =>
+                {
+                    b.Property<int>("MicroEmprendedoresId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RubrosId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MicroEmprendedoresId", "RubrosId");
+
+                    b.HasIndex("RubrosId");
+
+                    b.ToTable("MicroEmprendedorRubro");
+                });
+
             modelBuilder.Entity("Api.Models.MicroEmprendedor", b =>
                 {
                     b.HasOne("Api.Models.Localidad", "Localidad")
@@ -214,33 +206,19 @@ namespace Api.Migrations
                     b.Navigation("TipoDocumento");
                 });
 
-            modelBuilder.Entity("Api.Models.MicroEmprendedorRubro", b =>
+            modelBuilder.Entity("MicroEmprendedorRubro", b =>
                 {
-                    b.HasOne("Api.Models.MicroEmprendedor", "MicroEmprendedor")
-                        .WithMany("Rubros")
-                        .HasForeignKey("IdMicroEmprendedor")
+                    b.HasOne("Api.Models.MicroEmprendedor", null)
+                        .WithMany()
+                        .HasForeignKey("MicroEmprendedoresId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Api.Models.Rubro", "Rubro")
-                        .WithMany("MicroEmprendedores")
-                        .HasForeignKey("IdRubro")
+                    b.HasOne("Api.Models.Rubro", null)
+                        .WithMany()
+                        .HasForeignKey("RubrosId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("MicroEmprendedor");
-
-                    b.Navigation("Rubro");
-                });
-
-            modelBuilder.Entity("Api.Models.MicroEmprendedor", b =>
-                {
-                    b.Navigation("Rubros");
-                });
-
-            modelBuilder.Entity("Api.Models.Rubro", b =>
-                {
-                    b.Navigation("MicroEmprendedores");
                 });
 #pragma warning restore 612, 618
         }
