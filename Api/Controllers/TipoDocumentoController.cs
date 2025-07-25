@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace Api.Controllers
 {
@@ -21,12 +23,38 @@ namespace Api.Controllers
         [HttpGet]
         [Authorize]
         [ResponseCache(CacheProfileName = "apicache")]
-        public IActionResult GetTipoDocumentos(/*int pagesize, int pagenumber*/)
+        public IActionResult GetTipoDocumentoes(/*int pagesize, int pagenumber*/)
         {
             _logger.LogInformation("Fetching Todas las TipoDocumentos");
-            var TipoDocumentoList = _db.TipoDocumento.ToList();
-            return Ok(TipoDocumentoList);
 
+            List<TipoDocumento> rptListaTipoDocumento = new List<TipoDocumento>();
+            using (SqlConnection oConexion = new SqlConnection(Conexion.cn))
+            {
+                SqlCommand cmd = new SqlCommand("sp_ObtenerTipoDocumento", oConexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                try
+                {
+                    oConexion.Open();
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        rptListaTipoDocumento.Add(new TipoDocumento()
+                        {
+                            Id = Convert.ToInt32(dr["Id"].ToString()),
+                            DescA = dr["DescA"].ToString(),
+                            DescC = dr["DescC"].ToString()
+
+                        });
+                    }
+                    dr.Close();
+                    return Ok(rptListaTipoDocumento);
+                }
+                catch (Exception ex)
+                {
+                    rptListaTipoDocumento = null;
+                    return null;
+                }
+            }
         }
 
         [HttpGet("GetTipoDocumentoById")]
@@ -52,37 +80,63 @@ namespace Api.Controllers
 
         [HttpPost("AddTipoDocumento")]
         [Authorize]
-        public ActionResult<TipoDocumento> AddTipoDocumento([FromBody] TipoDocumento tipoDocumento)
+        public ActionResult<TipoDocumento> AddTipoDocumento([FromBody] TipoDocumento TipoDocumento)
         {
-            if (!ModelState.IsValid)
+
+            try
             {
-                return BadRequest(ModelState);
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
+                {
+                    SqlCommand cmd = new SqlCommand("sp_RegistrarTipoDocumento", oconexion);
+                    cmd.Parameters.AddWithValue("DescA", TipoDocumento.DescA);
+                    cmd.Parameters.AddWithValue("DescC", TipoDocumento.DescC);
+                    cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+                    cmd.ExecuteNonQuery();
+                    TipoDocumento.Id = Convert.ToInt32(cmd.Parameters["Resultado"].Value);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                //    idautogenerado = 0;
+                // Mensaje = ex.Message;
             }
 
-            _db.TipoDocumento.Add(tipoDocumento);
-            _db.SaveChanges();
-            return Ok(tipoDocumento);
+            return Ok(TipoDocumento);
 
         }
 
         [HttpPost("UpdateTipoDocumento")]
         [Authorize]
-        public ActionResult<TipoDocumento> UpdateTipoDocumento(Int32 Id, [FromBody] TipoDocumento tipoDocumento)
+        public ActionResult<TipoDocumento> UpdateTipoDocumento(Int32 Id, [FromBody] TipoDocumento TipoDocumento)
         {
-            if (tipoDocumento == null)
+            bool resultado = false;
+            // Mensaje = string.Empty;
+            try
             {
-                return BadRequest(tipoDocumento);
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
+                {
+                    SqlCommand cmd = new SqlCommand("sp_EditarTipoDocumento", oconexion);
+                    cmd.Parameters.AddWithValue("Id", TipoDocumento.Id);
+                    cmd.Parameters.AddWithValue("DescA", TipoDocumento.DescA);
+                    cmd.Parameters.AddWithValue("DescC", TipoDocumento.DescC);
+                    cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+                    cmd.ExecuteNonQuery();
+                    resultado = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
+                    // Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                }
             }
-
-            var TipoDocumento = _db.TipoDocumento.FirstOrDefault(x => x.Id == Id);
-            if (TipoDocumento == null)
+            catch (Exception ex)
             {
-                return NotFound();
+                resultado = false;
+                //   Mensaje = ex.Message;
             }
-
-            TipoDocumento.DescA = tipoDocumento.DescA;
-            TipoDocumento.DescC = tipoDocumento.DescC;
-            _db.SaveChanges();
             return Ok(TipoDocumento);
 
         }
@@ -91,13 +145,28 @@ namespace Api.Controllers
         [Authorize(Roles = "Admin")]
         public ActionResult<TipoDocumento> DeleteTipoDocumento(Int32 Id)
         {
-            var TipoDocumento = _db.TipoDocumento.FirstOrDefault(x => x.Id == Id);
-            if (TipoDocumento == null)
+            bool resultado = false;
+            //Mensaje = string.Empty;
+            try
             {
-                return NotFound();
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
+                {
+                    SqlCommand cmd = new SqlCommand("sp_EliminarTipoDocumento", oconexion);
+                    cmd.Parameters.AddWithValue("Id", Id);
+                    cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    oconexion.Open();
+                    cmd.ExecuteNonQuery();
+                    resultado = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
+                    //   Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                }
             }
-            _db.Remove(TipoDocumento);
-            _db.SaveChanges();
+            catch (Exception ex)
+            {
+                resultado = false;
+                //Mensaje = ex.Message;
+            }
             return NoContent();
         }
     }

@@ -17,63 +17,65 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FrontEnd
 build_property.RootNamespace = FrontEnd
-build_property.ProjectDir = C:\MicroEmprendedores\FrontEnd\
+build_property.ProjectDir = C:\MicroEmprendedor\FrontEnd\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\MicroEmprendedores\FrontEnd
+build_property.MSBuildProjectDirectory = C:\MicroEmprendedor\FrontEnd
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
-[C:/MicroEmprendedores/FrontEnd/Views/Authuser/AccessDenied.cshtml]
+[C:/MicroEmprendedor/FrontEnd/Views/Authuser/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aHVzZXJcQWNjZXNzRGVuaWVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MicroEmprendedores/FrontEnd/Views/Authuser/Login.cshtml]
+[C:/MicroEmprendedor/FrontEnd/Views/Authuser/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aHVzZXJcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MicroEmprendedores/FrontEnd/Views/Home/Index.cshtml]
+[C:/MicroEmprendedor/FrontEnd/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MicroEmprendedores/FrontEnd/Views/Home/Privacy.cshtml]
+[C:/MicroEmprendedor/FrontEnd/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MicroEmprendedores/FrontEnd/Views/Localidad/Index.cshtml]
+[C:/MicroEmprendedor/FrontEnd/Views/Localidad/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9jYWxpZGFkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MicroEmprendedores/FrontEnd/Views/MicroEmprendedor/Index.cshtml]
+[C:/MicroEmprendedor/FrontEnd/Views/MicroEmprendedor/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWljcm9FbXByZW5kZWRvclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MicroEmprendedores/FrontEnd/Views/Rubro/Index.cshtml]
+[C:/MicroEmprendedor/FrontEnd/Views/Rubro/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUnVicm9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MicroEmprendedores/FrontEnd/Views/Shared/Error.cshtml]
+[C:/MicroEmprendedor/FrontEnd/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MicroEmprendedores/FrontEnd/Views/Shared/_Layout.cshtml]
+[C:/MicroEmprendedor/FrontEnd/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MicroEmprendedores/FrontEnd/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/MicroEmprendedor/FrontEnd/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MicroEmprendedores/FrontEnd/Views/TipoDocumento/Index.cshtml]
+[C:/MicroEmprendedor/FrontEnd/Views/TipoDocumento/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0RvY3VtZW50b1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MicroEmprendedores/FrontEnd/Views/_ViewImports.cshtml]
+[C:/MicroEmprendedor/FrontEnd/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/MicroEmprendedores/FrontEnd/Views/_ViewStart.cshtml]
+[C:/MicroEmprendedor/FrontEnd/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

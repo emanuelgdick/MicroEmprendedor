@@ -5,533 +5,6 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Consulta": {
-      "get": {
-        "tags": [
-          "Consulta"
-        ],
-        "parameters": [
-          {
-            "name": "start",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "end",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Consulta/GetEventsByMedico": {
-      "get": {
-        "tags": [
-          "Consulta"
-        ],
-        "parameters": [
-          {
-            "name": "start",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "end",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "idMedico",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Consulta/GetEventsByFecha": {
-      "get": {
-        "tags": [
-          "Consulta"
-        ],
-        "parameters": [
-          {
-            "name": "start",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Consulta/{id}": {
-      "get": {
-        "tags": [
-          "Consulta"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Consulta"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Consulta"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Consulta"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Consulta"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Consulta/{id}/move": {
-      "put": {
-        "tags": [
-          "Consulta"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Consulta"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Consulta"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Consulta"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Consulta/{id}/color": {
-      "put": {
-        "tags": [
-          "Consulta"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Consulta"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Consulta"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Consulta"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Consulta/{id}/UpdateConsulta": {
-      "put": {
-        "tags": [
-          "Consulta"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Consulta"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Consulta"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Consulta"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Consulta/PostEvent": {
-      "post": {
-        "tags": [
-          "Consulta"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Consulta"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Consulta"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Consulta"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Consulta/DeleteEvent": {
-      "put": {
-        "tags": [
-          "Consulta"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Diagnostico": {
-      "get": {
-        "tags": [
-          "Diagnostico"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Diagnostico/GetDiagnosticoById": {
-      "get": {
-        "tags": [
-          "Diagnostico"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Diagnostico"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Diagnostico"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Diagnostico"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Diagnostico/AddDiagnostico": {
-      "post": {
-        "tags": [
-          "Diagnostico"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Diagnostico"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Diagnostico"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Diagnostico"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Diagnostico"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Diagnostico"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Diagnostico"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Diagnostico/UpdateDiagnostico": {
-      "post": {
-        "tags": [
-          "Diagnostico"
-        ],
-        "parameters": [
-          {
-            "name": "Id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Diagnostico"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Diagnostico"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Diagnostico"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Diagnostico"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Diagnostico"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Diagnostico"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Diagnostico/DeleteDiagnostico": {
-      "put": {
-        "tags": [
-          "Diagnostico"
-        ],
-        "parameters": [
-          {
-            "name": "Id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Diagnostico"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Diagnostico"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Diagnostico"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/Home": {
       "get": {
         "tags": [
@@ -750,10 +223,10 @@
         }
       }
     },
-    "/api/Medico": {
+    "/api/MicroEmprendedor": {
       "get": {
         "tags": [
-          "Medico"
+          "MicroEmprendedor"
         ],
         "responses": {
           "200": {
@@ -762,441 +235,10 @@
         }
       }
     },
-    "/api/Medico/GetMedicoById": {
+    "/api/MicroEmprendedor/GetMicroEmprendedoresFiltrados": {
       "get": {
         "tags": [
-          "Medico"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Medico"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Medico"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Medico"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Medico/GetMedicosConAgenda": {
-      "get": {
-        "tags": [
-          "Medico"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Medico"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Medico"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Medico"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Medico/AddMedico": {
-      "post": {
-        "tags": [
-          "Medico"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Medico"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Medico"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Medico"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Medico"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Medico"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Medico"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Medico/UpdateMedico": {
-      "post": {
-        "tags": [
-          "Medico"
-        ],
-        "parameters": [
-          {
-            "name": "Id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Medico"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Medico"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Medico"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Medico"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Medico"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Medico"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Medico/DeleteMedico": {
-      "put": {
-        "tags": [
-          "Medico"
-        ],
-        "parameters": [
-          {
-            "name": "Id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Medico"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Medico"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Medico"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Mutual": {
-      "get": {
-        "tags": [
-          "Mutual"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Mutual/GetMutualById": {
-      "get": {
-        "tags": [
-          "Mutual"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Mutual"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Mutual"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Mutual"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Mutual/AddMutual": {
-      "post": {
-        "tags": [
-          "Mutual"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Mutual"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Mutual"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Mutual"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Mutual"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Mutual"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Mutual"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Mutual/UpdateMutual": {
-      "post": {
-        "tags": [
-          "Mutual"
-        ],
-        "parameters": [
-          {
-            "name": "Id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Mutual"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Mutual"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Mutual"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Mutual"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Mutual"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Mutual"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Mutual/DeleteMutual": {
-      "put": {
-        "tags": [
-          "Mutual"
-        ],
-        "parameters": [
-          {
-            "name": "Id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Mutual"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Mutual"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Mutual"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Paciente": {
-      "get": {
-        "tags": [
-          "Paciente"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Paciente/GetPacientesFiltrados": {
-      "get": {
-        "tags": [
-          "Paciente"
+          "MicroEmprendedor"
         ],
         "parameters": [
           {
@@ -1206,6 +248,14 @@
               "type": "integer",
               "format": "int32"
             }
+          },
+          {
+            "name": "rubro",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
           }
         ],
         "responses": {
@@ -1215,10 +265,10 @@
         }
       }
     },
-    "/api/Paciente/GetPacienteById": {
+    "/api/MicroEmprendedor/GetMicroEmprendedorById": {
       "get": {
         "tags": [
-          "Paciente"
+          "MicroEmprendedor"
         ],
         "parameters": [
           {
@@ -1236,17 +286,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paciente"
+                  "$ref": "#/components/schemas/MicroEmprendedor"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paciente"
+                  "$ref": "#/components/schemas/MicroEmprendedor"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paciente"
+                  "$ref": "#/components/schemas/MicroEmprendedor"
                 }
               }
             }
@@ -1254,26 +304,40 @@
         }
       }
     },
-    "/api/Paciente/AddPaciente": {
+    "/api/MicroEmprendedor/AddMicroEmprendedor": {
       "post": {
         "tags": [
-          "Paciente"
+          "MicroEmprendedor"
+        ],
+        "parameters": [
+          {
+            "name": "lista",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          }
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Paciente"
+                "$ref": "#/components/schemas/MicroEmprendedor"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Paciente"
+                "$ref": "#/components/schemas/MicroEmprendedor"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Paciente"
+                "$ref": "#/components/schemas/MicroEmprendedor"
               }
             }
           }
@@ -1284,17 +348,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paciente"
+                  "$ref": "#/components/schemas/MicroEmprendedor"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paciente"
+                  "$ref": "#/components/schemas/MicroEmprendedor"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paciente"
+                  "$ref": "#/components/schemas/MicroEmprendedor"
                 }
               }
             }
@@ -1302,14 +366,14 @@
         }
       }
     },
-    "/api/Paciente/UpdatePaciente": {
+    "/api/MicroEmprendedor/UpdateMicroEmprendedor": {
       "post": {
         "tags": [
-          "Paciente"
+          "MicroEmprendedor"
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "Id",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -1321,17 +385,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Paciente"
+                "$ref": "#/components/schemas/MicroEmprendedor"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Paciente"
+                "$ref": "#/components/schemas/MicroEmprendedor"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Paciente"
+                "$ref": "#/components/schemas/MicroEmprendedor"
               }
             }
           }
@@ -1342,17 +406,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paciente"
+                  "$ref": "#/components/schemas/MicroEmprendedor"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paciente"
+                  "$ref": "#/components/schemas/MicroEmprendedor"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paciente"
+                  "$ref": "#/components/schemas/MicroEmprendedor"
                 }
               }
             }
@@ -1360,10 +424,10 @@
         }
       }
     },
-    "/api/Paciente/DeletePaciente": {
+    "/api/MicroEmprendedor/DeleteMicroEmprendedor": {
       "put": {
         "tags": [
-          "Paciente"
+          "MicroEmprendedor"
         ],
         "parameters": [
           {
@@ -1381,17 +445,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paciente"
+                  "$ref": "#/components/schemas/MicroEmprendedor"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paciente"
+                  "$ref": "#/components/schemas/MicroEmprendedor"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Paciente"
+                  "$ref": "#/components/schemas/MicroEmprendedor"
                 }
               }
             }
@@ -1399,10 +463,10 @@
         }
       }
     },
-    "/api/Profesion": {
+    "/api/Rubro": {
       "get": {
         "tags": [
-          "Profesion"
+          "Rubro"
         ],
         "responses": {
           "200": {
@@ -1411,10 +475,10 @@
         }
       }
     },
-    "/api/Profesion/GetProfesionById": {
+    "/api/Rubro/GetRubroById": {
       "get": {
         "tags": [
-          "Profesion"
+          "Rubro"
         ],
         "parameters": [
           {
@@ -1432,17 +496,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Profesion"
+                  "$ref": "#/components/schemas/Rubro"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Profesion"
+                  "$ref": "#/components/schemas/Rubro"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Profesion"
+                  "$ref": "#/components/schemas/Rubro"
                 }
               }
             }
@@ -1450,26 +514,26 @@
         }
       }
     },
-    "/api/Profesion/AddProfesion": {
+    "/api/Rubro/AddRubro": {
       "post": {
         "tags": [
-          "Profesion"
+          "Rubro"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Profesion"
+                "$ref": "#/components/schemas/Rubro"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Profesion"
+                "$ref": "#/components/schemas/Rubro"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Profesion"
+                "$ref": "#/components/schemas/Rubro"
               }
             }
           }
@@ -1480,17 +544,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Profesion"
+                  "$ref": "#/components/schemas/Rubro"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Profesion"
+                  "$ref": "#/components/schemas/Rubro"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Profesion"
+                  "$ref": "#/components/schemas/Rubro"
                 }
               }
             }
@@ -1498,10 +562,10 @@
         }
       }
     },
-    "/api/Profesion/UpdateProfesion": {
+    "/api/Rubro/UpdateRubro": {
       "post": {
         "tags": [
-          "Profesion"
+          "Rubro"
         ],
         "parameters": [
           {
@@ -1517,17 +581,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Profesion"
+                "$ref": "#/components/schemas/Rubro"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Profesion"
+                "$ref": "#/components/schemas/Rubro"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Profesion"
+                "$ref": "#/components/schemas/Rubro"
               }
             }
           }
@@ -1538,17 +602,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Profesion"
+                  "$ref": "#/components/schemas/Rubro"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Profesion"
+                  "$ref": "#/components/schemas/Rubro"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Profesion"
+                  "$ref": "#/components/schemas/Rubro"
                 }
               }
             }
@@ -1556,10 +620,10 @@
         }
       }
     },
-    "/api/Profesion/DeleteProfesion": {
+    "/api/Rubro/DeleteRubro": {
       "put": {
         "tags": [
-          "Profesion"
+          "Rubro"
         ],
         "parameters": [
           {
@@ -1577,17 +641,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Profesion"
+                  "$ref": "#/components/schemas/Rubro"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Profesion"
+                  "$ref": "#/components/schemas/Rubro"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Profesion"
+                  "$ref": "#/components/schemas/Rubro"
                 }
               }
             }
@@ -1890,76 +954,6 @@
   },
   "components": {
     "schemas": {
-      "Consulta": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "medico": {
-            "$ref": "#/components/schemas/Medico"
-          },
-          "idMedico": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "paciente": {
-            "$ref": "#/components/schemas/Paciente"
-          },
-          "idPaciente": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "start": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "end": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "text": {
-            "type": "string",
-            "nullable": true
-          },
-          "color": {
-            "type": "string",
-            "nullable": true
-          },
-          "observaciones": {
-            "type": "string",
-            "nullable": true
-          },
-          "diagnostico": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Diagnostico"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Diagnostico": {
-        "required": [
-          "descripcion"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "descripcion": {
-            "minLength": 1,
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
       "Localidad": {
         "required": [
           "descripcion"
@@ -2012,52 +1006,10 @@
         },
         "additionalProperties": false
       },
-      "Medico": {
+      "MicroEmprendedor": {
         "required": [
           "apeyNom"
         ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "apeyNom": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "tieneAgenda": {
-            "type": "boolean"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Mutual": {
-        "required": [
-          "descA"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "descA": {
-            "minLength": 1,
-            "type": "string"
-          },
-          "descC": {
-            "type": "string",
-            "nullable": true
-          },
-          "codigo": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Paciente": {
         "type": "object",
         "properties": {
           "id": {
@@ -2072,14 +1024,6 @@
           "tipoDocumento": {
             "$ref": "#/components/schemas/TipoDocumento"
           },
-          "idProfesion": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "profesion": {
-            "$ref": "#/components/schemas/Profesion"
-          },
           "idLocalidad": {
             "type": "integer",
             "format": "int32",
@@ -2088,28 +1032,17 @@
           "localidad": {
             "$ref": "#/components/schemas/Localidad"
           },
-          "idMedico": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "medico": {
-            "$ref": "#/components/schemas/Medico"
-          },
-          "idMutual": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "mutual": {
-            "$ref": "#/components/schemas/Mutual"
-          },
           "apeyNom": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "dni": {
             "type": "string",
             "nullable": true
           },
-          "nroDocumento": {
+          "fechaNacimiento": {
             "type": "string",
+            "format": "date-time",
             "nullable": true
           },
           "sexo": {
@@ -2139,35 +1072,37 @@
             "type": "string",
             "nullable": true
           },
-          "email": {
+          "correo": {
             "type": "string",
             "nullable": true
           },
-          "fnac": {
+          "sitioWeb": {
             "type": "string",
-            "format": "date-time",
             "nullable": true
           },
-          "nroHC": {
-            "type": "integer",
-            "format": "int32"
+          "instagram": {
+            "type": "string",
+            "nullable": true
+          },
+          "facebook": {
+            "type": "string",
+            "nullable": true
           },
           "observaciones": {
             "type": "string",
             "nullable": true
           },
-          "codAflp": {
-            "type": "string",
-            "nullable": true
-          },
-          "historia": {
-            "type": "string",
+          "rubros": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Rubro"
+            },
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "Profesion": {
+      "Rubro": {
         "required": [
           "descripcion"
         ],
@@ -2180,6 +1115,13 @@
           "descripcion": {
             "minLength": 1,
             "type": "string"
+          },
+          "microEmprendedores": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MicroEmprendedor"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false

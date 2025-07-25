@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NNess9nSa4F7Gj+P9qixH5KsfTlH+bhCtqk8R/ubQPjdFvjtrZ87qFnFOAwMxAXeRe7kkx8R3NUvJIU+sFIy6A==",
+  "dgSpecHash": "nR+x5xzB9j0=",
   "success": true,
-  "projectFilePath": "C:\\MicroEmprendedores\\FrontEnd\\FrontEnd.csproj",
+  "projectFilePath": "C:\\MicroEmprendedor\\FrontEnd\\FrontEnd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Emanuel\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Emanuel\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

@@ -369,8 +369,9 @@
                             if (data.resultado != 0) {
                                 TipoDocumento.id = data.resultado;
                                 tabladata.row.add(TipoDocumento).draw(false);
-                                $("#FormModal").modal("hide");
+
                                 agregarToast({ tipo: 'exito', titulo: 'Creando Tipo de Documento', descripcion: 'Tipo de Documento ingresado correctamente.', autoCierre: true });
+                                $("#FormModal").modal("hide");
                             }
                             else {
                                 agregarToast({ tipo: 'error', titulo: 'Creando Tipo de Documento', descripcion: data.mensaje, autoCierre: true });

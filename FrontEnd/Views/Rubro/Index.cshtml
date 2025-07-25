@@ -52,7 +52,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body ">
-                <input id="txtid" type="hidden" value="0" />
+                <input id="txtid" @* type="hidden" *@ value="0" />
                 <form id="formNivel" class="row">
                     <div class="container p-2">
                         <div class="form-floating">
@@ -239,7 +239,7 @@
             },
             "columns": [
                 { "data": "id" },
-                { "data": "descripcion" },
+                { "data": "text" },
                 {
                     "defaultContent": '<button type="button" title="Editar Rubro"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
                         '<button type="button" title="Eliminar Rubro" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
@@ -295,7 +295,7 @@
             if (json != null) {
                 $("#txtid").val(json.id);
                 $("#txtdescripcion").focus()
-                $("#txtdescripcion").val(json.descripcion).focus();
+                $("#txtdescripcion").val(json.text).focus();
 
             }
             $("#FormModal").modal("show");
@@ -380,10 +380,13 @@
                     //  Rubro nuevo
                     if (Rubro.id == 0) {
                         if (data.resultado != 0) {
-                            Rubro.id = data.resultado;
-                            tabladata.row.add(Rubro).draw(false);
-                            $("#FormModal").modal("hide");
+                           var Rub = {
+                                id: $("#txtid").val(),
+                                text: $("#txtdescripcion").val()
+                            }
+                            tabladata.row.add(Rub).draw(false);
                             agregarToast({ tipo: 'exito', titulo: 'Creando Rubro', descripcion: 'Rubro ingresado correctamente.', autoCierre: true });
+                            $("#FormModal").modal("hide");
                         }
                         else {
                             agregarToast({ tipo: 'error', titulo: 'Creando Rubro', descripcion: data.mensaje, autoCierre: true });
@@ -393,9 +396,13 @@
                     }
                     //  Rubro Editar
                     else {
-
+                       
                         if (data.resultado) {
-                            tabladata.row(filaSeleccionada).data(Rubro).draw(false);
+                            var Rub = {
+                                id: $("#txtid").val(),
+                                text: $("#txtdescripcion").val()
+                            }
+                            tabladata.row(filaSeleccionada).data(Rub).draw(false);
                             filaSeleccionada = null;
                             agregarToast({ tipo: 'exito', titulo: 'Modificando Rubro', descripcion: 'Rubro modificado correctamente.', autoCierre: true });
                             $("#FormModal").modal("hide");
@@ -408,7 +415,6 @@
                         }
                     }
                 },
-
 
                 beforeSend: function () {
                     $(".modal-body").LoadingOverlay("show", {

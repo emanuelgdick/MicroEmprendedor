@@ -4908,11 +4908,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MicroEmprendedores\\Api\\Api.csproj",
+      "projectUniqueName": "C:\\MicroEmprendedor\\Api\\Api.csproj",
       "projectName": "Api",
-      "projectPath": "C:\\MicroEmprendedores\\Api\\Api.csproj",
+      "projectPath": "C:\\MicroEmprendedor\\Api\\Api.csproj",
       "packagesPath": "C:\\Users\\Emanuel\\.nuget\\packages\\",
-      "outputPath": "C:\\MicroEmprendedores\\Api\\obj\\",
+      "outputPath": "C:\\MicroEmprendedor\\Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4927,7 +4927,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://www.nuget.org/api/v2/": {}
       },
       "frameworks": {
         "net8.0": {
@@ -4939,7 +4940,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -4991,7 +4998,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

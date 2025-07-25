@@ -379,11 +379,13 @@
                         $(".modal-body").LoadingOverlay("hide");
                         //  Localidad nuevo
                         if (Localidad.id == 0) {
+                            debugger;
                             if (data.resultado != 0) {
                                 Localidad.id = data.resultado;
                                 tabladata.row.add(Localidad).draw(false);
-                                $("#FormModal").modal("hide");
+                               
                                 agregarToast({ tipo: 'exito', titulo: 'Creando Localidad', descripcion: 'Localidad ingresada correctamente.', autoCierre: true });
+                                  $("#FormModal").modal("hide");
                             }
                             else {
                                 agregarToast({ tipo: 'error', titulo: 'Creando Localidad', descripcion: data.mensaje, autoCierre: true });
