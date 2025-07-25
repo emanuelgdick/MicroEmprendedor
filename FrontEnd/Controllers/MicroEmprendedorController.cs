@@ -72,17 +72,12 @@ namespace FrontEnd.Controllers
             return Json(new { data = oLista });
         }
 
-
-        
-
         [Authorize(Roles = "Admin")]
         [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Create()
         {
             return View();
         }
-
-
 
         [Authorize(Roles = "Admin")]
         [ResponseCache(Duration = 30)]
@@ -91,11 +86,7 @@ namespace FrontEnd.Controllers
             object resultado = null;
             string mensaje = String.Empty;
 
-            List<int> lista=new List<int>();
-
-            foreach (Rubro i in MicroEmprendedor.Rubros.ToList()) { 
-                    lista.Add(i.Id);
-            }
+       
             if (MicroEmprendedor != null) { 
             try
             {
@@ -104,7 +95,7 @@ namespace FrontEnd.Controllers
                     if (MicroEmprendedor.ApeyNom != "")
                     {
                         
-                        MicroEmprendedor = await _apiService.AddMicroEmprendedor(MicroEmprendedor,lista, HttpContext.Session.GetString("APIToken"));
+                        MicroEmprendedor = await _apiService.AddMicroEmprendedor(MicroEmprendedor, HttpContext.Session.GetString("APIToken"));
                         resultado = MicroEmprendedor.Id;
                         mensaje = "MicroEmprendedor ingresado correctamente";
                     }

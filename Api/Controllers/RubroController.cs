@@ -14,18 +14,13 @@ namespace Api.Controllers
         private MicroEmprendedorContext _db;
         private readonly ILogger<RubroController> _logger;
 
-        public RubroController(MicroEmprendedorContext db, ILogger<RubroController> logger)
-        {
-            _db = db;
-            _logger = logger;
-        }
-
+     
         [HttpGet]
         [Authorize]
         [ResponseCache(CacheProfileName = "apicache")]
         public IActionResult GetRubros(/*int pagesize, int pagenumber*/)
         {
-            _logger.LogInformation("Fetching Todas las Rubros");
+        //    _logger.LogInformation("Fetching Todas las Rubros");
 
             List<Rubro> rptListaRubro = new List<Rubro>();
             using (SqlConnection oConexion = new SqlConnection(Conexion.cn))

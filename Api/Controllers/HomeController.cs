@@ -26,13 +26,9 @@ namespace Api.Controllers
         {
         
             TotalesDTO totales=new TotalesDTO();
-            //totales.TotalPacientes = _db.Paciente.Count();
-            //totales.TotalMutuales = _db.Mutual.Count();
-            //totales.TotalMedicos = _db.Medico.Count();
-            //totales.TotalConsultas = _db.Consulta.Count();
-            //totales.TotalRubros = _db.Rubro.Count();
-            totales.Usuario = _db.Usuario.Where(s => s.Id ==id).FirstOrDefault();
-            totales.TotalUsuarios = _db.Usuario.Count();
+          
+            //totales.Usuario = _db.Usuario.Where(s => s.Id ==id).FirstOrDefault();
+            //totales.TotalUsuarios = _db.Usuario.Count();
             return Ok(totales);
 
         }

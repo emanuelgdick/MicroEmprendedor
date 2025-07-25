@@ -9,9 +9,7 @@ namespace FrontEnd.Models
     public partial class Rubro
     {
 
-        public Rubro() {
-            this.MicroEmprendedores = new HashSet<MicroEmprendedor>();   
-        }
+   
 
         [Key]
         public int Id { get; set; }
@@ -20,7 +18,7 @@ namespace FrontEnd.Models
         public string Descripcion { get; set; }
 
         
-        public virtual ICollection<MicroEmprendedor>? MicroEmprendedores { get; set; }
+        public virtual ICollection<MicroEmprendedorRubro>? MicroEmprendedores { get; set; }
     }
 
 }

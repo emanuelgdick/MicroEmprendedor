@@ -9,6 +9,6 @@ namespace Api
 {
     public class Conexion
     {
-        public static string cn = "server=Manolo;database=MicroEmprendedor;Integrated Security=true;TrustServerCertificate=true;";//ConfigurationManager.ConnectionStrings["cadena"].ToString();
+        public static string cn = "server=Computos05;database=MicroEmprendedor;Integrated Security=true;TrustServerCertificate=true;";//ConfigurationManager.ConnectionStrings["cadena"].ToString();
     }
 }

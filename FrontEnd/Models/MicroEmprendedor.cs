@@ -11,9 +11,7 @@ namespace FrontEnd.Models
     public partial class MicroEmprendedor
     {
 
-        public MicroEmprendedor() { 
-            this.Rubros= new HashSet<Rubro>();
-        }
+    
         [Key]
         public int Id { get; set; }
 
@@ -43,8 +41,8 @@ namespace FrontEnd.Models
         public string? Facebook { get; set; }
         public string? Observaciones { get; set; }
 
-      
-        public virtual ICollection<Rubro> Rubros { get; set; }
+
+        public virtual ICollection<MicroEmprendedorRubro> Rubros { get; set; }
 
     }
 }

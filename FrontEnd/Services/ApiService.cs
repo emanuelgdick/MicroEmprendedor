@@ -2,6 +2,7 @@
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Web.Mvc;
+using System.Xml.Linq;
 using Frontend.Models;
 using FrontEnd.Models;
 using FrontEnd.Models.DTOs;
@@ -151,14 +152,13 @@ namespace FrontEnd.Services
             return APIResponse;
         }
 
-        public async Task<MicroEmprendedor> AddMicroEmprendedor(MicroEmprendedor microEmprendedor,List<int>lista, string token)
+        public async Task<MicroEmprendedor> AddMicroEmprendedor(MicroEmprendedor microEmprendedor, string token)
         {
+
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<MicroEmprendedor>($"api/MicroEmprendedor/AddMicroEmprendedor?lista={lista}", microEmprendedor);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<MicroEmprendedor>($"api/MicroEmprendedor/AddMicroEmprendedor", microEmprendedor);
             response.EnsureSuccessStatusCode();
           
-
-            
             var contents = await response.Content.ReadAsStringAsync();
             var APIResponse = JsonConvert.DeserializeObject<MicroEmprendedor>(contents);
             return APIResponse;
@@ -174,10 +174,10 @@ namespace FrontEnd.Services
             return APIResponse;
         }
 
-        public async Task UpdateMicroEmprendedor(int id, MicroEmprendedor MicroEmprendedor, string token)
+        public async Task UpdateMicroEmprendedor(int id, MicroEmprendedor microEmprendedor, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<MicroEmprendedor>($"api/MicroEmprendedor/UpdateMicroEmprendedor?id={id}", MicroEmprendedor);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<MicroEmprendedor>($"api/MicroEmprendedor/UpdateMicroEmprendedor?id={id}", microEmprendedor);
             response.EnsureSuccessStatusCode();
 
         }

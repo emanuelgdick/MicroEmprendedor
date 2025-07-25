@@ -8,6 +8,10 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Numerics;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Data.SqlClient;
+using System.Data;
+using Microsoft.Extensions.Hosting;
+using System.Text.RegularExpressions;
 namespace Api.Controllers
 {
     [Route("api/[controller]")]
@@ -26,8 +30,30 @@ namespace Api.Controllers
         [HttpPost("UserLogin")]
         public async Task<LoginResponseDTO> Login( LoginRequestDTO logindetails)
         {
-            var user = _db.Usuario.FirstOrDefault(u => u.User.ToLower() == logindetails.User.ToLower()
-            && u.Password.ToLower() == RecursosBiz.ConvertirSha256(logindetails.Password.ToLower()));
+            //var user = _db.Usuario.FirstOrDefault(u => u.User.ToLower() == logindetails.User.ToLower()
+            //&& u.Password.ToLower() == RecursosBiz.ConvertirSha256(logindetails.Password.ToLower()));
+            Usuario user = new Usuario();
+            using (SqlConnection oConexion = new SqlConnection(Conexion.cn))
+            {
+                SqlCommand cmd = new SqlCommand("sp_ObtenerUsuario", oConexion);
+                cmd.Parameters.AddWithValue("User", logindetails.User);
+                cmd.Parameters.AddWithValue("Password", RecursosBiz.ConvertirSha256(logindetails.Password.ToLower()));
+                cmd.CommandType = CommandType.StoredProcedure;
+                oConexion.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    user.ApeyNom = dr["ApeyNom"].ToString();
+                    user.Id = Convert.ToInt32(dr["Id"].ToString());
+                    user.User = dr["User"].ToString();
+                    user.Password = dr["Password"].ToString();
+                    user.Rol = dr["Rol"].ToString();
+                    
+                    //  return rptListaFalta;
+                }
+                dr.Close();
+
+            }
 
 
             if (user == null)
