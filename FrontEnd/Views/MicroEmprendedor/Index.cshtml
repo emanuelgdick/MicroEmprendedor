@@ -275,11 +275,16 @@
                                     </div>
                                     <div id="step-3" style=" height: 320px; ">
                                         <div class="col-12  form-floating">
-
-
                                             <select class="js-example-basic-multiple js-states form-control" id="id_label_multiple" multiple="multiple" style="width:90%">
                                             </select>
+                                        </div>
 
+                                        <div class="control-group row">
+                                            <label class="control-label col-md-3 col-sm-3 ">Palabras Clave</label>
+                                            <div class="col-md-9 col-sm-9 ">
+                                                <input id="tags" type="text" class="tags form-control" value=""  />
+                                                <div id="suggestions-container" style="position: relative; float: left; width: 220px; margin: 10px;"></div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div id="step-4" style=" height: 320px; ">
@@ -321,7 +326,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btnCancelar"   data-bs-dismiss="modal" >Cerrar</button>
+                <button type="button" class="btn btnCancelar" data-bs-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btnAceptar" onclick="Guardar()">Guardar</button>
 
             </div>
@@ -334,762 +339,747 @@
 @section scripts {
 
     <script>
-        var tabladata;
-        var agregarToast;
-
-   
-        jQuery.ajax({
-            url: '@Url.Action("GetAllTipoDocumentos", "TipoDocumento")',
-            type: "GET",
-            data: null,
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbotipodoc");
-                $.each(data.data, function (index, value) {
-                    $("<option>").attr({ "value": value.id }).text(value.descA).appendTo("#cbotipodoc");
-                });
-            },
-            error: function (error) {
-                console.log(error)
-            }
-        });
-
-        //GET LOCALIDADES
-        jQuery.ajax({
-            url: '@Url.Action("GetAllLocalidades", "Localidad")',
-            type: "GET",
-            data: null,
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadF");
-                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidad");
-                $.each(data.data, function (index, value) {
-                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadF");
-                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidad");
-                });
-            },
-            error: function (error) {
-                console.log(error)
-            }
-        });
-
-        //GET RUBROS
-        var rub = [];
-        jQuery.ajax({
-            url: '@Url.Action("GetAllRubros", "Rubro")',
-            type: "GET",
-            data: null,
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                debugger;
-                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cborubroF");
-                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cborubro");
-                $.each(data.data, function (index, value) {
-                    rub.push({ value: value.id, text: value.descripcion });
-                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cborubroF");
-                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cborubro");
-                });
-            },
-            error: function (error) {
-                console.log(error)
-            }
-        });
-
-        const getDatePickerTitle = elem => {
-            // From the label or the aria-label
-            const label = elem.nextElementSibling;
-            let titleText = '';
-            if (label && label.tagName === 'LABEL') {
-                titleText = label.textContent;
-            } else {
-                titleText = elem.getAttribute('aria-label') || '';
-            }
-            return titleText;
-        }
-        const elems = document.querySelectorAll('.datepicker_input');
-        for (const elem of elems) {
-            const datepicker = new Datepicker(elem, {
-                'format': 'dd/mm/yyyy', // UK format
-                title: getDatePickerTitle(elem)
-            });
-        }
+                var tabladata;
+                var agregarToast;
 
 
-        const contenedorToast = document.getElementById('contenedor-toastP');
-        // Event listener para detectar click en los toasts
-        contenedorToast.addEventListener('click', (e) => {
-            const toastId = e.target.closest('div.toastP').id;
-            if (e.target.closest('button.btn-cerrar')) {
-                cerrarToast(toastId);
-            }
-        });
-
-        // Función para cerrar el toast
-        const cerrarToast = (id) => {
-            document.getElementById(id)?.classList.add('cerrando');
-        };
-
-
-        // Función para agregar la clase de cerrando al toast.
-        agregarToast = ({ tipo, titulo, descripcion, autoCierre }) => {
-            // Crear el nuevo toast
-            const nuevoToast = document.createElement('div');
-            // Agregar clases correspondientes
-            nuevoToast.classList.add('toastP');
-            nuevoToast.classList.add(tipo);
-            if (autoCierre) nuevoToast.classList.add('autoCierreP');
-            // Agregar id del toast
-            const numeroAlAzar = Math.floor(Math.random() * 100);
-            const fecha = Date.now();
-            const toastId = fecha + numeroAlAzar;
-            nuevoToast.id = toastId;
-            // Iconos
-            const iconos = {
-                exito: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                                      <path
-                                                                                                                          d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
-                                                                                                                      />
-                                                                                                                  </svg>`,
-                error: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                                                  <path
-                                                                                                                                      d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                                                                                                                                  />
-                                                                                                                              </svg>`,
-                info: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                                                  <path
-                                                                                                                                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
-                                                                                                                                  />
-                                                                                                                              </svg>`,
-                warning: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                                                  <path
-                                                                                                                                      d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                                                                                                                                  />
-                                                                                                                              </svg>`,
-            };
-
-            // Plantilla del toast
-            const toast = `
-                                                                                                          <div class="contenidoP">
-                                                                                                              <div class="icono">
-                                                                                                                  ${iconos[tipo]}
-                                                                                                              </div>
-                                                                                                              <div class="texto">
-                                                                                                                  <p class="titulo">${titulo}</p>
-                                                                                                                  <p class="descripcion">${descripcion}</p>
-                                                                                                              </div>
-                                                                                                          </div>
-                                                                                                          <button class="btn-cerrar">
-                                                                                                              <div class="icono">
-                                                                                                                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                                      <path
-                                                                                                                          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-                                                                                                                      />
-                                                                                                                  </svg>
-                                                                                                              </div>
-                                                                                                          </button>
-                                                                                                      `;
-
-            // Agregar la plantilla al nuevo toast
-            nuevoToast.innerHTML = toast;
-
-            // Agregamos el nuevo toast al contenedor
-            contenedorToast.appendChild(nuevoToast);
-
-            // Función para menajera el cierre del toast
-            const handleAnimacionCierre = (e) => {
-                if (e.animationName === 'cierre') {
-                    nuevoToast.removeEventListener('animationend', handleAnimacionCierre);
-                    nuevoToast.remove();
-                }
-            };
-
-            if (autoCierre) {
-                setTimeout(() => cerrarToast(toastId), 5000);
-            }
-
-            // Agregamos event listener para detectar cuando termine la animación
-            nuevoToast.addEventListener('animationend', handleAnimacionCierre);
-        };
-
-        var filaSeleccionada;
-        llenarTabla(false)
-
-
-        var rubroSeleccionado = [];
-        //Abrir Modal
-        function abrirModal(json) {
-            
-            var fnac;
-            var diafnac;
-            var mesfnac;
-            var aniofnac;
-            $("#wizard").smartWizard('goToStep', 1)
-            $("#txtid").val(0);
-            $("#txtnroMicroemprendedor").val('');
-            $("#txtapeynom").val('Gutierrez Dick, Emanuel');
-            $("#txtdni").val('26888310');
-            $("#cbotipodoc").val(1);
-            $("#cbolocalidad").val(1);
-
-            fnac = new Date()
-            diafnac = `${(fnac.getDate())}`.padStart(2, '0');
-            mesfnac = `${(fnac.getMonth() + 1)}`.padStart(2, '0');
-            aniofnac = fnac.getFullYear();
-            //$("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
-            $("#dtfechanac").val(`29/09/1978`);
-            $("#txttelfijo").val('451114');
-            $("#txttelcelular").val('2494013268');
-            $("#txtcalle").val('BElgrano');
-            $("#txtnro").val('875');
-            $("#txtpiso").val('1');
-            $("#txtdepto").val('2');
-            $("#txtemail").val('emanuelgdick@gmail.com');
-            $("#txtfacebook").val('www.facebook.com');
-            $("#txtinstagram").val('ig');
-            $("#txtsitioweb").val('www.manolo.com.ar');
-            $("#txtobservaciones").val('mano');
-            tinymce.get('taobservaciones').setContent("");
-
-            $('#id_label_multiple').val(null).trigger('change');
-            $("#id_label_multiple").empty();
-
-            $(".js-example-basic-multiple").select2({
-                theme: "classic",
-                ajax: {
-                    url: '@Url.Action("GetAllRubros", "Rubro")',
-                    dataType: 'json',
-                    delay: 250,
-                    data: function (params) {
-                        return {
-                            q: params.term,
-                        };
+                jQuery.ajax({
+                    url: '@Url.Action("GetAllTipoDocumentos", "TipoDocumento")',
+                    type: "GET",
+                    data: null,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbotipodoc");
+                        $.each(data.data, function (index, value) {
+                            $("<option>").attr({ "value": value.id }).text(value.descA).appendTo("#cbotipodoc");
+                        });
                     },
-                    processResults: function (data, params) {
-                        return {
-                            results: data.data
-                        };
-                    },
-                    cache: true
-                },
-                placeholder: 'Selecciona una opción',
-                allowClear: true,
-                language: "es",
-                dropdownParent: $('#FormModal'),
-                multiple: true,
-                minimumInputLength: 1,
-                templateResult: function (data) {
-                    if (data.loading) {
-                        return data.text;
+                    error: function (error) {
+                        console.log(error)
                     }
-                    var $container = $(
-                        "<div class='select2-result-repository clearfix'>" +
-                        "<div class='select2-result-repository__meta'>" +
-                        "<div class='select2-result-repository__title'></div>" +
-                        "</div>" +
-                        "</div>"
-                    );
-                    $container.find(".select2-result-repository__title").text(data.text);
-                    return $container;
-                },
-            });
+                });
 
-            
-            if (json != null) {
-                console.log(json);
-                $("#txtid").val(json.id);
-                $("#txtapeynom").val(json.apeyNom);
-                $("#txtdni").val(json.dni);
-                $("#cbotipodoc").val(json.idTipoDocumento == null ? 0 : json.idTipoDocumento);
+                //GET LOCALIDADES
+                jQuery.ajax({
+                    url: '@Url.Action("GetAllLocalidades", "Localidad")',
+                    type: "GET",
+                    data: null,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadF");
+                        $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidad");
+                        $.each(data.data, function (index, value) {
+                            $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadF");
+                            $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidad");
+                        });
+                    },
+                    error: function (error) {
+                        console.log(error)
+                    }
+                });
 
-                fnac = new Date(json.fechaNacimiento);
-                diafnac = `${(fnac.getDate())}`.padStart(2, '0');
-                mesfnac = `${(fnac.getMonth() + 1)}`.padStart(2, '0');
-                aniofnac = fnac.getFullYear();
-                $("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
+                //GET RUBROS
+                var rub = [];
+                jQuery.ajax({
+                    url: '@Url.Action("GetAllRubros", "Rubro")',
+                    type: "GET",
+                    data: null,
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        debugger;
+                        $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cborubroF");
+                        $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cborubro");
+                        $.each(data.data, function (index, value) {
+                            rub.push({ value: value.id, text: value.text });
+                            $("<option>").attr({ "value": value.id }).text(value.text).appendTo("#cborubroF");
+                            $("<option>").attr({ "value": value.id }).text(value.text).appendTo("#cborubro");
+                        });
+                    },
+                    error: function (error) {
+                        console.log(error)
+                    }
+                });
 
-
-                $("#txtcalle").val(json.calle);
-                $("#txtnro").val(json.nro);
-                $("#txtpiso").val(json.piso);
-                $("#txtdepto").val(json.depto);
-                $("#txttelfijo").val(json.telFijo);
-                $("#txttelcelular").val(json.telCelular);
-                $("#txtemail").val(json.correo);
-                $("#txtfacebook").val(json.facebook);
-                $("#txtinstagram").val(json.instagram);
-                $("#txtsitioweb").val(json.sitioWeb);
-                $("#cbolocalidad").val(json.idLocalidad == null ? 0 : json.idLocalidad);
-                // $("#cborubro").val(json.idRubro == null ? 0 : json.idRubro);
-                $("#txtnrodoc").val(json.dni);
-                if (json.sexo == "F") {
-                    $('input:radio[name=sexo]')[0].checked = true;
-                    $('input:radio[name=sexo]')[1].checked = false;
+                const getDatePickerTitle = elem => {
+                    // From the label or the aria-label
+                    const label = elem.nextElementSibling;
+                    let titleText = '';
+                    if (label && label.tagName === 'LABEL') {
+                        titleText = label.textContent;
+                    } else {
+                        titleText = elem.getAttribute('aria-label') || '';
+                    }
+                    return titleText;
                 }
-                else {
-                    $('input:radio[name=sexo]')[0].checked = false;
-                    $('input:radio[name=sexo]')[1].checked = true;
-                }
-                var observaciones = json.observaciones == null ? "" : json.observaciones;
-                if (observaciones[0] == '{') {
-                    //GET HTML DE OBSERVACIONES
-                    jQuery.ajax({
-                        url: "@Url.Action("ConverHCToHTML", "Microemprendedor")" + "?observaciones=" + observaciones,
-                        type: "GET",
-                        dataType: "json",
-                        contentType: "application/json; charset=utf-8",
-                        success: function (data) {
-                            tinymce.get('taobservaciones').setContent(data.data);
-                        },
-                        error: function (error) {
-                            console.log(error)
-                        }
+                const elems = document.querySelectorAll('.datepicker_input');
+                for (const elem of elems) {
+                    const datepicker = new Datepicker(elem, {
+                        'format': 'dd/mm/yyyy', // UK format
+                        title: getDatePickerTitle(elem)
                     });
                 }
-                else {
-                    tinymce.get('taobservaciones').setContent(observaciones);
-                }
-                $('#tablaConsulta').DataTable().clear().destroy();
-                $('#tablaConsulta').DataTable({
-                    data: json.consulta,
-                    columns: [
-                        { data: 'start' },
-                        { data: 'observaciones' }
-                    ],
 
-                    "order": {
-                        name: 'start',
-                        dir: 'desc'
-                    },
-                    "language": {
-                        "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
-                    },
-                    "order": [[0, "desc"]],
+
+                const contenedorToast = document.getElementById('contenedor-toastP');
+                // Event listener para detectar click en los toasts
+                contenedorToast.addEventListener('click', (e) => {
+                    const toastId = e.target.closest('div.toastP').id;
+                    if (e.target.closest('button.btn-cerrar')) {
+                        cerrarToast(toastId);
+                    }
                 });
-            
 
-                for (var i = 0; i < json.rubros.length; i++) {
-                    var newOption = new Option(json.rubros[i].rubro.descripcion, json.rubros[i].rubro.id, true, true);
-                    $('#id_label_multiple').append(newOption).trigger('change');
+                // Función para cerrar el toast
+                const cerrarToast = (id) => {
+                    document.getElementById(id)?.classList.add('cerrando');
                 };
 
 
+                // Función para agregar la clase de cerrando al toast.
+                agregarToast = ({ tipo, titulo, descripcion, autoCierre }) => {
+                    // Crear el nuevo toast
+                    const nuevoToast = document.createElement('div');
+                    // Agregar clases correspondientes
+                    nuevoToast.classList.add('toastP');
+                    nuevoToast.classList.add(tipo);
+                    if (autoCierre) nuevoToast.classList.add('autoCierreP');
+                    // Agregar id del toast
+                    const numeroAlAzar = Math.floor(Math.random() * 100);
+                    const fecha = Date.now();
+                    const toastId = fecha + numeroAlAzar;
+                    nuevoToast.id = toastId;
+                    // Iconos
+                    const iconos = {
+                        exito: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                                                                              <path
+                                                                                                                                  d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
+                                                                                                                              />
+                                                                                                                          </svg>`,
+                        error: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                                                                                          <path
+                                                                                                                                              d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                                                                                                          />
+                                                                                                                                      </svg>`,
+                        info: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                                                                                          <path
+                                                                                                                                              d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+                                                                                                                                          />
+                                                                                                                                      </svg>`,
+                        warning: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                                                                                          <path
+                                                                                                                                              d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                                                                                                          />
+                                                                                                                                      </svg>`,
+                    };
 
+                    // Plantilla del toast
+                    const toast = `
+                                                                                                      `;
 
+                    // Agregar la plantilla al nuevo toast
+                    nuevoToast.innerHTML = toast;
 
+                    // Agregamos el nuevo toast al contenedor
+                    contenedorToast.appendChild(nuevoToast);
 
-            }
-
-            $("#FormModal").modal("show");
-        }
-
-        $("#formNivel").validate({
-            rules: {
-                ApeyNom: {
-                    required: true
-                },
-            },
-            messages: {
-                ApeyNom: " El campo Apellido y Nombre es obligatorio",
-            },
-            errorElement: "div",
-            errorLabelContainer: ".alert-danger"
-        });
-
-        //Llenar Tabla
-        function llenarTabla(filtro) {
-
-            debugger;
-
-            var url;
-            if (filtro) {
-                url = "@Url.Action("GetMicroemprendedorFiltrados", "Microemprendedor")" + '?localidad=' + $("#cbolocalidadF").val() + '&rubro=' + $("#cborubroF").val()
-            } else {
-                url = "@Url.Action("GetAllMicroemprendedor", "Microemprendedor")";
-            }
-
-            $('#tabla').DataTable().clear().destroy();
-            tabladata = $("#tabla").DataTable({
-                responsive: true,
-                ordering: true,
-                dom: "Bfrtip",
-                buttons: [
-                    {
-                        extend: "excelHtml5",
-                        text: '<i class="fa fa-file-excel-o "></i>',
-                        filename: "Reporte de Microemprendedor",
-                        title: "Listado de Microemprendedor",
-                        exportOptions: {
-                            //muestra las columnas
-                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-                        },
-                        className: "btn-exportar-excel",
-
-
-                    },
-                    {
-                        extend: "pdfHtml5",
-                        text: '<i class="fa fa-file-pdf-o"></i>',
-                        filename: "Reporte de Microemprendedor",
-                        title: "Listado de Microemprendedor",
-                        exportOptions: {
-                            //muestra las columnas
-                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-                        },
-                        className: "btn-exportar-pdf"
-                    },
-                    {
-                        extend: "print",
-                        text: '<i class="fa fa-print"></i>',
-                        filename: "Reporte de Microemprendedor",
-                        title: "Listado de Microemprendedor",
-                        exportOptions: {
-                            //muestra las columnas
-                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-                        },
-                        className: "btn-imprimir"
-
-                    }
-                ],
-                "ajax": {
-                    url: url,
-                    type: "GET",
-                    dataType: "json",
-                    beforeSend: agregarToast({ tipo: 'exito', titulo: 'Obteniendo Microemprendedor', descripcion: 'Por favor espere...', autoCierre: true })
-                },
-                "columns": [
-                    { "data": "id" },
-                    { "data": "apeyNom" },
-                    {
-                        "data": "tipoDocumento", render: function (data) {
-                            var desc;
-                            if (data == null) {
-                                desc = null
-                            }
-                            else
-                                desc = data.descA
-                            return desc;
+                    // Función para menajera el cierre del toast
+                    const handleAnimacionCierre = (e) => {
+                        if (e.animationName === 'cierre') {
+                            nuevoToast.removeEventListener('animationend', handleAnimacionCierre);
+                            nuevoToast.remove();
                         }
-                    },
-                    { "data": "dni" },
-                    { "data": "sexo" },
-                    { "data": "calle" },
-                    { "data": "nro" },
-                    { "data": "piso" },
-                    { "data": "depto" },
-                    { "data": "telFijo" },
-                    { "data": "telCelular" },
-                    { "data": "correo" },
+                    };
 
-
-
-
-
-
-                    {
-                        "defaultContent": '<button type="button" title="Enviar Mensaje"  class="rounded-circle btn btn-sm  btn-block btn-enviar"   > <img src="../images/whatsapp.png" alt="" width="20" height="20" ></button>' +
-                            '<button type="button" title="Editar Microemprendedor"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
-                            '<button type="button" title="Eliminar Microemprendedor" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
-                        "orderable": false,
-                        "searchable": false,
-                        "width": "10%",
-                        "heigth": "10%"
+                    if (autoCierre) {
+                        setTimeout(() => cerrarToast(toastId), 5000);
                     }
-                ],
-                "order": {
-                    name: 'apeyNom',
-                    dir: 'asc'
-                },
-                "language": {
-                    "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
-                },
-                "order": [[1, "asc"]],
-                "columnDefs": [
-                    { "width": "3%", "targets": 0 },
-                    { "width": "10%", "targets": 1 },
-                    { "width": "5%", "targets": 2 },
-                    { "width": "8%", "targets": 3, render: DataTable.render.datetime('DD/MM/YYYY') },
-                    { "width": "2%", "targets": 4 },
-                    // { "width": "10%", "targets": 5 },
-                    // { "width": "3%", "targets": 6 },
-                    // { "width": "3%", "targets": 7 },
-                    // { "width": "3%", "targets": 8 },
-                    // { "width": "5%", "targets": 9 },
-                    // { "width": "5%", "targets": 10 },
-                    // { "width": "10%", "targets": 11, visible: false },
 
-                    // { "width": "70%", "targets": 12 },
-                    // { "width": "40%", "targets": 14, className: 'dt-body-right' },
-                ]
-            })
-        }
+                    // Agregamos event listener para detectar cuando termine la animación
+                    nuevoToast.addEventListener('animationend', handleAnimacionCierre);
+                };
 
-        //Filtrar Microemprendedor
-        function filtrarMicroemprendedor(filtro) {
-            llenarTabla(filtro);
-        }
-        //Filtrar Microemprendedor
-        function limpiarFiltros() {
-            $('#cbolocalidadF').val(0);
-            $('#cborubroF').val(0);
-            llenarTabla(false)
-        }
-        //Editar
-        $("#tabla tbody").on("click", '.btn-editar', function () {
+                var filaSeleccionada;
+                llenarTabla(false)
 
-            filaSeleccionada = $(this).closest("tr");
-            var data = tabladata.row(filaSeleccionada).data();
-            abrirModal(data)
-        })
 
-        //Eliminar
-        $("#tabla tbody").on("click", '.btn-eliminar', function () {
+                var rubroSeleccionado = [];
+                //Abrir Modal
+                function abrirModal(json) {
+                    console.log(json);
+                    var fnac;
+                    var diafnac;
+                    var mesfnac;
+                    var aniofnac;
+                    $("#wizard").smartWizard('goToStep', 1)
+                    $("#txtid").val(0);
+                    $("#txtnroMicroemprendedor").val('');
+                    $("#txtapeynom").val('Gutierrez Dick, Emanuel');
+                    $("#txtdni").val('26888310');
+                    $("#cbotipodoc").val(1);
+                    $("#cbolocalidad").val(1);
+                    fnac = new Date()
+                    diafnac = `${(fnac.getDate())}`.padStart(2, '0');
+                    mesfnac = `${(fnac.getMonth() + 1)}`.padStart(2, '0');
+                    aniofnac = fnac.getFullYear();
+                    //$("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
+                    $("#dtfechanac").val(`29/09/1978`);
+                    $("#txttelfijo").val('451114');
+                    $("#txttelcelular").val('2494013268');
+                    $("#txtcalle").val('BElgrano');
+                    $("#txtnro").val('875');
+                    $("#txtpiso").val('1');
+                    $("#txtdepto").val('2');
+                    $("#txtemail").val('emanuelgdick@gmail.com');
+                    $("#txtfacebook").val('www.facebook.com');
+                    $("#txtinstagram").val('ig');
+                    $("#txtsitioweb").val('www.manolo.com.ar');
+                    $("#txtobservaciones").val('mano');
+                    tinymce.get('taobservaciones').setContent("");
+                    $('#id_label_multiple').val(null).trigger('change');
+                    $("#id_label_multiple").empty();
+                    $(".js-example-basic-multiple").select2({
+                        theme: "classic",
+                        ajax: {
+                            url: '@Url.Action("GetAllRubros", "Rubro")',
+                            dataType: 'json',
+                            delay: 250,
+                            data: function (params) {
+                                return {
+                                    q: params.term,
+                                };
+                            },
+                            processResults: function (data, params) {
+                                return {
+                                    results: data.data
+                                };
+                            },
+                            cache: true
+                        },
+                        placeholder: 'Selecciona una opción',
+                        allowClear: true,
+                        language: "es",
+                        dropdownParent: $('#FormModal'),
+                        multiple: true,
+                        minimumInputLength: 1,
+                        templateResult: function (data) {
+                            if (data.loading) {
+                                return data.text;
+                            }
+                            var $container = $(
+                                "<div class='select2-result-repository clearfix'>" +
+                                "<div class='select2-result-repository__meta'>" +
+                                "<div class='select2-result-repository__title'></div>" +
+                                "</div>" +
+                                "</div>"
+                            );
+                            $container.find(".select2-result-repository__title").text(data.text);
+                            return $container;
+                        },
+                    });
+                    $('#tags').tagsInput();
+            $("#tags").importTags("");
+                    if (json != null) {
+                     
+                        $("#txtid").val(json.id);
+                        $("#txtapeynom").val(json.apeyNom);
+                        $("#txtdni").val(json.dni);
+                        $("#cbotipodoc").val(json.idTipoDocumento == null ? 0 : json.idTipoDocumento);
+                        fnac = new Date(json.fechaNacimiento);
+                        diafnac = `${(fnac.getDate())}`.padStart(2, '0');
+                        mesfnac = `${(fnac.getMonth() + 1)}`.padStart(2, '0');
+                        aniofnac = fnac.getFullYear();
+                        $("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
+                        $("#txtcalle").val(json.calle);
+                        $("#txtnro").val(json.nro);
+                        $("#txtpiso").val(json.piso);
+                        $("#txtdepto").val(json.depto);
+                        $("#txttelfijo").val(json.telFijo);
+                        $("#txttelcelular").val(json.telCelular);
+                        $("#txtemail").val(json.correo);
+                        $("#txtfacebook").val(json.facebook);
+                        $("#txtinstagram").val(json.instagram);
+                        $("#txtsitioweb").val(json.sitioWeb);
+                        $("#cbolocalidad").val(json.idLocalidad == null ? 0 : json.idLocalidad);
+                        // $("#cborubro").val(json.idRubro == null ? 0 : json.idRubro);
+                        $("#txtnrodoc").val(json.dni);
+                        if (json.sexo == "F") {
+                            $('input:radio[name=sexo]')[0].checked = true;
+                            $('input:radio[name=sexo]')[1].checked = false;
+                        }
+                        else {
+                            $('input:radio[name=sexo]')[0].checked = false;
+                            $('input:radio[name=sexo]')[1].checked = true;
+                        }
+                        var observaciones = json.observaciones == null ? "" : json.observaciones;
+                        if (observaciones[0] == '{') {
+                            //GET HTML DE OBSERVACIONES
+                            jQuery.ajax({
+                                url: "@Url.Action("ConverHCToHTML", "Microemprendedor")" + "?observaciones=" + observaciones,
+                                type: "GET",
+                                dataType: "json",
+                                contentType: "application/json; charset=utf-8",
+                                success: function (data) {
+                                    tinymce.get('taobservaciones').setContent(data.data);
+                                },
+                                error: function (error) {
+                                    console.log(error)
+                                }
+                            });
+                        }
+                        else {
+                            tinymce.get('taobservaciones').setContent(observaciones);
+                        }
+                        $('#tablaConsulta').DataTable().clear().destroy();
+                        $('#tablaConsulta').DataTable({
+                            data: json.consulta,
+                            columns: [
+                                { data: 'start' },
+                                { data: 'observaciones' }
+                            ],
 
-            var Microemprendedoreleccionado = $(this).closest("tr");
-            var data = tabladata.row(Microemprendedoreleccionado).data();
-            var Microemprendedor = {
-                id: data.id,
-                apeyNom: data.apeyNom
-            }
-            swal({
-                title: "Está Seguro?",
-                text: "Desea eliminar el Microemprendedor?",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonClass: "btn-primary",
-                confirmButtonText: "Si",
-                cancelButtonText: "No",
-                closeOnConfirm: true
-            },
-                function () {
+                            "order": {
+                                name: 'start',
+                                dir: 'desc'
+                            },
+                            "language": {
+                                "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+                            },
+                            "order": [[0, "desc"]],
+                        });
+
+                            for (var j = 0; j <  json.rubros.length; j++) {
+                                
+                                for (var i = 0; i < rub.length; i++) {
+
+                                if(json.rubros[j].idRubro==rub[i].value){
+                                    var newOption = new Option(rub[i].text, rub[i].value, true, true);
+                                    $('#id_label_multiple').append(newOption).trigger('change');
+                                }
+                            }
+
+
+                        };
+                        debugger;
+                    
+
+
+                     for (var j = 0; j <  json.palabrasClave.length; j++) {
+                       $("#tags").addTag(json.palabrasClave[j].palabra);
+                    }
+                    }
+                    $("#FormModal").modal("show");
+                }
+
+                $("#formNivel").validate({
+                    rules: {
+                        ApeyNom: {
+                            required: true
+                        },
+                    },
+                    messages: {
+                        ApeyNom: " El campo Apellido y Nombre es obligatorio",
+                    },
+                    errorElement: "div",
+                    errorLabelContainer: ".alert-danger"
+                });
+
+                //Llenar Tabla
+                function llenarTabla(filtro) {
+
+                    debugger;
+
+                    var url;
+                    if (filtro) {
+                        url = "@Url.Action("GetMicroemprendedorFiltrados", "Microemprendedor")" + '?localidad=' + $("#cbolocalidadF").val() + '&rubro=' + $("#cborubroF").val()
+                    } else {
+                        url = "@Url.Action("GetAllMicroemprendedor", "Microemprendedor")";
+                    }
+
+                    $('#tabla').DataTable().clear().destroy();
+                    tabladata = $("#tabla").DataTable({
+                        responsive: true,
+                        ordering: true,
+                        dom: "Bfrtip",
+                        buttons: [
+                            {
+                                extend: "excelHtml5",
+                                text: '<i class="fa fa-file-excel-o "></i>',
+                                filename: "Reporte de Microemprendedor",
+                                title: "Listado de Microemprendedor",
+                                exportOptions: {
+                                    //muestra las columnas
+                                    columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                                },
+                                className: "btn-exportar-excel",
+
+
+                            },
+                            {
+                                extend: "pdfHtml5",
+                                text: '<i class="fa fa-file-pdf-o"></i>',
+                                filename: "Reporte de Microemprendedor",
+                                title: "Listado de Microemprendedor",
+                                exportOptions: {
+                                    //muestra las columnas
+                                    columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                                },
+                                className: "btn-exportar-pdf"
+                            },
+                            {
+                                extend: "print",
+                                text: '<i class="fa fa-print"></i>',
+                                filename: "Reporte de Microemprendedor",
+                                title: "Listado de Microemprendedor",
+                                exportOptions: {
+                                    //muestra las columnas
+                                    columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                                },
+                                className: "btn-imprimir"
+
+                            }
+                        ],
+                        "ajax": {
+                            url: url,
+                            type: "GET",
+                            dataType: "json",
+                            beforeSend: agregarToast({ tipo: 'exito', titulo: 'Obteniendo Microemprendedor', descripcion: 'Por favor espere...', autoCierre: true })
+                        },
+                        "columns": [
+                            { "data": "id" },
+                            { "data": "apeyNom" },
+                            { "data": "tipoDocumento", render: function (data) {
+                                    return data.descA
+                                }
+                            },
+                            { "data": "dni" },
+                            { "data": "sexo" },
+                            { "data": "calle" },
+                            { "data": "nro" },
+                            { "data": "piso" },
+                            { "data": "depto" },
+                            { "data": "telFijo" },
+                            { "data": "telCelular" },
+                            { "data": "correo" },
+
+
+
+
+
+
+                            {
+                                "defaultContent": '<button type="button" title="Enviar Mensaje"  class="rounded-circle btn btn-sm  btn-block btn-enviar"   > <img src="../images/whatsapp.png" alt="" width="20" height="20" ></button>' +
+                                    '<button type="button" title="Editar Microemprendedor"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
+                                    '<button type="button" title="Eliminar Microemprendedor" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
+                                "orderable": false,
+                                "searchable": false,
+                                "width": "10%",
+                                "heigth": "10%"
+                            }
+                        ],
+                        "order": {
+                            name: 'apeyNom',
+                            dir: 'asc'
+                        },
+                        "language": {
+                            "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+                        },
+                        "order": [[1, "asc"]],
+                        "columnDefs": [
+                            { "width": "3%", "targets": 0 },
+                            { "width": "10%", "targets": 1 },
+                            { "width": "5%", "targets": 2 },
+                            { "width": "8%", "targets": 3, render: DataTable.render.datetime('DD/MM/YYYY') },
+                            { "width": "2%", "targets": 4 },
+                            // { "width": "10%", "targets": 5 },
+                            // { "width": "3%", "targets": 6 },
+                            // { "width": "3%", "targets": 7 },
+                            // { "width": "3%", "targets": 8 },
+                            // { "width": "5%", "targets": 9 },
+                            // { "width": "5%", "targets": 10 },
+                            // { "width": "10%", "targets": 11, visible: false },
+
+                            // { "width": "70%", "targets": 12 },
+                            // { "width": "40%", "targets": 14, className: 'dt-body-right' },
+                        ]
+                    })
+                }
+
+                //Filtrar Microemprendedor
+                function filtrarMicroemprendedor(filtro) {
+                    llenarTabla(filtro);
+                }
+                //Filtrar Microemprendedor
+                function limpiarFiltros() {
+                    $('#cbolocalidadF').val(0);
+                    $('#cborubroF').val(0);
+                    llenarTabla(false)
+                }
+                //Editar
+                $("#tabla tbody").on("click", '.btn-editar', function () {
+
+                    filaSeleccionada = $(this).closest("tr");
+                    var data = tabladata.row(filaSeleccionada).data();
+                    abrirModal(data)
+                })
+
+                //Eliminar
+                $("#tabla tbody").on("click", '.btn-eliminar', function () {
+
+                    var Microemprendedoreleccionado = $(this).closest("tr");
+                    var data = tabladata.row(Microemprendedoreleccionado).data();
+                    var Microemprendedor = {
+                        id: data.id,
+                        apeyNom: data.apeyNom
+                    }
+                    console.log(Microemprendedor);
+                    swal({
+                        title: "Está Seguro?",
+                        text: "Desea eliminar el Microemprendedor?",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonClass: "btn-primary",
+                        confirmButtonText: "Si",
+                        cancelButtonText: "No",
+                        closeOnConfirm: true
+                    },
+                        function () {
+                            jQuery.ajax({
+                                url: '@Url.Action("DeleteMicroemprendedor", "Microemprendedor")',
+                                type: "POST",
+                                data: JSON.stringify(Microemprendedor),
+                                contentType: 'application/json',
+                                success: function (data) {
+                                    if (data.resultado) {
+                                        tabladata.row(Microemprendedoreleccionado).remove().draw();
+                                        // mostrarAlert(data.mensaje)
+                                        agregarToast({ tipo: 'exito', titulo: 'Eliminando Microemprendedor', descripcion: 'Microemprendedor eliminado correctamente.', autoCierre: true })
+                                    } else {
+                                        agregarToast({ tipo: 'error', titulo: 'Eliminando Microemprendedor', descripcion: 'No se pudo eliminar el Microemprendedor', autoCierre: true });
+                                        // swal("No se pudo eliminar", data.mensaje, "error");
+                                        //  mostrarAlert(data.mensaje)
+                                    }
+                                },
+                                error: function (error) {
+                                    console.log(error);
+                                }
+                            })
+                        })
+                });
+
+                //Tomar Foto
+                function tomarFoto() {
+
+                    debugger;
+                    const video = document.getElementById('video');
+                    const canvas = document.getElementById('canvas');
+                    const imagen = document.getElementById('imagen');
+                    const botonCaptura = document.getElementById('botonCaptura');
+                    // Solicitar acceso a la cámara
+                    navigator.mediaDevices.getUserMedia({ video: true })
+                        .then(stream => {
+                            video.srcObject = stream;
+
+
+                        })
+                        .catch(error => {
+                            console.error('Error al acceder a la cámara:', error);
+                        });
+
+                    // Capturar la foto al hacer clic en el botón
+                    botonCaptura.addEventListener('click', () => {
+                        // Dibujar la imagen en el canvas
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+                        // Obtener la imagen como data URL
+                        const dataURL = canvas.toDataURL('image/png');
+
+                        // Mostrar la imagen en la etiqueta img
+                        imagen.src = dataURL;
+                    });
+
+
+
+
+                }
+                //Seleccionar Imagen
+                function changePicture() {
+                    $('#upload').click();
+                }
+                function readURL(input) {
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            $('#imagen').attr('src', e.target.result);
+
+                        };
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                }
+                function capture() {
+                    debugger;
+                    var canvas = document.getElementById("canvas");
+                    var video = document.getElementById("video");
+                    canvas.width = video.videoWidth;
+                    canvas.height = video.videoHeight;
+                    canvas.getContext("2d").drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+                    const dataURL = canvas.toDataURL('image/png');
+                    const playImage = new Image();
+                    playImage.src = dataURL;
+                    playImage.onload = () => {
+                        const startX = video.videoWidth / 2 - playImage.width / 2;
+                        const startY = video.videoHeight / 2 - playImage.height / 2;
+                        canvas.getContext("2d").drawImage(playImage, startX, startY, playImage.width, playImage.height);
+                        canvas.toBlob() = (blob) => {
+                            const img = new Image();
+                            img.src = window.URL.createObjectUrl(blob);
+                        };
+                    };
+                    /** End **/
+                }
+
+
+
+
+
+
+
+
+
+                //Guardar
+                function Guardar() {
+
+
+                    if (!$("#formNivel").valid()) {
+                        return;
+                    }
+
+                    var yyyy = $("#dtfechanac").val().substring(6, 10);
+                    var MM = $("#dtfechanac").val().substring(3, 5);
+                    var DD = $("#dtfechanac").val().substring(0, 2);
+                    var HH = $("#dtfechanac").val().substring(10, 12).trim();
+                    var mm = $("#dtfechanac").val().substring(13, 15).trim();
+                    var A = $("#dtfechanac").val().substring(19, 23).trim();
+                    if (HH.length == 1) { HH = '0' + HH; }
+
+                    if (mm.length == 1) { mm = '0' + mm; }
+
+
+                    var jsonModulo = {
+                        'datos': []
+                    };
+                    for (var i = 0; i < $("#id_label_multiple").val().length; i++) {
+                        jsonModulo.datos.push({
+                             "idMicroEmprendedor": 0,
+                             "idRubro": $("#id_label_multiple").val()[i],
+                        });
+                    };
+
+                var jsonPalabraClave = {
+                        'datos': []
+                 };
+            let palabras = $("#tags").val().split(",");
+
+            for (var i = 0; i < palabras.length; i++) {
+                jsonPalabraClave.datos.push({
+                     "idMicroEmprendedor": 0,
+                     "palabra": palabras[i],
+                });
+            };
+
+
+                    var json = JSON.stringify(jsonModulo);
+                    var obj = JSON.parse(json);
+                    var jsonpc = JSON.stringify(jsonPalabraClave);
+                    var objpc = JSON.parse(jsonpc);
+                    var Microemprendedor = {
+                        id: $("#txtid").val(),
+                        apeyNom: $("#txtapeynom").val(),
+                        dni: $("#txtdni").val(),
+                        fechaNacimiento: moment(yyyy + "-" + MM + "-" + DD + "T" + HH + ":" + mm + ":" + A).format('YYYY-MM-DDT00:00:00'),
+                        idTipoDocumento: $("#cbotipodoc option:selected").val() == 0 ? null : $("#cbotipodoc option:selected").val(),
+                        tipoDocumento: {
+                                id: $("#cbotipodoc option:selected").val() == 0 ? null : $("#cbotipodoc option:selected").val(),
+                                descA: $("#cbotipodoc option:selected").text(),
+                                descC: 'completa'
+                        },
+                        sexo: $('input:radio[name=sexo]')[0].checked == 0 ? "M" : "F",
+                        calle: $("#txtcalle").val(),
+                        nro: $("#txtnro").val(),
+                        piso: $("#txtpiso").val(),
+                        depto: $("#txtdepto").val(),
+                        idLocalidad: $("#cbolocalidad option:selected").val() == 0 ? null : $("#cbolocalidad option:selected").val(),
+                        idRubro: $("#cborubro option:selected").val() == 0 ? null : $("#cborubro option:selected").val(),
+                        telFijo: $("#txttelfijo").val(),
+                        telCelular: $("#txttelcelular").val(),
+                        correo: $("#txtemail").val(),
+                        instagram: $("#txtinstagram").val(),
+                        facebook: $("#txtfacebook").val(),
+                        sitioWeb: $("#txtsitioweb").val(),
+                        observaciones: tinymce.get('taobservaciones').getContent(),
+                        rubros: obj.datos,
+                        palabrasClave:objpc.datos
+                    };
+
+                    console.log(Microemprendedor);
+
                     jQuery.ajax({
-                        url: '@Url.Action("DeleteMicroemprendedor", "Microemprendedor")',
+                        url: '@Url.Action("CreateMicroEmprendedor", "MicroEmprendedor")',
                         type: "POST",
                         data: JSON.stringify(Microemprendedor),
                         contentType: 'application/json',
                         success: function (data) {
-                            if (data.resultado) {
-                                tabladata.row(Microemprendedoreleccionado).remove().draw();
-                                // mostrarAlert(data.mensaje)
-                                agregarToast({ tipo: 'exito', titulo: 'Eliminando Microemprendedor', descripcion: 'Microemprendedor eliminado correctamente.', autoCierre: true })
-                            } else {
-                                agregarToast({ tipo: 'error', titulo: 'Eliminando Microemprendedor', descripcion: 'No se pudo eliminar el Microemprendedor', autoCierre: true });
-                                // swal("No se pudo eliminar", data.mensaje, "error");
-                                //  mostrarAlert(data.mensaje)
+                            $(".modal-body").LoadingOverlay("hide");
+                            //  Microemprendedor nuevo
+                            if (Microemprendedor.id == 0) {
+                                if (data.resultado != 0) {
+                                    Microemprendedor.id = data.resultado;
+                                    console.log(Microemprendedor);
+                                    tabladata.row.add(Microemprendedor).draw(false);
+                                    $("#FormModal").modal("hide");
+                                    agregarToast({ tipo: 'exito', titulo: 'Creando Microemprendedor', descripcion: 'Microemprendedor ingresado correctamente.', autoCierre: true });
+                                }
+                                else {
+                                    agregarToast({ tipo: 'error', titulo: 'Creando Microemprendedor', descripcion: data.mensaje, autoCierre: true });
+                                    $("#mensajeError").text(data.mensaje);
+                                    $("#mensajeError").show();
+                                }
+                            }
+                            //  Microemprendedor Editar
+                            else {
+
+                                if (data.resultado) {
+                                    tabladata.row(filaSeleccionada).data(Microemprendedor).draw(false);
+                                    filaSeleccionada = null;
+                                    agregarToast({ tipo: 'exito', titulo: 'Modificando Microemprendedor', descripcion: 'Microemprendedor modificado correctamente.', autoCierre: true });
+                                    $("#FormModal").modal("hide");
+                                    // mostrarAlert(data.mensaje)
+
+                                } else {
+                                    agregarToast({ tipo: 'error', titulo: 'Modificando Microemprendedor', descripcion: data.mensaje, autoCierre: true });
+                                    $("#mensajeError").text(data.mensaje);
+                                    $("#mensajeError").show();
+                                }
                             }
                         },
+                        beforeSend: function () {
+                            $(".modal-body").LoadingOverlay("show", {
+                                imageResizeFactor: 2,
+                                text: "Cargando...",
+                                size: 14
+                            });
+                        },
                         error: function (error) {
-                            console.log(error);
-                        }
-                    })
-                })
-        });
-
-        //Tomar Foto
-        function tomarFoto() {
-
-            debugger;
-            const video = document.getElementById('video');
-            const canvas = document.getElementById('canvas');
-            const imagen = document.getElementById('imagen');
-            const botonCaptura = document.getElementById('botonCaptura');
-            // Solicitar acceso a la cámara
-            navigator.mediaDevices.getUserMedia({ video: true })
-                .then(stream => {
-                    video.srcObject = stream;
-
-
-                })
-                .catch(error => {
-                    console.error('Error al acceder a la cámara:', error);
-                });
-
-            // Capturar la foto al hacer clic en el botón
-            botonCaptura.addEventListener('click', () => {
-                // Dibujar la imagen en el canvas
-                const ctx = canvas.getContext('2d');
-                ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-                // Obtener la imagen como data URL
-                const dataURL = canvas.toDataURL('image/png');
-
-                // Mostrar la imagen en la etiqueta img
-                imagen.src = dataURL;
-            });
-
-
-
-
-        }
-        //Seleccionar Imagen
-        function changePicture() {
-            $('#upload').click();
-        }
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    $('#imagen').attr('src', e.target.result);
-
-                };
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-        function capture() {
-            debugger;
-            var canvas = document.getElementById("canvas");
-            var video = document.getElementById("video");
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            canvas.getContext("2d").drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
-            const dataURL = canvas.toDataURL('image/png');
-            const playImage = new Image();
-            playImage.src = dataURL;
-            playImage.onload = () => {
-                const startX = video.videoWidth / 2 - playImage.width / 2;
-                const startY = video.videoHeight / 2 - playImage.height / 2;
-                canvas.getContext("2d").drawImage(playImage, startX, startY, playImage.width, playImage.height);
-                canvas.toBlob() = (blob) => {
-                    const img = new Image();
-                    img.src = window.URL.createObjectUrl(blob);
-                };
-            };
-            /** End **/
-        }
-
-
-
-
-
-
-
-
-
-        //Guardar
-        function Guardar() {
-
-
-            if (!$("#formNivel").valid()) {
-                return;
-            }
-
-            var yyyy = $("#dtfechanac").val().substring(6, 10);
-            var MM = $("#dtfechanac").val().substring(3, 5);
-            var DD = $("#dtfechanac").val().substring(0, 2);
-            var HH = $("#dtfechanac").val().substring(10, 12).trim();
-            var mm = $("#dtfechanac").val().substring(13, 15).trim();
-            var A = $("#dtfechanac").val().substring(19, 23).trim();
-            if (HH.length == 1) { HH = '0' + HH; }
-
-            if (mm.length == 1) { mm = '0' + mm; }
-
-
-
-
-
-
-
-
-
-            var jsonModulo = {
-                'datos': []
-            };
-            for (var i = 0; i < $("#id_label_multiple").val().length; i++) {
-                jsonModulo.datos.push({
-                     "IdMicroEmprendedor": 0,
-                     "IdRubro": $("#id_label_multiple").val()[i],
-                    //"rubro": {
-                       // "id": $("#id_label_multiple").val()[i],
-//                         "Descripcion": "AAA"
-
-                    //}
-                });
-            };
-            var json = JSON.stringify(jsonModulo);
-            var obj = JSON.parse(json);
-            console.log(obj);
-            var Microemprendedor = {
-                id: $("#txtid").val(),
-                apeyNom: $("#txtapeynom").val(),
-                dni: $("#txtdni").val(),
-                fechaNacimiento: moment(yyyy + "-" + MM + "-" + DD + "T" + HH + ":" + mm + ":" + A).format('YYYY-MM-DDT00:00:00'),
-                idTipoDocumento: $("#cbotipodoc option:selected").val() == 0 ? null : $("#cbotipodoc option:selected").val(),
-                sexo: $('input:radio[name=sexo]')[0].checked == 0 ? "M" : "F",
-                calle: $("#txtcalle").val(),
-                nro: $("#txtnro").val(),
-                piso: $("#txtpiso").val(),
-                depto: $("#txtdepto").val(),
-                idLocalidad: $("#cbolocalidad option:selected").val() == 0 ? null : $("#cbolocalidad option:selected").val(),
-                idRubro: $("#cborubro option:selected").val() == 0 ? null : $("#cborubro option:selected").val(),
-                telFijo: $("#txttelfijo").val(),
-                telCelular: $("#txttelcelular").val(),
-                correo: $("#txtemail").val(),
-                instagram: $("#txtinstagram").val(),
-                facebook: $("#txtfacebook").val(),
-                sitioWeb: $("#txtsitioweb").val(),
-                observaciones: tinymce.get('taobservaciones').getContent(),
-                rubros: obj.datos
-            };
-           
-
-
-            jQuery.ajax({
-                url: '@Url.Action("CreateMicroEmprendedor", "MicroEmprendedor")',
-                type: "POST",
-                
-
-                data: JSON.stringify(Microemprendedor),
-                contentType: 'application/json',
-                success: function (data) {
-                    $(".modal-body").LoadingOverlay("hide");
-                    //  Microemprendedor nuevo
-                    if (Microemprendedor.id == 0) {
-                        if (data.resultado != 0) {
-                            Microemprendedor.id = data.resultado;
-                            tabladata.row.add(Microemprendedor).draw(false);
-                            $("#FormModal").modal("hide");
-                            agregarToast({ tipo: 'exito', titulo: 'Creando Microemprendedor', descripcion: 'Microemprendedor ingresado correctamente.', autoCierre: true });
-                        }
-                        else {
-                            agregarToast({ tipo: 'error', titulo: 'Creando Microemprendedor', descripcion: data.mensaje, autoCierre: true });
-                            $("#mensajeError").text(data.mensaje);
+                            $(".modal-body").LoadingOverlay("hide");
+                            $("#mensajeError").text("Error Ajax");
                             $("#mensajeError").show();
                         }
                     }
-                    //  Microemprendedor Editar
-                    else {
-
-                        if (data.resultado) {
-                            tabladata.row(filaSeleccionada).data(Microemprendedor).draw(false);
-                            filaSeleccionada = null;
-                            agregarToast({ tipo: 'exito', titulo: 'Modificando Microemprendedor', descripcion: 'Microemprendedor modificado correctamente.', autoCierre: true });
-                            $("#FormModal").modal("hide");
-                            // mostrarAlert(data.mensaje)
-
-                        } else {
-                            agregarToast({ tipo: 'error', titulo: 'Modificando Microemprendedor', descripcion: data.mensaje, autoCierre: true });
-                            $("#mensajeError").text(data.mensaje);
-                            $("#mensajeError").show();
-                        }
-                    }
-                },
-                beforeSend: function () {
-                    $(".modal-body").LoadingOverlay("show", {
-                        imageResizeFactor: 2,
-                        text: "Cargando...",
-                        size: 14
-                    });
-                },
-                error: function (error) {
-                    $(".modal-body").LoadingOverlay("hide");
-                    $("#mensajeError").text("Error Ajax");
-                    $("#mensajeError").show();
+                    )
                 }
-            }
-            )
-        }
 
 
 
@@ -1110,24 +1100,24 @@
 
 
 
-        tinymce.init({
-            selector: 'textarea#taobservaciones',
-            height: 310,
-            license_key: 'gpl',
-            language: 'es',
-            plugins: [
-                'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
-                'anchor', 'searchreplace', 'visualblocks', 'fullscreen',
-                'insertdatetime', 'media', 'table'
-            ],
-            toolbar: 'undo redo | ' +
-                'bold italic backcolor | alignleft aligncenter ' +
-                'alignright alignjustify | bullist numlist outdent indent | ' +
-                'removeformat |',
-            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
-        });
+                tinymce.init({
+                    selector: 'textarea#taobservaciones',
+                    height: 310,
+                    license_key: 'gpl',
+                    language: 'es',
+                    plugins: [
+                        'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+                        'anchor', 'searchreplace', 'visualblocks', 'fullscreen',
+                        'insertdatetime', 'media', 'table'
+                    ],
+                    toolbar: 'undo redo | ' +
+                        'bold italic backcolor | alignleft aligncenter ' +
+                        'alignright alignjustify | bullist numlist outdent indent | ' +
+                        'removeformat |',
+                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+                });
 
-   
+
     </script>
 
 

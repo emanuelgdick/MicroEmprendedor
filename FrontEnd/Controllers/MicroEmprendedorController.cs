@@ -96,7 +96,7 @@ namespace FrontEnd.Controllers
                     {
                         
                         MicroEmprendedor = await _apiService.AddMicroEmprendedor(MicroEmprendedor, HttpContext.Session.GetString("APIToken"));
-                        resultado = MicroEmprendedor.Id;
+                        resultado =MicroEmprendedor.Id;
                         mensaje = "MicroEmprendedor ingresado correctamente";
                     }
                     else

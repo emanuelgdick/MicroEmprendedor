@@ -37,6 +37,7 @@
     <Content Remove="wwwroot\css\pnotify\dist\pnotify.tooltip.js" />
     <Content Remove="wwwroot\css\pnotify\libtests\browserify\index.js" />
     <Content Remove="wwwroot\css\pnotify\README.md" />
+    <Content Remove="wwwroot\css\tagsinput\jquery.tagsinput.css" />
     <Content Remove="wwwroot\images\back_disabled.png" />
     <Content Remove="wwwroot\images\back_enabled.png" />
     <Content Remove="wwwroot\images\back_enabled_hover.png" />
@@ -64,6 +65,7 @@
     <Content Remove="wwwroot\js\jqvmap\jquery.vmap.sampledata.js" />
     <Content Remove="wwwroot\js\jqvmap\jquery.vmap.world.js" />
     <Content Remove="wwwroot\js\moment\moment.min.js" />
+    <Content Remove="wwwroot\js\jquery\tagsinput\jquery.tagsinput.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -195,6 +197,7 @@
     <None Include="wwwroot\css\floating-labels\floating.labels.min.css" />
     <None Include="wwwroot\css\pnotify\.gitignore" />
     <None Include="wwwroot\css\pnotify\COPYING" />
+    <None Include="wwwroot\css\tagsinput\jquery.tagsinput.css" />
     <None Include="wwwroot\js\FullCalendar\fullcalendar.js" />
     <None Include="wwwroot\js\FullCalendar\fullcalendar.min.js" />
     <None Include="wwwroot\js\pnotify\pnotify.animate.js" />
@@ -248,6 +251,7 @@
     <None Include="wwwroot\js\jqvmap\jquery.vmap.sampledata.js" />
     <None Include="wwwroot\js\jqvmap\jquery.vmap.world.js" />
     <None Include="wwwroot\js\moment\moment.min.js" />
+    <None Include="wwwroot\js\jquery\tagsinput\jquery.tagsinput.js" />
     <None Include="wwwroot\js\tinymce\CHANGELOG.md" />
     <None Include="wwwroot\js\tinymce\tinymce\icons\default\icons.min.js" />
     <None Include="wwwroot\js\tinymce\tinymce\langs\README.md" />

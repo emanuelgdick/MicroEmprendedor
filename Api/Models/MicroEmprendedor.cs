@@ -24,7 +24,7 @@ namespace Api.Models
         public Localidad? Localidad { get; set; }
 
         [Required]
-        public string ApeyNom { get; set; }
+        public string? ApeyNom { get; set; }
 
         public string? Dni { get; set; }
         public DateTime? FechaNacimiento { get; set; }
@@ -42,7 +42,8 @@ namespace Api.Models
         public string? Observaciones { get; set; }
 
 
-        public virtual ICollection<MicroEmprendedorRubro> Rubros { get; set; }
+        public virtual ICollection<MicroEmprendedorRubro>? Rubros { get; set; }
+        public virtual ICollection<PalabraClave>? PalabrasClave { get; set; }
 
     }
 }

@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using System.Data;
+using System.Globalization;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace Api.Controllers
@@ -36,33 +38,172 @@ namespace Api.Controllers
                 try
                 {
                     oConexion.Open();
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    while (dr.Read())
+                   
+                    using (XmlReader dr = cmd.ExecuteXmlReader())
                     {
-                        rptListaMicroEmprendedor.Add(new MicroEmprendedor()
+                        while (dr.Read())
                         {
-                            Id = Convert.ToInt32(dr["Id"].ToString()),
-                            ApeyNom = dr["ApeyNom"].ToString(),
-                            Dni = dr["Dni"].ToString(),
-                            FechaNacimiento = Convert.ToDateTime(dr["FechaNacimiento"]),//.ToString("dd/MM/yyyy"),
-                           // Sexo = dr["Sexo"].ToString(),
-                            Calle = dr["Calle"].ToString(),
-                            Nro = dr["Nro"].ToString(),
-                            Piso = dr["Piso"].ToString(),
-                            Depto = dr["Depto"].ToString(),
-                            TelFijo = dr["TelFijo"].ToString(),
-                            TelCelular = dr["TelCelular"].ToString(),
-                            Correo = dr["Correo"].ToString(),
-                            SitioWeb = dr["Sitioweb"].ToString(),
-                            Instagram = dr["Instagram"].ToString(),
-                            Facebook = dr["Facebook"].ToString(),
-                            Observaciones = dr["Observaciones"].ToString(),
-                           // Rubros = new RubroController().Listar(Convert.ToInt32(dr["Id"].ToString()))
+                            XDocument doc = XDocument.Load(dr);
+                            if (doc.Element("Data") != null)
+                            {
+                                rptListaMicroEmprendedor = (from c in doc.Element("Data").Elements("MicroEmprendedor")
+                                                            select new MicroEmprendedor()
+                                                            {
+                                                                Id = Convert.ToInt32(c.Element("Id").Value),
+                                                                IdTipoDocumento = Convert.ToInt32(c.Element("IdTipoDocumento").Value),
+                                                                IdLocalidad = Convert.ToInt32(c.Element("IdLocalidad").Value),
+                                                                ApeyNom = c.Element("ApeyNom").Value,
+                                                                Calle = c.Element("Calle").Value,
+                                                                Nro = c.Element("Nro").Value,
+                                                                Piso = c.Element("Piso").Value,
+                                                                Depto = c.Element("Depto").Value,
+                                                                TelFijo = c.Element("TelFijo").Value,
+                                                                TelCelular = c.Element("TelCelular").Value,
+                                                                Facebook = c.Element("Facebook").Value,
+                                                                Instagram = c.Element("Instagram").Value,
+                                                                SitioWeb = c.Element("SitioWeb").Value,
+                                                                Correo = c.Element("Correo").Value,
+                                                                // Sexo = c.Element("Sexo").Value.ToString(),
+                                                                Dni = c.Element("Dni").Value,
+                                                                Observaciones = c.Element("Observaciones").Value,
+                                                                FechaNacimiento = Convert.ToDateTime(c.Element("FechaNacimiento").Value.ToString()),
+                                                                Localidad = (from g in c.Elements("Localidad")
+                                                                             select new Localidad()
+                                                                             {
+                                                                                 Id = Convert.ToInt32(g.Element("Id").Value),
+                                                                                 Descripcion = g.Element("Descripcion").Value
+                                                                             }).FirstOrDefault(),
+                                                                TipoDocumento = (from h in c.Elements("TipoDocumento")
+                                                                                 select new TipoDocumento()
+                                                                                 {
+                                                                                     Id = Convert.ToInt32(h.Element("Id").Value),
+                                                                                     DescA = h.Element("DescA").Value,
+                                                                                     DescC = h.Element("DescC").Value
 
-                        });
+                                                                                 }).FirstOrDefault(),
+
+                                                                Rubros = (from d in c.Elements("Rubros")
+                                                                          select new MicroEmprendedorRubro()
+                                                                          {
+                                                                              IdMicroEmprendedor = Convert.ToInt32(d.Element("IdMicroEmprendedor").Value),
+                                                                              IdRubro = Convert.ToInt32(d.Element("IdRubro").Value)
+                                                                          }).ToList(),
+                                                                PalabrasClave = (from d in c.Elements("PalabrasClave")
+                                                                                 select new PalabraClave()
+                                                                                 {
+                                                                                     IdMicroEmprendedor = Convert.ToInt32(d.Element("IdMicroEmprendedor").Value),
+                                                                                     Palabra =d.Element("Palabra").Value
+                                                                                 }).ToList()
+
+
+
+                                                            }).ToList();
+                            }
+                            else
+                            {
+                                rptListaMicroEmprendedor = new List<MicroEmprendedor>();
+                            }
+                        }
+
+                        dr.Close();
+                        return Ok(rptListaMicroEmprendedor);
                     }
-                    dr.Close();
-                    return Ok(rptListaMicroEmprendedor);
+                }
+                catch (Exception ex)
+                {
+                    rptListaMicroEmprendedor = null;
+                    return null;
+                }
+            }
+        }
+
+        [HttpGet("GetMicroEmprendedoresFiltrados")]
+        [Authorize]
+        [ResponseCache(CacheProfileName = "apicache")]
+        public IActionResult GetMicroEmprendedoresFiltrados(int localidad, int rubro)
+        {
+            _logger.LogInformation("Fetching Todas las MicroEmprendedores");
+
+            List<MicroEmprendedor> rptListaMicroEmprendedor = new List<MicroEmprendedor>();
+            using (SqlConnection oConexion = new SqlConnection(Conexion.cn))
+            {
+                SqlCommand cmd = new SqlCommand("sp_ObtenerMicroEmprendedorFiltrados", oConexion);
+                cmd.Parameters.Add("IdLocalidad", SqlDbType.Int).Value = localidad;
+                cmd.Parameters.Add("IdRubro", SqlDbType.Int).Value = rubro;
+                cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                cmd.CommandType = CommandType.StoredProcedure;
+                try
+                {
+                    oConexion.Open();
+
+                    using (XmlReader dr = cmd.ExecuteXmlReader())
+                    {
+                        while (dr.Read())
+                        {
+                            XDocument doc = XDocument.Load(dr);
+                            if (doc.Element("Data") != null)
+                            {
+                                rptListaMicroEmprendedor = (from c in doc.Element("Data").Elements("MicroEmprendedor")
+                                                            select new MicroEmprendedor()
+                                                            {
+                                                                Id = Convert.ToInt32(c.Element("Id").Value),
+                                                                IdTipoDocumento = Convert.ToInt32(c.Element("IdTipoDocumento").Value),
+                                                                IdLocalidad = Convert.ToInt32(c.Element("IdLocalidad").Value),
+                                                                ApeyNom = c.Element("ApeyNom").Value,
+                                                                Calle = c.Element("Calle").Value,
+                                                                Nro = c.Element("Nro").Value,
+                                                                Piso = c.Element("Piso").Value,
+                                                                Depto = c.Element("Depto").Value,
+                                                                TelFijo = c.Element("TelFijo").Value,
+                                                                TelCelular = c.Element("TelCelular").Value,
+                                                                Facebook = c.Element("Facebook").Value,
+                                                                Instagram = c.Element("Instagram").Value,
+                                                                SitioWeb = c.Element("SitioWeb").Value,
+                                                                Correo = c.Element("Correo").Value,
+                                                                // Sexo = c.Element("Sexo").Value.ToString(),
+                                                                Dni = c.Element("Dni").Value,
+                                                                Observaciones = c.Element("Observaciones").Value,
+                                                                FechaNacimiento = Convert.ToDateTime(c.Element("FechaNacimiento").Value.ToString()),
+                                                                Localidad = (from g in c.Elements("Localidad")
+                                                                             select new Localidad()
+                                                                             {
+                                                                                 Id = Convert.ToInt32(g.Element("Id").Value),
+                                                                                 Descripcion = g.Element("Descripcion").Value
+                                                                             }).FirstOrDefault(),
+                                                                TipoDocumento = (from h in c.Elements("TipoDocumento")
+                                                                                 select new TipoDocumento()
+                                                                                 {
+                                                                                     Id = Convert.ToInt32(h.Element("Id").Value),
+                                                                                     DescA = h.Element("DescA").Value,
+                                                                                     DescC = h.Element("DescC").Value
+
+                                                                                 }).FirstOrDefault(),
+
+                                                                Rubros = (from d in c.Elements("Rubros")
+                                                                          select new MicroEmprendedorRubro()
+                                                                          {
+                                                                              //  Id = Convert.ToInt32(d.Element("Id").Value),
+                                                                              IdMicroEmprendedor = Convert.ToInt32(d.Element("IdMicroEmprendedor").Value),
+                                                                              IdRubro = Convert.ToInt32(d.Element("IdRubro").Value)
+                                                                          }).ToList(),
+                                                                PalabrasClave = (from d in c.Elements("PalabrasClave")
+                                                                                 select new PalabraClave()
+                                                                                 {
+                                                                                     IdMicroEmprendedor = Convert.ToInt32(d.Element("IdMicroEmprendedor").Value),
+                                                                                     Palabra = d.Element("Palabra").Value
+                                                                                 }).ToList()
+                                                            }).ToList();
+                            }
+                            else
+                            {
+                                rptListaMicroEmprendedor = new List<MicroEmprendedor>();
+                            }
+                        }
+
+                        dr.Close();
+                        return Ok(rptListaMicroEmprendedor);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -92,7 +233,6 @@ namespace Api.Controllers
             return MicroEmprendedor;
         }
 
-
         [HttpPost("AddMicroEmprendedor")]
         [Authorize]
         public ActionResult<MicroEmprendedor> AddMicroEmprendedor([FromBody] MicroEmprendedor microEmprendedor)
@@ -101,7 +241,7 @@ namespace Api.Controllers
             try
             {
                 XElement microRubro = new XElement("MicroEmprendedor",
-                     new XElement("IdtipoDocumento", microEmprendedor.IdTipoDocumento),
+                     new XElement("IdTipoDocumento", microEmprendedor.IdTipoDocumento),
                      new XElement("IdLocalidad", microEmprendedor.IdLocalidad),
                      new XElement("ApeyNom", microEmprendedor.ApeyNom),
                      new XElement("Dni", microEmprendedor.Dni),
@@ -132,10 +272,20 @@ namespace Api.Controllers
                     }
                 }
                 microRubro.Add(microEmprendedorRubro);
+                XElement palabraClave = new XElement("PalabraClave");
+                if (microEmprendedor.PalabrasClave != null)
+                {
+                    foreach (PalabraClave item in microEmprendedor.PalabrasClave)
+                    {
+                        palabraClave.Add(new XElement("Item",
 
+                                new XElement("IdMicroEmprendedor", item.IdMicroEmprendedor), 
+                                new XElement("Palabra", item.Palabra)
+                            ));
+                    }
+                }
 
-
-
+                microRubro.Add(palabraClave);
 
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
                 {
@@ -146,7 +296,7 @@ namespace Api.Controllers
                     cmd.CommandType = CommandType.StoredProcedure;
                     oconexion.Open();
                     cmd.ExecuteNonQuery();
-                    idautogenerado = Convert.ToInt32(cmd.Parameters["Resultado"].Value);
+                    microEmprendedor.Id = Convert.ToInt32(cmd.Parameters["Resultado"].Value);
                    // Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
                 }
             }
@@ -164,7 +314,7 @@ namespace Api.Controllers
         public ActionResult<MicroEmprendedor> UpdateMicroEmprendedor(Int32 Id, [FromBody] MicroEmprendedor microEmprendedor)
         {
             XElement microRubro = new XElement("MicroEmprendedor",
-            new XElement("IdtipoDocumento", microEmprendedor.IdTipoDocumento),
+            new XElement("IdTipoDocumento", microEmprendedor.IdTipoDocumento),
             new XElement("IdLocalidad", microEmprendedor.IdLocalidad),
             new XElement("ApeyNom", microEmprendedor.ApeyNom),
             new XElement("Dni", microEmprendedor.Dni),
@@ -194,11 +344,28 @@ namespace Api.Controllers
                         ));
                 }
             }
+
             microRubro.Add(microEmprendedorRubro);
+
+            XElement palabraClave = new XElement("PalabraClave");
+            if (microEmprendedor.PalabrasClave != null)
+            {
+                foreach (PalabraClave item in microEmprendedor.PalabrasClave)
+                {
+                    palabraClave.Add(new XElement("Item",
+
+                            new XElement("IdMicroEmprendedor", item.IdMicroEmprendedor),
+                            new XElement("Palabra", item.Palabra)
+                        ));
+                }
+            }
+
+            microRubro.Add(palabraClave);
 
             using (SqlConnection oconexion = new SqlConnection(Conexion.cn))
             {
                 SqlCommand cmd = new SqlCommand("sp_EditarMicroEmprendedor", oconexion);
+                cmd.Parameters.Add("IdMicroEmprendedor", SqlDbType.Int).Value = Id;
                 cmd.Parameters.Add("MicroEmprendedor", SqlDbType.Xml).Value = microRubro.ToString();
                 cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
@@ -211,9 +378,6 @@ namespace Api.Controllers
             return Ok(microEmprendedor);
         }
             
-
-        
-
         [HttpPut("DeleteMicroEmprendedor")]
         [Authorize(Roles = "Admin")]
         public ActionResult<MicroEmprendedor> DeleteMicroEmprendedor(Int32 Id)

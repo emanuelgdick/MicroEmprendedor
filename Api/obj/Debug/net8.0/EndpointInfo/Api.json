@@ -309,20 +309,6 @@
         "tags": [
           "MicroEmprendedor"
         ],
-        "parameters": [
-          {
-            "name": "lista",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "integer",
-                "format": "int32"
-              }
-            }
-          }
-        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -1095,8 +1081,53 @@
           "rubros": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Rubro"
+              "$ref": "#/components/schemas/MicroEmprendedorRubro"
             },
+            "nullable": true
+          },
+          "palabrasClave": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PalabraClave"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MicroEmprendedorRubro": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idMicroEmprendedor": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idRubro": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PalabraClave": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idMicroEmprendedor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "palabra": {
+            "type": "string",
             "nullable": true
           }
         },
@@ -1119,7 +1150,7 @@
           "microEmprendedores": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/MicroEmprendedor"
+              "$ref": "#/components/schemas/MicroEmprendedorRubro"
             },
             "nullable": true
           }
