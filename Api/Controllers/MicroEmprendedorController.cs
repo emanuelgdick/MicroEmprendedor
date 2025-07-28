@@ -24,8 +24,8 @@ namespace Api.Controllers
         }
 
         [HttpGet]
-        [Authorize]
-        [ResponseCache(CacheProfileName = "apicache")]
+        //[Authorize]
+        //[ResponseCache(CacheProfileName = "apicache")]
         public IActionResult GetMicroEmprendedores(/*int pagesize, int pagenumber*/)
         {
             _logger.LogInformation("Fetching Todas las MicroEmprendedores");
@@ -118,8 +118,8 @@ namespace Api.Controllers
         }
 
         [HttpGet("GetMicroEmprendedoresFiltrados")]
-        [Authorize]
-        [ResponseCache(CacheProfileName = "apicache")]
+        //[Authorize]
+        //[ResponseCache(CacheProfileName = "apicache")]
         public IActionResult GetMicroEmprendedoresFiltrados(int localidad, int rubro)
         {
             _logger.LogInformation("Fetching Todas las MicroEmprendedores");

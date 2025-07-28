@@ -1,3 +1,4 @@
+using FrontEnd.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Text.Json.Serialization;
 
@@ -17,15 +18,21 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
     options.Cookie.HttpOnly = true;
     options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
-    options.LoginPath = "/Authuser/Login";
+    //options.LoginPath = "/Authuser/Login";
+    options.LoginPath = "/Home/default";
     options.AccessDeniedPath = "/Authuser/AccessDenied";
     options.SlidingExpiration = true;
 
 });
 
+
 builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 //builder.Services.AddControllersWithViews().AddJsonOptions(x => x.JsonSerializerOptions.PropertyNamingPolicy = null);
+
+
+
+
 
 builder.Services.AddSession(options =>
 {
@@ -54,8 +61,11 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.UseSession();
 
+//app.MapControllerRoute(
+//    name: "default",
+//    pattern: "{controller=Authuser}/{action=Login}/{id?}");
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Authuser}/{action=Login}/{id?}");
+    pattern: "{controller=Home}/{action=default}");
 
 app.Run();

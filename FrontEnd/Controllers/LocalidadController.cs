@@ -37,12 +37,12 @@ namespace FrontEnd.Controllers
         }
 
 
-        [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
+        //[Authorize(Roles = "Admin")]
+        //[ResponseCache(Duration = 30)]
         public async Task<JsonResult> GetAllLocalidades()
         {
             List<Localidad> oLista = new List<Localidad>();
-            oLista = await _apiService.GetAllLocalidades(HttpContext.Session.GetString("APIToken"));
+            oLista = await _apiService.GetAllLocalidades(/*HttpContext.Session.GetString("APIToken")*/);
             return Json(new { data = oLista });
         }
 

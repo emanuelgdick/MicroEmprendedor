@@ -38,8 +38,8 @@ namespace FrontEnd.Controllers
         }
 
 
-        [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
+        //[Authorize(Roles = "Admin")]
+        //[ResponseCache(Duration = 30)]
         public async Task<JsonResult> GetAllRubros(string? q = null)
         {
             //List<Rubro> oLista = new List<Rubro>();
@@ -47,7 +47,7 @@ namespace FrontEnd.Controllers
             //return Json(new { data = oLista });
 
             List<Rubro> oLista = new List<Rubro>();
-            oLista = await _apiService.GetAllRubros(HttpContext.Session.GetString("APIToken"));
+            oLista = await _apiService.GetAllRubros(/*HttpContext.Session.GetString("APIToken")*/);
             List<Rubro> resultados = new List<Rubro>();
             if (q == null || q=="null")
             {

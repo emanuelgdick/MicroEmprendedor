@@ -27,7 +27,7 @@ namespace FrontEnd.Controllers
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance); // Register the provider
         }
 
-        
+
 
         [Authorize(Roles = "Admin")]
         [ResponseCache(Duration = 30)]
@@ -47,28 +47,28 @@ namespace FrontEnd.Controllers
         public ActionResult ConverHCToHTML(string historia)
         {
             string htmlContent = RtfHelper.ConvertRtfToHtml(historia);
-          //  ViewBag.HtmlContent = htmlContent; // Pasar el contenido HTML al modelo de la vista.
+            //  ViewBag.HtmlContent = htmlContent; // Pasar el contenido HTML al modelo de la vista.
             return Json(new { data = htmlContent });
         }
 
 
-        [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
+        //[Authorize(Roles = "Admin")]
+        //[ResponseCache(Duration = 30)]
         public async Task<JsonResult> GetAllMicroEmprendedor()
         {
             List<MicroEmprendedor> lstMicroEmprendedor = new List<MicroEmprendedor>();
-            
-            lstMicroEmprendedor = await _apiService.GetAllMicroEmprendedores(HttpContext.Session.GetString("APIToken"));
+
+            lstMicroEmprendedor = await _apiService.GetAllMicroEmprendedores(/*HttpContext.Session.GetString("APIToken")*/);
             return Json(new { data = lstMicroEmprendedor });
         }
-        
-        
-        [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
-        public async Task<JsonResult> GetMicroEmprendedorFiltrados(int localidad,int rubro)
+
+
+        //[Authorize(Roles = "Admin")]
+        //[ResponseCache(Duration = 30)]
+        public async Task<JsonResult> GetMicroEmprendedorFiltrados(int localidad, int rubro)
         {
             List<MicroEmprendedor> oLista = new List<MicroEmprendedor>();
-            oLista = await _apiService. GetMicroEmprendedoresFiltrados(localidad,rubro,HttpContext.Session.GetString("APIToken"));
+            oLista = await _apiService.GetMicroEmprendedoresFiltrados(localidad, rubro/*, HttpContext.Session.GetString("APIToken")*/);
             return Json(new { data = oLista });
         }
 
@@ -86,46 +86,61 @@ namespace FrontEnd.Controllers
             object resultado = null;
             string mensaje = String.Empty;
 
-       
-            if (MicroEmprendedor != null) { 
-            try
-            {
-                if (MicroEmprendedor.Id == 0)
-                {
-                    if (MicroEmprendedor.ApeyNom != "")
-                    {
-                        
-                        MicroEmprendedor = await _apiService.AddMicroEmprendedor(MicroEmprendedor, HttpContext.Session.GetString("APIToken"));
-                        resultado =MicroEmprendedor.Id;
-                        mensaje = "MicroEmprendedor ingresado correctamente";
-                    }
-                    else
-                    {
-                        resultado = false;
-                        mensaje = "Por favor ingrese el Apellido y Nombre";
-                    }
-                }
-                else
-                {
-                    if (MicroEmprendedor.ApeyNom != "")
-                    {
-                        await _apiService.UpdateMicroEmprendedor(MicroEmprendedor.Id, MicroEmprendedor, HttpContext.Session.GetString("APIToken"));
 
-                        resultado = true;
-                        mensaje = "MicroEmprendedor modificado correctamente";
+            if (MicroEmprendedor != null)
+            {
+                try
+                {
+                    if (MicroEmprendedor.Id == 0)
+                    {
+                        if (MicroEmprendedor.ApeyNom != "")
+                        {
+                            if (MicroEmprendedor.Rubros.Count != 0)
+                            {
+                                MicroEmprendedor = await _apiService.AddMicroEmprendedor(MicroEmprendedor, HttpContext.Session.GetString("APIToken"));
+                                resultado = MicroEmprendedor.Id;
+                                mensaje = "MicroEmprendedor ingresado correctamente";
+                            }
+                            else
+                            {
+                                resultado = false;
+                                mensaje = "Por favor ingrese al menos un rubro";
+                            }
+                        }
+                        else
+                        {
+                            resultado = false;
+                            mensaje = "Por favor ingrese el Apellido y Nombre";
+                        }
                     }
                     else
                     {
-                        resultado = false;
-                        mensaje = "Por favor ingrese el Apellido y Nombre";
+                        if (MicroEmprendedor.ApeyNom != "")
+                        {
+                            if (MicroEmprendedor.Rubros.Count != 0)
+                            {
+                                await _apiService.UpdateMicroEmprendedor(MicroEmprendedor.Id, MicroEmprendedor, HttpContext.Session.GetString("APIToken"));
+                                resultado = true;
+                                mensaje = "MicroEmprendedor modificado correctamente";
+                            }
+                            else
+                            {
+                                resultado = false;
+                                mensaje = "Por favor ingrese al menos un rubro";
+                            }
+                        }
+                        else
+                        {
+                            resultado = false;
+                            mensaje = "Por favor ingrese el Apellido y Nombre";
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                resultado = false;
-                mensaje += ex.Message;
-            }
+                catch (Exception ex)
+                {
+                    resultado = false;
+                    mensaje += ex.Message;
+                }
             }
             else
             {

@@ -28,9 +28,9 @@ namespace FrontEnd.Services
 
         //LOCALIDAD
         #region
-        public async Task<List<Localidad>> GetAllLocalidades(string token)
+        public async Task<List<Localidad>> GetAllLocalidades(/*string token*/)
         {
-            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+          //  _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             HttpResponseMessage response = await _httpClient.GetAsync($"api/Localidad?");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
@@ -79,9 +79,9 @@ namespace FrontEnd.Services
 
         //RUBRO
         #region
-        public async Task<List<Rubro>> GetAllRubros(string token)
+        public async Task<List<Rubro>> GetAllRubros(/*string token*/)
         {
-            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        //    _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             HttpResponseMessage response = await _httpClient.GetAsync($"api/Rubro?");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
@@ -131,9 +131,9 @@ namespace FrontEnd.Services
 
         //MICROEMPRENDEDOR
         #region
-        public async Task<List<MicroEmprendedor>> GetAllMicroEmprendedores(string token)
+        public async Task<List<MicroEmprendedor>> GetAllMicroEmprendedores(/*string token*/)
         {
-            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             HttpResponseMessage response = await _httpClient.GetAsync($"api/MicroEmprendedor?");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
@@ -142,9 +142,9 @@ namespace FrontEnd.Services
             return APIResponse;
         }
 
-        public async Task<List<MicroEmprendedor>> GetMicroEmprendedoresFiltrados(int localidad, int rubro, string token)
+        public async Task<List<MicroEmprendedor>> GetMicroEmprendedoresFiltrados(int localidad, int rubro/*, string token*/)
         {
-            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             HttpResponseMessage response = await _httpClient.GetAsync($"api/MicroEmprendedor/GetMicroEmprendedoresFiltrados?localidad={localidad}&rubro={rubro}");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();

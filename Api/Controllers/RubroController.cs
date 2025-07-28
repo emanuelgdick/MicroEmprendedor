@@ -16,8 +16,8 @@ namespace Api.Controllers
 
      
         [HttpGet]
-        [Authorize]
-        [ResponseCache(CacheProfileName = "apicache")]
+        //[Authorize]
+        //[ResponseCache(CacheProfileName = "apicache")]
         public IActionResult GetRubros(/*int pagesize, int pagenumber*/)
         {
         //    _logger.LogInformation("Fetching Todas las Rubros");

@@ -21,8 +21,8 @@ namespace Api.Controllers
         }
 
         [HttpGet]
-        [Authorize]
-        [ResponseCache(CacheProfileName = "apicache")]
+        //[Authorize]
+       // [ResponseCache(CacheProfileName = "apicache")]
         public IActionResult GetLocalidades(/*int pagesize, int pagenumber*/)
         {
             _logger.LogInformation("Fetching Todas las Localidads");

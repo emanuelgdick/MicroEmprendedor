@@ -103,9 +103,9 @@ function SmartWizard(target, options) {
         if($this.options.keyNavigation){
             $(document).keyup(function(e){
                 if(e.which==39){ // Right Arrow
-                    $this.goForward();
+                   // $this.goForward();
                 }else if(e.which==37){ // Left Arrow
-                    $this.goBackward();
+                   // $this.goBackward();
                 }
             });
         }

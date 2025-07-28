@@ -26,7 +26,7 @@ namespace Frontend.Controllers
      
         
 
-        [Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
        // [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Index()
         {
@@ -35,11 +35,19 @@ namespace Frontend.Controllers
             if (userIdClaim != null)
             {
                  userId=userIdClaim.Value;
+                TotalesDTO totales = new TotalesDTO();
+                totales = await _apiService.GetTotales(int.Parse(userId), HttpContext.Session.GetString("APIToken"));
+                return View(totales);
             }
-            TotalesDTO totales = new TotalesDTO();
-            totales = await _apiService.GetTotales(int.Parse(userId),HttpContext.Session.GetString("APIToken"));
-            return View(totales);
 
+            return View();
+        }
+
+
+        public async Task<IActionResult> Default()
+        {
+
+            return View();
         }
     }
 }

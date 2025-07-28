@@ -1,0 +1,415 @@
+﻿@* @using Frontend.Models
+ @model List<Rubro> *@
+@{
+    ViewBag.Title = "Microemprendedor";
+    Layout = null;
+}
+
+
+
+<style>
+    .contenedor-scroll {
+        overflow-x: hidden; /* Deshabilitar scroll horizontal */
+        /* Puedes añadir overflow-y: hidden; si también necesitas deshabilitar el scroll vertical */
+        width: 715px; /* Ajusta la anchura según tus necesidades */
+        height: 120px; /* Ajusta la altura según tus necesidades */
+        /*border: 1px solid black;  Para ver los límites del contenedor */
+    }
+
+    /* Adapts a floating label for use with a left-handed input group icon */
+    .form-floating > .bi-calendar-date + .datepicker_input + label {
+        padding-left: 3.5rem;
+        z-index: 3;
+    }
+
+</style>
+<!-- head: below existing links -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@4.0.1/dist/css/multi-select-tag.min.css">
+<!-- End of <body> -->
+<script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@4.0.1/dist/js/multi-select-tag.min.js"></script>
+
+<div class="card">
+    <div class="row  m-0 p-0">
+        <div class="col-11 m-0 p-0">
+            <h1 class=" m-0 mt-1 p-0">Microemprendedores</h1>
+        </div>
+    </div>
+
+    <hr class="m-0 p-0" style="background-color:#E74C3C" />
+
+    <div class="accordion m-3" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Filtros
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="row    m-0 p-0">
+                        <div class="col-2 m-1 mt-0 p-0 form-floating">
+                            <select id="cbolocalidadF" class="form-select " name="localidadF" autocomplete="off" placeholder="Localidad"></select>
+                            <label for="cbolocalidadF" class="form-label pt-1">Localidad</label>
+                        </div>
+
+                        <div class="col-2 m-1 mt-0 p-0 form-floating">
+                            <select id="cborubroF" class="form-select " name="rubroF" autocomplete="off" placeholder="Rubro"></select>
+                            <label for="cborubroF" class="form-label pt-1">Rubro</label>
+                        </div>
+
+                        <div class=" col-5">
+                        </div>
+                        <div class="col-1  m-1 ">
+                            <button type="button" class="btn btnFiltrar" onclick="filtrarMicroemprendedor(true)">Filtrar</button>
+                        </div>
+                        <div class="col-1  m-1 ">
+                            <button type="button" class="btn btnLimpiar" onclick="limpiarFiltros(true)">Limpiar</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="card-body">
+
+        <table id="tabla" class="display dataTable" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Apellido y Nombre</th>
+                    <th>Tipo Doc</th>
+                    <th>N° Doc</th>
+                    <th>Sexo</th>
+                    <th>Calle</th>
+                    <th>Nro</th>
+                    <th>Piso</th>
+                    <th>Depto</th>
+                    <th>Tel. Fijo</th>
+                    <th>Tel. Celular</th>
+                    <th>Correo</th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+    </div>
+
+</div>
+
+<!-- TOAST -->
+<div class="contenedor">
+    <div class="contenedor-toastP" id="contenedor-toastP">
+    </div>
+</div>
+
+
+
+
+
+@section scripts {
+
+    <script>
+        var tabladata;
+        var agregarToast;
+
+        //GET LOCALIDADES
+        jQuery.ajax({
+            url: '@Url.Action("GetAllLocalidades", "Localidad")',
+            type: "GET",
+            data: null,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadF");
+                $.each(data.data, function (index, value) {
+                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadF");
+                    
+                });
+            },
+            error: function (error) {
+                console.log(error)
+            }
+        });
+
+        //GET RUBROS
+        var rub = [];
+        jQuery.ajax({
+            url: '@Url.Action("GetAllRubros", "Rubro")',
+            type: "GET",
+            data: null,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                debugger;
+                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cborubroF");
+                $.each(data.data, function (index, value) {
+                    rub.push({ value: value.id, text: value.text });
+                    $("<option>").attr({ "value": value.id }).text(value.text).appendTo("#cborubroF");
+                });
+            },
+            error: function (error) {
+                console.log(error)
+            }
+        });
+
+        const getDatePickerTitle = elem => {
+            // From the label or the aria-label
+            const label = elem.nextElementSibling;
+            let titleText = '';
+            if (label && label.tagName === 'LABEL') {
+                titleText = label.textContent;
+            } else {
+                titleText = elem.getAttribute('aria-label') || '';
+            }
+            return titleText;
+        }
+        const elems = document.querySelectorAll('.datepicker_input');
+        for (const elem of elems) {
+            const datepicker = new Datepicker(elem, {
+                'format': 'dd/mm/yyyy', // UK format
+                title: getDatePickerTitle(elem)
+            });
+        }
+
+
+        const contenedorToast = document.getElementById('contenedor-toastP');
+        // Event listener para detectar click en los toasts
+        contenedorToast.addEventListener('click', (e) => {
+            const toastId = e.target.closest('div.toastP').id;
+            if (e.target.closest('button.btn-cerrar')) {
+                cerrarToast(toastId);
+            }
+        });
+
+        // Función para cerrar el toast
+        const cerrarToast = (id) => {
+            document.getElementById(id)?.classList.add('cerrando');
+        };
+
+
+        // Función para agregar la clase de cerrando al toast.
+        agregarToast = ({ tipo, titulo, descripcion, autoCierre }) => {
+            // Crear el nuevo toast
+            const nuevoToast = document.createElement('div');
+            // Agregar clases correspondientes
+            nuevoToast.classList.add('toastP');
+            nuevoToast.classList.add(tipo);
+            if (autoCierre) nuevoToast.classList.add('autoCierreP');
+            // Agregar id del toast
+            const numeroAlAzar = Math.floor(Math.random() * 100);
+            const fecha = Date.now();
+            const toastId = fecha + numeroAlAzar;
+            nuevoToast.id = toastId;
+            // Iconos
+            const iconos = {
+                exito: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                                                                                              <path
+                                                                                                                                                  d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
+                                                                                                                                              />
+                                                                                                                                          </svg>`,
+                error: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                                                                                                          <path
+                                                                                                                                                              d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                                                                                                                          />
+                                                                                                                                                      </svg>`,
+                info: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                                                                                                          <path
+                                                                                                                                                              d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+                                                                                                                                                          />
+                                                                                                                                                      </svg>`,
+                warning: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                                                                                                                                          <path
+                                                                                                                                                              d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                                                                                                                          />
+                                                                                                                                                      </svg>`,
+            };
+
+            // Plantilla del toast
+            const toast = `
+                                                                                                                      `;
+
+            // Agregar la plantilla al nuevo toast
+            nuevoToast.innerHTML = toast;
+
+            // Agregamos el nuevo toast al contenedor
+            contenedorToast.appendChild(nuevoToast);
+
+            // Función para menajera el cierre del toast
+            const handleAnimacionCierre = (e) => {
+                if (e.animationName === 'cierre') {
+                    nuevoToast.removeEventListener('animationend', handleAnimacionCierre);
+                    nuevoToast.remove();
+                }
+            };
+
+            if (autoCierre) {
+                setTimeout(() => cerrarToast(toastId), 5000);
+            }
+
+            // Agregamos event listener para detectar cuando termine la animación
+            nuevoToast.addEventListener('animationend', handleAnimacionCierre);
+        };
+
+        var filaSeleccionada;
+        llenarTabla(false)
+
+
+       
+   
+
+        //Llenar Tabla
+        function llenarTabla(filtro) {
+
+
+
+            var url;
+            if (filtro) {
+                url = "@Url.Action("GetMicroemprendedorFiltrados", "Microemprendedor")" + '?localidad=' + $("#cbolocalidadF").val() + '&rubro=' + $("#cborubroF").val()
+            }else
+                url = "@Url.Action("GetAllMicroEmprendedor", "Microemprendedor")"
+
+            $('#tabla').DataTable().clear().destroy();
+            tabladata = $("#tabla").DataTable({
+                responsive: true,
+                ordering: true,
+                dom: "Bfrtip",
+                buttons: [
+                    {
+                        extend: "excelHtml5",
+                        text: '<i class="fa fa-file-excel-o "></i>',
+                        filename: "Reporte de Microemprendedor",
+                        title: "Listado de Microemprendedor",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                        },
+                        className: "btn-exportar-excel",
+
+
+                    },
+                    {
+                        extend: "pdfHtml5",
+                        text: '<i class="fa fa-file-pdf-o"></i>',
+                        filename: "Reporte de Microemprendedor",
+                        title: "Listado de Microemprendedor",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                        },
+                        className: "btn-exportar-pdf"
+                    },
+                    {
+                        extend: "print",
+                        text: '<i class="fa fa-print"></i>',
+                        filename: "Reporte de Microemprendedor",
+                        title: "Listado de Microemprendedor",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                        },
+                        className: "btn-imprimir"
+
+                    }
+                ],
+                "ajax": {
+                    url: url,
+                    type: "GET",
+                    dataType: "json",
+                    beforeSend: agregarToast({ tipo: 'exito', titulo: 'Obteniendo Microemprendedor', descripcion: 'Por favor espere...', autoCierre: true })
+                },
+                "columns": [
+                    { "data": "id" },
+                    { "data": "apeyNom" },
+                    {
+                        "data": "tipoDocumento", render: function (data) {
+                            return data.descA
+                        }
+                    },
+                    { "data": "dni" },
+                    { "data": "sexo" },
+                    { "data": "calle" },
+                    { "data": "nro" },
+                    { "data": "piso" },
+                    { "data": "depto" },
+                    { "data": "telFijo" },
+                    { "data": "telCelular" },
+                    { "data": "correo" },
+                    {
+                        "defaultContent": '<button type="button" title="Enviar Mensaje"  class="rounded-circle btn btn-sm  btn-block btn-enviar"   > <img src="../images/whatsapp.png" alt="" width="20" height="20" ></button>' +
+                            '<button type="button" title="Editar Microemprendedor"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
+                            '<button type="button" title="Eliminar Microemprendedor" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
+                        "orderable": false,
+                        "searchable": false,
+                        "width": "10%",
+                        "heigth": "10%"
+                    }
+                ],
+                "order": {
+                    name: 'apeyNom',
+                    dir: 'asc'
+                },
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+                },
+                "order": [[1, "asc"]],
+                "columnDefs": [
+                    { "width": "3%", "targets": 0 },
+                    { "width": "10%", "targets": 1 },
+                    { "width": "5%", "targets": 2 },
+                    { "width": "8%", "targets": 3, render: DataTable.render.datetime('DD/MM/YYYY') },
+                    { "width": "2%", "targets": 4 },
+                    // { "width": "10%", "targets": 5 },
+                    // { "width": "3%", "targets": 6 },
+                    // { "width": "3%", "targets": 7 },
+                    // { "width": "3%", "targets": 8 },
+                    // { "width": "5%", "targets": 9 },
+                    // { "width": "5%", "targets": 10 },
+                    // { "width": "10%", "targets": 11, visible: false },
+
+                    // { "width": "70%", "targets": 12 },
+                    // { "width": "40%", "targets": 14, className: 'dt-body-right' },
+                ]
+            })
+        }
+
+        //Filtrar Microemprendedor
+        function filtrarMicroemprendedor(filtro) {
+            llenarTabla(filtro);
+        }
+        //Filtrar Microemprendedor
+        function limpiarFiltros() {
+            $('#cbolocalidadF').val(0);
+            $('#cborubroF').val(0);
+            llenarTabla(false)
+        }
+    
+        tinymce.init({
+            selector: 'textarea#taobservaciones',
+            height: 310,
+            license_key: 'gpl',
+            language: 'es',
+            plugins: [
+                'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+                'anchor', 'searchreplace', 'visualblocks', 'fullscreen',
+                'insertdatetime', 'media', 'table'
+            ],
+            toolbar: 'undo redo | ' +
+                'bold italic backcolor | alignleft aligncenter ' +
+                'alignright alignjustify | bullist numlist outdent indent | ' +
+                'removeformat |',
+            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+        });
+
+
+    </script>
+
+
+}
