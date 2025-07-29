@@ -829,6 +829,14 @@
       "PackagePath": "staticwebassets\\icons\\daypilot.svg"
     },
     {
+      "Id": "C:\\MicroEmprendedor\\FrontEnd\\wwwroot\\images\\WhatsApp Image 2025-07-28 at 11.36.47.jpeg",
+      "PackagePath": "staticwebassets\\images\\WhatsApp Image 2025-07-28 at 11.36.47.jpeg"
+    },
+    {
+      "Id": "C:\\MicroEmprendedor\\FrontEnd\\wwwroot\\images\\WhatsApp Image 2025-07-28 at 11.36.48.jpeg",
+      "PackagePath": "staticwebassets\\images\\WhatsApp Image 2025-07-28 at 11.36.48.jpeg"
+    },
+    {
       "Id": "C:\\MicroEmprendedor\\FrontEnd\\wwwroot\\images\\aceptar.png",
       "PackagePath": "staticwebassets\\images\\aceptar.png"
     },
@@ -4295,6 +4303,10 @@
     {
       "Id": "C:\\MicroEmprendedor\\FrontEnd\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FrontEnd.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FrontEnd.Microsoft.AspNetCore.StaticWebAssets.props",

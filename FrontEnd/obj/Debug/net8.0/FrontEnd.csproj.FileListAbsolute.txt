@@ -1135,7 +1135,6 @@ C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\System.Composition.TypedParts.dll
 C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
 C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\System.Drawing.Common.dll
-C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\System.Formats.Asn1.dll
 C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
 C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
 C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\System.Security.Permissions.dll
@@ -1291,9 +1290,13 @@ C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.buildMulti
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.FrontEnd.props
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\staticwebassets.pack.json
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\scopedcss\bundle\FrontEnd.styles.css
-C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\FrontEnd.csproj.CopyComplete
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\FrontEnd.dll
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\refint\FrontEnd.dll
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\FrontEnd.pdb
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\FrontEnd.genruntimeconfig.cache
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\ref\FrontEnd.dll
+C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\FrontEnd.staticwebassets.endpoints.json
+C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.FrontEnd.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\FrontEnd.csproj.Up2Date
