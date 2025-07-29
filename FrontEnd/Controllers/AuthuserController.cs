@@ -128,7 +128,7 @@ namespace FrontEnd.Controllers
         {
             await HttpContext.SignOutAsync();
             HttpContext.Session.SetString("APIToken", "");
-            return RedirectToAction("Login", "Authuser");
+            return RedirectToAction("default", "Home");
 
         }
         public IActionResult AccessDenied()
@@ -137,7 +137,23 @@ namespace FrontEnd.Controllers
             return View();
         }
 
-      
+
+        public ActionResult SessionIniciada()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                string nombreUsuario = User.Identity.Name;
+                bool sesionIniciada = User.Identity.IsAuthenticated==null?false:true;
+                ViewBag.SesionIniciada = sesionIniciada;
+                return View((object)nombreUsuario);
+            }
+            else
+            {
+                // El usuario no está autenticado, redirigir a la página de inicio de sesión
+                return RedirectToAction("Login", "Cuenta"); // Reemplaza "Login" y "Cuenta" con tus acciones y controlador de inicio de sesión
+            }
+        }
+
 
 
     }

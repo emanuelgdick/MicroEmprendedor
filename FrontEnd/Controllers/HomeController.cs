@@ -47,6 +47,7 @@ namespace Frontend.Controllers
         public async Task<IActionResult> Default()
         {
 
+            
             return View();
         }
     }
