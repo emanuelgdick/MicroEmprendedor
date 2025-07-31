@@ -1,122 +1,662 @@
-﻿
-@{
-    ViewBag.Title = "Microemprendedor";
-    Layout = "_Layout";
+﻿@{
+    Layout = null;
 }
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+
+    <title>Red Regional de Microemprendedores</title>
+
+    <!-- Additional CSS Files -->
+   @*  <link href="~/home/css/bootstrap.min.css" rel="stylesheet" /> *@
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link href="~/home/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/home/css/fullpage.min.css" rel="stylesheet" />
+    <link href="~/home/css/owl.carousel.css" rel="stylesheet" />
+    <link href="~/home/css/animate.css" rel="stylesheet" />
+    <link href="~/home/css/templatemo-style.css" rel="stylesheet" />
+    
+    <link href="~/home/css/responsive.css" rel="stylesheet" /> 
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.min.css" />
 
 
-<style>
-    .contenedor-scroll {
-        overflow-x: hidden; /* Deshabilitar scroll horizontal */
-        /* Puedes añadir overflow-y: hidden; si también necesitas deshabilitar el scroll vertical */
-        width: 715px; /* Ajusta la anchura según tus necesidades */
-        height: 120px; /* Ajusta la altura según tus necesidades */
-        /*border: 1px solid black;  Para ver los límites del contenedor */
-    }
 
-    /* Adapts a floating label for use with a left-handed input group icon */
-    .form-floating > .bi-calendar-date + .datepicker_input + label {
-        padding-left: 3.5rem;
-        z-index: 3;
-    }
+    <style>
+        
 
-</style>
-<!-- head: below existing links -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@4.0.1/dist/css/multi-select-tag.min.css">
-<!-- End of <body> -->
-<script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@4.0.1/dist/js/multi-select-tag.min.js"></script>
+        .btn {
+            /*     padding: 10px; */
+            border-width: 0px;
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+        }
 
-<div class="card">
-   @*  <div class="row  m-0 p-0">
-        <div class="col-11 m-0 p-0">
-            <h1 class=" m-0 mt-1 p-0">Microemprendedores</h1>
+        .btnFiltrar {
+            background-color: #21dbaa;
+            width: 100px;
+            opacity: 0.6;
+            text-align: center;
+        }
+
+            .btnFiltrar:hover {
+                background-color: #038f6a;
+            }
+
+        .btnLimpiar {
+            background-color: #21addb;
+            width: 100px;
+            opacity: 0.6;
+            text-align: center;
+        }
+
+            .btnLimpiar:hover {
+                background-color: #035773;
+            }
+
+         table.dataTable th {
+            font-size: 3px; /* O el tamaño que desees, por ejemplo 1.1em, 12px, etc. */
+        }
+
+        .dataTable {
+            font-family: Arial, sans-serif; /* Cambia la fuente a Arial */
+            font-size: 12px; /* Cambia el tamaño de la fuente */
+            /*font-weight: bold;  Cambia el peso de la fuente */
+        }
+
+      
+      
+    </style>
+
+    
+
+
+
+
+
+
+</head>
+
+<body>
+
+    <div id="video">
+        <div class="preloader">
+            <div class="preloader-bounce">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-    </div> *@
-   
-    <hr class="m-0 p-0" style="background-color:#E74C3C" />
 
-    <div class="accordion m-3" id="accordionExample">
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                    Filtros
-                </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <div class="row    m-0 p-0">
-                        <div class="col-2 m-1 mt-0 p-0 form-floating">
-                            <select id="cbolocalidadF" class="form-select " name="localidadF" autocomplete="off" placeholder="Localidad"></select>
-                            <label for="cbolocalidadF" class="form-label pt-1">Localidad</label>
-                        </div>
+        <header id="header">
+            <div class="container-fluid">
+                <div class="navbar">
 
-                        <div class="col-2 m-1 mt-0 p-0 form-floating">
-                            <select id="cborubroF" class="form-select " name="rubroF" autocomplete="off" placeholder="Rubro"></select>
-                            <label for="cborubroF" class="form-label pt-1">Rubro</label>
-                        </div>
+                    <div class="navigation-row">
+                        <nav id="navigation">
+                            <button type="button" class="navbar-toggle"> <i class="fa fa-bars"></i> </button>
+                            <div class="nav-box navbar-collapse">
+                                <ul class="navigation-menu nav navbar-nav navbars" id="nav">
+                                    <li data-menuanchor="slide01" class="active"><a href="#slide01">Inicio</a></li>
+                                    <li data-menuanchor="slide02"><a href="#slide02">Buscador</a></li>
+                                    <li data-menuanchor="slide03"><a href="#slide03">Services</a></li>
+                                    <li data-menuanchor="slide04"><a href="#slide04">My Skills</a></li>
+                                    <li data-menuanchor="slide05"><a href="#slide05">My Work</a></li>
+                                    <li data-menuanchor="slide06"><a href="#slide06">Testimonials</a></li>
+                                    <li data-menuanchor="slide07"><a href="#slide07">Contact Me</a></li>
+                                    <li data-menuanchor="slide07"><a href="#slide07">Iniciar Sesión</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-                        <div class=" col-5">
-                        </div>
-                        <div class="col-1  m-1 ">
-                            <button type="button" class="btn btnFiltrar" onclick="filtrarMicroemprendedor(true)">Filtrar</button>
-                        </div>
-                        <div class="col-1  m-1 ">
-                            <button type="button" class="btn btnLimpiar" onclick="limpiarFiltros(true)">Limpiar</button>
-                        </div>
+        <video autoplay muted loop id="myVideo">
+            <source src="/home/images/video-bg.mp4" type="video/mp4">
+        </video>
 
+        <div id="fullpage" class="fullpage-default">
+
+            <div class="section animated-row" data-section="slide01">
+                <div class="section-inner">
+                    <div class="welcome-box">
+                        <span class="welcome-first animate" data-animate="fadeInUp">Bienvenido a la Red Regional de </span>
+                        <h1 class="welcome-title animate" data-animate="fadeInUp">Microemprendedores</h1>
+                        <p class="animate" data-animate="fadeInUp">This is a clean and modern HTML5 template with a video background. You can use this layout for your profile page. Please spread a word about templatemo to your friends. Thank you.</p>
+                        <div class="scroll-down next-section animate data-animate=" fadeInUp""><img src="home/images/mouse-scroll.png" alt=""><span>Scroll Down</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section animated-row" data-section="slide02">
+                <div class="section-inner">
+                    <div class="about-section">
+                        <div class="row mt-0" >
+                            @* justify-content-center *@
+                            <div class="col-lg-12 wide-col-laptop">
+                                <div class="row" >
+                                    <div class="col-md-12">
+                                        <div class="about-contentbox">
+                                            <div class="animate" data-animate="fadeInUp">
+                                                <span>Buscar Microemprendedor</span>
+
+                                                <div class="row mt-2 p-0" >
+                                                    <div class="col-md-2 m-1 mt-0 p-0 form-floating">
+                                                        <select id="cbolocalidadF" class="form-select " name="localidadF" autocomplete="off" placeholder="Localidad" style=" background:rgba(250,250,250,0.05);"></select>
+                                                        <label for="cbolocalidadF" class="form-label pt-1">Localidad</label>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-2 m-1 mt-0 p-0 form-floating">
+                                                        <select id="cborubroF" class="form-select form-control" name="rubroF" autocomplete="off" placeholder="Rubro" style=" background:rgba(250,250,250,0.05);"></select>
+                                                        <label for="cborubroF" class="form-label pt-1">Rubro</label>
+                                                    </div>
+                                                    <div class=" col-md-4 mt-1">
+                                                        <div class="input-field">
+                                                            <input type="text" class="form-control" name="palabraclave" id="palabraclave" required placeholder="Palabras Clave">
+                                                        </div>
+                                                    </div>
+                                                 
+                                                    <div class="col-md-1">
+                                                        <button type="button" class="btn btnFiltrar" onclick="filtrarMicroemprendedor(true)">Filtrar</button>
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <button type="button" class="btn btnLimpiar" onclick="limpiarFiltros(true)">Limpiar</button>
+                                                    </div>
+
+                                                </div>
+
+
+                                                <div class="card-body">
+
+                                                    <table id="tabla"  style="width:100%">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Código</th>
+                                                                <th>Apellido y Nombre</th>
+                                                                <th>Tipo Doc</th>
+                                                                <th>N° Doc</th>
+                                                                <th>Sexo</th>
+                                                                <th>Calle</th>
+                                                                <th>Nro</th>
+                                                                <th>Piso</th>
+                                                                <th>Depto</th>
+                                                                <th>Tel. Fijo</th>
+                                                                <th>Tel. Celular</th>
+                                                                <th>Correo</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        </tbody>
+                                                        <tfoot>
+                                                        </tfoot>
+                                                    </table>
+                                                </div>
+
+
+
+
+
+                                            </div>
+                                            <!--<div class="facts-list owl-carousel">
+                                                <div class="item animate" data-animate="fadeInUp">
+                                                    <div class="counter-box">
+                                                        <i class="fa fa-trophy counter-icon" aria-hidden="true"></i><span class="count-number">32</span> Awards Won
+                                                    </div>
+                                                </div>
+                                                <div class="item animate" data-animate="fadeInUp">
+                                                    <div class="counter-box">
+                                                        <i class="fa fa-graduation-cap counter-icon" aria-hidden="true"></i><span class="count-number">4</span> Degrees
+                                                    </div>
+                                                </div>
+                                                <div class="item animate" data-animate="fadeInUp">
+                                                    <div class="counter-box">
+                                                        <i class="fa fa-desktop counter-icon" aria-hidden="true"></i><span class="count-number">12</span> Working Years
+                                                    </div>
+                                                </div>
+                                                <div class="item animate" data-animate="fadeInUp">
+                                                    <div class="counter-box">
+                                                        <i class="fa fa-support counter-icon" aria-hidden="true"></i><span class="count-number">6</span> Team Members
+                                                    </div>
+                                                </div>
+                                                <div class="item animate" data-animate="fadeInUp">
+                                                    <div class="counter-box">
+                                                        <i class="fa fa-certificate counter-icon" aria-hidden="true"></i><span class="count-number">10</span> Certificates
+                                                    </div>
+                                                </div>
+                                            </div>-->
+                                        </div>
+                                    </div>
+                                    <!--<div class="col-md-6">
+                                        <figure class="about-img animate" data-animate="fadeInUp"><img src="images/profile-girl.jpg" class="rounded" alt=""></figure>
+                                    </div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section animated-row" data-section="slide03">
+                <div class="section-inner">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 wide-col-laptop">
+                            <div class="title-block animate" data-animate="fadeInUp">
+                                <span>Services</span>
+                                <h2>What I Do?</h2>
+                            </div>
+                            <div class="services-section">
+                                <div class="services-list owl-carousel">
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-bookmark" aria-hidden="true"></i></span>
+                                            <h3>Bootstrap Themes</h3>
+                                            <p>Nullam auctor, justo vitae accumsan ultrices, arcu ex molestie massa, eu maximus enim tortor vitae quam. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-cloud" aria-hidden="true"></i></span>
+                                            <h3>HTML5 Coding</h3>
+                                            <p>Nullam auctor, justo vitae accumsan ultrices, arcu ex molestie massa, eu maximus enim tortor vitae quam. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-desktop" aria-hidden="true"></i></span>
+                                            <h3>Fully Responsive</h3>
+                                            <p>Nullam auctor, justo vitae accumsan ultrices, arcu ex molestie massa, eu maximus enim tortor vitae quam. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-mobile" aria-hidden="true"></i></span>
+                                            <h3>Mobile Ready</h3>
+                                            <p>Nullam auctor, justo vitae accumsan ultrices, arcu ex molestie massa, eu maximus enim tortor vitae quam. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
+                                            <h3>Fast Support</h3>
+                                            <p>Nullam auctor, justo vitae accumsan ultrices, arcu ex molestie massa, eu maximus enim tortor vitae quam. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-database" aria-hidden="true"></i></span>
+                                            <h3>24-hour Up Time</h3>
+                                            <p>Nullam auctor, justo vitae accumsan ultrices, arcu ex molestie massa, eu maximus enim tortor vitae quam. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-bell" aria-hidden="true"></i></span>
+                                            <h3>Instant Upgrades</h3>
+                                            <p>Nullam auctor, justo vitae accumsan ultrices, arcu ex molestie massa, eu maximus enim tortor vitae quam. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-camera" aria-hidden="true"></i></span>
+                                            <h3>Always Monitoring</h3>
+                                            <p>Nullam auctor, justo vitae accumsan ultrices, arcu ex molestie massa, eu maximus enim tortor vitae quam. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section animated-row" data-section="slide04">
+                <div class="section-inner">
+                    <div class="row justify-content-center">
+                        <div class="col-md-7 wide-col-laptop">
+                            <div class="title-block animate" data-animate="fadeInUp">
+                                <span>My Skills</span>
+                                <h2>What i’m good?</h2>
+                            </div>
+                            <div class="skills-row animate" data-animate="fadeInDown">
+                                <div class="row">
+                                    <div class="col-md-8 offset-md-2">
+                                        <div class="skill-item">
+                                            <h6>HTML CSS</h6>
+                                            <div class="skill-bar">
+                                                <span>70%</span>
+                                                <div class="filled-bar"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-item">
+                                            <h6>PSD Design</h6>
+                                            <div class="skill-bar">
+                                                <span>90%</span>
+                                                <div class="filled-bar-2"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-item">
+                                            <h6>Social Media</h6>
+                                            <div class="skill-bar">
+                                                <span>70%</span>
+                                                <div class="filled-bar"></div>
+                                            </div>
+                                        </div>
+                                        <div class="skill-item last-skill">
+                                            <h6>Leadership</h6>
+                                            <div class="skill-bar">
+                                                <span>90%</span>
+                                                <div class="filled-bar-2"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section animated-row" data-section="slide06">
+                <div class="section-inner">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 wide-col-laptop">
+                            <div class="title-block animate" data-animate="fadeInUp">
+                                <span>My Work</span>
+                                <h2>what i’ve done?</h2>
+                            </div>
+                            <div class="gallery-section">
+                                <div class="gallery-list owl-carousel">
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="portfolio-item">
+                                            <div class="thumb">
+                                                <img src="/home/images/item-1.jpg" alt="">
+                                            </div>
+                                            <div class="thumb-inner animate" data-animate="fadeInUp">
+                                                <h4>templatemo is the best</h4>
+                                                <p>Please tell your friends about it. Templatemo is the best website to download free Bootstrap CSS templates.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="portfolio-item">
+                                            <div class="thumb">
+                                                <img src="/home/images/item-2.jpg" alt="">
+                                            </div>
+                                            <div class="thumb-inner animate" data-animate="fadeInUp">
+                                                <h4>templatemo is the best</h4>
+                                                <p>Please tell your friends about it. Templatemo is the best website to download free Bootstrap themes.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="portfolio-item">
+                                            <div class="thumb">
+                                                <img src="/home/images/item-3.jpg" alt="">
+                                            </div>
+                                            <div class="thumb-inner animate" data-animate="fadeInUp">
+                                                <h4>templatemo is the best</h4>
+                                                <p>Please tell your friends about it. Templatemo is the best website to download free Bootstrap layouts.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="portfolio-item">
+                                            <div class="thumb">
+                                                <img src="/home/images/item-1.jpg" alt="">
+                                            </div>
+                                            <div class="thumb-inner animate" data-animate="fadeInUp">
+                                                <h4>templatemo is the best</h4>
+                                                <p>Please tell your friends about it. Templatemo is the best website to download free Bootstrap templates.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="portfolio-item">
+                                            <div class="thumb">
+                                                <img src="/home/images/item-2.jpg" alt="">
+                                            </div>
+                                            <div class="thumb-inner animate" data-animate="fadeInUp">
+                                                <h4>templatemo is the best</h4>
+                                                <p>Please tell your friends about it. Templatemo is the best website to download Bootstrap CSS templates.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="portfolio-item">
+                                            <div class="thumb">
+                                                <img src="/home/images/item-3.jpg" alt="">
+                                            </div>
+                                            <div class="thumb-inner animate" data-animate="fadeInUp">
+                                                <h4>templatemo is the best</h4>
+                                                <p>Please tell your friends about it. Templatemo is the best website to download free Bootstrap templates.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="portfolio-item">
+                                            <div class="thumb">
+                                                <img src="/home/images/item-1.jpg" alt="">
+                                            </div>
+                                            <div class="thumb-inner animate" data-animate="fadeInUp">
+                                                <h4>templatemo is the best</h4>
+                                                <p>Please tell your friends about it. Templatemo is the best website to download free Bootstrap templates.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="portfolio-item">
+                                            <div class="thumb">
+                                                <img src="/home/images/item-2.jpg" alt="">
+                                            </div>
+                                            <div class="thumb-inner animate" data-animate="fadeInUp">
+                                                <h4>templatemo is the best</h4>
+                                                <p>Please tell your friends about it. Templatemo is the best website to download free Bootstrap templates.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="portfolio-item">
+                                            <div class="thumb">
+                                                <img src="/home/images/item-3.jpg" alt="">
+                                            </div>
+                                            <div class="thumb-inner animate" data-animate="fadeInUp">
+                                                <h4>templatemo is the best</h4>
+                                                <p>Please tell your friends about it. Templatemo is the best website to download free Bootstrap templates.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section animated-row" data-section="slide05">
+                <div class="section-inner">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 wide-col-laptop">
+                            <div class="title-block animate" data-animate="fadeInUp">
+                                <span>TESTIMONIALS</span>
+                                <h2>what THEY SAY?</h2>
+                            </div>
+                            <div class="col-md-8 offset-md-2">
+                                <div class="testimonials-section">
+                                    <div class="testimonials-slider owl-carousel">
+                                        <div class="item animate" data-animate="fadeInUp">
+                                            <div class="testimonial-item">
+                                                <div class="client-row">
+                                                    <img src="/home/images/profile-01.jpg" class="rounded-circle" alt="profile 1">
+                                                </div>
+                                                <div class="testimonial-content">
+                                                    <h4>Sandar</h4>
+                                                    <p>"Ut varius leo eu mauris lacinia, eleifend posuere urna gravida. Aenean a mattis lacus."</p>
+                                                    <span>Managing Director</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item animate" data-animate="fadeInUp">
+                                            <div class="testimonial-item">
+                                                <div class="client-row">
+                                                    <img src="/home/images/profile-01.jpg" class="rounded-circle" alt="profile 2">
+                                                </div>
+                                                <div class="testimonial-content">
+                                                    <h4>Shinn</h4>
+                                                    <p>"Nam iaculis, leo nec facilisis sollicitudin, dui massa tempus odio, vitae malesuada ante elit vitae eros."</p>
+                                                    <span>CEO and Founder</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item animate" data-animate="fadeInUp">
+                                            <div class="testimonial-item">
+                                                <div class="client-row">
+                                                    <img src="/home/images/profile-01.jpg" class="rounded-circle" alt="profile 3">
+                                                </div>
+                                                <div class="testimonial-content">
+                                                    <h4>Marlar</h4>
+                                                    <p>"Etiam efficitur, tortor facilisis finibus semper, diam magna fringilla lectus, et fringilla felis urna posuere tortor."</p>
+                                                    <span>Chief Marketing Officer</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section animated-row" data-section="slide07">
+                <div class="section-inner">
+                    <div class="row justify-content-center">
+                        <div class="col-md-7 wide-col-laptop">
+                            <div class="title-block animate" data-animate="fadeInUp">
+                                <span>Contact</span>
+                                <h2>Get In Touch!</h2>
+                            </div>
+                            <div class="contact-section">
+                                <div class="row">
+                                    <div class="col-md-6 animate" data-animate="fadeInUp">
+                                        <div class="contact-box">
+                                            <div class="contact-row">
+                                                <i class="fa fa-map-marker"></i> 123 New Street Here, Wonderful City 10220
+                                            </div>
+                                            <div class="contact-row">
+                                                <i class="fa fa-phone"></i> 090 080 0210
+                                            </div>
+                                            <div class="contact-row">
+                                                <i class="fa fa-envelope"></i> info@company.co
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 animate" data-animate="fadeInUp">
+                                        <form id="ajax-contact" method="post" action="#">
+                                            <div class="input-field">
+                                                <input type="text" class="form-control" name="name" id="name" required placeholder="Name">
+                                            </div>
+                                            <div class="input-field">
+                                                <input type="email" class="form-control" name="email" id="email" required placeholder="Email">
+                                            </div>
+                                            <div class="input-field">
+                                                <textarea class="form-control" name="message" id="message" required placeholder="Message"></textarea>
+                                            </div>
+                                            <button class="btn" type="submit">Submit</button>
+                                        </form>
+                                        <div id="form-messages" class="mt-3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div id="social-icons">
+            <div class="text-right">
+                <ul class="social-icons">
+                    <li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#" title="Instagram"><i class="fa fa-behance"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- TOAST -->
+        <div class="contenedor">
+
+            <div class="contenedor-toastP" id="contenedor-toastP">
+            </div>
+        </div>
     </div>
 
-    <div class="card-body">
 
-        <table id="tabla" class="display dataTable" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Código</th>
-                    <th>Apellido y Nombre</th>
-                    <th>Tipo Doc</th>
-                    <th>N° Doc</th>
-                    <th>Sexo</th>
-                    <th>Calle</th>
-                    <th>Nro</th>
-                    <th>Piso</th>
-                    <th>Depto</th>
-                    <th>Tel. Fijo</th>
-                    <th>Tel. Celular</th>
-                    <th>Correo</th>
+      <script src="~/home/js/jquery.js"></script>
 
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-            <tfoot>
-            </tfoot>
-        </table>
-    </div>
+    
+    <script src="~/home/js/fullpage.min.js"></script>
 
-</div>
+    <script src="~/home/js/scrolloverflow.js"></script>
 
-<!-- TOAST -->
-<div class="contenedor">
-    <div class="contenedor-toastP" id="contenedor-toastP">
-    </div>
-</div>
+    <script src="~/home/js/owl.carousel.min.js"></script>
+
+    <script src="~/home/js/jquery.inview.min.js"></script>
+
+    <script src="~/home/js/form.js"></script> 
+    
+    
 
 
 
+    <!--DataTables-->
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.bootstrap5.min.js"></script>
+    <!--para exportar PDFs-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
 
 
-@section scripts {
+    <script src="~/js/datatables.net-buttons/js/buttons.colvis.js"></script>
+    <script src="~/js/datatables.net-buttons/js/buttons.colvis.min.js"></script>
+    <script src="~/js/datatables.net-buttons/js/buttons.html5.js"></script>
+    <script src="~/js/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/js/datatables.net-buttons/js/buttons.print.js"></script>
+    <script src="~/js/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="~/js/datatables.net-buttons/js/datatables.buttons.js"></script>
+    <script src="~/js/datatables.net-buttons/js/datatables.buttons.min.js"></script>
+
+
+    @* <script src="~/home/js/bootstrap.min.js"></script> *@
+    <!--Bootstrap 5-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    <!-- momentjs -->
+    <script src="~/js/moment/moment.min.js"></script>
+
+    <!-- Datejs -->
+    <script src="~/js/datejs/date.js"></script>
+
+    <script src="~/home/js/custom.js"></script>
+
 
     <script>
-        var tabladata;
-        var agregarToast;
-
         //GET LOCALIDADES
         jQuery.ajax({
             url: '@Url.Action("GetAllLocalidades", "Localidad")',
@@ -128,7 +668,7 @@
                 $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadF");
                 $.each(data.data, function (index, value) {
                     $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadF");
-                    
+
                 });
             },
             error: function (error) {
@@ -156,25 +696,6 @@
                 console.log(error)
             }
         });
-
-        const getDatePickerTitle = elem => {
-            // From the label or the aria-label
-            const label = elem.nextElementSibling;
-            let titleText = '';
-            if (label && label.tagName === 'LABEL') {
-                titleText = label.textContent;
-            } else {
-                titleText = elem.getAttribute('aria-label') || '';
-            }
-            return titleText;
-        }
-        const elems = document.querySelectorAll('.datepicker_input');
-        for (const elem of elems) {
-            const datepicker = new Datepicker(elem, {
-                'format': 'dd/mm/yyyy', // UK format
-                title: getDatePickerTitle(elem)
-            });
-        }
 
 
         const contenedorToast = document.getElementById('contenedor-toastP');
@@ -208,30 +729,30 @@
             // Iconos
             const iconos = {
                 exito: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                                                              <path
-                                                                                                                                                  d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
-                                                                                                                                              />
-                                                                                                                                          </svg>`,
+                                                                                                                                                      <path
+                                                                                                                                                          d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
+                                                                                                                                                      />
+                                                                                                                                                  </svg>`,
                 error: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                                                                          <path
-                                                                                                                                                              d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                                                                                                                                                          />
-                                                                                                                                                      </svg>`,
+                                                                                                                                                                  <path
+                                                                                                                                                                      d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                                                                                                                                  />
+                                                                                                                                                              </svg>`,
                 info: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                                                                          <path
-                                                                                                                                                              d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
-                                                                                                                                                          />
-                                                                                                                                                      </svg>`,
+                                                                                                                                                                  <path
+                                                                                                                                                                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+                                                                                                                                                                  />
+                                                                                                                                                              </svg>`,
                 warning: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                                                                          <path
-                                                                                                                                                              d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                                                                                                                                                          />
-                                                                                                                                                      </svg>`,
+                                                                                                                                                                  <path
+                                                                                                                                                                      d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                                                                                                                                  />
+                                                                                                                                                              </svg>`,
             };
 
             // Plantilla del toast
             const toast = `
-                                                                                                                      `;
+                                                                                                                              `;
 
             // Agregar la plantilla al nuevo toast
             nuevoToast.innerHTML = toast;
@@ -255,12 +776,15 @@
             nuevoToast.addEventListener('animationend', handleAnimacionCierre);
         };
 
-        var filaSeleccionada;
+
+
+
+
         llenarTabla(false)
 
 
-       
-   
+
+
 
         //Llenar Tabla
         function llenarTabla(filtro) {
@@ -270,7 +794,7 @@
             var url;
             if (filtro) {
                 url = "@Url.Action("GetMicroemprendedorFiltrados", "Microemprendedor")" + '?localidad=' + $("#cbolocalidadF").val() + '&rubro=' + $("#cborubroF").val()
-            }else
+            } else
                 url = "@Url.Action("GetAllMicroEmprendedor", "Microemprendedor")"
 
             $('#tabla').DataTable().clear().destroy();
@@ -339,15 +863,7 @@
                     { "data": "telFijo" },
                     { "data": "telCelular" },
                     { "data": "correo" },
-                    {
-                        "defaultContent": '<button type="button" title="Enviar Mensaje"  class="rounded-circle btn btn-sm  btn-block btn-enviar"   > <img src="../images/whatsapp.png" alt="" width="20" height="20" ></button>' +
-                            '<button type="button" title="Editar Microemprendedor"   class="rounded-circle btn btn-default   btn-editar"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
-                            '<button type="button" title="Eliminar Microemprendedor" class="rounded-circle btn btn-default   btn-eliminar" ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
-                        "orderable": false,
-                        "searchable": false,
-                        "width": "10%",
-                        "heigth": "10%"
-                    }
+
                 ],
                 "order": {
                     name: 'apeyNom',
@@ -358,11 +874,14 @@
                 },
                 "order": [[1, "asc"]],
                 "columnDefs": [
+                  
+                 
                     { "width": "3%", "targets": 0 },
                     { "width": "10%", "targets": 1 },
                     { "width": "5%", "targets": 2 },
                     { "width": "8%", "targets": 3, render: DataTable.render.datetime('DD/MM/YYYY') },
                     { "width": "2%", "targets": 4 },
+
                     // { "width": "10%", "targets": 5 },
                     // { "width": "3%", "targets": 6 },
                     // { "width": "3%", "targets": 7 },
@@ -387,26 +906,14 @@
             $('#cborubroF').val(0);
             llenarTabla(false)
         }
-    
-        tinymce.init({
-            selector: 'textarea#taobservaciones',
-            height: 310,
-            license_key: 'gpl',
-            language: 'es',
-            plugins: [
-                'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
-                'anchor', 'searchreplace', 'visualblocks', 'fullscreen',
-                'insertdatetime', 'media', 'table'
-            ],
-            toolbar: 'undo redo | ' +
-                'bold italic backcolor | alignleft aligncenter ' +
-                'alignright alignjustify | bullist numlist outdent indent | ' +
-                'removeformat |',
-            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
-        });
+
 
 
     </script>
 
 
-}
+
+</body>
+</html>
+
+

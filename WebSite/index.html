@@ -17,6 +17,8 @@
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
+
+
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 
     <link rel="stylesheet" type="text/css" href="css/fullpage.min.css">
@@ -575,45 +577,45 @@
     @section scripts {
 
     <script>
-        //GET LOCALIDADES
-        jQuery.ajax({
-            url: '@Url.Action("GetLocalidades", "http://localhost:5087/api/Localidad")',
-            type: "GET",
-            data: null,
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadF");
-                $.each(data.data, function (index, value) {
-                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadF");
+        ////GET LOCALIDADES
+        //jQuery.ajax({
+        //    url: "http://localhost:5087/api/Localidad/",// '@Url.Action("GetLocalidades", "http://localhost:5087/api/Localidad/")',
+        //    type: "GET",
+        //    data: null,
+        //    dataType: "json",
+        //    contentType: "application/json; charset=utf-8",
+        //    success: function (data) {
+        //        $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadF");
+        //        $.each(data.data, function (index, value) {
+        //            $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadF");
 
-                });
-            },
-            error: function (error) {
-                console.log(error)
-            }
-        });
+        //        });
+        //    },
+        //    error: function (error) {
+        //        console.log(error)
+        //    }
+        //});
 
-        //GET RUBROS
-        var rub = [];
-        jQuery.ajax({
-            url: '@Url.Action("GetAllRubros", "Rubro")',
-            type: "GET",
-            data: null,
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                debugger;
-                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cborubroF");
-                $.each(data.data, function (index, value) {
-                    rub.push({ value: value.id, text: value.text });
-                    $("<option>").attr({ "value": value.id }).text(value.text).appendTo("#cborubroF");
-                });
-            },
-            error: function (error) {
-                console.log(error)
-            }
-        });
+        ////GET RUBROS
+        //var rub = [];
+        //jQuery.ajax({
+        //    url: '@Url.Action("GetAllRubros", "Rubro")',
+        //    type: "GET",
+        //    data: null,
+        //    dataType: "json",
+        //    contentType: "application/json; charset=utf-8",
+        //    success: function (data) {
+        //        debugger;
+        //        $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cborubroF");
+        //        $.each(data.data, function (index, value) {
+        //            rub.push({ value: value.id, text: value.text });
+        //            $("<option>").attr({ "value": value.id }).text(value.text).appendTo("#cborubroF");
+        //        });
+        //    },
+        //    error: function (error) {
+        //        console.log(error)
+        //    }
+        //});
 
 
     </script>
