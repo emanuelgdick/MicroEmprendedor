@@ -12,6 +12,7 @@ using Microsoft.Data.SqlClient;
 using System.Data;
 using Microsoft.Extensions.Hosting;
 using System.Text.RegularExpressions;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 namespace Api.Controllers
 {
     [Route("api/[controller]")]
@@ -38,20 +39,25 @@ namespace Api.Controllers
                 SqlCommand cmd = new SqlCommand("sp_ObtenerUsuario", oConexion);
                 cmd.Parameters.AddWithValue("User", logindetails.User);
                 cmd.Parameters.AddWithValue("Password", RecursosBiz.ConvertirSha256(logindetails.Password.ToLower()));
+                cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                 cmd.CommandType = CommandType.StoredProcedure;
                 oConexion.Open();
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
+                //SqlDataReader dr = cmd.ExecuteReader();
+
+                using (SqlDataReader dr = cmd.ExecuteReader())
                 {
-                    user.ApeyNom = dr["ApeyNom"].ToString();
-                    user.Id = Convert.ToInt32(dr["Id"].ToString());
-                    user.User = dr["User"].ToString();
-                    user.Password = dr["Password"].ToString();
-                    user.Rol = dr["Rol"].ToString();
-                    
-                    //  return rptListaFalta;
+                    while (dr.Read())
+                    {
+                        user.ApeyNom = dr["ApeyNom"].ToString();
+                        user.Id = Convert.ToInt32(dr["Id"].ToString());
+                        user.User = dr["User"].ToString();
+                        user.Password = dr["Password"].ToString();
+                        user.Rol = dr["Rol"].ToString();
+                        //  return rptListaFalta;
+                    }
+                    dr.Close();
                 }
-                dr.Close();
 
             }
 
