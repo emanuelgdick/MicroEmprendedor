@@ -142,10 +142,10 @@ namespace FrontEnd.Services
             return APIResponse;
         }
 
-        public async Task<List<MicroEmprendedor>> GetMicroEmprendedoresFiltrados(int localidad, int rubro/*, string token*/)
+        public async Task<List<MicroEmprendedor>> GetMicroEmprendedoresFiltrados(int localidad, int rubro,string palabra/*, string token*/)
         {
             //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/MicroEmprendedor/GetMicroEmprendedoresFiltrados?localidad={localidad}&rubro={rubro}");
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/MicroEmprendedor/GetMicroEmprendedoresFiltrados?localidad={localidad}&rubro={rubro}&palabra={palabra}");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
             var APIResponse = JsonConvert.DeserializeObject<List<MicroEmprendedor>>(contents);

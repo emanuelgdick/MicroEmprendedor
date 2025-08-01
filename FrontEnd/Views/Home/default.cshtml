@@ -37,46 +37,37 @@
     <style>
 
 
-        .btn {
-        /*     padding: 10px; */
-        border-width: 0px;
-        border-radius: 5px;
-        color: white;
-        text-align: center;
+        .btn2 {
+            /*     padding: 10px; */
+            border-width: 0px;
+            border-radius: 5px;
+            color: white;
+            text-align: center;
         }
 
         .btnFiltrar {
-        background-color: #21dbaa;
-        width: 100px;
-        opacity: 0.6;
-        text-align: center;
+            background-color: #21dbaa;
+            width: 100px;
+            opacity: 0.6;
+            text-align: center;
         }
 
-        .btnFiltrar:hover {
-        background-color: #038f6a;
-        }
+            .btnFiltrar:hover {
+                background-color: #038f6a;
+            }
 
         .btnLimpiar {
-        background-color: #21addb;
-        width: 100px;
-        opacity: 0.6;
-        text-align: center;
+            background-color: #21addb;
+            width: 100px;
+            opacity: 0.6;
+            text-align: center;
         }
 
-        .btnLimpiar:hover {
-        background-color: #035773;
-        }
+            .btnLimpiar:hover {
+                background-color: #035773;
+            }
 
-        table.dataTable th {
-        font-size: 3px; /* O el tamaño que desees, por ejemplo 1.1em, 12px, etc. */
-        }
-
-        .dataTable {
-        font-family: Arial, sans-serif; /* Cambia la fuente a Arial */
-        font-size: 12px; /* Cambia el tamaño de la fuente */
-        /*font-weight: bold;  Cambia el peso de la fuente */
-        }
-
+   
     </style>
 
 
@@ -101,7 +92,6 @@
 
         <header id="header">
             <div class="container-fluid">
-
                 <div class="navbar">
                     <div class="navigation-row">
                         <nav id="navigation">
@@ -117,15 +107,14 @@
                                     <li data-menuanchor="slide07"><a href="#slide07">Contact Me</a></li>
                                     @if (User.Identity.IsAuthenticated)
                                     {
-                                        <li data-menuanchor="slide08" class="active"><a href="#slide08">Administración </a> </li>
+                                        <li data-menuanchor="slide08"><a href="#slide08">Administración </a> </li>
 
 
                                         <li data-menuanchor="slide09"><a asp-action="Logout" asp-controller="Authuser">Cerrar Sesión</a></li>
                                     }
                                     else
                                     {
-                                        <li data-menuanchor="slide09"><a href="#slide09">Iniciar Sesión</a></li>
-
+                                        <li data-menuanchor="slide08"><a href="#slide08">Iniciar Sesión</a></li>
                                     }
                                 </ul>
 
@@ -133,8 +122,6 @@
                         </nav>
                     </div>
                 </div>
-
-
             </div>
         </header>
 
@@ -143,7 +130,6 @@
         </video>
 
         <div id="fullpage" class="fullpage-default">
-
             <div class="section animated-row" data-section="slide01">
                 <div class="section-inner">
                     <div class="welcome-box">
@@ -156,108 +142,67 @@
             </div>
             <div class="section animated-row" data-section="slide02">
                 <div class="section-inner">
-                    <div class="about-section">
-                        <div class="row mt-0">
-                            @* justify-content-center *@
-                            <div class="col-lg-12 wide-col-laptop">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="about-contentbox">
-                                            <div class="animate" data-animate="fadeInUp">
-                                                <span>Buscar Microemprendedor</span>
+                    <div class="row    justify-content-center  ">
+                        <div class="col-md-7 wide-col-laptop ">
+                            <div class="title-block animate " data-animate="fadeInUp">
+                                    <span>Buscar Microemprendedores</span>
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <div class="row m-2">
+                        <div class="skills-row animate" data-animate="fadeInDown">
+                            <div class="row">
+                                <div class="row mt-2 p-0">
+                                    <div class="col-md-2 m-1 mt-0 p-0 form-floating">
+                                        <select id="cbolocalidadF2" class="form-select " name="localidadF2" autocomplete="off" placeholder="Localidad" style=" background:rgba(250,250,250,0.05);"></select>
+                                        <label for="cbolocalidadF2" class="form-label pt-1">Localidad</label>
+                                    </div>
 
-                                                <div class="row mt-2 p-0">
-                                                    <div class="col-md-2 m-1 mt-0 p-0 form-floating">
-                                                        <select id="cbolocalidadF" class="form-select " name="localidadF" autocomplete="off" placeholder="Localidad" style=" background:rgba(250,250,250,0.05);"></select>
-                                                        <label for="cbolocalidadF" class="form-label pt-1">Localidad</label>
-                                                    </div>
-
-                                                    <div class="col-md-2 m-1 mt-0 p-0 form-floating">
-                                                        <select id="cborubroF" class="form-select" name="rubroF" autocomplete="off" placeholder="Rubro" style=" background:rgba(250,250,250,0.05);"></select>
-                                                        <label for="cborubroF" class="form-label pt-1">Rubro</label>
-                                                    </div>
-                                                    <div class=" col-md-4 mt-1">
-                                                        <div class="input-field">
-                                                            <input type="text" class="form-control" name="palabraclave" id="palabraclave" required placeholder="Palabras Clave">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-1">
-                                                        <button type="button" class="btn btnFiltrar" onclick="filtrarMicroemprendedor(true)">Filtrar</button>
-                                                    </div>
-                                                    <div class="col-md-1">
-                                                        <button type="button" class="btn btnLimpiar" onclick="limpiarFiltros(true)">Limpiar</button>
-                                                    </div>
-
-                                                </div>
-
-
-                                                <div class="card-body">
-
-                                                    <table id="tabla" style="width:100%">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>Código</th>
-                                                                <th>Apellido y Nombre</th>
-                                                                <th>Tipo Doc</th>
-                                                                <th>N° Doc</th>
-                                                                <th>Sexo</th>
-                                                                <th>Calle</th>
-                                                                <th>Nro</th>
-                                                                <th>Piso</th>
-                                                                <th>Depto</th>
-                                                                <th>Tel. Fijo</th>
-                                                                <th>Tel. Celular</th>
-                                                                <th>Correo</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        </tbody>
-                                                        <tfoot>
-                                                        </tfoot>
-                                                    </table>
-                                                </div>
-
-
-
-
-
-                                            </div>
-                                            <!--<div class="facts-list owl-carousel">
-                                            <div class="item animate" data-animate="fadeInUp">
-                                            <div class="counter-box">
-                                            <i class="fa fa-trophy counter-icon" aria-hidden="true"></i><span class="count-number">32</span> Awards Won
-                                            </div>
-                                            </div>
-                                            <div class="item animate" data-animate="fadeInUp">
-                                            <div class="counter-box">
-                                            <i class="fa fa-graduation-cap counter-icon" aria-hidden="true"></i><span class="count-number">4</span> Degrees
-                                            </div>
-                                            </div>
-                                            <div class="item animate" data-animate="fadeInUp">
-                                            <div class="counter-box">
-                                            <i class="fa fa-desktop counter-icon" aria-hidden="true"></i><span class="count-number">12</span> Working Years
-                                            </div>
-                                            </div>
-                                            <div class="item animate" data-animate="fadeInUp">
-                                            <div class="counter-box">
-                                            <i class="fa fa-support counter-icon" aria-hidden="true"></i><span class="count-number">6</span> Team Members
-                                            </div>
-                                            </div>
-                                            <div class="item animate" data-animate="fadeInUp">
-                                            <div class="counter-box">
-                                            <i class="fa fa-certificate counter-icon" aria-hidden="true"></i><span class="count-number">10</span> Certificates
-                                            </div>
-                                            </div>
-                                            </div>-->
+                                    <div class="col-md-2 m-1 mt-0 p-0 form-floating">
+                                        <select id="cborubroF2" class="form-select" name="rubroF2" autocomplete="off" placeholder="Rubro" style=" background:rgba(250,250,250,0.05);"></select>
+                                        <label for="cborubroF2" class="form-label pt-1">Rubro</label>
+                                    </div>
+                                    <div class=" col-md-4 mt-1">
+                                        <div class="input-field">
+                                            <input type="text" class="form-control" name="palabraclave2" id="palabraclave2" required placeholder="Palabras Clave">
                                         </div>
                                     </div>
-                                    <!--<div class="col-md-6">
-                                    <figure class="about-img animate" data-animate="fadeInUp"><img src="images/profile-girl.jpg" class="rounded" alt=""></figure>
-                                    </div>-->
+                                     <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-1 mt-3">
+                                        <button type="button" class="btn2 btnFiltrar" onclick="filtrarMicroemprendedor2(true)">Filtrar</button>
+                                    </div>
+                                    <div class="col-md-1 mt-3">
+                                        <button type="button" class="btn2 btnLimpiar" onclick="limpiarFiltros2(true)">Limpiar</button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <table id="tabla2" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Código</th>
+                                                <th>Microemprendedor</th>
+                                                <th>Rubro</th>
+                                                <th>Localidad</th>
+                                                <th>Calle</th>
+                                                <th>Nro</th>
+                                                <th>Piso</th>
+                                                <th>Depto</th>
+                                                <th>Tel. Fijo</th>
+                                                <th>Tel. Celular</th>
+                                                <th>Correo</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                        <tfoot>
+                                        </tfoot>
+                                    </table>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -592,129 +537,88 @@
                     </div>
                 </div>
             </div>
+
             @if (User.Identity.IsAuthenticated)
             {
                 <div class="section animated-row" data-section="slide08">
                     <div class="section-inner">
-                        <div class="about-section">
-                            <div class="row mt-0">
-                                @* justify-content-center *@
-                                <div class="col-lg-12 wide-col-laptop">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="about-contentbox">
-                                                <div class="animate" data-animate="fadeInUp">
-                                                    <span>Administrar Microemprendedores</span>
+                        <div class="row    justify-content-center  ">
 
-                                                    <div class="row mt-2 p-0">
-                                                        <div class="col-md-2 m-1 mt-0 p-0 form-floating">
-                                                            <select id="cbolocalidadF" class="form-select " name="localidadF" autocomplete="off" placeholder="Localidad" style=" background:rgba(250,250,250,0.05);"></select>
-                                                            <label for="cbolocalidadF" class="form-label pt-1">Localidad</label>
-                                                        </div>
+                            <div class="col-md-7 wide-col-laptop ">
+                                <div class="title-block animate " data-animate="fadeInUp">
+                                    <span>Administrar Microemprendedores</span>
+                                </div>
 
-                                                        <div class="col-md-2 m-1 mt-0 p-0 form-floating">
-                                                            <select id="cborubroF" class="form-select" name="rubroF" autocomplete="off" placeholder="Rubro" style=" background:rgba(250,250,250,0.05);"></select>
-                                                            <label for="cborubroF" class="form-label pt-1">Rubro</label>
-                                                        </div>
-                                                        <div class=" col-md-4 mt-1">
-                                                            <div class="input-field">
-                                                                <input type="text" class="form-control" name="palabraclave" id="palabraclave" required placeholder="Palabras Clave">
-                                                            </div>
-                                                        </div>
+                            </div>
+                        </div>
+                        <div class="row m-2">
+                            <div class="skills-row animate" data-animate="fadeInDown">
+                                <div class="row">
+                                    <div class="row mt-2 p-0">
+                                        <div class="col-md-2 m-1 mt-0 p-0 form-floating">
+                                            <select id="cbolocalidadF8" class="form-select " name="localidadF8" autocomplete="off" placeholder="Localidad" style=" background:rgba(250,250,250,0.05);"></select>
+                                            <label for="cbolocalidadF8" class="form-label pt-1">Localidad</label>
+                                        </div>
 
-                                                        <div class="col-md-1">
-                                                            <button type="button" class="btn btnFiltrar" onclick="filtrarMicroemprendedor(true)">Filtrar</button>
-                                                        </div>
-                                                        <div class="col-md-1">
-                                                            <button type="button" class="btn btnLimpiar" onclick="limpiarFiltros(true)">Limpiar</button>
-                                                        </div>
-
-                                                    </div>
-
-
-                                                    <div class="card-body">
-
-                                                        <table id="tabla" style="width:100%">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Código</th>
-                                                                    <th>Apellido y Nombre</th>
-                                                                    <th>Tipo Doc</th>
-                                                                    <th>N° Doc</th>
-                                                                    <th>Sexo</th>
-                                                                    <th>Calle</th>
-                                                                    <th>Nro</th>
-                                                                    <th>Piso</th>
-                                                                    <th>Depto</th>
-                                                                    <th>Tel. Fijo</th>
-                                                                    <th>Tel. Celular</th>
-                                                                    <th>Correo</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                            </tbody>
-                                                            <tfoot>
-                                                            </tfoot>
-                                                        </table>
-                                                    </div>
-
-
-
-
-
-                                                </div>
-                                                <!--<div class="facts-list owl-carousel">
-                                                    <div class="item animate" data-animate="fadeInUp">
-                                                        <div class="counter-box">
-                                                            <i class="fa fa-trophy counter-icon" aria-hidden="true"></i><span class="count-number">32</span> Awards Won
-                                                        </div>
-                                                    </div>
-                                                    <div class="item animate" data-animate="fadeInUp">
-                                                        <div class="counter-box">
-                                                            <i class="fa fa-graduation-cap counter-icon" aria-hidden="true"></i><span class="count-number">4</span> Degrees
-                                                        </div>
-                                                    </div>
-                                                    <div class="item animate" data-animate="fadeInUp">
-                                                        <div class="counter-box">
-                                                            <i class="fa fa-desktop counter-icon" aria-hidden="true"></i><span class="count-number">12</span> Working Years
-                                                        </div>
-                                                    </div>
-                                                    <div class="item animate" data-animate="fadeInUp">
-                                                        <div class="counter-box">
-                                                            <i class="fa fa-support counter-icon" aria-hidden="true"></i><span class="count-number">6</span> Team Members
-                                                        </div>
-                                                    </div>
-                                                    <div class="item animate" data-animate="fadeInUp">
-                                                        <div class="counter-box">
-                                                            <i class="fa fa-certificate counter-icon" aria-hidden="true"></i><span class="count-number">10</span> Certificates
-                                                        </div>
-                                                    </div>
-                                                </div>-->
+                                        <div class="col-md-2 m-1 mt-0 p-0 form-floating">
+                                            <select id="cborubroF8" class="form-select" name="rubroF8" autocomplete="off" placeholder="Rubro" style=" background:rgba(250,250,250,0.05);"></select>
+                                            <label for="cborubroF8" class="form-label pt-1">Rubro</label>
+                                        </div>
+                                        <div class=" col-md-4 mt-1">
+                                            <div class="input-field">
+                                                <input type="text" class="form-control" name="palabraclave8" id="palabraclave8" required placeholder="Palabras Clave">
                                             </div>
                                         </div>
-                                        <!--<div class="col-md-6">
-                                            <figure class="about-img animate" data-animate="fadeInUp"><img src="images/profile-girl.jpg" class="rounded" alt=""></figure>
-                                        </div>-->
+                                        <div class="col-md-1">
+                                        </div>
+                                        <div class="col-md-1 mt-3">
+                                            <button type="button" class="btn2 btnFiltrar" onclick="filtrarMicroemprendedor8(true)">Filtrar</button>
+                                        </div>
+                                        <div class="col-md-1 mt-3">
+                                            <button type="button" class="btn2 btnLimpiar" onclick="limpiarFiltros8(true)">Limpiar</button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <table id="tabla8" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Código</th>
+                                                    <th>Microemprendedor</th>
+                                                    <th>Tipo Doc</th>
+                                                    <th>N° Doc</th>
+                                                    <th>Sexo</th>
+                                                    <th>Calle</th>
+                                                    <th>Nro</th>
+                                                    <th>Piso</th>
+                                                    <th>Depto</th>
+                                                    <th>Tel. Fijo</th>
+                                                    <th>Tel. Celular</th>
+                                                    <th>Correo</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                            <tfoot>
+                                            </tfoot>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
             }
             @if (!User.Identity.IsAuthenticated)
             {
-                <div class="section animated-row" data-section="slide09">
+                <div class="section animated-row" data-section="slide08">
                     <div class="section-inner">
-                    <div class="row justify-content-center">
-                        <div class="col-md-7 wide-col-laptop">
-                            <div class="title-block animate" data-animate="fadeInUp">
-                                <span>Iniciar Sesión</span>
-
-                            </div>
+                        <div class="welcome-box">
+                       @*      <span class="welcome-first animate" data-animate="fadeInUp">Iniciar Sesión </span>
+                            <h1 class="welcome-title animate" data-animate="fadeInUp">Iniciar Sesión</h1> *@
                             <div class="contact-section">
-                                <div class="row">
-                                    <div class="col-md-6 animate" data-animate="fadeInUp">
+                                <div class="row    justify-content-center  ">
+                                    <div class="col-md-3 animate" data-animate="fadeInUp">
                                         <form id="ajax-contact" method="post" action="#">
                                             <div class="input-field">
                                                 <input type="email" class="form-control" name="email" id="user" required placeholder="Email">
@@ -731,12 +635,13 @@
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
+                
                 </div>
-            </div>
             }
-         
+
         </div>
 
         <div id="social-icons">
@@ -759,7 +664,7 @@
 
 
     <script src="~/home/js/jquery.js"></script>
- 
+
     <script src="~/home/js/fullpage.min.js"></script>
 
     <script src="~/home/js/scrolloverflow.js"></script>
@@ -815,9 +720,11 @@
             dataType: "json",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
-                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadF");
+                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadF2");
+                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadF8");
                 $.each(data.data, function (index, value) {
-                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadF");
+                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadF2");
+                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadF8");
 
                 });
             },
@@ -836,10 +743,12 @@
             contentType: "application/json; charset=utf-8",
             success: function (data) {
                 debugger;
-                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cborubroF");
+                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cborubroF2");
+                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cborubroF8");
                 $.each(data.data, function (index, value) {
                     rub.push({ value: value.id, text: value.text });
-                    $("<option>").attr({ "value": value.id }).text(value.text).appendTo("#cborubroF");
+                    $("<option>").attr({ "value": value.id }).text(value.text).appendTo("#cborubroF2");
+                    $("<option>").attr({ "value": value.id }).text(value.text).appendTo("#cborubroF8");
                 });
             },
             error: function (error) {
@@ -879,30 +788,30 @@
             // Iconos
             const iconos = {
                 exito: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                                                                      <path
-                                                                                                                                                          d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
-                                                                                                                                                      />
-                                                                                                                                                  </svg>`,
+                                                                                                                                                                              <path
+                                                                                                                                                                                  d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
+                                                                                                                                                                              />
+                                                                                                                                                                          </svg>`,
                 error: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                                                                                  <path
-                                                                                                                                                                      d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                                                                                                                                                                  />
-                                                                                                                                                              </svg>`,
+                                                                                                                                                                                          <path
+                                                                                                                                                                                              d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                                                                                                                                                          />
+                                                                                                                                                                                      </svg>`,
                 info: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                                                                                  <path
-                                                                                                                                                                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
-                                                                                                                                                                  />
-                                                                                                                                                              </svg>`,
+                                                                                                                                                                                          <path
+                                                                                                                                                                                              d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+                                                                                                                                                                                          />
+                                                                                                                                                                                      </svg>`,
                 warning: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                                                                                  <path
-                                                                                                                                                                      d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                                                                                                                                                                  />
-                                                                                                                                                              </svg>`,
+                                                                                                                                                                                          <path
+                                                                                                                                                                                              d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                                                                                                                                                          />
+                                                                                                                                                                                      </svg>`,
             };
 
             // Plantilla del toast
             const toast = `
-                                                                                                                              `;
+                                                                                                                                                      `;
 
             // Agregar la plantilla al nuevo toast
             nuevoToast.innerHTML = toast;
@@ -926,21 +835,146 @@
             nuevoToast.addEventListener('animationend', handleAnimacionCierre);
         };
 
-        llenarTabla(false)
+        llenarTabla2(false)
 
-        //Llenar Tabla
-        function llenarTabla(filtro) {
-
-
+        //Llenar Tabla 2
+        function llenarTabla2(filtro) {
 
             var url;
             if (filtro) {
-                url = "@Url.Action("GetMicroemprendedorFiltrados", "Microemprendedor")" + '?localidad=' + $("#cbolocalidadF").val() + '&rubro=' + $("#cborubroF").val()
+                url = "@Url.Action("GetMicroemprendedorFiltrados", "Microemprendedor")" + '?localidad=' + $("#cbolocalidadF2").val() + '&rubro=' + $("#cborubroF2").val() + '&palabra=' + $("#palabraclave2").val()
             } else
                 url = "@Url.Action("GetAllMicroEmprendedor", "Microemprendedor")"
 
-            $('#tabla').DataTable().clear().destroy();
-            tabladata = $("#tabla").DataTable({
+            $('#tabla2').DataTable().clear().destroy();
+            tabladata = $("#tabla2").DataTable({
+                responsive: true,
+                ordering: true,
+                dom: "Bfrtip",
+                buttons: [
+                    {
+                        extend: "excelHtml5",
+                        text: '<i class="fa fa-file-excel-o "></i>',
+                        filename: "Reporte de Microemprendedor",
+                        title: "Listado de Microemprendedor",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                        },
+                        className: "btn-exportar-excel",
+
+
+                    },
+                    {
+                        extend: "pdfHtml5",
+                        text: '<i class="fa fa-file-pdf-o"></i>',
+                        filename: "Reporte de Microemprendedor",
+                        title: "Listado de Microemprendedor",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                        },
+                        className: "btn-exportar-pdf"
+                    },
+                    {
+                        extend: "print",
+                        text: '<i class="fa fa-print"></i>',
+                        filename: "Reporte de Microemprendedor",
+                        title: "Listado de Microemprendedor",
+                        exportOptions: {
+                            //muestra las columnas
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                        },
+                        className: "btn-imprimir"
+
+                    }
+                ],
+                "ajax": {
+                    url: url,
+                    type: "GET",
+                    dataType: "json",
+                    beforeSend: agregarToast({ tipo: 'exito', titulo: 'Obteniendo Microemprendedor', descripcion: 'Por favor espere...', autoCierre: true })
+                },
+                "columns": [
+                    { "data": "id" },
+                    { "data": "apeyNom" },
+                    { "data": "rubro", render: function (data) {
+                            return data.descripcion
+                        }
+                    },
+                    { "data": "localidad", render: function (data) {
+                            return data.descripcion
+                        }
+                    },
+                    { "data": "calle" },
+                    { "data": "nro" },
+                    { "data": "piso" },
+                    { "data": "depto" },
+                    { "data": "telFijo" },
+                    { "data": "telCelular" },
+                    { "data": "correo" },
+
+                ],
+                // "order": {
+                //     name: 'apeyNom',
+                //     dir: 'asc'
+                // },
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+                },
+                "order": [[1, "asc"]],
+                "columnDefs": [
+
+
+                    { "width": "15%", "targets": 0 },
+                    { "width": "100%", "targets": 1 },
+                    // { "width": "100%", "targets": 2 },
+                    // { "width": "8%", "targets": 3, render: DataTable.render.datetime('DD/MM/YYYY') },
+                    // { "width": "2%", "targets": 4 },
+
+                    // { "width": "10%", "targets": 5 },
+                    // { "width": "3%", "targets": 6 },
+                    // { "width": "3%", "targets": 7 },
+                    // { "width": "3%", "targets": 8 },
+                    // { "width": "5%", "targets": 9 },
+                    // { "width": "5%", "targets": 10 },
+                    // { "width": "10%", "targets": 11, visible: false },
+
+                    // { "width": "70%", "targets": 12 },
+                    // { "width": "40%", "targets": 14, className: 'dt-body-right' },
+                ]
+            })
+        }
+
+        //Filtrar Microemprendedor
+        function filtrarMicroemprendedor2(filtro) {
+            llenarTabla2(filtro);
+        }
+        //Filtrar Microemprendedor
+        function limpiarFiltros2() {
+            $('#cbolocalidadF2').val(0);
+            $('#cborubroF2').val(0);
+            $('#palabraclave2').val('');
+
+            llenarTabla2(false)
+        }
+
+
+
+
+
+        //Llenar Tabla 8
+        function llenarTabla8(filtro) {
+
+            var url;
+            if (filtro) {
+
+                url = "@Url.Action("GetMicroemprendedorFiltrados", "Microemprendedor")" + '?localidad=' + $("#cbolocalidadF8").val() + '&rubro=' + $("#cborubroF8").val() + '&palabra=' + $("#palabraclave8").val()
+            } else
+                url = "@Url.Action("GetAllMicroEmprendedor", "Microemprendedor")"
+
+            $('#tabla8').DataTable().clear().destroy();
+            tabladata = $("#tabla8").DataTable({
                 responsive: true,
                 ordering: true,
                 dom: "Bfrtip",
@@ -1007,123 +1041,113 @@
                     { "data": "correo" },
 
                 ],
-                "order": {
-                    name: 'apeyNom',
-                    dir: 'asc'
-                },
+                // "order": {
+                //     name: 'apeyNom',
+                //     dir: 'asc'
+                // },
                 "language": {
                     "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
                 },
                 "order": [[1, "asc"]],
                 "columnDefs": [
-
-
-                    { "width": "3%", "targets": 0 },
-                    { "width": "10%", "targets": 1 },
-                    { "width": "5%", "targets": 2 },
-                    { "width": "8%", "targets": 3, render: DataTable.render.datetime('DD/MM/YYYY') },
-                    { "width": "2%", "targets": 4 },
-
-                    // { "width": "10%", "targets": 5 },
-                    // { "width": "3%", "targets": 6 },
-                    // { "width": "3%", "targets": 7 },
-                    // { "width": "3%", "targets": 8 },
-                    // { "width": "5%", "targets": 9 },
-                    // { "width": "5%", "targets": 10 },
-                    // { "width": "10%", "targets": 11, visible: false },
-
-                    // { "width": "70%", "targets": 12 },
-                    // { "width": "40%", "targets": 14, className: 'dt-body-right' },
+                    { "width": "15%", "targets": 0 },
+                    { "width": "100%", "targets": 1 },
+                  
                 ]
             })
         }
 
         //Filtrar Microemprendedor
-        function filtrarMicroemprendedor(filtro) {
-            llenarTabla(filtro);
+        function filtrarMicroemprendedor8(filtro) {
+            llenarTabla8(filtro);
         }
         //Filtrar Microemprendedor
-        function limpiarFiltros() {
-            $('#cbolocalidadF').val(0);
-            $('#cborubroF').val(0);
-            llenarTabla(false)
+        function limpiarFiltros8() {
+            $('#cbolocalidadF8').val(0);
+            $('#cborubroF8').val(0);
+            $('#palabraclave8').val('');
+            llenarTabla8(false)
         }
 
 
-              async function enviarLogin(user,password)
-         {
-             const data = {
-                 User: user,
-                 Password: password
-             };
-
-                 let res = await fetch("/Authuser/Login", {
-                     method: 'POST',
-                     headers: {
-                         'Accept': 'application/json',
-                         'Content-Type': 'application/json'
-                     },
-                     body: JSON.stringify(data)
-                     })
-                     .then(response => {
-                          console.log(response);
-                         if (response.ok){
-
-                            return response.json();
-                         }else{
-                         throw new Error('Error en la solicitud');
-                         }
-                     })
-                     .then(data => {
-                             if (data.success){
 
 
-                                     // window.location.href='#'
 
-                                     window.location.reload();
-                                      // $("#idiniciosesion").val='Cerrar Sesión';
-                             }else{
 
-                                    alert(data.message);
-                             }
-                 });
-         }
 
-        async function registrarUser(user,password,apeyNom)
-         {
-             const data = {
-                 User: user,
-                 Password: password,
-                 ApeyNom:apeyNom,
-                 Rol:"Admin"
-             };
-                 let res = await fetch("/Authuser/CreateUser", {
-                     method: 'POST',
-                     headers: {
-                         'Accept': 'application/json',
-                         'Content-Type': 'application/json'
-                     },
-                     body: JSON.stringify(data)
-                     })
-                     .then(response => {
-                          console.log(response);
-                         if (response.ok){
-                              window.location.href='#';
-                            return response.json();
-                         }else{
-                         throw new Error('Error en la solicitud');
-                         }
-                     })
-                     .then(data => {
-                         debugger;
-                             if (data.success){
-                                     window.location.href='/Home/Index';
-                             }else{
 
-                                   // alert(data.message);
-                             }
-                 });
-         }
+        async function enviarLogin(user, password) {
+            const data = {
+                User: user,
+                Password: password
+            };
+
+            let res = await fetch("/Authuser/Login", {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => {
+                    console.log(response);
+                    if (response.ok) {
+
+                        return response.json();
+                    } else {
+                        throw new Error('Error en la solicitud');
+                    }
+                })
+                .then(data => {
+                    if (data.success) {
+
+
+                        // window.location.href='#'
+
+                        window.location.reload();
+                        // $("#idiniciosesion").val='Cerrar Sesión';
+                    } else {
+
+                        alert(data.message);
+                    }
+                });
+        }
+
+        async function registrarUser(user, password, apeyNom) {
+            const data = {
+                User: user,
+                Password: password,
+                ApeyNom: apeyNom,
+                Rol: "Admin"
+            };
+            let res = await fetch("/Authuser/CreateUser", {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => {
+                    console.log(response);
+                    if (response.ok) {
+                        window.location.href = '#';
+                        return response.json();
+                    } else {
+                        throw new Error('Error en la solicitud');
+                    }
+                })
+                .then(data => {
+                    debugger;
+                    if (data.success) {
+                        window.location.href = '/Home/Index';
+                    } else {
+
+                        // alert(data.message);
+                    }
+                });
+        }
 
         async function reestablecerUser(user) {
             const data = {
@@ -1159,8 +1183,8 @@
 
 
     </script>
-  
-    
+
+
 
 </body>
 </html>

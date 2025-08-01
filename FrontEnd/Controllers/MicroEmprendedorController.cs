@@ -65,10 +65,10 @@ namespace FrontEnd.Controllers
 
         //[Authorize(Roles = "Admin")]
         //[ResponseCache(Duration = 30)]
-        public async Task<JsonResult> GetMicroEmprendedorFiltrados(int localidad, int rubro)
+        public async Task<JsonResult> GetMicroEmprendedorFiltrados(int localidad, int rubro, string palabra)
         {
             List<MicroEmprendedor> oLista = new List<MicroEmprendedor>();
-            oLista = await _apiService.GetMicroEmprendedoresFiltrados(localidad, rubro/*, HttpContext.Session.GetString("APIToken")*/);
+            oLista = await _apiService.GetMicroEmprendedoresFiltrados(localidad, rubro,palabra/*, HttpContext.Session.GetString("APIToken")*/);
             return Json(new { data = oLista });
         }
 

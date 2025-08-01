@@ -176,6 +176,7 @@ video {
 }
 
 .section-inner {
+   
     padding: 20px 30px 0;
 }
 
@@ -512,7 +513,7 @@ a#logo {
 /*==============================================
 05. ABOUT ME
 ================================================*/
-.about-img {
+/*.about-img {
     margin: 0 auto 40px;
     position: relative;
 }
@@ -523,8 +524,10 @@ a#logo {
         box-shadow: 0 0 40px rgba(0,0,0,.3);
     }
 
+
+  
 .about-contentbox {
-    margin-top: 10px; /*80px;*/
+    margin-top: 80px;
     text-align: left;
     line-height: 1.8;
 }
@@ -583,7 +586,7 @@ a#logo {
     font-weight: 700;
     line-height: 1;
     margin-bottom: 10px;
-}
+}*/
 
 /*==============================================
 06. SERVICES BLOCK CSS
@@ -667,7 +670,7 @@ a#logo {
 /*==============================================
 07. WORK BLOCK CSS
 ================================================*/
-.gallery-section {
+/*.gallery-section {
     text-align: center;
 }
 
@@ -724,7 +727,7 @@ a#logo {
         margin-top: 30%;
         color: #1e1e1e;
         margin-bottom: 20px;
-    }
+    }*/
 
 /*==============================================
 08. CONTACT BLOCK CSS
@@ -896,7 +899,7 @@ textarea.form-control {
 /*==============================================
 09. TESTIMONOALS BLOCK CSS
 ================================================*/
-.testimonials-section .item {
+/*.testimonials-section .item {
     background-color: rgba(250,250,250,0.25);
     padding: 40px;
     border-radius: 10px;
@@ -918,14 +921,16 @@ textarea.form-control {
     .testimonials-section .item p {
         font-size: 17px;
         font-style: italic;
-    }
+    }*/
 
 /*==============================================
 10. SKILLS BLOCK CSS
 ================================================*/
+/*
 .skills-row {
     margin-top: 80px;
 }
+
 
 .skill-item {
     border-bottom: 1px solid rgba(250,250,250,0.1);
@@ -952,6 +957,7 @@ textarea.form-control {
     top: -21px;
     position: absolute;
     z-index: 999;
+    
 }
 
 .skills-row h6 {
@@ -988,3 +994,4 @@ textarea.form-control {
     background-color: #fff;
     border-radius: 3px;
 }
+*/

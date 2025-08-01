@@ -16,7 +16,7 @@ namespace FrontEnd.Models
 
         [ForeignKey("IdRubro")]
         public int IdRubro { get; set; }
-        //public Rubro? Rubro { get; set; }
+        public Rubro? Rubro { get; set; }
 
     }
 }

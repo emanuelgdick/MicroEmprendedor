@@ -86,7 +86,13 @@ namespace Api.Controllers
                                                                           select new MicroEmprendedorRubro()
                                                                           {
                                                                               IdMicroEmprendedor = Convert.ToInt32(d.Element("IdMicroEmprendedor").Value),
-                                                                              IdRubro = Convert.ToInt32(d.Element("IdRubro").Value)
+                                                                              IdRubro = Convert.ToInt32(d.Element("IdRubro").Value),
+                                                                              Rubro = (from q in c.Elements("Rubro")
+                                                                                       select new Rubro()
+                                                                                       {
+                                                                                           Id = Convert.ToInt32(q.Element("Id").Value),
+                                                                                           Descripcion = q.Element("Descripcion").Value
+                                                                                       }).FirstOrDefault(),
                                                                           }).ToList(),
                                                                 PalabrasClave = (from d in c.Elements("PalabrasClave")
                                                                                  select new PalabraClave()
@@ -120,7 +126,7 @@ namespace Api.Controllers
         [HttpGet("GetMicroEmprendedoresFiltrados")]
         //[Authorize]
         //[ResponseCache(CacheProfileName = "apicache")]
-        public IActionResult GetMicroEmprendedoresFiltrados(int localidad, int rubro)
+        public IActionResult GetMicroEmprendedoresFiltrados(int localidad, int rubro,string? palabra)
         {
             _logger.LogInformation("Fetching Todas las MicroEmprendedores");
 
@@ -130,6 +136,7 @@ namespace Api.Controllers
                 SqlCommand cmd = new SqlCommand("sp_ObtenerMicroEmprendedorFiltrados", oConexion);
                 cmd.Parameters.Add("IdLocalidad", SqlDbType.Int).Value = localidad;
                 cmd.Parameters.Add("IdRubro", SqlDbType.Int).Value = rubro;
+                cmd.Parameters.Add("Palabra", SqlDbType.VarChar).Value = palabra;
                 cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                 cmd.CommandType = CommandType.StoredProcedure;

@@ -39,8 +39,8 @@ namespace Api.Controllers
                 SqlCommand cmd = new SqlCommand("sp_ObtenerUsuario", oConexion);
                 cmd.Parameters.AddWithValue("User", logindetails.User);
                 cmd.Parameters.AddWithValue("Password", RecursosBiz.ConvertirSha256(logindetails.Password.ToLower()));
-                cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
-                cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                //cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                //cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                 cmd.CommandType = CommandType.StoredProcedure;
                 oConexion.Open();
                 //SqlDataReader dr = cmd.ExecuteReader();
