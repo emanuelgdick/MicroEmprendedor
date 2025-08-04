@@ -256,6 +256,13 @@
               "type": "integer",
               "format": "int32"
             }
+          },
+          {
+            "name": "palabra",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1111,6 +1118,9 @@
             "type": "integer",
             "format": "int32",
             "nullable": true
+          },
+          "rubro": {
+            "$ref": "#/components/schemas/Rubro"
           }
         },
         "additionalProperties": false

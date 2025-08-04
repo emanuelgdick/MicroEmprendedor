@@ -180,7 +180,7 @@
       defaultText:'Agregue Palabras clave',
       minChars:0,
       width:'300px',
-      height:'100px',
+      height:'40px',
       autocomplete: {selectFirst: false },
       hide:true,
       delimiter: ',',

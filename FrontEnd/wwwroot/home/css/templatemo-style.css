@@ -36,10 +36,13 @@ body {
 
 body {
     font: 16px/1.6 'Raleway', Arial, Helvetica, sans-serif;
-    color: #fff;
+    color:#000;
+
     text-align: center;
     background: #222;
 }
+
+
 
 img {
     border: 0;
@@ -101,33 +104,39 @@ h6 {
     margin: 0 0 20px;
     font-weight: 600;
     text-transform: uppercase;
+    color: #fff;
 }
 
-h1,
+h1 ,
 h2 {
     font-size: 16px;
+    color: #fff
 }
 
 h3 {
     font-size: 30px;
     font-weight: 600;
+    color: #fff
 }
 
 h4 {
     font-size: 22px;
     font-weight: 600;
+    color: #fff
 }
 
 h5 {
     font-size: 20px;
     margin-bottom: 10px;
     font-weight: 600;
+    color: #fff
 }
 
 h6 {
     font-size: 18px;
     margin-bottom: 10px;
     font-weight: 600;
+    color: #fff
 }
 
 #main {
@@ -176,7 +185,6 @@ video {
 }
 
 .section-inner {
-   
     padding: 20px 30px 0;
 }
 
@@ -513,7 +521,7 @@ a#logo {
 /*==============================================
 05. ABOUT ME
 ================================================*/
-/*.about-img {
+.about-img {
     margin: 0 auto 40px;
     position: relative;
 }
@@ -586,7 +594,7 @@ a#logo {
     font-weight: 700;
     line-height: 1;
     margin-bottom: 10px;
-}*/
+}
 
 /*==============================================
 06. SERVICES BLOCK CSS
@@ -670,7 +678,7 @@ a#logo {
 /*==============================================
 07. WORK BLOCK CSS
 ================================================*/
-/*.gallery-section {
+.gallery-section {
     text-align: center;
 }
 
@@ -727,7 +735,7 @@ a#logo {
         margin-top: 30%;
         color: #1e1e1e;
         margin-bottom: 20px;
-    }*/
+    }
 
 /*==============================================
 08. CONTACT BLOCK CSS
@@ -758,7 +766,7 @@ a#logo {
 
 .form-control {
     height: 50px;
-    /* color:#fff;*/
+    color: #fff;
     color: #000;
     border: none;
     background: rgba(250,250,250,0.05);
@@ -774,43 +782,41 @@ a#logo {
         outline: none;
         background: rgba(0,0,0,0.05);
         border: 1px solid rgba(250,250,250,1);
-        /* color:#fff;*/
+        color: #fff;
         color: #000;
     }
 
 .index .form-control.form-control-dark {
     background: rgba(250,250,250, 0.75);
-    /* color:#fff;*/
+    color: #fff;
     color: #000;
 }
 
     .index .form-control.form-control-dark:focus {
         background: rgba(54, 40, 158, 0.85);
-        /* color:#fff;*/
+        color: #fff;
         color: #000;
     }
 
     .index .form-control.form-control-dark::-webkit-input-placeholder {
-        /*  color: #fff !important;*/
-        /* color:#fff;*/
+        color: #fff !important;
+        color: #fff;
         color: #000;
     }
 
     .index .form-control.form-control-dark::-moz-placeholder {
-        /* color: #fff !important;*/
-        /* color:#fff;*/
+        color: #fff !important;
+        color: #fff;
         color: #000;
     }
 
     .index .form-control.form-control-dark:-ms-input-placeholder {
-        /*  color: #fff !important;*/
-        
+        color: #fff !important;
         color: #000;
     }
 
     .index .form-control.form-control-dark:-moz-placeholder {
-        /*  color: #fff !important;*/
-
+        color: #fff !important;
         color: #000;
     }
 
@@ -899,7 +905,7 @@ textarea.form-control {
 /*==============================================
 09. TESTIMONOALS BLOCK CSS
 ================================================*/
-/*.testimonials-section .item {
+.testimonials-section .item {
     background-color: rgba(250,250,250,0.25);
     padding: 40px;
     border-radius: 10px;
@@ -921,7 +927,7 @@ textarea.form-control {
     .testimonials-section .item p {
         font-size: 17px;
         font-style: italic;
-    }*/
+    }
 
 /*==============================================
 10. SKILLS BLOCK CSS
@@ -993,5 +999,12 @@ textarea.form-control {
     height: 6px;
     background-color: #fff;
     border-radius: 3px;
+}*/
+
+.modal-content {
+   /* opacity: 0.75;*/
+    background: -moz-linear-gradient(top, #4096ee 0%, #39ced6 100%);
+    background: -webkit-linear-gradient(top, #4096ee 0%,#39ced6 100%);
+    background: linear-gradient(to bottom, #4096ee 0%,#39ced6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4096ee', endColorstr='#39ced6',GradientType=0 );
 }
-*/

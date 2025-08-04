@@ -87,12 +87,12 @@ namespace Api.Controllers
                                                                           {
                                                                               IdMicroEmprendedor = Convert.ToInt32(d.Element("IdMicroEmprendedor").Value),
                                                                               IdRubro = Convert.ToInt32(d.Element("IdRubro").Value),
-                                                                              Rubro = (from q in c.Elements("Rubro")
-                                                                                       select new Rubro()
-                                                                                       {
-                                                                                           Id = Convert.ToInt32(q.Element("Id").Value),
-                                                                                           Descripcion = q.Element("Descripcion").Value
-                                                                                       }).FirstOrDefault(),
+                                                                              Rubro =
+                                                                                        new Rubro()
+                                                                                        {
+                                                                                            Id =Convert.ToInt32(d.Element("IdRubro").Value),
+                                                                                            Descripcion = d.Element("Descripcion").Value
+                                                                                        },
                                                                           }).ToList(),
                                                                 PalabrasClave = (from d in c.Elements("PalabrasClave")
                                                                                  select new PalabraClave()
@@ -190,9 +190,14 @@ namespace Api.Controllers
                                                                 Rubros = (from d in c.Elements("Rubros")
                                                                           select new MicroEmprendedorRubro()
                                                                           {
-                                                                              //  Id = Convert.ToInt32(d.Element("Id").Value),
                                                                               IdMicroEmprendedor = Convert.ToInt32(d.Element("IdMicroEmprendedor").Value),
-                                                                              IdRubro = Convert.ToInt32(d.Element("IdRubro").Value)
+                                                                              IdRubro = Convert.ToInt32(d.Element("IdRubro").Value),
+                                                                              Rubro =
+                                                                                        new Rubro()
+                                                                                        {
+                                                                                            Id = Convert.ToInt32(d.Element("IdRubro").Value),
+                                                                                            Descripcion = d.Element("Descripcion").Value
+                                                                                        },
                                                                           }).ToList(),
                                                                 PalabrasClave = (from d in c.Elements("PalabrasClave")
                                                                                  select new PalabraClave()
