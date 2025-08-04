@@ -28,14 +28,25 @@ namespace FrontEnd.Services
 
         }
 
-        public async Task<Usuario> AddUser(LoginRequestDTO userDetails)
+        public async Task<Usuario> AddUser(LoginRequestDTO usuario)
         {
-            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<LoginRequestDTO>($"api/Usuario/AddUser", userDetails);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<LoginRequestDTO>($"api/Usuario/AddUser", usuario);
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
             var APIResponse = JsonConvert.DeserializeObject<Usuario>(contents);
             return APIResponse;
 
+        }
+
+
+        public bool CambiarClave(int idusuario, string nuevaclave, out string Mensaje)
+        {
+            return objCapaDato.CambiarClave(idusuario, nuevaclave, out Mensaje);
+        }
+
+        public bool ReestablecerClave(long idusuario, string correo, out string Mensaje)
+        {
+           
         }
     }
 }

@@ -37,7 +37,7 @@ namespace FrontEnd.Controllers
             {
                 var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
                 identity.AddClaim(new Claim(ClaimTypes.Name, objResponse.Usuario.ApeyNom));
-                identity.AddClaim(new Claim(ClaimTypes.Role, objResponse.Usuario.Rol));
+                identity.AddClaim(new Claim(ClaimTypes.UserData, objResponse.Usuario.User));
                 identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, objResponse.Usuario.Id.ToString()));
                 var principal = new ClaimsPrincipal(identity);
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
@@ -83,8 +83,6 @@ namespace FrontEnd.Controllers
         //        return Json(new { success = false, message = "Credenciales inválidas" });
         //    }
         //}
-
-
 
 
         [HttpPost]
@@ -154,7 +152,29 @@ namespace FrontEnd.Controllers
             }
         }
 
-
+        [HttpPost]
+        public ActionResult Reestablecer(string correo)
+        {
+            Usuario oUsuario = new Usuario();
+            oUsuario = new UsuarioBiz().Listar().Where(item => item.Correo == correo).FirstOrDefault();
+            if (oUsuario == null)
+            {
+                ViewBag.Error = "No se encontró un usuario relacionado a ese correo";
+                return View();
+            }
+            string mensaje = string.Empty;
+            bool respuesta = new UsuarioBiz().ReestablecerClave(oUsuario.Id, correo, out mensaje);
+            if (respuesta)
+            {
+                ViewBag.Error = null;
+                return RedirectToAction("Index", "Acceso");
+            }
+            else
+            {
+                ViewBag.Error = mensaje;
+                return View();
+            }
+        }
 
     }
 }

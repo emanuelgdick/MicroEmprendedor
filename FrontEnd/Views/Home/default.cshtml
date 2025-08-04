@@ -37,23 +37,11 @@
     <!-- Tags -->
     <link href="~/css/tagsinput/jquery.tagsinput.css" rel="stylesheet" />
 
-
-
-
     <!-- head: below existing links -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@4.0.1/dist/css/multi-select-tag.min.css">
 
-
-
-
-
-
     <!-- Select2 -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
-
-
-
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
@@ -109,14 +97,6 @@
     </style>
 
 
-
-
-
-
-
-
-
-
 </head>
 
 <body>
@@ -145,19 +125,21 @@
                                     <li data-menuanchor="slide05"><a href="#slide05">My Work</a></li>
                                     <li data-menuanchor="slide06"><a href="#slide06">Testimonials</a></li>
                                     <li data-menuanchor="slide07"><a href="#slide07">Contact Me</a></li>
+                                  
+                                    
                                     @if (User.Identity.IsAuthenticated)
                                     {
                                         <li data-menuanchor="slide08"><a href="#slide08">Administración </a> </li>
-
-
                                         <li data-menuanchor="slide09"><a asp-action="Logout" asp-controller="Authuser">Cerrar Sesión</a></li>
                                     }
                                     else
                                     {
                                         <li data-menuanchor="slide08"><a href="#slide08">Iniciar Sesión</a></li>
                                     }
+                                @*     <li data-menuanchor="slide10"><a href="#slide10">Registr Me</a></li> *@
                                 </ul>
 
+                                    
                             </div>
                         </nav>
                     </div>
@@ -166,7 +148,7 @@
         </header>
 
         <video autoplay muted loop id="myVideo">
-            @*      <source src="/home/images/video-bg.mp4" type="video/mp4"> *@
+                 <source src="/home/images/video-bg.mp4" type="video/mp4">
         </video>
 
         <div id="fullpage" class="fullpage-default">
@@ -531,6 +513,12 @@
                     </div>
                 </div>
             </div>
+
+
+
+       
+
+
             <div class="section animated-row" data-section="slide07">
                 <div class="section-inner">
                     <div class="row justify-content-center">
@@ -652,10 +640,8 @@
                 <div class="section animated-row" data-section="slide08">
                     <div class="section-inner">
                         <div class="welcome-box">
-                            @*<span class="welcome-first animate" data-animate="fadeInUp">Iniciar Sesión </span>
-                            <h1 class="welcome-title animate" data-animate="fadeInUp">Iniciar Sesión</h1> *@
-                            <div class="contact-section">
-                                <div class="row    justify-content-center  ">
+                          <div class="contact-section">
+                                <div class="row    justify-content-center">
                                     <div class="col-md-3 animate" data-animate="fadeInUp">
                                         <form id="ajax-contact" method="post" action="#">
                                             <div class="input-field">
@@ -666,28 +652,107 @@
                                             </div>
                                             <div>
                                                 <a class="btn btn-default submit" href="#" onclick="enviarLogin(document.getElementById('user').value,document.getElementById('password').value)">Log in</a>
-                                                <a class="reset_pass" href="#reestablecer">Olvidó su contraseña?</a>
+                                                <row>
+                                                    <div class="col-12 mt-2" style="font-size:16px">
+                                                    
+                                                       <a href="#slide10">Registrarse</a>
+
+                                                   </div>
+                                                    
+                                                    <div class="col-12 mt-2" style="font-size:16px">
+                                                        <a class="reset_pass" href="#slide11">Olvidó su contraseña?</a>
+                                                    </div>
+                                                </row>                                                                        
                                             </div>
                                         </form>
                                         <div id="form-messages" class="mt-3"></div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> 
+                          
 
                         </div>
+                        </div>
+                    <div>
                     </div>
-
                 </div>
             }
-            <!-- TOAST -->
-            <div class="contenedor">
-
-                <div class="contenedor-toastP" id="contenedor-toastP">
+            <!-- REGISTRARSE -->
+            <div class="section animated-row" data-section="slide10">
+                <div class="section-inner">
+                    <div class="welcome-box">
+                        <div class="contact-section">
+                            <div class="row    justify-content-center">
+                                <div class="title-block animate" data-animate="fadeInUp">
+                                    <span style="color:#fff">Registrarse</span>
+                                    
+                                </div>
+                                <div class="col-md-3 animate" data-animate="fadeInUp">
+                                    <form id="fregistro" method="post" action="#">
+                                        <div class="input-field">
+                                            <input type="text" class="form-control" name="apeynomR" id="apeynomR" required placeholder="Apellido y Nombre" style=" background:rgba(250,250,250,0.05)">
+                                        </div>
+                                        <div class="input-field">
+                                            <input type="email" class="form-control" name="emailR" id="userR" required placeholder="Email"  style=" background:rgba(250,250,250,0.05)">
+                                        </div>
+                                        <div class="input-field">
+                                            <input type="password" class="form-control" name="passwordR" id="passwordR" required placeholder="Password" style=" background:rgba(250,250,250,0.05)">
+                                        </div>
+                                        <div class="col-12   form-floating">
+                                            <select id="cbolocalidadR" class="form-select " name="localidadR" autocomplete="off" placeholder="Localidad" style=" background:rgba(250,250,250,0.05);"></select>
+                                            <label for="cbolocalidadR" class="form-label pt-1">Localidad</label>
+                                        </div>
+                                        <div class="mt-4">
+                                            <a class="btn btn-default submit" href="#" onclick="registrarUser(document.getElementById('userR').value,document.getElementById('passwordR').value,document.getElementById('apeynomR').value,1/* document.getElementById('localidadR').value */)">Crear Cuenta</a>
+                                         
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
+
+            <!-- OLVIDO SU CONTRASEÑA -->
+            <div class="section animated-row" data-section="slide11">
+                <div class="section-inner">
+                    <div class="welcome-box">
+                        <div class="contact-section">
+                            <div class="row    justify-content-center">
+                                <div class="title-block animate" data-animate="fadeInUp">
+                                    <span style="color:#fff">Olvidó su contraseña</span>
+
+                                </div>
+                                <div class="col-md-3 animate" data-animate="fadeInUp">
+                                    <form id="fregistro" method="post" action="#">
+                                   
+                                        <div class="input-field">
+                                            <input type="email" class="form-control" name="emailR" id="userR" required placeholder="Email" style=" background:rgba(250,250,250,0.05)">
+                                        </div>
+
+                                        <div class="mt-4">
+                                            <a class="btn btn-default submit" href="#" onclick="restablecerUser(document.getElementById('userR').value,document.getElementById('passwordR').value,document.getElementById('apeynomR').value,1/* document.getElementById('localidadR').value */)">Restablecer la Cuenta</a>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
         </div>
 
+        <!-- TOAST -->
+        <div class="contenedor">
 
+            <div class="contenedor-toastP" id="contenedor-toastP">
+            </div>
+        </div>
 
         <!-- Modal -->
         <div class="  modal  fade " id="FormModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
@@ -873,10 +938,12 @@
                 $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadF2");
                 $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadF8");
                 $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadN");
+                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadR");
                 $.each(data.data, function (index, value) {
                     $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadF2");
                     $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadF8");
                     $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadN");
+                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadR");
 
                 });
             },
@@ -944,6 +1011,7 @@
 
         // Función para agregar la clase de cerrando al toast.
         agregarToast = ({ tipo, titulo, descripcion, autoCierre }) => {
+            debugger;
             // Crear el nuevo toast
             const nuevoToast = document.createElement('div');
             // Agregar clases correspondientes
@@ -955,33 +1023,52 @@
             const fecha = Date.now();
             const toastId = fecha + numeroAlAzar;
             nuevoToast.id = toastId;
+
             // Iconos
             const iconos = {
                 exito: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                                                                                              <path
-                                                                                                                                                                                  d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
-                                                                                                                                                                              />
-                                                                                                                                                                          </svg>`,
+                                            <path
+                                                d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
+                                            />
+                                        </svg>`,
                 error: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                                                                                                          <path
-                                                                                                                                                                                              d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                                                                                                                                                                                          />
-                                                                                                                                                                                      </svg>`,
+                                                        <path
+                                                            d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                        />
+                                                    </svg>`,
                 info: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                                                                                                          <path
-                                                                                                                                                                                              d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
-                                                                                                                                                                                          />
-                                                                                                                                                                                      </svg>`,
+                                                        <path
+                                                            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+                                                        />
+                                                    </svg>`,
                 warning: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                                                                                                                                                          <path
-                                                                                                                                                                                              d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                                                                                                                                                                                          />
-                                                                                                                                                                                      </svg>`,
+                                                        <path
+                                                            d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                                        />
+                                                    </svg>`,
             };
 
             // Plantilla del toast
             const toast = `
-                                                                                                                                                      `;
+                                <div class="contenidoP">
+                                    <div class="icono">
+                                        ${iconos[tipo]}
+                                    </div>
+                                    <div class="texto">
+                                        <p class="titulo">${titulo}</p>
+                                        <p class="descripcion">${descripcion}</p>
+                                    </div>
+                                </div>
+                                <button class="btn-cerrar">
+                                    <div class="icono">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                            <path
+                                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                                            />
+                                        </svg>
+                                    </div>
+                                </button>
+                            `;
 
             // Agregar la plantilla al nuevo toast
             nuevoToast.innerHTML = toast;
@@ -1005,7 +1092,13 @@
             nuevoToast.addEventListener('animationend', handleAnimacionCierre);
         };
 
+        
+        document.getElementById("apeynomR").value = "";
+        document.getElementById("emailR").value = "456";
+        document.getElementById("passwordR").value = "";
+        document.getElementById("localidadR").value = "";
         llenarTabla2(false)
+        llenarTabla8(false)
 
         //Llenar Tabla 2
         function llenarTabla2(filtro) {
@@ -1199,9 +1292,7 @@
                     { "data": "id" },
                     { "data": "apeyNom" },
                     { "data": "rubros", render: function (data) {
-                                                    console.log('*');
-                                                    console.log(data);
-                                                    console.log('*');
+                                                  
                                                     var cadena='';
                                                     for (let i = 0; i < data.length; i++) {
                                                         cadena=cadena+' '+data[i].rubro.descripcion;
@@ -1284,7 +1375,7 @@
 
         //Abrir Modal
         function abrirModal(json) {
-
+           
                var fnac;
                var diafnac;
                var mesfnac;
@@ -1295,7 +1386,7 @@
                $("#txtapeynom").val('Gutierrez Dick, Emanuel');
                $("#txtdni").val('26888310');
                $("#cbotipodoc").val(1);
-               $("#cbolocalidad").val(1);
+               $("#cbolocalidadN").val(1);
                fnac = new Date()
                diafnac = `${(fnac.getDate())}`.padStart(2, '0');
                mesfnac = `${(fnac.getMonth() + 1)}`.padStart(2, '0');
@@ -1316,7 +1407,7 @@
                 tinymce.get('taobservaciones').setContent("");
                 $('#id_label_multiple').val(null).trigger('change');
                 $("#id_label_multiple").empty();
-                debugger;
+               
                $("#id_label_multiple").select2({
                    theme: "classic",
                    ajax: {
@@ -1381,7 +1472,7 @@
                    $("#txtfacebook").val(json.facebook);
                    $("#txtinstagram").val(json.instagram);
                    $("#txtsitioweb").val(json.sitioWeb);
-                   $("#cbolocalidad").val(json.idLocalidad == null ? 0 : json.idLocalidad);
+                   $("#cbolocalidadN").val(json.idLocalidad == null ? 0 : json.idLocalidad);
                    // $("#cborubro").val(json.idRubro == null ? 0 : json.idRubro);
                    $("#txtnrodoc").val(json.dni);
                    if (json.sexo == "F") {
@@ -1411,23 +1502,7 @@
                    else {
                        tinymce.get('taobservaciones').setContent(observaciones);
                    }
-                   $('#tablaConsulta').DataTable().clear().destroy();
-                   $('#tablaConsulta').DataTable({
-                       data: json.consulta,
-                       columns: [
-                           { data: 'start' },
-                           { data: 'observaciones' }
-                       ],
-
-                       "order": {
-                           name: 'start',
-                           dir: 'desc'
-                       },
-                       "language": {
-                           "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
-                       },
-                       "order": [[0, "desc"]],
-                   });
+                
 
                    for (var j = 0; j < json.rubros.length; j++) {
 
@@ -1441,9 +1516,6 @@
 
 
                    };
-                   debugger;
-
-
 
                    for (var j = 0; j < json.palabrasClave.length; j++) {
                        $("#tags").addTag(json.palabrasClave[j].palabra);
@@ -1472,13 +1544,28 @@
             var jsonModulo = {
                 'datos': []
             };
+
+            debugger;
+            var selected = $("#id_label_multiple").select2("data");
+            var selectedText = [];
+
+            for (var i = 0; i < selected.length; i++) {
+                selectedText.push(selected[i].text);
+            }
+
+
             for (var i = 0; i < $("#id_label_multiple").val().length; i++) {
+
+               
+                
+                    
+                
                 jsonModulo.datos.push({
                     "idMicroEmprendedor": 0,
                     "idRubro": $("#id_label_multiple").val()[i],
                     "rubro":{
                             "id": $("#id_label_multiple").val()[i],
-                            "descripcion":'hola'
+                        "descripcion": selectedText[i]//$("#id_label_multiple").text()
                     
                     }
                 });
@@ -1518,7 +1605,7 @@
                 idLocalidad: $("#cbolocalidadN option:selected").val() == 0 ? null : $("#cbolocalidadN option:selected").val(),
                 localidad: {
                     id: $("#cbolocalidadN option:selected").val() == 0 ? null : $("#cbolocalidadN option:selected").val(),
-                    descripcion: 'hola',
+                    descripcion: $("#cbolocalidadN option:selected").text(),
                     
                 },
                 idRubro: $("#cborubro option:selected").val() == 0 ? null : $("#cborubro option:selected").val(),
@@ -1595,6 +1682,7 @@
 
             filaSeleccionada = $(this).closest("tr");
             var data = tabladata.row(filaSeleccionada).data();
+
             abrirModal(data)
         })
 
@@ -1667,12 +1755,7 @@
                 })
                 .then(data => {
                     if (data.success) {
-
-
-                        // window.location.href='#'
-
                         window.location.reload();
-                        // $("#idiniciosesion").val='Cerrar Sesión';
                     } else {
 
                         alert(data.message);
@@ -1680,9 +1763,10 @@
                 });
         }
 
-        async function registrarUser(user, password, apeyNom) {
+        async function registrarUser(user, password, apeyNom,localidad) {
             const data = {
                 User: user,
+                IdLocalidad:localidad,
                 Password: password,
                 ApeyNom: apeyNom,
                 Rol: "Admin"
@@ -1696,9 +1780,8 @@
                 body: JSON.stringify(data)
             })
                 .then(response => {
-                    console.log(response);
                     if (response.ok) {
-                        window.location.href = '#';
+                        window.location.href = '#slide08';
                         return response.json();
                     } else {
                         throw new Error('Error en la solicitud');
@@ -1707,7 +1790,7 @@
                 .then(data => {
                     debugger;
                     if (data.success) {
-                        window.location.href = '/Home/Index';
+                        window.location.href = '#slide10';
                     } else {
 
                         // alert(data.message);
@@ -1728,7 +1811,7 @@
                 body: JSON.stringify(data)
             })
                 .then(response => {
-                    console.log(response);
+                   
                     if (response.ok) {
                         window.location.href = '#';
                         return response.json();
