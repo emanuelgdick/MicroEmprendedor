@@ -5,7 +5,7 @@
     Layout = null;
 
 }
-
+ @model Usuario
 
 <!DOCTYPE html>
 <html lang="en">
@@ -161,7 +161,10 @@
                     <div class="welcome-box">
                         <span class="welcome-first animate" data-animate="fadeInUp" style="color:#fff">Bienvenido a la Red Regional de </span>
                         <h1 class="welcome-title animate" data-animate="fadeInUp">Microemprendedores</h1>
-                        <p class="animate" data-animate="fadeInUp">This is a clean and modern HTML5 template with a video background. You can use this layout for your profile page. Please spread a word about templatemo to your friends. Thank you.</p>
+                        <p class="animate" data-animate="fadeInUp">Un ecosistema de apoyo que conecta a emprendedores en una zona geográfica específica, facilitando el intercambio de conocimientos, recursos y oportunidades para fortalecer sus negocios.
+                                                                   Se apunta a generar nuevos canales de conexión  que permita visibilizar los emprendedores en busca de nuevos canales de comercialización, así como también vinculación para resolver sus necesidades.
+                                                                    Quienes participan en la misma son emprendedores de las ciudades de Madariaga – Lobería- Rauch –Tandil y Ayacucho.
+                        </p>
                         <div class="scroll-down next-section animate data-animate=" fadeInUp""><img src="home/images/mouse-scroll.png" alt=""> <span style="color:#fff">Scroll Down</span></div>
                     </div>
                 </div>
@@ -821,7 +824,7 @@
                                             </div>
 
                                             <div class=" col-3 form-floating">
-                                                <select id="cbolocalidadN" class="form-select " name="localidadN" autocomplete="off" placeholder="Localidad"></select>
+                                                <select id="cbolocalidadN" class="form-select " name="localidadN" autocomplete="off" placeholder="Localidad" ></select>
                                                 <label for="cbolocalidadN" class="form-label pt-1">Localidad</label>
                                             </div>
 
@@ -952,7 +955,7 @@
         success: function (data) {
         $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadF2");
         $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadF8");
-        $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadN");
+        $("<option>").attr({ "value": "2", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadN");
         $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadR");
         $.each(data.data, function (index, value) {
         $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadF2");
@@ -1422,25 +1425,23 @@
         //Abrir Modal
         function abrirModal(json) {
         
-      
-       
-        
-
                var fnac;
                var diafnac;
                var mesfnac;
                var aniofnac;
-
                $("#txtid").val(0);
                $("#txtnroMicroemprendedor").val('');
                $("#txtapeynom").val('Gutierrez Dick, Emanuel');
                $("#txtdni").val('26888310');
                $("#cbotipodoc").val(1);
-               //$("#cbolocalidadN").val(1);
+
+        $("#cbolocalidadN").val(3);
+
+            
                fnac = new Date()
                diafnac = `${(fnac.getDate())}`.padStart(2, '0');
                mesfnac = `${(fnac.getMonth() + 1)}`.padStart(2, '0');
-                aniofnac = fnac.getFullYear();
+               aniofnac = fnac.getFullYear();
                 //$("#dtfechanac").val(`${diafnac}/${mesfnac}/${aniofnac}`);
                 $("#dtfechanac").val(`29/09/1978`);
                $("#txttelfijo").val('451114');
@@ -1522,7 +1523,7 @@
                    $("#txtfacebook").val(json.facebook);
                    $("#txtinstagram").val(json.instagram);
                    $("#txtsitioweb").val(json.sitioWeb);
-                   $("#cbolocalidadN").val(json.idLocalidad == null ? 0 : json.idLocalidad);
+                   //$("#cbolocalidadN").val(json.idLocalidad == null ? 0 : json.idLocalidad);
         
                    // $("#cborubro").val(json.idRubro == null ? 0 : json.idRubro);
                    $("#txtnrodoc").val(json.dni);

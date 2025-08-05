@@ -1,4 +1,5 @@
-﻿using FrontEnd.Models;
+﻿using Frontend.Models;
+using FrontEnd.Models;
 using FrontEnd.Models.DTOs;
 using FrontEnd.Services;
 using Microsoft.AspNetCore.Authentication;
@@ -16,7 +17,9 @@ namespace Frontend.Controllers
     {
 
         private readonly ApiService _apiService;
-      
+        private readonly ApiUserService _apiUserService;
+
+
         public HomeController()
         {
             _apiService = new ApiService();
@@ -44,11 +47,28 @@ namespace Frontend.Controllers
         }
 
 
-        public async Task<IActionResult> Default()
+        public async Task<IActionResult> Default([FromBody] LoginRequestDTO obj=null)
         {
-
-            
-            return View();
+        return View();
         }
+
+        //public async ActionResult SessionIniciada(LoginResponseDTO obj)
+        //{
+        //    LoginResponseDTO objResponse = new LoginResponseDTO();
+        //    Usuario usuario = new Usuario();
+        //    if (obj != null)
+        //    {
+        //        objResponse = await _apiUserService.AuthenticateUser(obj);
+
+        //        usuario.User = objResponse.Usuario.User;
+        //        usuario.Password = objResponse.Usuario.Password;
+        //        usuario.ApeyNom = objResponse.Usuario.ApeyNom;
+        //        usuario.IdLocalidad = objResponse.Usuario.IdLocalidad;
+        //        return View(usuario);
+        //    }
+        //    return View(usuario);
+        //}
+
+
     }
 }

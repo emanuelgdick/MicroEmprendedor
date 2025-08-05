@@ -42,12 +42,7 @@ namespace FrontEnd.Controllers
                 var principal = new ClaimsPrincipal(identity);
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
                 HttpContext.Session.SetString("APIToken", objResponse.Token);
-                //Usuario usuario = new Usuario();
-                //usuario.User = objResponse.Usuario.User;
-                //usuario.Password = objResponse.Usuario.Password;
-                //usuario.ApeyNom = objResponse.Usuario.ApeyNom;
-                //usuario.IdLocalidad = objResponse.Usuario.IdLocalidad;
-
+               
         
                 return Json(new { success = true, token = objResponse.Token});
                 
@@ -144,10 +139,9 @@ namespace FrontEnd.Controllers
                 string nombreUsuario = User.Identity.Name;
                 bool sesionIniciada = User.Identity.IsAuthenticated==null?false:true;
                 ViewBag.SesionIniciada = sesionIniciada;
+
                 //Usuario u = new Usuario();
                 //u.ApeyNom = User.Identity.Name;
-
-
                 return View((object)nombreUsuario);
             }
             else
