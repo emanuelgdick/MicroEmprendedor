@@ -1,7 +1,11 @@
 ﻿ @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
 @{
+
     Layout = null;
+
 }
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -54,45 +58,45 @@
     <style>
 
         .btn2 {
-            /*     padding: 10px; */
-            border-width: 0px;
-            border-radius: 5px;
-            color: white;
-            text-align: center;
+        /*     padding: 10px; */
+        border-width: 0px;
+        border-radius: 5px;
+        color: white;
+        text-align: center;
         }
 
         .btnFiltrar {
-            background-color: #21dbaa;
-            width: 100px;
-            opacity: 0.6;
-            text-align: center;
+        background-color: #21dbaa;
+        width: 100px;
+        opacity: 0.6;
+        text-align: center;
         }
 
-            .btnFiltrar:hover {
-                background-color: #038f6a;
-            }
+        .btnFiltrar:hover {
+        background-color: #038f6a;
+        }
 
         .btnLimpiar {
-            background-color: #21addb;
-            width: 100px;
-            opacity: 0.6;
-            text-align: center;
+        background-color: #21addb;
+        width: 100px;
+        opacity: 0.6;
+        text-align: center;
         }
 
-            .btnLimpiar:hover {
-                background-color: #035773;
-            }
+        .btnLimpiar:hover {
+        background-color: #035773;
+        }
 
         .btnNuevo {
-            background-color: #db5321;
-            width: 100px;
-            opacity: 0.6;
-            text-align: center;
+        background-color: #db5321;
+        width: 100px;
+        opacity: 0.6;
+        text-align: center;
         }
 
-            .btnNuevo:hover {
-                background-color: #db8a21;
-            }
+        .btnNuevo:hover {
+        background-color: #db8a21;
+        }
 
     </style>
 
@@ -125,8 +129,8 @@
                                     <li data-menuanchor="slide05"><a href="#slide05">My Work</a></li>
                                     <li data-menuanchor="slide06"><a href="#slide06">Testimonials</a></li>
                                     <li data-menuanchor="slide07"><a href="#slide07">Contact Me</a></li>
-                                  
-                                    
+
+
                                     @if (User.Identity.IsAuthenticated)
                                     {
                                         <li data-menuanchor="slide08"><a href="#slide08">Administración </a> </li>
@@ -136,10 +140,10 @@
                                     {
                                         <li data-menuanchor="slide08"><a href="#slide08">Iniciar Sesión</a></li>
                                     }
-                                @*     <li data-menuanchor="slide10"><a href="#slide10">Registr Me</a></li> *@
+                                    @*     <li data-menuanchor="slide10"><a href="#slide10">Registr Me</a></li> *@
                                 </ul>
 
-                                    
+
                             </div>
                         </nav>
                     </div>
@@ -148,7 +152,7 @@
         </header>
 
         <video autoplay muted loop id="myVideo">
-                 <source src="/home/images/video-bg.mp4" type="video/mp4">
+            <source src="/home/images/video-bg.mp4" type="video/mp4">
         </video>
 
         <div id="fullpage" class="fullpage-default">
@@ -516,7 +520,7 @@
 
 
 
-       
+
 
 
             <div class="section animated-row" data-section="slide07">
@@ -640,7 +644,7 @@
                 <div class="section animated-row" data-section="slide08">
                     <div class="section-inner">
                         <div class="welcome-box">
-                          <div class="contact-section">
+                            <div class="contact-section">
                                 <div class="row    justify-content-center">
                                     <div class="col-md-3 animate" data-animate="fadeInUp">
                                         <form id="ajax-contact" method="post" action="#">
@@ -654,11 +658,11 @@
                                                 <a class="btn btn-default submit" href="#" onclick="enviarLogin(document.getElementById('user').value,document.getElementById('password').value)">Log in</a>
                                                 <row>
                                                     <div class="col-12 mt-2" style="font-size:16px">
-                                                    
-                                                       <a href="#slide10">Registrarse</a>
 
-                                                   </div>
-                                                    
+                                                        <a href="#slide10">Registrarse</a>
+
+                                                    </div>
+
                                                     <div class="col-12 mt-2" style="font-size:16px">
                                                         <a class="reset_pass" href="#slide11">Olvidó su contraseña?</a>
                                                     </div>
@@ -669,10 +673,10 @@
                                     </div>
                                 </div>
                             </div> 
-                          
+
 
                         </div>
-                        </div>
+                    </div>
                     <div>
                     </div>
                 </div>
@@ -685,7 +689,7 @@
                             <div class="row    justify-content-center">
                                 <div class="title-block animate" data-animate="fadeInUp">
                                     <span style="color:#fff">Registrarse</span>
-                                    
+
                                 </div>
                                 <div class="col-md-3 animate" data-animate="fadeInUp">
                                     <form id="fregistro" method="post" action="#">
@@ -704,7 +708,7 @@
                                         </div>
                                         <div class="mt-4">
                                             <a class="btn btn-default submit" href="#" onclick="registrarUser(document.getElementById('userR').value,document.getElementById('passwordR').value,document.getElementById('apeynomR').value,1/* document.getElementById('localidadR').value */)">Crear Cuenta</a>
-                                         
+
                                         </div>
                                     </form>
                                 </div>
@@ -728,7 +732,7 @@
                                 </div>
                                 <div class="col-md-3 animate" data-animate="fadeInUp">
                                     <form id="fregistro" method="post" action="#">
-                                   
+
                                         <div class="input-field">
                                             <input type="email" class="form-control" name="emailR" id="userR" required placeholder="Email" style=" background:rgba(250,250,250,0.05)">
                                         </div>
@@ -744,147 +748,156 @@
                     </div>
                 </div>
             </div>
-          
+           
+
         </div>
 
-        <!-- TOAST -->
-        <div class="contenedor">
+       
+    
+    </div>
 
-            <div class="contenedor-toastP" id="contenedor-toastP">
-            </div>
-        </div>
 
-        <!-- Modal -->
-        <div class="  modal  fade " id="FormModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
-            <div class="modal-dialog  modal-xl ">
-                <div class="modal-content">
-                    <div class="modal-header text-white" style="background: #2A3F54">
-                        <h5 class="modal-title" id="exampleModalLabel">Microemprendedor</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body m-0 p-0 ">
-                        <input id="txtid" type="hidden" value="0" />
-                        <div class="row m-0 p-0">
-                            <div class="col-md-12 col-sm-12 m-0 p-0">
-                                <div class="x_panel  pt-3">
-                                    <div class="x_content  ">
-                                        <form id="formNivel" class="col-12 row">
-                                            <div class="row m-2">
-                                                <div class="col-2 form-floating">
-                                                    <select id="cbotipodoc" class="form-select " name="tipodoc" autocomplete="off" placeholder="Tipo Documento"></select>
-                                                    <label for="cbotipodoc" class="form-label pt-1">Tipo Documento</label>
-                                                </div>
-                                                <div class="col-2 form-floating">
-                                                    <input type="text" class="form-control form-control-sm" id="txtdni" name="dni" placeholder="Dni" />
-                                                    <label for="txtdni">Dni</label>
-                                                </div>
-                                                <div class="col-3 form-floating">
-                                                    <input type="text" class="form-control form-control-sm" id="txtapeynom" name="apeynom" placeholder="Apellido y Nombre" />
-                                                    <label for="txtapeynom">Apellido y Nombre</label>
-                                                </div>
-                                                <div class="col-2 form-floating  d-flex">
-                                                    <input type="text"
-                                                           class="datepicker_input form-control border-2"
-                                                           id="dtfechanac"
-                                                           required
-                                                           placeholder="DD/MM/YYYY">
-                                                    <label for="dtfechanac">Fecha Nacimiento</label>
-                                                </div>
-                                                <div class="col-3 mt-4 form-floating">
-                                                    <div class="radio">
-                                                        <input type="radio" name="sexo" value="F" id="rbF">
-                                                        <label for="F">Mujer</label>
-                                                        <input type="radio" name="sexo" value="M" id="rbM">
-                                                        <label for="M">Hombre</label>
-                                                    </div>
+    <!-- Modal -->
+    <div class="  modal  fade " id="FormModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog  modal-xl ">
+            <div class="modal-content">
+                <div class="modal-header text-white" style="background: #2A3F54">
+                    <h5 class="modal-title" id="exampleModalLabel">Microemprendedor</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body m-0 p-0 ">
+                    <input id="txtid" type="hidden" value="0" />
+                    <div class="row m-0 p-0">
+                        <div class="col-md-12 col-sm-12 m-0 p-0">
+                            <div class="x_panel  pt-3">
+                                <div class="x_content  ">
+                                    <form id="formNivel" class="col-12 row">
+                                        <div class="row m-2">
+                                            <div class="col-2 form-floating">
+                                                <select id="cbotipodoc" class="form-select " name="tipodoc" autocomplete="off" placeholder="Tipo Documento"></select>
+                                                <label for="cbotipodoc" class="form-label pt-1">Tipo Documento</label>
+                                            </div>
+                                            <div class="col-2 form-floating">
+                                                <input type="text" class="form-control form-control-sm" id="txtdni" name="dni" placeholder="Dni" />
+                                                <label for="txtdni">Dni</label>
+                                            </div>
+                                            <div class="col-3 form-floating">
+                                                <input type="text" class="form-control form-control-sm" id="txtapeynom" name="apeynom" placeholder="Apellido y Nombre" />
+                                                <label for="txtapeynom">Apellido y Nombre</label>
+                                            </div>
+                                            <div class="col-2 form-floating  d-flex">
+                                                <input type="text"
+                                                       class="datepicker_input form-control border-2"
+                                                       id="dtfechanac"
+                                                       required
+                                                       placeholder="DD/MM/YYYY">
+                                                <label for="dtfechanac">Fecha Nacimiento</label>
+                                            </div>
+                                            <div class="col-3 mt-4 form-floating">
+                                                <div class="radio">
+                                                    <input type="radio" name="sexo" value="F" id="rbF">
+                                                    <label for="F">Mujer</label>
+                                                    <input type="radio" name="sexo" value="M" id="rbM">
+                                                    <label for="M">Hombre</label>
                                                 </div>
                                             </div>
-                                            <div class="row m-2">
-                                                <div class=" col-2  form-floating">
-                                                    <input type="text" class="form-control form-control-sm" id="txtcalle" placeholder="Calle" />
-                                                    <label for="txtcalle">Calle</label>
-                                                </div>
-                                                <div class="col-1  form-floating">
-                                                    <input type="text" class="form-control form-control-sm" id="txtnro" placeholder="Nro" />
-                                                    <label for="txtnro">Nro</label>
-                                                </div>
-                                                <div class="col-1  form-floating">
-                                                    <input type="text" class="form-control form-control-sm" id="txtpiso" placeholder="Piso" />
-                                                    <label for="txtpiso">Piso</label>
-                                                </div>
-                                                <div class="col-1  form-floating">
-                                                    <input type="text" class="form-control form-control-sm" id="txtdepto" placeholder="Depto" />
-                                                    <label for="txtdepto">Depto</label>
-                                                </div>
-                                                <div class=" col-3 form-floating">
-                                                    <select id="cbolocalidadN" class="form-select " name="localidadN" autocomplete="off" placeholder="Localidad"></select>
-                                                    <label for="cbolocalidadN" class="form-label pt-1">Localidad</label>
-                                                </div>
-                                                <div class="col-2  form-floating">
-                                                    <input type="text" class="form-control form-control-sm" id="txttelfijo" placeholder="Teléfono Fijo" />
-                                                    <label for="txttelfijo">Teléfono Fijo</label>
-                                                </div>
-                                                <div class="col-2  form-floating">
-                                                    <input type="text" class="form-control form-control-sm" id="txttelcelular" placeholder="Teléfono Celular" />
-                                                    <label for="txttelcelular">Teléfono Celular</label>
-                                                </div>
+                                        </div>
+                                        <div class="row m-2">
+                                            <div class=" col-2  form-floating">
+                                                <input type="text" class="form-control form-control-sm" id="txtcalle" placeholder="Calle" />
+                                                <label for="txtcalle">Calle</label>
                                             </div>
-                                            <div class="row m-2">
+                                            <div class="col-1  form-floating">
+                                                <input type="text" class="form-control form-control-sm" id="txtnro" placeholder="Nro" />
+                                                <label for="txtnro">Nro</label>
+                                            </div>
+                                            <div class="col-1  form-floating">
+                                                <input type="text" class="form-control form-control-sm" id="txtpiso" placeholder="Piso" />
+                                                <label for="txtpiso">Piso</label>
+                                            </div>
+                                            <div class="col-1  form-floating">
+                                                <input type="text" class="form-control form-control-sm" id="txtdepto" placeholder="Depto" />
+                                                <label for="txtdepto">Depto</label>
+                                            </div>
 
-                                                <div class="col-3  form-floating">
-                                                    <input type="text" class="form-control form-control-sm" id="txtemail" placeholder="Correo Electrónico" />
-                                                    <label for="txtemail">Correo Electrónico</label>
-                                                </div>
-                                                <div class="col-3  form-floating">
-                                                    <input type="text" class="form-control form-control-sm" id="txtinstagram" placeholder="Correo Electrónico" />
-                                                    <label for="txtinstagram">Instagram</label>
-                                                </div>
-                                                <div class="col-3  form-floating">
-                                                    <input type="text" class="form-control form-control-sm" id="txtfacebook" placeholder="Correo Electrónico" />
-                                                    <label for="txtfacebook">Facebook</label>
-                                                </div>
-                                                <div class="col-3  form-floating">
-                                                    <input type="text" class="form-control form-control-sm" id="txtsitioweb" placeholder="Sitio Web" />
-                                                    <label for="txtsitioweb">Sitio Web</label>
-                                                </div>
+                                            <div class=" col-3 form-floating">
+                                                <select id="cbolocalidadN" class="form-select " name="localidadN" autocomplete="off" placeholder="Localidad"></select>
+                                                <label for="cbolocalidadN" class="form-label pt-1">Localidad</label>
+                                            </div>
 
+                                            <div class="col-2  form-floating">
+                                                <input type="text" class="form-control form-control-sm" id="txttelfijo" placeholder="Teléfono Fijo" />
+                                                <label for="txttelfijo">Teléfono Fijo</label>
+                                            </div>
+                                            <div class="col-2  form-floating">
+                                                <input type="text" class="form-control form-control-sm" id="txttelcelular" placeholder="Teléfono Celular" />
+                                                <label for="txttelcelular">Teléfono Celular</label>
+                                            </div>
+                                        </div>
+                                        <div class="row m-2">
+
+                                            <div class="col-3  form-floating">
+                                                <input type="text" class="form-control form-control-sm" id="txtemail" placeholder="Correo Electrónico" />
+                                                <label for="txtemail">Correo Electrónico</label>
+                                            </div>
+                                            <div class="col-3  form-floating">
+                                                <input type="text" class="form-control form-control-sm" id="txtinstagram" placeholder="Correo Electrónico" />
+                                                <label for="txtinstagram">Instagram</label>
+                                            </div>
+                                            <div class="col-3  form-floating">
+                                                <input type="text" class="form-control form-control-sm" id="txtfacebook" placeholder="Correo Electrónico" />
+                                                <label for="txtfacebook">Facebook</label>
+                                            </div>
+                                            <div class="col-3  form-floating">
+                                                <input type="text" class="form-control form-control-sm" id="txtsitioweb" placeholder="Sitio Web" />
+                                                <label for="txtsitioweb">Sitio Web</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="row m-2">
+                                            <div class="col-4  form-floating">
+                                                <select class="js-example-basic-multiple  js-states form-control  " id="id_label_multiple" name="rubros" multiple="multiple" style="width:90% ;color:#000 "> </select>
+                                            </div>
+                                            <div class="col-4  form-floating">
+                                                <input id="tags" name="tags" type="text" class="tags form-control" value="" />
+                                                @* <label class="control-label">Palabras Clave</label> *@
+                                                <div id="suggestions-container" style="position: relative; float: left; width: 110px; margin: 10px;"></div>
                                             </div>
                                             <div class="row m-2">
-                                                <div class="col-4  form-floating">
-                                                    <select class="js-example-basic-multiple  js-states form-control  " id="id_label_multiple" name="rubros" multiple="multiple" style="width:90% ;color:#000 "> </select>
-                                                </div>
-                                                <div class="col-4  form-floating">
-                                                    <input id="tags" name="tags" type="text" class="tags form-control" value="" />
-                                                    @* <label class="control-label">Palabras Clave</label> *@
-                                                    <div id="suggestions-container" style="position: relative; float: left; width: 110px; margin: 10px;"></div>
-                                                </div>
-                                                <div class="row m-2">
-                                                    <textarea id="taobservaciones"></textarea>
-                                                </div>
+                                                <textarea id="taobservaciones"></textarea>
                                             </div>
-                                        </form>
-                                    </div>
+                                        </div>
+                                    </form>
                                 </div>
-                                <!-- End SmartWizard Content -->
                             </div>
+                            <!-- End SmartWizard Content -->
                         </div>
                     </div>
-                    <div class="row mt-0 p-0">
-                        <div class="col-12">
-                            <div id="mensajeError" class="alert-danger" role="alert">
-                            </div>
+                </div>
+                <div class="row mt-0 p-0">
+                    <div class="col-12">
+                        <div id="mensajeError" class="alert-danger" role="alert">
                         </div>
                     </div>
+                </div>
 
-                    <div class="modal-footer">
-                        <button type="button" class="btn btnCancelar" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btnAceptar" onclick="Guardar()">Guardar</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btnCancelar" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btnAceptar" onclick="Guardar()">Guardar</button>
 
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <!-- TOAST -->
+    <div class="contenedor">
+
+        <div class="contenedor-toastP" id="contenedor-toastP" style="background-color:red">
+        </div>
+    </div>
+
 
 
     <div id="social-icons">
@@ -897,8 +910,6 @@
             </ul>
         </div>
     </div>
-   
-
 
     <script src="~/home/js/jquery.js"></script>
     <script src="~/home/js/fullpage.min.js"></script>
@@ -926,456 +937,495 @@
     <!-- tinymce-->
     <script src="~/js/tinymce/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
 
+    <!-- Validar -->
+    <script src="~/js/jquery/jquery.validate.js"></script>
+
     <script>
+     
         //GET LOCALIDADES
         jQuery.ajax({
-            url: '@Url.Action("GetAllLocalidades", "Localidad")',
-            type: "GET",
-            data: null,
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadF2");
-                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadF8");
-                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadN");
-                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadR");
-                $.each(data.data, function (index, value) {
-                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadF2");
-                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadF8");
-                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadN");
-                    $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadR");
+        url: '@Url.Action("GetAllLocalidades", "Localidad")',
+        type: "GET",
+        data: null,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+        $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadF2");
+        $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadF8");
+        $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadN");
+        $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbolocalidadR");
+        $.each(data.data, function (index, value) {
+        $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadF2");
+        $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadF8");
+        $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadN");
+        $("<option>").attr({ "value": value.id }).text(value.descripcion).appendTo("#cbolocalidadR");
 
-                });
-            },
-            error: function (error) {
-                console.log(error)
-            }
+        });
+        },
+        error: function (error) {
+        console.log(error)
+        }
         });
 
         //GET RUBROS
         var rub = [];
         jQuery.ajax({
-            url: '@Url.Action("GetAllRubros", "Rubro")',
-            type: "GET",
-            data: null,
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                debugger;
-                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cborubroF2");
-                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cborubroF8");
-                $.each(data.data, function (index, value) {
-                    rub.push({ value: value.id, text: value.text });
-                    $("<option>").attr({ "value": value.id }).text(value.text).appendTo("#cborubroF2");
-                    $("<option>").attr({ "value": value.id }).text(value.text).appendTo("#cborubroF8");
-                });
-            },
-            error: function (error) {
-                console.log(error)
-            }
+        url: '@Url.Action("GetAllRubros", "Rubro")',
+        type: "GET",
+        data: null,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+        $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cborubroF2");
+        $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cborubroF8");
+        $.each(data.data, function (index, value) {
+        rub.push({ value: value.id, text: value.text });
+        $("<option>").attr({ "value": value.id }).text(value.text).appendTo("#cborubroF2");
+        $("<option>").attr({ "value": value.id }).text(value.text).appendTo("#cborubroF8");
+        });
+        },
+        error: function (error) {
+        console.log(error)
+        }
         });
 
 
         //GET TIPOS DE DOCUMENTOS
         jQuery.ajax({
-            url: '@Url.Action("GetAllTipoDocumentos", "TipoDocumento")',
-            type: "GET",
-            data: null,
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbotipodoc");
-                $.each(data.data, function (index, value) {
-                    $("<option>").attr({ "value": value.id }).text(value.descA).appendTo("#cbotipodoc");
-                });
-            },
-            error: function (error) {
-                console.log(error)
-            }
+        url: '@Url.Action("GetAllTipoDocumentos", "TipoDocumento")',
+        type: "GET",
+        data: null,
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (data) {
+        $("<option>").attr({ "value": "0", "enabled": "true" }).text("Seleccionar").appendTo("#cbotipodoc");
+        $.each(data.data, function (index, value) {
+        $("<option>").attr({ "value": value.id }).text(value.descA).appendTo("#cbotipodoc");
+        });
+        },
+        error: function (error) {
+        console.log(error)
+        }
         });
 
         const contenedorToast = document.getElementById('contenedor-toastP');
         // Event listener para detectar click en los toasts
         contenedorToast.addEventListener('click', (e) => {
-            const toastId = e.target.closest('div.toastP').id;
-            if (e.target.closest('button.btn-cerrar')) {
-                cerrarToast(toastId);
-            }
+        const toastId = e.target.closest('div.toastP').id;
+        if (e.target.closest('button.btn-cerrar')) {
+        cerrarToast(toastId);
+        }
         });
 
         // Función para cerrar el toast
         const cerrarToast = (id) => {
-            document.getElementById(id)?.classList.add('cerrando');
+        document.getElementById(id)?.classList.add('cerrando');
         };
 
 
         // Función para agregar la clase de cerrando al toast.
         agregarToast = ({ tipo, titulo, descripcion, autoCierre }) => {
-            debugger;
-            // Crear el nuevo toast
-            const nuevoToast = document.createElement('div');
-            // Agregar clases correspondientes
-            nuevoToast.classList.add('toastP');
-            nuevoToast.classList.add(tipo);
-            if (autoCierre) nuevoToast.classList.add('autoCierreP');
-            // Agregar id del toast
-            const numeroAlAzar = Math.floor(Math.random() * 100);
-            const fecha = Date.now();
-            const toastId = fecha + numeroAlAzar;
-            nuevoToast.id = toastId;
 
-            // Iconos
-            const iconos = {
-                exito: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
-                                            />
-                                        </svg>`,
-                error: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                                                        />
-                                                    </svg>`,
-                info: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
-                                                        />
-                                                    </svg>`,
-                warning: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                                                        />
-                                                    </svg>`,
-            };
+        // Crear el nuevo toast
+        const nuevoToast = document.createElement('div');
+        // Agregar clases correspondientes
+        nuevoToast.classList.add('toastP');
+        nuevoToast.classList.add(tipo);
+        if (autoCierre) nuevoToast.classList.add('autoCierreP');
+        // Agregar id del toast
+        const numeroAlAzar = Math.floor(Math.random() * 100);
+        const fecha = Date.now();
+        const toastId = fecha + numeroAlAzar;
+        nuevoToast.id = toastId;
 
-            // Plantilla del toast
-            const toast = `
-                                <div class="contenidoP">
-                                    <div class="icono">
-                                        ${iconos[tipo]}
-                                    </div>
-                                    <div class="texto">
-                                        <p class="titulo">${titulo}</p>
-                                        <p class="descripcion">${descripcion}</p>
-                                    </div>
-                                </div>
-                                <button class="btn-cerrar">
-                                    <div class="icono">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
-                                            />
-                                        </svg>
-                                    </div>
-                                </button>
-                            `;
-
-            // Agregar la plantilla al nuevo toast
-            nuevoToast.innerHTML = toast;
-
-            // Agregamos el nuevo toast al contenedor
-            contenedorToast.appendChild(nuevoToast);
-
-            // Función para menajera el cierre del toast
-            const handleAnimacionCierre = (e) => {
-                if (e.animationName === 'cierre') {
-                    nuevoToast.removeEventListener('animationend', handleAnimacionCierre);
-                    nuevoToast.remove();
-                }
-            };
-
-            if (autoCierre) {
-                setTimeout(() => cerrarToast(toastId), 5000);
-            }
-
-            // Agregamos event listener para detectar cuando termine la animación
-            nuevoToast.addEventListener('animationend', handleAnimacionCierre);
+        // Iconos
+        const iconos = {
+        exito: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+        <path
+        d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"
+        />
+        </svg>`,
+        error: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+        <path
+        d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+        />
+        </svg>`,
+        info: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+        <path
+        d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+        />
+        </svg>`,
+        warning: `<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+        <path
+        d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+        />
+        </svg>`,
         };
 
-        
-        document.getElementById("apeynomR").value = "";
-        document.getElementById("emailR").value = "456";
-        document.getElementById("passwordR").value = "";
-        document.getElementById("localidadR").value = "";
+        // Plantilla del toast
+        const toast = `
+        <div class="contenidoP">
+        <div class="icono">
+        ${iconos[tipo]}
+        </div>
+        <div class="texto">
+        <p class="titulo">${titulo}</p>
+        <p class="descripcion">${descripcion}</p>
+        </div>
+        </div>
+        <button class="btn-cerrar">
+        <div class="icono">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+        <path
+        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+        />
+        </svg>
+        </div>
+        </button>
+        `;
+
+        // Agregar la plantilla al nuevo toast
+        nuevoToast.innerHTML = toast;
+
+        // Agregamos el nuevo toast al contenedor
+        contenedorToast.appendChild(nuevoToast);
+
+        // Función para menajera el cierre del toast
+        const handleAnimacionCierre = (e) => {
+        if (e.animationName === 'cierre') {
+        nuevoToast.removeEventListener('animationend', handleAnimacionCierre);
+        nuevoToast.remove();
+        }
+        };
+
+        if (autoCierre) {
+        setTimeout(() => cerrarToast(toastId), 5000);
+        }
+
+        // Agregamos event listener para detectar cuando termine la animación
+        nuevoToast.addEventListener('animationend', handleAnimacionCierre);
+        };
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+        // document.getElementById("apeynomR").value = "";
+
+        // document.getElementById("passwordR").value = "";
+        // document.getElementById("localidadR").value = "";
+        // document.getElementById("emailR").value = "";
+        });
+
         llenarTabla2(false)
         llenarTabla8(false)
 
         //Llenar Tabla 2
         function llenarTabla2(filtro) {
 
-            var url;
-            if (filtro) {
-                url = "@Url.Action("GetMicroemprendedorFiltrados", "Microemprendedor")" + '?localidad=' + $("#cbolocalidadF2").val() + '&rubro=' + $("#cborubroF2").val() + '&palabra=' + $("#palabraclave2").val()
-            } else
-                url = "@Url.Action("GetAllMicroEmprendedor", "Microemprendedor")"
+        var url;
+        if (filtro) {
+        url = "@Url.Action("GetMicroemprendedorFiltrados", "Microemprendedor")" + '?localidad=' + $("#cbolocalidadF2").val() + '&rubro=' + $("#cborubroF2").val() + '&palabra=' + $("#palabraclave2").val()
+        } else
+        url = "@Url.Action("GetAllMicroEmprendedor", "Microemprendedor")"
 
-            $('#tabla2').DataTable().clear().destroy();
-            tabladata = $("#tabla2").DataTable({
-                responsive: true,
-                ordering: true,
-                dom: "Bfrtip",
-                buttons: [
-                    {
-                        extend: "excelHtml5",
-                        text: '<i class="fa fa-file-excel-o "></i>',
-                        filename: "Reporte de Microemprendedor",
-                        title: "Listado de Microemprendedor",
-                        exportOptions: {
-                            //muestra las columnas
-                            columns: [0, 1, 2, 3, 4, 5, 6,7,8]
-                        },
-                        className: "btn-exportar-excel",
-
-
-                    },
-                    {
-                        extend: "pdfHtml5",
-                        text: '<i class="fa fa-file-pdf-o"></i>',
-                        filename: "Reporte de Microemprendedor",
-                        title: "Listado de Microemprendedor",
-                        exportOptions: {
-                            //muestra las columnas
-                            columns: [0, 1, 2, 3, 4, 5, 6,7,8]
-                        },
-                        className: "btn-exportar-pdf"
-                    },
-                    {
-                        extend: "print",
-                        text: '<i class="fa fa-print"></i>',
-                        filename: "Reporte de Microemprendedor",
-                        title: "Listado de Microemprendedor",
-                        exportOptions: {
-                            //muestra las columnas
-                            columns: [0, 1, 2, 3, 4, 5, 6,7,8]
-                        },
-                        className: "btn-imprimir"
-
-                    }
-                ],
-                "ajax": {
-                    url: url,
-                    type: "GET",
-                    dataType: "json",
-                    beforeSend: agregarToast({ tipo: 'exito', titulo: 'Obteniendo Microemprendedor', descripcion: 'Por favor espere...', autoCierre: true })
-                },
-                "columns": [
-                    { "data": "id" },
-                    { "data": "apeyNom" },
-                    { "data": "rubros", render: function (data) {
-
-                                                    var cadena='';
-                                                    for (let i = 0; i < data.length; i++) {
-                                                        cadena=cadena+' '+data[i].rubro.descripcion;
-                                                        }
-                                                    return cadena;
-                                            }
+        $('#tabla2').DataTable().clear().destroy();
+        tabladata = $("#tabla2").DataTable({
+        responsive: true,
+        ordering: true,
+        dom: "Bfrtip",
+        buttons: [
+        {
+        extend: "excelHtml5",
+        text: '<i class="fa fa-file-excel-o "></i>',
+        filename: "Reporte de Microemprendedor",
+        title: "Listado de Microemprendedor",
+        exportOptions: {
+        //muestra las columnas
+        columns: [0, 1, 2, 3, 4, 5, 6,7,8]
+        },
+        className: "btn-exportar-excel",
 
 
-                    },
-                    { "data": "localidad", render: function (data) {
-                            return data.descripcion
-                        }
-                    },
-                    { "data": function (data) {
-                                                var cadena='';
-                                                    cadena=data.calle+' '+data.nro+' '+data.piso+' '+data.depto;
-                                                    return cadena;
-                                }
-                    },
-                    { "data":  function (data) {
+        },
+        {
+        extend: "pdfHtml5",
+        text: '<i class="fa fa-file-pdf-o"></i>',
+        filename: "Reporte de Microemprendedor",
+        title: "Listado de Microemprendedor",
+        exportOptions: {
+        //muestra las columnas
+        columns: [0, 1, 2, 3, 4, 5, 6,7,8]
+        },
+        className: "btn-exportar-pdf"
+        },
+        {
+        extend: "print",
+        text: '<i class="fa fa-print"></i>',
+        filename: "Reporte de Microemprendedor",
+        title: "Listado de Microemprendedor",
+        exportOptions: {
+        //muestra las columnas
+        columns: [0, 1, 2, 3, 4, 5, 6,7,8]
+        },
+        className: "btn-imprimir"
 
-                                                    var cadena='';
-                                                    cadena=data.telFijo+'-'+data.telCelular;
-                                                    return cadena;
-                                         }
-                    },
-                    { "data": "correo" },
-                    { "data": "instagram" },
-                    { "data": "facebook" },
+        }
+        ],
+        "ajax": {
+        url: url,
+        type: "GET",
+        dataType: "json",
+        beforeSend: agregarToast({ tipo: 'exito', titulo: 'Obteniendo Microemprendedor', descripcion: 'Por favor espere...', autoCierre: true })
+        },
+        "columns": [
+        { "data": "id" },
+        { "data": "apeyNom" },
+        { "data": "rubros", render: function (data) {
 
-                ],
-                "language": {
-                    "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
-                },
-                "order": [[1, "asc"]],
-                "columnDefs": [
-                      {     targets: '_all', // Aplica a todas las columnas
-                            className: 'dt-left' // Clase para alineación a la izquierda
-                       },
-                    { "width": "10", "targets": 0 },
-                    { "width": "10", "targets": 1 },
-                    { "width": "10", "targets": 2 },
-                    { "width": "10", "targets": 3 },
-                    { "width": "10", "targets": 4 },
-                    { "width": "10", "targets": 5 },
-                    { "width": "10", "targets": 6 },
-                    { "width": "10", "targets": 7 },
-                    { "width": "10", "targets": 8 }
+        var cadena='';
+        for (let i = 0; i < data.length; i++) {
+        cadena=cadena+' '+data[i].rubro.descripcion;
+        }
+        return cadena;
+        }
 
-                ]
-            })
+
+        },
+        { "data": "localidad", render: function (data) {
+        return data.descripcion
+        }
+        },
+        { "data": function (data) {
+        var cadena='';
+        cadena=data.calle+' '+data.nro+' '+data.piso+' '+data.depto;
+        return cadena;
+        }
+        },
+        { "data":  function (data) {
+
+        var cadena='';
+        cadena=data.telFijo+'-'+data.telCelular;
+        return cadena;
+        }
+        },
+        { "data": "correo" },
+        { "data": "instagram" },
+        { "data": "facebook" },
+
+        ],
+        "language": {
+        "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+        },
+        "order": [[1, "asc"]],
+        "columnDefs": [
+        {     targets: '_all', // Aplica a todas las columnas
+        className: 'dt-left' // Clase para alineación a la izquierda
+        },
+        { "width": "10", "targets": 0 },
+        { "width": "10", "targets": 1 },
+        { "width": "10", "targets": 2 },
+        { "width": "10", "targets": 3 },
+        { "width": "10", "targets": 4 },
+        { "width": "10", "targets": 5 },
+        { "width": "10", "targets": 6 },
+        { "width": "10", "targets": 7 },
+        { "width": "10", "targets": 8 }
+
+        ]
+        })
         }
 
         //Filtrar Microemprendedor
         function filtrarMicroemprendedor2(filtro) {
-            llenarTabla2(filtro);
+        llenarTabla2(filtro);
         }
         //Filtrar Microemprendedor
         function limpiarFiltros2() {
-            $('#cbolocalidadF2').val(0);
-            $('#cborubroF2').val(0);
-            $('#palabraclave2').val('');
+        $('#cbolocalidadF2').val(0);
+        $('#cborubroF2').val(0);
+        $('#palabraclave2').val('');
 
-            llenarTabla2(false)
+        llenarTabla2(false)
         }
 
         //Llenar Tabla 8
         function llenarTabla8(filtro) {
 
-            var url;
-            if (filtro) {
+        var url;
+        if (filtro) {
 
-                url = "@Url.Action("GetMicroemprendedorFiltrados", "Microemprendedor")" + '?localidad=' + $("#cbolocalidadF8").val() + '&rubro=' + $("#cborubroF8").val() + '&palabra=' + $("#palabraclave8").val()
-            } else
-                url = "@Url.Action("GetAllMicroEmprendedor", "Microemprendedor")"
+        url = "@Url.Action("GetMicroemprendedorFiltrados", "Microemprendedor")" + '?localidad=' + $("#cbolocalidadF8").val() + '&rubro=' + $("#cborubroF8").val() + '&palabra=' + $("#palabraclave8").val()
+        } else
+        url = "@Url.Action("GetAllMicroEmprendedor", "Microemprendedor")"
 
-            $('#tabla8').DataTable().clear().destroy();
-            tabladata = $("#tabla8").DataTable({
-                responsive: true,
-                ordering: true,
-                dom: "Bfrtip",
-                buttons: [
-                    {
-                        extend: "excelHtml5",
-                        text: '<i class="fa fa-file-excel-o "></i>',
-                        filename: "Reporte de Microemprendedor",
-                        title: "Listado de Microemprendedor",
-                        exportOptions: {
-                            //muestra las columnas
-                             columns: [0, 1, 2, 3, 4, 5, 6,7,8]
-                        },
-                        className: "btn-exportar-excel",
-
-
-                    },
-                    {
-                        extend: "pdfHtml5",
-                        text: '<i class="fa fa-file-pdf-o"></i>',
-                        filename: "Reporte de Microemprendedor",
-                        title: "Listado de Microemprendedor",
-                        exportOptions: {
-                            //muestra las columnas
-                              columns: [0, 1, 2, 3, 4, 5, 6,7,8]
-                        },
-                        className: "btn-exportar-pdf"
-                    },
-                    {
-                        extend: "print",
-                        text: '<i class="fa fa-print"></i>',
-                        filename: "Reporte de Microemprendedor",
-                        title: "Listado de Microemprendedor",
-                        exportOptions: {
-                            //muestra las columnas
-                              columns: [0, 1, 2, 3, 4, 5, 6,7,8]
-                        },
-                        className: "btn-imprimir"
-
-                    }
-                ],
-                "ajax": {
-                    url: url,
-                    type: "GET",
-                    dataType: "json",
-                    beforeSend: agregarToast({ tipo: 'exito', titulo: 'Obteniendo Microemprendedor', descripcion: 'Por favor espere...', autoCierre: true })
-                },
-                  "columns": [
-                    { "data": "id" },
-                    { "data": "apeyNom" },
-                    { "data": "rubros", render: function (data) {
-                                                  
-                                                    var cadena='';
-                                                    for (let i = 0; i < data.length; i++) {
-                                                        cadena=cadena+' '+data[i].rubro.descripcion;
-                                                        }
-                                                    return cadena;
-                                            }
+        $('#tabla8').DataTable().clear().destroy();
+        tabladata = $("#tabla8").DataTable({
+        responsive: true,
+        ordering: true,
+        dom: "Bfrtip",
+        buttons: [
+        {
+        extend: "excelHtml5",
+        text: '<i class="fa fa-file-excel-o "></i>',
+        filename: "Reporte de Microemprendedor",
+        title: "Listado de Microemprendedor",
+        exportOptions: {
+        //muestra las columnas
+        columns: [0, 1, 2, 3, 4, 5, 6,7,8]
+        },
+        className: "btn-exportar-excel",
 
 
-                    },
-                    { "data": "localidad", render: function (data) {
-                            return data.descripcion
-                        }
-                    },
-                    { "data": function (data) {
-                                                var cadena='';
-                                                    cadena=data.calle+' '+data.nro+' '+data.piso+' '+data.depto;
-                                                    return cadena;
-                                }
-                    },
-                    { "data":  function (data) {
+        },
+        {
+        extend: "pdfHtml5",
+        text: '<i class="fa fa-file-pdf-o"></i>',
+        filename: "Reporte de Microemprendedor",
+        title: "Listado de Microemprendedor",
+        exportOptions: {
+        //muestra las columnas
+        columns: [0, 1, 2, 3, 4, 5, 6,7,8]
+        },
+        className: "btn-exportar-pdf"
+        },
+        {
+        extend: "print",
+        text: '<i class="fa fa-print"></i>',
+        filename: "Reporte de Microemprendedor",
+        title: "Listado de Microemprendedor",
+        exportOptions: {
+        //muestra las columnas
+        columns: [0, 1, 2, 3, 4, 5, 6,7,8]
+        },
+        className: "btn-imprimir"
 
-                                                    var cadena='';
-                                                    cadena=data.telFijo+'-'+data.telCelular;
-                                                    return cadena;
-                                         }
-                    },
-                    { "data": "correo" },
-                    { "data": "instagram" },
-                    { "data": "facebook" },
-                      {
-                        "defaultContent":
-                            '<button type="button" title="Editar Microemprendedor"   class="rounded-circle btn  btn-editar  m-0 "style="background-color: transparent"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
-                            '<button type="button" title="Eliminar Microemprendedor" class="rounded-circle btn   btn-eliminar m-0 "style="background-color: transparent"   ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
-                        "orderable": false,
-                        "searchable": false,
-                        "width": "15%",
-                        "heigth": "15%"
-                    }
-                ],
-                "language": {
-                    "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
-                },
-                "order": [[1, "asc"]],
-                "columnDefs": [
-                      {     targets: '_all', // Aplica a todas las columnas
-                            className: 'dt-left' // Clase para alineación a la izquierda
-                       },
-                    { "width": "5%", "targets": 0 },
-                    { "width": "10%", "targets": 1 },
-                    { "width": "10%", "targets": 2 },
-                    { "width": "10%", "targets": 3 },
-                    { "width": "10%", "targets": 4 },
-                    { "width": "10%", "targets": 5 },
-                    { "width": "10%", "targets": 6 },
-                    { "width": "10%", "targets": 7 },
-                    { "width": "10%", "targets": 8 },
-                    { "width": "30%", "targets": 9 }
+        }
+        ],
+        "ajax": {
+        url: url,
+        type: "GET",
+        dataType: "json",
+        beforeSend: agregarToast({ tipo: 'exito', titulo: 'Obteniendo Microemprendedor', descripcion: 'Por favor espere...', autoCierre: true })
+        },
+        "columns": [
+        { "data": "id" },
+        { "data": "apeyNom" },
+        { "data": "rubros", render: function (data) {
 
-                ]
-            })
+        var cadena='';
+        for (let i = 0; i < data.length; i++) {
+        cadena=cadena+' '+data[i].rubro.descripcion;
+        }
+        return cadena;
+        }
+
+
+        },
+        { "data": "localidad", render: function (data) {
+        return data.descripcion
+        }
+        },
+        { "data": function (data) {
+        var cadena='';
+        cadena=data.calle+' '+data.nro+' '+data.piso+' '+data.depto;
+        return cadena;
+        }
+        },
+        { "data":  function (data) {
+
+        var cadena='';
+        cadena=data.telFijo+'-'+data.telCelular;
+        return cadena;
+        }
+        },
+        { "data": "correo" },
+        { "data": "instagram" },
+        { "data": "facebook" },
+        {
+        "defaultContent":
+        '<button type="button" title="Editar Microemprendedor"   class="rounded-circle btn  btn-editar  m-0 "style="background-color: transparent"   ><i class="fa fa-pencil"   style="Color: #E74C3C;" ></i></button>' +
+        '<button type="button" title="Eliminar Microemprendedor" class="rounded-circle btn   btn-eliminar m-0 "style="background-color: transparent"   ><i class="fa fa-trash-o"  style="Color: #E74C3C;" ></i></button>',
+        "orderable": false,
+        "searchable": false,
+        "width": "15%",
+        "heigth": "15%"
+        }
+        ],
+        "language": {
+        "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json"
+        },
+        "order": [[1, "asc"]],
+        "columnDefs": [
+        {     targets: '_all', // Aplica a todas las columnas
+        className: 'dt-left' // Clase para alineación a la izquierda
+        },
+        { "width": "5%", "targets": 0 },
+        { "width": "10%", "targets": 1 },
+        { "width": "10%", "targets": 2 },
+        { "width": "10%", "targets": 3 },
+        { "width": "10%", "targets": 4 },
+        { "width": "10%", "targets": 5 },
+        { "width": "10%", "targets": 6 },
+        { "width": "10%", "targets": 7 },
+        { "width": "10%", "targets": 8 },
+        { "width": "30%", "targets": 9 }
+
+        ]
+        })
         }
 
         //Filtrar Microemprendedor
         function filtrarMicroemprendedor8(filtro) {
-            llenarTabla8(filtro);
+        llenarTabla8(filtro);
         }
         //Filtrar Microemprendedor
         function limpiarFiltros8() {
-            $('#cbolocalidadF8').val(0);
-            $('#cborubroF8').val(0);
-            $('#palabraclave8').val('');
-            llenarTabla8(false)
+        $('#cbolocalidadF8').val(0);
+        $('#cborubroF8').val(0);
+        $('#palabraclave8').val('');
+        llenarTabla8(false)
         }
 
+         //VALIDACIONES
+        $.validator.addMethod("valueNotEquals", function (value, element, arg) {
+            return arg !== value;
+        }, "Value must not equal arg.");
+          $("#formNivel").validate({
+            rules: {
 
-           $('#id_label_multiple').on('focus', function() {
-            // Open the Select2 dropdown
-            $(this).select2('open');
+                apeynom: {
+                    required: true
+                },
+
+                dni: {
+                    required: true
+                },
+                rubros:{
+                    required: true
+                },
+            },
+            messages: {
+
+                apeynom: " El Apellido y Nombre es obligation",
+                dni: " El Dni es obligatorio",
+                rubros:" Por favor seleccione al menos un rubro",
+            },
+            errorElement: "div",
+            errorLabelContainer: ".alert-danger"
+        });
+
+
+
+        $('#id_label_multiple').on('focus', function() {
+        // Open the Select2 dropdown
+        $(this).select2('open');
         });
 
         //Abrir Modal
         function abrirModal(json) {
-           
+        
+      
+       
+        
+
                var fnac;
                var diafnac;
                var mesfnac;
@@ -1386,7 +1436,7 @@
                $("#txtapeynom").val('Gutierrez Dick, Emanuel');
                $("#txtdni").val('26888310');
                $("#cbotipodoc").val(1);
-               $("#cbolocalidadN").val(1);
+               //$("#cbolocalidadN").val(1);
                fnac = new Date()
                diafnac = `${(fnac.getDate())}`.padStart(2, '0');
                mesfnac = `${(fnac.getMonth() + 1)}`.padStart(2, '0');
@@ -1473,6 +1523,7 @@
                    $("#txtinstagram").val(json.instagram);
                    $("#txtsitioweb").val(json.sitioWeb);
                    $("#cbolocalidadN").val(json.idLocalidad == null ? 0 : json.idLocalidad);
+        
                    // $("#cborubro").val(json.idRubro == null ? 0 : json.idRubro);
                    $("#txtnrodoc").val(json.dni);
                    if (json.sexo == "F") {
@@ -1526,7 +1577,7 @@
 
         //Guardar
         function Guardar() {
-         
+         debugger;
             if (!$("#formNivel").valid()) {
                 return;
             }
@@ -1608,7 +1659,7 @@
                     descripcion: $("#cbolocalidadN option:selected").text(),
                     
                 },
-                idRubro: $("#cborubro option:selected").val() == 0 ? null : $("#cborubro option:selected").val(),
+                //idRubro: $("#cborubro option:selected").val() == 0 ? null : $("#cborubro option:selected").val(),
                 telFijo: $("#txttelfijo").val(),
                 telCelular: $("#txttelcelular").val(),
                 correo: $("#txtemail").val(),
@@ -1695,7 +1746,7 @@
                 id: data.id,
                 apeyNom: data.apeyNom
             }
-            console.log(Microemprendedor);
+          
             swal({
                 title: "Está Seguro?",
                 text: "Desea eliminar el Microemprendedor?",
@@ -1730,8 +1781,9 @@
                 })
         });
 
+        var us;
         async function enviarLogin(user, password) {
-            const data = {
+            const obj = {
                 User: user,
                 Password: password
             };
@@ -1742,27 +1794,32 @@
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(data)
+                body: JSON.stringify(obj)
             })
                 .then(response => {
-                    console.log(response);
+                   
                     if (response.ok) {
-
+                   
                         return response.json();
                     } else {
                         throw new Error('Error en la solicitud');
                     }
                 })
                 .then(data => {
+                   
+                   
+                   
                     if (data.success) {
+                     
                         window.location.reload();
+                      
                     } else {
 
                         alert(data.message);
                     }
                 });
         }
-
+      
         async function registrarUser(user, password, apeyNom,localidad) {
             const data = {
                 User: user,
@@ -1852,8 +1909,7 @@
     <script src="~/js/loadingoverlay/loadingoverlay.js"></script>
     <script src="~/js/loadingoverlay/loadingoverlay.min.js"></script>
 
-    <!-- Validar -->
-    <script src="~/js/jquery/jquery.validate.js"></script>
+ 
 
     @* <script src="~/home/js/bootstrap.min.js"></script> *@
     <!--Bootstrap 5-->

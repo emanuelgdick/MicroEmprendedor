@@ -21,9 +21,9 @@ namespace Api.Controllers
         }
 
         [HttpGet]
-        [Authorize]
-        [ResponseCache(CacheProfileName = "apicache")]
-        public IActionResult GetTipoDocumentoes(/*int pagesize, int pagenumber*/)
+        //[Authorize]
+        //[ResponseCache(CacheProfileName = "apicache")]
+        public IActionResult GetTipoDocumentos(/*int pagesize, int pagenumber*/)
         {
             _logger.LogInformation("Fetching Todas las TipoDocumentos");
 

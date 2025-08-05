@@ -39,14 +39,15 @@ namespace FrontEnd.Services
         }
 
 
-        public bool CambiarClave(int idusuario, string nuevaclave, out string Mensaje)
-        {
-            return objCapaDato.CambiarClave(idusuario, nuevaclave, out Mensaje);
-        }
-
-        public bool ReestablecerClave(long idusuario, string correo, out string Mensaje)
-        {
+        //public bool CambiarClave(int idusuario, string nuevaclave, out string Mensaje)
+        //{
            
-        }
+        //    return objCapaDato.CambiarClave(idusuario, nuevaclave, out Mensaje);
+        //}
+
+        //public bool ReestablecerClave(long idusuario, string correo, out string Mensaje)
+        //{
+           
+        //}
     }
 }

@@ -60,7 +60,7 @@ namespace Api.Controllers
                 }
             }
 
-            if (user == null)
+            if (user.Id == 0)
             {
                 return null;
             }

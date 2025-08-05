@@ -33,13 +33,13 @@ namespace FrontEnd.Controllers
             return View(totales);
         }
 
-        [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
+        //[Authorize(Roles = "Admin")]
+        //[ResponseCache(Duration = 30)]
         public async Task<JsonResult> GetAllTipoDocumentos()
         {
 
             List<TipoDocumento> oLista = new List<TipoDocumento>();
-            oLista = await _apiService.GetAllTipoDocumentos(HttpContext.Session.GetString("APIToken"));
+            oLista = await _apiService.GetAllTipoDocumentos(/*HttpContext.Session.GetString("APIToken")*/);
             return Json(new { data = oLista });
         }
 

@@ -23,7 +23,7 @@ namespace FrontEnd.Controllers
         {
 
             //LoginRequestDTO obj = new LoginRequestDTO();
-          
+           
             return View(/*obj*/);
         }
 
@@ -46,11 +46,12 @@ namespace FrontEnd.Controllers
                 //usuario.User = objResponse.Usuario.User;
                 //usuario.Password = objResponse.Usuario.Password;
                 //usuario.ApeyNom = objResponse.Usuario.ApeyNom;
-                //usuario.Rol = objResponse.Usuario.Rol;
-                //ViewData["ApeyNom"] = usuario.ApeyNom;
+                //usuario.IdLocalidad = objResponse.Usuario.IdLocalidad;
+
+        
                 return Json(new { success = true, token = objResponse.Token});
                 
-                //return usuario;
+               
 
             }
             else
@@ -143,6 +144,10 @@ namespace FrontEnd.Controllers
                 string nombreUsuario = User.Identity.Name;
                 bool sesionIniciada = User.Identity.IsAuthenticated==null?false:true;
                 ViewBag.SesionIniciada = sesionIniciada;
+                //Usuario u = new Usuario();
+                //u.ApeyNom = User.Identity.Name;
+
+
                 return View((object)nombreUsuario);
             }
             else
@@ -152,29 +157,29 @@ namespace FrontEnd.Controllers
             }
         }
 
-        [HttpPost]
-        public ActionResult Reestablecer(string correo)
-        {
-            Usuario oUsuario = new Usuario();
-            oUsuario = new UsuarioBiz().Listar().Where(item => item.Correo == correo).FirstOrDefault();
-            if (oUsuario == null)
-            {
-                ViewBag.Error = "No se encontró un usuario relacionado a ese correo";
-                return View();
-            }
-            string mensaje = string.Empty;
-            bool respuesta = new UsuarioBiz().ReestablecerClave(oUsuario.Id, correo, out mensaje);
-            if (respuesta)
-            {
-                ViewBag.Error = null;
-                return RedirectToAction("Index", "Acceso");
-            }
-            else
-            {
-                ViewBag.Error = mensaje;
-                return View();
-            }
-        }
+        //[HttpPost]
+        //public ActionResult Reestablecer(string correo)
+        //{
+        //    Usuario oUsuario = new Usuario();
+        //    oUsuario = new UsuarioBiz().Listar().Where(item => item.Correo == correo).FirstOrDefault();
+        //    if (oUsuario == null)
+        //    {
+        //        ViewBag.Error = "No se encontró un usuario relacionado a ese correo";
+        //        return View();
+        //    }
+        //    string mensaje = string.Empty;
+        //    bool respuesta = new UsuarioBiz().ReestablecerClave(oUsuario.Id, correo, out mensaje);
+        //    if (respuesta)
+        //    {
+        //        ViewBag.Error = null;
+        //        return RedirectToAction("Index", "Acceso");
+        //    }
+        //    else
+        //    {
+        //        ViewBag.Error = mensaje;
+        //        return View();
+        //    }
+        //}
 
     }
 }

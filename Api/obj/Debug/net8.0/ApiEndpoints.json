@@ -400,7 +400,7 @@
   },
   {
     "ContainingType": "Api.Controllers.TipoDocumentoController",
-    "Method": "GetTipoDocumentoes",
+    "Method": "GetTipoDocumentos",
     "RelativePath": "api/TipoDocumento",
     "HttpMethod": "GET",
     "IsController": true,
@@ -533,7 +533,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.Usuario",
+        "Type": "Api.Models.LoginResponseDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",

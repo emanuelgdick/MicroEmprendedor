@@ -391,7 +391,7 @@ namespace Api.Controllers
         }
             
         [HttpPut("DeleteMicroEmprendedor")]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public ActionResult<MicroEmprendedor> DeleteMicroEmprendedor(Int32 Id)
         {
             bool resultado = false;

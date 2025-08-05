@@ -79,7 +79,7 @@ namespace FrontEnd.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [ResponseCache(Duration = 30)]
         public async Task<JsonResult> CreateMicroEmprendedor([FromBody] MicroEmprendedor MicroEmprendedor)
         {
@@ -177,7 +177,7 @@ namespace FrontEnd.Controllers
             return View(MicroEmprendedor);
         }
 
-        [Authorize(Roles = "Admin,Student")]
+        //[Authorize(Roles = "Admin,Student")]
         [ResponseCache(Duration = 30)]
         public async Task<JsonResult> DeleteMicroEmprendedor([FromBody] MicroEmprendedor MicroEmprendedor)
         {

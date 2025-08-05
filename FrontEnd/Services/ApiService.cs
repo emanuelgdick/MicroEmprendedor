@@ -194,9 +194,9 @@ namespace FrontEnd.Services
 
         //TIPO DE DOCUMENTO
         #region
-        public async Task<List<TipoDocumento>> GetAllTipoDocumentos(string token)
+        public async Task<List<TipoDocumento>> GetAllTipoDocumentos(/*string token*/)
         {
-            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             HttpResponseMessage response = await _httpClient.GetAsync($"api/TipoDocumento?");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
