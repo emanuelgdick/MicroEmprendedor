@@ -73,7 +73,8 @@
     input.css('width', minWidth);
   };
 
-	$.fn.addTag = function(value,options) {
+	$.fn.addTag = function (value, options) {
+		debugger;
 			options = jQuery.extend({focus:false,callback:true},options);
 			this.each(function() {
 				var id = $(this).attr('id');
@@ -168,16 +169,18 @@
 	};
 
    // clear all existing tags and import new ones from a string
-   $.fn.importTags = function(str) {
+	$.fn.importTags = function (str) {
+		debugger;
       var id = $(this).attr('id');
       $('#'+id+'_tagsinput .tag').remove();
       $.fn.tagsInput.importTags(this,str);
    }
 
-	$.fn.tagsInput = function(options) {
+	$.fn.tagsInput = function (options) {
+		
     var settings = jQuery.extend({
       interactive:true,
-      defaultText:'Agregue Palabras clave',
+      defaultText:'',
       minChars:0,
       width:'300px',
       height:'40px',
@@ -342,12 +345,14 @@
 
 	};
 
-	$.fn.tagsInput.updateTagsField = function(obj,tagslist) {
+	$.fn.tagsInput.updateTagsField = function (obj, tagslist) {
+		debugger;
 		var id = $(obj).attr('id');
 		$(obj).val(tagslist.join(delimiter[id]));
 	};
 
-	$.fn.tagsInput.importTags = function(obj,val) {
+	$.fn.tagsInput.importTags = function (obj, val) {
+		debugger;
 		$(obj).val('');
 		var id = $(obj).attr('id');
 		var tags = val.split(delimiter[id]);
