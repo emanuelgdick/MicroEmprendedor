@@ -326,3 +326,8 @@ C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\refint\FrontEnd.dll
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\FrontEnd.pdb
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\FrontEnd.genruntimeconfig.cache
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\ref\FrontEnd.dll
+C:\MicroEmprendedor\FrontEnd\bin\Release\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\MicroEmprendedor\FrontEnd\bin\Release\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\MicroEmprendedor\FrontEnd\bin\Release\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\MicroEmprendedor\FrontEnd\bin\Release\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\MicroEmprendedor\FrontEnd\bin\Release\net8.0\System.IdentityModel.Tokens.Jwt.dll

@@ -119,6 +119,10 @@ C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\win-x64\PubTmp\Out\Microsoft.Ext
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\win-x64\PubTmp\Out\Microsoft.Extensions.Logging.Abstractions.dll
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\win-x64\PubTmp\Out\Microsoft.Extensions.Options.dll
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\win-x64\PubTmp\Out\Microsoft.Extensions.Primitives.dll
+C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\win-x64\PubTmp\Out\Microsoft.IdentityModel.Abstractions.dll
+C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\win-x64\PubTmp\Out\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\win-x64\PubTmp\Out\Microsoft.IdentityModel.Logging.dll
+C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\win-x64\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\win-x64\PubTmp\Out\Microsoft.NET.StringTools.dll
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\win-x64\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.dll
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\win-x64\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -152,6 +156,7 @@ C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\win-x64\PubTmp\Out\System.Config
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\win-x64\PubTmp\Out\System.Diagnostics.DiagnosticSource.dll
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\win-x64\PubTmp\Out\System.Drawing.Common.dll
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\win-x64\PubTmp\Out\System.Formats.Asn1.dll
+C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\win-x64\PubTmp\Out\System.IdentityModel.Tokens.Jwt.dll
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\win-x64\PubTmp\Out\System.Reflection.MetadataLoadContext.dll
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\win-x64\PubTmp\Out\System.Security.Cryptography.ProtectedData.dll
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\win-x64\PubTmp\Out\System.Security.Permissions.dll

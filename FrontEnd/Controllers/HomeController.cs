@@ -23,14 +23,14 @@ namespace Frontend.Controllers
         public HomeController()
         {
             _apiService = new ApiService();
-         
+            _apiUserService = new ApiUserService();
         }
 
-     
         
 
-       // [Authorize(Roles = "Admin")]
-       // [ResponseCache(Duration = 30)]
+
+        // [Authorize(Roles = "Admin")]
+        // [ResponseCache(Duration = 30)]
         public async Task<IActionResult> Index()
         {
             var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
@@ -62,8 +62,9 @@ namespace Frontend.Controllers
                 usuario.Password = objResponse.Usuario.Password;
                 usuario.ApeyNom = objResponse.Usuario.ApeyNom;
                 usuario.IdLocalidad = objResponse.Usuario.IdLocalidad;
-                
+                ViewData["Message"] = usuario.ApeyNom;
             }
+            
             return View(usuario);
             //return View();
         }

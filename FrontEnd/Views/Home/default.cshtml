@@ -7,6 +7,11 @@
 }
  @model Usuario
 
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -166,6 +171,7 @@
                                                                    Se apunta a generar nuevos canales de conexión  que permita visibilizar los emprendedores en busca de nuevos canales de comercialización, así como también vinculación para resolver sus necesidades.
                                                                     Quienes participan en la misma son emprendedores de las ciudades de Madariaga – Lobería- Rauch –Tandil y Ayacucho.
                         </p>
+                        
                         <div class="scroll-down next-section animate data-animate=" fadeInUp""><img src="home/images/mouse-scroll.png" alt=""> <span style="color:#fff">Scroll Down</span></div>
                     </div>
                 </div>
@@ -1155,7 +1161,7 @@
 
         var url;
         if (filtro) {
-        url = "@Url.Action("GetMicroemprendedorFiltrados", "Microemprendedor")" + '?localidad=' + $("#cbolocalidadF2").val() + '&rubro=' + $("#cborubroF2").val() + '&palabra=' + $("#palabraclave2").val()
+                url = "@Url.Action("GetMicroemprendedorFiltrados", "Microemprendedor")" + '?localidad=' + $("#cbolocalidadF2").val() + '&rubro=' + $("#cborubroF2").val() + '&palabra=' + $("#palabraclave2").val()
         } else
         url = "@Url.Action("GetAllMicroEmprendedor", "Microemprendedor")"
 
@@ -1899,8 +1905,39 @@
                    
                     if (data.success) {
                         debugger;
-                     console.log(data);
+
                         window.location.reload();
+
+
+                        // const obj = {
+                        //     User: user,
+                        //     Password: password,
+                        //     IdLocalidad:2,
+                        //     ApeyNom:'Gutierrez Dick, Emanuel'
+                        // };
+                        
+                        // jQuery.ajax({
+                        //     url: '@Url.Action("Default", "Home")',
+                        //     type: "POST",
+                        //     data: JSON.stringify(obj),
+                        //     contentType: 'application/json',
+                        //     success: function (data) {
+                        //     //    alert(@ViewData["Message"]);
+                                
+                        //         window.location.reload();
+                        //     },
+                        //     beforeSend: function () {
+                                
+                        //     },
+                        //     error: function (error) {
+                            
+                        //     }
+                        // }
+                        // )
+
+
+
+
                       
                     } else {
 
