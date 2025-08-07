@@ -651,7 +651,7 @@
                             <div class="contact-section">
                                 <div class="row    justify-content-center">
                                     <div class="col-md-3 animate" data-animate="fadeInUp">
-                                        <form id="ajax-contact" method="post" action="#">
+                                        <form id="formLogin" method="post" action="#">
                                             <div class="input-field">
                                                 <input type="email" class="form-control" name="email" id="user" required placeholder="Email">
                                             </div>
@@ -673,7 +673,13 @@
                                                 </row>                                                                        
                                             </div>
                                         </form>
-                                        <div id="form-messages" class="mt-3"></div>
+                                       @*  <div id="form-messages" class="mt-3"></div> *@
+                                        <div class="row mt-0 p-0">
+                                            <div class="col-12">
+                                                <div id="mensajeError" class="alert-danger" role="alert">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div> 
@@ -715,6 +721,12 @@
 
                                         </div>
                                     </form>
+                                    <div class="row mt-0 p-0">
+                                        <div class="col-12">
+                                            <div id="mensajeError" class="alert-danger" role="alert">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1433,7 +1445,68 @@
             errorLabelContainer: ".alert-danger"
         });
 
+        //VALIDAR LOGIN
+        $.validator.addMethod("valueNotEquals", function (value, element, arg) {
+            return arg !== value;
+        }, "Value must not equal arg.");
+          $("#formLogin").validate({
+            rules: {
 
+                email: {
+                    required: true
+                },
+
+                password: {
+                    required: true
+                },
+                
+            },
+            messages: {
+
+                email: "Por favor ingrese el Usuario",
+                password: " Por favor ingrese el Password",
+            },
+            errorElement: "div",
+            errorLabelContainer: ".alert-danger"
+        });
+
+
+         //VALIDAR REGISTRO
+        $.validator.addMethod("valueNotEquals", function (value, element, arg) {
+            return arg !== value;
+        }, "Value must not equal arg.");
+          $("#fregistro").validate({
+            rules: {
+                apeynomR: {
+                    required: true
+                },
+
+                emailR: {
+                    required: true
+                },
+
+                passwordR: {
+                    required: true
+                },
+                localidadR: {
+                    // if ($("#cbotipodoc option:selected").val() == 0)
+                    // {
+                     required: true
+                    // }
+                    
+                    
+
+                },
+            },
+            messages: {
+                apeynomR: "Por favor ingrese el Apellido y Nombre",
+                emailR: "Por favor ingrese el Usuario",
+                passwordR: " Por favor ingrese el Password",
+                localidadR: " Por favor ingrese la localidad",
+            },
+            errorElement: "div",
+            errorLabelContainer: ".alert-danger"
+        });
 
         $('#id_label_multiple').on('focus', function() {
         // Open the Select2 dropdown
@@ -1795,6 +1868,9 @@
 
         var us;
         async function enviarLogin(user, password) {
+                if (!$("#formLogin").valid()) {
+                return;
+            }
             const obj = {
                 User: user,
                 Password: password
@@ -1822,7 +1898,8 @@
                    
                    
                     if (data.success) {
-                     
+                        debugger;
+                     console.log(data);
                         window.location.reload();
                       
                     } else {
@@ -1833,6 +1910,10 @@
         }
       
         async function registrarUser(user, password, apeyNom,localidad) {
+
+                if (!$("#fregistro").valid()) {
+                return;
+            }
             const data = {
                 User: user,
                 IdLocalidad:localidad,

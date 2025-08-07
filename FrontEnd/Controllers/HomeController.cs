@@ -49,7 +49,23 @@ namespace Frontend.Controllers
 
         public async Task<IActionResult> Default([FromBody] LoginRequestDTO obj=null)
         {
-        return View();
+            LoginResponseDTO objResponse = new LoginResponseDTO();
+            
+            Usuario usuario = new Usuario();
+            if (obj != null)
+            {
+                objResponse = await _apiUserService.AuthenticateUser(obj);
+
+
+
+                usuario.User = objResponse.Usuario.User;
+                usuario.Password = objResponse.Usuario.Password;
+                usuario.ApeyNom = objResponse.Usuario.ApeyNom;
+                usuario.IdLocalidad = objResponse.Usuario.IdLocalidad;
+                
+            }
+            return View(usuario);
+            //return View();
         }
 
         //public async ActionResult SessionIniciada(LoginResponseDTO obj)

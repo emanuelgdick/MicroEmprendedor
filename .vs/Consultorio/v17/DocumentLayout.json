@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\MicroEmprendedor\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|c:\\microemprendedor\\frontend\\views\\home\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\home\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|c:\\microemprendedor\\frontend\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|c:\\microemprendedor\\frontend\\views\\authuser\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\authuser\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|c:\\microemprendedor\\frontend\\controllers\\authusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\controllers\\authusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|c:\\microemprendedor\\api\\controllers\\microemprendedorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|solutionrelative:api\\controllers\\microemprendedorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|c:\\microemprendedor\\frontend\\controllers\\microemprendedorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\controllers\\microemprendedorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|c:\\microemprendedor\\frontend\\views\\home\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\home\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|c:\\microemprendedor\\frontend\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|c:\\microemprendedor\\frontend\\controllers\\localidadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\controllers\\localidadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|c:\\microemprendedor\\frontend\\controllers\\authusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\controllers\\authusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,22 +46,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "default.cshtml",
-              "DocumentMoniker": "C:\\MicroEmprendedor\\FrontEnd\\Views\\Home\\default.cshtml",
-              "RelativeDocumentMoniker": "FrontEnd\\Views\\Home\\default.cshtml",
-              "ToolTip": "C:\\MicroEmprendedor\\FrontEnd\\Views\\Home\\default.cshtml",
-              "RelativeToolTip": "FrontEnd\\Views\\Home\\default.cshtml",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAAAGsAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-03T18:52:49.054Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -69,19 +63,59 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "default.cshtml",
+              "DocumentMoniker": "C:\\MicroEmprendedor\\FrontEnd\\Views\\Home\\default.cshtml",
+              "RelativeDocumentMoniker": "FrontEnd\\Views\\Home\\default.cshtml",
+              "ToolTip": "C:\\MicroEmprendedor\\FrontEnd\\Views\\Home\\default.cshtml",
+              "RelativeToolTip": "FrontEnd\\Views\\Home\\default.cshtml",
+              "ViewState": "AgIAAFEHAAAAAAAAAAAtwG4HAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-03T18:52:49.054Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\MicroEmprendedor\\FrontEnd\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "FrontEnd\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\MicroEmprendedor\\FrontEnd\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "FrontEnd\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAkwDUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T21:31:45.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\MicroEmprendedor\\FrontEnd\\Views\\Authuser\\Login.cshtml",
+              "RelativeDocumentMoniker": "FrontEnd\\Views\\Authuser\\Login.cshtml",
+              "ToolTip": "C:\\MicroEmprendedor\\FrontEnd\\Views\\Authuser\\Login.cshtml",
+              "RelativeToolTip": "FrontEnd\\Views\\Authuser\\Login.cshtml",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAAKkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-06T21:01:42.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "MicroEmprendedorController.cs",
               "DocumentMoniker": "C:\\MicroEmprendedor\\Api\\Controllers\\MicroEmprendedorController.cs",
               "RelativeDocumentMoniker": "Api\\Controllers\\MicroEmprendedorController.cs",
               "ToolTip": "C:\\MicroEmprendedor\\Api\\Controllers\\MicroEmprendedorController.cs",
               "RelativeToolTip": "Api\\Controllers\\MicroEmprendedorController.cs",
-              "ViewState": "AgIAAIEBAAAAAAAAAAAtwJIBAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJIBAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-04T23:44:43.976Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "ApiService.cs",
               "DocumentMoniker": "C:\\MicroEmprendedor\\FrontEnd\\Services\\ApiService.cs",
               "RelativeDocumentMoniker": "FrontEnd\\Services\\ApiService.cs",
@@ -89,12 +123,11 @@
               "RelativeToolTip": "FrontEnd\\Services\\ApiService.cs",
               "ViewState": "AgIAAK0AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T23:35:08.69Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-04T23:35:08.69Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "custom.js",
               "DocumentMoniker": "C:\\MicroEmprendedor\\FrontEnd\\wwwroot\\home\\js\\custom.js",
               "RelativeDocumentMoniker": "FrontEnd\\wwwroot\\home\\js\\custom.js",
@@ -102,25 +135,24 @@
               "RelativeToolTip": "FrontEnd\\wwwroot\\home\\js\\custom.js",
               "ViewState": "AgIAAIwAAAAAAAAAAAAtwJ0AAACHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-08-04T23:11:45.816Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-04T23:11:45.816Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "AuthuserController.cs",
               "DocumentMoniker": "C:\\MicroEmprendedor\\FrontEnd\\Controllers\\AuthuserController.cs",
               "RelativeDocumentMoniker": "FrontEnd\\Controllers\\AuthuserController.cs",
               "ToolTip": "C:\\MicroEmprendedor\\FrontEnd\\Controllers\\AuthuserController.cs",
               "RelativeToolTip": "FrontEnd\\Controllers\\AuthuserController.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAgwCsAAABNAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-04T22:42:18.686Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "MicroEmprendedorController.cs",
               "DocumentMoniker": "C:\\MicroEmprendedor\\FrontEnd\\Controllers\\MicroEmprendedorController.cs",
               "RelativeDocumentMoniker": "FrontEnd\\Controllers\\MicroEmprendedorController.cs",
@@ -128,12 +160,11 @@
               "RelativeToolTip": "FrontEnd\\Controllers\\MicroEmprendedorController.cs",
               "ViewState": "AgIAAKkAAAAAAAAAAAAlwLgAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T22:42:04.059Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-04T22:42:04.059Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "LocalidadController.cs",
               "DocumentMoniker": "C:\\MicroEmprendedor\\FrontEnd\\Controllers\\LocalidadController.cs",
               "RelativeDocumentMoniker": "FrontEnd\\Controllers\\LocalidadController.cs",
@@ -141,8 +172,7 @@
               "RelativeToolTip": "FrontEnd\\Controllers\\LocalidadController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T23:05:48.169Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-04T23:05:48.169Z"
             }
           ]
         }

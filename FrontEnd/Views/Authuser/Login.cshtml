@@ -90,13 +90,13 @@
                     <form>
                         <h1>Crear Cuenta</h1>
                         <div>
-                            <input type="text" class="form-control" id="apeynom" placeholder="Apellido y Nombre" required="" value="" />@* Username *@
+                            <input type="text" class="form-control" id="apeynom" name="apeynom" placeholder="Apellido y Nombre" required="" value="" />@* Username *@
                         </div>
                         <div>
-                            <input type="email" id="usr" class="form-control" placeholder="Correo" required="" value="" /> @* Email *@
+                            <input type="email" id="usr" class="form-control" name="usr" placeholder="Correo" required="" value="" /> @* Email *@
                         </div>
                         <div>
-                            <input type="password" id="psw" class="form-control" placeholder="Contraseña" required="" value="" /> @* Password *@
+                            <input type="password" id="psw" class="form-control" name="psw" placeholder="Contraseña" required="" value="" /> @* Password *@
                         </div>
                         <div>
                             <a class="btn btn-default submit" href="#" onclick="registrarUser(document.getElementById('usr').value,document.getElementById('psw').value,document.getElementById('apeynom').value)">Enviar</a>
@@ -138,9 +138,39 @@
 }
 
 <script>
+         //VALIDACIONES
+        $.validator.addMethod("valueNotEquals", function (value, element, arg) {
+            return arg !== value;
+        }, "Value must not equal arg.");
+          $("#formNivel").validate({
+            rules: {
+
+            
+
+                usr: {
+                    required: true
+                },
+                psw:{
+                    required: true
+                },
+            },
+            messages: {
+
+              
+                usr: " Por favor ingrese el Usuario",
+                psw:" Por favor ingrese el password",
+            },
+            errorElement: "div",
+            errorLabelContainer: ".alert-danger"
+        });
+
 
     async function enviarLogin(user,password)
      {
+         alert('login');
+         if (!$("#formLogin").valid()) {
+                return;
+         }
          const data = {
              User: user,
              Password: password
@@ -243,6 +273,8 @@
             });
     }
 
+     <!-- Validar -->
+    <script src="~/js/jquery/jquery.validate.js"></script>
 
 
 </script>
