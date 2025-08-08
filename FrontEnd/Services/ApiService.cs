@@ -15,8 +15,8 @@ namespace FrontEnd.Services
     public class ApiService
     {
         private readonly HttpClient _httpClient;
-        private string _ApiURLPath = "http://localhost:8090/";
-        
+        private string _ApiURLPath = "http://localhost:5087/"; /* "http://mpiscicelli-001-site2.stempurl.com/"*/
+
 
         public ApiService()
         {
@@ -156,7 +156,7 @@ namespace FrontEnd.Services
         public async Task<MicroEmprendedor> AddMicroEmprendedor(MicroEmprendedor microEmprendedor, string token)
         {
 
-            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+          //  _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             HttpResponseMessage response = await _httpClient.PostAsJsonAsync<MicroEmprendedor>($"api/MicroEmprendedor/AddMicroEmprendedor", microEmprendedor);
             response.EnsureSuccessStatusCode();
           

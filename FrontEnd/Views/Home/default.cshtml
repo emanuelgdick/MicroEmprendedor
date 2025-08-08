@@ -363,45 +363,45 @@
                     <div class="row justify-content-center">
                         <div class="col-md-8 wide-col-laptop">
                             <div class="title-block animate" data-animate="fadeInUp">
-                                <span style="color:#fff">My Work</span>
-                                <h2>what i’ve done?</h2>
+                                <span style="color:#fff">Encuentros</span>
+                                <h2>Qué hemos hecho?</h2>
                             </div>
                             <div class="gallery-section">
                                 <div class="gallery-list owl-carousel">
                                     <div class="item animate" data-animate="fadeInUp">
                                         <div class="portfolio-item">
                                             <div class="thumb">
-                                                <img src="/home/images/item-1.jpg" alt="">
+                                                <img src="/home/images/image1.jpeg" alt="">
                                             </div>
                                             <div class="thumb-inner animate" data-animate="fadeInUp">
-                                                <h4>templatemo is the best</h4>
-                                                <p>Please tell your friends about it. Templatemo is the best website to download free Bootstrap CSS templates.</p>
+                                                <h4>Primet encuentro capacitación regional para emprendedores</h4>
+
                                             </div>
                                         </div>
                                     </div>
                                     <div class="item animate" data-animate="fadeInUp">
                                         <div class="portfolio-item">
                                             <div class="thumb">
-                                                <img src="/home/images/item-2.jpg" alt="">
+                                                <img src="/home/images/image2.jpeg" alt="">
                                             </div>
                                             <div class="thumb-inner animate" data-animate="fadeInUp">
-                                                <h4>templatemo is the best</h4>
-                                                <p>Please tell your friends about it. Templatemo is the best website to download free Bootstrap themes.</p>
+                                                <h4>Presentación programa gestar territorios dinámicos</h4>
+                                            
                                             </div>
                                         </div>
                                     </div>
                                     <div class="item animate" data-animate="fadeInUp">
                                         <div class="portfolio-item">
                                             <div class="thumb">
-                                                <img src="/home/images/item-3.jpg" alt="">
+                                                <img src="/home/images/image3.jpeg" alt="">
                                             </div>
                                             <div class="thumb-inner animate" data-animate="fadeInUp">
-                                                <h4>templatemo is the best</h4>
-                                                <p>Please tell your friends about it. Templatemo is the best website to download free Bootstrap layouts.</p>
+                                                <h4>Intercambio de experiencias</h4>
+                                              
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="item animate" data-animate="fadeInUp">
+                           @*          <div class="item animate" data-animate="fadeInUp">
                                         <div class="portfolio-item">
                                             <div class="thumb">
                                                 <img src="/home/images/item-1.jpg" alt="">
@@ -466,7 +466,7 @@
                                                 <p>Please tell your friends about it. Templatemo is the best website to download free Bootstrap templates.</p>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> *@
                                 </div>
                             </div>
                         </div>
@@ -1296,7 +1296,7 @@
         url = "@Url.Action("GetAllMicroEmprendedor", "Microemprendedor")"
 
         $('#tabla8').DataTable().clear().destroy();
-        tabladata = $("#tabla8").DataTable({
+        tabladata8 = $("#tabla8").DataTable({
         responsive: true,
         ordering: true,
         dom: "Bfrtip",
@@ -1521,7 +1521,7 @@
 
         //Abrir Modal
         function abrirModal(json) {
-        
+          
                var fnac;
                var diafnac;
                var mesfnac;
@@ -1596,6 +1596,8 @@
 
                $('#tags').tagsInput();
                $("#tags").importTags("");
+
+            debugger;
                if (json != null) {
 
                    $("#txtid").val(json.id);
@@ -1774,7 +1776,7 @@
                         if (data.resultado != 0) {
                             Microemprendedor.id = data.resultado;
                             console.log(Microemprendedor);
-                            tabladata.row.add(Microemprendedor).draw(false);
+                            tabladata8.row.add(Microemprendedor).draw(false);
                             $("#FormModal").modal("hide");
                             agregarToast({ tipo: 'exito', titulo: 'Creando Microemprendedor', descripcion: 'Microemprendedor ingresado correctamente.', autoCierre: true });
                         }
@@ -1789,7 +1791,7 @@
 
                         if (data.resultado) {
                             console.log(Microemprendedor);
-                            tabladata.row(filaSeleccionada).data(Microemprendedor).draw(false);
+                            tabladata8.row(filaSeleccionada).data(Microemprendedor).draw(false);
                             filaSeleccionada = null;
                             
                             agregarToast({ tipo: 'exito', titulo: 'Modificando Microemprendedor', descripcion: 'Microemprendedor modificado correctamente.', autoCierre: true });
@@ -1821,9 +1823,9 @@
 
         //Editar
         $("#tabla8 tbody").on("click", '.btn-editar', function () {
-
+            debugger;
             filaSeleccionada = $(this).closest("tr");
-            var data = tabladata.row(filaSeleccionada).data();
+            var data = tabladata8.row(filaSeleccionada).data();
 
             abrirModal(data)
         })
@@ -1832,7 +1834,7 @@
         $("#tabla8 tbody").on("click", '.btn-eliminar', function () {
 
             var Microemprendedoreleccionado = $(this).closest("tr");
-            var data = tabladata.row(Microemprendedoreleccionado).data();
+            var data = tabladata8.row(Microemprendedoreleccionado).data();
             var Microemprendedor = {
                 id: data.id,
                 apeyNom: data.apeyNom
@@ -1856,7 +1858,7 @@
                         contentType: 'application/json',
                         success: function (data) {
                             if (data.resultado) {
-                                tabladata.row(Microemprendedoreleccionado).remove().draw();
+                                tabladata8.row(Microemprendedoreleccionado).remove().draw();
                                 // mostrarAlert(data.mensaje)
                                 agregarToast({ tipo: 'exito', titulo: 'Eliminando Microemprendedor', descripcion: 'Microemprendedor eliminado correctamente.', autoCierre: true })
                             } else {

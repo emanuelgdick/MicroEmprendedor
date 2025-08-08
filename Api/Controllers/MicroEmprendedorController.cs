@@ -246,7 +246,7 @@ namespace Api.Controllers
         }
 
         [HttpPost("AddMicroEmprendedor")]
-        [Authorize]
+        //[Authorize]
         public ActionResult<MicroEmprendedor> AddMicroEmprendedor([FromBody] MicroEmprendedor microEmprendedor)
         {
             int idautogenerado = 0;
@@ -322,7 +322,7 @@ namespace Api.Controllers
         }
 
         [HttpPost("UpdateMicroEmprendedor")]
-        [Authorize]
+       // [Authorize]
         public ActionResult<MicroEmprendedor> UpdateMicroEmprendedor(Int32 Id, [FromBody] MicroEmprendedor microEmprendedor)
         {
             XElement microRubro = new XElement("MicroEmprendedor",
