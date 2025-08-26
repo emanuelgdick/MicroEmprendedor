@@ -53,20 +53,16 @@ namespace Api.Controllers
                                                                 IdTipoDocumento = Convert.ToInt32(c.Element("IdTipoDocumento").Value),
                                                                 IdLocalidad = Convert.ToInt32(c.Element("IdLocalidad").Value),
                                                                 ApeyNom = c.Element("ApeyNom").Value,
-                                                                Calle = c.Element("Calle").Value,
-                                                                Nro = c.Element("Nro").Value,
-                                                                Piso = c.Element("Piso").Value,
-                                                                Depto = c.Element("Depto").Value,
-                                                                TelFijo = c.Element("TelFijo").Value,
-                                                                TelCelular = c.Element("TelCelular").Value,
-                                                                Facebook = c.Element("Facebook").Value,
-                                                                Instagram = c.Element("Instagram").Value,
-                                                                SitioWeb = c.Element("SitioWeb").Value,
-                                                                Correo = c.Element("Correo").Value,
-                                                                // Sexo = c.Element("Sexo").Value.ToString(),
                                                                 Dni = c.Element("Dni").Value,
-                                                                Observaciones = c.Element("Observaciones").Value,
                                                                 FechaNacimiento = Convert.ToDateTime(c.Element("FechaNacimiento").Value.ToString()),
+                                                                Sexo = Convert.ToChar(c.Element("Sexo").Value),
+                                                                Direccion = c.Element("Direccion").Value,
+                                                                Telefono = c.Element("Telefono").Value,
+                                                                Correo = c.Element("Correo").Value,
+                                                                SitioWeb = c.Element("SitioWeb").Value,
+                                                                Instagram = c.Element("Instagram").Value,
+                                                                Facebook = c.Element("Facebook").Value,
+                                                                
                                                                 Localidad = (from g in c.Elements("Localidad")
                                                                              select new Localidad()
                                                                              {
@@ -158,19 +154,19 @@ namespace Api.Controllers
                                                                 IdTipoDocumento = Convert.ToInt32(c.Element("IdTipoDocumento").Value),
                                                                 IdLocalidad = Convert.ToInt32(c.Element("IdLocalidad").Value),
                                                                 ApeyNom = c.Element("ApeyNom").Value,
-                                                                Calle = c.Element("Calle").Value,
-                                                                Nro = c.Element("Nro").Value,
-                                                                Piso = c.Element("Piso").Value,
-                                                                Depto = c.Element("Depto").Value,
-                                                                TelFijo = c.Element("TelFijo").Value,
-                                                                TelCelular = c.Element("TelCelular").Value,
+                                                                Direccion = c.Element("Direccion").Value,
+                                                                //Nro = c.Element("Nro").Value,
+                                                                //Piso = c.Element("Piso").Value,
+                                                                //Depto = c.Element("Depto").Value,
+                                                                Telefono = c.Element("Telefono").Value,
+                                                                //TelCelular = c.Element("TelCelular").Value,
                                                                 Facebook = c.Element("Facebook").Value,
                                                                 Instagram = c.Element("Instagram").Value,
                                                                 SitioWeb = c.Element("SitioWeb").Value,
                                                                 Correo = c.Element("Correo").Value,
-                                                                // Sexo = c.Element("Sexo").Value.ToString(),
+                                                                Sexo = Convert.ToChar(c.Element("Sexo").Value),
                                                                 Dni = c.Element("Dni").Value,
-                                                                Observaciones = c.Element("Observaciones").Value,
+                                                                //Observaciones = c.Element("Observaciones").Value,
                                                                 FechaNacimiento = Convert.ToDateTime(c.Element("FechaNacimiento").Value.ToString()),
                                                                 Localidad = (from g in c.Elements("Localidad")
                                                                              select new Localidad()
@@ -259,17 +255,17 @@ namespace Api.Controllers
                      new XElement("Dni", microEmprendedor.Dni),
                      new XElement("FechaNacimiento", Convert.ToDateTime(microEmprendedor.FechaNacimiento)),
                      new XElement("Sexo", microEmprendedor.Sexo),
-                     new XElement("Calle", microEmprendedor.Calle),
-                     new XElement("Nro", microEmprendedor.Nro),
-                     new XElement("Piso", microEmprendedor.Piso),
-                     new XElement("Depto", microEmprendedor.Depto),
-                     new XElement("TelFijo", microEmprendedor.TelFijo),
-                     new XElement("TelCelular", microEmprendedor.TelCelular),
+                     new XElement("Direccion", microEmprendedor.Direccion),
+                     //new XElement("Nro", microEmprendedor.Nro),
+                     //new XElement("Piso", microEmprendedor.Piso),
+                     //new XElement("Depto", microEmprendedor.Depto),
+                     new XElement("Telefono", microEmprendedor.Telefono),
+                     //new XElement("TelCelular", microEmprendedor.TelCelular),
                      new XElement("Correo", microEmprendedor.Correo),
                      new XElement("SitioWeb", microEmprendedor.SitioWeb),
                      new XElement("Instagram", microEmprendedor.Instagram),
-                     new XElement("FaceBook", microEmprendedor.Facebook),
-                     new XElement("Observaciones", microEmprendedor.Observaciones)
+                     new XElement("FaceBook", microEmprendedor.Facebook)
+                     //new XElement("Observaciones", microEmprendedor.Observaciones)
                      );
                 XElement microEmprendedorRubro = new XElement("MicroEmprendedorRubro");
                 if (microEmprendedor.Rubros != null)
@@ -332,17 +328,17 @@ namespace Api.Controllers
             new XElement("Dni", microEmprendedor.Dni),
             new XElement("FechaNacimiento", Convert.ToDateTime(microEmprendedor.FechaNacimiento)),
             new XElement("Sexo", microEmprendedor.Sexo),
-            new XElement("Calle", microEmprendedor.Calle),
-            new XElement("Nro", microEmprendedor.Nro),
-            new XElement("Piso", microEmprendedor.Piso),
-            new XElement("Depto", microEmprendedor.Depto),
-            new XElement("TelFijo", microEmprendedor.TelFijo),
-            new XElement("TelCelular", microEmprendedor.TelCelular),
+            new XElement("Direccion", microEmprendedor.Direccion),
+            //new XElement("Nro", microEmprendedor.Nro),
+            //new XElement("Piso", microEmprendedor.Piso),
+            //new XElement("Depto", microEmprendedor.Depto),
+            new XElement("Telefono", microEmprendedor.Telefono),
+            //new XElement("TelCelular", microEmprendedor.TelCelular),
             new XElement("Correo", microEmprendedor.Correo),
             new XElement("SitioWeb", microEmprendedor.SitioWeb),
             new XElement("Instagram", microEmprendedor.Instagram),
-            new XElement("FaceBook", microEmprendedor.Facebook),
-            new XElement("Observaciones", microEmprendedor.Observaciones)
+            new XElement("FaceBook", microEmprendedor.Facebook)
+            //new XElement("Observaciones", microEmprendedor.Observaciones)
         );
             XElement microEmprendedorRubro = new XElement("MicroEmprendedorRubro");
             if (microEmprendedor.Rubros != null)

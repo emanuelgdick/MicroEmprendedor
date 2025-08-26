@@ -11,7 +11,6 @@ namespace FrontEnd.Models
     public partial class MicroEmprendedor
     {
 
-    
         [Key]
         public int Id { get; set; }
 
@@ -24,22 +23,23 @@ namespace FrontEnd.Models
         public Localidad? Localidad { get; set; }
 
         [Required]
-        public string ApeyNom { get; set; }
+        public string? ApeyNom { get; set; }
 
         public string? Dni { get; set; }
         public DateTime? FechaNacimiento { get; set; }
         public char Sexo { get; set; }
-        public string? Calle { get; set; }
-        public string? Nro { get; set; }
-        public string? Piso { get; set; }
-        public string? Depto { get; set; }
-        public string? TelFijo { get; set; }
-        public string? TelCelular { get; set; }
+        public string? Direccion { get; set; }
+        //public string? Nro { get; set; }
+        //public string? Piso { get; set; }
+        //public string? Depto { get; set; }
+        public string? Telefono { get; set; }
+        //public string? TelCelular { get; set; }
         public string? Correo { get; set; }
         public string? SitioWeb { get; set; }
         public string? Instagram { get; set; }
         public string? Facebook { get; set; }
-        public string? Observaciones { get; set; }
+        //public string? Observaciones { get; set; }
+
 
         public virtual ICollection<MicroEmprendedorRubro> Rubros { get; set; }
         public virtual ICollection<PalabraClave>? PalabrasClave { get; set; }

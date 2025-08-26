@@ -1041,27 +1041,11 @@
           "sexo": {
             "type": "string"
           },
-          "calle": {
+          "direccion": {
             "type": "string",
             "nullable": true
           },
-          "nro": {
-            "type": "string",
-            "nullable": true
-          },
-          "piso": {
-            "type": "string",
-            "nullable": true
-          },
-          "depto": {
-            "type": "string",
-            "nullable": true
-          },
-          "telFijo": {
-            "type": "string",
-            "nullable": true
-          },
-          "telCelular": {
+          "telefono": {
             "type": "string",
             "nullable": true
           },
@@ -1078,10 +1062,6 @@
             "nullable": true
           },
           "facebook": {
-            "type": "string",
-            "nullable": true
-          },
-          "observaciones": {
             "type": "string",
             "nullable": true
           },

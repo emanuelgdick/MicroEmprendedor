@@ -8,7 +8,7 @@ namespace FrontEnd.Services
     public class ApiUserService
     {
         private readonly HttpClient _httpClient;
-        private string _ApiURLPath = "http://localhost:5087/"; /* "http://mpiscicelli-001-site2.stempurl.com/"*/
+        private string _ApiURLPath = "http://mpiscicelli-001-site2.stempurl.com/";  /* "http://localhost:5087/";*/
 
         public ApiUserService()
         {

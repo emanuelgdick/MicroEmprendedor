@@ -917,6 +917,18 @@
       "PackagePath": "staticwebassets\\home\\fonts\\slick.woff"
     },
     {
+      "Id": "C:\\MicroEmprendedor\\FrontEnd\\wwwroot\\home\\images\\Image1.jpeg",
+      "PackagePath": "staticwebassets\\home\\images\\Image1.jpeg"
+    },
+    {
+      "Id": "C:\\MicroEmprendedor\\FrontEnd\\wwwroot\\home\\images\\Image2.jpeg",
+      "PackagePath": "staticwebassets\\home\\images\\Image2.jpeg"
+    },
+    {
+      "Id": "C:\\MicroEmprendedor\\FrontEnd\\wwwroot\\home\\images\\Image3.jpeg",
+      "PackagePath": "staticwebassets\\home\\images\\Image3.jpeg"
+    },
+    {
       "Id": "C:\\MicroEmprendedor\\FrontEnd\\wwwroot\\home\\images\\item-1.jpg",
       "PackagePath": "staticwebassets\\home\\images\\item-1.jpg"
     },
@@ -4491,6 +4503,10 @@
     {
       "Id": "C:\\MicroEmprendedor\\FrontEnd\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.FrontEnd.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.FrontEnd.Microsoft.AspNetCore.StaticWebAssets.props",

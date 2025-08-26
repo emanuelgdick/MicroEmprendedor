@@ -1053,6 +1053,7 @@ C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\Content\moment\bower.json
 C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\Content\pnotify\.bower.json
 C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\Content\pnotify\bower.json
 C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\FrontEnd.staticwebassets.runtime.json
+C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\FrontEnd.staticwebassets.endpoints.json
 C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\FrontEnd.exe
 C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\FrontEnd.deps.json
 C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\FrontEnd.runtimeconfig.json
@@ -1130,7 +1131,6 @@ C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\System.Composition.TypedParts.dll
 C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
 C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\System.Drawing.Common.dll
-C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\System.Formats.Asn1.dll
 C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
 C:\MicroEmprendedor\FrontEnd\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
@@ -1288,15 +1288,17 @@ C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\FrontEnd.MvcApplicationPartsAssemb
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\FrontEnd.RazorAssemblyInfo.cache
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\FrontEnd.RazorAssemblyInfo.cs
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\FrontEnd.sourcelink.json
+C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\scopedcss\bundle\FrontEnd.styles.css
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\staticwebassets.build.json
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\staticwebassets.development.json
+C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.FrontEnd.Microsoft.AspNetCore.StaticWebAssets.props
+C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.FrontEnd.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.build.FrontEnd.props
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.FrontEnd.props
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.FrontEnd.props
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\staticwebassets.pack.json
-C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\scopedcss\bundle\FrontEnd.styles.css
-C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\FrontEnd.csproj.CopyComplete
+C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\FrontEnd.csproj.Up2Date
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\FrontEnd.dll
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\refint\FrontEnd.dll
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\FrontEnd.pdb

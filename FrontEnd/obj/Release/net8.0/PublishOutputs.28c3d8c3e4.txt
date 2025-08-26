@@ -155,7 +155,6 @@ C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\PubTmp\Out\System.Composition.Ty
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\PubTmp\Out\System.Configuration.ConfigurationManager.dll
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\PubTmp\Out\System.Diagnostics.DiagnosticSource.dll
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\PubTmp\Out\System.Drawing.Common.dll
-C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\PubTmp\Out\System.Formats.Asn1.dll
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\PubTmp\Out\System.IdentityModel.Tokens.Jwt.dll
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\PubTmp\Out\System.Reflection.MetadataLoadContext.dll
 C:\MicroEmprendedor\FrontEnd\obj\Release\net8.0\PubTmp\Out\System.Security.Cryptography.ProtectedData.dll

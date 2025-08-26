@@ -1,11 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!--
-https://go.microsoft.com/fwlink/?LinkID=208121.
--->
+<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>C:\MicroemprendedorSitio\Frontend</_PublishTargetUrl>
-    <History>True|2025-08-08T12:17:22.4639367Z;</History>
+    <_PublishTargetUrl>C:\mep\Frontend</_PublishTargetUrl>
+    <History>True|2025-08-08T20:10:19.2224657Z||;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>
