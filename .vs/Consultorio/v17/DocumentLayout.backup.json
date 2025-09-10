@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\MicroEmprendedor\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|c:\\microemprendedor\\frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|c:\\microemprendedor\\frontend\\views\\rubro\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\rubro\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|c:\\microemprendedor\\api\\controllers\\microemprendedorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AA678DB3-D24E-462A-8611-852C08884C77}|Api\\Api.csproj|solutionrelative:api\\controllers\\microemprendedorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -39,10 +47,6 @@
       "RelativeMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|c:\\microemprendedor\\frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|c:\\microemprendedor\\frontend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{83D2847F-8452-4FE2-B7BB-51703886780C}|FrontEnd\\FrontEnd.csproj|solutionrelative:frontend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -70,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,20 +90,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\MicroEmprendedor\\FrontEnd\\Views\\Rubro\\Index.cshtml",
+              "RelativeDocumentMoniker": "FrontEnd\\Views\\Rubro\\Index.cshtml",
+              "ToolTip": "C:\\MicroEmprendedor\\FrontEnd\\Views\\Rubro\\Index.cshtml",
+              "RelativeToolTip": "FrontEnd\\Views\\Rubro\\Index.cshtml",
+              "ViewState": "AgIAAHMBAAAAAAAAAAAAAHIBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-25T19:00:56.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "MicroEmprendedorController.cs",
               "DocumentMoniker": "C:\\MicroEmprendedor\\Api\\Controllers\\MicroEmprendedorController.cs",
               "RelativeDocumentMoniker": "Api\\Controllers\\MicroEmprendedorController.cs",
               "ToolTip": "C:\\MicroEmprendedor\\Api\\Controllers\\MicroEmprendedorController.cs",
               "RelativeToolTip": "Api\\Controllers\\MicroEmprendedorController.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAYwGUAAABIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGUAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T14:04:58.177Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-24T14:04:58.177Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "LocalidadController.cs",
               "DocumentMoniker": "C:\\MicroEmprendedor\\Api\\Controllers\\LocalidadController.cs",
               "RelativeDocumentMoniker": "Api\\Controllers\\LocalidadController.cs",
@@ -111,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ApiService.cs",
               "DocumentMoniker": "C:\\MicroEmprendedor\\FrontEnd\\Services\\ApiService.cs",
               "RelativeDocumentMoniker": "FrontEnd\\Services\\ApiService.cs",
@@ -119,12 +134,11 @@
               "RelativeToolTip": "FrontEnd\\Services\\ApiService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T18:23:56.662Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-19T18:23:56.662Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "RubroController.cs",
               "DocumentMoniker": "C:\\MicroEmprendedor\\Api\\Controllers\\RubroController.cs",
               "RelativeDocumentMoniker": "Api\\Controllers\\RubroController.cs",
@@ -136,7 +150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\MicroEmprendedor\\Api\\appsettings.Development.json",
               "RelativeDocumentMoniker": "Api\\appsettings.Development.json",
@@ -148,7 +162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Api.http",
               "DocumentMoniker": "C:\\MicroEmprendedor\\Api\\Api.http",
               "RelativeDocumentMoniker": "Api\\Api.http",
@@ -160,7 +174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\MicroEmprendedor\\Api\\Program.cs",
               "RelativeDocumentMoniker": "Api\\Program.cs",
@@ -172,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Error.cshtml",
               "DocumentMoniker": "C:\\MicroEmprendedor\\FrontEnd\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "FrontEnd\\Views\\Shared\\Error.cshtml",
@@ -184,7 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "C:\\MicroEmprendedor\\FrontEnd\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "FrontEnd\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -196,19 +210,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\MicroEmprendedor\\FrontEnd\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "FrontEnd\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\MicroEmprendedor\\FrontEnd\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "FrontEnd\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAALMCAAAAAAAAAAAAANICAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAANICAAAAAAAAAAAAANICAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-12T19:52:01.729Z"
+              "WhenOpened": "2025-08-12T19:52:01.729Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "default.cshtml",
               "DocumentMoniker": "C:\\MicroEmprendedor\\FrontEnd\\Views\\Home\\default.cshtml",
               "RelativeDocumentMoniker": "FrontEnd\\Views\\Home\\default.cshtml",
@@ -220,7 +235,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\MicroEmprendedor\\FrontEnd\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "FrontEnd\\Controllers\\HomeController.cs",
@@ -232,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\MicroEmprendedor\\FrontEnd\\Program.cs",
               "RelativeDocumentMoniker": "FrontEnd\\Program.cs",
@@ -244,7 +259,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "FrontEnd",
               "DocumentMoniker": "C:\\MicroEmprendedor\\FrontEnd\\FrontEnd.csproj",
               "RelativeDocumentMoniker": "FrontEnd\\FrontEnd.csproj",
@@ -255,7 +270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Api",
               "DocumentMoniker": "C:\\MicroEmprendedor\\Api\\Api.csproj",
               "RelativeDocumentMoniker": "Api\\Api.csproj",

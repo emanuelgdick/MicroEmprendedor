@@ -1304,3 +1304,4 @@ C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\refint\FrontEnd.dll
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\FrontEnd.pdb
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\FrontEnd.genruntimeconfig.cache
 C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\ref\FrontEnd.dll
+C:\MicroEmprendedor\FrontEnd\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
